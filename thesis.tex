@@ -1,0 +1,83 @@
+\documentclass[a4paper,11pt,twoside]{thesis}
+
+\usepackage[british]{babel}
+\usepackage{csquotes}
+
+\usepackage{debug}
+\usepackage{sciencestuff}
+
+\usepackage{lipsum}
+
+\author{Riccardo Finotello}
+\title{Title of the Thesis}
+\advisor{Igor Pesando}
+\institution{Universit\`{a} degli Studi di Torino}
+\school{Scuola di Dottorato}
+\specialisation{Dottorato in Fisica ed Astrofisica}
+\logo{img/unito}
+
+\begin{document}
+
+  \maketitlepage{}
+
+  \cleardoubleplainpage{}
+
+  \makefrontespice{}
+
+  \cleardoubleplainpage{}
+
+  \begin{abstractpage}
+
+    \lipsum[1-2]
+
+  \end{abstractpage}
+
+  \cleardoubleplainpage{}
+
+  \begin{acknowledgementspage}
+
+    \lipsum[3-4]
+
+  \end{acknowledgementspage}
+
+  \cleardoubleplainpage{}
+
+  \plaintoc{}
+
+  \outline{Outline}
+    \lipsum[1-3]
+
+  \thesispart{This Is the First Part}
+
+  \section{AAA}
+    \lipsum[1]
+
+    \subsection{AAA1}
+      \lipsum[2-5]
+
+    \subsection{AAA2}
+      \lipsum[6-11]
+
+
+  \thesispart{This Is the Second Part 2}
+
+  \section{BBB}
+    \lipsum[1]
+
+    \subsection{BBB1}
+      \lipsum[2-5]
+
+    \subsection{BBB2}
+      \lipsum[6-10]
+
+  \appendix
+
+  \section{CCC}
+    \lipsum[1-3]
+
+  \section{DDD}
+    \lipsum[4-6]
+
+\end{document}
+
+% vim: ft=tex
