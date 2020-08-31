@@ -15,9 +15,10 @@ jobs:
         with:
             name: thesis
             path: thesis.pdf
+      - name: Clear old file
+        run: rm -rf thesis.pdf
       - name: Download PDF file
         uses: actions/download-artifact@v2
         with:
             name: thesis
-            path: thesis.pdf
 
