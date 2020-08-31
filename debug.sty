@@ -1,1 +1,21 @@
-latex-commons/packages/debug.sty
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{debug}[2020/06/10 Debug package]
+
+\RequirePackage{xparse} %----------- improved \newcommand
+\RequirePackage{marginnote} %------- use margin note in floats
+\RequirePackage[usenames,
+                dvipsnames,
+                svgnames,
+                table]{xcolor} %---- provide colours
+
+\ProcessOptions\relax
+
+\newcounter{draftcommentcnt}
+\NewDocumentCommand{\draftcomment}{s O{red} m}{%
+        \def\margnote{\IfBooleanTF{#1}{\marginnote}{\marginpar}}%
+        \stepcounter{draftcommentcnt}%
+        \textcolor{#2}{#3}%
+        \margnote{\textcolor{#2}{$\Leftarrow$ \arabic{draftcommentcnt}}}%
+}
+
+% vim: ft=tex

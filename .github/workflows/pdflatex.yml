@@ -1,4 +1,4 @@
-name: Compile LaTeX Thesis
+name: Build PDFLaTeX
 on: [push]
 jobs:
   build_latex:
@@ -10,3 +10,14 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: thesis.tex
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v2
+        with:
+            name: thesis
+            path: thesis.pdf
+      - name: Download PDF file
+        uses: actions/download-artifact@v2
+        with:
+            name: thesis
+
+
