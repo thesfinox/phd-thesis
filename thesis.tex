@@ -2,81 +2,94 @@
 
 \usepackage[british]{babel}
 \usepackage{csquotes}
-
 \usepackage{debug}
 \usepackage{sciencestuff}
 
-\usepackage{lipsum}
-
 \author{Riccardo Finotello}
-\title{Title of the Thesis}
+\title{Topics on Theoretical and Computational Aspects of String Theory and Their Phenomenological Implications}
 \advisor{Igor Pesando}
 \institution{Universit\`{a} degli Studi di Torino}
 \school{Scuola di Dottorato}
 \specialisation{Dottorato in Fisica ed Astrofisica}
 \logo{img/unito}
 
+\addbibresource{thesis.bib}
+
+%---- additional commands
+\newcommand{\sm}{\textsc{sm}\xspace}
+\newcommand{\eom}{\textsc{e.o.m.}\xspace}
+\newcommand{\cft}{\textsc{cft}\xspace}
+
+%---- derivatives
+\newcommand{\pd}{\ensuremath{\partial}}
+\newcommand{\bpd}{\ensuremath{\overline{\partial}}}
+
+%---- operators
+\newcommand{\bT}{\ensuremath{\overline{T}}}
+
+%---- coordinates
+\newcommand{\dX}{\ensuremath{\dot{X}}}
+\newcommand{\pX}{\ensuremath{X'}}
+\newcommand{\bxi}{\ensuremath{\overline{\xi}}}
+\newcommand{\bchi}{\ensuremath{\overline{\chi}}}
+\newcommand{\bz}{\ensuremath{\overline{z}}}
+\newcommand{\bw}{\ensuremath{\overline{w}}}
+\newcommand{\bomega}{\ensuremath{\overline{\omega}}}
+
+
+%---- BEGIN DOCUMENT
+
 \begin{document}
 
-  \maketitlepage{}
+%---- TITLE
+\maketitlepage{}
+\cleardoubleplainpage{}
 
-  \cleardoubleplainpage{}
+%---- FRONTESPICE
+\makefrontespice{}
+\cleardoubleplainpage{}
 
-  \makefrontespice{}
+%---- ABSTRACT
+\begin{abstractpage}
+\input{sec/abstract.tex}
+\end{abstractpage}
+\cleardoubleplainpage{}
 
-  \cleardoubleplainpage{}
+%---- ACKNOWLEDGENTS
+\begin{acknowledgmentspage}
+\input{sec/acknowledgments.tex}
+\end{acknowledgmentspage}
+\cleardoubleplainpage{}
 
-  \begin{abstractpage}
+%---- TOC AND OUTLINE
+\plaintoc{}
+\outline{Outline}
+\input{sec/outline.tex}
 
-    \lipsum[1-2]
+%---- PARTICLE PHYSICS
+\thesispart{Conformal Symmetry and Geometry of the Wordlsheet}
+\section{Introduction}
+\input{sec/part1/introduction.tex}
+\section{D-branes Intersecting at Angles}
+\input{sec/part1/dbranes.tex}
+\section{Fermions With Boundary Defects}
+\input{sec/part1/fermions.tex}
 
-  \end{abstractpage}
+%---- COSMOLOGY
+\thesispart{Cosmology and Time Dependent Divergences}
+\section{Introduction}
+\input{sec/part2/introduction.tex}
 
-  \cleardoubleplainpage{}
+%---- DEEP LEARNING
+\thesispart{Deep Learning the Geometry of String Theory}
+\section{Introduction}
+\input{sec/part3/introduction.tex}
 
-  \begin{acknowledgmentspage}
+%---- APPENDIX
+\appendix
 
-    \lipsum[3-4]
-
-  \end{acknowledgmentspage}
-
-  \cleardoubleplainpage{}
-
-  \plaintoc{}
-
-  \outline{Outline}
-    \lipsum[1-3]
-
-  \thesispart{This Is the First Part}
-
-  \section{AAA}
-    \lipsum[1]
-
-    \subsection{AAA1}
-      \lipsum[2-5]
-
-    \subsection{AAA2}
-      \lipsum[6-11]
-
-
-  \thesispart{This Is the Second Part 2}
-
-  \section{BBB}
-    \lipsum[1]
-
-    \subsection{BBB1}
-      \lipsum[2-5]
-
-    \subsection{BBB2}
-      \lipsum[6-10]
-
-  \appendix
-
-  \section{CCC}
-    \lipsum[1-3]
-
-  \section{DDD}
-    \lipsum[4-6]
+%---- BIBLIOGRAPHY
+\printbibliography[heading=bibintoc]
 
 \end{document}
 

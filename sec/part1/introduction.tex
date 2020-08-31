@@ -1,0 +1,187 @@
+In this first part we focus on aspects of string theory directly connected with its worldsheet description and symmetries.
+The underlying idea is to build technical tools to address the study of viable phenomenological models in this framework.
+In fact the construction of realistic string models of particle physics is the key to better understanding the nature of a theory of everything such as string theory.
+
+As a first test of validity, the string theory should properly extend the known Standard Model (\sm) of particle physics, which is arguably one of the most experimentally backed theoretical frameworks in modern physics.
+In particular its description in terms of fundamental strings should be able to include a gauge algebra locally isomorphic to that of
+\begin{equation}
+  \SU{3}_{\rC} \otimes \SU{2}_{\rL} \otimes \U{1}_{\rY}
+\end{equation}
+in order to reproduce known results.
+For instance, string theory could provide a unified framework by predicting the existence of a larger gauge group containing the \sm{} as a subset.
+In what follows we deal with the definition of mathematical tools to compute amplitudes to be used in phenomenological calculations related to the study of particles in string theory.
+
+
+\subsection{Properties of String Theory and Conformal Symmetry}
+
+Strings are extended one-dimensional objects.
+They are curves in space parametrized by a coordinate $\sigma \in \left[0, \ell \right]$.
+Propagating in $D$-dimensional spacetime they span a two-dimensional surface, the \emph{worldsheet}, described by the position of the string at given values of $\sigma$ at a time $\tau$, i.e.\ $X^{\mu}(\tau, \sigma)$ where $\mu = 0, 1, \dots, D - 1$ indexes the coordinates.
+
+
+\subsubsection{Action Principle}
+
+As the action of a point particle is proportional to the length of its trajectory (its \emph{worldline}), the same object for string is proportional to the area of the worldsheet in the original formulation by Nambu and Goto.
+The solutions of the classical equations of motion (\eom) are therefore strings spanning a worldsheet of extremal area.
+While Nambu and Goto's formulation is fairly direct in its definition, it usually best to work with Polyakov's action~\cite{Polyakov:1981:QuantumGeometryBosonic}
+\begin{equation}
+  S_P[ \gamma, X ]
+  =
+  -\frac{T}{2}
+  \infinfint{\tau}
+  \finiteint{\sigma}{0}{\ell}
+  \sqrt{- \det \gamma}\,
+  \gamma^{\alpha\beta}\,
+  \ipd{\alpha} X^{\mu}(\tau, \sigma)\,
+  \ipd{\beta} X^{\nu}(\tau, \sigma)\,
+  \eta_{\mu\nu}.
+  \label{eq:conf:polyakov}
+\end{equation}
+In this formulation $\gamma_{\alpha\beta}$ is the worldsheet metric with Lorentzian signature $(-, +)$.
+As there are no derivatives of $\gamma_{\alpha\beta}$, its \eom is a constraint ensuring the equivalence of Polyakov's and Nambu and Goto's formulations.
+In fact
+\begin{equation}
+  \fdv{S_P[\gamma, X]}{\gamma^{\alpha\beta}}
+  =
+  \ipd{\alpha} X \cdot \ipd{\beta} X
+  -
+  \frac{1}{2}
+  \gamma_{\alpha\beta}\,
+  \gamma^{\lambda\rho}\,
+  \ipd{\lambda} X \cdot \ipd{\rho} X
+  =
+  0
+  \label{eq:conf:worldsheetmetric}
+\end{equation}
+implies
+\begin{equation}
+  \eval{S_P[\gamma, X]}_{\fdv{S_P[\gamma, X]}{\gamma^{\alpha\beta}} = 0}
+  =
+  - T
+  \infinfint{\tau}
+  \finiteint{\sigma}{0}{\sigma}
+  \sqrt{\dX \cdot \dX - \pX \cdot \pX}
+  =
+  S_{NG}[X],
+\end{equation}
+where $S_{NG}[X]$ is the Nambu--Goto action for the classical string.
+
+The symmetries of $S_P[\gamma, X]$ are the keys to the success of the string theory framework~\cite{Polchinski:1998:StringTheoryIntroduction}.
+Specifically~\eqref{eq:conf:polyakov} displays symmetries under:
+\begin{itemize}
+  \item $D$-dimensional Poincaré invariance
+    \begin{equation}
+      \begin{split}
+        X'^{\mu}(\tau, \sigma)
+        & =
+        \tensor{\Lambda}{^{\mu}_{\nu}}\, X^{\mu}(\tau, \sigma) + c^{\nu},
+        \\
+        \gamma'_{\alpha\beta}(\tau, \sigma)
+        & =
+        \gamma_{\alpha\beta}(\tau, \sigma)
+      \end{split}
+    \end{equation}
+    where $\Lambda \in \SO{1, D-1}$ and $c \in \R^D$,
+
+  \item 2-dimensional diffeomorphism invariance
+    \begin{equation}
+      \begin{split}
+        X'^{\mu}(\tau', \sigma')
+        & =
+        X^{\mu}(\tau, \sigma)
+        \\
+        \gamma'_{\alpha\beta}(\tau', \sigma')
+        & =
+        \pdv{\sigma'^{\lambda}}{\sigma^{\alpha}}\,
+        \pdv{\sigma'^{\rho}}{\sigma^{\beta}}\,
+        \gamma_{\lambda\rho}(\tau, \sigma)
+      \end{split}
+    \end{equation}
+    where $\sigma^0 = \tau$ and $\sigma^1 = \sigma$,
+
+  \item Weyl invariance
+    \begin{equation}
+      \begin{split}
+        X'^{\mu}(\tau', \sigma')
+        & =
+        X^{\mu}(\tau, \sigma)
+        \\
+        \gamma'_{\alpha\beta}(\tau, \sigma)
+        & =
+        e^{2 \omega(\tau, \sigma)}\, \gamma_{\alpha\beta}(\tau, \sigma)
+      \end{split}
+    \end{equation}
+    for arbitrary $\omega(\tau, \sigma)$.
+\end{itemize}
+Notice that the last is not a symmetry of the Nambu--Goto action and it only appears in Polyakov's formulation of the action.
+
+
+\subsubsection{Conformal Invariance}
+
+The definition of the 2-dimensional stress-energy tensor is a direct consequence of~\eqref{eq:conf:worldsheetmetric} \cite{Green:1988:SuperstringTheoryIntroduction}.
+In fact the classical constraint on the tensor is simply
+\begin{equation}
+  T_{\alpha\beta}
+  =
+  -\frac{2 \pi}{\sqrt{- \det \gamma}}
+  \fdv{S_P[\gamma, X]}{\gamma^{\alpha\beta}}
+  =
+  0.
+\end{equation}
+While its conservation $\nabla^{\alpha} T_{\alpha\beta} = 0$ is somewhat trivial, Weyl invariance also ensures the tracelessness of the tensor
+\begin{equation}
+  \trace{T} = \tensor{T}{^{\alpha}_{\alpha}} = 0.
+\end{equation}
+In other words, the $(1 + 1)$-dimensional theory of massless scalars $X^{\mu}$ in~\eqref{eq:conf:polyakov} is \emph{conformally invariant} (for review and details see \cite{Friedan:1986:ConformalInvarianceSupersymmetrya,DiFrancesco:1997:ConformalFieldTheorya}).
+
+Finally we can set $\gamma_{\alpha\beta}(\tau, \sigma) = e^{\phi(\tau, \sigma)}\, \eta_{\alpha\beta}$, known as \emph{conformal gauge} where $\eta_{\alpha\beta} = \mathrm{diag}(-1, 1)$, using the invariances of the action.
+This gauge choice is however preserved by the residual \emph{pseudoconformal} transformations
+\begin{equation}
+  \tau \pm \sigma = \sigma_{\pm} \mapsto f_{\pm}(\sigma_{\pm}),
+\end{equation}
+where $f_{\pm}(\xi)$ are arbitrary functions.
+It is natural to introduce a Wick rotation $\tau_E = i \tau$ and the complex coordinates $\xi = \tau_E + i \sigma$ and $\bxi = \xi^*$.
+In these terms, the tracelessness of the stress-energy tensor translates to
+\begin{equation}
+  T_{z \bz} = 0,
+\end{equation}
+while its conservation $\partial^{\alpha} T_{\alpha\beta} = 0$ becomes:\footnotemark{}
+\footnotetext{%
+  Since we fix $\gamma_{\alpha\beta}(\tau, \sigma) \propto \eta_{\alpha\beta}$ we do not need to account for the components of the connection and we can replace the covariant derivative $\nabla^{\alpha}$ with a standard derivative $\partial^{\alpha}$.
+}
+\begin{equation}
+  \bpd T_{\xi\xi}( \xi, \bxi ) = \pd \bT_{\bxi\bxi}( \xi, \bxi ) = 0.
+\end{equation}
+The last equation finally implies
+\begin{equation}
+  T_{\xi\xi}( \xi, \bxi ) = T_{\xi\xi}( \xi ) = T( \xi ),
+  \qquad
+  \bT_{\bxi\bxi}( \xi, \bxi ) = \bT_{\bxi\bxi}( \bxi ) = \bT( \bxi ),
+\end{equation}
+which are respectively the holomorphic and the anti-holomorphic components of the 2-dimensional stress energy tensor.
+
+The previous properties define what is known as a 2-dimensional \emph{conformal field theory} (\cft).
+Ordinary tensor fields
+\begin{equation}
+  \phi_{\omega, \bomega}( \xi, \bxi )
+  =
+  \phi_{\underbrace{\xi \dots \xi}\limits_{\omega~\text{times}}\, \underbrace{\bxi \dots \bxi}\limits_{\bomega~\text{times}}}( \xi, \bxi )
+  \left( \dd{\xi} \right)^{\omega}
+  \left( \dd{\bxi} \right)^{\bomega}
+\end{equation}
+can be classified according to their weights $\omega$ and $\bomega$.
+In fact a transformation $\xi \mapsto \chi(\xi)$ and $\bxi \mapsto \bchi(\bxi)$ maps the conformal fields to
+\begin{equation}
+  \phi_{\omega, \bomega}( \chi, \bchi )
+  =
+  \left( \dv{\chi}{\xi} \right)^{\omega}\,
+  \left( \dv{\bchi}{\bxi} \right)^{\bomega}\,
+  \phi_{\omega, \bomega}( \xi, \bxi ).
+\end{equation}
+
+\subsection{Extra Dimensions and Compactification}
+
+
+\subsection{D-branes and Open Strings}
+
+% vim ft=tex
