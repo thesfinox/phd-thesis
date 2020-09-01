@@ -3,7 +3,7 @@ The underlying idea is to build technical tools to address the study of viable p
 In fact the construction of realistic string models of particle physics is the key to better understanding the nature of a theory of everything such as string theory.
 
 As a first test of validity, the string theory should properly extend the known Standard Model (\sm) of particle physics, which is arguably one of the most experimentally backed theoretical frameworks in modern physics.
-In particular its description in terms of fundamental strings should be able to include a gauge algebra locally isomorphic to that of
+In particular its description in terms of fundamental strings should be able to include a gauge algebra isomorphic to that of
 \begin{equation}
   \SU{3}_{\rC} \otimes \SU{2}_{\rL} \otimes \U{1}_{\rY}
 \end{equation}
@@ -17,6 +17,7 @@ In what follows we deal with the definition of mathematical tools to compute amp
 Strings are extended one-dimensional objects.
 They are curves in space parametrized by a coordinate $\sigma \in \left[0, \ell \right]$.
 Propagating in $D$-dimensional spacetime they span a two-dimensional surface, the \emph{worldsheet}, described by the position of the string at given values of $\sigma$ at a time $\tau$, i.e.\ $X^{\mu}(\tau, \sigma)$ where $\mu = 0, 1, \dots, D - 1$ indexes the coordinates.
+Such surface can have different topologies according to the nature of the object propagating in spacetime: strings can be \emph{closed} if $X^{\mu}(\tau, 0) = X^{\mu}(\tau, \ell)$ or \emph{open} if the endpoints in $\sigma = 0$ and $\sigma = \ell$ do not coincide.
 
 
 \subsubsection{Action Principle}
@@ -27,15 +28,31 @@ While Nambu and Goto's formulation is fairly direct in its definition, it usuall
 \begin{equation}
   S_P[ \gamma, X ]
   =
-  -\frac{T}{2}
+  -\frac{1}{4 \pi \ap}
   \infinfint{\tau}
   \finiteint{\sigma}{0}{\ell}
-  \sqrt{- \det \gamma}\,
-  \gamma^{\alpha\beta}\,
+  \sqrt{- \det \gamma(\tau, \sigma)}\,
+  \gamma^{\alpha\beta}(\tau, \sigma)\,
   \ipd{\alpha} X^{\mu}(\tau, \sigma)\,
   \ipd{\beta} X^{\nu}(\tau, \sigma)\,
   \eta_{\mu\nu}.
   \label{eq:conf:polyakov}
+\end{equation}
+The \eom for the string $X^{\mu}(\tau, \sigma)$ is therefore
+\begin{equation}
+  \frac{1}{\sqrt{- \det \gamma}}\,
+  \ipd{\alpha}
+  \left(
+    \sqrt{- \det \gamma}\,
+    \gamma^{\alpha\beta}\,
+    \ipd{\beta} X^{\mu}
+  \right)
+  =
+  0,
+  \qquad
+  \mu = 0, 1, \dots, D - 1,
+  \qquad
+  \alpha,\, \beta = 0, 1.
 \end{equation}
 In this formulation $\gamma_{\alpha\beta}$ is the worldsheet metric with Lorentzian signature $(-, +)$.
 As there are no derivatives of $\gamma_{\alpha\beta}$, its \eom is a constraint ensuring the equivalence of Polyakov's and Nambu and Goto's formulations.
@@ -43,12 +60,16 @@ In fact
 \begin{equation}
   \fdv{S_P[\gamma, X]}{\gamma^{\alpha\beta}}
   =
-  \ipd{\alpha} X \cdot \ipd{\beta} X
-  -
-  \frac{1}{2}
-  \gamma_{\alpha\beta}\,
-  \gamma^{\lambda\rho}\,
-  \ipd{\lambda} X \cdot \ipd{\rho} X
+  - \frac{1}{4 \pi \ap}
+  \sqrt{- \det \gamma}\,
+  \left(
+    \ipd{\alpha} X \cdot \ipd{\beta} X
+    -
+    \frac{1}{2}
+    \gamma_{\alpha\beta}\,
+    \gamma^{\lambda\rho}\,
+    \ipd{\lambda} X \cdot \ipd{\rho} X
+  \right)
   =
   0
   \label{eq:conf:worldsheetmetric}
@@ -57,7 +78,7 @@ implies
 \begin{equation}
   \eval{S_P[\gamma, X]}_{\fdv{S_P[\gamma, X]}{\gamma^{\alpha\beta}} = 0}
   =
-  - T
+  - \frac{1}{2 \pi \ap}
   \infinfint{\tau}
   \finiteint{\sigma}{0}{\sigma}
   \sqrt{\dX \cdot \dX - \pX \cdot \pX}
@@ -123,16 +144,26 @@ In fact the classical constraint on the tensor is simply
 \begin{equation}
   T_{\alpha\beta}
   =
-  -\frac{2 \pi}{\sqrt{- \det \gamma}}
+  \frac{4 \pi}{\sqrt{- \det \gamma}}
   \fdv{S_P[\gamma, X]}{\gamma^{\alpha\beta}}
   =
+  -\frac{1}{\ap}
+  \left(
+    \ipd{\alpha} X \cdot \ipd{\beta} X
+    -
+    \frac{1}{2} \eta_{\alpha\beta}\,
+    \eta^{\lambda\rho}\,
+    \ipd{\lambda} X \cdot \ipd{\rho} X
+  \right)
+  =
   0.
+  \label{eq:conf:stringT}
 \end{equation}
 While its conservation $\nabla^{\alpha} T_{\alpha\beta} = 0$ is somewhat trivial, Weyl invariance also ensures the tracelessness of the tensor
 \begin{equation}
   \trace{T} = \tensor{T}{^{\alpha}_{\alpha}} = 0.
 \end{equation}
-In other words, the $(1 + 1)$-dimensional theory of massless scalars $X^{\mu}$ in~\eqref{eq:conf:polyakov} is \emph{conformally invariant} (for review and details see \cite{Friedan:1986:ConformalInvarianceSupersymmetrya,DiFrancesco:1997:ConformalFieldTheorya}).
+In other words, the $(1 + 1)$-dimensional theory of massless scalars $X^{\mu}$ in~\eqref{eq:conf:polyakov} is \emph{conformally invariant} (for review and details see \cite{Friedan:1986:ConformalInvarianceSupersymmetry,DiFrancesco:1997:ConformalFieldTheory,Ginsparg:1988:AppliedConformalField,Blumenhagen:2009:IntroductionConformalField}).
 
 Finally we can set $\gamma_{\alpha\beta}(\tau, \sigma) = e^{\phi(\tau, \sigma)}\, \eta_{\alpha\beta}$, known as \emph{conformal gauge} where $\eta_{\alpha\beta} = \mathrm{diag}(-1, 1)$, using the invariances of the action.
 This gauge choice is however preserved by the residual \emph{pseudoconformal} transformations
@@ -141,6 +172,8 @@ This gauge choice is however preserved by the residual \emph{pseudoconformal} tr
 \end{equation}
 where $f_{\pm}(\xi)$ are arbitrary functions.
 It is natural to introduce a Wick rotation $\tau_E = i \tau$ and the complex coordinates $\xi = \tau_E + i \sigma$ and $\bxi = \xi^*$.
+The transformation maps the Lorentzian worldsheet to a new surface: an infinite Euclidean strip for open strings or a cylinder for closed strings.
+
 In these terms, the tracelessness of the stress-energy tensor translates to
 \begin{equation}
   T_{z \bz} = 0,
@@ -169,7 +202,7 @@ Ordinary tensor fields
   \left( \dd{\xi} \right)^{\omega}
   \left( \dd{\bxi} \right)^{\bomega}
 \end{equation}
-can be classified according to their weights $\omega$ and $\bomega$.
+can be classified according to their weight $\left( \omega, \bomega \right)$ referring to the holomorphic and anti-holomorphic parts respectively.
 In fact a transformation $\xi \mapsto \chi(\xi)$ and $\bxi \mapsto \bchi(\bxi)$ maps the conformal fields to
 \begin{equation}
   \phi_{\omega, \bomega}( \chi, \bchi )
@@ -179,9 +212,498 @@ In fact a transformation $\xi \mapsto \chi(\xi)$ and $\bxi \mapsto \bchi(\bxi)$ 
   \phi_{\omega, \bomega}( \xi, \bxi ).
 \end{equation}
 
+\begin{figure}[tbp]
+  \centering
+  \begin{subfigure}[c]{0.45\linewidth}
+    \centering
+    \def\svgwidth{\linewidth}
+    \import{img}{complex_plane.pdf_tex}
+    \caption{Radial ordering.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[c]{0.45\linewidth}
+    \centering
+    \def\svgwidth{\linewidth}
+    \import{img}{radial_ordering.pdf_tex}
+    \caption{Difference of time ordered contours.}
+  \end{subfigure}
+  \caption{Map to the complex plane.}
+  \label{fig:conf:complex_plane}
+\end{figure}
+
+An additional conformal map
+\begin{equation}
+  z = e^{\xi} = e^{\tau_e + i \sigma} \in \left\lbrace z \in \C | \Im z \ge 0 \right\rbrace,
+  \qquad
+  \bz = e^{\bxi} = e^{\tau_e - i \sigma} \in \left\lbrace z \in \C | \Im z \le 0 \right\rbrace
+\end{equation}
+maps the worldsheet of the string to the complex plane.
+On this Riemann surface the usual time ordering becomes a \emph{radial ordering} as constant time surfaces are circles around the origin (see the contours $\ccC_{(0)}$ and $\ccC_{(1)}$ in \Cref{fig:conf:complex_plane}). 
+In these coordinates the conserved charge associated to the transformation $z \mapsto z + \epsilon(z)$ in radial quantization is
+\begin{equation}
+  Q_{\epsilon, \bepsilon}
+  =
+  \cint{0}
+  \ddz
+  \epsilon(z)\, T(z)
+  +
+  \cint{0}
+  \ddbz
+  \bepsilon(\bz)\, \bT(\bz),
+\end{equation}
+where $\ccC_0$ is an anti-clockwise constant radial time path around the origin.
+The transformation on a field $\phi_{\omega, \bomega}$ of weight $(\omega, \bomega)$ is thus given by the commutator with $Q_{\epsilon, \bepsilon}$:
+\begin{equation}
+  \begin{split}
+    \delta_{\epsilon, \bepsilon} \phi_{\omega, \bomega}
+    & =
+    \left[ Q_{\epsilon, \bepsilon}, \phi_{\omega, \bomega}( w, \bw ) \right]
+    \\
+    & =
+    \cint{0} \ddz \epsilon(z) \left[ T(z), \phi_{\omega, \bomega}( w, \bw ) \right]
+    +
+    \cint{0} \ddbz \bepsilon(\bz) \left[ \bT(\bz), \phi_{\omega, \bomega}( w, \bw ) \right]
+    \\
+    & =
+    \cint{w} \ddz \epsilon(z)\, \rR\!\left( T(z)\, \phi_{\omega, \bomega}( w, \bw ) \right)
+    +
+    \cint{\bw} \ddbz \bepsilon(\bz)\, \rR\!\left( \bT(\bz)\, \phi_{\omega, \bomega}( w, \bw ) \right),
+  \end{split}
+\end{equation}
+where in the last passage we used the fact that the difference of ordered integrals becomes the contour integral of the radially ordered product computed surrounding $w$.
+Equating the result with the expected variation
+\begin{equation}
+  \begin{split}
+    \delta_{\epsilon, \bepsilon} \phi_{\omega, \bomega}
+    & =
+    \omega\, \ipd{w} \epsilon( w )\, \phi_{\omega, \bomega}( w, \bw )
+    +
+    \epsilon( w )\, \ipd{w} \phi_{\omega, \bomega}( w, \bw )
+    \\
+    & +
+    \bomega\, \ipd{\bw} \bepsilon( \bw )\, \phi_{\omega, \bomega}( w, \bw )
+    +
+    \epsilon( \bw )\, \ipd{\bw} \phi_{\omega, \bomega}( w, \bw )
+  \end{split}
+\end{equation}
+we find the short distance singularities of the components of the stress-energy tensor with the field $\phi_{\omega, \bomega}( w, \bw )$:
+\begin{equation}
+  \begin{split}
+    T( z )\, \phi_{\omega, \bomega}( w, \bw )
+    & =
+    \frac{\omega}{(z - w)^2} \phi_{\omega, \bomega}( w, \bw )
+    +
+    \frac{1}{z - w} \ipd{w} \phi_{\omega, \bomega}( w, \bw )
+    +
+    \order{1},
+    \\
+    \bT( \bz )\, \phi_{\omega, \bomega}( w, \bw )
+    & =
+    \frac{\bomega}{(\bz - \bw)^2} \phi_{\omega, \bomega}( w, \bw )
+    +
+    \frac{1}{\bz - \bw} \ipd{\bw} \phi_{\omega, \bomega}( w, \bw )
+    +
+    \order{1},
+  \end{split}
+  \label{eq:conf:primary}
+\end{equation}
+where we drop the radial ordering symbol $\rR$ for simplicity.
+Since the contour $\ccC_{w}$ is infinitely small around $w$, the conformal properties of $\phi_{\omega, \bomega}( w, \bw )$ are entirely defined by these relations.
+In fact $\phi_{\omega, \bomega}( w, \bw )$ is a \emph{primary field} if its short distance behaviour with the stress-energy tensor is as such.
+This is an example of an \emph{operator product expansion} (\ope)
+\begin{equation}
+  \phi^{(i)}_{\omega_i, \bomega_i}( z, \bz )\, \phi^{(j)}_{\omega_j, \bomega_j}( w, \bw )
+  =
+  \sum\limits_{k}
+  \cC_{ijk}
+  (z - w)^{\omega_k - \omega_i - \omega_j}\,
+  (\bz - \bw)^{\bomega_k - \bomega_i - \bomega_j}\,
+  \phi^{(k)}_{\omega_k, \bomega_k}( w, \bw )
+  \label{eq:conf:ope}
+\end{equation}
+which is an asymptotic expansion containing the full information on the singularities.\footnotemark{}
+\footnotetext{%
+  The expression \eqref{eq:conf:ope} is valid assuming the normalisation of the 2-points function
+  \begin{equation*}
+    \left\langle \phi^{(i)}_{\omega_i, \bomega_i}( z, \bz )\, \phi^{(j)}_{\omega_j, \bomega_j}( w, \bw ) \right\rangle
+    =
+    \frac{\delta_{ij}}{(z - w)^{\omega_i + \omega_j} (\bz - \bw)^{\bomega_i + \bomega_j}}.
+  \end{equation*}
+}
+The constant coefficients $\cC_{ijk}$ are subject to restrictive constraints given by the properties of the conformal theories to the point that a \cft is completely specified by the spectrum of the weights $(\omega_i, \bomega_i)$ and the coefficients $\cC_{ijk}$ \cite{Friedan:1986:ConformalInvarianceSupersymmetry}.
+
+The \ope can also be compute on the stress-energy tensor itself.
+Focusing on the holomorphic component we find
+\begin{equation}
+  \begin{split}
+    T( z )\, T( w )
+    & =
+    \frac{\frac{c}{2}}{(z - w)^4}
+    +
+    \frac{2}{(z - w)^2}\, T(w)
+    +
+    \frac{1}{z - w}\, \ipd{w} T(w),
+    \\
+    \bT( \bz )\, \bT( \bw )
+    & =
+    \frac{\frac{\overline{c}}{2}}{(\bz - \bw)^4}
+    +
+    \frac{2}{(\bz - \bw)^2}\, \bT(\bw)
+    +
+    \frac{1}{\bz - \bw}\, \ipd{\bw} \bT(\bw).
+  \end{split}
+  \label{eq:conf:TTexpansion}
+\end{equation}
+The components of the stress-energy tensor are therefore not primary fields and show an anomaly in the behaviour encoded by the constant $c \in \R$.
+This is a reflection of the anomalous algebra of the operator modes $L_n$ and $\bL_n$ computed from the Laurent expansion
+\begin{equation}
+  \begin{split}
+    T( z ) = \infinfsum{n} L_n\, z^{-n -2}
+    & \Rightarrow
+    L_n = \cint{0} \ddz z^{n + 1} T(z),
+    \\
+    \bT( \bz ) = \infinfsum{n} \bL_n\, \bz^{-n -2}
+    & \Rightarrow
+    \bL_n = \cint{0} \ddbz \bz^{n + 1} \bT(\bz).
+  \end{split}
+  \label{eq:conf:Texpansion}
+\end{equation}
+This ultimately leads to the quantum algebra
+\begin{equation}
+  \begin{split}
+    \left[ L_n, L_m \right]
+    & =
+    (n - m)\, L_{n + m} + \frac{c}{12}\, n\, (n^2 - 1)\, \delta_{n, -m},
+    \\
+    \left[ \bL_n, \bL_m \right]
+    & =
+    (n - m)\, \bL_{n + m} + \frac{\overline{c}}{12}\, n\, (n^2 - 1)\, \delta_{n, -m},
+    \\
+    \left[ L_n, \bL_m \right]
+    & =
+    0,
+  \end{split}
+  \label{eq:conf:virasoro}
+\end{equation}
+known as Virasoro algebra, unique central extension of the classical de Witt algebra, with central charge $c$.
+Operators $L_n$ and $\bL_n$ are called Virasoro operators.\footnotemark{}
+\footnotetext{%
+  Notice that the subset of Virasoro operators $\left\lbrace L_{-1}, L_0, L_1 \right\rbrace$ forms a closed subalgebra generating the group $\SL{2}{\R}$.
+}
+Notice that $L_0 + \bL_0$ is the generator of the dilations on the complex plane.
+In terms of radial quantization this translates to time translations and $L_0 + \bL_0$ can be considered to be the Hamiltonian of the theory.
+
+In the same fashion as~\eqref{eq:conf:Texpansion}, fields can be expanded in modes:
+\begin{equation}
+  \phi_{\omega, \bomega}( w, \bw )
+  =
+  \sum\limits_{n,\, m = -\infty}^{+\infty}
+  \phi_{\omega, \bomega}^{(n, m)}\,
+  z^{-n -\omega}\,
+  \bz^{-m -\bomega}.
+  \label{eq:conf:expansion}
+\end{equation}
+From the previous relations we can finally define the ``asymptotic'' in-states as one-to-one correspondence with conformal operators:
+\begin{equation}
+  \ket{\phi_{\omega, \bomega}}
+  =
+  \lim\limits_{z,\, \bz \to 0}
+  \phi_{\omega, \bomega}
+  \regvacuum.
+\end{equation}
+The regularity of \eqref{eq:conf:expansion} requires
+\begin{equation}
+  \phi_{\omega, \bomega}^{(n, m)}
+  \regvacuum
+  =
+  0,
+  \qquad
+  n > \omega,
+  \quad
+  m > \bomega.
+\end{equation}
+As a consequence also
+\begin{equation}
+  L_n \regvacuum
+  =
+  \bL_n \regvacuum
+  =
+  0,
+  \qquad
+  n > -2.
+\end{equation}
+Finally the definitions of the primary operators~\eqref{eq:conf:primary} define the \emph{physical} states as
+\begin{equation}
+  \begin{split}
+    L_0 \ket{\phi_{\omega, \bomega}} & = \omega \ket{\phi_{\omega, \bomega}},
+    \\
+    \bL_0 \ket{\phi_{\omega, \bomega}} & = \bomega \ket{\phi_{\omega, \bomega}},
+    \\
+    L_n \ket{\phi_{\omega, \bomega}} & = \bL_n \ket{\phi_{\omega, \bomega}} = 0,
+    \quad
+    n \ge 1.
+  \end{split}
+\end{equation}
+
+From this definition we can build an entire representation of \emph{descendant} states applying any operator $L_{-n}$ (or $\bL_{-n}$) with $n \ge 1$ to $\ket{\phi_{\omega, \bomega}}$.
+Let $\phi_{\omega}( w )$ be a holomorphic field in the \cft for simplicity, and let $\ket{\phi_{\omega}}$ be its corresponding state.
+The generic state at level $m$ build from such state is
+\begin{equation}
+  \ket{\phi_{\omega}^{\lbrace n_1, n_2, \dots, n_m \rbrace}}
+  =
+  L_{-n_1}\, L_{-n_2}\, \dots L_{-n_m}
+  \ket{\phi_{\omega}},
+  \qquad
+  \finitesum{i}{1}{m} n_i = m \ge 0.
+\end{equation}
+From the commutation relations~\eqref{eq:conf:virasoro} we finally compute its conformal weight as eigenvalue of $L_0$:
+\begin{equation}
+  L_0 \ket{\phi_{\omega}^{\lbrace n_1, n_2, \dots, n_m \rbrace}}
+  =
+  (\omega + m) \ket{\phi_{\omega}^{\lbrace n_1, n_2, \dots, n_m \rbrace}}.
+\end{equation}
+States corresponding to primary operators have therefore the lowest energy (intended as eigenvalue of the Hamiltonian $L_0 + \bL_0$) in the entire representation.
+They are however called \emph{highest weight} states from the mathematical literature which uses the opposite sign for the Hamiltonian operator.
+
+The particular case of the \cft in \eqref{eq:conf:polyakov} can be cast in this language.
+In particular the solutions to the \eom factorise into a holomorphic and an anti-holomorphic contributions:
+\begin{equation}
+  \ipd{z} \ipd{\bz} X( z, \bz ) = 0
+  \Rightarrow
+  X( z, \bz ) = X( z ) + \bX( \bz ),
+\end{equation}
+and the components of the stress-energy tensor~\eqref{eq:conf:stringT} are
+\begin{equation}
+  \begin{split}
+    T( z ) & = \ipd{z} X( z ) \cdot \ipd{z} X( z ),
+    \\
+    \bT( \bz ) & = \ipd{\bz} \bX( \bz ) \cdot \ipd{\bz} \bX( \bz ).
+  \end{split}
+\end{equation}
+Using the normalisation of the 2-points function $\left\langle X^{\mu}( z, \bz ) X^{\nu}( w, \bw ) \right\rangle = - \frac{1}{2} \eta^{\mu\nu} \ln\left| z - w \right|$ we can show that $c = D$ in~\eqref{eq:conf:TTexpansion}, where $D$ is the dimensions of spacetime (or equivalently the number of scalar fields $X^{\mu}$ in the action).
+It can be shown that in order to cancel the central charge in bosonic string theory we need to introduce a pair of conformal ghosts $b(z)$ and $c(z)$ with conformal weights $(2, 0)$ and $(-1, 0)$ respectively, together with their anti-holomorphic counterparts $\overline{b}(z)$ and $\overline{c}(z)$.
+The non vanishing components of their stress-energy tensor can be computed as:\footnotemark{}
+\footnotetext{%
+  In general ghosts $b( z )$ and $c( z )$ with weight $(\lambda, 0)$ and $(1 - \lambda, 0)$ can be introduced as a standalone \cft \cite{Friedan:1986:ConformalInvarianceSupersymmetry,Polchinski:1998:StringTheorySuperstring} with action
+  \begin{equation*}
+    S = \frac{1}{2 \pi} \iint \dd{z} \dd{\bz} b( z )\, \ipd{\bz} c( z )
+  \end{equation*}
+  whose equations of motion are $\ipd{\bz} c( z ) = \ipd{\bz} b( z ) = 0$.
+  The \ope is
+  \begin{equation*}
+    b( z )\, c( z ) = \frac{\varepsilon}{z - w} + \order{1},
+  \end{equation*}
+  where $\varepsilon = +1$ for anti-commuting fields and $\varepsilon = -1$ for Bose statistic.
+  Their stress-energy tensor is
+  \begin{equation*}
+    T_{\text{ghost}}( z ) = - \lambda\, b( z )\, \ipd{z} c( z ) - \varepsilon\, (1 - \lambda)\, c( z )\, \ipd{z} b( z ).
+  \end{equation*}
+  Their central charge is therefore $c_{\text{ghost}} = \varepsilon\, ( 1 - 3 \cQ^2)$, where $\cQ = \varepsilon\,( 1 - 2 \lambda )$.
+
+  Notice finally that this ghost \cft has in general an additional \emph{ghost number} \U{1} symmetry generated by the current
+  \begin{equation*}
+    j( z ) = - b( z )\, c( z ).
+  \end{equation*}
+  In general this current is a primary field (i.e.\ it is not anomalous) when $\cQ = 0$ since
+  \begin{equation*}
+    T_{\text{ghost}}( z )\, j( w ) = \frac{Q}{( z - w )^3} + \order{(z - w)^{-2}}.
+  \end{equation*}
+  This is the case of the worldsheet fermions in~\eqref{eq:super:action} for which $\lambda = \frac{1}{2}$.
+  For instance the reparametrisation ghosts with $\lambda = 2$ have $Q = -3$.
+}
+\begin{equation}
+  \begin{split}
+    T_{\text{ghost}}( z )
+    & =
+    c( z )\, \ipd{z} b( z ) - 2\, b( z )\, \ipd{z} c( z ),
+    \\
+    \bT_{\text{ghost}}( \bz )
+    & =
+    \overline{c}( \bz )\, \ipd{\bz} \overline{b}( \bz ) - 2\, \overline{b}( \bz )\, \ipd{\bz} \overline{c}( \bz ).
+  \end{split}
+\end{equation}
+
+From their 2-points functions
+\begin{equation}
+  \left\langle b(z)\, c(w) \right\rangle = \frac{1}{z - w},
+  \qquad
+  \left\langle \overline{b}(\bz)\, \overline{c}(\bw) \right\rangle = \frac{1}{\bz - \bw},
+\end{equation}
+we get the \ope of the components of their stress-energy tensor:
+\begin{equation}
+  \begin{split}
+    T_{\text{ghost}}(z)\, T_{\text{ghost}}(w)
+    & =
+    \frac{-13}{(z - w)^4}
+    +
+    \frac{2}{(z - w)^2}\, T_{\text{ghost}}(z)
+    +
+    \frac{1}{z - w}\, \ipd{z} T_{\text{ghost}}(z),
+    \\
+    \bT_{\text{ghost}}(\bz)\, \bT_{\text{ghost}}(\bw)
+    & =
+    \frac{-13}{(\bz - \bw)^4}
+    +
+    \frac{2}{(\bz - \bw)^2}\, \bT_{\text{ghost}}(\bz)
+    +
+    \frac{1}{\bz - \bw}\, \ipd{\bz} \bT_{\text{ghost}}(\bz),
+  \end{split}
+\end{equation}
+which show that $c_{\text{ghost}} = - 26$.
+The central charge is therefore cancelled in the full theory (bosonic string and ghosts) when the spacetime dimensions are $D = 26$.
+In fact let $T_{\text{full}} = T + T_{\text{ghost}}$ and $\bT_{\text{full}} = \bT + \bT_{\text{ghost}}$, then:
+\begin{equation}
+  \eval{T_{\text{full}}( z )}_{\order{(z - w)^{-4}}}
+  =
+  \eval{\bT_{\text{full}}( \bz )}_{\order{(\bz - \bw)^{-4}}}
+  =
+  c + c_{\text{ghost}}
+  =
+  \frac{D}{2} - 13
+  =
+  0
+  \quad
+  \Leftrightarrow
+  \quad
+  D = 26.
+\end{equation}
+
+
+\subsection{Superstrings}
+
+As bosonic string theory deals with commuting fields $X^{\mu}$, it is impossible to build spacetime fermions and a consistent phenomenology.
+It is in fact necessary to introduce worldsheet fermions (i.e.\ anti-commuting variables on the string worldsheet) as an extension to the bosonic coordinates \cite{Friedan:1986:ConformalInvarianceSupersymmetry,Polchinski:1998:StringTheorySuperstring}.
+We schematically and briefly recall some results due to the extension of bosonic string theory to the superstring as they will be used in what follows and mainly follow from the previous discussion.
+
+The superstring action is built as an addition to the bosonic equivalent~\eqref{eq:conf:polyakov}.
+In complex coordinates on the plane it is:
+\begin{equation}
+  S[ X, \psi ]
+  =
+  - \frac{1}{4 \pi}
+  \iint \dd{z} \dd{\bz}
+  \left(
+    \frac{2}{\ap}\, \ipd{\bz} X^{\mu}\, \ipd{z} X^{\nu}
+    +
+    \psi^{\mu}\, \ipd{\bz} \psi^{\nu}
+    +
+    \bpsi^{\mu}\, \ipd{z} \bpsi^{\nu}
+  \right)
+  \eta_{\mu\nu}.
+  \label{eq:super:action}
+\end{equation}
+In the last expression $\psi^{\mu}$ are $D$ two-dimensional holomorphic fermion fields with conformal weight $(\frac{1}{2}, 0)$ and $\bpsi^{\mu}$ are their anti-holomorphic counterparts with weight $(0, \frac{1}{2})$. Their short-distance behaviour is
+\begin{equation}
+  \psi^{\mu}( z )\, \psi^{\nu}( w ) = \frac{\eta^{\mu\nu}}{z - w},
+  \qquad
+  \bpsi^{\mu}( \bz )\, \bpsi^{\nu}( \bw ) = \frac{\eta^{\mu\nu}}{\bz - \bw}.
+\end{equation}
+In this case the components of the stress-energy tensor of the theory are:
+\begin{equation}
+  \begin{split}
+    T( z )
+    & =
+    -\frac{1}{\ap} \ipd{z} X( z ) \cdot \ipd{z} X( z ) - \frac{1}{2} \psi( z ) \cdot \ipd{z} \psi( z ),
+    \\
+    \bT( \bz )
+    & =
+    -\frac{1}{\ap} \ipd{\bz} \bX( \bz ) \cdot \ipd{\bz} \bX( \bz ) - \frac{1}{2} \bpsi( \bz ) \cdot \ipd{\bz} \bpsi( \bz ).
+  \end{split}
+\end{equation}
+
+The action~\eqref{eq:super:action} is also invariant under the \emph{supersymmetric} transformations
+\begin{equation}
+  \begin{split}
+    \sqrt{\frac{2}{\ap}}\,
+    \delta_{\epsilon, \bepsilon}\,
+    X^{\mu}( z, \bz )
+    & =
+    \epsilon( z ) \psi^{\mu}( z ) + \bepsilon( \bz ) \bpsi^{\mu}( \bz ),
+    \\
+    \sqrt{\frac{2}{\ap}} \delta_{\epsilon} \psi^{\mu}( z )
+    & =
+    - \epsilon( z ) \ipd{z} X^{\mu}( z ),
+    \\
+    \sqrt{\frac{2}{\ap}} \delta_{\bepsilon} \bpsi^{\mu}( \bz )
+    & =
+    - \bepsilon( \bz ) \ipd{\bz} \bX^{\mu}( \bz )
+  \end{split}
+\end{equation}
+generated by the currents $J( z ) = \epsilon( z ) T_F( z )$ and $\overline{J}( \bz ) = \bepsilon( \bz )\, \bT_F( \bz )$, where $\epsilon( z )$ and $\bepsilon( \bz ) = \left( \epsilon( z ) \right)^*$ are anti-commuting fermions and
+\begin{equation}
+  \begin{split}
+    T_F( z )
+    & =
+    i\, \sqrt{\frac{2}{\ap}}\, \psi( z ) \cdot \ipd{z} X( z ),
+    \\
+    \bT_F( \bz )
+    & =
+    i\, \sqrt{\frac{2}{\ap}}\, \bpsi( \bz ) \cdot \ipd{\bz} \bX( \bz )
+  \end{split}
+\end{equation}
+are the \emph{supercurrents}.
+The central charge associated to the Virasoro algebra is in this case given by both bosonic and fermionic contributions:
+\begin{equation}
+  \begin{split}
+    T( z )\, T( w )
+    & =
+    \frac{\frac{3 D}{4}}{( z - w )^4}
+    +
+    \frac{2}{( z - w )^2} T( w )
+    +
+    \frac{1}{z - w} \ipd{w} T( w )
+    +
+    \order{1},
+    \\
+    \bT( \bz )\, \bT( \bw )
+    & =
+    \frac{\frac{3 D}{4}}{( \bz - \bw )^4}
+    +
+    \frac{2}{( \bz - \bw )^2} \bT( \bw )
+    +
+    \frac{1}{\bz - \bw} \ipd{\bw} \bT( \bw )
+    +
+    \order{1}.
+  \end{split}
+\end{equation}
+The central charge is therefore $c = \frac{3}{2} D$ for the \cft defined in~\eqref{eq:super:action}.
+
+As in the case of the bosonic string, in order to cancel the central charge we introduce the reparametrisation anti-commuting ghosts $b( z )$ and $c( z )$ and their anti-holomorphic components as well as the commuting \emph{superghosts} $\beta( z )$ and $\gamma( z )$ and their anti-holomorphic counterparts.
+These are conformal fields with conformal weights $\left( \frac{3}{2}, 0 \right)$ and $\left( -\frac{1}{2}, 0 \right)$.
+Their central charge becomes $c_{\text{ghost}} = c_{bc} + c_{\beta\gamma} = -26 + 11 = -15$.
+When considering the full theory $T_{\text{full}} = T + T_{\text{ghost}}$ and $\bT_{\text{full}} = \bT + \bT_{\text{ghost}}$ the central charge vanishes only in 10-dimensional spacetime:
+\begin{equation}
+  \eval{T_{\text{full}}( z )}_{\order{(z - w)^{-4}}}
+  =
+  \eval{\bT_{\text{full}}( \bz )}_{\order{(\bz - \bw)^{-4}}}
+  =
+  c + c_{\text{ghost}}
+  =
+  \frac{3}{2}\, D - 15
+  =
+  0
+  \quad
+  \Leftrightarrow
+  \quad
+  D = 10.
+\end{equation}
+
+
 \subsection{Extra Dimensions and Compactification}
+
+We are ultimately interested in building a consistent phenomenology in the framework of string theory.
+Any theoretical infrastructure has then to be able to support matter states made of fermions.
+In what follows we thus consider the superstring formulation in $D = 10$ dimensions even when we deal with bosonic string theory only.
+
+It is however clear that low energy phenomena need to be explained by a $4$-dimensional theory in order to be comparable with other theoretical frameworks and experimental evidence.
+In this section we briefly review for completeness the necessary tools to be able to reproduce consistent models capable of describing particle physics and beyond.
+These results represent the background knowledge necessary to better understand more complicated scenarios involving strings.
+As we will never deal directly with $4$-dimensional physics this is not a complete review and we refer to \cite{Anderson:2018:TASILecturesGeometric,Blumenhagen:2007:FourdimensionalStringCompactifications,Blumenhagen:2013:BasicConceptsString,Grana:2005:FluxCompactificationsString,Grana:2017:StringTheoryCompactifications,Krippendorf:2010:CambridgeLecturesSupersymmetry,Uranga:2005:TASILecturesString} for more in-depth explanations.
 
 
 \subsection{D-branes and Open Strings}
+
+
+\subsection{Twist Fields and Spin Fields}
 
 % vim ft=tex

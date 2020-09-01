@@ -4,37 +4,56 @@
 \usepackage{csquotes}
 \usepackage{debug}
 \usepackage{sciencestuff}
+\usepackage{import}
 
 \author{Riccardo Finotello}
-\title{Topics on Theoretical and Computational Aspects of String Theory and Their Phenomenological Implications}
+\title{Theoretical and Computational Aspects of String Theory and Their Phenomenological Implications}
 \advisor{Igor Pesando}
-\institution{Universit\`{a} degli Studi di Torino}
+\institution{Università degli Studi di Torino}
 \school{Scuola di Dottorato}
 \specialisation{Dottorato in Fisica ed Astrofisica}
 \logo{img/unito}
 
 \addbibresource{thesis.bib}
 
+\hypersetup{%
+  pdfauthor={Riccardo Finotello}
+}
+
 %---- additional commands
 \newcommand{\sm}{\textsc{sm}\xspace}
 \newcommand{\eom}{\textsc{e.o.m.}\xspace}
 \newcommand{\cft}{\textsc{cft}\xspace}
+\newcommand{\ope}{\textsc{ope}\xspace}
+\newcommand{\ap}{\ensuremath{\alpha'}}
 
 %---- derivatives
 \newcommand{\pd}{\ensuremath{\partial}}
 \newcommand{\bpd}{\ensuremath{\overline{\partial}}}
 
+%---- integrals
+\newcommand{\ddz}{\ensuremath{\frac{\mathrm{d}z}{2 \pi i}}}
+\newcommand{\ddbz}{\ensuremath{\frac{\mathrm{d}\overline{z}}{2 \pi i}}}
+\newcommand{\cint}[1]{\ensuremath{\oint\limits_{\ccC_{#1}}}}
+
 %---- operators
 \newcommand{\bT}{\ensuremath{\overline{T}}}
+\newcommand{\bL}{\ensuremath{\overline{L}}}
+
+%---- states
+\newcommand{\regvacuum}{\ensuremath{\ket{0}_{\SL{2}{R}}}}
 
 %---- coordinates
 \newcommand{\dX}{\ensuremath{\dot{X}}}
 \newcommand{\pX}{\ensuremath{X'}}
+\newcommand{\bX}{\ensuremath{\overline{X}}}
+\newcommand{\bpsi}{\ensuremath{\overline{\psi}}}
 \newcommand{\bxi}{\ensuremath{\overline{\xi}}}
 \newcommand{\bchi}{\ensuremath{\overline{\chi}}}
 \newcommand{\bz}{\ensuremath{\overline{z}}}
 \newcommand{\bw}{\ensuremath{\overline{w}}}
 \newcommand{\bomega}{\ensuremath{\overline{\omega}}}
+\newcommand{\bepsilon}{\ensuremath{\overline{\epsilon}}}
 
 
 %---- BEGIN DOCUMENT
