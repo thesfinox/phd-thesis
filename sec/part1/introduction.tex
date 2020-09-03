@@ -11,6 +11,9 @@ in order to reproduce known results.
 For instance, string theory could provide a unified framework by predicting the existence of a larger gauge group containing the \sm{} as a subset.
 In what follows we deal with the definition of mathematical tools to compute amplitudes to be used in phenomenological calculations related to the study of particles in string theory.
 
+In this introduction we present instruments and preparatory frameworks used throughout the manuscript as many tools are strongly connected and their definitions are interdependent.
+In particular we recall some results on the symmetries of string theory and how to recover a realistic description of physics.
+
 
 \subsection{Properties of String Theory and Conformal Symmetry}
 
@@ -257,7 +260,7 @@ The transformation on a field $\phi_{\omega, \bomega}$ of weight $(\omega, \bome
   \begin{split}
     \delta_{\epsilon, \bepsilon} \phi_{\omega, \bomega}
     & =
-    \left[ Q_{\epsilon, \bepsilon}, \phi_{\omega, \bomega}( w, \bw ) \right]
+    \liebraket{Q_{\epsilon, \bepsilon}}{\phi_{\omega, \bomega}( w, \bw )}
     \\
     & =
     \cint{0} \ddz \epsilon(z) \left[ T(z), \phi_{\omega, \bomega}( w, \bw ) \right]
@@ -371,15 +374,15 @@ This is a reflection of the anomalous algebra of the operator modes $L_n$ and $\
 This ultimately leads to the quantum algebra
 \begin{equation}
   \begin{split}
-    \left[ L_n, L_m \right]
+    \liebraket{L_n}{L_m}
     & =
     (n - m)\, L_{n + m} + \frac{c}{12}\, n\, (n^2 - 1)\, \delta_{n, -m},
     \\
-    \left[ \bL_n, \bL_m \right]
+    \liebraket{\bL_n}{\bL_m}
     & =
     (n - m)\, \bL_{n + m} + \frac{\overline{c}}{12}\, n\, (n^2 - 1)\, \delta_{n, -m},
     \\
-    \left[ L_n, \bL_m \right]
+    \liebraket{L_n}{\bL_m}
     & =
     0,
   \end{split}
@@ -443,6 +446,7 @@ Finally the definitions of the primary operators~\eqref{eq:conf:primary} define 
     \quad
     n \ge 1.
   \end{split}
+  \label{eq:conf:physical}
 \end{equation}
 
 From this definition we can build an entire representation of \emph{descendant} states applying any operator $L_{-n}$ (or $\bL_{-n}$) with $n \ge 1$ to $\ket{\phi_{\omega, \bomega}}$.
@@ -479,6 +483,7 @@ and the components of the stress-energy tensor~\eqref{eq:conf:stringT} are
     \\
     \bT( \bz ) & = \ipd{\bz} \bX( \bz ) \cdot \ipd{\bz} \bX( \bz ).
   \end{split}
+  \label{eq:conf:bosonicstringT}
 \end{equation}
 Using the normalisation of the 2-points function $\left\langle X^{\mu}( z, \bz ) X^{\nu}( w, \bw ) \right\rangle = - \frac{1}{2} \eta^{\mu\nu} \ln\left| z - w \right|$ we can show that $c = D$ in~\eqref{eq:conf:TTexpansion}, where $D$ is the dimensions of spacetime (or equivalently the number of scalar fields $X^{\mu}$ in the action).
 It can be shown that in order to cancel the central charge in bosonic string theory we need to introduce a pair of conformal ghosts $b(z)$ and $c(z)$ with conformal weights $(2, 0)$ and $(-1, 0)$ respectively, together with their anti-holomorphic counterparts $\overline{b}(z)$ and $\overline{c}(z)$.
@@ -604,11 +609,11 @@ In this case the components of the stress-energy tensor of the theory are:
   \begin{split}
     T( z )
     & =
-    -\frac{1}{\ap} \ipd{z} X( z ) \cdot \ipd{z} X( z ) - \frac{1}{2} \psi( z ) \cdot \ipd{z} \psi( z ),
+    -\frac{1}{\ap}\, \ipd{z} X( z ) \cdot \ipd{z} X( z ) - \frac{1}{2}\, \psi( z ) \cdot \ipd{z} \psi( z ),
     \\
     \bT( \bz )
     & =
-    -\frac{1}{\ap} \ipd{\bz} \bX( \bz ) \cdot \ipd{\bz} \bX( \bz ) - \frac{1}{2} \bpsi( \bz ) \cdot \ipd{\bz} \bpsi( \bz ).
+    -\frac{1}{\ap}\, \ipd{\bz} \bX( \bz ) \cdot \ipd{\bz} \bX( \bz ) - \frac{1}{2}\, \bpsi( \bz ) \cdot \ipd{\bz} \bpsi( \bz ).
   \end{split}
 \end{equation}
 
@@ -621,11 +626,13 @@ The action~\eqref{eq:super:action} is also invariant under the \emph{supersymmet
     & =
     \epsilon( z )\, \psi^{\mu}( z ) + \bepsilon( \bz )\, \bpsi^{\mu}( \bz ),
     \\
-    \sqrt{\frac{2}{\ap}} \delta_{\epsilon} \psi^{\mu}( z )
+    \sqrt{\frac{2}{\ap}}\,
+    \delta_{\epsilon} \psi^{\mu}( z )
     & =
     - \epsilon( z )\, \ipd{z} X^{\mu}( z ),
     \\
-    \sqrt{\frac{2}{\ap}} \delta_{\bepsilon} \bpsi^{\mu}( \bz )
+    \sqrt{\frac{2}{\ap}}\,
+    \delta_{\bepsilon} \bpsi^{\mu}( \bz )
     & =
     - \bepsilon( \bz )\, \ipd{\bz} \bX^{\mu}( \bz )
   \end{split}
@@ -715,8 +722,8 @@ In particular $\ccX_6$ should be a compact manifold to ``hide'' the 6 extra-dime
 Moreover the geometry of $\ccM^{1,3}$ should be a maximally symmetric space and there should be a $N = 1$ unbroken supersymmetry in $4$ dimensions.
 Finally the gauge group of and the spectrum of fermions should be realistic (e.g.\ it should be possible to define chiral fermion states) \cite{Candelas:1985:VacuumConfigurationsSuperstrings}.
 These manifolds were first conjectured to exist by Eugenio Calabi~\cite{Calabi:1957:KahlerManifoldsVanishing}.
-Their existence was later proved by Shing-Tung Yau~\cite{Yau:1977:CalabiConjectureNew}.
-They are defined as complex Ricci-flat Kähler manifolds $M$ of dimensions $2m$ and with holonomy \SU{3} (see for instance \cite{Joyce:2000:CompactManifoldsSpecial,Joyce:2002:LecturesCalabiYauSpecial}).
+Their existence was later proved by Shing-Tung Yau~\cite{Yau:1977:CalabiConjectureNew}, hence the name Calabi-Yau (\cy) manifolds.
+They are defined as complex Ricci-flat Kähler manifolds $M$ of dimensions $2m$ and with holonomy \SU{3} (see for instance \cite{Joyce:2000:CompactManifoldsSpecial,Joyce:2002:LecturesCalabiYauSpecial,Greene:1997:StringTheoryCalabiYau}).
 
 
 \subsubsection{Complex and Kähler Manifolds}
@@ -725,20 +732,20 @@ In general an \emph{almost complex structure} $J$ is a tensor such that $\tensor
 For any vector field $v_p \in \rT_p M$ defined in $p \in M$ we then define $(J v)^a = \tensor{J}{^a_b} v^b$, thus the tangent space $\rT_p M$ has the structure of a \emph{complex vector space}.
 The tensor $J$ is called \emph{complex structure} if there exist a tensor $N$ such that
 \begin{equation}
-  \tensor{N}{^a_{bc}} v_p^b w_p^c
+  \tensor{N}{^a_{bc}}\, v_p^b\, w_p^c
   =
   \left(
-    [ v_p, w_p ]
+    \liebraket{v_p}{w_p}
     +
     J
-    \left( [ J\, v_p, w_p ] + [ v_p, J\, w_p ] \right)
+    \left( \liebraket{J\, v_p}{w_p} + \liebraket{v_p}{J\, w_p} \right)
     -
-    [ J\, v_p, J\, w_p ]
+    \liebraket{J\, v_p}{J\, w_p}
   \right)^a
   =
   0
 \end{equation}
-for any $v_p,\, w_p \in \rT_p M$, where $[ \cdot, \cdot ]$ is the Lie braket of vector fields.
+for any $v_p,\, w_p \in \rT_p M$, where $\liebraket{\cdot}{\cdot}\colon\, \rT_p M \times \rT_p M \to \rT_p M$ is the Lie braket of vector fields.
 A manifold $M$ is a \emph{complex} manifold if it is possible to define a complex structure $J$ on it.\footnotemark{}
 \footnotetext{%
   Notice that a smooth function $f\colon\, M \to \C$ whose pushforward of $v_p \in \rT_p M$ is $f_{*\, p}\colon\, \rT_p M \to \rT_{f(p)} \C$ is called holomorphic if $(J\, f_{*\, p}( v_p ))^a = i ( f_{*\, p}( v_p ) )^a$ as such expression encodes the Cauchy-Riemann equations.
@@ -768,14 +775,14 @@ The metric is \emph{Hermitian} if
   g( v_p, w_p ) = g( J\, v_p, J\, w_p )
   \quad
   \forall v_p,\, w_p \in \rT_p M
-  \quad
-  \Leftrightarrow
-  \quad
-  \tensor{g}{_{ab}}
-  =
-  \tensor{J}{_a^c}\,
-  \tensor{J}{_b^d}\,
-  \tensor{g}{_{cd}}.
+  % \quad
+  % \Leftrightarrow
+  % \quad
+  % \tensor{g}{_{ab}}
+  % =
+  % \tensor{J}{_a^c}\,
+  % \tensor{J}{_b^d}\,
+  % \tensor{g}{_{cd}}.
 \end{equation}
 In this case we can define a $(1, 1)$-form $\omega$ as
 \begin{equation}
@@ -784,31 +791,319 @@ In this case we can define a $(1, 1)$-form $\omega$ as
   g( J\, v_p, w_p )
   \quad
   \forall v_p,\, w_p \in \rT_p M.
-  \quad
-  \Leftrightarrow
-  \quad
-  \tensor{\omega}{_{ab}}
-  =
-  \tensor{J}{_a^c}\,
-  \tensor{g}{_{cb}}.
+  % \quad
+  % \Leftrightarrow
+  % \quad
+  % \tensor{\omega}{_{ab}}
+  % =
+  % \tensor{J}{_a^c}\,
+  % \tensor{g}{_{cb}}.
 \end{equation}
-$(M, J, g)$ is a \emph{Kähler} manifold if ~\cite{Joyce:2002:LecturesCalabiYauSpecial}:
+$(M, J, g)$ is a \emph{Kähler} manifold if:
 \begin{equation}
   \dd{\omega}
   =
-  \left( \ipd{z} + \ipd{\bz} \right)
+  \left( \pd + \bpd \right)
   \omega(z, \bz)
   =
   0,
+  \label{eq:cy:kaehler}
 \end{equation}
 or equivalently $\nabla J = 0$ or $\nabla \omega = 0$, where $\nabla$ is the connection of $g$.
+Notice that the operators $\pd$ and $\bpd$ are operators such that $\pd^2 = \bpd^2 = 0$: they replace the \emph{de Rham cohomology} operator $\mathrm{d}^2 = 0$ in complex space with the holomorphic and antiholomorphic \emph{Dolbeault cohomology} operators.
 The covariant conservation of $J$ and $\omega$ implies that the holonomy group must preserve these objects in $\R^{2m}$.
-Thus we have $\mathrm{Hol}(g) \subseteq \U{m} \subset \mathrm{O}(2m)$.
+Thus we have $\mathrm{Hol}(g) \subseteq \U{m} \subset \OO{2m}$.
+
+
+\subsubsection{Calabi-Yau Manifolds}
+
+With the general definitions of the Kähler geometry we can now explicitly compute the conditions needed for a \cy manifold.
+In local coordinates a Hermitian metric is such that
+\begin{equation}
+  g
+  =
+  g_{a\overline{b}}\, \dd{z}^a \otimes \dd{\bz}^{\overline{b}}
+  +
+  g_{\overline{a}b}\, \dd{\bz}^{\overline{a}} \otimes \dd{z}^b,
+\end{equation}
+thus the Kähler form becomes $\omega = i g_{a\overline{b}}\, \dd{z}^a \wedge \dd{\bz}^{\overline{b}}$.
+The relation~\eqref{eq:cy:kaehler} then translates into:
+\begin{equation}
+  \dd{\omega} = i\, \left( \pd + \bpd \right)\, g_{a\overline{b}}\, \dd{z}^a \wedge \dd{\bz}^{\overline{b}}
+  =
+  0
+  \quad
+  \Leftrightarrow
+  \quad
+  \begin{cases}
+    \ipd{z^c} g_{a\overline{b}} & = \ipd{z^a} g_{c\overline{b}}
+    \\
+    \ipd{\bz^c} g_{\overline{a}b} & = \ipd{\bz^a} g_{\overline{c}b}
+  \end{cases}.
+\end{equation}
+The $(1,1)$-form $\omega$ can locally be written as $\omega = i\, \pd \bpd\, \phi( z, \bz )$ up to a constant.
+This ultimately leads to
+\begin{equation}
+  g_{a\overline{b}}
+  =
+  \pdv{\phi( z, \bz )}{z^a}{\bz^{\overline{b}}}
+  =
+  \ipd{a} \ipd{\overline{b}}\, \phi( z, \bz ),
+\end{equation}
+Since $\omega$ is the Kähler form then the Levi-Civita connection has only fully holomorphic and anti-holomorphic components:
+\begin{equation}
+  \tensor{\Gamma}{^a_{bc}}
+  =
+  \tensor{g}{^{a\overline{d}}}\,
+  \ipd{b}\,
+  \tensor{g}{_{\overline{d}c}},
+  \qquad
+\tensor{\Gamma}{^{\overline{a}}_{\overline{b}\overline{c}}}
+  =
+  \tensor{g}{^{\overline{a}d}}\,
+  \ipd{\overline{b}}\,
+  \tensor{g}{_{d\overline{c}}}.
+\end{equation}
+As a consequence the Ricci tensor becomes
+\begin{equation}
+  \tensor{R}{_{\overline{a}b}}
+  =
+  -
+  \pdv{\tensor{\Gamma}{^{\overline{c}}_{\overline{a}\overline{c}}}}{z^b}.
+\end{equation}
+
+Since \cy manifolds have \SU{m} holonomy, the trace part of the coefficients of the connection vanishes.
+\cy manifolds thus have $\tensor{R}{_{\overline{a}b}} = 0$, that is they are complex Ricci-flat Kähler manifolds.
+
+
+\subsubsection{Cohomology and Hodge Numbers}
+
+\cy manifolds $M$ of complex dimension $m$ present geometric characteristics of general interest both in pure mathematics and string theory.
+They can be characterised in different ways.
+For instance the study of the cohomology groups of the manifold has a direct connection with the analysis of topological invariants.
+
+For real manifolds $M$ of dimension $2m$, closed $p$-forms $\omega$ are always defined up to an \emph{exact} term.
+In fact:
+\begin{equation}
+  \dd{\omega'_{(p)}} = \dd{(\omega_{(p)} + \dd{\eta_{(p-1)}})} = 0
+  \label{eq:cy:closedform}
+\end{equation}
+implies an equivalence relation $\omega'_{(p)} \sim \omega_{(p)} + \dd{\eta_{(p-1)}}$.
+This translates in the fact that elements of the de Rham cohomology group $H^{(p)}_{\mathrm{d}}(M, \R)$ are equivalence classes $[ \omega ]$ computed through the operator $\mathrm{d}$.
+The term $b^{p} = \dim{H^{(p)}_{\mathrm{d}}( M, \R )}$ counts the total number of possible $p$-forms we can build on $X$, up to \emph{gauge transformations}.
+These are known as \emph{Betti numbers}.
+
+The extension to the Dolbeault cohomology in complex space is possible through the operators $\pd$ and $\bpd$ over $(r, s)$-forms on manifolds $M$ of real dimension $2m$.
+The equivalence relation~\eqref{eq:cy:closedform} has a similar expression in complex space as
+\begin{equation}
+  \omega'_{(r,s)} \sim \omega_{(r,s)} + \bpd \omega_{(r,s-1)},
+\end{equation}
+or an equivalent formulation using $\pd$.
+The cohomology group in this case is $H^{(r,s)}_{\bpd}( M, \C )$ and the relation with the real counterpart is
+\begin{equation}
+  H^{(p)}_{\mathrm{d}}( M, \R )
+  =
+  \bigoplus\limits_{p = r + s}\,
+  H^{(r,s)}_{\bpd}( M, \C ).
+\end{equation}
+As in the case of Betti numbers, we can define the complex equivalents, the \emph{Hodge numbers}, $h^{r,s} = \dim\limits_{\C} H^{(r,s)}_{\bpd}( M, \C )$ which count the number of harmonic $(r, s)$-forms on $M$.
+Notice that in this case $h^{r,s}$ is the complex dimension $\dim\limits_{\C}$ of the cohomology group.
+
+For \cy manifolds it is possible to show that the \SU{m} holonomy of $g$ implies that the vector space of $(r, 0)$-forms is \C if $r = 0$ or $r = m$.
+Therefore $h^{0,0} = h^{m,0} = 1$, while $h^{r,0} = 0$ if $r \neq 0,\, m$.
+Exploiting symmetries of the cohomology groups, Hodge numbers are usually collected in \emph{Hodge diamonds}.
+In string theory we are ultimately interested in \cy manifolds of real dimensions $6$, thus we focus mainly on \cy $3$-folds (i.e.\ having $m = 3$).
+The diamond in this case is
+\begin{equation}
+  \mqty{%
+            &         &         & h^{0,0} &         &         & 
+    \\
+            &         & h^{1,0} &         & h^{0,1} &         & 
+    \\
+            & h^{2,0} &         & h^{1,1} &         & h^{0,2} & 
+    \\
+    h^{3,0} &         & h^{2,1} &         & h^{1,2} &         & h^{0,3}
+    \\
+            & h^{3,1} &         & h^{2,2} &         & h^{1,3} & 
+    \\
+            &         & h^{3,2} &         & h^{2,3} &         & 
+    \\
+            &         &         & h^{3,3} &         &         & 
+  }
+  \quad
+  =
+  \quad
+  \mqty{%
+            &         &         &    1    &         &         & 
+    \\
+            &         &    0    &         &    0    &         & 
+    \\
+            &    0    &         & h^{1,1} &         &    0    & 
+    \\
+        1   &         & h^{2,1} &         & h^{2,1} &         &    1
+    \\
+            &    0    &         & h^{1,1} &         &    0    & 
+    \\
+            &         &    0    &         &    0    &         & 
+    \\
+            &         &         &    1    &         &         & 
+  },
+\end{equation}
+where we used $h^{r,s} = h^{d-r, d-s}$ to stress the fact that the only independent Hodge numbers are $h^{1,1}$ and $h^{2,1}$ for $m = 3$.
+These results will also be the starting point of~\Cref{part:deeplearning} in which the ability to predict the values of the Hodge numbers using \emph{artificial intelligence} is tested.
 
 
 \subsection{D-branes and Open Strings}
 
+Dirichlet branes, or \emph{D-branes}, are another key mathematical object in string theory.
+They are naturally included as extended object as hypersurfaces supporting strings with open topology and as physical objects with charge and tension~\cite{Polchinski:1995:DirichletBranesRamondRamond,Polchinski:1996:TASILecturesDBranes,DiVecchia:1999:DbranesStringTheory,DiVecchia:2000:BranesStringTheory,DiVecchia:1997:ClassicalPbranesBoundary,Taylor:2003:LecturesDbranesTachyon,Taylor:2004:DBranesTachyonsString,Johnson:2000:DBranePrimer}.
+They are relevant in the definition of phenomenological models in string theory as they can be arranged to support chiral fermions and bosons in \sm-like scenarios as well as beyond~\cite{Honecker:2012:FieldTheoryStandard,Lust:2009:LHCStringHunter,Zwiebach::FirstCourseString}.
+We are ultimately interested in their study to construct Yukawa couplings in string theory.
 
-\subsection{Twist Fields and Spin Fields}
+
+\subsubsection{Compactification of Closed Strings}
+
+As a first approach to the definition of D-branes, consider the action~\eqref{eq:conf:polyakov}.
+The variation of such action with respect to $\delta X$ leads to the equation of motion
+\begin{equation}
+  \partial_{\alpha} \partial^{\alpha}\, X^{\mu}( \tau, \sigma ) = 0
+  \qquad
+  \mu = 0, 1, \dots, D - 1,
+\end{equation}
+and naturally to the \emph{Neumann} boundary conditions:\footnotemark{}
+\footnotetext{%
+  As~\cite{Polchinski:1996:TASILecturesDBranes} shows, \emph{Dirichlet} conditions can be shown to descend from T-duality.
+}
+\begin{equation}
+  \eval{\ipd{\sigma} X^{\mu}( \tau, \sigma )}_{\sigma = 0}^{\sigma = \ell} = 0,
+  \qquad
+  \mu = 0, 1, \dots, D - 1.
+\end{equation}
+
+Closed strings are such that $X^{\mu}( \tau, \sigma + \ell ) = X^{\mu}( \tau, \sigma )$.
+The usual mode expansion in conformal coordinates $X^{\mu}( z, \bz ) = X( z ) + \bX( \bz )$ leads to
+\begin{equation}
+  \begin{split}
+    X^{\mu}( z )
+    & =
+    x_0^{\mu}
+    +
+    i\, \sqrt{\frac{\ap}{2}}\,
+    \left(
+      - \alpha_0^{\mu}\, \ln{z}
+      + \sum\limits_{n \in \Z \setminus \{0\}} \frac{\alpha_n^{\mu}}{n} z^{-n}
+    \right),
+    \\
+    \bX^{\mu}( \bz )
+    & =
+    \overline{x}_0^{\mu}
+    +
+    i\, \sqrt{\frac{\ap}{2}}\,
+    \left(
+      - \balpha_0^{\mu}\, \ln{\bz}
+      + \sum\limits_{n \in \Z \setminus \{0\}} \frac{\balpha_n^{\mu}}{n} \bz^{-n}
+    \right),
+  \end{split}
+\end{equation}
+where $\alpha_0^{\mu} = \balpha_0^{\mu}$ and $\ell = 2 \pi$.
+When the string is free to move in the entire $D$-dimensional space, then the momentum of the center of mass is $p^{\mu} = \frac{1}{\sqrt{2 \ap}} ( \alpha_0^{\mu} + \balpha_0^{\mu} )$.
+
+Now let
+\begin{equation}
+  \ccM^{1, D - 1} = \ccM^{1, D - 2} \otimes S^1( R ),
+\end{equation}
+where $S^1( R )$ is a compact $1$-dimensional circle of radius $R$ such that the boundary conditions for the compact coordinate are
+\begin{equation}
+  X^{D - 1}( z\, e^{2\pi i}, \bz\, e^{-2\pi i} )
+  =
+  X^{D - 1}( z, \bz ) + 2 \pi\, m\, R,
+  \qquad
+  m \in \Z.
+  \label{eq:dbranes:winding}
+\end{equation}
+This is cast into
+\begin{equation}
+  \begin{split}
+    \alpha_0^{D-1} + \balpha_0^{D-1} & = \sqrt{\frac{2}{\ap}}\, n\, \frac{\ap}{R},
+    \qquad
+    n \in \Z,
+    \\
+    \alpha_0^{D-1} - \balpha_0^{D-1} & = \sqrt{\frac{2}{\ap}}\, m\, R,
+    \qquad
+    m \in \Z,
+  \end{split}
+\end{equation}
+respectively encoding the quantisation of the momentum for a compact coordinate and the \emph{winding} in the compact direction~\eqref{eq:dbranes:winding}.
+We finally have
+\begin{equation}
+  \begin{split}
+    \alpha_0^{D-1} &= \frac{1}{\sqrt{2 \ap}}\, \left( n\, \frac{\ap}{R} + m\, R \right),
+    \\
+    \balpha_0^{D-1} &= \frac{1}{\sqrt{2 \ap}}\, \left( n\, \frac{\ap}{R} - m\, R \right),
+  \end{split}
+\end{equation}
+
+An interesting phenomenon involving these quantities appears when computing the mass spectrum of the theory.
+From~\eqref{eq:conf:Texpansion} and \eqref{eq:conf:bosonicstringT} we find
+\begin{equation}
+  \begin{split}
+    L_0
+    &=
+    \frac{\ap}{2}\,
+    \left(
+      \left( \alpha_0^{D-1} \right)^2
+      +
+      \sum\limits_{i = 0}^{D-2}\, \left( \alpha_0^i \right)^2
+      +
+      \sum\limits_{n = 1}^{+\infty}\, \left( 2 \alpha_{-n}^{\mu} \alpha_n^{\nu}\, \eta_{\mu\nu} + a \right)
+    \right),
+    \\
+    \bL_0
+    &=
+    \frac{\ap}{2}\,
+    \left(
+      \left( \balpha_0^{D-1} \right)^2
+      +
+      \sum\limits_{i = 0}^{D-2}\, \left( \balpha_0^i \right)^2
+      +
+      \sum\limits_{n = 1}^{+\infty}\, \left( 2 \balpha_{-n}^{\mu} \balpha_n^{\nu}\, \eta_{\mu\nu} + a \right)
+    \right),
+  \end{split}
+\end{equation}
+where $a$ is constant given by normal ordering, representing the zero point energy of the theory.
+Imposing physical conditions~\eqref{eq:conf:physical} and the \emph{level matching} $(L_0 - \bL_0) \ket{\phi} = 0$ for closed strings, we find
+\begin{equation}
+  \begin{split}
+    M^2
+    & =
+    \frac{1}{\ap^2}\, \left( n\, \frac{\ap}{R} + m\, R \right)^2
+    +
+    \frac{4}{\ap}\, \left( \rN + a \right)
+    \\
+    & =
+    \frac{1}{\ap^2}\, \left( n\, \frac{\ap}{R} - m\, R \right)^2
+    +
+    \frac{4}{\ap}\, \left( \overline{\rN} + a \right),
+  \end{split}
+  \label{eq:dbranes:closedspectrum}
+\end{equation}
+where $\rN = \sum\limits_{n = 1}^{+\infty}\, \alpha_{-n} \cdot \alpha_n$ and $\overline{\rN} = \sum\limits_{n = 1}^{+\infty}\, \balpha_{-n} \cdot \balpha_n$.
+We then notice that as $R \to \infty$ all states with $m \neq 0$ become infinitely massive while the states for $m = 0$ and all values of $n$ become a continuum.
+Conversely, as $R \to 0$ all states with $n \neq 0$ become infinitely heavy.
+In field theory this would translate into a reduction of the number of dimensions since the remaining fields would be independent of the compact coordinate~\cite{Polchinski:1996:TASILecturesDBranes,Zwiebach::FirstCourseString}.
+However in closed string theory as $R \to 0$ the compactified dimension is again present.
+
+As seen in~\eqref{eq:dbranes:closedspectrum} the mass spectra of the theories compactified at radius $R$ or $\ap\, R^{-1}$ are the same under the exchange of $n$ and $m$.
+At the level of the modes this \emph{T-duality} acts by swapping the sign of the right zero-modes in the compact direction
+\begin{equation}
+  \alpha_0^{D-1} \stackrel{T}{\longmapsto} \alpha_0^{D-1},
+  \qquad
+  \balpha_0^{D-1} \stackrel{T}{\longmapsto} - \balpha_0^{D-1}.
+\end{equation}
+
+
+
+\subsubsection{D-branes from T-duality}
+
 
 % vim ft=tex
