@@ -179,7 +179,7 @@ The transformation maps the Lorentzian worldsheet to a new surface: an infinite 
 
 In these terms, the tracelessness of the stress-energy tensor translates to
 \begin{equation}
-  T_{z \bz} = 0,
+  T_{\xi \bxi} = 0,
 \end{equation}
 while its conservation $\partial^{\alpha} T_{\alpha\beta} = 0$ becomes:\footnotemark{}
 \footnotetext{%
@@ -969,6 +969,7 @@ The variation of such action with respect to $\delta X$ leads to the equation of
   \partial_{\alpha} \partial^{\alpha}\, X^{\mu}( \tau, \sigma ) = 0
   \qquad
   \mu = 0, 1, \dots, D - 1,
+  \label{eq:tduality:eom}
 \end{equation}
 and naturally to the \emph{Neumann} boundary conditions:\footnotemark{}
 \footnotetext{%
@@ -978,6 +979,7 @@ and naturally to the \emph{Neumann} boundary conditions:\footnotemark{}
   \eval{\ipd{\sigma} X^{\mu}( \tau, \sigma )}_{\sigma = 0}^{\sigma = \ell} = 0,
   \qquad
   \mu = 0, 1, \dots, D - 1.
+  \label{eq:tduality:bc}
 \end{equation}
 
 Closed strings are such that $X^{\mu}( \tau, \sigma + \ell ) = X^{\mu}( \tau, \sigma )$.
@@ -1004,6 +1006,7 @@ The usual mode expansion in conformal coordinates $X^{\mu}( z, \bz ) = X( z ) + 
       + \sum\limits_{n \in \Z \setminus \{0\}} \frac{\balpha_n^{\mu}}{n} \bz^{-n}
     \right),
   \end{split}
+  \label{eq:tduality:modes}
 \end{equation}
 where $\alpha_0^{\mu} = \balpha_0^{\mu}$ and $\ell = 2 \pi$.
 When the string is free to move in the entire $D$-dimensional space, then the momentum of the center of mass is $p^{\mu} = \frac{1}{\sqrt{2 \ap}} ( \alpha_0^{\mu} + \balpha_0^{\mu} )$.
@@ -1011,6 +1014,7 @@ When the string is free to move in the entire $D$-dimensional space, then the mo
 Now let
 \begin{equation}
   \ccM^{1, D - 1} = \ccM^{1, D - 2} \otimes S^1( R ),
+  \label{eq:tduality:compactification}
 \end{equation}
 where $S^1( R )$ is a compact $1$-dimensional circle of radius $R$ such that the boundary conditions for the compact coordinate are
 \begin{equation}
@@ -1098,12 +1102,91 @@ At the level of the modes this \emph{T-duality} acts by swapping the sign of the
 \begin{equation}
   \alpha_0^{D-1} \stackrel{T}{\longmapsto} \alpha_0^{D-1},
   \qquad
-  \balpha_0^{D-1} \stackrel{T}{\longmapsto} - \balpha_0^{D-1}.
+  \balpha_0^{D-1} \stackrel{T}{\longmapsto} - \balpha_0^{D-1},
+\end{equation}
+defining the dual coordinate
+\begin{equation}
+  Y^{D-1}( z, \bz ) = Y^{D-1}( z ) + \overline{Y}^{D-1}( \bz ) =  X^{D-1}( z ) - \bX^{D-1}( \bz ).
+  \label{eq:tduality:compactdirection}
 \end{equation}
 
 
 
 \subsubsection{D-branes from T-duality}
+
+Consider the case of open strings satisfying the \eom~\eqref{eq:tduality:eom} and the coundary conditions~\eqref{eq:tduality:bc}.
+The usual mode expansion~\eqref{eq:tduality:modes} here leads to
+\begin{equation}
+  X^{\mu}( z, \bz )
+  =
+  x_0^{\mu}
+  -
+  i\, \ap\, p^{\mu}\, \ln( z \bz )
+  +
+  i\, \sqrt{\frac{\ap}{2}}\,
+  \sum\limits_{n \in \Z \setminus \{0\}}
+  \frac{\alpha_n^{\mu}}{n} \left( z^{-n} + \bz^{-n} \right)
+\end{equation}
+and $\ell = \pi$.
+
+Under the compactification~\eqref{eq:tduality:compactification} open strings do not wind around the compact cycle.
+Thus they do not present a quantum number $m$ as closed strings do.
+When $R \to 0$ modes with non vanishing momentum (i.e.\ with $n \neq 0$) become infinitely massive:
+\begin{equation}
+  p^{D-1}
+  =
+  \frac{n}{R} \stackrel{R \to 0}{\longrightarrow} \infty.
+\end{equation}
+The behaviour resembles field theory: the compactified dimension disappears and open string endpoints live in a $(D-1)$-dimensional hypersurface.
+This is a consequence of the T-duality transformation applied on the compact direction.
+In fact the original Neumann boundary condition~\eqref{eq:tduality:bc} becomes a \emph{Dirichlet condition} for $Y^{D-1}$ defined as in~\eqref{eq:tduality:compactdirection}:
+\begin{equation}
+  \begin{split}
+    \eval{\ipd{\sigma} X^{D-1}( \tau, \sigma )}^{\sigma = \pi}_{\sigma = 0}
+    & =
+    \eval{\ipd{\sigma} X^{D-1}( e^{\tau_E + i \sigma} ) + \ipd{\sigma} \bX^{D-1}( e^{\tau_E - i \sigma} )}^{\sigma = \pi}_{\sigma = 0}
+    \\
+    & =
+    \eval{i\, \ipd{\xi} X^{D-1}( e^{\xi} ) - i\, \ipd{\bxi} \bX^{D-1}( e^{\bxi} )}^{\Im \xi = \pi}_{\Im \xi = 0}
+    \\
+    & =
+    \eval{i\, \ipd{\tau_E} Y^{D-1}( e^{\tau_E + i \sigma} ) + i\, \ipd{\tau_E} \overline{Y}^{D-1}( e^{\tau_E - i \sigma} )}^{\sigma = \pi}_{\sigma = 0}
+    \\
+    & =
+    \eval{i\, \ipd{\tau} Y^{D-1}( \tau, \sigma )}^{\sigma = \pi}_{\sigma = 0}
+    \\
+    & =
+    0.
+  \end{split}
+\end{equation}
+The coordinate of the endpoint in the compact direction is therefore fixed and constrained on a hypersurface called \emph{Dp-brane}, where $p$ stands for the dimension of the surface (in this case $p = D - 1$):
+\begin{equation}
+  \begin{split}
+    Y^{D-1}( \tau, \pi ) - Y^{D-1}( \tau, 0 )
+    & =
+    \finiteint{\sigma}{0}{\pi} \ipd{\sigma} Y^{D-1}( \tau, \sigma )
+    \\
+    & =
+    i\, \finiteint{\sigma}{0}{\pi} \ipd{\tau} X^{D-1}( \tau, \sigma)
+    \\
+    & =
+    2 \pi \ap p^{D-1}
+    \\
+    & = 
+    2 \pi n\, \frac{\ap}{R}
+    \\
+    & =
+    2 \pi n\, R'.
+  \end{split}
+\end{equation}
+The only difference in the position of the endpoints can only be a multiple of the radius of the compactified dimension.
+Otherwise they lie on the same hypersurface.
+The procedure can be generalise to $p$ coordinates and constraining the string to live on a $(D - p)$-brane.
+
+This geometric interpretation of the Dirichlet branes and boundary conditions is the basis for the definition of more complex scenarios in which multiple D-branes are inserted in spacetime.
+D-branes are however much more than mathematical entities.
+They also present physical properties such as tension and charge~\cite{DiVecchia:1997:ClassicalPbranesBoundary,DiVecchia:2006:BoundaryStateMagnetized,Polchinski:1995:DirichletBranesRamondRamond}.
+However these aspects will not be discussed here as the following analysis will mainly focus on geometrical aspects of D-branes in spacetime.
 
 
 % vim ft=tex
