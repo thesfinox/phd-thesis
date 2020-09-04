@@ -6,6 +6,7 @@ As a first test of validity, the string theory should properly extend the known 
 In particular its description in terms of fundamental strings should be able to include a gauge algebra isomorphic to that of
 \begin{equation}
   \SU{3}_{\rC} \otimes \SU{2}_{\rL} \otimes \U{1}_{\rY}
+  \label{eq:intro:smgroup}
 \end{equation}
 in order to reproduce known results.
 For instance, string theory could provide a unified framework by predicting the existence of a larger gauge group containing the \sm{} as a subset.
@@ -217,14 +218,14 @@ In fact a transformation $\xi \mapsto \chi(\xi)$ and $\bxi \mapsto \bchi(\bxi)$ 
 
 \begin{figure}[tbp]
   \centering
-  \begin{subfigure}[c]{0.45\linewidth}
+  \begin{subfigure}[b]{0.45\linewidth}
     \centering
     \def\svgwidth{\linewidth}
     \import{img}{complex_plane.pdf_tex}
     \caption{Radial ordering.}
   \end{subfigure}
   \hfill
-  \begin{subfigure}[c]{0.45\linewidth}
+  \begin{subfigure}[b]{0.45\linewidth}
     \centering
     \def\svgwidth{\linewidth}
     \import{img}{radial_ordering.pdf_tex}
@@ -949,7 +950,7 @@ The diamond in this case is
             &         &         &    1    &         &         & 
   },
 \end{equation}
-where we used $h^{r,s} = h^{d-r, d-s}$ to stress the fact that the only independent Hodge numbers are $h^{1,1}$ and $h^{2,1}$ for $m = 3$.
+where we used $h^{r,s} = h^{m-r, m-s}$ to stress the fact that the only independent Hodge numbers are $h^{1,1}$ and $h^{2,1}$ for $m = 3$.
 These results will also be the starting point of~\Cref{part:deeplearning} in which the ability to predict the values of the Hodge numbers using \emph{artificial intelligence} is tested.
 
 
@@ -1159,7 +1160,7 @@ In fact the original Neumann boundary condition~\eqref{eq:tduality:bc} becomes a
     0.
   \end{split}
 \end{equation}
-The coordinate of the endpoint in the compact direction is therefore fixed and constrained on a hypersurface called \emph{Dp-brane}, where $p$ stands for the dimension of the surface (in this case $p = D - 1$):
+The coordinate of the endpoint in the compact direction is therefore fixed and constrained on a hypersurface called \emph{Dp-brane}, where $p+1$ is the dimension of the surface (in this case $p = D - 2$):
 \begin{equation}
   \begin{split}
     Y^{D-1}( \tau, \pi ) - Y^{D-1}( \tau, 0 )
@@ -1187,6 +1188,138 @@ This geometric interpretation of the Dirichlet branes and boundary conditions is
 D-branes are however much more than mathematical entities.
 They also present physical properties such as tension and charge~\cite{DiVecchia:1997:ClassicalPbranesBoundary,DiVecchia:2006:BoundaryStateMagnetized,Polchinski:1995:DirichletBranesRamondRamond}.
 However these aspects will not be discussed here as the following analysis will mainly focus on geometrical aspects of D-branes in spacetime.
+
+
+\subsubsection{Gauge Groups from D-branes}
+
+As previously stated, in order to recover $4$-dimensional physics we need to compactify the $6$ extra-dimensions of the superstring.
+There are in general multiple ways to do such operation consistently~\cite{Brown:1988:NeutralizationCosmologicalConstant,Bousso:2000:QuantizationFourformFluxes,Susskind:2003:AnthropicLandscapeString,tHooft:2009:DimensionalReductionQuantum,Kachru:2003:SitterVacuaString}.
+Reproducing the \sm or beyond \sm spectra are however strong constraints on the possible compactification procedures~\cite{Cleaver:2007:SearchMinimalSupersymmetric,Lust:2009:LHCStringHunter}.
+Many of the physical requests usually involve the introduction of D-branes and the study of open strings in order to be able to define chiral fermions and realist gauge groups.
+
+As seen in the previous section, D-branes introduce preferred directions of motion by restricting the hypersurface on which the open string endpoints live.
+Specifically a Dp-branes breaks the original \SO{1, D-1} symmetry to $\SO{1, p} \otimes \SO{D - 1 - p}$.\footnotemark{}
+\footnotetext{%
+  Notice that usually $D = 10$, but we keep a generic indication of the spacetime dimensions when possible.
+}
+The massless spectrum of the theory on the D-brane is easily computed in lightcone gauge~\cite{Goddard:1973:QuantumDynamicsMassless,Polchinski:1998:StringTheoryIntroduction,Green:1988:SuperstringTheoryIntroduction,Angelantonj:2002:OpenStrings}.
+Using the residual symmetries of the two-dimensional diffeomorphism (i.e.\ armonic functions of $\tau$ and $\sigma$) we can set
+\begin{equation}
+  X^+( \tau, \sigma ) = x_0^+ + 2 \ap\, p^+\, \tau,
+\end{equation}
+where $X^{\pm} = \frac{1}{\sqrt{2}} (X^0 \pm X^{D-1})$.
+The vanishing of the stress-energy tensor fixes the oscillators in $X^-$ in terms of the physical transverse modes.
+The mass shell condition for open strings then becomes:\footnotemark{}
+\footnotetext{%
+  The constant $a$ in~\eqref{eq:dbranes:closedspectrum} takes here the value $-1$ from the imposition of the canonical commutation relations and a $\zeta$-regularisation.
+}
+\begin{equation}
+  M^2 = \frac{1}{\ap} \left( N - 1 \right).
+\end{equation}
+
+Consider for a moment bosonic string theory and define the usual vacuum as
+\begin{equation}
+  \alpha_n^i \regvacuum = 0,
+  \qquad
+  n \ge 0,
+  \qquad
+  i = 1, 2, \dots, D - 2,
+\end{equation}
+we find that at the massless level we have a single \U{1} gauge field in the representation of the Little Group \SO{D-2}:
+\begin{equation}
+  \cA^i
+  \qquad
+  \rightarrow
+  \qquad
+  \alpha_{-1}^i \regvacuum.
+\end{equation}
+
+The introduction of a Dp-brane however breaks the Lorentz invariance down to $\SO{1, p} \otimes \SO{D - 1 - p}$.
+Thus the gauge field in the original theory is split into
+\begin{equation}
+  \begin{split}
+    \cA^A
+    \qquad
+    & \rightarrow
+    \qquad
+    \alpha_{-1}^A \regvacuum,
+    \qquad
+    A = 1, \dots, p - 2,
+    \\
+    \cA^a
+    \qquad
+    & \rightarrow
+    \qquad
+    \alpha_{-1}^a \regvacuum,
+    \qquad
+    a = 1, 2, \dots, D - 1 -p.
+  \end{split}
+\end{equation}
+In the last expression $\cA^A$ forms a representation of the Little Group \SO{p-2} and as such it is a vector gauge field in $p$ dimensions.
+The field $\cA^a$ form a vector representation of the group \SO{D-1-p} and from the point of view of the Lorentz group they are $D - 1 - p$ scalars in the light spectrum.
+
+\begin{figure}[tbp]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \def\svgwidth{0.8\linewidth}
+    \import{img}{chanpaton.pdf_tex}
+    \caption{Chan-Paton factors labelling strings.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \def\svgwidth{0.7\linewidth}
+    \import{img}{quark.pdf_tex}
+    \caption{Naive model of a left handed massive quark.}
+  \end{subfigure}
+  \caption{Strings attached to different D-branes.}
+  \label{fig:dbranes:chanpaton}
+\end{figure}
+
+It is also possible to add non dynamical degrees of freedom to the open string endpoints.
+They are known as \emph{Chan-Paton factors}~\cite{Paton:1969:GeneralizedVenezianoModel}.
+They have no dynamics and do not spoil Poincaré or conformal invariance in the action of the string.
+Each state can then be labelled by $i$ and $j$ running from $1$ to $N$.
+Matrices $\tensor{\lambda}{^a_{ij}}$ thus form a basis for expanding wave functions and states:
+\begin{equation}
+  \ket{n;\, a} = \sum\limits_{i,\, j = 1}^N \ket{n;\, i, j}\, \lambda^a_{ij}.
+\end{equation}
+In general Chan-Paton factors label the D-brane on which the endpoint of the string lives as in the left of~\Cref{fig:dbranes:chanpaton}.
+Notice that strings stretching across different D-branes present an additional term in the mass shell condition proportional to the distance between the hypersurfaces: fields built using strings with Chan-Paton factors $\lambda^a_{ij}$ for which $i \neq j$ will therefore be massive.
+However when $N$ D-branes coincide in space and form a stack their mass vanishes again: it then possible to organise the $N^2$ resulting massless fields in a representation of the gauge group \U{N}, thus promoting the symmetry $\bigotimes\limits_{a = 1}^N \rU_a( 1 )$ of $N$ separate D-branes.
+It is also possible to show that in the field theory limit the resulting gauge theory is a Yang-Mills gauge theory.
+
+Eventually the massless spectrum of $N$ coincident $Dp-branes$ is formed by \U{N} gauge bosons in the adjoint representation, $N^2 \times (D - 1 - p)$ scalars and $N^2$ sets of $(p+1)$-dimensional fermions~\cite{Uranga:2005:TASILecturesString}.
+These are the basic building blocks for a consistent string phenomenology involving both gauge bosons and matter.
+
+
+\subsubsection{Standard Model Scenarios}
+
+Being able to describe gauge bosons and fermions is not enough.
+Physics as we test it in experiments poses stringent constraints on what kind of string models we can use.
+For instance there is no way to describe chirality by simply using parallel D-branes and strings stretching among them, while requiring the existence of fermions transforming in different representations of the gauge group is necessary to reproduce \sm results~\cite{Aldazabal:2000:DBranesSingularitiesBottomUp}.
+
+For instance, in the low energy limit it is possible to build a gauge theory of the strong force using a stack of $3$ coincident D-branes and an electroweak sector using $2$ D-branes.
+These stacks would separately lead to a $\U{3} \times \U{2}$ gauge theory.
+It would however be theory of pure force, without matter content.
+Moreover we should also worry about the extra \U{1} groups appearing: these need careful consideration but go beyond the necessary analysis for what follows.
+
+Matter fields are notoriously fermions transforming in the bi-fundamental representation $(\vb{N}, \vb{M})$ of the \sm gauge group~\eqref{eq:intro:smgroup}.
+For example left handed quarks in the \sm transform under the $(\vb{3}, \vb{2})$ representation of the group $\SU{3}_C \otimes \SU{2}_L$.
+This is realised in string theory by a string stretched across two stacks of $3$ and $2$ D-branes as in the right of~\Cref{fig:dbranes:chanpaton}.
+The fermion would then be characterised by the charge under the gauge bosons living on the D-branes.
+The corresponding anti-particle would then simply be a string oriented in the opposite direction.
+Things get complicated when introducing also left handed leptons transforming in the $(\vb{1}, \vb{2})$ representation: they cannot have endpoints on the same stack of D-branes as quarks since they do not have colour charge.
+We therefore need to introduce more D-branes to account for all the possible combinations.
+
+An additional issue comes from the requirement of chirality.
+Strings stretched across D-branes are naturally massive but, in the field theory limit, a mass term would mix different chiralities.
+We thus need to include a symmetry preserving mechanism for generating the mass of fermions.
+In string theory there are ways to deal with the requirement~\cite{Uranga:2003:ChiralFourdimensionalString,Uranga:2005:TASILecturesString,Zwiebach::FirstCourseString,Aldazabal:2000:DBranesSingularitiesBottomUp}.
+These range from D-branes located at singular points of orbifolds to D-branes intersecting at angles~\cite{Finotello:2019:ClassicalSolutionBosonic}.
+We focus in particular on the latter.
+Specifically we focus on intersecting D6-branes filling the $4$-dimensional spacetime and whose additional $3$ dimensions are embedded in a \cy 3-fold (e.g.\ as lines in a factorised torus $T^6 = T^2 \times T^2 \times T^2$).
 
 
 % vim ft=tex
