@@ -1,3 +1,145 @@
 \subsection{Motivation}
 
+As seen in the previous sections, the study of viable phenomenological models in string theory involves the analysis of the properties of systems of D-branes.
+The inclusion of the physical requirements deeply constrains the possible scenarios.
+In particular the chiral spectrum of the \sm acts as a strong restriction on the possible setup.
+In this section we study models based on \emph{intersecting branes}, which represent a relevant class of such models with interacting chiral matter.
+We focus on the development of technical tools for the computation of Yukawa interactions for D-branes at angles~\cite{Chamoun:2004:FermionMassesMixing,Cremades:2003:YukawaCouplingsIntersecting,Cvetic:2010:BranesInstantonsIntersecting,Abel:2007:RealisticYukawaCouplings,Chen:2008:RealisticWorldIntersecting,Chen:2008:RealisticYukawaTextures,Abel:2005:OneloopYukawasIntersecting}.
+The fermion--boson couplings and the study of flavour changing neutral currents~\cite{Abel:2003:FlavourChangingNeutral} are keys to the validity of the models.
+These and many other computations require the ability to calculate correlation functions of (excited) twist and (excited) spin fields.
+The goal of the section is therefore to address such challenges in specific scenarios.
+
+The computation of the correlation functions of Abelian twist fields can be found in literature and plays a role in many scenarios, such as magnetic branes with commuting magnetic fluxes~\cite{Angelantonj:2000:TypeIStringsMagnetised,Bertolini:2006:BraneWorldEffective,Bianchi:2005:OpenStoryMagnetic,Pesando:2010:OpenClosedString,Forste:2018:YukawaCouplingsMagnetized}, strings in gravitational wave background~\cite{Kiritsis:1994:StringPropagationGravitational,DAppollonio:2003:StringInteractionsGravitational,Berkooz:2004:ClosedStringsMisner,DAppollonio:2005:DbranesBCFTHppwave}, bound states of D-branes~\cite{Gava:1997:BoundStatesBranes,Duo:2007:NewTwistField,David:2000:TachyonCondensationD0} and tachyon condensation in Superstring Field Theory~\cite{David:2000:TachyonCondensationD0,David:2001:TachyonCondensationUsing,David:2002:ClosedStringTachyon,Hashimoto:2003:RecombinationIntersectingDbranes}.
+A similar analysis can be extended to excited twist fields even though they are more subtle to treat and hide more delicate aspects~\cite{Burwick:1991:GeneralYukawaCouplings,Stieberger:1992:YukawaCouplingsBosonic,Erler:1993:HigherTwistedSector,Anastasopoulos:2011:ClosedstringTwistfieldCorrelators,Anastasopoulos:2012:LightStringyStates,Anastasopoulos:2013:ThreeFourpointCorrelators}.
+Results were however found starting from dual models up to modern interpretations of string theory~\cite{Sciuto:1969:GeneralVertexFunction,DellaSelva:1970:SimpleExpressionSciuto}.
+Correlation functions involving arbitrary numbers of plain and excited twist fields were more recently studied~\cite{Pesando:2014:CorrelatorsArbitraryUntwisted,Pesando:2012:GreenFunctionsTwist,Pesando:2011:GeneratingFunctionAmplitudes} blending the CFT techniques with the path integral approach and the canonical quantization~\cite{Pesando:2008:MultibranesBoundaryStates,DiVecchia:2007:WrappedMagnetizedBranes,Pesando:2011:StringsArbitraryConstant,DiVecchia:2011:OpenStringsSystem,Pesando:2013:LightConeQuantization}.
+
+We consider D6-branes intersecting at angles in the case of non Abelian relative rotations presenting non Abelian twist fields at the intersections.
+We try to understand subtleties and technical issues arising from a scenario which has been studied only in the formulation of non Abelian orbifolds \cite{Inoue:1987:NonAbelianOrbifolds,Inoue:1990:StringInteractionsNonAbelian,Gato:1990:VertexOperatorsNonabelian,Frampton:2001:ClassificationConformalityModels} and for D-branes relative \SU{2} rotations~\cite{Pesando:2016:FullyStringyComputation}.
+
+In this configuration we study three D6-branes in $10$-dimensional Minkowski space $\ccM^{1,9}$ with an internal space of the form $\R^4 \times \R^2$ before the compactification.
+The D-branes are embedded as lines in $\R^2$ and as two-dimensional surfaces inside $\R^4$.
+We focus on the relative rotations which characterise each D-brane in $\R^4$ with respect to the others.
+In total generality, they are non commuting \SO{4} matrices.
+
+In this paper we study the classical solution of the bosonic string which dominates the behaviour of the correlator of twist fields.
+Using the path integral approach we can in fact separate the classical contribution from the quantum fluctuations and write the correlators of $N_B$ twist fields $\sigma_{M_{(t)}}( x_{(t)} )$ as:\footnotemark{}
+\footnotetext{%
+  Ultimately $N_B = 3$ in our case.
+}
+\begin{equation}
+  \left\langle
+    \finiteprod{t}{1}{N_B}
+    \sigma_{M_{(t)}}(x_{(t)})
+  \right\rangle
+  =
+  \cN
+  \left(
+    \left\lbrace x_{(t)},\, M_{(t)} \right\rbrace_{1 \le t \le N_B}
+  \right)\,
+  e^{-S_E\left( \left\lbrace x_{(t)}, M_{(t)} \right\rbrace_{1 \le t \le N_B} \right)},
+\end{equation}
+where $M_{(t)}$ (for $1 \le t \le N_B$) are the monodromies induced by the twist fields, $N_B$ is the number of D-branes and $x_{(t)}$ are the intersection points on the worldsheet.
+Even though quantum corrections are crucial to the complete determination of the normalisation of the correlator, the classical contribution of the Euclidean action represents the leading term of the Yukawa couplings.
+We focus on its contribution to better address the differences from the usual factorised case and generalise the results to non Abelian rotations of the D-branes.
+We do not consider the quantum corrections as they cannot be computed with the actual techniques.
+Their calculations requires the correlator of four twist fields which in turn requires knowledge of the connection formula for Heun functions which is not known.
+
+We therefore study the boundary conditions for the open string describing the D-branes embedded in $\R^4$.
+In particular we first address the issue connected to the global description of the embedding of the D-branes.
+In conformal coordinates we rephrase such problem into the study of the monodromies acquired by the string coordinates.
+These additional phase factors can then be specialised to \SO{4}, which can be studied in spinor representation as a double copy of \SU{2}.
+We thus recast the issue of finding the solution as $4$-dimensional real vector to a tensor product of two solutions in the fundamental representation of \SU{2}.
+We then see that these solutions are well represented by hypergeometric functions, up to integer factors.
+Physical requirements finally restrict the number of possible solutions.
+
+
+\subsection{D-brane Configuration and Boundary Conditions}
+
+We focus on the bosonic string embedded in $\ccM^{1, d + 4}$.
+The relevant configuration of the D-branes is seen as two-dimensional Euclidean planes in $\R^4$.
+We specifically concentrate on the Euclidean solution for the classical bosonic string in this scenario.
+The mathematical analysis is however more general and can be applied to any Dp-brane embedded in a generic Euclidean space $\R^q$.
+The classical solution can in principle be defined in this case provided the ability to write the explicit form of the basis of functions with the proper boundary and monodromy conditions.
+This is possible in the case of three intersecting D-branes but in general it is an open mathematical issue.
+In the case of three D-branes with generic embedding we can in fact connect a local basis around one intersection point to another, the third depending on the first two intersections, by means of Mellin-Barnes integrals.
+This way the solution can be explicitly and globally constructed.
+With more than three D-branes the situation is by far more difficult since the explicit form of the connection formulas is not known.
+
+
+\subsubsection{Intersecting D-branes at Angles}
+
+Let $N_B$ be the total number of D-branes and $t = 1,\, 2,\, \dots,\, N_B$ be
+an index defined modulo $N_B$ to label them.
+We describe one of the D-branes in a well adapted system of coordinates
+$X_{(t)}^I$, where $I = 1,\, 2,\, 3,\, 4$, as:
+\begin{equation}
+  X_{(t)}^3 = X_{(t)}^4 = 0.
+  \label{eq:well-adapt-embed}
+\end{equation}
+We thus choose $X_{(t)}^1$ and $X_{(t)}^2$ to be the coordinates parallel to the D-brane $D_{(t)}$ while $X_{(t)}^3$ and $X_{(t)}^4$ are the coordinates orthogonal to it.
+
+\begin{figure}[tbp]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \def\svgwidth{\linewidth}
+    \import{img/}{branesangles.pdf_tex}
+    \caption{%
+      D-branes as lines on $\R^2$.
+    }
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \def\svgwidth{\linewidth}
+    \import{img/}{welladapted.pdf_tex}
+    \caption{Well adapted system of coordinates.}
+  \end{subfigure}
+  \caption{%
+    Geometry of D-branes at angles.
+  }
+  \label{fig:branes_at_angles}
+\end{figure}
+
+The well adapted reference coordinates system is connected to the global $\R^{4}$ coordinates $X^I$ by a transformation:
+\begin{equation}
+  \tensor{(X_{(t)})}{^I}
+  =
+  \tensor{(R_{(t)})}{^I_J}\, \tensor{X}{^J}
+  -
+  \tensor{(g_{(t)})}{^I},
+  \qquad
+  I,\, J = 1,\, 2,\, 3,\, 4,
+  \label{eq:brane_rotation}
+\end{equation}
+where $R_{(t)}$ represents the rotation of the D-brane $D_{(t)}$ and $g_{(t)} \in \R^4$ its translation with respect to the origin of the global set of coordinates (see \Cref{fig:branes_at_angles} for a two-dimensional example).
+
+While we could naively consider $R_{(t)} \in \mathrm{SO}(4)$, rotating separately the subset of coordinates parallel and orthogonal to the D-brane does not affect the embedding.
+In fact it just amounts to a trivial redefinition of the initial well adapted coordinates.
+The rotation $R_{(t)}$ is actually defined in the Grassmannian:
+\begin{equation}
+  R_{(t)}
+  \in
+  \mathrm{Gr}(2, 4)
+  =
+  \frac{\SO{4}}{\rS\left( \OO{2} \times \OO{2} \right)},
+\end{equation}
+that is we just need to consider the left coset where $R_{(t)}$ is a representative of an equivalence class
+\begin{equation}
+  \left[ R_{(t)} \right]
+  =
+  \left\lbrace R_{(t)} \sim \cO_{(t)} R_{(t)} \right\rbrace,
+\end{equation}
+where $\cO_{(t)} = \rS\left( \OO{2} \times \OO{2} \right)$ is defined as
+\begin{equation}
+  \cO_{(t)}
+  =
+  \mqty( \dmat{\cO^{\parallel}_{(t)}, \cO^{\perp}_{(t)}} )
+\end{equation}
+with $\cO^{\parallel}_{t} \in \OO{2}$, $\cO^{\perp}_{t} \in \OO{2}$ and $\det \cO_{(t)} = 1$.
+The superscript $\parallel$ represents any of the coordinates parallel to the D-brane, while $\perp$ any of the orthogonal.
+Notice that the additional $\Z_2$ factor in $\rS\left( \OO{2} \times \OO{2} \right)$ with respect to $\SO{2} \times \SO{2}$ can be used to set $g_{(t)}^{\perp} \ge 0$.
+
+
 % vim ft=tex
