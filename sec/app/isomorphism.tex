@@ -1,0 +1,176 @@
+In this appendix we explain the conventions used for \SU{2} and show the details of the isomorphism between \SO{4} and a class of equivalence of $\SU{2} \times \SU{2}$.
+
+
+\subsection{Conventions}
+
+We parameterise \SU{2} matrices $U$ with a vector $\vb{n} \in \R^3$ such that:
+\begin{equation}
+  U(\vb{n})
+  =
+  \cos(2 \pi n)\, \1_2
+  +
+  i\, \frac{\vb{n} \cdot \vb{\sigma}}{n}\, \sin(2 \pi n),
+  \label{eq:su2parametrisation}
+\end{equation}
+where $n = \norm{\vb{n}}$ and $0 \le n \le \frac{1}{2}$.
+We also identify all $\vb{n}$ when $n=\frac{1}{2}$ since in this case $U(\vb{n})= -\1_2$.
+The parametrisation is such that:
+\begin{eqnarray}
+  U^*(\vb{n})
+  & = &
+  \sigma^2\, U(\vb{n})\, \sigma^2
+  =
+  U(\widetilde{\vb{n}}),
+  \\
+  U^{\dagger}(\vb{n})
+  & = &
+  U^T(\widetilde{\vb{n}})
+  =
+  U(-\vb{n}),
+  \\
+  -U(\vb{n})
+  & = &
+  U(\widehat{\vb{n}})
+  \label{eq:U_props}
+\end{eqnarray}
+where $\sigma^2$ is the second Pauli matrix, $\widetilde{\vb{n}} = \left( -n^1, n^2, -n^3 \right)$ and $\widehat{\vb{n}} = - \left(\frac{1}{2} -n \right)\, \frac{\vb{n}}{n}$.
+
+The group product of two elements $U(\vb{n} \circ \vb{m} ) = U(\vb{n})\,  U(\vb{m})$ has an explicit realisation as:
+\begin{equation}
+  \begin{split}
+    \cos(2 \pi \norm{\vb{n} \circ \vb{m}})
+    & =
+    \cos(2 \pi n)\, \cos(2 \pi m)
+    -
+    \sin(2 \pi n)\, \sin(2\pi m)\, \frac{\vb{n} \cdot \vb{m}}{n\, m},
+    \\
+    \sin(2 \pi \norm{\vb{n} \circ \vb{m}})\,
+    \frac{\vb{n} \circ \vb{m}}{\norm{\vb{n} \circ \vb{m}}}
+    & =
+    \cos(2 \pi n)\, \sin(2\pi m)\, \frac{\vb{m}}{m}
+    +
+    \sin(2 \pi n)\, \cos(2\pi m)\, \frac{\vb{n}}{n}.
+  \end{split}
+  \label{eq:product_in_SU2}
+\end{equation}
+
+\subsection{The Isomorphism}
+
+Let $I = 1,\, 2,\, 3,\, 4$ and define:
+\begin{equation}
+  \tau_I = \left( i\, \1_2,\, \vb{\sigma} \right),
+\end{equation}
+where $\vb{\sigma} = \left( \sigma^1,\, \sigma^2,\, \sigma^3 \right)$ are the Pauli matrices.
+It is possible to show that:
+\begin{equation}
+  \begin{split}
+    \left( \tau_I \right)^{\dagger}
+    & =
+    \eta_{IJ}\, {\tau}^I,
+    \\
+    \left( \tau^I \right)^*
+    & =
+    -\sigma_2\, \tau_I\, \sigma_2,
+  \end{split}
+  \label{eq:tau_props}
+\end{equation}
+where $\eta_{IJ} = \mathrm{diag}(-1,1,1,1)$.
+The following relations are then a natural consequence:
+\begin{eqnarray}
+  \tr(\tau_I)
+  & = &
+  2\, i\, \delta_{I1},
+  \\
+  \tr(\tau_I \tau_J)
+  & = &
+  2\, \eta_{IJ},
+  \\
+  \tr(\tau_I \left( \tau_J \right)^{\dagger})
+  & = &
+  2\, \delta_{IJ}.
+\end{eqnarray}
+
+Now consider a vector in the spinor representation:
+\begin{equation}
+  X_{(s)} = X^I\, \tau_I.
+\end{equation}
+We can recover the components using the previous properties:
+\begin{equation}
+  X^I
+  =
+  \frac{1}{2}\, \delta^{IJ}\,
+  \tr(X_{(s)} \left( \tau_J \right)^{\dagger})
+  =
+  \frac{1}{2}\, \eta^{IJ}\, \tr(X_{(s)} \tau_J),
+\end{equation}
+where the trace acts on the space of the $\tau$ matrices.
+If the vector $X^I$ is real, using~\eqref{eq:tau_props} we have:
+\begin{equation}
+  \begin{split}
+    X_{(s)}^{\dagger}
+    & =
+    X^I\, \eta_{IJ}\, \tau^J
+    =
+    \frac{1}{2} \tr(X_{(s)} \tau_I)\, \tau^I,
+    \\
+    X_{(s)}^*
+    & =
+    - \sigma_2\, X_{(s)}\, \sigma_2.
+  \end{split}
+  \label{eq:X_dagger}
+\end{equation}
+
+A rotation in spinor representation is defined as:
+\begin{equation}
+  X'_{(s)} = U_{L}(\vb{n})\, X_{(s)}\, U_{R}^{\dagger}(\vb{m})
+\end{equation}
+and it is equivalent to:
+\begin{equation}
+  \left( X' \right)^I
+  =
+  \tensor{R}{^I_J}\,
+  X^J
+\end{equation}
+through
+\begin{equation}
+  R_{IJ}
+  =
+  \frac{1}{2}
+  \tr(
+    \left( \tau_I \right)^{\dagger}\,
+    U_{L}(\vb{n})\,
+    \tau_J\,
+    U_{R}^{\dagger}(\vb{m})
+  ).
+\end{equation}
+The matrix $R$ is the $4$-dimensional rotation matrix we are looking for since:
+\begin{equation}
+  \tr(X'_{(s)}\, (X')^{\dagger}_{(s)})
+  =
+  \tr(X_{(s)}\, X^{\dagger}_{(s)})
+  \qquad
+  \Rightarrow
+  \qquad
+  \finitesum{K}{1}{4} R_{IK} R^*_{JK} = \delta_{I \,J}.
+\end{equation}
+From the second equation in \eqref{eq:tau_props} and the first equation in \eqref{eq:U_props} we then get the reality condition on $R$:
+\begin{equation}
+  R_{NM}
+  =
+  \frac{1}{2}\, \eta_{NI}\, \eta_{MJ}\,
+  \tr(\tau_I ^{\dagger}\, U_{R}\, \tau_J\, U_{L}^{\dagger})
+  =
+  \frac{1}{2}
+  \tr(\tau_N\, U_{R}\, \tau_M^\dagger\, U_{L}^{\dagger})
+  =
+  R_{NM}^*.
+\end{equation}
+Furthermore the direct computation of the determinant of $R$ using the parametrisation~\eqref{eq:su2parametrisation} shows that $\det R = 1$.
+Finally the explicit choice of the basis $\tau$ ensures $R$ to be a real matrix which ensures $R \in \SO{4}$.
+Since $\left\lbrace U_{L},\, U_{R} \right\rbrace$ and $\left\lbrace -U_{L},\, -U_{R} \right\rbrace$ generate the same \SO{4} matrix then the correct isomorphism takes the form:
+\begin{equation}
+  \SO{4}
+  \cong
+  \frac{\SU{2} \times \SU{2}}{\Z_2}.
+\end{equation}
+

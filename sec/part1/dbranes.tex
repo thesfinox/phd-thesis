@@ -142,4 +142,440 @@ The superscript $\parallel$ represents any of the coordinates parallel to the D-
 Notice that the additional $\Z_2$ factor in $\rS\left( \OO{2} \times \OO{2} \right)$ with respect to $\SO{2} \times \SO{2}$ can be used to set $g_{(t)}^{\perp} \ge 0$.
 
 
+\subsubsection{Boundary Conditions for Branes at Angles}
+
+The peculiar embedding of the D-branes has natural consequences on the boundary conditions of the open strings.
+Let $\tau_E = i \tau$ be the Wick rotated time direction.
+We define the usual upper plane coordinates:
+\begin{eqnarray}
+  u
+  =
+  x + i y
+  =
+  e^{\tau_E + i \sigma}
+  & \in &
+  \ccH \cup \left\lbrace z \in \C \mid \Im z = 0 \right\rbrace,
+  \\
+  \bu
+  =
+  x - i y
+  =
+  e^{\tau_E - i \sigma}
+  & \in &
+  \overline{\ccH} \cup \left\lbrace z \in \C \mid \Im z = 0 \right\rbrace,
+\end{eqnarray}
+where $\ccH = \left\lbrace z \in \C \mid \Im z > 0 \right\rbrace$ is the upper complex plane and $\overline{\ccH} = \left\lbrace z \in \C \mid \Im z < 0 \right\rbrace$ is the lower complex plane.
+In conformal coordinates $u$ and $\bu$, D-branes at $\sigma = 0$ and $\sigma = \pi$ are mapped onto the real axis $\Im z = 0$.
+We use the symbol $D_{(t)}$ to label both the brane and the interval representing it on the real axis of the upper half plane:
+\begin{equation}
+  D_{(t)} = \left[ x_{(t)}, x_{(t-1)} \right],
+  \qquad
+  t = 2,\, 3,\, \dots,\, N_B,
+  \qquad
+  x_{(t)} < x_{(t-1)}.
+\end{equation}
+The points $x_{(t)}$ and $x_{(t-1)}$ represent the worldsheet intersection points of the brane $D_{(t)}$ with the branes $D_{(t+1)}$ and $D_{(t-1)}$ respectively.
+The choice of the intervals must be carefully considered: since the D-branes are defined modulo $N_B$, the shorthand for the interval $D_{(1)} = \left[ x_{(1)}, x_{(N_B)} \right]$ should actually be:
+\begin{equation}
+  D_{(1)}
+  =
+  \left[ x_{(1)}, +\infty \right) \cup \left( -\infty, x_{(N_B)} \right].
+\end{equation}
+
+In the global coordinates system associated to the subspace $\R^4 \subset \ccM^{1, d+4}$ where D-branes intersect, the relevant part of the action in conformal gauge is:
+\begin{equation}
+  \begin{split}
+    S_{\R^4}
+    & =
+    \frac{1}{2 \pi \ap}
+    \iint\limits_{\ccH}
+    \dd{u} \dd{\bu}\,
+    \ipd{u} X^I\, \ipd{\bu} X^J\,
+    \eta_{IJ}
+    \\
+    & =
+    \frac{1}{4 \pi \ap}
+    \iint\limits_{\R \times \R^+}
+    \dd{x}\dd{y}\,
+    \left(
+      \ipd{x} X^I\, \ipd{x} X^J
+      +
+      \ipd{y} X^I\, \ipd{y} X^J
+    \right)\,
+    \eta_{IJ},
+  \end{split}
+  \label{eq:string_action}
+\end{equation}
+where $2\, \ipd{u} = \ipd{x} - i\, \ipd{y}$ and $2\, \ipd{\bu} = \ipd{x} + i\, \ipd{y}$.
+The \eom in these coordinates are:
+\begin{equation}
+  \ipd{u} \ipd{\bu} X^I( u, \bu )
+  =
+  \frac{1}{4}
+  \left( \ipd{x}^2 + \ipd{y}^2 \right) X^I( x+iy, x-iy )
+  =
+  0.
+  \label{eq:string_equation_of_motion}
+\end{equation}
+Their solution factorises as usual in holomorphic and anti-holomorphic components $X^I( u, \bu ) = X^I( u ) + \bX^I( \bu )$.
+
+In the well adapted frame~\eqref{eq:well-adapt-embed} we describe an open string with one of the endpoints on $D_{(t)}$ through the relations:
+\begin{eqnarray}
+  \eval{\ipd{\sigma} X^i_{(t)}( \tau, \sigma )}_{\sigma = 0}
+  =
+  \eval{\ipd{y} X^i_{(t)}( u, \bu )}_{y = 0}
+  & = &
+  0,
+  \qquad
+  i = 1,\, 2,
+  \label{eq:neumann_bc}
+  \\
+  X^m_{(t)}( \tau, 0 )
+  =
+  X^m_{(t)}( x, x )
+  & = &
+  0,
+  \qquad
+  m = 3,\, 4,
+  \label{eq:dirichlet_bc}
+\end{eqnarray}
+where $x \in D_{(t)} = \left[ x_t, x_{t-1} \right]$ and the index $i$ labels the Neumann boundary conditions while $m$ labels the Dirichlet coordinates associated to the direction orthogonal to the D-branes.
+
+As the presence of $g_{(t)}^m$ in \eqref{eq:brane_rotation} and \eqref{eq:dirichlet_bc} may complicate the analysis, we consider the derivative along the boundary direction of \eqref{eq:dirichlet_bc} to remove the dependence on the translation vector.
+This procedure produces simpler boundary conditions which are nevertheless not equivalent to the original~\eqref{eq:neumann_bc} and \eqref{eq:dirichlet_bc}: they will be recovered later by adding further constraints.
+The simpler boundary conditions we consider in the global coordinates are:
+\begin{eqnarray}
+  \tensor{\left( R_{(t)} \right)}{^i_J}
+  \eval{\ipd{\sigma} X^J( \tau, \sigma )}_{\sigma = 0}
+  & = &
+  i\, \tensor{\left( R_{(t)} \right)}{^i_J}
+  \left(
+    \ipd{u} X^J( x + i\, 0^+ ) - \ipd{\bu} \bX^J( x - i\, 0^+ )
+  \right)
+  =
+  0,
+  \\
+  \tensor{\left( R_{(t)} \right)}{^m_J}
+  \eval{\ipd{\tau} X^J( \tau, \sigma )}_{\sigma = 0}
+  & = &
+  i\, \tensor{\left( R_{(t)} \right)}{^m_J}
+  \left(
+    \ipd{u} X^J( x + i\, 0^+ ) + \ipd{\bu} \bX^J( x - i\, 0^+ )
+  \right)
+  =
+  0,
+\end{eqnarray}
+where $i = 1,\, 2$, $m = 3,\, 4$ and $x \in D_{(t)}$.
+
+With the introduction of the target space embedding of the worldsheet interaction point between D-branes $D_{(t)}$ and $D_{(t+1)}$, $f_{(t)}$, we recover the full boundary conditions in terms of discontinuities on the real axis:
+\begin{equation}
+  \begin{cases}
+    \ipd{u} X^I( x + i\, 0^+ )
+    & =
+    \tensor{\left( U_{(t)} \right)}{^I_J}
+    \ipd{\bu} \bX^J( x - i\, 0^+ ),
+    \qquad
+    x \in D_{(t)}
+    \\
+    X^I( x_{(t)}, x_{(t)} )
+    & =
+    f_{(t)}
+  \end{cases}.
+  \label{eq:discontinuity_bc}
+\end{equation}
+In the last expression we introduced the matrix
+\begin{equation}
+  U_{(t)}
+  =
+  \left( R_{(t)} \right)^{-1}\,
+  \cS\,
+  R_{(t)}
+  \in
+  \frac{\SO{4}}{\rS\left( \OO{2} \times \OO{2} \right)},
+  \label{eq:Umatrices}
+\end{equation}
+where
+\begin{equation}
+  \cS
+  =
+  \mqty( \dmat{ 1, 1, -1, -1 } )
+  \label{eq:reflection_S}
+\end{equation}
+embeds the difference between Neumann and Dirichlet conditions.
+Given its definition $U_{(t)}$ is such that $U_{(t)} = \left( U_{(t)} \right)^{-1} = \left( U_{(t)} \right)^T$.
+
+The target space vector $f_{(t)}$ recovers the apparent loss of information suffered when losing $g_{(t)}$.
+Consider for instance the embedding equations~\eqref{eq:dirichlet_bc} for any two intersecting D-branes $D_{(t)}$ and $D_{(t+1)}$.
+Introducing the auxiliary quantities
+\begin{eqnarray}
+  \cR_{(t,\, t+1)}
+  =
+  \mqty( R_{(t)}^m \\ R_{(t+1)}^n )
+  & \in &
+  \GL{4}{\R},
+  \qquad
+  m, n = 3, 4,
+  \\
+  \cG_{(t,\, t+1)}
+  =
+  \mqty( g_{(t)}^m \\ g_{(t+1)}^n )
+  & \in &
+  \R^4,
+  \qquad
+  m, n = 3, 4,
+\end{eqnarray}
+we can compute the intersection point as:
+\begin{equation}
+  f_{(t)}
+  =
+  \left( \cR_{(t,\, t+1)} \right)^{-1}\,
+  \cG_{(t,\, t+1)}.
+\end{equation}
+Information on $g_{(t)}$ is thus recovered through the global boundary conditions in the second equation in \eqref{eq:discontinuity_bc}.
+
+
+\subsubsection{Doubling Trick and Branch Cut Structure}
+
+In conformal coordinates we thus introduced the discontinuities~\eqref{eq:discontinuity_bc} across each D-brane which define a non trivial cut structure on the plane.
+One way to deal with them is to introduce the \emph{doubling trick} by gluing the relations along an arbitrary but fixed D-brane $D_{(\bt)}$:
+\begin{equation}
+  \ipd{z} \cX(z) =
+  \begin{cases}
+    \ipd{u} X(u)
+    &
+    \qif
+    z = u \qand \Im z > 0 \qor z \in D_{(\bt)}
+    \\
+    U_{(\bt)}\,
+    \ipd{\bu} \bX(\bu)
+    & \qif z = \bu \qand \Im z < 0 \qor z \in D_{(\bt)}
+  \end{cases}.
+  \label{eq:real_doubling_trick}
+\end{equation}
+Let then $\cU_{(t,\, t+1)} = U_{(t+1)}\, U_{(t)}$ and $\widetilde{\cU}_{(t,\, t+1)} = U_{(\bt)}\, U_{(t)}\, U_{(t+1)}\, U_{(\bt)}$.
+The boundary conditions in terms of the doubling field are:
+\begin{eqnarray}
+  \ipd{z} \cX( x_t + e^{2 \pi i}( \eta + i\, 0^+ ) )
+  & = &
+  \cU_{(t,\, t+1)}
+  \ipd{z} \cX( x_t + \eta + i\, 0^+ ),
+  \label{eq:top_monodromy}
+  \\
+  \partial \cX( x_t + e^{2 \pi i}( \eta - i\, 0^+ ) )
+  & = &
+  \widetilde{\cU}_{(t,\, t+1)}
+  \ipd{z} \cX( x_t + \eta - i\, 0^+ ),
+  \label{eq:bottom_monodromy}
+\end{eqnarray}
+for $0 < \eta < \min\left( \abs{x_{(t-1)} - x_{(t)}}, \abs{x_{(t)} - x_{(t+1)}} \right)$ in order to consider only the two adjacent D-branes $D_{(t)}$ and $D_{(t+1)}$.
+Matrices $\cU_{(t,\, t+1)}$ and $\widetilde{\cU}_{(t,\, t+1)}$ are the non trivial monodromies arising from the rotation of the D-branes.
+
+Since the relative rotations between consecutive D-branes are non Abelian, for each interaction point there are two monodromies \cU and $\widetilde{\cU}$ depending on the location of the base point of the closed loop: one for paths starting in the upper plane \ccH and one for paths starting in $\overline{\ccH}$.
+As a consequence of the geometry of the rotations of the D-branes, a path on the complex plane enclosing all of them does not present a monodromy:
+\begin{equation}
+  \finiteprod{t}{1}{N_B}\,
+  \cU_{(\bt - t, \bt + 1 - t)}
+  =
+  \finiteprod{t}{1}{N_B}\,
+  \widetilde{\cU}_{(\bt + t, \bt + 1 + t)}
+  =
+  \1_4.
+\end{equation}
+The complex plane has therefore branch cuts running between the D-branes at finite as shown in \Cref{fig:finite_cuts}.
+We thus translated the rotations of the D-branes encoded in the matrices $R_{(t)}$ in terms of $\cU_{(t,\, t+1)}$ and $\widetilde{\cU}_{(t,\, t+1)}$ which are matrix representations of the homotopy group of the complex plane with the described branch cut structure.
+
+\begin{figure}[tbp]
+  \centering
+  \def\svgwidth{0.5\textwidth}
+  \import{img/}{branchcuts.pdf_tex}
+  \caption{%
+    Branch cut structure of the complex plane with $N_B = 4$.
+    Cuts are pictured as solid coloured blocks running from one intersection point to another at finite.
+  }
+  \label{fig:finite_cuts}
+\end{figure}
+
+As a consistency check, the action~\eqref{eq:string_action} can be computed in terms of the doubling field \cX.
+The map
+\begin{equation}
+  x_{(t)} + \eta \pm i\, 0^+
+  \quad
+  \mapsto
+  \quad
+  x_{(t)} + e^{2 \pi i}( \eta \pm i\, 0^+)
+\end{equation}
+must leave the action untouched since it does not depend on the branch cut structure.
+In fact we can show that
+\begin{equation}
+  S_{\R^4}
+  =
+  \frac{1}{4 \pi \ap}
+  \iint\limits_{\C}
+  \dd{z} \dd{\bz}\,
+  \ipd{z} \cX^T(z)\,
+  U_{(\bt)}\,
+  \ipd{\bz} \cX(\bz).
+\end{equation}
+As a matter of fact the action does not depend on the branch structure of the complex plane.
+
+
+\subsection{D-branes at Angles in Spinor Representation}
+
+In the previous section we showed that it is possible to map the information on the rotations of the D-branes to non trivial monodromies of the doubling field.
+We thus recast the issue of solving the \eom of the string in the presence of rotated boundary conditions to the search for an explicit solution $\ipd{z} \cX( z )$ reproducing the non trivial monodromies in~\eqref{eq:top_monodromy} and \eqref{eq:bottom_monodromy}.
+
+The field $\ipd{z} \cX( z )$ is technically a $4$-dimensional \emph{real} vector which has $N_B$ non trivial monodromy factors represented by $4
+\times 4$ real matrices, one for each interaction point $x_{(t)}$.
+A solution of the \eom is encoded in four linearly independent functions with $N_B$ branch points.
+In principle we could try to write it as a solution to fourth order differential equations with $N_B$ finite Fuchsian points.
+This is however an open mathematical debate.
+In fact the basis of such functions around each branch point are usually complicated and defined up to several free parameters.
+Moreover the explicit connection formulae between any two of them is an unsolved mathematical problem.
+Using contour integrals and writing the functions as Mellin--Barnes integrals it might be possible to solve the issue in the case $N_B = 3$ but it is certainly not the best course of action.
+
+On the other hand $N_B = 3$ is exactly the case we are investigating.
+In what follows we use the isomorphism
+\begin{equation}
+  \SO{4}
+  \cong
+  \frac{\SU{2} \times \SU{2}}{\Z_2}
+  \label{eq:su2isomorphism}
+\end{equation}
+to map the problem of finding a $4$-dimensional real solution to the \eom to a quest for a $2 \times 2$ complex matrix.
+Such matrix is a linear superposition of tensor products of vectors in the fundamental representation of two different \SU{2} groups.
+These vectors are solutions to second order differential equations with three Fuchsian points, that is the hypergeometric equation.
+The task is then to find the parameters of the hypergeometric functions producing the spinor representation of the monodromies in~\eqref{eq:top_monodromy} and \eqref{eq:bottom_monodromy}.
+
+
+\subsubsection{Doubling Trick and Rotations in Spinor Representation}
+
+We recall some of the properties of the isomorphism~\eqref{eq:su2isomorphism} in~\Cref{sec:isomorphism}.
+We define the spinor representation of $X$ as:
+\begin{equation}
+  X_{(s)}( u, \bu ) = X^I( u, \bu )\, \tau_I,
+\end{equation}
+where $\tau = \left( i\, \1_2,\, \vb{\sigma} \right)$ and $\vb{\sigma}$ is the vector of the Pauli matrices.
+Consider then:
+\begin{equation}
+  \ipd{z} \cX_{(s)}( z )
+  =
+  \begin{cases}
+    \ipd{u} X_{(s)}(u)
+    & \qif
+    z \in \ccH \qor z \in D_{(\bt)}
+    \\
+    U_{L}(\vb{n}_{(\bt)})\,
+    \ipd{\bu} X_{(s)}(\bu)\,
+    U_{R}^{\dagger}(\vb{m}_{(\bt)})
+    & \qif z \in \overline{\ccH} \qor z \in D_{(\bt)}
+  \end{cases}.
+  \label{eq:spinor_doubling_trick}
+\end{equation}
+
+As in the real representation the discontinuities on the D-branes can be cast into monodromy factors with respect to the D-brane $D_{(\bt)}$. Branch cut structure and considerations on the homotopy group are left unchanged as long as we consider both left and right sectors of $\SU{2}_L \times \SU{2}_R$ at the same time.
+Let $0 < \eta < \min\left( \abs{x_{(t)} - x_{(t-1)}}, \abs{x_{(t+1)} - x_{(t)}} \right)$.
+We find:
+\begin{eqnarray}
+  \ipd{z} \cX_{(s)}( x_t + e^{2 \pi i}( \eta + i\, 0^+) )
+  & = &
+  \cL_{(t,\, t+1)} \ipd{z}\,
+  \cX_{(s)}( x_t + \eta + i\, 0^+ )\,
+  \cR_{(t,\, t+1)}^{\dagger},
+  \label{eq:top_spinor_monodromy}
+  \\
+  \ipd{z} \cX_{(s)}( x_t + e^{2 \pi i}( \eta - i\, 0^+) )
+  & = &
+  \widetilde{\cL}_{(t,\, t+1)}\,
+  \ipd{z} \cX_{(s)}( x_t + \eta - i\, 0^+ )\,
+  \widetilde{\cR}_{(t,\, t+1)}^{\dagger},
+  \label{eq:bottom_spinor_monodromy}
+\end{eqnarray}
+  where:
+\begin{eqnarray}
+  \cL_{(t,\, t+1)}
+  & = &
+  U_{L}(\vb{n}_{(t+1)})\,
+  U_{L}^{\dagger}(\vb{n}_{(t)}),
+  \\
+  \widetilde{\cL}_{(t,\, t+1)}
+  & = &
+  U_{L}(\vb{n}_{(\bt)})\,
+  U_{L}^{\dagger}(\vb{n}_{(t)})\,
+  U_{L}(\vb{n}_{(t+1)})\,
+  U_{L}^{\dagger}(\vb{n}_{(\bt)}),
+  \\
+  \cR_{(t,\, t+1)}
+  & = &
+  U_{R}(\vb{m}_{(t+1)})\,
+  U_{R}^{\dagger}(\vb{m}_{(t)}),
+  \\
+  \widetilde{\cR}_{(t,\, t+1)}
+  & = &
+  U_{R}(\vb{m}_{(\bt)})\,
+  U_{R}^{\dagger}(\vb{m}_{(t)})\,
+  U_{R}(\vb{m}_{(t+1)})\,
+  U_{R}^{\dagger}(\vb{m}_{(\bt)}).
+\end{eqnarray}
+
+In spinor representation the action~\eqref{eq:string_action} becomes
+\begin{equation}
+  \begin{split}
+    S_{\R^4}
+    & =
+    \frac{1}{4 \pi \ap}
+    \iint\limits_{\ccH}
+    \dd{u} \dd{\bu}\,
+    \tr(\ipd{u} X_{(s)}(u, \bu) \cdot \ipd{\bu} X^{\dagger}_{(s)}(u, \bu))
+    \\
+    & =
+    \frac{1}{8 \pi \ap}
+    \iint\limits_{\C}
+    \dd{z} \dd{\bz}\,
+    \tr(
+      U_{L}(\vb{n}_{(\bt)})\,
+      \ipd{z} \cX_{(s)}(z, \bz)\,
+      U_{R}^{\dagger}(\vb{m}_{(\bt)})\,
+      \ipd{\bz} \cX_{(s)}^{\dagger}(z, \bz)
+    ).
+  \end{split}
+  \label{eq:action_doubling_fields_spinor_representation}
+\end{equation}
+It is possible to show that the closed loop $x_t + \eta \pm i\, 0^+ \mapsto x_t + e^{2 \pi i}( \eta \pm i\, 0^+ )$ does not generate additional contributions in the action.
+
+
+\subsubsection{Special Form of Matrices for D-Branes at Angles} 
+\label{sect:special_SO4}
+
+The $\SU{2}$ matrices involved in this scenario with D-branes intersecting at angles have a particular form.
+In the left sector (i.e.\ $\SU{2}_L$ matrices) we have:
+\begin{equation}
+  \cL_{(t,\, t+1)}
+  =
+  U_{L}(\vb{n}_{(t+1)})\,
+  U_{L}^{\dagger}(\vb{n}_{(t)})\,
+  =
+  -\vb{n}_{(t+1)} \cdot \vb{n}_{(t)}
+  +
+  i\, (\vb{n}_{(t+1)} \times \vb{n}_{(t)}) \cdot \vb{\sigma} ,
+\end{equation}
+with $\vb{n}_{(t)}^2 = 1$.
+This is a consequence of the peculiar properties of the \SO{4} matrices $U_{(t)}$ defined in \eqref{eq:Umatrices}.
+Hence the corresponding $\SU{2}_L \times \SU{2}_R$ element $(U_{L}(\vb{n}_{(t)}),\, U_{R}(\vb{m}_{(t)}))$ reflects such characteristics.
+In particular for the left part we have
+\begin{equation}
+  U_{L}(\vb{n}_{(t)})
+  =
+  i\, \vb{n}_{(t)} \cdot \vb{\sigma},
+  \qquad
+  \vb{n}_{(t)}^2 = 1,
+  \label{eq:special_UL_brane_t}
+\end{equation}
+since $U_{(t)}^2 = \1_4$ implies that $U_{L}^2 = \pm \1_2$.
+The right sector clearly follows the same discussion.
+
+In fact \cS in~\eqref{eq:reflection_S} can be represented as $U_{L} = U_{R} = i\, \sigma_1$.
+Then any matrix $U_{L}(\vb{n}_{(t)})$ is of the form $U_{L}(\vb{n}_{(t)}) = i\, U(\vb{r}_{(t)}) \cdot \sigma_1 \cdot U^\dagger(\vb{r}_{(t)})$, for some $\vb{r}_{(t)}$ as follows from~\eqref{eq:Umatrices}.
+Such matrix has vanishing trace and squares to $-\1_2$ hence the term  proportional to two-dimensional unit matrix in the expression of the generic $\mathrm{SU}(2)$ element given in \Cref{sec:isomorphism} vanishes.
+As a consequence $n_{(t)} = \frac{1}{4}$ such that \eqref{eq:special_UL_brane_t} follows.
+
 % vim ft=tex
