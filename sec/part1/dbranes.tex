@@ -23,23 +23,23 @@ We focus on the relative rotations which characterise each D-brane in $\R^4$ wit
 In total generality, they are non commuting \SO{4} matrices.
 
 In this paper we study the classical solution of the bosonic string which dominates the behaviour of the correlator of twist fields.
-Using the path integral approach we can in fact separate the classical contribution from the quantum fluctuations and write the correlators of $N_B$ twist fields $\sigma_{M_{(t)}}( x_{(t)} )$ as:\footnotemark{}
+Using the path integral approach we can in fact separate the classical contribution from the quantum fluctuations and write the correlators of $N_B$ twist fields $\sigma_{\rM_{(t)}}( x_{(t)} )$ as:\footnotemark{}
 \footnotetext{%
   Ultimately $N_B = 3$ in our case.
 }
 \begin{equation}
   \left\langle
     \finiteprod{t}{1}{N_B}
-    \sigma_{M_{(t)}}(x_{(t)})
+    \sigma_{\rM_{(t)}}(x_{(t)})
   \right\rangle
   =
   \cN
   \left(
-    \left\lbrace x_{(t)},\, M_{(t)} \right\rbrace_{1 \le t \le N_B}
+    \left\lbrace x_{(t)},\, \rM_{(t)} \right\rbrace_{1 \le t \le N_B}
   \right)\,
-  e^{-S_E\left( \left\lbrace x_{(t)}, M_{(t)} \right\rbrace_{1 \le t \le N_B} \right)},
+  e^{-S_E\left( \left\lbrace x_{(t)}, \rM_{(t)} \right\rbrace_{1 \le t \le N_B} \right)},
 \end{equation}
-where $M_{(t)}$ (for $1 \le t \le N_B$) are the monodromies induced by the twist fields, $N_B$ is the number of D-branes and $x_{(t)}$ are the intersection points on the worldsheet.
+where $\rM_{(t)}$ (for $1 \le t \le N_B$) are the monodromies induced by the twist fields, $N_B$ is the number of D-branes and $x_{(t)}$ are the intersection points on the worldsheet.
 Even though quantum corrections are crucial to the complete determination of the normalisation of the correlator, the classical contribution of the Euclidean action represents the leading term of the Yukawa couplings.
 We focus on its contribution to better address the differences from the usual factorised case and generalise the results to non Abelian rotations of the D-branes.
 We do not consider the quantum corrections as they cannot be computed with the actual techniques.
@@ -115,7 +115,7 @@ The well adapted reference coordinates system is connected to the global $\R^{4}
 \end{equation}
 where $R_{(t)}$ represents the rotation of the D-brane $D_{(t)}$ and $g_{(t)} \in \R^4$ its translation with respect to the origin of the global set of coordinates (see \Cref{fig:branes_at_angles} for a two-dimensional example).
 
-While we could naively consider $R_{(t)} \in \mathrm{SO}(4)$, rotating separately the subset of coordinates parallel and orthogonal to the D-brane does not affect the embedding.
+While we could naively consider $R_{(t)} \in \SO{4}$, rotating separately the subset of coordinates parallel and orthogonal to the D-brane does not affect the embedding.
 In fact it just amounts to a trivial redefinition of the initial well adapted coordinates.
 The rotation $R_{(t)}$ is actually defined in the Grassmannian:
 \begin{equation}
@@ -380,6 +380,7 @@ As a consequence of the geometry of the rotations of the D-branes, a path on the
   \widetilde{\cU}_{(\bt + t, \bt + 1 + t)}
   =
   \1_4.
+  \label{eq:homotopy_rep}
 \end{equation}
 The complex plane has therefore branch cuts running between the D-branes at finite as shown in \Cref{fig:finite_cuts}.
 We thus translated the rotations of the D-branes encoded in the matrices $R_{(t)}$ in terms of $\cU_{(t,\, t+1)}$ and $\widetilde{\cU}_{(t,\, t+1)}$ which are matrix representations of the homotopy group of the complex plane with the described branch cut structure.
@@ -443,7 +444,7 @@ In what follows we use the isomorphism
 \end{equation}
 to map the problem of finding a $4$-dimensional real solution to the \eom to a quest for a $2 \times 2$ complex matrix.
 Such matrix is a linear superposition of tensor products of vectors in the fundamental representation of two different \SU{2} groups.
-These vectors are solutions to second order differential equations with three Fuchsian points, that is the hypergeometric equation.
+These vectors are solutions to second order differential equations with three Fuchsian points, possibly the hypergeometric equation.
 The task is then to find the parameters of the hypergeometric functions producing the spinor representation of the monodromies in~\eqref{eq:top_monodromy} and \eqref{eq:bottom_monodromy}.
 
 
@@ -544,9 +545,9 @@ It is possible to show that the closed loop $x_t + \eta \pm i\, 0^+ \mapsto x_t 
 
 
 \subsubsection{Special Form of Matrices for D-Branes at Angles} 
-\label{sect:special_SO4}
+\label{sec:special_SO4}
 
-The $\SU{2}$ matrices involved in this scenario with D-branes intersecting at angles have a particular form.
+The \SU{2} matrices involved in this scenario with D-branes intersecting at angles have a particular form.
 In the left sector (i.e.\ $\SU{2}_L$ matrices) we have:
 \begin{equation}
   \cL_{(t,\, t+1)}
@@ -575,7 +576,428 @@ The right sector clearly follows the same discussion.
 
 In fact \cS in~\eqref{eq:reflection_S} can be represented as $U_{L} = U_{R} = i\, \sigma_1$.
 Then any matrix $U_{L}(\vb{n}_{(t)})$ is of the form $U_{L}(\vb{n}_{(t)}) = i\, U(\vb{r}_{(t)}) \cdot \sigma_1 \cdot U^\dagger(\vb{r}_{(t)})$, for some $\vb{r}_{(t)}$ as follows from~\eqref{eq:Umatrices}.
-Such matrix has vanishing trace and squares to $-\1_2$ hence the term  proportional to two-dimensional unit matrix in the expression of the generic $\mathrm{SU}(2)$ element given in \Cref{sec:isomorphism} vanishes.
-As a consequence $n_{(t)} = \frac{1}{4}$ such that \eqref{eq:special_UL_brane_t} follows.
+Such matrix has vanishing trace and squares to $-\1_2$ hence the term  proportional to two-dimensional unit matrix in the expression of the generic \SU{2} element given in \Cref{sec:isomorphism} vanishes.
+As a consequence $n_{(t)} = \frac{1}{4}$ such that~\eqref{eq:special_UL_brane_t} follows.
 
-% vim ft=tex
+
+\subsection{The Classical Solution}
+
+In the previous sections we defined the principal tools to study the non Abelian embedding of the D-branes.
+In what follows we start the investigation of the relation between the hypergeometric solutions and the monodromies due to the geometry of the D-branes.
+
+
+\subsubsection{The Choice of Hypergeometric Functions}
+
+We build the spinorial representation with \SU{2} matrices and solutions of Fuchsian equations with $N_B$ regular singular points.
+We are specifically interested in a solution with $N_B = 3$.
+We fix the usual \SL{2}{\R} invariance by mapping the three intersection points $x_{(\bt-1)}$, $x_{(\bt+1)}$ and $x_{(\bt)}$ to $\omega_{\bt-1} = \omega_{x_{(\bt-1)}} = 0$, $\omega_{\bt+1} = \omega_{x_{(\bt+1)}} = 1$ and $\omega_{\bt} = \omega_{x_{(\bt)}} = \infty$ respectively through:
+\begin{equation}
+  \omega_{u}
+  =
+  \frac{u - x_{(\bt-1)}}{u - x_{(\bt)}}
+  \cdot
+  \frac{x_{(\bt+1)} - x_{(\bt-1)}}{x_{(\bt+1)} - x_{(\bt)}}
+  \label{eq:def_omega}
+\end{equation}
+The cut structure for this choice is presented in~\Cref{fig:hypergeometric_cuts}.
+The map also defines $\arg(\omega_t - \omega_z) \in \left[ 0,\, 2\pi \right)$ for $t = \bt-1,\, \bt+1$.
+We choose $\bt = 1$ in what follows.
+
+\begin{figure}[tbp]
+  \centering
+  \def\svgwidth{0.35\linewidth}
+  \import{img/}{threebranes_plane.pdf_tex}
+  \caption{%
+    Fixing the \SL{2}{\R} invariance for $N_B = 3$ and $\bt = 1$ leads to a cut structure with all the cuts defined on the real axis towards $\omega_{\bt} = \infty$.}
+  \label{fig:hypergeometric_cuts}
+\end{figure}
+
+The map~\eqref{eq:def_omega} moves the generic Fuchsian singularities to known points on the complex plane.
+The functions reproducing the necessary monodromies are basis of hypergeometric functions.
+We define:
+\begin{equation}
+  \hyp{a}{b}{c}{z}
+  =
+  \zeroinfsum{k}\,
+  \frac{\poch{a}{k}\poch{b}{k}}{\gfun{c+k}}~
+  \frac{z^k}{k!}
+  =
+  \frac{1}{\gfun{c}}~
+  \tensor[_2]{F}{_1}(a,\, b;\, c;\, z),
+\end{equation}
+where $\tensor[_2]{F}{_1}(a,\, b;\, c;\, z)$ is the Gauss hypergeometric function and $\gfun{s}$ is the Euler Gamma function.
+The function \hyp{a}{b}{c}{z} is well defined for any value of its parameters.\footnotemark{}
+\footnotetext{%
+  It is not necessary to require $c \in \Z_+$ as in the definition of the Gauss hypergeometric function.
+}
+We define a vector of independent hypergeometric functions:
+\begin{equation}
+  B_{\vb{0}}(z)
+  =
+  \mqty(
+    \hyp{a}{b}{c}{z}
+    \\
+    (-z)^{1-c}~\hyp{a+1-c}{b+1-c}{2-c}{z}
+  )
+  \label{eq:basis_0}
+\end{equation}
+as basis of functions around $z = 0$ with a branch cut on the interval $\left[ 0, +\infty \right)$.
+The choice of the branch cuts follows from the cut on $\left[ 1, +\infty \right)$ coming from $\hyp{a}{b}{c}{z}$ which has a singularity at $z = 1$ and the cut on $\left[ 0, +\infty \right)$ from $(-z)^{1-c}$.
+
+As argued in~\eqref{eq:homotopy_rep}, the homotopy group of the complex plane with the branch cut structure of~\Cref{fig:hypergeometric_cuts} is such that a closed loop around all the singularities is homotopically trivial.
+The corresponding product of the monodromy matrices~\eqref{eq:homotopy_rep} is the unit matrix.
+Let for instance $\cM_{\omega_z}^{\pm}$ be the monodromy matrix which represents a closed loop around $\omega_z$ (the $+$ sign represents a path starting in $\ccH$, while $-$ is a path with base point in $\overline{\ccH}$).
+The triviality property is realised through:
+\begin{equation}
+  \cM_{\vb{0}}^+\,
+  \cM_{\vb{1}}^+\,
+  \cM_{\vb{\infty}}^+
+  =
+  \cM_{\vb{\infty}}^-\,
+  \cM_{\vb{1}}^-\,
+  \cM_{\vb{0}}^-
+  =
+  \1_2
+  \label{eq:monodromy_relations}
+\end{equation}
+The monodromy matrix $\omega_{\bt+1} = 1$ can thus be recovered as a product of monodromies around $0$ and $\infty$ given the properties
+\begin{equation}
+  \begin{split}
+    \cM_{\vb{0}}^+
+    & =
+    \cM_{\vb{0}}^-
+    =
+    \cM_{\vb{0}},
+    \\
+    \cM_{\vb{\infty}}^+
+    & =
+    \cM_{\vb{\infty}}^-
+    =
+    \cM_{\vb{\infty}},
+  \end{split}
+\end{equation}
+which encode the peculiar branch cut structure due to the doubling trick gluing the intervals on one arbitrary D-brane.
+These matrices are an abstract representation of the monodromy group since they are in an arbitrary basis.
+
+Using the basis in $z = 0$~\eqref{eq:basis_0} it is straightforward to find the explicit representation $\rM_{\vb{0}}$ of the abstract monodromy $\cM_{\vb{0}}$:
+\begin{equation}
+  \rM_{\vb{0}}( c ) = \mqty( \dmat{1, e^{-2\pi i c}} ).
+  \label{eq:monodromy_zero}
+\end{equation}
+The computation of the monodromy matrix $\rM_{\vb{\infty}}$ representing the monodromy in $\omega_z  =\infty$ in the basis \eqref{eq:basis_0} requires to first compute the monodromy representation $\widetilde{\rM}_{\vb{\infty}}$ of the abstract monodromy $\cM_{\vb{\infty}}$ in the basis of hypergeometric functions around $z = \infty$:
+\begin{equation}
+  B_{\vb{\infty}}(z)
+  =
+  \mqty(
+    (-z)^{-a}~\hyp{a}{a+1-c}{a+1-b}{z^{-1}}
+    \\
+    (-z)^{-b}~\hyp{b}{b+1-c}{b+1-a}{z^{-1}}
+  ).
+\end{equation}
+This basis is connected to~\eqref{eq:basis_0} through the transition matrix
+\begin{equation}
+  \cC( a,\, b,\, c )
+  =
+  \frac{\pi}{\sin(\pi(a-b))}
+  \mqty(
+    \frac{1}{\gfun{b}\gfun{c-a}}
+    &
+    -\frac{1}{\gfun{a} \gfun{c-b}}
+    \\
+    \frac{1}{\gfun{1-a}\gfun{b+1-c}}
+    &
+    -\frac{1}{\gfun{1-b}\gfun{a+1-c}}
+  ),
+  \label{eq:transition_matrix}
+\end{equation}
+as $B_{\vb{0}}(z) = \cC(a,\, b,\, c)~B_{\vb{\infty}}(z)$.
+Through the loop $z \mapsto z e^{-2\pi i}$ we find:
+\begin{equation}
+  \widetilde{\rM}_{\vb{\infty}}( a,\, b )
+  =
+  \mqty( \dmat{e^{2\pi i a}, e^{2\pi i b}} ).
+\end{equation}
+Finally we can build the desired monodromy:
+\begin{equation}
+  \rM_{\vb{\infty}}
+  =
+  \cC(a,\, b,\, c)\,
+  \widetilde{\rM}_{\vb{\infty}}(a,\, b)\,
+  \cC^{-1}(a,\, b,\, c).
+  \label{eq:monodromy_infty}
+\end{equation}
+
+
+\subsubsection{The Monodromy Factors}
+
+With the previous definitions we reproduce the monodromies of the doubling field in its spinor representation~\eqref{eq:top_spinor_monodromy}.\footnotemark{}
+\footnotetext{%
+  In general we do not need to consider~\eqref{eq:bottom_spinor_monodromy} since they are the same monodromies.
+}
+These monodromies are tensor products of two basis of hypergeometric functions: the first basis reproduces the monodromies defined as $\cL$ and the second one those defined as $\cR$ in~\eqref{eq:top_spinor_monodromy}.
+Since in principle there can be several combinations of parameters of the hypergeometric function yielding the same monodromy, we consider the full solution to be a linear superposition of all possible contributions:
+\begin{equation}
+  \ipd{z} \cX(z)
+  =
+  \pdv{\omega_z}{z}\,
+  \sum\limits_{l,\, r}
+  c_{lr}\,
+  \ipd{z} \cX_{l,r}(\omega_z),
+  \label{eq:formal_solution}
+\end{equation}
+where we drop the index representing the spinorial representation to lighten the notation.
+We write any possible solution in a factorised form as
+\begin{equation}
+  \ipd{z} \cX_{l,\,r}(\omega_z)
+  =
+  (-\omega_z)^{A_{lr}}\,
+  (1-\omega_z)^{B_{lr}}\,
+  \cB_{\vb{0},\, l}^{(L)}(\omega_z)
+  \left( \cB_{\vb{0},\, r}^{(R)}(\omega_z) \right)^T,
+  \label{eq:formal_solution_lr}
+\end{equation}
+where  $l$ and $r$ label the parameters associates with the left and right sectors of the hypergeometric function.
+We introduce the left basis element
+\begin{equation}
+  \begin{split}
+    \cB_{\vb{0},\, l}^{(L)}(\omega_z)
+    & =
+    D^{(L)}_l~
+    B_{\vb{0},\,l}^{(L)}(\omega_z)
+    \\
+    & =
+    \mqty( 1 & 0 \\ 0 & K_l^{(L)} )\,
+    \mqty(
+      \hyp{a_l}{b_l}{c_l}{\omega_z}
+      \\
+      (-z)^{(1-c_l)}\,
+      \hyp{a_l+1-c_l}{b_l+1-c_l}{2-c_l}{\omega_z}
+    )
+  \end{split}
+\end{equation}
+where $D_l^{(L)} \in \GL{2}{\C}$ is a relative normalisation matrix weighting differently the components of the basis.\footnotemark{}
+\footnotetext{%
+  In general they can be different for each solution.
+}
+The right sector follows in a similar way.
+Notice that the matrices $D^{(L)}_l$ do not fix the absolute normalisation contained in $c_{lr}$.
+
+
+\subsubsection{Parameters of the Trivial Monodromy}
+
+Using the previous relations we can determine the possible $\ipd{z} \cX_{l,r}(\omega_z)$ with the desired monodromies.
+In this section we study the case of the most general \SU{2} matrices despite the fact that in~\Cref{sec:special_SO4} we argued that they have a specific form.
+
+First of all consider the matrices in \eqref{eq:monodromy_zero} and \eqref{eq:monodromy_infty}.
+We impose:
+\begin{eqnarray}
+  &&\begin{cases}
+    D^{(L)}\,
+    \rM_{\vb{0}}^{(L)}\,
+    \left( D^{(L)} \right)^{-1}
+    =
+    e^{-2\pi i \delta_{\vb{0}}^{(L)}}\,
+    \cL(\vb{n}_{\vb{0}})
+    \\
+    D^{(R)}\,
+    \rM_{\vb{0}}^{(R)}\,
+    \left( D^{(R)} \right)^{-1}
+    =
+    e^{-2\pi i \delta_{\vb{0}}^{(R)}}\,
+    \cR^*(\vb{m}_{\vb{0}})
+    =
+    e^{-2\pi i \delta_{\vb{0}}^{(R)}}\,
+    \cR(\widetilde{\vb{m}}_{\vb{0}})
+    \\
+    e^{2\pi i ( A_{lr} - \delta_{\vb{0}}^{(L)} -
+    \delta_{\vb{0}}^{(R)} )}
+    =
+    1
+    \end{cases},
+  \label{eq:parameters_equality_zero}
+  \\
+  &&\begin{cases}
+    D^{(L)},
+    \rM_{\vb{\infty}}^{(L)}\,
+    \left( D^{(L)} \right)^{-1}
+    =
+    e^{-2\pi i \delta_{\vb{\infty}}^{(L)}}\,
+    \cL(\vb{n}_{\vb{\infty}})
+    \\
+    D^{(R)}\,
+    \rM_{\vb{\infty}}^{(R)}\,
+    \left( D^{(R)} \right)^{-1}
+    =
+    e^{-2\pi i \delta_{\vb{\infty}}^{(R)}}\,
+    \cR^*(\vb{m}_{\vb{\infty}})
+    =
+    e^{-2\pi i \delta_{\vb{\infty}}^{(R)}}\,
+    \cR(\widetilde{\vb{m}}_{\vb{\infty}})
+    \\
+    e^{2\pi i ( A_{lr} + B_{lr} - \delta_{\vb{\infty}}^{(L)} -
+    \delta_{\vb{\infty}}^{(R)} )}
+    =
+    1
+  \end{cases},
+  \label{eq:parameters_equality_infty}
+\end{eqnarray}
+where we defined
+\begin{eqnarray}
+  \cL(\vb{n}_{\vb{0}})
+  & = &
+  \cL_{(\bt-1,\,\bt)}
+  =
+  U_L(\vb{n}_{(\bt)})\,
+  U_L^{\dagger}(\vb{n}_{(\bt-1)}),
+  \\
+  \cL(\vb{n}_{\vb{\infty}})
+  & = &
+  \cL_{(\bt,\, \bt+1)}
+  =
+  U_L(\vb{n}_{(\bt+1)})
+  U_L^{\dagger}(\vb{n}_{(\bt)}),
+  \\
+  \cR(\vb{m}_{\vb{0}})
+  & = &
+  \cR_{(\bt-1,\, \bt)}
+  =
+  U_R(\vb{n}_{(\bt)})
+  U_R^{\dagger}(\vb{n}_{(\bt-1)}),
+  \\
+  \cR(\vb{m}_{\vb{\infty}})
+  & = &
+  \cR_{(\bt,\, \bt+1)}
+  =
+  U_R(\vb{n}_{(\bt+1)})
+  U_R^{\dagger}(\vb{n}_{(\bt)}).
+\end{eqnarray}
+The range of $\delta_{\vb{0}}^{(L)}$ is
+\begin{equation}
+  \alpha \le \delta_{\vb{0}}^{(L)} \le  \alpha + \frac{1}{2},
+\end{equation}
+that is the width of the range is only $\frac{1}{2}$ and not $1$ as one would naively expect.
+This is a consequence of the fact that $e^{- 4 \pi i \delta_{\vb{0}}^{(L)}}$ is the determinant of the right hand side of the first equation in \eqref{eq:parameters_equality_zero}.
+We then choose $\alpha = 0$ for simplicity.
+The same considerations hold true for all the other additional parameters $\delta_{\vb{0}}^{(R)}$ and $\delta_{\vb{\infty}}^{(L,\,R)}$.
+
+Since we are interested in relative rotations of the D-branes, we choose the
+rotation in $\omega_{\bt-1} = 0$ in the maximal torus of $\SU{2}_L \times \SU{2}_R$ without loss of generality: as we have two independent groups, we can in fact fix the orientation of both vectors $\vb{n}_{\vb{0}}$ and $\vb{m}_{\vb{0}}$.
+In particular we set:
+\begin{eqnarray}
+  \vb{n}_{\vb{0}}
+  =
+  ( 0,\, 0,\, n_{\vb{0}}^3 ) \in \R^3,
+  & \qquad &
+  0 < n_{\vb{0}}^3 < \frac{1}{2},
+  \label{eq:maximal_torus_left}
+  \\
+  \widetilde{\vb{m}}_{\vb{0}}
+  =
+  ( 0,\, 0,\, -m_{\vb{0}}^3 ) \in \R^3,
+  & \qquad &
+  0 < m_{\vb{0}}^3 < \frac{1}{2},
+  \label{eq:maximal_torus_right}
+\end{eqnarray}
+where $n_{\vb{0}}^3 = 0$ is excluded to avoid considering a trivial rotation.
+We then define the parameters of the rotation in $\omega_{\bt} = \infty$ to be the most general
+\begin{equation}
+  \begin{split}
+    \vb{n}_{\vb{\infty}}
+    & =
+    ( n_{\vb{\infty}}^1,\, n_{\vb{\infty}}^2,\, n_{\vb{\infty}}^3 ),
+    \\
+    \widetilde{\vb{m}}_{\vb{\infty}}
+    & =
+    ( -m_{\vb{\infty}}^1,\, m_{\vb{\infty}}^2,\, -m_{\vb{\infty}}^3 ),
+\end{split}
+\end{equation}
+We could actually set $n_{\vb{\infty}}^2 = m_{\vb{\infty}}^2 = 0$ since the choice of the ``gauge''~\eqref{eq:maximal_torus_left} and~\eqref{eq:maximal_torus_right} is preserved by \U{1} rotations mixing $n_{\vb{\infty}}^1$ and $n_{\vb{\infty}}^2$.
+We nevertheless keep the general expression in order to check the computations.
+
+Solving~\eqref{eq:parameters_equality_zero} and~\eqref{eq:parameters_equality_infty} connects the parameters of the hypergeometric function to the parameter of the rotations (see \Cref{sec:parameters}) thus reproducing the boundary conditions of the intersecting D-branes through the non trivial monodromies of the basis of hypergeometric functions.
+We find:
+\begin{eqnarray}
+  a_l^{(L)}
+  =
+  n_{\vb{0}}
+  +
+  (-1)^{f^{(L)}}\, n_{\vb{1}}
+  +
+  n_{\vb{\infty}}
+  +
+  \ffa^{(L)}_l,
+  & \qquad &
+  \ffa^{(L)}_l \in \Z,
+  \\
+  b_l^{(L)}
+  =
+  n_{\vb{0}}
+  +
+  (-1)^{f^{(L)}}\, n_{\vb{1}}
+  -
+  n_{\vb{\infty}}
+  +
+  \ffb^{(L)}_l,
+  & \qquad &
+  \ffb^{(L)}_l \in \Z,
+  \\
+  c_l^{(L)}
+  =
+  2\, n_{\vb{0}}
+  +
+  \ffc^{(L)}_l,
+  & \qquad &
+  \ffc^{(L)}_l \in \Z,
+  \\
+  \delta_{\vb{0}}^{(L)}
+  =
+  n_{\vb{0}},
+  \\
+  \delta_{\vb{\infty}}^{(L)}
+  =
+  -
+  n_{\vb{0}}
+  -
+  (-1)^{f^{(L)}}\, n_{\vb{1}},
+  \\
+  K^{(L)}_l
+  =
+  -\frac{1}{2 \pi^2}\,
+  \cG(a_l^{(L)},\, b_l^{(L)},\, c_l^{(L)})\,
+  \cF(a_l^{(L)},\, b_l^{(L)},\, c_l^{(L)})\,
+  \frac{n^1_{\vb{\infty}}+ i\, n^2_{\vb{\infty}}}{n_{\vb{\infty}}},
+\label{eq:K_factor_value}
+\end{eqnarray}
+where $f^{(L)} \in \left\lbrace 0,\, 1 \right\rbrace$.
+For the sake of brevity we defined two auxiliary functions, namely $\cG(a,\, b,\, c) = \gfun{1-a}\, \gfun{1-b}\, \gfun{a+1-c}\, \gfun{b+1-c}$ and $\cF(a,\, b,\, c) = \sin(\pi c)\, \sin(\pi(a-b))$.
+We also introduced the norm $n_{\vb{1}} = \norm{\vb{n}_{\vb{1}}}$ of the rotation vector around $\omega_{\bt+1} = 1$.
+Its dependence on the other parameters is encoded in~\eqref{eq:monodromy_relations}, where $\rM^+_{\vb{1}} = \rM^{-1}_{\vb{0}}\, \rM^{-1}_{\vb{\infty}}$, and the composition rule~\eqref{eq:product_in_SU2}:
+\begin{equation}
+  \cos(2\pi n_{\vb{1}})
+  =
+  \cos(2\pi n_{\vb{0}})\,
+  \cos(2\pi n_{\vb{\infty}})
+  -
+  \sin(2\pi n_{\vb{0}})\,
+  \sin(2\pi n_{\vb{\infty}})\,
+  \frac{n_{\vb{\infty}}^3}{n_{\vb{\infty}}}.
+  \label{eq:dependent_monodromy_main_text}
+\end{equation}
+Relations for the right sector follow under the interchange of $(L)$ with $(R)$ and $\vb{n} \leftrightarrow \vb{m}$.
+
+Parameters $A_{lr}$ and $B_{lr}$ follow the previous results and equations~\eqref{eq:parameters_equality_zero} and \eqref{eq:parameters_equality_infty}:
+\begin{eqnarray}
+  A_{lr}
+  =
+  n_{\vb{0}} + m_{\vb{0}} + \ffA_{lr},
+  & \qquad &
+  \ffA_{lr} \in \Z,
+  \\
+  B_{lr}
+  (-1)^{f^{(L)}}\, n_{\vb{1}} + (-1)^{f^{(R)}}\, m_{\vb{1}} + \ffB_{lr},
+  & \qquad &
+  \ffB_{lr} \in \Z.
+\end{eqnarray}
+
+
+% vim: ft=tex

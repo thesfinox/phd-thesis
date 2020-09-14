@@ -1,0 +1,351 @@
+In this appendix we show the computation of the parameters of the hypergeometric functions and their relation with the rotation parameters.
+
+
+\subsection{Consistency Conditions of the Monodromy Matrices}
+
+In the main text we set
+\begin{equation}
+  D~
+  \rM_{\vb{\infty}}~
+  D^{-1}
+  =
+  e^{-2\pi i \delta_{\vb{\infty}}}\,
+  \cL(\vb{n}_{\vb{\infty}}),
+\end{equation}
+where $\cL(\vb{n}_{\vb{\infty}}) \in \SU{2}$.
+The previous equation implies
+\begin{equation}
+  \left( D\, \rM_{\vb{\infty}}\, D^{-1} \right)^\dagger
+  =
+  \left( D\, \rM_{\vb{\infty}}\, D^{-1} \right)^{-1},
+\end{equation}
+which can be rewritten as
+\begin{equation}
+  \widetilde{\rM}_{\vb{\infty}}^{-1}~
+  \cC^{\dagger}\, D^{\dagger}\, D\, \cC
+  =
+  \cC^{\dagger}\, D^{\dagger}\, D\, \cC~
+  \widetilde{\rM}_{\vb{\infty}}^{-1}.
+\end{equation}
+As $\widetilde{\rM}_{\vb{\infty}}$ is a generic diagonal matrix, the previous equation implies that the off-diagonal elements of $\cC^{\dagger}\, D^{\dagger}\, D\, \cC$ must vanish.
+We therefore have
+\begin{equation}
+  \begin{split}
+    \abs{K}^{-2}
+    & =
+    -\frac{\cC_{21}\, \cC^*_{22}}{\cC_{11}\, \cC^*_{12}}
+    \\
+    & =
+    -\frac{1}{\pi^4}\,
+    \abs{\gfun{a} \gfun{b} \gfun{c-a} \gfun{c-b}}^2 \times
+    \\
+    & \times
+    \sin(\pi a)\, \sin^*(\pi (c-a))\, (\sin(\pi b)\, \sin^*(\pi (c-b)))^*.
+  \end{split}
+\end{equation}
+When $a,\, b,\, c \in \R$ this ultimately means that
+\begin{equation}
+  \sin(\pi a)\, \sin(\pi (c-a))\, \sin(\pi b)\, \sin(\pi (c-b)) < 0.
+  \label{eq:constraint_from_K^2}
+\end{equation}
+Since the previous equation is invariant under integer shift of any of its parameters, we can consider just the fractional parts $0 \le \{a\},\, \{b\},\, \{c\} < 1$.
+In order to have \U{2} monodromies finally requires
+\begin{equation}
+  0 \le \{b\} < \{c\} < \{a\} < 1
+  \qq{or}
+  0 \le \{a\} < \{c\} < \{b\} <1.
+  \label{eq:K_consistency_condition}
+\end{equation}
+
+Should we request \U{1,1} monodromies as in moving rotated branes then we get:
+\begin{equation}
+  \abs{K}^{-2}
+  =
+  \frac{\cC_{21}\, \cC^*_{22}}{\cC_{11}\, \cC^*_{12}}.
+\end{equation}
+This would then imply
+\begin{equation}
+  0 \le \{c\} < \{a\},\, \{b\} < 1
+  \qq{or}
+  0 \le \{a\},\, \{b\} < \{c\} < 1.
+\end{equation}
+
+
+\subsection{Fixing the Parameters}
+
+We can finally show in details the computation of the parameters of the basis of hypergeometric functions used in the main text.
+The relation between these and the \SU{2} matrices can be computed requiring that the monodromies induced by the choice of the parameters equal the monodromies produced by the rotations of the D-branes.
+
+The monodromy in $\omega_{\bt-1} = 0$ is simpler to compute given that we choose $\cL(\vb{n}_{\vb{0}})$ and $\cR(\widetilde{\vb{m}}_{\vb{0}})$ to be diagonal.
+We impose:
+\begin{eqnarray}
+  \mqty( \dmat{1, e^{-2\pi i c^{(L)}}} )
+  & = &
+  e^{-2\pi i \delta_{\vb{0}}^{(L)}}\,
+  \mqty( \dmat{e^{2\pi i n_{\vb{0}}}, e^{-2\pi i n_{\vb{0}}}} ),
+  \\
+  \mqty( \dmat{1, e^{-2\pi i c^{(R)}}} )
+  & = &
+  e^{-2\pi i \delta_{\vb{0}}^{(R)}}\,
+  \mqty( \dmat{e^{-2\pi i m_{\vb{0}}}, e^{2\pi i m_{\vb{0}}}} ),
+\end{eqnarray}
+where $n^3_{\vb{0}} = \norm{\vb{n}_{\vb{0}}} = n_{\vb{0}}$ and $m^3_{\vb{0}} = \norm{\vb{m}_{\vb{0}}} = m_{\vb{0}}$ with $0 \le  n_{\vb{0}},\, m_{\vb{0}} < 1$ due to the conventions \eqref{eq:maximal_torus_left} and \eqref{eq:maximal_torus_right}.
+We thus have:
+\begin{equation}
+  \begin{split}
+    \delta_{\vb{0}}^{(L)}
+    & =
+    n_{\vb{0}} + k_{\delta^{(L)}_{\vb{0}}},
+    \qquad
+    k_{\delta^{(L)}_{\vb{0}}} \in \Z,
+    \\
+    c^{(L)}
+    & =
+    2 n_{\vb{0}} + k_c,
+    \qquad
+    k_c \in \Z.
+  \end{split}
+  \label{eq:cL}
+\end{equation}
+Since the determinant of the right hand side is $e^{-4 \pi i \delta_{\vb{0}}^{(L)}}$, the range of definition of $\delta_{\vb{0}}^{(L)}$ is $\alpha \le \delta_{\vb{0}}^{(L)} \le  \alpha + \frac{1}{2}$.
+Given that $0 \le n_{\vb{0}} < \frac{1}{2}$ we simply take $\alpha = 0$ and set $\delta_{\vb{0}}^{(L)} = n_{\vb{0}}$.
+Analogous results hold in the right sector.
+Furthermore from the third equation in \eqref{eq:parameters_equality_zero} and from the first equation in \eqref{eq:cL} we can restrict:
+\begin{equation}
+  n_{\vb{0}} + m_{\vb{0}} - A \in \Z.
+\end{equation}
+
+We then need to find $3$ equations to determine $a^{(L)}$, $b^{(L)}$ and $\delta^{(L)}_{\vb{\infty}}$.
+After that we then fix the remaining factors in $B$ and $\abs{K^{(L)}}$.
+The equations follow from~\eqref{eq:parameters_equality_infty}.
+The first two equations for $a^{(L)}$, $b^{(L)}$ and $\delta^{(L)}_{\vb{\infty}}$ follow by considering the trace of~\eqref{eq:parameters_equality_infty}:
+\begin{equation}
+  e^{\pi i ( a^{(L)} + b^{(L)} )} \cos(\pi( a^{(L)} - b^{(L)} ) )
+  =
+  e^{-2\pi i \delta^{(L)}_{\infty}} \cos(2\pi n_{\vb{\infty}}),
+\end{equation}
+which is satisfied by:
+\begin{equation}
+  \begin{split}
+    \delta^{(L)}_{\vb{\infty}}
+    & =
+    -
+    \frac{1}{2}(a^{(L)} + b^{(L)})
+    +
+    \frac{1}{2} k_{\delta^{(L)}_{\vb{\infty}}},
+    \qquad
+    k_{\delta_{\vb{\infty}}} \in \Z,
+    \\
+    a^{(L)} - b^{(L)}
+    & =
+    2\, (-1)^{p^{(L)}}\, n_{\vb{\infty}}
+    +
+    (-1)^{q^{(L)}}\, k_{\delta^{(L)}_{\vb{\infty}}}
+    +
+    2\, k'_{a b},
+    \qquad
+    k'_{ab} \in \Z,
+  \end{split}
+\end{equation}
+where $p^{(L)},\, q^{(L)} \in \left\lbrace 0, 1 \right\rbrace$.
+Notice that changing the value of $p^{(L)}$ corresponds to swapping $a$ and $b$: since the hypergeometric function is symmetric in those parameters we can fix $p^{(L)}=0$.
+Redefining $k'$ we can always set $q^{(L)}=0$.
+We therefore have:
+\begin{equation}
+  a^{(L)} - b^{(L)}
+  =
+  2\, n_{\vb{\infty}}
+  +
+  k_{\delta^{(L)}_{\vb{\infty}}}
+  +
+  2 k_{ab},
+  \qquad
+  k_{a b}\in \Z.
+  \label{eq:aL-bL}
+\end{equation}
+The allowed values for $k_{\delta^{(L)}_{\vb{\infty}}}$ follow a construction similar to the monodromy around $\omega_{\bt-1} = 0$.
+The main difference is given by the fact that $\frac{1}{2}(a^{(L)} + b^{(L)})$  may a priori take values in an interval of width $1$.
+As in the previous case we have $\alpha \le \delta_{\vb{\infty}}^{(L)} \le \alpha + \frac{1}{2}$ with $\alpha$ technically arbitrary.
+We cannot thus choose a vanishing $k_{\delta^{(L)}_{\vb{\infty}}}$ but we have to consider $k_{\delta^{(L)}_{\infty}} = 0,\, 1$.
+
+We find a third relation by considering the entry
+\begin{equation}
+  \Im\left(
+    e^{+2\pi i \delta_{\vb{\infty}}^{(L)}}\,
+    D^{(L)}\,
+    \rM_{\vb{\infty}}^{(L)}\,
+    \left( D^{(L)} \right)^{-1}
+  \right)_{11}
+  =
+  \Im\left(
+    \cL(n_{\vb{\infty}})
+  \right)_{11}.
+\end{equation}
+Using
+\begin{equation}
+  \det \cC
+  =
+  \frac{\sin(\pi c^{(L)})}{\sin(\pi(a^{(L)}-b^{(L)}))},
+\end{equation}
+and the second equation in~\eqref{eq:cL} and~\eqref{eq:aL-bL} leads to:
+\begin{equation}
+  \cos(\pi( a^{(L)} + b^{(L)} - c^{(L)} ))
+  =
+  (-1)^{k_c+k_{\delta^{(L)}_{\vb{\infty}}} }\, \cos(2\pi \cA^{(L)}),
+\end{equation}
+where
+\begin{equation}
+  \cos(2\pi \cA^{(L)})
+  =
+  \cos(2\pi n_{\vb{0}})\,
+  \cos(2\pi n_{\vb{\infty}})
+  -
+  \sin(2\pi n_{\vb{0}})\,
+  \sin(2\pi n_{\vb{\infty}})\,
+  \frac{n_{\vb{\infty}}^3}{n_{\vb{\infty}}}.
+\label{eq:cos_n1}
+\end{equation}
+This expression is connected with rotation parameter in the third interaction point $\omega_{\bt+1} = 1$.
+In fact $\cos(2\pi \cA^{(L)}) = \cos(2\pi {n}_{\vb{1}})$.
+We then write
+\begin{equation}
+  a^{(L)} + b^{(L)} - c^{(L)}
+  =
+  2\, (-1)^{f^{(L)}}\, n_{\vb{1}}
+  +
+  k_c
+  +
+  k_{\delta^{(L)}_{\vb{\infty}}}
+  +
+  2\, k_{abc},
+  \qquad
+  k_{abc}\in \Z,
+\end{equation}
+with $f^{(L)} \in \left\lbrace 0, 1 \right\rbrace$.
+The request
+\begin{equation}
+  A
+  +
+  B
+  -
+  n_{\vb{0}}
+  -
+  m_{\vb{0}}
+  -
+  (-1)^{f^{(L)}}\, n_{\vb{1}}
+  -
+  (-1)^{f^{(R)}}\, m_{\vb{1}}
+  \in \Z
+\end{equation}
+finally fixes the $B$ parameter in the third equation of~\eqref{eq:parameters_equality_infty}.
+
+So far we can summarise the results in
+\begin{eqnarray}
+  a
+  =
+  n_{\vb{0}} + (-1)^{f^{(L)}} n_{\vb{1}} + n_{\vb{\infty}} + m_a,
+  & \qquad &
+  m_a \in \Z,
+  \\
+  b
+  =
+  n_{\vb{0}} + (-1)^{f^{(L)}} n_{\vb{1}} - n_{\vb{\infty}} + m_b,
+  & \qquad &
+  m_b \in \Z,
+  \\
+  c
+  =
+  2\, n_{\vb{0}} + m_c,
+  & \qquad &
+  m_c \in \Z,
+  \\
+  \delta_{\vb{0}}^{(L)}
+  =
+  n_{\vb{0}},
+  \\
+  \delta_{\vb{\infty}}^{(L)}
+  =
+  - n_{\vb{0}} - (-1)^{f^{(L)}} n_{\vb{1}} + m_c + 2\, m_\delta,
+  & \qquad &
+  m_{\delta} \in \Z,
+  \\
+  A
+  =
+  n_{\vb{0}} + m_{\vb{0}} + m_A,
+  & \qquad &
+  m_A \in \Z,
+  \\
+  B
+  =
+  (-1)^{f^{(L)}}\, n_{\vb{1}} + (-1)^{f^{(R)}}\, m_{\vb{1}} + m_B,
+  & \qquad &
+  m_B \in \Z.
+\end{eqnarray}
+
+$K^{(L)}$ is finally determined from
+\begin{equation}
+  \left( D^{(L)}\, \rM_{\vb{\infty}}\, \left( D^{(L)} \right)^{-1} \right)_{21}
+  =
+  e^{-2\pi i \delta_{\vb{\infty}}^{(L)}}\,
+  \left( \cL(n_{\vb{\infty}}) \right)_{21},
+  \label{eq:fixing_K_21}
+\end{equation}
+and get:
+\begin{equation}
+  K^{(L)}
+  =
+  -\frac{(-1)^{m_a + m_b + m_c}}{2 \pi^2}\,
+  \cG( a^{(L)},\, b^{(L)},\, c^{(L)} )\,
+  \sin(2 \pi n_{\vb{0}})
+  \sin(2 \pi n_{\vb{\infty}})
+  \frac{n^1_{\vb{\infty}} + i\, n^2_{\vb{\infty}}}{n_{\vb{\infty}}},
+  \label{eq:app_B_K21}
+\end{equation}
+where $\cG( a,\, b,\, c ) = \gfun{1-a}\, \gfun{1-b}\, \gfun{a+1-c}\, \gfun{b+1-c}$.
+
+
+\subsection{Checking the Consistency of the Solution}
+
+We check the consistency condition \eqref{eq:K_consistency_condition} using~\eqref{eq:product_in_SU2}.
+The result is
+\begin{equation}
+  \begin{split}
+    \left( K^{(L)} \right)^{-1}
+    & =
+    \frac{(-1)^{m_a + m_b + m_c}}{2 \pi^2}\,
+    \cG(1 - a^{(L)},\, 1 - b^{(L)},\, 2 - c^{(L)})\,
+    \\
+    & \times
+    \sin(2 \pi n_{\vb{0}})\,
+    \sin(2 \pi n_{\vb{\infty}})\,
+    \frac{n^1_{\vb{\infty}} -i n^2_{\vb{\infty}}}{n_{\vb{\infty}}},
+  \end{split}
+  \label{eq:app_B_K12}
+\end{equation}
+where the function $\cG( a,\, b,\, c )$ was defined at the end of the previous section.
+Compatibility with~\eqref{eq:app_B_K21} requires
+\begin{equation}
+  \frac{(n^1_{\vb{\infty}})^2 + (n^2_{\vb{\infty}})^2}{n^2_{\vb{\infty}}}
+  =
+  -4 \frac{\sin(\pi a) \sin(\pi(c-a))\sin(\pi b) \sin(\pi(c-b))}
+          {\sin^2(\pi c) \sin^2(\pi(a-b))}.
+  \label{eq:n12+n22}
+\end{equation}
+We can then rewrite~\eqref{eq:cos_n1} as
+\begin{equation}
+  \frac{(n^3_{\vb{\infty}})^2}{n^2_{\vb{\infty}}}
+  =
+  \frac{(\cos(\pi (a-b)) \cos(\pi c)- \cos(\pi(a+b-c)))^2}
+       {\sin^2(\pi c) \sin^2(\pi(a-b))}.
+\end{equation}
+It is then possible to verify that the sum of the left and right hand sides of~\eqref{eq:n12+n22} and the last equation are equal to $1$.
+The same consistency check can also be performed by computing $K^{(L)}$ from
+\begin{equation}
+  \left( D^{(L)}\, \rM_{\vb{\infty}}\, \left( D^{(L)} \right)^{-1} \right)_{12}
+  =
+  e^{-2\pi i \delta_{\vb{\infty}}^{(L)}}\,
+  \left( \cL(n_{\vb{\infty}}) \right)_{12},
+\end{equation}
+instead of \eqref{eq:fixing_K_21}.
+
+% vim: ft=tex

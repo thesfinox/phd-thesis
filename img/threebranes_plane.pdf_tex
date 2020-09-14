@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.0.1 (3bc2e813f5, 2020-09-07), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'branchcuts.pdf' (pdf, eps, ps)
+%% Accompanies image file 'threebranes_plane.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{238.15880585bp}%
+    \setlength{\unitlength}{219.23129104bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,16 +50,15 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.76153715)%
+  \begin{picture}(1,0.72827187)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{branchcuts.pdf}}%
-    \put(0.0016767,0.36606096){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D_{(1)}$\end{tabular}}}}%
-    \put(0.85635351,0.37478128){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D_{(1)}$\end{tabular}}}}%
-    \put(0.63438514,0.16935535){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D_{(2)}$\end{tabular}}}}%
-    \put(0.36608568,0.41016979){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D_{(3)}$\end{tabular}}}}%
-    \put(0.15254082,0.16219913){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D_{(4)}$\end{tabular}}}}%
-    \put(0.96995274,0.31241506){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
-    \put(0.26561284,0.72061977){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$y$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{threebranes_plane.pdf}}%
+    \put(0.90661054,0.21062757){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Re \omega_z$\end{tabular}}}}%
+    \put(0.17376261,0.68689795){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Im \omega_z$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{threebranes_plane.pdf}}%
+    \put(0.07991501,0.07872282){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$0$\end{tabular}}}}%
+    \put(0.38681025,0.07918286){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1$\end{tabular}}}}%
+    \put(0.95532675,0.07841701){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\infty$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

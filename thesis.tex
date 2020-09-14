@@ -31,6 +31,11 @@
 \newcommand{\ap}{\ensuremath{\alpha'}}
 \newcommand{\cy}{\textsc{CY}\xspace}
 
+%---- functions
+\newcommand{\hyp}[4]{\ensuremath{\mathrm{F}\left( #1,\, #2;\, #3;\, #4 \right)}}
+\newcommand{\poch}[2]{\ensuremath{\left( #1 \right)_{#2}}}
+\newcommand{\gfun}[1]{\ensuremath{\Gamma\left( #1 \right)}}
+
 %---- derivatives
 \newcommand{\pd}{\ensuremath{\partial}}
 \newcommand{\bpd}{\ensuremath{\overline{\partial}}}
@@ -113,11 +118,15 @@
 \input{sec/part3/introduction.tex}
 
 %---- APPENDIX
-\cleardoubleplainpage{}
+\thesispart{Appendix}
 \appendix
 \section{The Isomorphism in Details}
 \label{sec:isomorphism}
 \input{sec/app/isomorphism.tex}
+
+\section{The Parameters of the Hypergeometric Function}
+\label{sec:parameters}
+\input{sec/app/parameters.tex}
 
 
 %---- BIBLIOGRAPHY
