@@ -1000,4 +1000,226 @@ Parameters $A_{lr}$ and $B_{lr}$ follow the previous results and equations~\eqre
 \end{eqnarray}
 
 
+\subsubsection{Equivalent Solutions and Necessary Parameters}
+
+There are ambiguities in the equations presented in the previous section.
+In fact the choice of $f^{(L)}$ and $f^{(R)}$ looks arbitrary and leading to an undefined solution.
+We can use properties of the hypergeometric functions to show that any choice does not affect the final result.
+Specifically we can start with certain values but we can recover the others through:
+\begin{equation}
+  \rP
+  \left\lbrace
+    \mqty{
+      0   & 1     & \infty &   \\
+      0   & 0     & a      & z \\
+      1-c & c-a-b & b      &
+    }
+  \right\rbrace
+  =
+  (1-z)^{c-a-b}\,
+  \rP
+  \left\lbrace
+    \mqty{
+      0   & 1     & \infty &   \\
+      0   & 0     & c-b    & z \\
+      1-c & a+b-c & c-a    &
+    }
+  \right\rbrace,
+\end{equation}
+where \rP is the Papperitz-Riemann symbol for the hypergeometric functions.
+We can then assign any admissible value to $f^{(L)}$ and $f^{(R)}$ and then recover the other through the identification:
+\begin{eqnarray}
+  f^{(L)}{}' & = & \left( 1 + f^{(L)} \right)~\text{mod}~2,
+  \\
+  \ffa_l' & = & \ffc_l - \ffb_l,
+  \\
+  \ffb_l' & = & \ffc_l - \ffa_l,
+  \\
+  \ffc_l' & = &\ffc_l.
+\end{eqnarray}
+A similar procedure applies also for the right sector.
+Finally we also identified the ``free'' parameters:
+\begin{eqnarray}
+  \ffA_{lr}'
+  & = &
+  \ffA_{lr},
+  \\
+  \ffB_{lr}'
+  & = &
+  \ffB_{lr} - \ffa^{(L)}_l - \ffa^{(R)}_r - \ffb^{(L)}_l - \ffb^{(R)}_r + \ffc^{(L)}_l + \ffc^{(R)}_r.
+\end{eqnarray}
+The choice of $f^{(L,\,R)}$ is thus simply a convenient relabeling of parameters.
+We choose $f^{(L)} = f^{(R)} = 0$ for simplicity.
+Moreover in order to get a well defined solution we must impose constraints on the hypergeometric parameters.
+We require:
+\begin{eqnarray}
+  c_l^{(L)} & \not\in & \mathds{Z},
+  \\
+  a_l^{(L)} + b_l^{(L)} & \not\in & \mathds{Z} + \frac{1}{2}.
+\end{eqnarray}
+
+The relations between the parameters of the hypergeometric functions and the monodromies associated to the rotation of the intersecting D-brane are more general than needed.
+The number of parameters necessary to fix the configuration is $6$, that is the amount of parameters to uniquely determine $n_{\vb{0}}^3$, $n_{\vb{\infty}}^1$, $n_{\vb{\infty}}^3$ and $m_{\vb{0}}^3$, $m_{\vb{\infty}}^1$, $m_{\vb{\infty}}^3$.
+As noticed before we can in fact fix $n_{\vb{\infty}}^2 = m_{\vb{\infty}}^2 = 0$.
+This is a consequence of the fact that all parameters depend on the norm of the rotation vectors exception made for $K^{(L)}$ and $K^{(R)}$.
+They depend on $n_{\vb{\infty}}^1 + i n_{\vb{\infty}}^2$ and $m_{\vb{\infty}}^1 + i m_{\vb{\infty}}^2$.
+Performing a $\SU{2}_L$ and $\SU{2}_R$ rotation around the third axis and a shift of the parameters $\delta_{\vb{\infty}}$, the phases of the normalisation factors $K$ can vanish.
+
+
+\subsubsection{The Importance of the Normalization Factors}
+
+Using the \rP symbol the solutions can be symbolically written as
+\begin{equation}
+  \begin{split}
+    &
+    (-\omega)^{\ffA}\, (1-\omega)^{\ffB}
+    \times
+    \\
+    &
+    \times
+    \rP \left\lbrace
+      \mqty{
+          0
+          &
+          1
+          &
+          \infty
+          &
+          \\
+          n_{\vb{0}}
+          &
+          n_{\vb{1}}
+          &
+          n_{\vb{\infty}} + \ffa^{(L)}
+          &
+          \omega
+          \\
+          -n_{\vb{0}} + 1 - \ffc^{(L)}
+          &
+          -n_{\vb{1}} - \ffa^{(L)} - \ffb^{(L)} + \ffc^{(L)}
+          &
+          -n_{\vb{\infty}} + \ffb^{(L)}
+          &
+      }
+    \right\rbrace
+    \\
+    &
+    \times
+    \rP \left\lbrace
+      \mqty{
+          0
+          &
+          1
+          &
+          \infty
+          &
+          \\
+          m_{\vb{0}}
+          &
+          m_{\vb{1}}
+          &
+          m_{\vb{\infty}} + \ffa^{(R)}
+          &
+          \omega
+          \\
+          -m_{\vb{0}} + 1 - \ffc^{(R)}
+          &
+          -m_{\vb{1}} - \ffa^{(R)} - \ffb^{(R)} + \ffc^{(R)}
+          &
+          -m_{\vb{\infty}} + \ffb^{(R)}
+          &
+      }
+      \right\rbrace.
+  \end{split}
+  \label{eq:symbolic_solutions_using_P}
+\end{equation}
+The normalisation parameters $K$ cannot however be guessed from the \rP symbol.
+
+As we are interested in finding the truly independent solutions to the original problem, we can use properties of the hypergeometric functions to reduce the number of possible choices of the integer factors in the definition of the parameters.
+It is possible to show that any hypergeometric function $\hyp{a + \ffa}{b + \ffb}{c + \ffc}{z}$ can be written as a combination of \hyp{a}{b}{c}{z} and any of its contiguous functions~\cite{::NISTDigitalLibrary}.
+For instance we can choose:
+\begin{equation}
+  \hyp{a + \ffa}{b + \ffb}{c + \ffc}{z}
+  =
+  h_1(a,\, b,\, c;\, z)\,
+  \hyp{a+1}{b}{c}{z}
+  +
+  h_2(a,\, b,\, c;\, z)\,
+  \hyp{a}{b}{c}{z},
+  \label{eq:reduction_F_F+}
+\end{equation}
+where $h_1$ and $h_2$ are finite sums of integer (both positive and negative) powers of $z$ and negative powers of $1-z$.
+For simplicity let:
+\begin{equation}
+  \begin{split}
+    F & = \hyp{a}{b}{c}{z},
+    \\
+    F(a+k) & = \hyp{a+k}{b}{c}{z},
+    \\
+    F(b+k) & = \hyp{a}{b+k}{c}{z},
+    \\
+    & \dots
+  \end{split}
+\end{equation}
+Similarly we use a shorthand notation for the basis of the hypergeometric functions:\footnotemark{}
+\footnotetext{%
+  In this expression we introduce a slight abuse of notation since $K_{a,b,c}$ depends on a phase which is not a function of $a$, $b$ or $c$.
+  See for instance~\eqref{eq:K_factor_value} and~\eqref{eq:n12+n22}.
+}
+\begin{equation}
+  \cB_{\vb{0}}(a,\, b,\, c;\, z)
+  =
+  \mqty(
+    \hyp{a}{b}{c}{z}
+    \\
+    K_{a,b,c}~
+    (-z)^{(1-c)}~
+    \hyp{a+1-c}{b+1-c}{2-c}{z}
+  ).
+\end{equation}
+We can then algorithmically apply the following relations
+\begin{equation}
+  \begin{split}
+    (c-a)\, F(a-1) + (2a-c+(b-a)z)\, F - a(1-z)\, F(a+1) & = 0.
+    \\
+    (b-a)\, F + a\, F(a+1) - b\, F(b+1) & = 0,
+    \\
+    (c-a-b)\, F + a (1-z)\, F(a+1) - (c-b)\, F(b-1) & = 0,
+    \\
+    (a+(b-c)z)\, F - a (1-z)\, F(a+1) + (c-a)(c-b)z\, F(c+1) & = 0,
+    \\
+    (c-a-1)\, F + a\, F(a+1) - F(c-1) & = 0,
+  \end{split}
+  \label{eq:contiguous_functions}
+\end{equation}
+to eliminate unwanted integer factors and keep only \hyp{a}{b}{c}{z} and any of its contiguous functions.
+
+Notice that $\cB_{\vb{0}}$ is a basis element of the possible solutions of the classical and quantum string \eom.
+Using any relation in~\eqref{eq:contiguous_functions} we can change $a$, $b$ or $c$ by one unit coherently in both hypergeometric functions contained in $\cB_{\vb{0}}$.
+For example from the first equation in~\eqref{eq:contiguous_functions} we expect:
+\begin{equation}
+  (c-a)\, \cB_{\vb{0}}(a-1)
+  +
+  (2a-c+(b-a)z)\, \cB_{\vb{0}}
+  -
+  a(1-z)\, \cB_{\vb{0}}(a+1)
+  =
+  0,
+\end{equation}
+which can be used to lower and rise the integer factors in $a$.
+The relation holds only because the normalisation factor $K$ is present.
+In fact coefficients in this equation equal those in the relation for the first component of $\cB_{\vb{0}}$.
+It is not trivial for the second component where the factor $K$ is key to the consistency.
+Similarly the relation needed to lower $c$ reads:
+\begin{equation}
+  (a-c)(b-c)\, \cB_{\vb{0}}(c+1)
+  +
+  (a+(b-c)z)\, \cB_{\vb{0}}
+  -
+  a(1-z) \cB_{\vb{0}}(a+1)
+  =
+  0.
+\end{equation}
+
+
 % vim: ft=tex
