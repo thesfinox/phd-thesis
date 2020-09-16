@@ -1053,9 +1053,9 @@ We choose $f^{(L)} = f^{(R)} = 0$ for simplicity.
 Moreover in order to get a well defined solution we must impose constraints on the hypergeometric parameters.
 We require:
 \begin{eqnarray}
-  c_l^{(L)} & \not\in & \mathds{Z},
+  c_l^{(L)} & \not\in & \Z,
   \\
-  a_l^{(L)} + b_l^{(L)} & \not\in & \mathds{Z} + \frac{1}{2}.
+  a_l^{(L)} + b_l^{(L)} & \not\in & \Z + \frac{1}{2}.
 \end{eqnarray}
 
 The relations between the parameters of the hypergeometric functions and the monodromies associated to the rotation of the intersecting D-brane are more general than needed.
@@ -1194,7 +1194,7 @@ We can then algorithmically apply the following relations
 \end{equation}
 to eliminate unwanted integer factors and keep only \hyp{a}{b}{c}{z} and any of its contiguous functions.
 
-Notice that $\cB_{\vb{0}}$ is a basis element of the possible solutions of the classical and quantum string \eom.
+Notice that $\cB_{\vb{0}}$ is a basis element of the possible solutions of the classical and quantum string \eom
 Using any relation in~\eqref{eq:contiguous_functions} we can change $a$, $b$ or $c$ by one unit coherently in both hypergeometric functions contained in $\cB_{\vb{0}}$.
 For example from the first equation in~\eqref{eq:contiguous_functions} we expect:
 \begin{equation}
@@ -1221,5 +1221,862 @@ Similarly the relation needed to lower $c$ reads:
   0.
 \end{equation}
 
+
+\subsubsection{Constraints from the Finite Euclidean Action}
+
+In previous sections we present a general procedure to write all possible independent solutions to the classical string \eom
+However not all of them are physically acceptable.
+In fact we require the finiteness of the Euclidean action~\eqref{eq:action_doubling_fields_spinor_representation}.
+
+In principle it could appear obvious to use~\eqref{eq:contiguous_functions} to restrict the possible arbitrary integers to:
+\begin{eqnarray}
+  \ffa^{(L)} \in \left\lbrace -1,\, 0 \right\rbrace,
+  & \qquad &
+  \ffa^{(R)} \in \left\lbrace -1,\, 0 \right\rbrace,
+  \\
+  \ffb^{(L)} = 0,
+  & \qquad &
+  \ffb^{(R)} = 0,
+  \\
+  \ffc^{(L)} = 0,
+  & \qquad &
+  \ffc^{(R)} = 0.
+\end{eqnarray}
+We could then use~\eqref{eq:reduction_F_F+} to write the possible solution as
+\begin{equation}
+  \begin{split}
+    \ipd{z} \cX(z)
+    & =
+    \pdv{\omega_z}{z}\,
+    (-\omega_z)^{n_{\vb{0}} + m_{\vb{0}}}\,
+    (1-\omega_z)^{n_{\vb{1}} + m_{\vb{1}}}
+    \\
+    & \times
+    \sum\limits_{\ffa^{(L,\,R)} \in \left\lbrace -1, 0 \right\rbrace} 
+    h(\omega_z,\, \ffa^{(L,R)})
+    \times
+    \\
+    & \times
+    \cB_{\vb{0}}^{(L)}(a^{(L)} + \ffa^{(L)},\, b,\, c;\, \omega_z)
+    \left(
+      \cB_{\vb{0}}^{(R)}(a^{(R)} + \ffa^{(R)},\, b,\, c;\, \omega_z)
+    \right)^T.
+  \end{split}
+  \label{eq:doubling_field_expansion}
+\end{equation}
+The issue is therefore to find an explicit form for $h(\omega_z,\, \ffa^{(L,R)})$ yielding a finite action.
+
+We could however use the symbolic solution~\eqref{eq:symbolic_solutions_using_P} to find basis of solutions with finite action.
+As a matter of fact, finding the possible solutions with finite action can be recast to finding conditions such that the field $\ipd{z} \cX(z)$ is finite by itself.
+Linearity of this condition ensures a simpler approach with respect to the quadratic action of the string.
+From~\eqref{eq:action_doubling_fields_spinor_representation} it is clear that the action can be expressed as the sum of the product of any possible couple of elements of the expansion~\eqref{eq:formal_solution}.
+We thus need to take into examination all possible pairs of contributions $\ipd{z} \cX_{l_1 r_1}(z)~ \ipd{\bz} \cX_{l_2 r_2}(\bz)$.
+Near its singular points, the behavior of any element of solution~\eqref{eq:formal_solution} can be easily read from its symbolic representation~\eqref{eq:symbolic_solutions_using_P}:
+\begin{equation}
+  \ipd{z} \cX(z)
+  \stackrel{\omega_z \to \omega_t}{\sim}
+  \omega_t^{C_t}
+  \mqty( \omega_t^{k_{t_1}} \\ \omega_t^{k_{t_2}} )
+  \mqty( \omega_t^{h_{t_1}} & \omega_t^{h_{t_2}} ).
+\end{equation}
+It can be verified that the convergence of the action both at finite and infinite intersection points is ensured by the same constraints found when imposing the convergence at any point of the classical solution
+\begin{equation}
+  X_{(s)}(u,\, \bu)
+  =
+  f_{(s)\, (\bt-1)}
+  +
+  \finiteint{u'}{x_{(\bt-1)}}{u}
+  \ipd{u'} \cX_{(s)}(u')
+  +
+  U_L^{\dagger}(\vb{n}_{{\bt}})
+  \left[
+    \finiteint{\bu'}{x_{(\bt-1)}}{\bu}
+    \ipd{\bu'} \cX_{(s)}(\bu')
+  \right]
+  U_R(\vb{m}_{{\bt}}),
+  \label{eq:classical_solution}
+\end{equation}
+which follows in spinor representation from~\eqref{eq:spinor_doubling_trick} and where $f_{(s),\, (\bt-1)} = f^I_{(\bt-1)}\, \tau_I$.
+We specifically find:
+\begin{equation}
+  \begin{split}
+    C_t + k_{t_i} + h_{t_j} > -1,
+    \qquad
+    i,\, j \in \{1,2\},
+    & \qquad
+    \omega_t \in \{0, 1\},
+    \\
+    C_t + k_{t_i} + h_{t_j} < -1,
+    \qquad
+    i,\, j \in \{1,2\},
+    & \qquad
+    \omega_t = \infty.
+  \end{split}
+  \label{eq:constraints_finite_X}
+\end{equation}
+
+For simplicity first consider the case of a trivial right rotation.\footnotemark{}
+\footnotetext{%
+  That is require that $U_R$ is proportional to the identity.
+}
+In this case~\eqref{eq:symbolic_solutions_using_P} becomes
+\begin{equation}
+  (-\omega)^\ffA\,
+  (1-\omega)^\ffB\,
+  \rP\left\lbrace
+  \mqty{
+    0
+    &
+    1
+    &
+    \infty
+    &
+    \\
+    n_{\vb{0}}
+    &
+    n_{\vb{1}}
+    &
+    n_{\vb{\infty}} + \ffa^{(L)}
+    &
+    \omega
+    \\
+    -n_{\vb{0}} + 1 -\ffc^{(L)}
+    &
+    -n_{\vb{1}} - \ffa^{(L)} - \ffb^{(L)} + \ffc^{(L)}
+    &
+    -n_{\vb{\infty}} + \ffb^{(L)}
+    &
+  }
+  \right\rbrace.
+\end{equation}
+The only possible solution compatible with~\eqref{eq:constraints_finite_X} is
+\begin{equation}
+  \rP\left\lbrace
+  \mqty{
+    0
+    &
+    1
+    &
+    \infty
+    &
+    \\
+    n_{\vb{0}} - 1
+    &
+    n_{\vb{1}} - 1
+    &
+    n_{\vb{\infty}} + 1
+    &
+    \omega
+    \\
+    -n_{\vb{0}}
+    &
+    -n_{\vb{1}}
+    &
+    -n_{\vb{\infty}} + 2
+    &
+  }
+  \right\rbrace,
+  \label{eq:X_solution_pure_L}
+\end{equation}
+that is $\ffa^{(L)} = -1$, $\ffb^{(L)} = 0$, $\ffc^{(L)} = 0$, $\ffA = -1$ and  $\ffB = -1$.
+
+In the general the solution is more complicated and it depends on the relation between the rotation vectors $\vb{n}_{\vb{0},\, \vb{1},\, \vb{\infty}}$, $\vb{m}_{\vb{0},\, \vb{1},\, \vb{\infty}}$.
+For each possible case the solution is however unique and it is given by
+\begin{enumerate}
+  \item $n_{\vb{0}} > m_{\vb{0}}$ and $n_{\vb{1}} > m_{\vb{1}}$:
+    \begin{equation}
+      \rP\left\lbrace
+        \mqty{
+          0
+          &
+          1
+          &
+          \infty
+          &
+          \\
+          n_{\vb{0}} - 1
+          &
+          n_{\vb{1}} - 1
+          &
+          n_{\vb{\infty}} + 1
+          &
+          \omega
+          \\
+          -n_{\vb{0}}
+          &
+          -n_{\vb{1}}
+          &
+          -n_{\vb{\infty}} + 2
+          &
+        }
+      \right\rbrace
+      \rP\left\lbrace
+        \mqty{
+          0
+          &
+          1
+          &
+          \infty
+          &
+          \\
+          m_{\vb{0}}
+          &
+          m_{\vb{1}}
+          &
+          m_{\vb{\infty}}
+          &
+          \omega
+          \\
+          -m_{\vb{0}} + 1
+          &
+          -m_{\vb{1}}
+          &
+          -m_{\vb{\infty}} + 1
+          &
+        }
+      \right\rbrace,
+      \label{eq:X_solution>>}
+   \end{equation}
+
+   \item $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} < m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$:
+     \begin{equation}
+       \rP\left\lbrace
+         \mqty{
+           0
+           &
+           1
+           &
+           \infty
+           &
+           \\
+           n_{\vb{0}} - 1
+           &
+           n_{\vb{1}}
+           &
+           n_{\vb{\infty}}
+           &
+           \omega
+           \\
+           -n_{\vb{0}}
+           &
+           -n_{\vb{1}}
+           &
+           -n_{\vb{\infty}} + 2
+           &
+         }
+       \right\rbrace
+       \rP\left\lbrace
+         \mqty{
+           0
+           &
+           1
+           &
+           \infty
+           &
+           \\
+           m_{\vb{0}}
+           &
+           m_{\vb{1}} - 1
+           &
+           m_{\vb{\infty}} + 1
+           &
+           \omega
+           \\
+           -m_{\vb{0}}
+           &
+           -m_{\vb{1}}
+           &
+           -m_{\vb{\infty}} + 1
+           &
+         }
+       \right\rbrace,
+       \label{eq:X_solution><>}
+     \end{equation}
+
+   \item $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} < m_{\vb{1}}$ and $n_{\vb{\infty}} < m_{\vb{\infty}}$:
+     \begin{equation}
+       \rP\left\lbrace
+         \mqty{
+           0
+           &
+           1
+           &
+           \infty
+           &
+           \\
+           n_{\vb{0}} - 1
+           &
+           n_{\vb{1}}
+           &
+           n_{\vb{\infty}} + 1
+           &
+           \omega
+           \\
+           -n_{\vb{0}}
+           &
+           -n_{\vb{1}}
+           &
+           -n_{\vb{\infty}} + 1
+           &
+         }
+       \right\rbrace
+       \rP\left\lbrace
+         \mqty{
+           0
+           &
+           1
+           &
+           \infty
+           &
+           \\
+           m_{\vb{0}}
+           &
+           m_{\vb{1}} - 1
+           &
+           m_{\vb{\infty}}
+           &
+           \omega
+           \\
+           -m_{\vb{0}}
+           &
+           -m_{\vb{1}}
+           &
+           -m_{\vb{\infty}} + 2
+           &
+         }
+       \right\rbrace,
+       \label{eq:X_solution><<}
+     \end{equation}
+
+   \item $n_{\vb{0}} < m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$:
+     \begin{equation}
+       \rP\left\lbrace
+         \mqty{
+           0
+           &
+           1
+           &
+           \infty
+           &
+           \\
+           n_{\vb{0}}
+           &
+           n_{\vb{1}} - 1
+           &
+           n_{\vb{\infty}}
+           &
+           \omega
+           \\
+           -n_{\vb{0}}
+           &
+           -n_{\vb{1}}
+           &
+           -n_{\vb{\infty}} + 2
+           &
+         }
+       \right\rbrace
+       \rP\left\lbrace
+         \mqty{
+           0
+           &
+           1
+           &
+           \infty
+           &
+           \\
+           m_{\vb{0}} - 1
+           &
+           m_{\vb{1}}
+           &
+           m_{\vb{\infty}} + 1
+           &
+           \omega
+           \\
+           -m_{\vb{0}}
+           &
+           -m_{\vb{1}}
+           &
+           -m_{\vb{\infty}} + 1
+           &
+         }
+       \right\rbrace,
+       \label{eq:X_solution<>>}
+     \end{equation}
+
+   \item $n_{\vb{0}} < m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} < m_{\vb{\infty}}$:
+     \begin{equation}
+       \rP\left\lbrace
+         \mqty{
+           0
+           &
+           1
+           &
+           \infty
+           &
+           \\
+           n_{\vb{0}}
+           &
+           n_{\vb{1}} - 1
+           &
+           n_{\vb{\infty}} + 1
+           &
+           \omega
+           \\
+           -n_{\vb{0}}
+           &
+           -n_{\vb{1}}
+           &
+           -n_{\vb{\infty}} + 1
+           &
+         }
+       \right\rbrace
+       \rP\left\lbrace
+         \mqty{
+           0
+           &
+           1
+           &
+           \infty
+           &
+           \\
+           m_{\vb{0}} - 1
+           &
+           m_{\vb{1}}
+           &
+           m_{\vb{\infty}}
+           &
+           \omega
+           \\
+           -m_{\vb{0}}
+           &
+           -m_{\vb{1}}
+           &
+           -m_{\vb{\infty}} + 2
+           &
+         }
+       \right\rbrace,
+       \label{eq:X_solution<><}
+     \end{equation}
+
+   \item $n_{\vb{0}} < m_{\vb{0}}$, $n_{\vb{1}} < m_{\vb{1}}$:
+     \begin{equation}
+       \rP\left\lbrace
+         \mqty{
+           0
+           &
+           1
+           &
+           \infty
+           &
+           \\
+           n_{\vb{0}}
+           &
+           n_{\vb{1}}
+           &
+           n_{\vb{\infty}}
+           &
+           \omega
+           \\
+           -n_{\vb{0}}
+           &
+           -n_{\vb{1}}
+           &
+           -n_{\vb{\infty}} + 1
+           &
+         }
+       \right\rbrace
+       \rP\left\lbrace
+         \mqty{
+           0
+           &
+           1
+           &
+           \infty
+           &
+           \\
+           m_{\vb{0}} - 1
+           &
+           m_{\vb{1}} - 1
+           &
+           m_{\vb{\infty}} + 1
+           &
+           \omega
+           \\
+           -m_{\vb{0}}
+           &
+           -m_{\vb{1}}
+           &
+           -m_{\vb{\infty}} + 2
+           &
+         }
+       \right\rbrace.
+       \label{eq:X_solution<<}
+     \end{equation}
+\end{enumerate}
+The parameters associated to this list of solutions are summarised in~\Cref{tab:coeffs_k}, where the symmetry under the exchange of $n$ and $m$ becomes evident.
+
+\begin{table}[tbp]
+  \centering
+  \begin{tabular}{@{}ccc|rr|rrr|rrr@{}}
+    \toprule
+    & & & \ffA & \ffB & $\ffa^{(L)}$ & $\ffb^{(L)}$ & $\ffc^{(L)}$ & $\ffa^{(R)}$ & $\ffb^{(R)}$ & $\ffc^{(R)}$ \\
+    \midrule
+    $n_{\vb{0}} > m_{\vb{0}}$ & $n_{\vb{1}} > m_{\vb{1}}$ & $n_{\vb{\infty}} \lessgtr m_{\vb{\infty}}$ & -1 & -1 & -1 & 0 & 0 & 0 & +1 & +1 \\
+    $n_{\vb{0}} > m_{\vb{0}}$ & $n_{\vb{1}} < m_{\vb{1}}$ & $n_{\vb{\infty}} > m_{\vb{\infty}}$ & -1 & -1 & -1 & +1 & 0 & 0 & 0 & +1 \\
+    $n_{\vb{0}} > m_{\vb{0}}$ & $n_{\vb{1}} < m_{\vb{1}}$ & $n_{\vb{\infty}} < m_{\vb{\infty}}$ & -1 & -1 & 0 & 0 & 0 & -1 & +1 & +1 \\
+    $n_{\vb{0}} < m_{\vb{0}}$ & $n_{\vb{1}} > m_{\vb{1}}$ & $n_{\vb{\infty}} > m_{\vb{\infty}}$ & -1 & -1 & -1 & +1 & +1 & 0 & 0 & 0 \\
+    $n_{\vb{0}} < m_{\vb{0}}$ & $n_{\vb{1}} > m_{\vb{1}}$ & $n_{\vb{\infty}} < m_{\vb{\infty}}$ & -1 & -1 & 0 & 0 & +1 & -1 & +1 & 0 \\
+    $n_{\vb{0}} < m_{\vb{0}}$ & $n_{\vb{1}} < m_{\vb{1}}$ & $n_{\vb{\infty}} \lessgtr m_{\vb{\infty}}$ & -1 & -1 & 0 & +1 & +1 & -1 & 0 & 0 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Integer shifts in the parameters of the hypergeometric function.}
+  \label{tab:coeffs_k}
+\end{table}
+
+
+\subsubsection{The Basis of Solutions}
+\label{sec:true_basis}
+
+In the previous section we produced one solution for each ordering of the $n_{\omega_z}$ with respect to $m_{\omega_z}$.
+There are however other solutions connected to the $\Z_2$ equivalence class in the isomorphism between \SO{4} its double cover.
+Given a solution $(\vb{n}_{\vb{0}},\, \vb{n}_{\vb{1}},\, \vb{n}_{\vb{\infty}}) \oplus (\vb{m}_{\vb{0}},\, \vb{m}_{\vb{1}},\, \vb{m}_{\vb{\infty}})$, we can in fact replace any couple of $\vb{n}$ and $\vb{m}$ by $\widehat{\vb{n}}$ and $\widehat{\vb{m}}$ and get an apparently new solution.\footnotemark{}
+\footnotetext{%
+  We need to change two rotation vectors because the monodromies are constrained by \eqref{eq:monodromy_relations}.
+}
+For instance we could consider $(\widehat{\vb{n}}_{\vb{0}},\, \widehat{\vb{n}}_{\vb{1}},\, \vb{n}_{\vb{\infty}}) \oplus (\vb{m}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \widehat{\vb{m}}_{\vb{\infty}})$.
+On the other hand the previous substitution would change the \SO{4} in both $\omega = 0$ and $\omega = \infty$: it does not represent a new solution.
+We are left therefore with three possibilities besides the original one:
+\begin{equation}
+  \begin{split}
+    (\widehat{\vb{n}}_{\vb{0}},\, \widehat{\vb{n}}_{\vb{1}},\, \vb{n}_{\vb{\infty}})
+    & \oplus
+    (\widehat{\vb{m}}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \vb{m}_{\vb{\infty}}),
+    \\
+    (\widehat{\vb{n}}_{\vb{0}},\, \vb{n}_{\vb{1}},\, \widehat{\vb{n}}_{\vb{\infty}})
+    & \oplus
+    (\vb{m}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \widehat{\vb{m}}_{\vb{\infty}}),
+    \\
+    (\widehat{\vb{n}}_{\vb{0}},\, \vb{n}_{\vb{1}},\, \widehat{\vb{n}}_{\vb{\infty}})
+    & \oplus
+    (\vb{m}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \widehat{\vb{m}}_{\vb{\infty}}).
+  \end{split}
+\end{equation}
+We can gauge fix the $\Z_2$ choice by letting $\vb{n}_{\vb{0}}^3,\, \vb{m}_{\vb{0}}^3 > 0$ as required by~\eqref{eq:maximal_torus_left} and~\eqref{eq:maximal_torus_right}.
+We are thus left with two possible solutions
+\begin{align}
+  (\vb{n}_{\vb{0}},\, \vb{n}_{\vb{1}},\, \vb{n}_{\vb{\infty}})
+  & \oplus
+  (\vb{m}_{\vb{0}},\, \vb{m}_{\vb{1}},\, \vb{m}_{\vb{\infty}}),
+  \\
+  (\vb{n}_{\vb{0}},\, \widehat{\vb{n}}_{\vb{1}},\, \widehat{\vb{n}}_{\vb{\infty}})
+  & \oplus
+  (\vb{m}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \widehat{\vb{m}}_{\vb{\infty}}).
+\end{align}
+These are the original and a modified solution obtained by acting with a parity operator $P_2$ on the rotation parameters at $\omega = 1,\, \infty$ on both left and right sector at the same time.
+We then need to ensure its independence in order to accept it as a possible solution.
+
+As shown in~\Cref{tab:coeffs_k}, there are only two different cases up to left-right symmetry.
+The first is
+\begin{equation}
+  \Big\lbrace
+    (n_{\vb{0}} > m_{\vb{0}},\, n_{\vb{1}} > m_{\vb{1}},\, n_{\vb{\infty}} >  m_{\vb{\infty}} ),~
+    (n_{\vb{0}} > m_{\vb{0}},\, \hat{n}_{\vb{1}} < \hat{m}_{\vb{1}},\, \hat{n}_{\vb{\infty}} < \hat{m}_{\vb{\infty}})
+  \Big\rbrace,
+\end{equation}
+which is mapped to
+\begin{equation}
+  \Big\lbrace
+    (n_{\vb{0}} < m_{\vb{0}},\, n_{\vb{1}} < m_{\vb{1}},\, n_{\vb{\infty}} <  m_{\vb{\infty}} ),~
+    (n_{\vb{0}} < m_{\vb{0}},\, \hat{n}_{\vb{1}} > \hat{m}_{\vb{1}},\, \hat{n}_{\vb{\infty}} > \hat{m}_{\vb{\infty}})
+  \Big\rbrace
+\end{equation}
+by the left-right symmetry.
+The second is
+\begin{equation}
+  \Big\lbrace
+    (n_{\vb{0}} > m_{\vb{0}},\, n_{\vb{1}} > m_{\vb{1}},\, n_{\vb{\infty}} <  m_{\vb{\infty}} ),~
+    (n_{\vb{0}} > m_{\vb{0}},\, \hat{n}_{\vb{1}} < \hat{m}_{\vb{1}},\, \hat{n}_{\vb{\infty}} > \hat{m}_{\vb{\infty}})
+  \Big\rbrace,
+\end{equation}
+which is mapped to
+\begin{align}
+  \Big\lbrace
+    (n_{\vb{0}} < m_{\vb{0}},\, n_{\vb{1}} < m_{\vb{1}},\, n_{\vb{\infty}} >  m_{\vb{\infty}} ),~
+    (n_{\vb{0}} < m_{\vb{0}},\, \hat{n}_{\vb{1}} > \hat{m}_{\vb{1}},\, \hat{n}_{\vb{\infty}} < \hat{m}_{\vb{\infty}})
+  \Big\rbrace
+\end{align}
+by the same symmetry.
+
+We can then study the two solutions in the two cases.
+We first perform the computations common to both cases and then we explicitly specialise the calculations.
+Computing the parameters of the hypergeometric functions of the first solution leads to:
+
+
+
+
+%% TODO %%
+
+
+
+
+
+\begin{align}
+\left\{\begin{array}{l}
+  a^{(L)}=n_{\vb{0}}+n_{\vb{1}}+n_{\vb{\infty}}+\ffa^{(L)}
+\\
+  b^{(L)}=n_{\vb{0}}+n_{\vb{1}}-n_{\vb{\infty}}+\ffb^{(L)}
+\\
+  c^{(L)}=2 n_{\vb{0}}+\ffc^{(L)}
+       \end{array}
+  \right.
+  ,~~~~
+\left\{\begin{array}{l}
+ a^{(R)}=m_{\vb{0}}+m_{\vb{1}}+m_{\vb{\infty}}+\ffa^{(R)}
+\\
+  b^{(R)}=m_{\vb{0}}+m_{\vb{1}}-m_{\vb{\infty}}+\ffb^{(R)}
+\\
+  c^{(R)}=2 m_{\vb{0}}+1+\ffc^{(R)}
+       \end{array}
+  \right.,
+\end{align}
+where the values of the constants can be read from Table~\ref{tab:coeffs_k}.
+Then we compute the $K^{(L)}$ and $K^{(R)}$ factors using \eqref{eq:K_factor_value}.
+Therefore the first solution is:
+\begin{align}
+    \partial_\omega \chi_1 =&
+  (-\omega)^{n_{\vb{0}}+m_{\vb{0}}-1 }
+  (1-\omega)^{n_{\vb{1}}+m_{\vb{1}}-1 } \times
+                              \nonumber\\
+  & \times
+  \mqty(
+  F(a^{(L)}, b^{(L)}; c^{(L)}; \omega) \\
+  K^{(L)} (-\omega)^{1-c^{(L)}}
+  F(a^{(L)}+1-c^{(L)}, b^{(L)}+1-c^{(L)}; 2-c^{(L)}; \omega)
+  )
+  \nonumber\\
+  &\times
+  \mqty(
+  F(a^{(R)}, b^{(R)}; c^{(R)}; \omega) \\
+  K^{(R)} (-\omega)^{1-c^{(R)}}
+  F(a^{(R)}+1-c^{(R)}, b^{(R)}+1-c^{(R)}; 2-c^{(R)}; \omega)
+  )^T.
+\end{align}
+
+The parameters of the second solution read
+\begin{align}
+  &
+    \left\{\begin{array}{ll}
+\hat  a^{(L)}= n_{\vb{0}}+\hat n_{\vb{1}}+ \hat n_{\vb{\infty}}
+         +\hat {\ffa}^{(L)}
+         &= c^{(L)}-a^{(L)}
+         +\ffa^{(L)}-\ffc^{(L)}+
+         \hat {\ffa}^{(L)}+1
+\\
+\hat   b^{(L)}=n_{\vb{0}}+\hat n_{\vb{1}}- \hat n_{\vb{\infty}}+
+             \hat {\ffb}^{(L)}
+         &= c^{(L)}-b^{(L)}
+         +\ffb^{(L)}-\ffc^{(L)}+
+         \hat {\ffb}^{(L)}
+\\
+             \hat   c^{(L)}=2 n_{\vb{0}} +\hat {\ffc}^{(L)}
+             &= c^{(L)} -\ffc^{(L)}+\hat {\ffc}^{(L)}
+       \end{array}
+  \right.,
+  \nonumber\\
+  &
+    \left\{\begin{array}{ll}
+\hat  a^{(R)}= m_{\vb{0}}+\hat m_{\vb{1}}+ \hat m_{\vb{\infty}}
+         +\hat {\ffa}^{(R)}
+         &= c^{(R)}-a^{(R)}
+         +\ffa^{(R)}-\ffc^{(R)}+
+         \hat {\ffa}^{(R)}+1
+\\
+\hat   b^{(R)}=m_{\vb{0}}+\hat m_{\vb{1}}- \hat m_{\vb{\infty}}+
+             \hat {\ffb}^{(R)}
+         &= c^{(R)}-b^{(R)}
+         +\ffb^{(R)}-\ffc^{(R)}+
+         \hat {\ffb}^{(R)}
+\\
+             \hat   c^{(R)}=2 m_{\vb{0}} +\hat {\ffc}^{(R)}
+             &= c^{(R)} -\ffc^{(R)}+\hat {\ffc}^{(R)}
+       \end{array}
+               \right.
+               .
+\end{align}
+We see that the two cases differ only for the constants and not for
+the structure.
+
+
+\subsubsection{Case 1}
+\label{sec:case1}
+We start with the case $n_{\vb{0}}>m_{\vb{0}}$, $n_{\vb{1}}>m_{\vb{1}}$ and
+$n_{\vb{\infty}}> m_{\vb{\infty}}$
+for which the second solution is
+$n_{\vb{0}}>m_{\vb{0}}$, $\hat n_{\vb{1}}< \hat m_{\vb{1}}$ and
+$\hat n_{\vb{\infty}}< \hat m_{\vb{\infty}}$
+The parameters for the second are explicitly
+\begin{align}
+  &
+    \left\{\begin{array}{l}
+\hat  a^{(L)}= c^{(L)}-a^{(L)}
+\\
+\hat   b^{(L)}= c^{(L)}-b^{(L)}
+\\
+\hat   c^{(L)}= c^{(L)}
+       \end{array}
+  \right.
+,~~~~
+    \left\{\begin{array}{l}
+\hat  a^{(R)}= c^{(R)}-a^{(R)}
+\\
+\hat   b^{(R)}= c^{(R)}-b^{(R)}+1
+\\
+\hat   c^{(R)}= c^{(R)} +1
+       \end{array}
+               \right.
+               .
+\end{align}
+The $K$ factors are
+\begin{equation}
+  \hat K^{(L)}= K^{(L)},~~~~
+  \hat K^{(R)}= \frac{K^{(R)}}{a^{(R)} (c^{(R)}-b^{(R)})}
+  .
+\end{equation}
+Using Euler relation
+\begin{equation}
+  F(a,b;c; \omega) =(1-\omega)^{c-a-b} F(c-a,c-b;c; \omega)
+  ,
+\end{equation}
+we can finally write the second solution as
+\begin{align}
+    \partial_\omega \chi_2 =&
+  (-\omega)^{n_{\vb{0}}+m_{\vb{0}}-1}
+  (1-\omega)^{n_{\vb{1}}+m_{\vb{1}}} \times
+                              \nonumber\\
+  & \times
+  \mqty(
+  F(a^{(L)}, b^{(L)}; c^{(L)}; \omega) \\
+  K^{(L)} (-\omega)^{1-c^{(L)}}
+  F(a^{(L)}+1-c^{(L)}, b^{(L)}+1-c^{(L)}; 2-c^{(L)}; \omega)
+  )
+  \nonumber\\
+  &\times
+  \mqty(
+  F(a^{(R)}+1, b^{(R)}; c^{(R)}+1; \omega) \\
+  \hat K^{(R)}
+%  \frac{K^{(R)}}{a^{(R)} (c^{(R)}-b^{(R)})}
+  (-\omega)^{-c^{(R)}}
+  F(a^{(R)}+1-c^{(R)}, b^{(R)}-c^{(R)}; 1-c^{(R)}; \omega)
+  )^T
+  ,
+\end{align}
+in which the left basis is exactly equal to the first solution while
+the right basis differs for $a^{(R)}\rightarrow a^{(R)}+1$ and
+$c^{(R)}\rightarrow c^{(R)}+1$.
+
+\subsubsection{Case 2}
+\label{sec:case2}
+
+Consider now the second case $n_{\vb{0}}>m_{\vb{0}}$, $n_{\vb{1}}>m_{\vb{1}}$ and
+$n_{\vb{\infty}}< m_{\vb{\infty}}$.
+For the second solution we have
+$n_{\vb{0}}> m_{\vb{0}}$, $\hat n_{\vb{1}}< \hat m_{\vb{1}}$ and
+$\hat n_{\vb{\infty}}> \hat m_{\vb{\infty}}$ and the parameters are explicitly
+\begin{align}
+  &
+    \left\{\begin{array}{l}
+\hat  a^{(L)}= c^{(L)}-a^{(L)}-1
+\\
+\hat   b^{(L)}= c^{(L)}-b^{(L)}+1
+\\
+\hat   c^{(L)}= c^{(L)}
+       \end{array}
+  \right.
+,~~~~
+    \left\{\begin{array}{l}
+\hat  a^{(R)}= c^{(R)}-a^{(R)}
+\\
+\hat   b^{(R)}= c^{(R)}-b^{(R)}
+\\
+\hat   c^{(R)}= c^{(R)}
+       \end{array}
+               \right.
+               .
+\end{align}
+The $K$ factors are
+\begin{equation}
+  \hat K^{(L)}= K^{(L)}\frac{(b^{(L)}-1)(c^{(L)}-a^{(L)}-1)}{a^{(L)}(c^{(L)}-b^{(L)})},~~~~
+  \hat K^{(R)}= K^{(R)}
+  .
+\end{equation}
+Using Euler relation we can finally write the second solution for the
+second case as
+\begin{align}
+    \partial_\omega \chi_2 =&
+  (-\omega)^{n_{\vb{0}}+m_{\vb{0}}-1}
+  (1-\omega)^{n_{\vb{1}}+m_{\vb{1}}} \times
+                              \nonumber\\
+  & \times
+  \mqty(
+  F(a^{(L)}+1, b^{(L)}-1; c^{(L)}; \omega) \\
+  \hat K^{(L)}
+%K^{(L)}\frac{(b^{(L)}-1)(c^{(L)}-a^{(L)}-1)}{a^{(L)}(c^{(L)}-b^{(L)})}
+  (-\omega)^{1-c^{(L)}}
+  F(a^{(L)}+2-c^{(L)}, b^{(L)}-c^{(L)}; 2-c^{(L)}; \omega)
+  )
+  \nonumber\\
+  &\times
+  \mqty(
+  F(a^{(R)}, b^{(R)}; c^{(R)}; \omega) \\
+  K^{(R)} (-\omega)^{1-c^{(R)}}
+  F(a^{(R)}+1-c^{(R)}, b^{(R)}+1-c^{(R)}; 2-c^{(R)}; \omega)
+  )^T
+  ,
+\end{align}
+in which the right basis is exactly equal to the first solution while
+the left basis differs for $a^{(L)}\rightarrow a^{(L)}+1$ and
+$b^{(L)}\rightarrow b^{(L)}-1$.
+
+
+
+
+\subsection{The Solution}
+  In the previous section we have shown that there are two independent
+  solutions, therefore the general solution for
+  $\partial_\omega \chi$ obviously reads
+  \begin{equation}
+\partial_\omega \chi= C_1 \partial_\omega \chi_1 + C_2 \partial_\omega \chi_2
+\label{eq:general_solution}
+.
+\end{equation}
+  Therefore the final solution depends now only on two complex
+  constants, $C_1$ and $C_2$ which we can fix imposing the global conditions
+  in \eqref{eq:discontinuity_bc}, i.e. the second equation for all
+  $t$'s in the solution \eqref{eq:classical_solution}.
+  Since the three target space intersection
+  points always define a triangle on a 2-dimensional plane, we can
+  impose the boundary conditions knowing two angles formed by the sides (i.e.
+  the branes between two intersections) and the length of one of
+  them.
+  We already fixed the parameters of the rotations, then we need to
+  compute the length of one of the sides.
+  and consider, for instance, the length of the side
+  $X(x_{\bt+1},x_{\bt+1}) - X(x_{\bt-1}, x_{\bt-1})$:
+Explicitly we impose the four real equations in spinorial formalism
+  \begin{equation}
+    \int_0^1 \dd{\omega} \partial_\omega \cX(\omega)
+    +
+    U_L^{\dagger}(\vb{n}_{{\bt}})
+    ~\int_0^1 \dd{\bar\omega} \partial_\omega \cX(\bar\omega)
+    ~U_R(\vb{m}_{{\bt}})
+  =
+  f_{{\bt+1}\,(s)}-f_{{\bt-1}\,(s)}
+  ,
+\end{equation}
+where we have used the mapping \eqref{eq:def_omega} to write the
+integrals directly in $\omega$ variables.
+This equation has then enough degrees of freedom to fix completely
+the two complex parameters $C_1$ and $C_2$,
+thus completing the determination of the full solution in its general form.
 
 % vim: ft=tex
