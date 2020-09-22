@@ -84,16 +84,14 @@ We thus choose $X_{(t)}^1$ and $X_{(t)}^2$ to be the coordinates parallel to the
   \begin{subfigure}[b]{0.45\linewidth}
     \centering
     \def\svgwidth{\linewidth}
-    \import{img/}{branesangles.pdf_tex}
-    \caption{%
-      D-branes as lines on $\R^2$.
-    }
+    \import{img}{branesangles.pdf_tex}
+    \caption{D-branes as lines on $\R^2$.}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.45\linewidth}
     \centering
     \def\svgwidth{\linewidth}
-    \import{img/}{welladapted.pdf_tex}
+    \import{img}{welladapted.pdf_tex}
     \caption{Well adapted system of coordinates.}
   \end{subfigure}
   \caption{%
@@ -388,7 +386,7 @@ We thus translated the rotations of the D-branes encoded in the matrices $R_{(t)
 \begin{figure}[tbp]
   \centering
   \def\svgwidth{0.5\textwidth}
-  \import{img/}{branchcuts.pdf_tex}
+  \import{img}{branchcuts.pdf_tex}
   \caption{%
     Branch cut structure of the complex plane with $N_B = 4$.
     Cuts are pictured as solid coloured blocks running from one intersection point to another at finite.
@@ -606,7 +604,7 @@ We choose $\bt = 1$ in what follows.
 \begin{figure}[tbp]
   \centering
   \def\svgwidth{0.35\linewidth}
-  \import{img/}{threebranes_plane.pdf_tex}
+  \import{img}{threebranes_plane.pdf_tex}
   \caption{%
     Fixing the \SL{2}{\R} invariance for $N_B = 3$ and $\bt = 1$ leads to a cut structure with all the cuts defined on the real axis towards $\omega_{\bt} = \infty$.}
   \label{fig:hypergeometric_cuts}
@@ -1810,273 +1808,359 @@ by the same symmetry.
 We can then study the two solutions in the two cases.
 We first perform the computations common to both cases and then we explicitly specialise the calculations.
 Computing the parameters of the hypergeometric functions of the first solution leads to:
-
-
-
-
-%% TODO %%
-
-
-
-
-
-\begin{align}
-\left\{\begin{array}{l}
-  a^{(L)}=n_{\vb{0}}+n_{\vb{1}}+n_{\vb{\infty}}+\ffa^{(L)}
-\\
-  b^{(L)}=n_{\vb{0}}+n_{\vb{1}}-n_{\vb{\infty}}+\ffb^{(L)}
-\\
-  c^{(L)}=2 n_{\vb{0}}+\ffc^{(L)}
-       \end{array}
-  \right.
-  ,~~~~
-\left\{\begin{array}{l}
- a^{(R)}=m_{\vb{0}}+m_{\vb{1}}+m_{\vb{\infty}}+\ffa^{(R)}
-\\
-  b^{(R)}=m_{\vb{0}}+m_{\vb{1}}-m_{\vb{\infty}}+\ffb^{(R)}
-\\
-  c^{(R)}=2 m_{\vb{0}}+1+\ffc^{(R)}
-       \end{array}
-  \right.,
-\end{align}
-where the values of the constants can be read from Table~\ref{tab:coeffs_k}.
-Then we compute the $K^{(L)}$ and $K^{(R)}$ factors using \eqref{eq:K_factor_value}.
-Therefore the first solution is:
-\begin{align}
-    \partial_\omega \chi_1 =&
-  (-\omega)^{n_{\vb{0}}+m_{\vb{0}}-1 }
-  (1-\omega)^{n_{\vb{1}}+m_{\vb{1}}-1 } \times
-                              \nonumber\\
-  & \times
-  \mqty(
-  F(a^{(L)}, b^{(L)}; c^{(L)}; \omega) \\
-  K^{(L)} (-\omega)^{1-c^{(L)}}
-  F(a^{(L)}+1-c^{(L)}, b^{(L)}+1-c^{(L)}; 2-c^{(L)}; \omega)
-  )
-  \nonumber\\
-  &\times
-  \mqty(
-  F(a^{(R)}, b^{(R)}; c^{(R)}; \omega) \\
-  K^{(R)} (-\omega)^{1-c^{(R)}}
-  F(a^{(R)}+1-c^{(R)}, b^{(R)}+1-c^{(R)}; 2-c^{(R)}; \omega)
-  )^T.
-\end{align}
+\begin{equation}
+  \begin{cases}
+    a^{(L)} & = n_{\vb{0}} + n_{\vb{1}} + n_{\vb{\infty}} + \ffa^{(L)}
+    \\
+    b^{(L)} & = n_{\vb{0}} + n_{\vb{1}} - n_{\vb{\infty}} + \ffb^{(L)}
+    \\
+    c^{(L)} & = 2\, n_{\vb{0}} + \ffc^{(L)}
+  \end{cases},
+  \qquad
+  \begin{cases}
+    a^{(R)} & = m_{\vb{0}} + m_{\vb{1}} + m_{\vb{\infty}} + \ffa^{(R)}
+    \\
+    b^{(R)} & = m_{\vb{0}} + m_{\vb{1}} - m_{\vb{\infty}} + \ffb^{(R)}
+    \\
+    c^{(R)} & = 2\, m_{\vb{0}} + 1 + \ffc^{(R)}
+  \end{cases}.
+\end{equation}
+The values of the constants are in \Cref{tab:coeffs_k}.
+We then derive the factors $K^{(L)}$ and $K^{(R)}$ using~\eqref{eq:K_factor_value}.
+The first solution reads:
+\begin{equation}
+  \begin{split}
+    \ipd{\omega} \cX_1
+    & =
+    (-\omega)^{n_{\vb{0}} + m_{\vb{0}} - 1}\,
+    (1-\omega)^{n_{\vb{1}} + m_{\vb{1}} - 1}\,
+    \\
+    & \times
+    \mqty(
+      \hyp{a^{(L)}}{b^{(L)}}{c^{(L)}}{\omega}
+      \\
+      K^{(L)}\, (-\omega)^{1 - c^{(L)}}\,
+      \hyp{a^{(L)} + 1 - c^{(L)}}{b^{(L)} + 1 - c^{(L)}}{2 - c^{(L)}}{\omega}
+    )
+    \\
+    & \times
+    \mqty(
+      \hyp{a^{(R)}}{b^{(R)}}{c^{(R)}}{\omega}
+      \\
+      K^{(R)}\, (-\omega)^{1 - c^{(R)}}\,
+      \hyp{a^{(R)} + 1 - c^{(R)}}{b^{(R)} + 1 - c^{(R)}}{2 - c^{(R)}}{\omega}
+    )
+  \end{split}
+  \label{eq:first_solution}
+\end{equation}
 
 The parameters of the second solution read
-\begin{align}
-  &
-    \left\{\begin{array}{ll}
-\hat  a^{(L)}= n_{\vb{0}}+\hat n_{\vb{1}}+ \hat n_{\vb{\infty}}
-         +\hat {\ffa}^{(L)}
-         &= c^{(L)}-a^{(L)}
-         +\ffa^{(L)}-\ffc^{(L)}+
-         \hat {\ffa}^{(L)}+1
-\\
-\hat   b^{(L)}=n_{\vb{0}}+\hat n_{\vb{1}}- \hat n_{\vb{\infty}}+
-             \hat {\ffb}^{(L)}
-         &= c^{(L)}-b^{(L)}
-         +\ffb^{(L)}-\ffc^{(L)}+
-         \hat {\ffb}^{(L)}
-\\
-             \hat   c^{(L)}=2 n_{\vb{0}} +\hat {\ffc}^{(L)}
-             &= c^{(L)} -\ffc^{(L)}+\hat {\ffc}^{(L)}
-       \end{array}
-  \right.,
-  \nonumber\\
-  &
-    \left\{\begin{array}{ll}
-\hat  a^{(R)}= m_{\vb{0}}+\hat m_{\vb{1}}+ \hat m_{\vb{\infty}}
-         +\hat {\ffa}^{(R)}
-         &= c^{(R)}-a^{(R)}
-         +\ffa^{(R)}-\ffc^{(R)}+
-         \hat {\ffa}^{(R)}+1
-\\
-\hat   b^{(R)}=m_{\vb{0}}+\hat m_{\vb{1}}- \hat m_{\vb{\infty}}+
-             \hat {\ffb}^{(R)}
-         &= c^{(R)}-b^{(R)}
-         +\ffb^{(R)}-\ffc^{(R)}+
-         \hat {\ffb}^{(R)}
-\\
-             \hat   c^{(R)}=2 m_{\vb{0}} +\hat {\ffc}^{(R)}
-             &= c^{(R)} -\ffc^{(R)}+\hat {\ffc}^{(R)}
-       \end{array}
-               \right.
-               .
-\end{align}
-We see that the two cases differ only for the constants and not for
-the structure.
-
-
-\subsubsection{Case 1}
-\label{sec:case1}
-We start with the case $n_{\vb{0}}>m_{\vb{0}}$, $n_{\vb{1}}>m_{\vb{1}}$ and
-$n_{\vb{\infty}}> m_{\vb{\infty}}$
-for which the second solution is
-$n_{\vb{0}}>m_{\vb{0}}$, $\hat n_{\vb{1}}< \hat m_{\vb{1}}$ and
-$\hat n_{\vb{\infty}}< \hat m_{\vb{\infty}}$
-The parameters for the second are explicitly
-\begin{align}
-  &
-    \left\{\begin{array}{l}
-\hat  a^{(L)}= c^{(L)}-a^{(L)}
-\\
-\hat   b^{(L)}= c^{(L)}-b^{(L)}
-\\
-\hat   c^{(L)}= c^{(L)}
-       \end{array}
-  \right.
-,~~~~
-    \left\{\begin{array}{l}
-\hat  a^{(R)}= c^{(R)}-a^{(R)}
-\\
-\hat   b^{(R)}= c^{(R)}-b^{(R)}+1
-\\
-\hat   c^{(R)}= c^{(R)} +1
-       \end{array}
-               \right.
-               .
-\end{align}
-The $K$ factors are
 \begin{equation}
-  \hat K^{(L)}= K^{(L)},~~~~
-  \hat K^{(R)}= \frac{K^{(R)}}{a^{(R)} (c^{(R)}-b^{(R)})}
-  .
+  \begin{split}
+    &
+    \begin{cases}
+      \hat{a}^{(L)}
+      & =
+      n_{\vb{0}} + \hat{n}_{\vb{1}} + \hat{n}_{\vb{\infty}} + \hat{\ffa}^{(L)}
+      =
+      c^{(L)} - a^{(L)} + \ffa^{(L)} - \ffc^{(L)} + \hat{\ffa}^{(L)} + 1
+      \\
+      \hat{b}^{(L)}
+      & =
+      n_{\vb{0}} + \hat{n}_{\vb{1}} - \hat{n}_{\vb{\infty}} + \hat{\ffb}^{(L)}
+      =
+      c^{(L)} - b^{(L)} + \ffb^{(L)} - \ffc^{(L)} + \hat{\ffb}^{(L)}
+      \\
+      \hat{c}^{(L)}
+      & =
+      2\, n_{\vb{0}} + \hat{\ffc}^{(L)}
+      =
+      c^{(L)} - \ffc^{(L)} + \hat{\ffc}^{(L)}
+    \end{cases}
+    \\
+    &
+    \begin{cases}
+      \hat{a}^{(R)}
+      & =
+      m_{\vb{0}} + \hat{n}_{\vb{1}} + \hat{n}_{\vb{\infty}} + \hat{\ffa}^{(R)}
+      =
+      c^{(R)} - a^{(R)} + \ffa^{(R)} - \ffc^{(R)} + \hat{\ffa}^{(R)} + 1
+      \\
+      \hat{b}^{(R)}
+      & =
+      m_{\vb{0}} + \hat{n}_{\vb{1}} - \hat{n}_{\vb{\infty}} + \hat{\ffb}^{(R)}
+      =
+      c^{(R)} - b^{(R)} + \ffb^{(R)} - \ffc^{(R)} + \hat{\ffb}^{(R)}
+      \\
+      \hat{c}^{(R)}
+      & =
+      2\, m_{\vb{0}} + \hat{\ffc}^{(R)}
+      =
+      c^{(R)} - \ffc^{(R)} + \hat{\ffc}^{(R)}
+    \end{cases}
+  \end{split}
+\end{equation}
+The two cases differ only for constant factors and not in structure.
+
+
+\paragraph{Case 1}
+
+Consider $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$.
+The associated second solution is $n_{\vb{0}} > m_{\vb{0}}$, $\hat{n}_{\vb{1}} < \hat{m}_{\vb{1}}$ and $\hat{n}_{\vb{\infty}} < \hat{m}_{\vb{\infty}}$.
+Its parameters are:
+\begin{equation}
+  \begin{cases}
+    \hat{a}^{(L)} & = c^{(L)} - a^{(L)}
+    \\
+    \hat{b}^{(L)} & = c^{(L)} - b^{(L)}
+    \\
+    \hat{c}^{(L)} & = c^{(L)}
+  \end{cases},
+  \qquad
+  \begin{cases}
+    \hat{a}^{(R)} & = c^{(R)} - a^{(R)}
+    \\
+    \hat{b}^{(R)} & = c^{(R)} - b^{(R)} + 1
+    \\
+    \hat{c}^{(R)} & = c^{(R)} + 1
+  \end{cases},
+\end{equation}
+The normalisation factors are
+\begin{equation}
+  \hat{K}^{(L)} = K^{(L)},
+  \qquad
+  \hat{K}^{(R)} = \frac{K^{(R)}}{a^{(R)} (c^{(R)} - b^{(R)})}.
 \end{equation}
 Using Euler relation
 \begin{equation}
-  F(a,b;c; \omega) =(1-\omega)^{c-a-b} F(c-a,c-b;c; \omega)
-  ,
+  \hyp{a}{b}{c}{\omega} = (1-\omega)^{c-a-b}\, \hyp{c-a}{c-b}{c}{\omega},
 \end{equation}
-we can finally write the second solution as
-\begin{align}
-    \partial_\omega \chi_2 =&
-  (-\omega)^{n_{\vb{0}}+m_{\vb{0}}-1}
-  (1-\omega)^{n_{\vb{1}}+m_{\vb{1}}} \times
-                              \nonumber\\
-  & \times
-  \mqty(
-  F(a^{(L)}, b^{(L)}; c^{(L)}; \omega) \\
-  K^{(L)} (-\omega)^{1-c^{(L)}}
-  F(a^{(L)}+1-c^{(L)}, b^{(L)}+1-c^{(L)}; 2-c^{(L)}; \omega)
-  )
-  \nonumber\\
-  &\times
-  \mqty(
-  F(a^{(R)}+1, b^{(R)}; c^{(R)}+1; \omega) \\
-  \hat K^{(R)}
-%  \frac{K^{(R)}}{a^{(R)} (c^{(R)}-b^{(R)})}
-  (-\omega)^{-c^{(R)}}
-  F(a^{(R)}+1-c^{(R)}, b^{(R)}-c^{(R)}; 1-c^{(R)}; \omega)
-  )^T
-  ,
-\end{align}
-in which the left basis is exactly equal to the first solution while
-the right basis differs for $a^{(R)}\rightarrow a^{(R)}+1$ and
-$c^{(R)}\rightarrow c^{(R)}+1$.
-
-\subsubsection{Case 2}
-\label{sec:case2}
-
-Consider now the second case $n_{\vb{0}}>m_{\vb{0}}$, $n_{\vb{1}}>m_{\vb{1}}$ and
-$n_{\vb{\infty}}< m_{\vb{\infty}}$.
-For the second solution we have
-$n_{\vb{0}}> m_{\vb{0}}$, $\hat n_{\vb{1}}< \hat m_{\vb{1}}$ and
-$\hat n_{\vb{\infty}}> \hat m_{\vb{\infty}}$ and the parameters are explicitly
-\begin{align}
-  &
-    \left\{\begin{array}{l}
-\hat  a^{(L)}= c^{(L)}-a^{(L)}-1
-\\
-\hat   b^{(L)}= c^{(L)}-b^{(L)}+1
-\\
-\hat   c^{(L)}= c^{(L)}
-       \end{array}
-  \right.
-,~~~~
-    \left\{\begin{array}{l}
-\hat  a^{(R)}= c^{(R)}-a^{(R)}
-\\
-\hat   b^{(R)}= c^{(R)}-b^{(R)}
-\\
-\hat   c^{(R)}= c^{(R)}
-       \end{array}
-               \right.
-               .
-\end{align}
-The $K$ factors are
+we can write the second solution as
 \begin{equation}
-  \hat K^{(L)}= K^{(L)}\frac{(b^{(L)}-1)(c^{(L)}-a^{(L)}-1)}{a^{(L)}(c^{(L)}-b^{(L)})},~~~~
-  \hat K^{(R)}= K^{(R)}
-  .
+  \begin{split}
+    \ipd{\omega} \cX_2
+    & =
+    (-\omega)^{n_{\vb{0}} + m_{\vb{0}} - 1}\,
+    (1-\omega)^{n_{\vb{1}} + m_{\vb{1}}}\,
+    \\
+    & \times
+    \mqty(
+      \hyp{a^{(L)}}{b^{(L)}}{c^{(L)}}{\omega}
+      \\
+      K^{(L)}\, (-\omega)^{1 - c^{(L)}}\,
+      \hyp{a^{(L)} + 1 - c^{(L)}}{b^{(L)} + 1 - c^{(L)}}{2 - c^{(L)}}{\omega}
+    )
+    \\
+    & \times
+    \mqty(
+      \hyp{a^{(R)} + 1}{b^{(R)}}{c^{(R)} + 1}{\omega}
+      \\
+      \hat{K}^{(R)}\, (-\omega)^{- c^{(R)}}\,
+      \hyp{a^{(R)} + 1 - c^{(R)}}{b^{(R)} - c^{(R)}}{1 - c^{(R)}}{\omega}
+    )
+  \end{split}.
 \end{equation}
-Using Euler relation we can finally write the second solution for the
-second case as
-\begin{align}
-    \partial_\omega \chi_2 =&
-  (-\omega)^{n_{\vb{0}}+m_{\vb{0}}-1}
-  (1-\omega)^{n_{\vb{1}}+m_{\vb{1}}} \times
-                              \nonumber\\
-  & \times
-  \mqty(
-  F(a^{(L)}+1, b^{(L)}-1; c^{(L)}; \omega) \\
-  \hat K^{(L)}
-%K^{(L)}\frac{(b^{(L)}-1)(c^{(L)}-a^{(L)}-1)}{a^{(L)}(c^{(L)}-b^{(L)})}
-  (-\omega)^{1-c^{(L)}}
-  F(a^{(L)}+2-c^{(L)}, b^{(L)}-c^{(L)}; 2-c^{(L)}; \omega)
-  )
-  \nonumber\\
-  &\times
-  \mqty(
-  F(a^{(R)}, b^{(R)}; c^{(R)}; \omega) \\
-  K^{(R)} (-\omega)^{1-c^{(R)}}
-  F(a^{(R)}+1-c^{(R)}, b^{(R)}+1-c^{(R)}; 2-c^{(R)}; \omega)
-  )^T
-  ,
-\end{align}
-in which the right basis is exactly equal to the first solution while
-the left basis differs for $a^{(L)}\rightarrow a^{(L)}+1$ and
-$b^{(L)}\rightarrow b^{(L)}-1$.
+In this solution the left basis is exactly the same as in the first solution~\eqref{eq:first_solution} while the right basis differs for $a^{(R)} \mapsto a^{(R)} + 1$ and $c^{(R)} \mapsto c^{(R)} + 1$.
 
 
+\paragraph{Case 2}
 
-
-\subsection{The Solution}
-  In the previous section we have shown that there are two independent
-  solutions, therefore the general solution for
-  $\partial_\omega \chi$ obviously reads
-  \begin{equation}
-\partial_\omega \chi= C_1 \partial_\omega \chi_1 + C_2 \partial_\omega \chi_2
-\label{eq:general_solution}
-.
+Consider now the second option $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} < m_{\vb{\infty}}$.
+For the second solution we have $n_{\vb{0}} > m_{\vb{0}}$, $\hat{n}_{\vb{1}} < \hat{m}_{\vb{1}}$ and $\hat{n}_{\vb{\infty}} > \hat{m}_{\vb{\infty}}$ and the parameters are explicitly:
+\begin{equation}
+  \begin{cases}
+    \hat{a}^{(L)} & = c^{(L)} - a^{(L)} - 1
+    \\
+    \hat{b}^{(L)} & = c^{(L)} - b^{(L)} - 1
+    \\
+    \hat{c}^{(L)} & = c^{(L)}
+  \end{cases},
+  \qquad
+  \begin{cases}
+    \hat{a}^{(R)} & = c^{(R)} - a^{(R)}
+    \\
+    \hat{b}^{(R)} & = c^{(R)} - b^{(R)}
+    \\
+    \hat{c}^{(R)} & = c^{(R)}
+  \end{cases},
 \end{equation}
-  Therefore the final solution depends now only on two complex
-  constants, $C_1$ and $C_2$ which we can fix imposing the global conditions
-  in \eqref{eq:discontinuity_bc}, i.e. the second equation for all
-  $t$'s in the solution \eqref{eq:classical_solution}.
-  Since the three target space intersection
-  points always define a triangle on a 2-dimensional plane, we can
-  impose the boundary conditions knowing two angles formed by the sides (i.e.
-  the branes between two intersections) and the length of one of
-  them.
-  We already fixed the parameters of the rotations, then we need to
-  compute the length of one of the sides.
-  and consider, for instance, the length of the side
-  $X(x_{\bt+1},x_{\bt+1}) - X(x_{\bt-1}, x_{\bt-1})$:
-Explicitly we impose the four real equations in spinorial formalism
-  \begin{equation}
-    \int_0^1 \dd{\omega} \partial_\omega \cX(\omega)
-    +
-    U_L^{\dagger}(\vb{n}_{{\bt}})
-    ~\int_0^1 \dd{\bar\omega} \partial_\omega \cX(\bar\omega)
-    ~U_R(\vb{m}_{{\bt}})
+The normalisation factors $K$ are:
+\begin{equation}
+  \hat{K}^{(L)}
   =
-  f_{{\bt+1}\,(s)}-f_{{\bt-1}\,(s)}
-  ,
+  K^{(L)}\,
+  \frac{(b^{(L)} - 1)(c^{(L)} - a^{(L)} - 1)}{a^{(L)} (c^{(L)} - b^{(L)})},
+  \qquad
+  \hat{K}^{(R)}
+  =
+  K^{(R)}.
 \end{equation}
-where we have used the mapping \eqref{eq:def_omega} to write the
-integrals directly in $\omega$ variables.
-This equation has then enough degrees of freedom to fix completely
-the two complex parameters $C_1$ and $C_2$,
-thus completing the determination of the full solution in its general form.
+Using Euler relation we write the second solution for the second case as
+\begin{equation}
+  \begin{split}
+    \ipd{\omega} \cX_2
+    & =
+    (-\omega)^{n_{\vb{0}} + m_{\vb{0}} - 1}\,
+    (1-\omega)^{n_{\vb{1}} + m_{\vb{1}}}\,
+    \\
+    & \times
+    \mqty(
+      \hyp{a^{(L)} + 1}{b^{(L)} - 1}{c^{(L)}}{\omega}
+      \\
+      \hat{K}^{(L)}\, (-\omega)^{1 - c^{(L)}}\,
+      \hyp{a^{(L)} + 2 - c^{(L)}}{b^{(L)} - c^{(L)}}{2 - c^{(L)}}{\omega}
+    )
+    \\
+    & \times
+    \mqty(
+      \hyp{a^{(R)}}{b^{(R)}}{c^{(R)}}{\omega}
+      \\
+      \hat{K}^{(R)}\, (-\omega)^{- c^{(R)}}\,
+      \hyp{a^{(R)} + 1 - c^{(R)}}{b^{(R)} + 1 - c^{(R)}}{2 - c^{(R)}}{\omega}
+    )
+  \end{split}.
+\end{equation}
+The right basis is the same as in the first solution while the left basis differs for $a^{(L)} \mapsto a^{(L)} + 1$ and $b^{(L)} \mapsto b^{(L)} - 1$.
+
+
+\subsubsection{The Solution}
+  
+We showed that there are two independent solutions.
+The general solution for $\ipd{\omega} \cX$ is therefore:
+\begin{equation}
+  \ipd{\omega} \cX
+  =
+  C_1\, \ipd{\omega} \cX_1 + C_2\, \ipd{\omega} \cX_2.
+  \label{eq:general_solution}
+\end{equation}
+The final solution depends only on two complex constants, $C_1$ and $C_2$, which we can fix imposing the global conditions in \eqref{eq:discontinuity_bc}, that is the second equation in the solution \eqref{eq:classical_solution}.
+As the three intersection points in target space always define a triangle on a 2-dimensional plane, we impose the boundary conditions knowing two angles formed by the sides of the triangle (i.e.\ the branes between two intersections) and the length of one of them.
+Since we already fixed the parameters associated to the rotations, we need to compute the length of one of the sides.
+Consider for instance the length of $X(x_{\bt+1},\, x_{\bt+1}) - X(x_{\bt-1},\, x_{\bt-1})$.
+Explicitly we impose the four real equations in spinorial formalism
+\begin{equation}
+  \finiteint{\omega}{0}{1}
+  \ipd{\omega} \cX(\omega)
+  +
+  U_L^{\dagger}(\vb{n}_{{\bt}})
+  \left[
+    \finiteint{\bomega}{0}{1} \ipd{\bomega} \cX(\bomega)
+  \right]
+  U_R(\vb{m}_{{\bt}})
+  =
+  f_{{\bt+1}\, (s)} - f_{{\bt-1}\, (s)},
+\end{equation}
+where we used the mapping~\eqref{eq:def_omega} to write the integrals in the $\omega$ variables.
+This equation has enough degrees of freedom to fix completely the two complex parameters $C_1$ and $C_2$.
+The final generic solution is thus uniquely determined.
+
+
+\subsection{Recovering the \texorpdfstring{\SU{2}}{SU(2)} and the Abelian Solution}
+
+In this section we show how this general procedure includes both the solution with pure \SU{2} rotation matrices and the solution with Abelian rotations of the D-branes.
+The Abelian solution emerges from this construction as a limit and produces the known result for Abelian $\SO{2} \times \SO{2} \subset \SO{4}$ rotations in the case of a factorised space $\R^4 = \R^2 \times \R^2$.
+
+\subsubsection{Abelian Limit of the \texorpdfstring{\SU{2}}{SU(2)} Monodromies}
+
+Here we compute the parameter $\vb{n}_{\vb{1}}$ given two Abelian rotation in $\upomega = 0$ and $\upomega = \infty$ using the standard expression for two \SU{2} element multiplication given in~\eqref{eq:product_in_SU2} in~\Cref{sec:isomorphism}.
+Results are shown in~\Cref{tab:Abelian_composition}.
+\begin{table}[tbp]
+  \centering
+  \begin{tabular}{@{}rr|cc|cr|c@{}}
+    \toprule
+    $\vb{n}_{\vb{0}}$                 &
+    $\vb{n}_{\vb{\infty}}$            &
+    \multicolumn{2}{c|}{relations}    &
+    $n_{\vb{1}}$                      &
+    $\vb{n}_{\vb{1}}$                 &
+    $\sum\limits_{t} \vb{n}_{\vb{t}}$
+    \\
+    \midrule
+    $n_{\vb{0}}\, \vb{k}$                        &
+    $n_{\vb{\infty}}\, \vb{k}$                   &
+    $n_{\vb{0}} + n_{\vb{\infty}} < \frac{1}{2}$ &
+    $n_{\vb{0}} \lessgtr n_{\vb{\infty}}$        &
+    $n_{\vb{0}} + n_{\vb{\infty}}$               &
+    $-n_{\vb{1}}\, \vb{k}$                       &
+    $\vb{0}$
+    \\
+    $n_{\vb{0}}\, \vb{k}$                        &
+    $n_{\vb{\infty}}\, \vb{k}$                   &
+    $n_{\vb{0}} + n_{\vb{\infty}} > \frac{1}{2}$ &
+    $n_{\vb{0}} \lessgtr n_{\vb{\infty}}$        &
+    $1 - (n_{\vb{0}} + n_{\vb{\infty}})$         &
+    $n_{\vb{1}}\, \vb{k}$                        &
+    $\vb{k}$
+    \\
+    $n_{\vb{0}}\, \vb{k}$                               &
+    $-n_{\vb{\infty}}\, \vb{k}$                         &
+    $n_{\vb{0}} + n_{\vb{\infty}} \lessgtr \frac{1}{2}$ &
+    $n_{\vb{0}} > n_{\vb{\infty}}$                      &
+    $n_{\vb{0}} - n_{\vb{\infty}}$                      &
+    $-n_{\vb{1}}\, \vb{k}$                              &
+    $\vb{0}$
+    \\
+    $n_{\vb{0}}\, \vb{k}$                               &
+    $-n_{\vb{\infty}}\, \vb{k}$                         &
+    $n_{\vb{0}} + n_{\vb{\infty}} \lessgtr \frac{1}{2}$ &
+    $n_{\vb{0}} < n_{\vb{\infty}}$                      &
+    $-n_{\vb{0}} + n_{\vb{\infty}}$                     &
+    $n_{\vb{1}}\, \vb{k}$                               &
+    $\vb{0}$
+    \\
+    \bottomrule
+  \end{tabular}
+  \caption{Abelian limit of \SU{2} monodromies}
+  \label{tab:Abelian_composition}
+\end{table}
+Under the parity transformation $P_2$ the previous four cases are grouped
+into two sets $\{ n_{\vb{1}} = n_{\vb{0}} + n_{\vb{\infty}},\, \hat{n}_{\vb{1}} = -n_{\vb{0}} + \hat{n}_{\vb{\infty}} \}$ and $\{ n_{\vb{1}} = 1 - (n_{\vb{0}} + n_{\vb{\infty}}),\, \hat{n}_{\vb{1}} = n_{\vb{0}} - \hat{n}_{\vb{\infty}} \}$.
+Geometrically the first group corresponds to the same geometry which is depicted in~\Cref{fig:Abelian_angles_1} while the second in~\Cref{fig:Abelian_angles_2}.
+We can in fact arbitrarily fix the orientation of $D_{(3)}$ to obtain these geometrical interpretations.
+Since $n^3_{\vb{0}} > 0$ we can then fix the orientation of $D_{{1}}$.
+$D_{{2}}$ is then fixed relatively to $D_{{1}}$ by the sign of $n^3_{\vb{\infty}}$.
+The sign of $n^3_{\vb{1}}$ then follows.
+
+Differently from the usual geometric Abelian case, this group analytical approach distinguishes between the possible orientations of the D-branes.
+In fact we can compare all possible D-brane orientation and the group parameter $n^3$ with the angles in the Abelian configuration in~\Cref{fig:usual_Abelian_angles}.
+The relation between the usual Abelian paramter $\epsilon_{\vb{t}}$ and $n_{\vb{t}}^3$ is
+\begin{equation}
+  \varepsilon_{\vb{t}}
+  =
+  n_{\vb{t}}^3 + \theta(-n^3_{\vb{t}})
+  \label{eq:Abelian_vs_n_simple_case},
+\end{equation}
+when all $m = 0$.
+
+\begin{figure}[tbp]
+    \centering
+    \def\svgwidth{0.8\textwidth}
+    \import{img}{abelian_angles_case1.pdf_tex}
+    \caption{%
+      The Abelian limit when the triangle has all acute angles.
+      This corresponds to the cases  $n_{\vb{0}} + n_{\vb{\infty}}< \frac{1}{2}$ and $n_{\vb{0}}< n_{\vb{\infty}}$ which are exchanged under the parity $P_2$.}
+    \label{fig:Abelian_angles_1}
+\end{figure}
+
+\begin{figure}[tbp]
+    \centering
+    \def\svgwidth{0.8\textwidth}
+    \import{img}{abelian_angles_case2.pdf_tex}
+    \caption{%
+      The Abelian limit when the triangle has one obtuse angle.
+      This corresponds to the cases $n_{\vb{0}} + n_{\vb{\infty}}> \frac{1}{2}$ and $n_{\vb{0}}> n_{\vb{\infty}}$ which are exchanged under the parity $P_2$.}
+    \label{fig:Abelian_angles_2}
+\end{figure}
+
+\begin{figure}[tbp]
+  \centering
+  \def\svgwidth{0.8\textwidth}
+  \import{img}{usual_abelian_angles.pdf_tex}
+  \caption{%
+    The geometrical angles used in the usual geometrical approach to the Abelian configuration do not distinguish among the possible branes orientations.
+    In fact we have $0 \le \alpha < 1$ and $0 < \upvarepsilon < 1$.
+  }
+  \label{fig:usual_Abelian_angles}
+\end{figure}
 
 % vim: ft=tex
