@@ -553,20 +553,20 @@ In the left sector (i.e.\ $\SU{2}_L$ matrices) we have:
   U_{L}(\vb{n}_{(t+1)})\,
   U_{L}^{\dagger}(\vb{n}_{(t)})\,
   =
-  -\vb{n}_{(t+1)} \cdot \vb{n}_{(t)}
+  -\vb{v}_{(t+1)} \cdot \vb{v}_{(t)}
   +
-  i\, (\vb{n}_{(t+1)} \times \vb{n}_{(t)}) \cdot \vb{\sigma} ,
+  i\, (\vb{v}_{(t+1)} \times \vb{v}_{(t)}) \cdot \vb{\sigma} ,
 \end{equation}
-with $\vb{n}_{(t)}^2 = 1$.
+with $\norm{\vb{v}_{(t)}}^2 = 1$.
 This is a consequence of the peculiar properties of the \SO{4} matrices $U_{(t)}$ defined in \eqref{eq:Umatrices}.
 Hence the corresponding $\SU{2}_L \times \SU{2}_R$ element $(U_{L}(\vb{n}_{(t)}),\, U_{R}(\vb{m}_{(t)}))$ reflects such characteristics.
 In particular for the left part we have
 \begin{equation}
   U_{L}(\vb{n}_{(t)})
   =
-  i\, \vb{n}_{(t)} \cdot \vb{\sigma},
+  i\, \vb{v}_{(t)} \cdot \vb{\sigma},
   \qquad
-  \vb{n}_{(t)}^2 = 1,
+  \norm{\vb{v}_{(t)}}^2 = 1,
   \label{eq:special_UL_brane_t}
 \end{equation}
 since $U_{(t)}^2 = \1_4$ implies that $U_{L}^2 = \pm \1_2$.
@@ -2062,8 +2062,6 @@ The Abelian solution emerges from this construction as a limit and produces the 
 
 \subsubsection{Abelian Limit of the \texorpdfstring{\SU{2}}{SU(2)} Monodromies}
 
-Here we compute the parameter $\vb{n}_{\vb{1}}$ given two Abelian rotation in $\upomega = 0$ and $\upomega = \infty$ using the standard expression for two \SU{2} element multiplication given in~\eqref{eq:product_in_SU2} in~\Cref{sec:isomorphism}.
-Results are shown in~\Cref{tab:Abelian_composition}.
 \begin{table}[tbp]
   \centering
   \begin{tabular}{@{}rr|cc|cr|c@{}}
@@ -2113,24 +2111,8 @@ Results are shown in~\Cref{tab:Abelian_composition}.
   \caption{Abelian limit of \SU{2} monodromies}
   \label{tab:Abelian_composition}
 \end{table}
-Under the parity transformation $P_2$ the previous four cases are grouped
-into two sets $\{ n_{\vb{1}} = n_{\vb{0}} + n_{\vb{\infty}},\, \hat{n}_{\vb{1}} = -n_{\vb{0}} + \hat{n}_{\vb{\infty}} \}$ and $\{ n_{\vb{1}} = 1 - (n_{\vb{0}} + n_{\vb{\infty}}),\, \hat{n}_{\vb{1}} = n_{\vb{0}} - \hat{n}_{\vb{\infty}} \}$.
-Geometrically the first group corresponds to the same geometry which is depicted in~\Cref{fig:Abelian_angles_1} while the second in~\Cref{fig:Abelian_angles_2}.
-We can in fact arbitrarily fix the orientation of $D_{(3)}$ to obtain these geometrical interpretations.
-Since $n^3_{\vb{0}} > 0$ we can then fix the orientation of $D_{{1}}$.
-$D_{{2}}$ is then fixed relatively to $D_{{1}}$ by the sign of $n^3_{\vb{\infty}}$.
-The sign of $n^3_{\vb{1}}$ then follows.
-
-Differently from the usual geometric Abelian case, this group analytical approach distinguishes between the possible orientations of the D-branes.
-In fact we can compare all possible D-brane orientation and the group parameter $n^3$ with the angles in the Abelian configuration in~\Cref{fig:usual_Abelian_angles}.
-The relation between the usual Abelian paramter $\epsilon_{\vb{t}}$ and $n_{\vb{t}}^3$ is
-\begin{equation}
-  \varepsilon_{\vb{t}}
-  =
-  n_{\vb{t}}^3 + \theta(-n^3_{\vb{t}})
-  \label{eq:Abelian_vs_n_simple_case},
-\end{equation}
-when all $m = 0$.
+Here we compute the parameter $\vb{n}_{\vb{1}}$ given two Abelian rotation in $\omega = 0$ and $\omega = \infty$ using the standard expression for two \SU{2} element multiplication given in~\eqref{eq:product_in_SU2} in~\Cref{sec:isomorphism}.
+Results are shown in~\Cref{tab:Abelian_composition}.
 
 \begin{figure}[tbp]
     \centering
@@ -2152,15 +2134,448 @@ when all $m = 0$.
     \label{fig:Abelian_angles_2}
 \end{figure}
 
+Under the parity transformation $P_2$ the previous four cases are grouped
+into two sets $\{ n_{\vb{1}} = n_{\vb{0}} + n_{\vb{\infty}},\, \hat{n}_{\vb{1}} = -n_{\vb{0}} + \hat{n}_{\vb{\infty}} \}$ and $\{ n_{\vb{1}} = 1 - (n_{\vb{0}} + n_{\vb{\infty}}),\, \hat{n}_{\vb{1}} = n_{\vb{0}} - \hat{n}_{\vb{\infty}} \}$.
+Geometrically the first group corresponds to the same geometry which is depicted in~\Cref{fig:Abelian_angles_1} while the second in~\Cref{fig:Abelian_angles_2}.
+We can in fact arbitrarily fix the orientation of $D_{(3)}$ to obtain these geometrical interpretations.
+Since $n^3_{\vb{0}} > 0$ we can then fix the orientation of $D_{{1}}$.
+$D_{{2}}$ is then fixed relatively to $D_{{1}}$ by the sign of $n^3_{\vb{\infty}}$.
+The sign of $n^3_{\vb{1}}$ then follows.
+
+Differently from the usual geometric Abelian case, this group analytical approach distinguishes between the possible orientations of the D-branes.
+In fact we can compare all possible D-brane orientation and the group parameter $n^3$ with the angles in the Abelian configuration in~\Cref{fig:usual_Abelian_angles}.
+The relation between the usual Abelian paramter $\epsilon_{\vb{t}}$ and $n_{\vb{t}}^3$ is
+\begin{equation}
+  \varepsilon_{\vb{t}}
+  =
+  n_{\vb{t}}^3 + \theta(-n^3_{\vb{t}})
+  \label{eq:Abelian_vs_n_simple_case},
+\end{equation}
+when all $m = 0$.
+
 \begin{figure}[tbp]
   \centering
   \def\svgwidth{0.8\textwidth}
   \import{img}{usual_abelian_angles.pdf_tex}
   \caption{%
     The geometrical angles used in the usual geometrical approach to the Abelian configuration do not distinguish among the possible branes orientations.
-    In fact we have $0 \le \alpha < 1$ and $0 < \upvarepsilon < 1$.
+    In fact we have $0 \le \alpha < 1$ and $0 < \varepsilon < 1$.
   }
   \label{fig:usual_Abelian_angles}
 \end{figure}
+
+
+\subsubsection{The Abelian Limit of the Left Solutions}
+
+We can then compute the basis element for the entries of~\Cref{tab:coeffs_k} for any value of $n_{\vb{1}}$ given in~\Cref{tab:Abelian_composition}.
+For simplicity we consider the left sector of the solution and drop the notation identifying it to avoid cluttering the equations.
+The right sector follows in a similar way.
+
+In the Abelian limit either $K = 0$ or $K = \infty$.
+We can absorb the infinite divergence in a constant term globally multiplying the solution and use:
+\begin{eqnarray}
+  \eval{D}_{K = 0} & = & \mqty( 1 & \\ & 0 ),
+  \\
+  \eval{D}_{K = \infty} & = & \mqty( 0 & \\ & 1 ).
+\end{eqnarray}
+Results are summarised in~\Cref{tab:Left_Abelian_solutions} where we left some hypergeometric functions in their symbolic form for compactness even though they are in fact elementary functions since either $a$ or $c - b$ equal $-1$.
+\begin{table}[tbp]
+  \centering
+  \begin{tabular}{@{}ccc@{}}
+    \toprule
+    $\left( \ffa^{(L)},\, \ffb^{(L)},\, \ffc^{(L)} \right)$ &
+    $n_{\vb{1}}$                                            &
+    $\left( \cB^{(L)}( z ) \right)^T$
+    \\
+    \midrule
+    \multirow{4}{*}{$(-1,\, 0,\, 0)$} &
+    $n_{\vb{0}} + n_{\vb{\infty}}$    &
+    $\mqty( (1 - z)^{-2\, n_{\vb{\infty}} - 2\, n_{\vb{0}} + 1} & 0 )$
+    \\
+                                                      &
+    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $\mqty( 1 & 0 )$
+    \\
+                                   &
+    $n_{\vb{0}} - n_{\vb{\infty}}$ &
+    $\mqty( 1 & (-z)^{1 - 2\, n_{\vb{0}}} )$
+    \\
+                                     &
+    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
+    $\mqty( 1 & 0 )$
+    \\
+    \midrule
+    \multirow{4}{*}{$(-1,\, 1,\, 0)$} &
+    $n_{\vb{0}} + n_{\vb{\infty}}$    &
+    $\mqty( \hyp{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 1}
+                {2\, n_{\vb{0}} + 1}
+                {2\, n_{\vb{0}}}
+                {z}
+            & 0 )$
+    \\
+                                                      &
+    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $\mqty( 1 & 0 )$
+    \\
+                                   &
+    $n_{\vb{0}} - n_{\vb{\infty}}$ &
+    $\mqty( 0 & (-z)^{1 - 2\, n_{\vb{0}}} )$
+    \\
+                                     &
+    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
+    $\mqty( 0 & (1-z)^{2\, n_{\vb{0}} - 2\, n_{\vb{\infty}}}\, (-z)^{1 - 2\, n_{\vb{0}}} )$
+    \\
+    \midrule
+    \multirow{4}{*}{$(0,\, 0,\, 0)$} &
+    $n_{\vb{0}} + n_{\vb{\infty}}$    &
+    $\mqty( (1-z)^{-2\, n_{\vb{\infty}} - 2\, n_{\vb{0}}} & 0 )$
+    \\
+                                                      &
+    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $\mqty( 0 & (1-z)^{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 2}\, (-z)^{1 - 2\, n_{\vb{0}}} )$
+    \\
+                                   &
+    $n_{\vb{0}} - n_{\vb{\infty}}$ &
+    $\mqty( (1-z)^{2\, n_{\vb{\infty}} - 2\, n_{\vb{0}}} & 0 )$
+    \\
+                                     &
+    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
+    $\mqty( 1 & 0 )$
+    \\
+    \midrule
+    \multirow{4}{*}{$(-1,\, 1,\, 1)$} &
+    $n_{\vb{0}} + n_{\vb{\infty}}$    &
+    $\mqty( (1-z)^{-2\, n_{\vb{\infty}} - 2\, n_{\vb{0}}} + 1 & 0 )$
+    \\
+                                                      &
+    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $\mqty( 1 & 0 )$
+    \\
+                                   &
+    $n_{\vb{0}} - n_{\vb{\infty}}$ &
+    $\mqty( 0 & (-z)^{-2\, n_{\vb{0}}})\, \hyp{-1}{1 - 2\, n_{\vb{\infty}}}{1 - 2\, n_{\vb{0}}}{z} )$
+    \\
+                                     &
+    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
+    $\mqty( 0 & (1-z)^{-2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} + 1}\, (-z)^{-2\, n_{\vb{0}}} )$
+    \\
+    \midrule
+    \multirow{4}{*}{$(0,\, 0,\, 1)$} &
+    $n_{\vb{0}} + n_{\vb{\infty}}$    &
+    $\mqty( 0 & (-z)^{-2\, n_{\vb{0}}} )$
+    \\
+                                                      &
+    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $\mqty( 0 & (1-z)^{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 1}\, (-z)^{-2\, n_{\vb{0}}} )$
+    \\
+                                   &
+    $n_{\vb{0}} - n_{\vb{\infty}}$ &
+    $\mqty( 0 & (-z)^{-2\, n_{\vb{0}}}) )$
+    \\
+                                     &
+    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
+    $\mqty( 1 & 0 )$
+    \\
+    \midrule
+    \multirow{4}{*}{$(0,\, 1,\, 1)$} &
+    $n_{\vb{0}} + n_{\vb{\infty}}$    &
+    $\mqty( (1-z)^{-2\, n_{\vb{\infty}} -2\, n_{\vb{0}}} & 0 )$
+    \\
+                                                      &
+    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $\mqty( 0 & (1-z)^{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 2}\, (-z)^{-2\, n_{\vb{0}}} )$
+    \\
+                                   &
+    $n_{\vb{0}} - n_{\vb{\infty}}$ &
+    $\mqty( 0 & (-z)^{-2\, n_{\vb{0}}}) )$
+    \\
+                                     &
+    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
+    $\mqty( 0 & (1-z)^{2\, n_{\vb{0}} - 2\, n_{\vb{\infty}}}\, (-z)^{-2\, n_{\vb{0}}} )$
+    \\
+    \bottomrule
+  \end{tabular}
+  \caption{Abelian limit of the solutions}
+  \label{tab:Left_Abelian_solutions}
+\end{table}
+
+
+\subsubsection{The \texorpdfstring{$\SU{2}_L$}{Left SU(2)} Limit}
+
+We recover the non Abelian \SU{2} solution by considering $m_{\vb{t}}\sim 0$.
+This is the first specific case shown in~\Cref{sec:true_basis}.
+In this scenario the left solution $\cB^{(L)}$ is always the same and matches the previous computation, however the right sector seems to give different solutions when different Abelian limits are taken.
+Studying all possible solutions we find that all of them give the same answer in the limit $m_{\vb{t}} \to 0$, i.e.\ both $\cB^{(R)} = \mqty(1 & 0)^T$ and $\cB^{(R)} = \mqty(0 & 1)^T$.\footnotemark{}
+\footnotetext{%
+  We write ``possible solutions'' because $m_{\vb{1}} = 1 - \left( m_{\vb{0}} + m_{\vb{\infty}} \right)$ is not.
+}
+The difference is the solution obtained from $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$ or $n_{\vb{0}} > m_{\vb{0}}$, $\hat{n}_{\vb{1}} < \hat{m}_{\vb{1}}$ and $\hat{n}_{\vb{\infty}} < \hat{m}_{\vb{\infty}}$.
+In any case the solution is factorised in the form $\cB^{(L)}(z) \otimes \mqty(C & C')^T$ which is expected since the right sector plays no role.
+
+
+\subsubsection{Relating the Abelian Angles with the Group Parameters}
+
+Using the explicit form of the \SO{4} and $\SU{2} \times \SU{2}$ matrices, we can verify that when the left and right $\SU{2}$ parameters are $\vb{n} = n^3\, \vb{k}$ and $\vb{m} = m^3\, \vb{k}$ the rotation of the D-branes in the plane $14$ is a \SO{2} element
+\begin{equation}
+  \mqty( \cos(\theta) & \sin(\theta) \\ -\sin(\theta)&  \cos(\theta) ),
+  \qquad
+  \theta = n^3 - m^3,
+\end{equation}
+while in plane $23$ the angle is $\theta = n^3 + m^3$.
+Comparing with the case $m = 0$ given in~\eqref{eq:Abelian_vs_n_simple_case}, we then guess that the general relation between the group parameters and the usual Abelian angles is:
+\begin{equation}
+  \begin{split}
+    \varepsilon_{\vb{t}}
+    & =
+    n_{\vb{t}}^3 - m_{\vb{t}}^3 + \theta( -(n^3_{\vb{t}} - m_{\vb{t}}^3) ),
+    \\
+    \varphi_{\vb{t}}
+    & =
+    n_{\vb{t}}^3 + m_{\vb{t}}^3 + \theta( -(n^3_{\vb{t}} + m_{\vb{t}}^3) ).
+  \end{split}
+  \label{eq:Abelian_vs_n_general_case}
+\end{equation}
+
+
+\subsubsection{Recovering the Abelian Result: an Example}
+
+To show that the construction of the Abelian limit is indeed working, we consider the first case in~\Cref{sec:true_basis} with $n_{\vb{1}} = 1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ and $m_{\vb{1}} = -m_{\vb{0}} + m_{\vb{\infty}}$.
+This leads to two independent rational functions of $\omega_z$:
+\begin{equation}
+  \begin{split}
+    \ipd{\omega_z} \cX(\omega_z)
+    & =
+    \mqty( i \ipd{\omega_z} \bar{\cZ}^1(\omega_z) &
+           \ipd{\omega_z} \cZ^{2}(\omega_z)
+           \\
+           \ipd{\omega_z} \bar{\cZ}^{2}(\omega_z) &
+           i \ipd{\omega_z} \cZ^{1}(\omega_z)
+    )
+    \\
+    & =
+    \mqty( i \ipd{\omega_z} ( \cX^1(\omega_z) - i \cX^4(\omega_z) ) &
+           \ipd{\omega_z} ( \cX^2(\omega_z) + i \cX^3(\omega_z) )
+           \\
+           \ipd{\omega_z} ( \cX^2(\omega_z) - i \cX^3(\omega_z) )   &
+           i \ipd{\omega_z} ( \cX^1(\omega_z) + i \cX^4(\omega_z) )
+    )
+    \\
+    & =
+    \mqty( 0 &
+           C_1\,
+           (1-\omega_z)^{\varepsilon_{\vb{1}}-1}\,
+           (-\omega_z)^{\varepsilon_{\vb{0}}-1}
+           \\
+           0 &
+           C_2\,
+           (1-\omega_z)^{-\varphi_{\vb{1}}}\,
+           (-\omega_z)^{-\varphi_{\vb{0}}}
+    ),
+  \end{split}
+  \label{eq:Abelian_sol_example}
+\end{equation}
+where $C_1$ and $C_2$ are constants as in~\eqref{eq:general_solution}.
+This is the known result in the presence of Abelian rotations of the D-branes: we have two different \U{1} sectors undergoing two different rotations
+$\U{1}_1 \times \U{1}_2 \subset \SU{2}_L \times \SU{2}_R$.
+In particular we used~\eqref{eq:Abelian_vs_n_general_case} to write the relation between the usual Abelian angles and the group parameters as
+\begin{equation}
+  \varepsilon_{\vb{0}} = n_{\vb{0}} - m_{\vb{0}},
+  \qquad
+  \varepsilon_{\vb{1}} = n_{\vb{1}} - m_{\vb{1}},
+  \qquad
+  \varepsilon_{\vb{\infty}} = n_{\vb{\infty}} + m_{\vb{\infty}}
+\end{equation}
+such that $\sum\limits_{t} \varepsilon_{\vb{t}} = 1$, and
+\begin{equation}
+  \varphi_{\vb{0}} = n_{\vb{0}} + m_{\vb{0}},
+  \qquad
+  \varphi_{\vb{1}} = n_{\vb{1}} + m_{\vb{1}},
+  \qquad
+  \varphi_{\vb{\infty}} = n_{\vb{\infty}} - m_{\vb{\infty}},
+  \label{eq:Abelian_rotation_second}
+\end{equation}
+where $\sum\limits_{t} \varphi_{\vb{t}} = 2$, in order to approach the usual notation in the literature.
+As usual we have $\ipd{\omega_z} \cZ^1( \omega_z ) \neq \left[ \ipd{\omega_z} \overline{\cZ}^1( \omega_z ) \right]^*$.
+
+We can now build the Abelian solution to show the analytical structure of the limit.
+We have
+\begin{equation}
+  \mqty( i \overline{Z}^1( u,\, \bu ) & Z^2( u,\, \bu )
+         \\
+         \overline{Z}^2( u,\, \bu ) & i Z^1( u,\, \bu )
+  )
+  =
+  \mqty( i \overline{f}^1_{(\bt - 1)} + i \finiteint{\omega}{0}{\bomega_{\bu}}\, \ipd{\omega} \cZ^1
+         &
+         f^2_{(\bt -1)} + \finiteint{\omega}{0}{\omega_u}\, \ipd{\omega} \cZ^2
+         \\
+         \overline{f}^2_{(\bt - 1)} + \finiteint{\omega}{0}{\bomega_{\bu}}\, \ipd{\omega} \cZ^2
+         &
+         i f^1_{(\bt-1)} + i \finiteint{\omega}{0}{\omega_u}\, \ipd{\omega_z} \cZ^1
+  )
+\end{equation}
+where we chose $R_{(\bt)} = \1_4$ so that $U_{(\bt)}$ in~\eqref{eq:Umatrices} is mapped to $(i \sigma_1, i \sigma_1) \in \SU{2} \times \SU{2}$.
+Notice however that $\vb{n}_{\vb{t}} = n_{\vb{t}}^3\, \vb{k}$ implies that $v^3_{(t)} = 0$ in~\eqref{eq:special_UL_brane_t}.
+Hence $U_L$ and $U_R$ are always off diagonal and their action on~\eqref{eq:Abelian_sol_example} is to fill the first column.
+From the previous relations we can also recover the usual holomorphicity $\overline{Z}^1(\bu) = \left[ Z^1(u) \right]^*$ of the sector with $\sum\limits_t \varepsilon_{\vb{t}} = 1$ and $\overline{Z}^2(\bu) = \left[ Z^2(u) \right]^*$ of the sector with $\sum\limits_t \varphi_{\vb{t}} = 2$.
+
+
+\subsubsection{Abelian Limits}
+
+From the example in the previous section it is possible to consider both cases given in~\Cref{sec:true_basis} and all possible combinations of the expression of $n_{\vb{1}}$ and $m_{\vb{1}}$ for a total of $2 \times 4 \times 4 = 32$ possible combinations.
+In almost all cases (in fact all but six) the solution in spinorial formalism is a $2 \times 2$ matrix which has two non vanishing entries, hence two independent Abelian solutions.
+In the remaining cases the matrix has only one non vanishing entry but the constraints on $n$ and $m$ are not compatible, thus they should not be considered.
+In the first case encountered in~\Cref{sec:true_basis} the inconsistent combinations are $\{ n_{\vb{1}} = n_{\vb{0}} + n_{\vb{\infty}},~ m_{\vb{1}} = 1 - (m_{\vb{0}} + m_{\vb{\infty}}) \}$ and $\{ n_{\vb{1}} = 1 - (n_{\vb{0}} + n_{\vb{\infty}}),~ m_{\vb{1}} = 1 - (m_{\vb{0}} + m_{\vb{\infty}}) \}$.
+In the second case in~\Cref{sec:true_basis} the incompatible constraints appear when $n_{\vb{1}} = -n_{\vb{0}} + n_{\vb{\infty}}$.
+
+
+\subsection{The Physical Interpretation}
+
+In this section we show some consequences of the explicit classical solution for the phenomenology of models involving D-branes intersecting at angles.
+In particular we focus on the value of the action which plays a fundamental role in the hierarchy of the Yukawa couplings.
+
+
+\subsubsection{Rewriting the Action}
+
+Using the classical solution previously computed, it is possible to compute the classical action of the bosonic string and show its contribution to the correlation functions of twist fields and Yukawa couplings.
+We use the equations of motion~\eqref{eq:string_equation_of_motion} to simplify the action~\eqref{eq:string_action}.
+We get:
+\begin{equation}
+  4 \pi \ap \eval{S_{\R^4}}_{\text{on-shell}}
+  =
+  i \finitesum{t}{1}{3}\,
+  \sum\limits_{m \in \{3, 4\}}
+  g_{(t)\, m}\,
+  \finiteint{x}{x_{(t)}}{x_{(t-1)}}
+  \tensor{\left( R_{(t)} \right)}{_{mI}}
+  \eval{\left( X_L'(x) - X_R'(x) \right)^I}_{y=0^+},
+  \label{eq:area_tmp}
+\end{equation}
+where indices $I = 1,\, 2,\, 3,\, 4$ are summed over and $m = 3,\, 4$ are the transverse directions in the well adapted frame with respect to the D-brane.
+As the number of D-branes is defined modulo $N_B = 3$, $D_{(1)}$ is split on two separate intervals:
+\begin{equation}
+  \left[ x_{(1)},\, x_{(3)} \right]
+  =
+  \left[ x_{(1)},\, +\infty \right)
+  \cup
+  \left( -\infty,\, x_{(3)} \right],
+\end{equation}
+as it is visually shown in~\Cref{fig:finite_cuts}.
+For $x_{(t)} < x < x_{(t-1)}$ we have:
+\begin{equation}
+  X(x+iy,\, x-iy)
+  =
+  X^*(x+iy,\, x-iy)
+  \quad
+  \Rightarrow
+  \quad
+  X_L^*(x-iy)
+  =
+  X_R(x-iy) + Y,
+\end{equation}
+where $Y \in \R$ is a constant factor which cannot depend on the particular D-brane $D_{(t)}$.
+In fact the continuity of $X_L(u)$ and $X_R(\bu)$ on the worldsheet intersection point ensures that
+\begin{equation}
+  \lim\limits_{x \to x_{(t)}^+} X(x, x)
+  =
+  \lim\limits_{x \to x_{(t)}^-} X(x, x),
+\end{equation}
+which does not allow $Y$ to depend on the specific D-brane while the reality of $X(u,\bu)$ implies that $\Im Y = 0$.
+Now~\eqref{eq:area_tmp} becomes:
+\begin{equation}
+  \begin{split}
+    4 \pi \ap \eval{S_{\R^4}}_{\text{on-shell}}
+    & =
+    -2 \finitesum{t}{1}{3}\,
+    \sum\limits_{m \in \{3, 4\}}
+    \eval{%
+      g_{(t)\, m}\,
+      \tensor{\Im \left( R_{(t)} \right)}{_{mI}}
+      X_L^I(x+i0^+)
+    }^{x = x_{(t-1)}}_{x = x_{(t)}}
+    \\
+    & =
+    -2 \finitesum{t}{1}{3}\,
+    g^{(\perp)}_{(t)\, I}\,
+    \eval{%
+      \Im X_L^I(x+i0^+)
+    }^{x = x_{(t-1)}}_{x = x_{(t)}} \in \R,
+  \end{split}
+  \label{eq:action_with_imaginary_part}
+\end{equation}
+where $g^{(\perp)}_{(t)\, I} = \sum_{m \in \{3, 4\}} \tensor{\left( R_{(t)}^{-1} \right)}{_{mI}}\, g_{(t)\, m}$ is the transverse shift of $D_{(t)}$ in global coordinates:
+\begin{equation}
+  g^{(\perp)}_{(t)\, I}\, (f_{(t-1)} - f_{(t)})^I = 0.
+  \label{eq:g_perp_Delta_f}
+\end{equation}
+
+
+\subsubsection{Holomorphic Case}
+
+In this case there are global complex coordinates for which the string solution is holomorphic:
+\begin{equation}
+  Z^i(u, \bu) = Z^i_L(u),
+  \qquad
+  \overline{Z}^i(u, \bu) = \bar{Z}^i(\bu) = \left( Z^i_L(u) \right)^*,
+\end{equation}
+where $i = 1$ in the Abelian case and $i=1,\, 2$ in the \SU{2} case.
+We also have $f^i_{(t)} = Z^i_L(x_{(t)} + i\, 0^+)$.
+Equations~\eqref{eq:g_perp_Delta_f} and~\eqref{eq:action_with_imaginary_part} then become
+\begin{eqnarray}
+  \Re( g_{(t)\, i}^{(\perp)}\, \left( f_{(t-1)} - f_{(t)} \right)^i )
+  & = &
+  0,
+  \\
+  4 \pi \ap \eval{S_{\R^4}}_{\text{on-shell}}
+  & = &
+  -2 \finitesum{t}{1}{3}\,
+  \Im( g_{(t)\, i}^{(\perp)}\, \left( f_{(t-1)} - f_{(t)} \right)^i ),
+\end{eqnarray}
+where the last equation shows that the action can be expressed using just the global data.
+
+In the Abelian scenario we can further simplify the action and give a clear geometrical meaning.
+Given to complex numbers $a, b \in \C$ such that $\Re(a^* b)=0$ then $\Im(a^* b) = \pm \abs{a} \abs{b}$.
+This can be seen either by direct computation or by using a \U{1} rotation to set $b$ equal to $\abs{b}$.
+Since the action is positive then we can write
+\begin{equation}
+  \eval{S_{\R^4}}_{\text{on-shell}}
+  =
+  \frac{1}{2 \pi \ap}
+  \finitesum{t}{1}{3}\,
+  \left(
+    \frac{1}{2} \abs{g^{(\perp)}_{(t)}} \,
+    \abs{f_{(t-1)} - f_{(t)}}
+  \right),
+\end{equation}
+where a factor $\frac{1}{2}$ comes from raising the complex index in $g^{(\perp)}_{(t)\, 1}$.
+The right hand side of the previous expression is the sum of the areas of the triangles having the interval between two intersection points on a given D-brane $D_{(t)}$ as base and the distance between the D-brane and the origin as height.
+A visual reference can be found in~\Cref{fig:branes_at_angles}.
+
+For the \SU{2} case we can use a rotation to map $(f_{(t-1)} - f_{(t)})^i$ to the form $\norm{f_{(t-1)} - f_{(t)}} \delta^i_1$.
+Each term of the action can be interpreted again as an area of a triangle where the distance between the interaction points is the base.
+
+
+\subsubsection{The General Non Abelian Case}
+
+\begin{figure}[tbp]
+  \centering
+  \def\svgwidth{0.35\textwidth}
+  \import{img/}{brane3d.pdf_tex}
+  \caption{%
+    Pictorial $3$-dimensional representation of two D2-branes intersecting in the Euclidean space $\R^3$ along a line (in $\R^4$ the intersection is a point since the co-dimension of each D-brane is 2): since it is no longer constrained on a bi-dimensional plane, the string must be deformed in order to stretch between two consecutive D-branes.
+    Its action can be larger than the planar area.
+  }
+  \label{fig:brane3d}
+\end{figure}
+
+In the general case there does not seem to be any possible way of computing the action~\eqref{eq:action_with_imaginary_part} in term of the global data.
+Most probably the value of the action is larger than in the holomorphic case since the string is no longer confined to a plane.
+Given the nature of the rotation its worldsheet has to bend in order to be attached to the D-brane as pictorially shown in~\Cref{fig:brane3d} in the case of a $3$-dimensional space.
+The general case we considered then differs from the known factorized case by an additional contribution in the on-shell action which can be intuitively understood as a small ``bump'' of the string worldsheet in proximity of the boundary.
+
+
+\subsection{A Brief Summary}
+
+
 
 % vim: ft=tex
