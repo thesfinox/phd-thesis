@@ -1,1 +1,519 @@
+\subsection{Motivation}
+
+As previously pointed out, the computation of quantities such as Yukawa couplings involves correlators of excited spin and twist fields.
+After the analysis of the main contribution to amplitudes involving twist fields at the intersection of D-branes, we focus on the computation of correlators of (excited) spin fields.
+This has been a research subject for many years until the formulation found in the seminal paper by Friedan, Martinec and Shenker~\cite{Friedan:1986:ConformalInvarianceSupersymmetry} based on bosonization.
+In general the available techniques allow to compute only correlators involving ``Abelian'' configurations, that is configurations which can be factorized in sub-configurations having \U{1} symmetry.
+Non Abelian cases have been considered~\cite{Inoue:1987:NonAbelianOrbifolds,Inoue:1990:StringInteractionsNonAbelian,Gato:1990:VertexOperatorsNonabelian,Frampton:2001:ClassificationConformalityModels,Pesando:2016:FullyStringyComputation} which is mathematically by far more complicated.
+  
+Despite the existence of an efficient method based on bosonization~\cite{Friedan:1986:ConformalInvarianceSupersymmetry} and old methods based on the Reggeon vertex~\cite{Sciuto:1969:GeneralVertexFunction,DellaSelva:1970:SimpleExpressionSciuto,Schwarz:1973:EvaluationDualFermion,DiVecchia:1990:VertexIncludingEmission,Nilsson:1990:GeneralNSRString,DiBartolomeo:1990:GeneralPropertiesVertices,Engberg:1993:AlgorithmComputingFourRamond,Petersen:1989:CovariantSuperreggeonCalculus}, we take into examination the computation of spin field correlators and propose a new method to compute them.
+We hope to be able to extend this approach to correlators involving twist fields and non Abelian spin and twist fields.
+We would also like to investigate the reason of the non existence of an approach equivalent to bosonization for twist fields.
+At the same time we are interested to explore what happens to a CFT in presence of defects.
+It turns out that, despite the defects, it is still possible to define a radial time dependent stress-energy tensor which satisfies the canonical OPE.
+Moreover the boundary changing defects in the construction can be associated with excited spin fields enabling the computation of correlators involving excited spin fields without resorting to bosonization.
+
+
+
+\subsection{Point-like Defect CFT: the Minkowskian Formulation}
+\label{sec:Mink_theory}
+  
+Let $( \tau,\, \sigma ) \in \Sigma = ( -\infty,\, +\infty) \times \qty[ 0, \pi ]$ define a strip with Lorentzian metric and consider $N_f$ massless complex fermions $\psi^i$ such that $i = 1,\, 2,\, \dots,\, N_f$.
+Their two-dimensional Minkowski action defined on the strip $\Sigma$ is:
+\begin{equation}
+  S
+  =
+  \frac{T}{2}
+  \infinfint{\tau}
+  \finiteint{\sigma}{0}{\pi}
+  \left(
+    \frac{1}{2}\, \bpsi_i( \tau,\, \sigma )\,
+    \left( -i \gamma^{\alpha} \lrpartial{\alpha} \right)\,
+    \psi^i( \tau,\, \sigma ) 
+  \right),
+  \label{eq:cft-action_full}
+\end{equation}
+where the gamma matrices are
+\begin{equation}
+  \gamma^{\tau}
+  =
+  \mqty( & 1 \\ -1 & )
+  =
+  -\gamma_{\tau},
+  \qquad
+  \gamma^{\sigma}
+  =
+  \mqty( & 1 \\ 1 & )
+  =
+  \gamma_{\sigma},
+\end{equation}
+and the components of the massless fermions are
+\begin{equation}
+  \psi
+  =
+  \mqty( \psi_+ \\ \psi_- ),
+  \qquad
+  \bpsi
+  =
+  \psi^{\dagger}\, \gamma^{\tau}
+  =
+  \mqty( -\psi_-^* & \psi_+^* ).
+\end{equation}
+We then define the lightcone coordinates $\xi_{\pm} = \tau \pm \sigma$ such that $\ipd{\pm} = \frac{1}{2}\, \left( \ipd{\tau} \pm \ipd{\sigma} \right)$.
+In components the action reads:
+\begin{equation}
+  S
+  =
+  i \frac{T}{4}
+  \infinfint{\xi_+}
+  \infinfint{\xi_-}
+  \left(
+    \psi^*_{-,\, i} \lrpartial{+} \psi^i_- + \psi^*_{+,\, i} \lrpartial{-} \psi^i_+
+  \right),
+  \label{eq:cft-action}
+\end{equation}
+so the \eom are:
+\begin{equation}
+  \begin{split}
+    \ipd{-} \psi_{+}^i( \xi_+, \xi_- )
+    & =
+    \ipd{+} \psi_{-}^i( \xi_+, \xi_- )
+    =
+    0,
+    \\
+    \ipd{-} \psi^*_{+,\, i}( \xi_+, \xi_- )
+    & =
+    \ipd{+} \psi^*_{-,\, i}( \xi_+, \xi_- )
+    =
+    0.
+  \end{split}
+  \label{eq:eom}
+\end{equation}
+Their solutions are the ``holomorphic'' functions $\psi_{+}^i(\xi_+)$ and $\psi_{-}^i(\xi_-)$ and their complex conjugates.\footnotemark{}
+\footnotetext{%
+  Notice that $\psi^*$ is indeed the complex conjugate of the field $\psi$, while it will no longer be the case in the Euclidean formalism.
+}
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.4\linewidth]{img/point-like-defects}
+  \caption{Propagation of the string in the presence of the worldsheet defects.}
+  \label{fig:point-like-defects}
+\end{figure}
+The boundary conditions are instead:
+\begin{equation}
+  \eval{
+    \left(
+      \var{\psi}_{+,\, i}^* \psi_{+}^{ i} +
+      \var{\psi}_{-,\, i}^* \psi_{-}^{ i} -
+      \psi_{+,\, i}^* \var{\psi}_{+}^{ i} -
+      \psi_{-,\, i}^* \var{\psi}_{-}^{ i}
+    \right)
+  }_{\sigma = 0}^{\sigma = \pi} = 0.
+  \label{eq:boundary-conditions}
+\end{equation}
+We solve the constraint imposing the non trivial relations:
+\begin{equation}
+  \begin{cases}
+    \psi_-^i( \tau, 0 )
+    =
+    \tensor{\left( R_{(t)} \right)}{^i_j}
+    \psi^j_+( \tau, 0 ),
+    & \qquad
+    \tau \in \left( \htau_{(t)}, \htau_{(t-1)} \right),
+    \\
+    \psi_-^i( \tau, \pi )
+    =
+    - \psi_+^i( \tau, \pi ),
+    & \qquad
+    \tau \in \R,
+  \end{cases}
+  \label{eq:boundary-conditions-solutions}
+\end{equation}
+where $t = 1, 2, \dots, N$.
+This way we introduce $N$ zero-dimensional defects on the boundary, pictorially shown in~\Cref{fig:point-like-defects}.
+They are located on the strip at $( \htau_{(t)}, 0 ) \in \Sigma$ such that $\htau_{(t)} < \htau_{(t-1)}$ with $\htau_{N+1} = -\infty$ and $\htau_0 = +\infty$.
+Their characterisation is given by $N$ matrices $R_{(t)} \in \U{N_f}$.
+    
+In most of this paper we want the in- and out-vacua to be the usual NS vacuum.
+We thus choose the boundary condition at $\sigma = \pi$ so that when there are no defects the system describes NS fermions.
+We require also the cancellation of the action of the defects at $\htau = \pm\infty$, that is:
+\begin{equation}
+  R_{(N)} R_{(N-1)} \dots R_{(1)} = \1.
+\end{equation}
+More general cases where the asymptotic vacua are twisted can be worked out in similar fashion.
+   
+In order to connect to the Euclidean formulation we introduce $N_f$ ``double fields'' $\Psi^i$.\footnotemark{}
+\footnotetext{%
+  In this case they correspond to the fields $\psi^i_+$.
+}
+They can be obtained by gluing $\psi^i_+$ and $\psi^i_-$ along the $\sigma = \pi$ boundary and labeled by an index $i = 1,\, 2,\, \dots,\, N_f$:
+\begin{equation}
+  \Psi^i(\tau,\, \phi)
+  =
+  \begin{cases}
+    \psi^i_+(\tau,\, \phi),
+    & \qquad 0\le\phi\le \pi
+    \\
+    -\psi^i_-(\tau,\, 2\pi-\phi),
+    & \qquad \pi \le \phi \le 2 \pi        
+  \end{cases}
+  \label{eq:double-field-Lorentzian}
+\end{equation}
+where $0 \le \phi \le 2 \pi$.
+The boundary conditions become:
+\begin{equation}
+  \Psi^i(\tau, 2 \pi )
+  =
+  - \tensor{\left( R_{(t)} \right)}{^i_j}
+  \Psi^j(\tau,\, 0 ),
+  \qquad
+  \tau \in \left( \htau_{(t)},\, \htau_{(t-1)} \right).
+\end{equation}
+Using the equation of motion we get $\Psi^i(\tau,\, \phi) = \Psi^i(\tau + \phi)$ and the boundary conditions become the (pseudo-)periodicity conditions
+\begin{equation}
+  \Psi^i(\tau + 2 \pi )
+  =
+  - \tensor{\left( R_{(t)} \right)}{^i_j}
+  \Psi^j(\tau ),
+  \qquad
+  \tau \in \left( \htau_{(t)}, \htau_{(t-1)} \right).
+\end{equation}
+The main issue is now to expand $\Psi$ in a basis of modes and proceed to its quantization.
+Even in the simplest case $N_f = 1$ the task of finding the Minkowskian modes turns out to be fairly complicated.
+It is however possible to overcome the issue in the Euclidean formalism.
+
+
+\subsection{Conserved Product and Charges}
+\label{sec:product}
+
+In order to promote the theory to its quantum formulation, we define a procedure to build a Fock space of states in the Heisenberg formalism.
+Equal time anti-commutation relations must then be invariant in time.
+We thus need a time independent internal product to extract the creation and annihilation operators and expand the fields on the basis of modes.
+
+
+\subsubsection{Conserved Product and Current}
+
+Start from a generic conserved current
+\begin{equation}
+  j( \tau,\, \sigma )
+  =
+  j_{\tau}( \tau,\, \sigma )\, \dd{\tau} + j_{\sigma}( \tau,\, \sigma )\, \dd{\sigma},
+\end{equation}
+and consider
+\begin{equation}
+  \star j
+  =
+  j_{\sigma} \dd{\tau} + j_{\tau} \dd{\sigma}
+  \quad
+  \Rightarrow
+  \quad
+  \dd{(\star j)}
+  =
+  \qty( \ipd{\tau} j_{\tau} - \ipd{\sigma} j_{\sigma} ) \dd{\tau} \dd{\sigma},
+\end{equation}
+where $\star$ is the Hodge dual operator.
+Integration over the surface $\Sigma' = [ \tau_i, \tau_f ] \times [ 0, \pi ]$ yields:
+\begin{equation}
+  \int\limits_{\Sigma'} \dd{(\star j)}
+  =
+  \int\limits_{\partial \Sigma'}
+  \star j
+  =
+  0
+  \qquad
+  \Leftrightarrow
+  \qquad
+  \finiteint{\sigma}{0}{\pi}
+  \eval{j_{\tau}}_{\tau = \tau_f}^{\tau = \tau_i}
+  =
+  \finiteint{\tau}{\tau_i}{\tau_f}
+  \eval{j_{\sigma}}_{\sigma = \pi}^{\sigma = 0}.
+\end{equation}
+The current $j_{\tau}( \tau,\, \sigma )$ is thus conserved in time if
+\begin{equation}
+  \finiteint{\tau}{\tau_i}{\tau_f}
+  \left( \eval{j_{\sigma}}_{\sigma = \pi} - \eval{j_{\sigma}}_{\sigma = 0} \right)
+  =
+  0.
+  \label{eq:time-conservation}
+\end{equation}
+In this case we can define
+\begin{equation}
+  Q = \finiteint{\sigma}{0}{\pi} j_{\tau}( \tau,\, \sigma ) 
+\end{equation}
+as conserved quantity (that is $\ipd{\tau} Q = 0$).
+We now consider explicitly the symmetries of the action~\eqref{eq:cft-action}.
+We focus on diffeomorphism invariance and $\U{N_f}$ flavour symmetries of the bulk theory leading to the stress-energy tensor and a vector current.
+
+
+\subsubsection{Flavour Vector Current}
+
+Consider first the $\U{N_f}$ vector current of the flavour symmetry in~\eqref{eq:cft-action_full}.
+We write it as
+\begin{equation}
+  j_{\alpha}^a ( \tau,\, \sigma )
+  =
+  \tensor{\left( \rT^a \right)}{^i_j}\,
+  \bpsi_i( \tau,\, \sigma )\, \gamma_{\alpha}\, \psi^j( \tau,\, \sigma ),
+\end{equation}
+where $\rT^a$ is a generator of $\U{N_f}$ such that $a = 1,\, 2,\, \dots,\, N_f^2$.\footnotemark{}
+\footnotetext{%
+  The results however are more general and hold for a generic matrix $M$ taking the place of any of the generators $\rT^a$.
+  Spinors $\psi$ and $\bpsi$ can also be generalized to two different and arbitrary solutions of the \eom~\eqref{eq:eom} while keeping the current conserved.
+}
+In components we have:
+\begin{eqnarray}
+  j^a_{\tau}( \tau,\, \sigma )
+  & = &
+  \tensor{\left( \rT^a \right)}{^i_j}\,
+  \left( \psi^*_{+,\, i} \psi^j_+ + \psi^*_{-,\, i} \psi^j_- \right)
+  \\
+  j^a_{\sigma}( \tau,\, \sigma )
+  & = &
+  \tensor{\left( \rT^a \right)}{^i_j}\,
+  \left( \psi^*_{+,\, i} \psi^j_+ - \psi^*_{-,\, i} \psi^j_- \right).
+\end{eqnarray}
+
+In order to define a conserved charge, we require:
+\begin{equation}
+  \finiteint{\tau}{\tau_i}{\tau_f}
+  \left(
+    \eval{j_{\sigma}^a}_{\sigma = \pi} - \eval{j_{\sigma}^a}_{\sigma = 0}
+  \right)
+  =
+  0,
+\end{equation}
+where
+\begin{equation}
+  \eval{j_{\sigma}^a( \tau,\, \sigma )}_{\sigma = \pi} \equiv 0
+\end{equation}
+using the boundary conditions~\eqref{eq:boundary-conditions}.
+Moreover we have:
+\begin{equation}
+  \eval{j_{\sigma}^a( \tau,\, \sigma )}_{\sigma = 0}
+  =
+  \left[
+    \psi^*_+\,
+    \left( \rT^a - R_{(t)}^{\dagger} \rT^a R_{(t)} \right)\,
+    \psi_+
+  \right]_{\sigma = 0},
+  \qquad
+  \tau \in \left( \htau_{(t)}, \htau_{(t-1)} \right).
+\end{equation}
+In general
+\begin{equation}
+  \eval{j_{\sigma}^a( \tau,\, \sigma )}_{\sigma = 0}
+  =
+  0
+  \qquad
+  \Leftrightarrow
+  \quad
+  \rT^a \propto \1
+\end{equation}
+so that $R_{(t)}^{\dagger} \rT^a = \rT^a R_{(t)}^{\dagger}$.
+This shows that the presence of the point-like defects on the worldsheet breaks the $\U{N_f}$ symmetry down to a \U{1} phase.\footnotemark{}
+\footnotetext{%
+  The symmetry is $\SO{N_f} \times \SO{N_f}$ if we consider Majorana-Weyl fermions.
+}
+The \U{1} vector current then defines a conserved charge for a restricted class of functions.
+
+Let $\alpha$ and $\beta$ be two arbitrary (bosonic) solutions to the \eom~\eqref{eq:eom}, we define a product
+\begin{equation}
+  \consprod{\alpha}{\beta}
+  =
+  \cN
+  \finiteint{\sigma}{0}{\pi}
+  \left( \alpha_{+,\, i}^* \beta_+^i + \alpha_{-,\, i}^* \beta_-^i \right),
+  \label{eq:conserved-product}
+\end{equation}
+where $\cN \in \R$ is a normalisation constant and the integrand must not present non integrable singularities.
+The product is such that $\consprod{\alpha}{\beta} = \consprod{\alpha}{\beta}^*$.
+We can also rewrite the result to the double fields defined in~\eqref{eq:double-field-Lorentzian}.
+Let in fact $A$ and $B$ be the ``double
+fields'' corresponding to $\alpha$ and $\beta$ respectively:
+\begin{equation}
+  \consprod{\alpha}{\beta}
+  =
+  \cN
+  \finiteint{\phi}{0}{2\pi}\,
+  A_i^*( \tau + \phi )\, B^i( \tau + \phi ).
+  \label{eq:conserved-product-double-field}
+\end{equation}
+
+\subsubsection{Stress-Energy Tensor}
+
+Consider the stress-energy tensor of the bulk theory.
+Using the usual Nöther's procedure we get the on-shell non vanishing components:
+\begin{equation}
+  \begin{split}
+    \cT_{++}( \xi_+ )
+    & =
+    -i \frac{T}{4} \psi_{+,\, i}^*( \xi_+ ) \lrpartial{+} \psi_+^i( \xi_+ ),
+    \\
+    \cT_{--}( \xi_- )
+    & =
+    -i \frac{T}{4} \psi_{-,\, i}^*( \xi_- )\lrpartial{-} \psi_-^i( \xi_- ).
+  \end{split}
+  \label{eq:stress-energy-tensor-lightcone}
+\end{equation}
+As always the boundary of $\Sigma$ breaks the symmetry for translations in the $\sigma$ direction, while the defects break the time translations: the Hamiltonian is therefore time-dependent but it is constant between two consecutive point-like defects.
+In fact, from the definition of the stress-energy tensor, we can in principle
+build the hypothetical charges:
+\begin{eqnarray}
+  \rH( \tau )
+  & = &
+  \finiteint{\sigma}{0}{\pi}
+  \cT_{\tau\tau}( \tau,\, \sigma )
+  =
+  \finiteint{\sigma}{0}{\pi}
+  \left( \cT_{++}( \tau + \sigma ) + \cT_{--}( \tau - \sigma ) \right),
+  \label{eq:hamiltonian}
+  \\
+  \rP( \tau )
+  & = &
+  \finiteint{\sigma}{0}{\pi}
+  \cT_{\tau\sigma}( \tau,\, \sigma )
+  =
+  \finiteint{\sigma}{0}{\pi}
+  \left( \cT_{++}( \tau + \sigma ) - \cT_{--}( \tau - \sigma ) \right),
+  \label{eq:momentum}
+\end{eqnarray}
+which are conserved if~\eqref{eq:time-conservation} holds.
+
+We order the point-like defects as $\htau_{(t_0 - 1)} < \tau_i \le \htau_{(t_0)} < \htau_{(t_N)} \le \tau_f < \htau_{(t_N+1)}$.
+For the linear momentum $\rP$ the condition of conservation
+reads:\footnotemark{}
+\footnotetext{%
+  Notice that in the second term of the second line the differentiation with respect to $\tau$ is acting only on $R_{(t)}$ and $R_{(t)}^{\dagger}$.
+}
+\begin{equation}
+  \begin{split}
+    & \finiteint{\tau}{\tau_i}{\tau_f}
+    \eval{\left( \cT_{++}( \tau + \sigma ) + \cT_{--}( \tau - \sigma ) \right)}_{\sigma = 0}^{\sigma = \pi}
+    \\
+    & =
+    - i \frac{T}{4}
+    \int \Delta\tau
+    \left(
+      2 \eval{\psi_{+,\, i}^*\, \lrpartial{\tau} \psi_+^i}^{\sigma = \pi}_{\sigma = 0}
+      -
+      \eval{\psi_{+,\, i}^* \tensor{\left( R_{(t)}^{\dagger} \lrpartial{\tau} R_{(t)} \right)}{^i_j} \psi_+^j}_{\sigma = 0}
+    \right)
+    \neq
+    0.
+  \end{split}
+\end{equation}
+The corresponding condition for the Hamiltonian $\rH$ is:
+\begin{equation}
+  \begin{split}
+    & \finiteint{\tau}{\tau_i}{\tau_f}
+    \eval{\left( \cT_{++}( \tau + \sigma ) - \cT_{--}( \tau - \sigma ) \right)}_{\sigma = 0}^{\sigma = \pi}
+    \\
+    & =
+    - i \frac{T}{4}
+    \int \Delta\tau
+    \left( \eval{\psi_{+,\, i}^* \tensor{\left( R_{(t)}^{\dagger} \lrpartial{\tau} R_{(t)} \right)}{^i_j} \psi_+^j}_{\sigma = 0} \right)
+    = 0
+    \quad
+    \Leftrightarrow
+    \quad
+    \left( \tau_i, \tau_f \right) \in \left( \htau_{(t)}, \htau_{(t-1)} \right).
+  \end{split}
+\end{equation}
+In both cases we used the shorthand graphical notation
+\begin{equation}
+    \int \Delta \tau
+    =
+    \left(
+      \int\limits_{\tau_i}^{\htau_{t_0}}
+      +
+      \finitesum{t}{t_0}{t_N - 1}
+      \int\limits_{\htau_{(t)}}^{\htau_{(t+1)}}
+      +
+      \int\limits_{\htau_N}^{\tau_f}
+    \right)
+    \dd{\tau}
+\end{equation}
+for simplicity.
+
+These relations therefore prove that the generator of the $\sigma$-translations~\eqref{eq:momentum} is not conserved in time because of the boundary conditions, while the time evolution operator $\rH$ is only piecewise conserved and therefore globally time dependent.
+
+
+\subsection{Basis of Solutions and Dual Modes}
+
+Let $\left\lbrace \psi_{n,\, \pm}^i \right\rbrace_{n \in \Z}$ be a complete basis of modes such that:
+\begin{equation}
+  \begin{cases}
+    \psi_{n,\, +}^i( \tau, 0 ) = \qty( R_{(t)} )^i_j \psi_{n,\, -}^j(
+    \tau, 0 ) & \qfor \tau \in \qty( \htau_{(t)}, \htau_{(t-1)} )
+    \\
+    \psi_{n,\, +}^i( \tau, \pi ) = -\psi_{n,\, -}^i( \tau, \pi )
+    & \qfor \tau \in \R
+  \end{cases}.
+\end{equation}
+These fields are related to a complete basis of the modes of the ``double field'' $\Psi_n^i$ as in~\eqref{eq:double-field-Lorentzian}.
+The modes $\psi_n$ (and their counterparts $\Psi_n$) are a basis of solutions of the \eom and the boundary conditions for $\tau \in \R \setminus \qty{ \htau_{(t)} }_{0 \le t \le N}$.
+The fields $\psi^i$ (and the fields $\Psi^i$) are then a superposition of such modes:
+\begin{equation}
+  \psi^i_{\pm}( \xi_{\pm} )
+  =
+  \sum\limits_{n \in \Z} b_n \psi^i_{n,\, \pm}( \xi_{\pm} )
+  \qquad
+  \Rightarrow
+  \qquad
+  \Psi^i( \xi )
+  =
+  \sum\limits_{n \in \Z} b_n \Psi^i_n( \xi ).
+\label{eq:usual-mode-expansion}
+\end{equation}
+
+In order to extract the ``coefficients'' $b_n$ we first introduce the dual basis $\dual{\psi}_{n,\, \pm}$ (and $\dual{\Psi}_n$) in an abstract sense such that:
+\begin{itemize}
+  \item the dual fields $\dual{\psi}_{n,\, \pm}$ (and $\dual{\Psi}_n$) must be solutions to the \eom,
+
+  \item the dual fields $\dual{\psi}_{n,\, \pm}$ (and $\dual{\Psi}_n$) can differ from $\psi_{n,\, \pm}$ (and $\Psi_n$) in their behavior at the boundary,
+
+  \item the functional form of $\dual{\psi}_{n,\, \pm}$ (and $\dual{\Psi}_n$) is fixed by the request of time invariance of the usual anti-commutation relations $\qty[ b_n, b_m^{\dagger} ]_+$ (that is $b_n$ and $b_n^{\dagger}$ can evolve in time, but their anti-commutation relations must remain constant).
+\end{itemize}
+We then define the conserved product for the ``double fields''~\eqref{eq:conserved-product-double-field} in such a way that:
+\begin{equation}
+  \eval{\lconsprod{\dual{\Psi}_n}{\Psi_m}}_{\tau = \tau_0}
+  =
+  \cN
+  \finiteint{\sigma}{0}{2\pi}
+  \dual{\Psi}_{n,\, i}^{*}(\tau + \sigma)\,
+  \Psi_m^i( \tau + \sigma )
+  =
+  \delta_{n,\, m}.
+  \label{eq:conserved-product-dual-basis}
+\end{equation}
+In the previous expression we changed the notation of the product.
+We are in fact dealing with the space of solutions whose basis is $\left\lbrace \Psi_n \right\rbrace$ and a dual space with basis $\left\lbrace \dual{\Psi}_n \right\rbrace$ which is not required to span entirely the original space but only to be a subset of it in order to be able to compute the anti-commutation relations among the annihilation and construction operators in a well defined way as in~\eqref{eq:Mink_can_anticomm_rel_ann_des}.
+Given the previous product we can extract the operators as
+\begin{eqnarray}
+  \lconsprod{\dual{\Psi}_n}{\Psi} & = & b_n,
+  \\
+  \lconsprod{\dual{\Psi}_n^*}{\Psi^*} & = & b_n^{\dagger}.
+\end{eqnarray}
+As a consequence of the canonical anti-commutation relations
+\begin{equation}
+  \left[
+    \Psi^i\qty( \tau,\, \sigma ), \Psi^*_j\qty( \tau,\, \sigma' )
+  \right]_+
+  =
+  \frac{2}{T}\, \tensor{\delta}{^i_j}\, \delta( \sigma - \sigma' ),
+\end{equation}
+we have then:
+\begin{equation}
+  \eval{\left[ b_n, b_m^{\dagger} \right]_+}_{\tau = \tau_0}
+  =
+  \frac{2}{T} \cN \eval{\lconsprod{\dual{\Psi}_n}{\dual{\Psi}_m}}_{\tau = \tau_0}.
+  \label{eq:Mink_can_anticomm_rel_ann_des}
+\end{equation}
+By definition the product~\eqref{eq:conserved-product-dual-basis} is time independent as long as the integrand $\dual{\Psi}_n^* \Psi_m$ is free of singularities at $\tau = \htau_{(t)}$ for $t = 1, 2, \dots, N$.
+Such request on the dual basis automatically fixes its functional form.
+Clearly this does not exclude the possibility to have singularities in $\Psi_m$ or $\dual{\Psi}_n$ separately: they are instead deeply connected to the boundary changing primary operator hidden in the discontinuity of the boundary conditions, that is different singularities will be shown to be in correspondence to the excited spin fields.
+Using the definition of the conserved product we therefore moved the focus from finding a consistent definition of the Fock space to the construction of the dual basis of modes.
+This task is however easier to address in a Euclidean formulation.
+
 % vim: ft=tex

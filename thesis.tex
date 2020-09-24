@@ -39,6 +39,14 @@
 %---- derivatives
 \newcommand{\pd}{\ensuremath{\partial}}
 \newcommand{\bpd}{\ensuremath{\overline{\partial}}}
+\newcommand{\lrpartial}[1]{\overset{\leftrightarrow}
+                                   {\partial_{ #1 }}
+                          }
+\newcommand{\consprod}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\lconsprod}[2]{\left\langle\hspace{-0.25em}\left\langle #1\right.,\, #2 \right\rangle}
+\newcommand{\lfdv}[2]{\frac{\overset{\leftarrow}{\delta} #1}{\delta #2}}
+\newcommand{\rfdv}[2]{\frac{\overset{\rightarrow}{\delta} #1}{\delta #2}}
+\newcommand{\dual}[1]{\tensor[^*]{#1}{}}
 
 %---- integrals
 \newcommand{\ddz}{\ensuremath{\frac{\mathrm{d}z}{2 \pi i}}}
@@ -66,6 +74,7 @@
 \newcommand{\bomega}{\ensuremath{\overline{\omega}}}
 \newcommand{\bepsilon}{\ensuremath{\overline{\epsilon}}}
 \newcommand{\balpha}{\ensuremath{\overline{\alpha}}}
+\newcommand{\htau}{\ensuremath{\widehat{\tau}}}
 
 
 %---- BEGIN DOCUMENT
