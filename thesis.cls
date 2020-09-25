@@ -195,7 +195,7 @@
   \thispagestyle{plain}
 
   \noindent {\Large \sc Abstract} \\
-  \rule{0.99\textwidth}{\sepwidth}
+  \rule{0.99\linewidth}{\sepwidth}
 }
 {%
   \vfill
@@ -208,11 +208,11 @@
   \thispagestyle{plain}
 
   \noindent {\Large \sc Acknowledgements} \\
-  \rule{0.99\textwidth}{\sepwidth}
+  \rule{0.99\linewidth}{\sepwidth}
 }
 {%
   \vspace{\parskip}
-  \raggedleft\theauthor
+  \theauthor
   \vfill
 }
 

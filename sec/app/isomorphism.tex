@@ -33,7 +33,7 @@ The parametrisation is such that:
   U(\widehat{\vb{n}})
   \label{eq:U_props}
 \end{eqnarray}
-where $\sigma^2$ is the second Pauli matrix, $\widetilde{\vb{n}} = \left( -n^1, n^2, -n^3 \right)$ and $\widehat{\vb{n}} = - \left(\frac{1}{2} -n \right)\, \frac{\vb{n}}{n}$.
+where $\sigma^2$ is the second Pauli matrix, $\widetilde{\vb{n}} = \qty( -n^1, n^2, -n^3 )$ and $\widehat{\vb{n}} = - \qty(\frac{1}{2} -n )\, \frac{\vb{n}}{n}$.
 
 The group product of two elements $U(\vb{n} \circ \vb{m} ) = U(\vb{n})\,  U(\vb{m})$ has an explicit realisation as:
 \begin{equation}
@@ -58,17 +58,17 @@ The group product of two elements $U(\vb{n} \circ \vb{m} ) = U(\vb{n})\,  U(\vb{
 
 Let $I = 1,\, 2,\, 3,\, 4$ and define:
 \begin{equation}
-  \tau_I = \left( i\, \1_2,\, \vb{\sigma} \right),
+  \tau_I = \qty( i\, \1_2,\, \vb{\sigma} ),
 \end{equation}
-where $\vb{\sigma} = \left( \sigma^1,\, \sigma^2,\, \sigma^3 \right)$ are the Pauli matrices.
+where $\vb{\sigma} = \qty( \sigma^1,\, \sigma^2,\, \sigma^3 )$ are the Pauli matrices.
 It is possible to show that:
 \begin{equation}
   \begin{split}
-    \left( \tau_I \right)^{\dagger}
+    \qty( \tau_I )^{\dagger}
     & =
     \eta_{IJ}\, {\tau}^I,
     \\
-    \left( \tau^I \right)^*
+    \qty( \tau^I )^*
     & =
     -\sigma_2\, \tau_I\, \sigma_2,
   \end{split}
@@ -85,7 +85,7 @@ The following relations are then a natural consequence:
   & = &
   2\, \eta_{IJ},
   \\
-  \tr(\tau_I \left( \tau_J \right)^{\dagger})
+  \tr(\tau_I \qty( \tau_J )^{\dagger})
   & = &
   2\, \delta_{IJ}.
 \end{eqnarray}
@@ -99,7 +99,7 @@ We can recover the components using the previous properties:
   X^I
   =
   \frac{1}{2}\, \delta^{IJ}\,
-  \tr(X_{(s)} \left( \tau_J \right)^{\dagger})
+  \tr(X_{(s)} \qty( \tau_J )^{\dagger})
   =
   \frac{1}{2}\, \eta^{IJ}\, \tr(X_{(s)} \tau_J),
 \end{equation}
@@ -126,7 +126,7 @@ A rotation in spinor representation is defined as:
 \end{equation}
 and it is equivalent to:
 \begin{equation}
-  \left( X' \right)^I
+  \qty( X' )^I
   =
   \tensor{R}{^I_J}\,
   X^J
@@ -137,7 +137,7 @@ through
   =
   \frac{1}{2}
   \tr(
-    \left( \tau_I \right)^{\dagger}\,
+    \qty( \tau_I )^{\dagger}\,
     U_{L}(\vb{n})\,
     \tau_J\,
     U_{R}^{\dagger}(\vb{m})
@@ -167,7 +167,7 @@ From the second equation in \eqref{eq:tau_props} and the first equation in \eqre
 \end{equation}
 Furthermore the direct computation of the determinant of $R$ using the parametrisation~\eqref{eq:su2parametrisation} shows that $\det R = 1$.
 Finally the explicit choice of the basis $\tau$ ensures $R$ to be a real matrix which ensures $R \in \SO{4}$.
-Since $\left\lbrace U_{L},\, U_{R} \right\rbrace$ and $\left\lbrace -U_{L},\, -U_{R} \right\rbrace$ generate the same \SO{4} matrix then the correct isomorphism takes the form:
+Since $\qty{ U_{L},\, U_{R} }$ and $\qty{ -U_{L},\, -U_{R} }$ generate the same \SO{4} matrix then the correct isomorphism takes the form:
 \begin{equation}
   \SO{4}
   \cong

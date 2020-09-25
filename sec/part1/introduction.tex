@@ -19,7 +19,7 @@ In particular we recall some results on the symmetries of string theory and how 
 \subsection{Properties of String Theory and Conformal Symmetry}
 
 Strings are extended one-dimensional objects.
-They are curves in spacetime parametrized by a coordinate $\sigma \in \left[0, \ell \right]$.
+They are curves in spacetime parametrized by a coordinate $\sigma \in \qty[0, \ell ]$.
 When propagating they span a two-dimensional surface, the \emph{worldsheet}, described by the position of the string at given values of $\sigma$ at a time $\tau$, i.e.\ $X^{\mu}(\tau, \sigma)$ where $\mu = 0, 1, \dots, D - 1$ indexes the coordinates.
 Such surface can have different topologies according to the nature of the object propagating in spacetime: strings can be \emph{closed} if $X^{\mu}(\tau, 0) = X^{\mu}(\tau, \ell)$ or \emph{open} if the endpoints in $\sigma = 0$ and $\sigma = \ell$ do not coincide.
 
@@ -46,11 +46,11 @@ The \eom for the string $X^{\mu}(\tau, \sigma)$ is therefore
 \begin{equation}
   \frac{1}{\sqrt{- \det \gamma}}\,
   \ipd{\alpha}
-  \left(
+  \qty(
     \sqrt{- \det \gamma}\,
     \gamma^{\alpha\beta}\,
     \ipd{\beta} X^{\mu}
-  \right)
+  )
   =
   0,
   \qquad
@@ -66,14 +66,14 @@ In fact
   =
   - \frac{1}{4 \pi \ap}
   \sqrt{- \det \gamma}\,
-  \left(
+  \qty(
     \ipd{\alpha} X \cdot \ipd{\beta} X
     -
     \frac{1}{2}
     \gamma_{\alpha\beta}\,
     \gamma^{\lambda\rho}\,
     \ipd{\lambda} X \cdot \ipd{\rho} X
-  \right)
+  )
   =
   0
   \label{eq:conf:worldsheetmetric}
@@ -152,13 +152,13 @@ In fact the classical constraint on the tensor is simply
   \fdv{S_P[\gamma, X]}{\gamma^{\alpha\beta}}
   =
   -\frac{1}{\ap}
-  \left(
+  \qty(
     \ipd{\alpha} X \cdot \ipd{\beta} X
     -
     \frac{1}{2} \eta_{\alpha\beta}\,
     \eta^{\lambda\rho}\,
     \ipd{\lambda} X \cdot \ipd{\rho} X
-  \right)
+  )
   =
   0.
   \label{eq:conf:stringT}
@@ -188,33 +188,33 @@ while its conservation $\partial^{\alpha} T_{\alpha\beta} = 0$ becomes:\footnote
   Since we fix $\gamma_{\alpha\beta}(\tau, \sigma) \propto \eta_{\alpha\beta}$ we do not need to account for the components of the connection and we can replace the covariant derivative $\nabla^{\alpha}$ with a standard derivative $\partial^{\alpha}$.
 }
 \begin{equation}
-  \bpd T_{\xi\xi}( \xi, \bxi ) = \pd \bT_{\bxi\bxi}( \xi, \bxi ) = 0.
+  \bpd T_{\xi\xi}( \xi,\, \bxi ) = \pd \bT_{\bxi\bxi}( \xi,\, \bxi ) = 0.
 \end{equation}
 The last equation finally implies
 \begin{equation}
-  T_{\xi\xi}( \xi, \bxi ) = T_{\xi\xi}( \xi ) = T( \xi ),
+  T_{\xi\xi}( \xi,\, \bxi ) = T_{\xi\xi}( \xi ) = T( \xi ),
   \qquad
-  \bT_{\bxi\bxi}( \xi, \bxi ) = \bT_{\bxi\bxi}( \bxi ) = \bT( \bxi ),
+  \bT_{\bxi\bxi}( \xi,\, \bxi ) = \bT_{\bxi\bxi}( \bxi ) = \bT( \bxi ),
 \end{equation}
-which are respectively the holomorphic and the anti-holomorphic components of the 2-dimensional stress energy tensor.
+which are respectively the holomorphic and the anti-holomorphic components of the bidimensional stress energy tensor.
 
-The previous properties define what is known as a 2-dimensional \emph{conformal field theory} (\cft).
+The previous properties define what is known as a bidimensional \emph{conformal field theory} (\cft).
 Ordinary tensor fields
 \begin{equation}
-  \phi_{\omega, \bomega}( \xi, \bxi )
+  \phi_{\omega, \bomega}( \xi,\, \bxi )
   =
-  \phi_{\underbrace{\xi \dots \xi}\limits_{\omega~\text{times}}\, \underbrace{\bxi \dots \bxi}\limits_{\bomega~\text{times}}}( \xi, \bxi )
-  \left( \dd{\xi} \right)^{\omega}
-  \left( \dd{\bxi} \right)^{\bomega}
+  \phi_{\underbrace{\xi \dots \xi}\limits_{\omega~\text{times}}\, \underbrace{\bxi \dots \bxi}\limits_{\bomega~\text{times}}}( \xi,\, \bxi )
+  \qty( \dd{\xi} )^{\omega}
+  \qty( \dd{\bxi} )^{\bomega}
 \end{equation}
-can be classified according to their weight $\left( \omega, \bomega \right)$ referring to the holomorphic and anti-holomorphic parts respectively.
+are classified according to their weight $\qty( \omega,\, \bomega )$ referring to the holomorphic and anti-holomorphic parts respectively.
 In fact a transformation $\xi \mapsto \chi(\xi)$ and $\bxi \mapsto \bchi(\bxi)$ maps the conformal fields to
 \begin{equation}
   \phi_{\omega, \bomega}( \chi, \bchi )
   =
-  \left( \dv{\chi}{\xi} \right)^{\omega}\,
-  \left( \dv{\bchi}{\bxi} \right)^{\bomega}\,
-  \phi_{\omega, \bomega}( \xi, \bxi ).
+  \qty( \dv{\chi}{\xi} )^{\omega}\,
+  \qty( \dv{\bchi}{\bxi} )^{\bomega}\,
+  \phi_{\omega, \bomega}( \xi,\, \bxi ).
 \end{equation}
 
 \begin{figure}[tbp]
@@ -238,9 +238,9 @@ In fact a transformation $\xi \mapsto \chi(\xi)$ and $\bxi \mapsto \bchi(\bxi)$ 
 
 An additional conformal transformation
 \begin{equation}
-  z = e^{\xi} = e^{\tau_e + i \sigma} \in \left\lbrace z \in \C | \Im z \ge 0 \right\rbrace,
+  z = e^{\xi} = e^{\tau_e + i \sigma} \in \qty{ z \in \C | \Im z \ge 0 },
   \qquad
-  \bz = e^{\bxi} = e^{\tau_e - i \sigma} \in \left\lbrace z \in \C | \Im z \le 0 \right\rbrace
+  \bz = e^{\bxi} = e^{\tau_e - i \sigma} \in \qty{ z \in \C | \Im z \le 0 }
 \end{equation}
 maps the worldsheet of the string to the complex plane.
 On this Riemann surface the usual time ordering becomes a \emph{radial ordering} as constant time surfaces are circles around the origin (see the contours $\ccC_{(0)}$ and $\ccC_{(1)}$ in \Cref{fig:conf:complex_plane}). 
@@ -265,14 +265,14 @@ The transformation on a field $\phi_{\omega, \bomega}$ of weight $(\omega, \bome
     \liebraket{Q_{\epsilon, \bepsilon}}{\phi_{\omega, \bomega}( w, \bw )}
     \\
     & =
-    \cint{0} \ddz \epsilon(z) \left[ T(z), \phi_{\omega, \bomega}( w, \bw ) \right]
+    \cint{0} \ddz \epsilon(z) \qty[ T(z), \phi_{\omega, \bomega}( w, \bw ) ]
     +
-    \cint{0} \ddbz \bepsilon(\bz) \left[ \bT(\bz), \phi_{\omega, \bomega}( w, \bw ) \right]
+    \cint{0} \ddbz \bepsilon(\bz) \qty[ \bT(\bz), \phi_{\omega, \bomega}( w, \bw ) ]
     \\
     & =
-    \cint{w} \ddz \epsilon(z)\, \rR\!\left( T(z)\, \phi_{\omega, \bomega}( w, \bw ) \right)
+    \cint{w} \ddz \epsilon(z)\, \rR\!\qty( T(z)\, \phi_{\omega, \bomega}( w, \bw ) )
     +
-    \cint{\bw} \ddbz \bepsilon(\bz)\, \rR\!\left( \bT(\bz)\, \phi_{\omega, \bomega}( w, \bw ) \right),
+    \cint{\bw} \ddbz \bepsilon(\bz)\, \rR\!\qty( \bT(\bz)\, \phi_{\omega, \bomega}( w, \bw ) ),
   \end{split}
 \end{equation}
 where in the last passage we used the fact that the difference of ordered integrals becomes the contour integral of the radially ordered product computed surrounding $w$.
@@ -393,7 +393,7 @@ This ultimately leads to the quantum algebra
 known as Virasoro algebra, unique central extension of the classical de Witt algebra, with central charge $c$.
 Operators $L_n$ and $\bL_n$ are called Virasoro operators.\footnotemark{}
 \footnotetext{%
-  Notice that the subset of Virasoro operators $\left\lbrace L_{-1}, L_0, L_1 \right\rbrace$ forms a closed subalgebra generating the group $\SL{2}{\R}$.
+  Notice that the subset of Virasoro operators $\qty{ L_{-1}, L_0, L_1 }$ forms a closed subalgebra generating the group $\SL{2}{\R}$.
 }
 Notice that $L_0 + \bL_0$ is the generator of the dilations on the complex plane.
 In terms of radial quantization this translates to time translations and $L_0 + \bL_0$ can be considered to be the Hamiltonian of the theory.
@@ -592,13 +592,13 @@ In complex coordinates on the plane it is:
   =
   - \frac{1}{4 \pi}
   \iint \dd{z} \dd{\bz}
-  \left(
+  \qty(
     \frac{2}{\ap}\, \ipd{\bz} X^{\mu}\, \ipd{z} X^{\nu}
     +
     \psi^{\mu}\, \ipd{\bz} \psi^{\nu}
     +
     \bpsi^{\mu}\, \ipd{z} \bpsi^{\nu}
-  \right)
+  )
   \eta_{\mu\nu}.
   \label{eq:super:action}
 \end{equation}
@@ -641,7 +641,7 @@ The action~\eqref{eq:super:action} is also invariant under the \emph{supersymmet
     - \bepsilon( \bz )\, \ipd{\bz} \bX^{\mu}( \bz )
   \end{split}
 \end{equation}
-generated by the currents $J( z ) = \epsilon( z )\, T_F( z )$ and $\overline{J}( \bz ) = \bepsilon( \bz )\, \bT_F( \bz )$, where $\epsilon( z )$ and $\bepsilon( \bz ) = \left( \epsilon( z ) \right)^*$ are anti-commuting fermions and
+generated by the currents $J( z ) = \epsilon( z )\, T_F( z )$ and $\overline{J}( \bz ) = \bepsilon( \bz )\, \bT_F( \bz )$, where $\epsilon( z )$ and $\bepsilon( \bz ) = \qty( \epsilon( z ) )^*$ are anti-commuting fermions and
 \begin{equation}
   \begin{split}
     T_F( z )
@@ -681,7 +681,7 @@ The central charge associated to the Virasoro algebra is in this case given by b
 The central charge is therefore $c = \frac{3}{2} D$ for the \cft defined in~\eqref{eq:super:action}.
 
 As in the case of the bosonic string, in order to cancel the central charge we introduce the reparametrisation anti-commuting ghosts $b( z )$ and $c( z )$ and their anti-holomorphic components as well as the commuting \emph{superghosts} $\beta( z )$ and $\gamma( z )$ and their anti-holomorphic counterparts.
-These are conformal fields with conformal weights $\left( \frac{3}{2}, 0 \right)$ and $\left( -\frac{1}{2}, 0 \right)$.
+These are conformal fields with conformal weights $\qty( \frac{3}{2}, 0 )$ and $\qty( -\frac{1}{2}, 0 )$.
 Their central charge becomes $c_{\text{ghost}} = c_{bc} + c_{\beta\gamma} = -26 + 11 = -15$ (see \cref{note:conf:ghosts} for the general computation).
 When considering the full theory $T_{\text{full}} = T + T_{\text{ghost}}$ and $\bT_{\text{full}} = \bT + \bT_{\text{ghost}}$ the central charge vanishes only in 10-dimensional spacetime:
 \begin{equation}
@@ -738,14 +738,14 @@ The tensor $J$ is called \emph{complex structure} if there exist a tensor $N$ su
 \begin{equation}
   \tensor{N}{^a_{bc}}\, v_p^b\, w_p^c
   =
-  \left(
+  \qty(
     \liebraket{v_p}{w_p}
     +
     J
-    \left( \liebraket{J\, v_p}{w_p} + \liebraket{v_p}{J\, w_p} \right)
+    \qty( \liebraket{J\, v_p}{w_p} + \liebraket{v_p}{J\, w_p} )
     -
     \liebraket{J\, v_p}{J\, w_p}
-  \right)^a
+  )^a
   =
   0
 \end{equation}
@@ -807,7 +807,7 @@ $(M, J, g)$ is a \emph{Kähler} manifold if:
 \begin{equation}
   \dd{\omega}
   =
-  \left( \pd + \bpd \right)
+  \qty( \pd + \bpd )
   \omega(z, \bz)
   =
   0,
@@ -833,7 +833,7 @@ In local coordinates a Hermitian metric is such that
 thus the Kähler form becomes $\omega = i g_{a\overline{b}}\, \dd{z}^a \wedge \dd{\bz}^{\overline{b}}$.
 The relation~\eqref{eq:cy:kaehler} then translates into:
 \begin{equation}
-  \dd{\omega} = i\, \left( \pd + \bpd \right)\, g_{a\overline{b}}\, \dd{z}^a \wedge \dd{\bz}^{\overline{b}}
+  \dd{\omega} = i\, \qty( \pd + \bpd )\, g_{a\overline{b}}\, \dd{z}^a \wedge \dd{\bz}^{\overline{b}}
   =
   0
   \quad
@@ -995,20 +995,20 @@ The usual mode expansion in conformal coordinates $X^{\mu}( z, \bz ) = X( z ) + 
     x_0^{\mu}
     +
     i\, \sqrt{\frac{\ap}{2}}\,
-    \left(
+    \qty(
       - \alpha_0^{\mu}\, \ln{z}
       + \sum\limits_{n \in \Z \setminus \{0\}} \frac{\alpha_n^{\mu}}{n} z^{-n}
-    \right),
+    ),
     \\
     \bX^{\mu}( \bz )
     & =
     \overline{x}_0^{\mu}
     +
     i\, \sqrt{\frac{\ap}{2}}\,
-    \left(
+    \qty(
       - \balpha_0^{\mu}\, \ln{\bz}
       + \sum\limits_{n \in \Z \setminus \{0\}} \frac{\balpha_n^{\mu}}{n} \bz^{-n}
-    \right),
+    ),
   \end{split}
   \label{eq:tduality:modes}
 \end{equation}
@@ -1045,9 +1045,9 @@ respectively encoding the quantisation of the momentum for a compact coordinate 
 We finally have
 \begin{equation}
   \begin{split}
-    \alpha_0^{D-1} &= \frac{1}{\sqrt{2 \ap}}\, \left( n\, \frac{\ap}{R} + m\, R \right),
+    \alpha_0^{D-1} &= \frac{1}{\sqrt{2 \ap}}\, \qty( n\, \frac{\ap}{R} + m\, R ),
     \\
-    \balpha_0^{D-1} &= \frac{1}{\sqrt{2 \ap}}\, \left( n\, \frac{\ap}{R} - m\, R \right),
+    \balpha_0^{D-1} &= \frac{1}{\sqrt{2 \ap}}\, \qty( n\, \frac{\ap}{R} - m\, R ),
   \end{split}
 \end{equation}
 
@@ -1058,24 +1058,24 @@ From~\eqref{eq:conf:Texpansion} and \eqref{eq:conf:bosonicstringT} we find
     L_0
     &=
     \frac{\ap}{2}\,
-    \left(
-      \left( \alpha_0^{D-1} \right)^2
+    \qty(
+      \qty( \alpha_0^{D-1} )^2
       +
-      \sum\limits_{i = 0}^{D-2}\, \left( \alpha_0^i \right)^2
+      \sum\limits_{i = 0}^{D-2}\, \qty( \alpha_0^i )^2
       +
-      \sum\limits_{n = 1}^{+\infty}\, \left( 2 \alpha_{-n}^{\mu} \alpha_n^{\nu}\, \eta_{\mu\nu} + a \right)
-    \right),
+      \sum\limits_{n = 1}^{+\infty}\, \qty( 2 \alpha_{-n}^{\mu} \alpha_n^{\nu}\, \eta_{\mu\nu} + a )
+    ),
     \\
     \bL_0
     &=
     \frac{\ap}{2}\,
-    \left(
-      \left( \balpha_0^{D-1} \right)^2
+    \qty(
+      \qty( \balpha_0^{D-1} )^2
       +
-      \sum\limits_{i = 0}^{D-2}\, \left( \balpha_0^i \right)^2
+      \sum\limits_{i = 0}^{D-2}\, \qty( \balpha_0^i )^2
       +
-      \sum\limits_{n = 1}^{+\infty}\, \left( 2 \balpha_{-n}^{\mu} \balpha_n^{\nu}\, \eta_{\mu\nu} + a \right)
-    \right),
+      \sum\limits_{n = 1}^{+\infty}\, \qty( 2 \balpha_{-n}^{\mu} \balpha_n^{\nu}\, \eta_{\mu\nu} + a )
+    ),
   \end{split}
 \end{equation}
 where $a$ is constant given by normal ordering, representing the zero point energy of the theory.
@@ -1084,14 +1084,14 @@ Imposing physical conditions~\eqref{eq:conf:physical} and the \emph{level matchi
   \begin{split}
     M^2
     & =
-    \frac{1}{\ap^2}\, \left( n\, \frac{\ap}{R} + m\, R \right)^2
+    \frac{1}{\ap^2}\, \qty( n\, \frac{\ap}{R} + m\, R )^2
     +
-    \frac{4}{\ap}\, \left( \rN + a \right)
+    \frac{4}{\ap}\, \qty( \rN + a )
     \\
     & =
-    \frac{1}{\ap^2}\, \left( n\, \frac{\ap}{R} - m\, R \right)^2
+    \frac{1}{\ap^2}\, \qty( n\, \frac{\ap}{R} - m\, R )^2
     +
-    \frac{4}{\ap}\, \left( \overline{\rN} + a \right),
+    \frac{4}{\ap}\, \qty( \overline{\rN} + a ),
   \end{split}
   \label{eq:dbranes:closedspectrum}
 \end{equation}
@@ -1129,7 +1129,7 @@ The usual mode expansion~\eqref{eq:tduality:modes} here leads to
   +
   i\, \sqrt{\frac{\ap}{2}}\,
   \sum\limits_{n \in \Z \setminus \{0\}}
-  \frac{\alpha_n^{\mu}}{n} \left( z^{-n} + \bz^{-n} \right)
+  \frac{\alpha_n^{\mu}}{n} \qty( z^{-n} + \bz^{-n} )
 \end{equation}
 and $\ell = \pi$.
 
@@ -1217,7 +1217,7 @@ The mass shell condition for open strings then becomes:\footnotemark{}
   The constant $a$ in~\eqref{eq:dbranes:closedspectrum} takes here the value $-1$ from the imposition of the canonical commutation relations and a $\zeta$-regularisation.
 }
 \begin{equation}
-  M^2 = \frac{1}{\ap} \left( N - 1 \right).
+  M^2 = \frac{1}{\ap} \qty( N - 1 ).
 \end{equation}
 
 Consider for a moment bosonic string theory and define the usual vacuum as

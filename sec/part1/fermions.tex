@@ -26,11 +26,11 @@ Their two-dimensional Minkowski action defined on the strip $\Sigma$ is:
   \frac{T}{2}
   \infinfint{\tau}
   \finiteint{\sigma}{0}{\pi}
-  \left(
+  \qty(
     \frac{1}{2}\, \bpsi_i( \tau,\, \sigma )\,
-    \left( -i \gamma^{\alpha} \lrpartial{\alpha} \right)\,
+    \qty( -i \gamma^{\alpha} \lrpartial{\alpha} )\,
     \psi^i( \tau,\, \sigma ) 
-  \right),
+  ),
   \label{eq:cft-action_full}
 \end{equation}
 where the gamma matrices are
@@ -59,7 +59,7 @@ and the components of the massless fermions are
   =
   \mqty( -\psi_-^* & \psi_+^* ).
 \end{equation}
-We then define the lightcone coordinates $\xi_{\pm} = \tau \pm \sigma$ such that $\ipd{\pm} = \frac{1}{2}\, \left( \ipd{\tau} \pm \ipd{\sigma} \right)$.
+We then define the lightcone coordinates $\xi_{\pm} = \tau \pm \sigma$ such that $\ipd{\pm} = \frac{1}{2}\, \qty( \ipd{\tau} \pm \ipd{\sigma} )$.
 In components the action reads:
 \begin{equation}
   S
@@ -67,9 +67,9 @@ In components the action reads:
   i \frac{T}{4}
   \infinfint{\xi_+}
   \infinfint{\xi_-}
-  \left(
+  \qty(
     \psi^*_{-,\, i} \lrpartial{+} \psi^i_- + \psi^*_{+,\, i} \lrpartial{-} \psi^i_+
-  \right),
+  ),
   \label{eq:cft-action}
 \end{equation}
 so the \eom are:
@@ -102,12 +102,12 @@ Their solutions are the ``holomorphic'' functions $\psi_{+}^i(\xi_+)$ and $\psi_
 The boundary conditions are instead:
 \begin{equation}
   \eval{
-    \left(
+    \qty(
       \var{\psi}_{+,\, i}^* \psi_{+}^{ i} +
       \var{\psi}_{-,\, i}^* \psi_{-}^{ i} -
       \psi_{+,\, i}^* \var{\psi}_{+}^{ i} -
       \psi_{-,\, i}^* \var{\psi}_{-}^{ i}
-    \right)
+    )
   }_{\sigma = 0}^{\sigma = \pi} = 0.
   \label{eq:boundary-conditions}
 \end{equation}
@@ -116,10 +116,10 @@ We solve the constraint imposing the non trivial relations:
   \begin{cases}
     \psi_-^i( \tau, 0 )
     =
-    \tensor{\left( R_{(t)} \right)}{^i_j}
+    \tensor{\qty( R_{(t)} )}{^i_j}
     \psi^j_+( \tau, 0 ),
     & \qquad
-    \tau \in \left( \htau_{(t)}, \htau_{(t-1)} \right),
+    \tau \in \qty( \htau_{(t)}, \htau_{(t-1)} ),
     \\
     \psi_-^i( \tau, \pi )
     =
@@ -164,19 +164,19 @@ The boundary conditions become:
 \begin{equation}
   \Psi^i(\tau, 2 \pi )
   =
-  - \tensor{\left( R_{(t)} \right)}{^i_j}
+  - \tensor{\qty( R_{(t)} )}{^i_j}
   \Psi^j(\tau,\, 0 ),
   \qquad
-  \tau \in \left( \htau_{(t)},\, \htau_{(t-1)} \right).
+  \tau \in \qty( \htau_{(t)},\, \htau_{(t-1)} ).
 \end{equation}
 Using the equation of motion we get $\Psi^i(\tau,\, \phi) = \Psi^i(\tau + \phi)$ and the boundary conditions become the (pseudo-)periodicity conditions
 \begin{equation}
   \Psi^i(\tau + 2 \pi )
   =
-  - \tensor{\left( R_{(t)} \right)}{^i_j}
+  - \tensor{\qty( R_{(t)} )}{^i_j}
   \Psi^j(\tau ),
   \qquad
-  \tau \in \left( \htau_{(t)}, \htau_{(t-1)} \right).
+  \tau \in \qty( \htau_{(t)}, \htau_{(t-1)} ).
 \end{equation}
 The main issue is now to expand $\Psi$ in a basis of modes and proceed to its quantization.
 Even in the simplest case $N_f = 1$ the task of finding the Minkowskian modes turns out to be fairly complicated.
@@ -232,7 +232,7 @@ Integration over the surface $\Sigma' = [ \tau_i, \tau_f ] \times [ 0, \pi ]$ yi
 The current $j_{\tau}( \tau,\, \sigma )$ is thus conserved in time if
 \begin{equation}
   \finiteint{\tau}{\tau_i}{\tau_f}
-  \left( \eval{j_{\sigma}}_{\sigma = \pi} - \eval{j_{\sigma}}_{\sigma = 0} \right)
+  \qty( \eval{j_{\sigma}}_{\sigma = \pi} - \eval{j_{\sigma}}_{\sigma = 0} )
   =
   0.
   \label{eq:time-conservation}
@@ -253,7 +253,7 @@ We write it as
 \begin{equation}
   j_{\alpha}^a ( \tau,\, \sigma )
   =
-  \tensor{\left( \rT^a \right)}{^i_j}\,
+  \tensor{\qty( \rT^a )}{^i_j}\,
   \bpsi_i( \tau,\, \sigma )\, \gamma_{\alpha}\, \psi^j( \tau,\, \sigma ),
 \end{equation}
 where $\rT^a$ is a generator of $\U{N_f}$ such that $a = 1,\, 2,\, \dots,\, N_f^2$.\footnotemark{}
@@ -265,21 +265,21 @@ In components we have:
 \begin{eqnarray}
   j^a_{\tau}( \tau,\, \sigma )
   & = &
-  \tensor{\left( \rT^a \right)}{^i_j}\,
-  \left( \psi^*_{+,\, i} \psi^j_+ + \psi^*_{-,\, i} \psi^j_- \right)
+  \tensor{\qty( \rT^a )}{^i_j}\,
+  \qty( \psi^*_{+,\, i} \psi^j_+ + \psi^*_{-,\, i} \psi^j_- )
   \\
   j^a_{\sigma}( \tau,\, \sigma )
   & = &
-  \tensor{\left( \rT^a \right)}{^i_j}\,
-  \left( \psi^*_{+,\, i} \psi^j_+ - \psi^*_{-,\, i} \psi^j_- \right).
+  \tensor{\qty( \rT^a )}{^i_j}\,
+  \qty( \psi^*_{+,\, i} \psi^j_+ - \psi^*_{-,\, i} \psi^j_- ).
 \end{eqnarray}
 
 In order to define a conserved charge, we require:
 \begin{equation}
   \finiteint{\tau}{\tau_i}{\tau_f}
-  \left(
+  \qty(
     \eval{j_{\sigma}^a}_{\sigma = \pi} - \eval{j_{\sigma}^a}_{\sigma = 0}
-  \right)
+  )
   =
   0,
 \end{equation}
@@ -292,13 +292,13 @@ Moreover we have:
 \begin{equation}
   \eval{j_{\sigma}^a( \tau,\, \sigma )}_{\sigma = 0}
   =
-  \left[
+  \qty[
     \psi^*_+\,
-    \left( \rT^a - R_{(t)}^{\dagger} \rT^a R_{(t)} \right)\,
+    \qty( \rT^a - R_{(t)}^{\dagger} \rT^a R_{(t)} )\,
     \psi_+
-  \right]_{\sigma = 0},
+  ]_{\sigma = 0},
   \qquad
-  \tau \in \left( \htau_{(t)}, \htau_{(t-1)} \right).
+  \tau \in \qty( \htau_{(t)}, \htau_{(t-1)} ).
 \end{equation}
 In general
 \begin{equation}
@@ -323,7 +323,7 @@ Let $\alpha$ and $\beta$ be two arbitrary (bosonic) solutions to the \eom~\eqref
   =
   \cN
   \finiteint{\sigma}{0}{\pi}
-  \left( \alpha_{+,\, i}^* \beta_+^i + \alpha_{-,\, i}^* \beta_-^i \right),
+  \qty( \alpha_{+,\, i}^* \beta_+^i + \alpha_{-,\, i}^* \beta_-^i ),
   \label{eq:conserved-product}
 \end{equation}
 where $\cN \in \R$ is a normalisation constant and the integrand must not present non integrable singularities.
@@ -366,7 +366,7 @@ build the hypothetical charges:
   \cT_{\tau\tau}( \tau,\, \sigma )
   =
   \finiteint{\sigma}{0}{\pi}
-  \left( \cT_{++}( \tau + \sigma ) + \cT_{--}( \tau - \sigma ) \right),
+  \qty( \cT_{++}( \tau + \sigma ) + \cT_{--}( \tau - \sigma ) ),
   \label{eq:hamiltonian}
   \\
   \rP( \tau )
@@ -375,7 +375,7 @@ build the hypothetical charges:
   \cT_{\tau\sigma}( \tau,\, \sigma )
   =
   \finiteint{\sigma}{0}{\pi}
-  \left( \cT_{++}( \tau + \sigma ) - \cT_{--}( \tau - \sigma ) \right),
+  \qty( \cT_{++}( \tau + \sigma ) - \cT_{--}( \tau - \sigma ) ),
   \label{eq:momentum}
 \end{eqnarray}
 which are conserved if~\eqref{eq:time-conservation} holds.
@@ -389,16 +389,16 @@ reads:\footnotemark{}
 \begin{equation}
   \begin{split}
     & \finiteint{\tau}{\tau_i}{\tau_f}
-    \eval{\left( \cT_{++}( \tau + \sigma ) + \cT_{--}( \tau - \sigma ) \right)}_{\sigma = 0}^{\sigma = \pi}
+    \eval{\qty( \cT_{++}( \tau + \sigma ) + \cT_{--}( \tau - \sigma ) )}_{\sigma = 0}^{\sigma = \pi}
     \\
     & =
     - i \frac{T}{4}
     \int \Delta\tau
-    \left(
+    \qty(
       2 \eval{\psi_{+,\, i}^*\, \lrpartial{\tau} \psi_+^i}^{\sigma = \pi}_{\sigma = 0}
       -
-      \eval{\psi_{+,\, i}^* \tensor{\left( R_{(t)}^{\dagger} \lrpartial{\tau} R_{(t)} \right)}{^i_j} \psi_+^j}_{\sigma = 0}
-    \right)
+      \eval{\psi_{+,\, i}^* \tensor{\qty( R_{(t)}^{\dagger} \lrpartial{\tau} R_{(t)} )}{^i_j} \psi_+^j}_{\sigma = 0}
+    )
     \neq
     0.
   \end{split}
@@ -407,31 +407,31 @@ The corresponding condition for the Hamiltonian $\rH$ is:
 \begin{equation}
   \begin{split}
     & \finiteint{\tau}{\tau_i}{\tau_f}
-    \eval{\left( \cT_{++}( \tau + \sigma ) - \cT_{--}( \tau - \sigma ) \right)}_{\sigma = 0}^{\sigma = \pi}
+    \eval{\qty( \cT_{++}( \tau + \sigma ) - \cT_{--}( \tau - \sigma ) )}_{\sigma = 0}^{\sigma = \pi}
     \\
     & =
     - i \frac{T}{4}
     \int \Delta\tau
-    \left( \eval{\psi_{+,\, i}^* \tensor{\left( R_{(t)}^{\dagger} \lrpartial{\tau} R_{(t)} \right)}{^i_j} \psi_+^j}_{\sigma = 0} \right)
+    \qty( \eval{\psi_{+,\, i}^* \tensor{\qty( R_{(t)}^{\dagger} \lrpartial{\tau} R_{(t)} )}{^i_j} \psi_+^j}_{\sigma = 0} )
     = 0
     \quad
     \Leftrightarrow
     \quad
-    \left( \tau_i, \tau_f \right) \in \left( \htau_{(t)}, \htau_{(t-1)} \right).
+    \qty( \tau_i, \tau_f ) \in \qty( \htau_{(t)}, \htau_{(t-1)} ).
   \end{split}
 \end{equation}
 In both cases we used the shorthand graphical notation
 \begin{equation}
     \int \Delta \tau
     =
-    \left(
+    \qty(
       \int\limits_{\tau_i}^{\htau_{t_0}}
       +
       \finitesum{t}{t_0}{t_N - 1}
       \int\limits_{\htau_{(t)}}^{\htau_{(t+1)}}
       +
       \int\limits_{\htau_N}^{\tau_f}
-    \right)
+    )
     \dd{\tau}
 \end{equation}
 for simplicity.
@@ -441,7 +441,7 @@ These relations therefore prove that the generator of the $\sigma$-translations~
 
 \subsection{Basis of Solutions and Dual Modes}
 
-Let $\left\lbrace \psi_{n,\, \pm}^i \right\rbrace_{n \in \Z}$ be a complete basis of modes such that:
+Let $\qty{ \psi_{n,\, \pm}^i }_{n \in \Z}$ be a complete basis of modes such that:
 \begin{equation}
   \begin{cases}
     \psi_{n,\, +}^i( \tau, 0 ) = \qty( R_{(t)} )^i_j \psi_{n,\, -}^j(
@@ -457,13 +457,13 @@ The fields $\psi^i$ (and the fields $\Psi^i$) are then a superposition of such m
 \begin{equation}
   \psi^i_{\pm}( \xi_{\pm} )
   =
-  \sum\limits_{n \in \Z} b_n \psi^i_{n,\, \pm}( \xi_{\pm} )
+  \sum\limits_{n \in \Z} b_n\, \psi^i_{n,\, \pm}( \xi_{\pm} )
   \qquad
   \Rightarrow
   \qquad
   \Psi^i( \xi )
   =
-  \sum\limits_{n \in \Z} b_n \Psi^i_n( \xi ).
+  \sum\limits_{n \in \Z} b_n\, \Psi^i_n( \xi ).
 \label{eq:usual-mode-expansion}
 \end{equation}
 
@@ -488,7 +488,7 @@ We then define the conserved product for the ``double fields''~\eqref{eq:conserv
   \label{eq:conserved-product-dual-basis}
 \end{equation}
 In the previous expression we changed the notation of the product.
-We are in fact dealing with the space of solutions whose basis is $\left\lbrace \Psi_n \right\rbrace$ and a dual space with basis $\left\lbrace \dual{\Psi}_n \right\rbrace$ which is not required to span entirely the original space but only to be a subset of it in order to be able to compute the anti-commutation relations among the annihilation and construction operators in a well defined way as in~\eqref{eq:Mink_can_anticomm_rel_ann_des}.
+We are in fact dealing with the space of solutions whose basis is $\qty{ \Psi_n }$ and a dual space with basis $\qty{ \dual{\Psi}_n }$ which is not required to span entirely the original space but only to be a subset of it in order to be able to compute the anti-commutation relations among the annihilation and construction operators in a well defined way as in~\eqref{eq:Mink_can_anticomm_rel_ann_des}.
 Given the previous product we can extract the operators as
 \begin{eqnarray}
   \lconsprod{\dual{\Psi}_n}{\Psi} & = & b_n,
@@ -497,15 +497,15 @@ Given the previous product we can extract the operators as
 \end{eqnarray}
 As a consequence of the canonical anti-commutation relations
 \begin{equation}
-  \left[
+  \qty[
     \Psi^i\qty( \tau,\, \sigma ), \Psi^*_j\qty( \tau,\, \sigma' )
-  \right]_+
+  ]_+
   =
   \frac{2}{T}\, \tensor{\delta}{^i_j}\, \delta( \sigma - \sigma' ),
 \end{equation}
 we have then:
 \begin{equation}
-  \eval{\left[ b_n, b_m^{\dagger} \right]_+}_{\tau = \tau_0}
+  \eval{\qty[ b_n, b_m^{\dagger} ]_+}_{\tau = \tau_0}
   =
   \frac{2}{T} \cN \eval{\lconsprod{\dual{\Psi}_n}{\dual{\Psi}_m}}_{\tau = \tau_0}.
   \label{eq:Mink_can_anticomm_rel_ann_des}
@@ -515,5 +515,744 @@ Such request on the dual basis automatically fixes its functional form.
 Clearly this does not exclude the possibility to have singularities in $\Psi_m$ or $\dual{\Psi}_n$ separately: they are instead deeply connected to the boundary changing primary operator hidden in the discontinuity of the boundary conditions, that is different singularities will be shown to be in correspondence to the excited spin fields.
 Using the definition of the conserved product we therefore moved the focus from finding a consistent definition of the Fock space to the construction of the dual basis of modes.
 This task is however easier to address in a Euclidean formulation.
+
+
+\subsection{Point-like Defect CFT: the Euclidean Formulation}
+\label{sec:eucl_formulation}
+
+In the Euclidean reformulation the solution to the \eom might be easier to study than its Lorentzian worldsheet form.
+This is specifically the case when $R_{(t)} \in \U{1}^{N_f} \subset \U{N_f}$.
+The presence of a time dependent Hamiltonian is not standard and we can neither blindly apply the usual Wick rotation nor the usual CFT techniques.
+
+
+\subsubsection{Fields on the Strip}
+
+Performing the Wick rotation as $\tau_E = i \tau$ such that $e^{i S} = e^{-S_E}$, the Minkowskian action~\eqref{eq:cft-action} becomes:
+\begin{equation}
+  S_E
+  =
+  \frac{T}{2}
+  \iint \dd{\xi} \dd{\bxi}\,
+  \frac{1}{2}\,
+  \qty(
+    \hpsi_{E,\, +,\, i}^*\, \lrpartial{\bxi} \hpsi_{E,\, +}^i
+    +
+    \hpsi_{E,\, -,\, i}^*\, \lrpartial{\xi} \hpsi_{E,\, -}^i
+  ),
+  \label{eq:S_Eu_strip}
+\end{equation}
+where the Euclidean fermion on the strip is connected to the Minkowskian formulation through
+\begin{equation}
+  \hpsi_{E,\, \pm}^i( \xi,\, \bxi )
+  =
+  \psi_{\pm}^i( -i\xi,\, -i\bxi ).
+\end{equation}
+In the previous expressions we defined the coordinates $\xi = \tau_E + i \sigma$, $\bar \xi = \tau_E - i \sigma$ such that $\bxi = \xi^*$.
+Moreover we get $\ipd{\xi} = \pdv{\xi} = \frac{1}{2} \qty( \pdv{\tau_E} - i\pdv{\sigma} )$, $\ipd{\bxi} = \pdv{\bxi} = \frac{1}{2} \qty( \pdv{\tau_E} + i \pdv{\sigma} )$.
+As a consequence the Euclidean ``complex conjugation'' $\star$ (defined off-shell) acts as
+\begin{equation}
+  \qty[
+    \hpsi_{E,\, \pm}^i(\xi,\, \bxi)
+  ]^\star
+  =
+  \hpsi_{E,\, \pm i}^*(-\bxi,\, -\xi).
+  \label{eq:off-shell-Hermitian-conjugate}
+\end{equation}
+
+The \eom are as usual
+\begin{eqnarray}
+  \ipd{\xi} \hpsi_{E,\, -}^i( \xi,\, \bxi )
+  = &
+  \ipd{\bxi} \hpsi_{E,\, +}^i( \xi,\, \bxi )
+  = &
+  0,
+  \\
+  \ipd{\xi} \hpsi_{E,\, -,\, i}^*( \xi,\, \bxi )
+  = &
+  \ipd{\bxi} \hpsi_{E,\, +,\, i}^*( \xi,\, \bxi )
+  = &
+  0,
+\end{eqnarray}
+whose solutions are the holomorphic functions $\hpsi_{E,\, +}( \xi )$ and $\hpsi_{E,\, -}( \bxi )$, together with $\hpsi_{E,\, +}^*( \xi )$ and $\hpsi_{E,\, -}^*( \bxi )$.
+In these coordinates the boundary conditions~\eqref{eq:boundary-conditions-solutions} translate to:
+\begin{equation}
+  \begin{cases}
+    \hpsi_{E,\, -}^i( \tau_E - i\, 0^+ )
+    & =
+    \tensor{\qty( R_{(t)} )}{^i_j}\,
+    \hpsi_{E,\, +}^j(\tau_E + i\, 0^+ )
+    \\
+    \hpsi_{E,\, -,\, i}^{*}( \tau_E - i\, 0^+ )
+    & =
+    \tensor{\qty( R_{(t)}^* )}{_i^j}\,
+    \hpsi_{E,\, +,\, j}^*(\tau_E + i\, 0^+ )
+  \end{cases}
+  \label{eq:bc_eu_strip}
+\end{equation}
+for $\tau_E \in \qty( \htau_{E,\, (t)}, \htau_{E,\, (t-1)} )$ and
+\begin{equation}
+  \begin{cases}
+    \hpsi_{E,\, -}^i( \tau_E - i\, \pi )
+    & =
+    -\hpsi_{E,\, +}^i( \tau_E + i\, \pi )
+    \\
+    \hpsi_{E,\, -,\, i}^*( \tau_E - i\, \pi )
+    & =
+    -\hpsi_{E,\, +,\, i}^*( \tau_E + i\, \pi )
+  \end{cases},
+\end{equation}
+where $t = 1,\, 2,\, \dots,\, N$ and $\htau_{E,\, (t)}$ are the Wick-rotated locations of the $N$ zero-dimensional defects, analytically continued to a real value.
+
+The conserved product on the strip becomes:
+\begin{equation}
+  \consprod{\halpha^*_E}{\hbeta_E}
+  =
+  \cN
+  \finiteint{\sigma}{0}{\pi}
+  \qty(
+    \halpha^*_{E,\, +,\, i} \hbeta_{E,\, +}^i
+    +
+    \halpha^*_{E,\, -,\, i}  \hbeta_{E,\, -}^i
+  ),
+  \label{eq:euclidean-conserved-product-strip}
+\end{equation}
+where $\halpha^*_E$ and $\hbeta_E$ are the Euclidean counterparts of the generic solutions in the original definition of the product in~\eqref{eq:conserved-product}.
+In the Euclidean context we have to explicitly write $\halpha^*_E$ because it is no longer the ``complex conjugate''  of $\halpha_E$ in the traditional sense.
+The product is conserved only when it couples two solutions which have different boundary conditions as in~\eqref{eq:bc_eu_strip}.
+
+The definition of the stress-energy tensor in~\eqref{eq:stress-energy-tensor-lightcone} requires a change in the numerical pre-factor to use the usual CFT normalization.
+Introducing a spacetime variable central charge as well the components of the stress-energy tensor become:\footnotemark{}
+\footnotetext{%
+  The canonical coefficient in front of the CFT stress-energy tensor is such that the Euclidean Hamiltonian $\rL_{0}$ is normalized such that
+  \begin{equation*}
+    \cT_{\zeta\zeta}( \zeta ) = \sum_n \rL_{n} e^{-n \zeta}
+  \end{equation*}
+  (we are anticipating the double strip notation defined in the next subsection for simplicity).
+  We thus get:
+  \begin{equation*}
+     \rH_E
+     =
+     \rL_{0}
+     =
+     \int\limits_{0}^{2\pi} \frac{\dd{\phi}}{2 \pi}
+     \cT_{\zeta \zeta}( \tau_E + i\, \phi )
+  \end{equation*}
+  therefore $\cT_{\zeta\zeta}( \zeta ) = 2 \pi\, \cT^{(can)}_{\zeta\zeta}( \zeta )$.
+}
+\begin{equation}
+  \begin{split}
+    \cT_{\xi \xi}( \xi )
+    & =
+    - \frac{\pi T}{2}\,
+    \hpsi_{E,\, +,\, i}^*( \xi )\, \lrpartial{\xi} \hpsi^i_{E,\, +}( \xi )
+    +
+    \widehat{\cC}( \xi ),
+    \\
+    \cT_{\bxi \bxi}( \bxi )
+    & =
+    - \frac{\pi T}{2}\,
+    \hpsi_{E,\, -,\, i}^*( \bxi ) \lrpartial{\bxi}
+    \hpsi^i_{E,\, -}( \bxi )
+    +
+    \widehat{\overline{\cC}}( \bxi ),
+  \end{split}
+\end{equation}
+where $\widehat{\cC}$ and $\widehat{\overline{\cC}}$ are the leftover terms after the regularization of the singularities due to the normal ordering.
+The canonical anti-commutation relations are then
+\begin{equation}
+  \eval{
+    \qty[
+      \hpsi_{E,\, \pm}^i( \xi_1,\, \bxi_1),
+      \hpsi_{E,\, \pm,\, j}^*( \xi_2,\, \bxi_2 )
+    ]_+
+  }_{\Re\xi_1 = \Re\xi_2}
+  =
+  \frac{2}{T}\,
+  \tensor{\delta}{^i_j}\,
+  \delta\qty( \Im\xi_1 - \Im\xi_2 ).
+\end{equation}
+
+Given the Euclidean modes $\hpsi^i_{E,\, \pm,\, n}$ and $\hpsi^*_{E,\, \pm,\, n,\, i}$ where $n \in \Z$, we can then define the dual modes $\dual{\hpsi}^i_{E,\, n}$ and $\dual{\hpsi}^*_{E,\, n,\, i}$ such that the conserved product~\eqref{eq:euclidean-conserved-product-strip} between them gives:
+\begin{equation}
+  \lconsprod{\dual{\hpsi}^*_{E,\, n}}{\hpsi_{E,\, m}}
+  =
+  \lconsprod{\dual{\hpsi}_{E,\, n}}{\hpsi^*_{E,\, m}}
+  =
+  \delta_{n,m}.
+\end{equation}
+We can then expand the fields as
+\begin{equation}
+  \begin{cases}
+    \hpsi^i_{E,\, +}(\xi)
+    & =
+    \sum\limits_{n \in \Z} b_n\, \hpsi^i_{E,\, +,\, n}(\xi)
+    \\
+    \hpsi^i_{E,\, -}(\bxi)
+    & =
+    \sum\limits_{n \in \Z} b_n\, \hpsi^i_{E,\, -,\, n}(\bxi)
+  \end{cases}
+\end{equation}
+and
+\begin{equation}
+  \begin{cases}
+    \hpsi^*_{E,\, +,\, i}(\xi)
+    & =
+    \sum\limits_{n \in \Z} b^*_n\, \hpsi^*_{E,\, +,\, n,\, i}(\xi)
+    \\
+    \hpsi^*_{E,\, -,\, i}(\bxi)
+    & =
+    \sum\limits_{n \in \Z} b^*_n\, \hpsi^*_{E,\, -,\, n,\, i}(\bxi)
+  \end{cases}
+\end{equation}
+in order to extract the operators through the conserved product
+\begin{equation}
+  b_n
+  =
+  \lconsprod{\dual{\hpsi}^*_{E,\, n}}{\hpsi_{E}},
+  \qquad
+  b^*_n
+  =
+  \lconsprod{\dual{\hpsi}_{E,\, n}}{\hpsi^*_{E}},
+\end{equation}
+and get the anti-commutation relations at fixed Euclidean time as
+\begin{equation}
+  \eval{ \qty[ b_n,\, b^*_m ]_+ }_{\tau_E = \tau_{E,\, (0)}}
+  =
+  \frac{2 \cN}{T}
+  \lconsprod{\dual{\hpsi}^*_{E,\, n}}{\dual{\hpsi}_{E,\, m}}.
+\end{equation}
+
+
+\subsubsection{Double Strip Formalism and Doubling Trick}
+
+It is natural to use the doubling trick on the strip to simplify the previous expressions by gluing the holomorphic and anti-holomorphic fields along the $\sigma = \pi$ boundary.
+Define the coordinate $\zeta = \tau_E + i\, \phi$ with $0 \le \phi \le 2\pi$.
+We then have
+\begin{equation}
+  \Hpsi( \zeta )
+  =
+  \begin{cases}
+    \hpsi_{E,\, +}(\zeta)
+    &
+    \qfor
+    \phi = \sigma \in \qty[ 0, \pi ]
+    \\
+    -\hpsi_{E,\, -}(\zeta - 2 \pi i)
+    &
+    \qfor
+    \phi = 2\pi - \sigma \in \qty[ \pi, 2 \pi ]
+  \end{cases}
+\end{equation}
+on-shell (and similarly for $\Hpsi^*( \zeta )$ with the substitution $\hpsi_{E,\, \pm} \to \hpsi_{E,\, \pm}^*$).
+The ``complex conjugation'' $\star$ acts on the off-shell double fields as
+\begin{equation}
+  \qty[ \Hpsi^i(\zeta,\, \bzeta) ]^\star = \Hpsi_i^*(-\bzeta,\, -\zeta),
+\end{equation}
+while the boundary conditions are translated into
+\begin{equation}
+  \begin{cases}
+    \Hpsi^i( \tau_E + 2 \pi i^- )
+    =
+    -\tensor{\qty( R_{(t)} )}{^i_j}\,
+    \Hpsi^j( \tau_E + i\, 0^+ )
+    \\
+    \Hpsi^{* i}( \tau_E + 2 \pi i^- )
+    =
+    -\tensor{\qty( R_{(t)}^* )}{^i_j}\,
+    \Hpsi^{* j}( \tau_E + i\, 0^+ )
+  \end{cases}
+\end{equation}
+for $\tau_E \in \qty( \htau_{E,\, (t)}, \htau_{E,\, (t-1)} )$.
+The conserved product can then be defined as
+\begin{equation}
+  \consprod{\widehat{A}^*}{\widehat{B}}
+  =
+  \cN
+  \finiteint{\phi}{0}{2\pi}\,
+  \widehat{A}^*_i(\tau_E + i\, \phi )\,
+  \widehat{B}^i( \tau_E + i\, \phi ),
+\end{equation}
+where $\widehat{A}^*$ and $\widehat{B}$ are the double fields connected to $\halpha^*_E$ and $\hbeta_E$ in the previous definition on the strip.
+The holomorphic stress-energy tensor is then
+\begin{equation}
+  \cT_{\zeta \zeta}( \zeta )
+  =
+  - \frac{\pi T}{2}\,
+  \Hpsi_{i}^*( \zeta )\, \lrpartial{\zeta} \Hpsi^i( \zeta ) 
+  +
+  \widehat{\cC}(\zeta)
+\end{equation}
+and the canonical anti-commutation relations are now
+\begin{equation}
+  \eval{
+    \qty[
+      \Hpsi^i( \zeta_1 )
+      ,
+      \Hpsi_{j}^*( \zeta_2 )
+    ]_+
+  }_{\Re\zeta_1 = \Re\zeta_2}
+  =
+  \frac{2}{T}\, \tensor{\delta}{^i_j} \delta\qty( \Im\zeta_1 - \Im\zeta_2 ).
+\end{equation}
+
+
+The double field formulation shows that we need only one coefficient $b_n$ (or $b_n^*$) for both $\psi_{E,\, +}$ and $\psi_{E,\, -}$ (or for both $\psi^*_{E,\, +}$ and $\psi^*_{E,\, -}$).
+In fact, given the Euclidean modes $\Hpsi^i_{n}$ and $\Hpsi^*_{n,\, i}$ where $n \in \Z$, we define the dual modes $\dual{\Hpsi}^i_{n}$ and $\dual{\Hpsi}^*_{n,\, i}$ such that:
+\begin{equation}
+  \lconsprod{\dual{\Hpsi}^*_{n}}{\Hpsi_{m}}
+  =
+  \lconsprod{\dual{\Hpsi}_{n}}{\Hpsi^*_{m}}
+  =
+  \delta_{n,m}.
+\end{equation}
+We expand the double fields as
+\begin{equation}
+  \Hpsi^i(\zeta)
+  =
+  \sum\limits_{n \in \Z} b_n \Hpsi^i_{n}(\zeta),
+  \qquad
+  \Hpsi^*_{i}(\zeta)
+  =
+  \sum\limits_{n \in \Z} b^*_n \Hpsi^*_{n}(\zeta)
+\end{equation}
+Operators are then extracted as
+\begin{equation}
+  b_n
+  =
+  \lconsprod{\dual{\Hpsi}^*_{n}}{\Hpsi},
+  \qquad
+  b^*_n
+  =
+  \lconsprod{\dual{\Hpsi}_{n}}{\Hpsi^*}.
+  \label{eq:upper-half-extraction}
+\end{equation}
+Finally we get the anti-commutation relations as
+\begin{equation}
+  \eval{ \qty[ b_n, b^*_m ]_+ }_{\tau_E = \tau_{E,\, 0}}
+  =
+  \frac{2 \cN}{T} \lconsprod{\dual{\Hpsi}^*_{n}}{\dual{\Hpsi}_m}.
+\end{equation}
+
+
+\subsection{Fields on the Upper Half Plane}
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.5\linewidth]{img/complex-plane}
+  \caption{%
+    Fields are glued on the $x < 0$ semi-axis with non trivial discontinuities for $x_t < x < x_{t-1}$ for $t = 1,\, 2,\, \dots,\, N$ and where $x_t = \exp( \htau_{E,\, (t)} )$.
+  }
+  \label{fig:complex-plane}
+\end{figure}
+
+We consider a set of coordinates on the upper half \ccH of the complex plane:
+\begin{equation}
+  u = e^{\xi} \in \ccH,
+\end{equation}
+where $\xi = \tau_E + i \sigma$ and $\sigma \in \qty[ 0, \pi ]$ define the usual strip, and $\ccH = \qty{ w \in \C \mid \Im w \ge 0 }$.
+These coordinates can then be extended to the entire complex plane by considering
+\begin{equation}
+  z = e^{\zeta} \in \C,
+\end{equation}
+where $\zeta = \tau_E + i \phi$ and $\phi \in \qty[0, 2\pi ]$ define the double strip.
+Under this change of coordinates the Euclidean action~\eqref{eq:S_Eu_strip} becomes
+\begin{equation}
+  \begin{split}
+    S_E
+    & =
+    \frac{T}{2}
+    \iint \dd{u}\dd{\bu}\,
+    \frac{1}{2}\,
+    \qty(
+      \frac{1}{u}\, \hpsi_{E,\, +,\, i}^* \lrpartial{\bu} \hpsi_{E,\, +}^i
+      +
+      \frac{1}{\bu}\, \hpsi_{E,\, -,\, i}^* \lrpartial{u} \hpsi_{E,\, -}^i
+    )
+    \\
+    & =
+    \frac{T}{2}
+    \iint \dd{u}\dd{\bu}\,
+    \frac{1}{2}\,
+    \qty(
+      \psi_{E,\, +,\, i}^* \lrpartial{\bu} \psi_{E,\, +}^i
+      +
+      \psi_{E,\, -,\, i}^* \lrpartial{u} \psi_{E,\, -}^i
+    ),
+  \end{split}
+\end{equation}
+where we introduce the off-shell field redefinitions:
+\begin{equation}
+  \psi_{E,\, +}^i(u,\, \bu)
+  =
+  \frac{1}{\sqrt{u}}\, \hpsi_{E,\, +}^i( \xi,\, \bxi ),
+  \qquad
+  \psi_{E,\, -}^i(u,\, \bu)
+  =
+  \frac{1}{\sqrt{\bu}}\, \hpsi_{E,\, -}^i( \xi,\, \bxi ).
+  \label{eq:euclidean-off-shell-redefinitions}
+\end{equation}
+Fields with the hat sign on top thus represent strip and double strip definitions, while fields without the hat sign are defined on $\ccH$ or $\C$.\footnotemark{}
+\footnotetext{%
+  We could have anticipated these redefinitions from a CFT argument where
+    \begin{equation*}
+      \psi( u ) = \eval{\qty( \dv{u}{\xi} )^{-\frac{1}{2}}
+        {\hpsi}(\xi)}_{\xi = \ln( u )},
+    \end{equation*}
+  but we cannot and do not rely on CFT properties since we have not shown that the theory is a CFT yet.
+}
+Notice that this is the result one would expect from the engineering dimension: in this case it works since the theory is essentially free.
+Using the redefinitions~\eqref{eq:euclidean-off-shell-redefinitions}, the off-shell ``complex conjugation'' $\star$ then becomes
+\begin{equation}
+  \qty[ \psi_{E,\, +,\, i}( u,\, \bu ) ]^\star
+  =
+  \frac{1}{\bu}\, \psi_{E,\, +,\, i}^*\qty( \frac{1}{\bu},\, \frac{1}{u} ),
+  \qquad
+  \qty[ \psi_{E,\, -,\, i}( u,\, \bu ) ]^\star
+  =
+  \frac{1}{u}\, \psi_{E,\, -,\, i}^*\qty( \frac{1}{\bu},\, \frac{1}{u} ).
+\end{equation}
+
+We choose to insert the cut of the square root on the real negative axis.
+The boundary conditions are then translated into
+\begin{equation}
+  \begin{cases}
+    \psi_{E,\, -}^i( x - i\, 0^+ )
+    =
+    \tensor{\qty( R_{(t)} )}{^i_j} \psi_{E,\, +}^j( x + i\, 0^+ )
+    \\
+    \psi^{*}_{E,\, -,\, i}( x - i\, 0^+ ) =
+    \tensor{\qty( R_{(t)}^* )}{_i^j} \psi^{*}_{E,\, +,\, j}( x + i\, 0^+ )
+  \end{cases}
+\end{equation}
+for $x \in \qty( x_{(t)}, x_{(t-1)} )$, where $x_{(t)} = \exp( \htau_{E,\, (t)} ) > 0$, and
+\begin{equation}
+  \psi_{E,\, -}^i( x - i\, 0^+ )
+  =
+  \psi_{E,\, +}^i( x + i\, 0^+ ),
+  \qquad
+  \psi^{*}_{E,\, -,\, i}( x - i\, 0^+ )
+  =
+  \psi^{*}_{E,\, +,\, i}( x + i\, 0^+ )
+\end{equation}
+for $x<0$.
+
+The product~\eqref{eq:euclidean-conserved-product-strip} is then
+\begin{equation}
+  \consprod{\alpha^*}{\beta}
+  =
+  -i \cN\,
+  \qty[
+    \int\limits_{\widehat{\Sigma}} \dd{u}
+    \alpha^*_{+,\, i}(u) \beta_+^i(u)
+    -
+    \int\limits_{\widehat{\overline{\Sigma}}} \dd{\bu}
+    \alpha^*_{-,\, i}(\bu) \beta_-^i(\bu)
+  ],
+  \label{eq:prod_H}
+\end{equation}
+where integrations are computed over two semi-circles $\widehat{\Sigma} = \qty{ u \in \C \mid \abs{u} = \exp( \htau_E ),\, 0 \le \Im u \le \pi }$ and $\widehat{\overline{\Sigma}} = \qty{ u \in \C \mid \abs{u} = \exp( \htau_E ),\, -\pi \le \Im u \le 0}$.
+The stress-energy tensor becomes:\footnotemark{}
+\footnotetext{%
+  While rewriting the operator part of the stress-energy tensor from the strip
+  formulation into the coordinates in $\ccH$ we actually get
+  \begin{equation*}
+    \cT_{\xi \xi}( \xi(u) ) = u^2\, \cT_{u u}( u ).
+  \end{equation*}
+  The reason of the presence of $u^2$ factor can be explained in two ways.
+  Using GR we know that $\cT_{\xi \xi}( \xi ) \dss[2]{\xi} = \cT_{u u}( u ) \dss[2]{u}$.
+  Another way is to notice that a translation in $\xi$ is a dilatation of $u$: the infinitesimal generator of $\xi$ translation must be the infinitesimal
+  generator of $u$ dilatation, that is:
+  \begin{equation*}
+    P_{\xi}
+    \sim
+    \int \dd{\sigma}\, \cT_{\xi \xi}
+    \sim
+    D_u
+    \sim 
+    \int \dd{u}\, u\, \cT_{u u}.
+  \end{equation*}
+}
+\begin{equation}
+  \begin{split}
+    \cT_{u u}( u )
+    & =
+    - \frac{\pi T}{2}\,
+    \psi_{E,\, +,\, i}^*( u )\, \lrpartial{u} \psi^i_{E,\, +}( u )
+    +
+    \widehat{\cC}(u ),
+    \\
+    \cT_{\bu \bu}( \bu )
+    & =
+    - \frac{\pi T}{2}\,
+    \psi_{E,\, -,\, i}^*( \bu )\, \lrpartial{\bu} \psi^i_{E,\, -}( \bu )
+    +
+    \widehat{\overline{\cC}}( \bu ).
+  \end{split}
+\end{equation}
+Finally the anti-commutation relations are
+\begin{equation}
+  \begin{cases}
+    \eval{
+      \qty[
+        \psi_{E,\, +}^i( u_1,\, \bu_1 )
+        ,
+        \psi_{E,\, +,\, j}^*( u_2,\, \bu_2 )
+      ]_+
+    }_{\abs{u_1} = \abs{u_2}}
+    & =
+    \frac{2}{T u_1}\, \tensor{\delta}{^i_j}\, \delta( \arg(u_1) - \arg(u_2) )
+    \\
+    \eval{
+      \qty[
+        \psi_{E,\, -}^i( u_1,\, \bu_1 )
+        ,
+        \psi_{E,\, -,\, j}^*( u_2,\, \bu_2 )
+      ]_+
+    }_{\abs{u_1} = \abs{u_2}}
+    & =
+    \frac{2}{T \bu_1}\, \tensor{\delta}{^i_j}\, \delta( \arg(u_1) - \arg(u_2) ),
+  \end{cases}
+\end{equation}
+which despite the strange look of the expression are perfectly compatible with the definition~\eqref{eq:upper-half-extraction} leading to:
+\begin{equation}
+  \qty[ b_n,\, b^*_m ]_+
+  =
+  \frac{2 \cN}{T}\,
+  \lconsprod{\dual{\hpsi}^*_{E,\, n}}{\dual{\hpsi}_{E,\, m}}
+  =
+  \frac{2 \cN}{T}\,
+  \lconsprod{\dual{\psi}^*_{E,\, n}}{\dual{\psi}_{E,\, m}}
+\end{equation}
+when the product $\lconsprod{\cdot}{\cdot}$ is defined according to~\eqref{eq:prod_H}.
+We expand the fields in modes as:
+\begin{equation}
+  \begin{cases}
+    \psi^i_{E,\, +}(u)
+    =
+    \sum\limits_{n \in \Z} b_n\, \psi^i_{E,\, +,\, n}(u)
+    \\
+    \psi^i_{E,\, -}(\bu)
+    =
+    \sum\limits_{n \in \Z} b_n\, \psi^i_{E,\, -,\, n}(\bu)
+  \end{cases}
+\end{equation}
+and
+\begin{equation}
+  \begin{cases}
+    \psi^*_{E,\, +,\, i}(u)
+    =
+    \sum\limits_{n \in \Z} b^*_n\, \psi^*_{E,\, +,\, n,\, i}(u)
+    \\
+    \psi^*_{E,\, -,\, i}(\bu)
+    =
+    \sum\limits_{n \in \Z} b^*_n\, \psi^*_{E,\, -,\, n,\, i}(\bu)
+  \end{cases}
+\end{equation}
+and $\dual{\psi}_{E,\, n}$ and $\dual{\psi}^*_{E,\, n}$ are the corresponding dual modes on the upper half plane.   
+
+
+\subsection{Fields on the Complex Plane and the Doubling Trick}
+  
+We use again the doubling trick to define the fields on the subset $\C \setminus \qty[ x_{(N)},\, x_{(1)} ]$:
+\begin{equation}
+  \Psi( z )
+  =
+  \begin{cases}
+    \psi_{E,\, +}(u)
+    & \qfor
+    z = u \in \ccH \setminus \qty[ x_{(N)}, x_{(1)} ]
+    \\
+    \psi_{E,\, -}(\bu)
+    & \qfor
+    z = \bu \in \overline{\ccH} \setminus \qty[ x_{(N)}, x_{(1)} ]
+  \end{cases}
+\end{equation}
+where $z = \exp( \tau_E + i\, \phi ) = x + i y$ and $\overline{\ccH} = \qty{ w \in \C \mid \Im w \le 0 }$.
+The same procedure applies also to $\Psi^*$ with the exchange $\psi_{E,\, \pm} \leftrightarrow \psi_{E,\, \pm}^*$.
+
+In this case the ``complex conjugation'' $\star$ acts off-shell as
+\begin{equation}
+  \qty[ \Psi^i( z, \bz ) ]^\star
+  =
+  \frac{1}{\bz}\, \Psi_i^*\qty(\frac{1}{\bz}, \frac{1}{z}).
+  \label{eq:complex-plane-conjugate}
+\end{equation}
+The boundary conditions then become:
+\begin{equation}
+  \begin{cases}
+    \Psi^i( x - i\, 0^+ )
+    & =
+    \tensor{\qty( R_{(t)} )}{^i_j} \Psi^j( x + i\, 0^+ ),
+    \\
+    \Psi^{*\, i}( x - i 0^+ )
+    & =
+    \tensor{\qty( R_{(t)}^* )}{^i_j} \Psi^{*\, j}( x + i\, 0^+ ),
+  \end{cases}
+  \label{eq:boundary-condition-euclidean}
+\end{equation}
+for $x \in \qty( x_{(t)}, x_{(t-1)} )$, where $x_{(t)} = \exp( \htau_{E,\, (t)} ) > 0$ for $t \in \qty{ 1,\, 2,\, \dots,\, N }$.
+When $x < 0$ we get
+\begin{equation}
+  \begin{cases}
+    \Psi( x - i\, 0^+ ) & = \Psi( x + i\, 0^+ ),
+    \\
+    \Psi^*( x - i\, 0^+ ) & = \Psi^*( x + i\, 0^+ )
+  \end{cases}.
+  \label{eq:gluing-conditions-euclidean}
+\end{equation}
+
+Given the relations $\dd{z} = i\, z\, \dd{\phi}$, we can write the conserved product \eqref{eq:prod_H} as:
+\begin{equation}
+  \consprod{A^*}{B}
+  =
+  2\pi \cN
+  \oint\limits_{\abs{z} = \exp( \tau_E )}
+  \frac{\dd{z}}{2 \pi i}\, A^*_i( z )\, B^i( z ),
+  \label{eq:conserved-product-complex-plane}
+\end{equation}
+where we explicitly stressed that the integral has to be performed at a fixed Euclidean time $\tau_E$: in the new coordinate on the plane the conserved product becomes a contour integral at a fixed radius from the origin.
+
+In the same way we can recast the stress-energy tensor components~\eqref{eq:stress-energy-tensor-lightcone} in the new coordinates:
+\begin{equation}
+  \cT( z )
+  =
+  - \frac{\pi T}{2}\,
+  \Psi^*_i( z )\, \lrpartial{z} \Psi^i( z )
+  +
+  \cC( z ),
+\end{equation}
+where $\cT = \cT_{zz}$ for simplicity.
+
+Finally the canonical anti-commutation relations between the fields are:
+\begin{equation}
+  \eval{
+    \qty[
+      \Psi^i( z_1 ),\,
+      \Psi_{j}^*( z_2 )
+    ]_+
+  }_{\abs{z_1} = \abs{z_2}}
+  =
+  \frac{2}{T z_1}\, \tensor{\delta}{^i_j}\, \delta( \arg(z_1) - \arg(z_2) ).
+\end{equation}
+The fields expansion in modes thus reads
+\begin{equation}
+  \Psi^i(z)
+  =
+  \sum\limits_{n \in \Z} b_n\, \Psi^i_{n}(z),
+  \qquad
+  \Psi^*_{i}(z)
+  =
+  \sum\limits_{n \in \Z} b^*_n\, \Psi^*_{n. i}(z).
+  \label{eq:complex-plane-mode-expansion}
+\end{equation}
+The anti-commutation relations among the operators are
+\begin{equation}
+  \qty[ b_n,\, b^*_m ]_+
+  =
+  \frac{2 \cN}{T}\, \lconsprod{\dual{\Psi}^*_{n}}{\dual{\Psi}_{m}},
+\end{equation}
+when we introduce the dual modes
+$\dual{\Psi}_{n}(z)$ and $\dual{\Psi}^*_{n}(z)$ whose normalization is
+\begin{equation}
+  \lconsprod{\dual{\Psi}^*_{n}}{{\Psi}_{m}}
+  =
+  \lconsprod{\dual{\Psi}_{n}}{{\Psi}^*_{m}}
+  =
+  \delta_{m,n}.
+\end{equation}
+
+
+\subsection{Algebra of Creation and Annihilation Operators}
+\label{sec:modes_and_algebra}
+  
+In this section we find the explicit expression of the modes which satisfy the \eom and the boundary conditions.
+We then compute the dual fields and finally the algebra of the creators and annihilators.
+
+
+\subsubsection{NS Complex Fermions}
+\label{sec:ns-complex-fermions}
+
+We start from NS complex fermions to show that the formalism can recover known results.
+Consider the usual definition:
+\begin{equation}
+  \begin{cases}
+    \psi_-^i( \tau, 0 )
+    & =
+    \psi_+^i( \tau, 0 ),
+    \\
+    \psi_-^i( \tau, \pi )
+    & =
+    -\psi_+^i( \tau, \pi )
+  \end{cases}
+\end{equation}
+for $\tau \in \R$, which can be recovered from~$\eqref{eq:boundary-conditions-solutions}$ setting $R_{(t)} \equiv \1$.
+In the Euclidean formulation we use~\eqref{eq:boundary-condition-euclidean} and~\eqref{eq:gluing-conditions-euclidean} to get:
+\begin{equation}
+  \begin{cases}
+    \Psi( x - i\, 0^+ ) & =  \Psi( x + i\, 0^+ )
+    \\
+    \Psi^*( x - i\, 0^+ ) & =  \Psi^*( x + i\, 0^+ )
+  \end{cases}
+\end{equation}
+for $x \in \R$.
+
+We define:
+\begin{eqnarray}
+  \Psi^i_{( n,\, i_0 )}( z )
+  & = &
+  \cN_{\Psi}\, \delta^i_{i_0}\, z^{-n},
+  \\
+  \dual{\Psi}_{( m,\, j_0 ),\, j}( z )
+  & = &
+  \qty( 2 \pi \cN\, \cN_{\Psi} )^{-1}\, \delta_{j, j_0}\, z^{m-1}
+\end{eqnarray}
+to recover the definition of the dual modes~\eqref{eq:conserved-product-dual-basis} using the Euclidean conserved product \eqref{eq:conserved-product-complex-plane}.
+We then proceed similarly for $\Psi^*$ in such a way that
+\begin{equation}
+  \lconsprod{\dual{\Psi}_{( n,\, i_0 )}^*}{\Psi_{( m,\, j_0 )}}
+  =
+  \lconsprod{\dual{\Psi}_{( m,\, j_0 )}}{\Psi^*_{( n,\, i_0 )}}
+  =
+  \delta_{n, m}\, \delta_{i_0, j_0}.
+\end{equation}
+As a consequence we find
+\begin{equation}
+  \lconsprod{\dual{\Psi}_{( n,\, i_0 )}^*}{\dual{\Psi}_{( m,\, i_1 )}}
+  =
+  \frac{1}{2 \pi \cN\, \cN^2_{\Psi}}\, \delta_{i_0, i_1}\, \delta_{n + m, 1}.
+\end{equation}
+
+Consider the  NS expansion in modes of the double fields:
+\begin{eqnarray}
+  \Psi^i( z )
+  & = &
+  \sum\limits_{n \in \Z}\,
+  \sum\limits_{i_0}\,
+  b_{(n,\, i_0)}\, \Psi^i_{( n,\, i_0 )}( z ),
+  \\
+  \Psi^{*}_i( z )
+  & = &
+  \sum\limits_{n \in \Z}\,
+  \sum\limits_{i_0}\,
+  b^*_{(n,\, i_0)}\, \Psi^{*}_{( n,\, i_0 ),\, i}( z ),
+\end{eqnarray}
+then
+\begin{eqnarray}
+  b_{( n,\, i_0 )}
+  & = &
+  \lconsprod{\dual{\Psi}_{( n,\, i_0 )}^*}{\Psi},
+  \\
+  b^*_{( n,\, i_0 )}
+  & = &
+  \lconsprod{\dual{\Psi}_{( n,\, i_0)}}{\Psi^*},
+\end{eqnarray}
+and
+\begin{equation}
+  \qty[ b_{( n, i_0 )},\, b^*_{( m, j_0 )} ]_+
+  =
+  \frac{1}{\pi T \cN_{\Psi}^2}\, \delta_{i_0, j_0}\, \delta_{n + m, 1}.
+  \label{eq:ns-algebra}
+\end{equation}
+
 
 % vim: ft=tex

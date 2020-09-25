@@ -32,10 +32,10 @@ Using the path integral approach we can in fact separate the classical contribut
   \right\rangle
   =
   \cN
-  \left(
-    \left\lbrace x_{(t)},\, \rM_{(t)} \right\rbrace_{1 \le t \le N_B}
-  \right)\,
-  e^{-S_E\left( \left\lbrace x_{(t)}, \rM_{(t)} \right\rbrace_{1 \le t \le N_B} \right)},
+  \qty(
+    \qty{ x_{(t)},\, \rM_{(t)} }_{1 \le t \le N_B}
+  )\,
+  e^{-S_E\qty( \qty{ x_{(t)}, \rM_{(t)} }_{1 \le t \le N_B} )},
 \end{equation}
 where $\rM_{(t)}$ (for $1 \le t \le N_B$) are the monodromies induced by the twist fields, $N_B$ is the number of D-branes and $x_{(t)}$ are the intersection points on the worldsheet.
 Even though quantum corrections are crucial to the complete determination of the normalisation of the correlator, the classical contribution of the Euclidean action represents the leading term of the Yukawa couplings.
@@ -119,15 +119,15 @@ The rotation $R_{(t)}$ is actually defined in the Grassmannian:
   \in
   \mathrm{Gr}(2, 4)
   =
-  \frac{\SO{4}}{\rS\left( \OO{2} \times \OO{2} \right)},
+  \frac{\SO{4}}{\rS\qty( \OO{2} \times \OO{2} )},
 \end{equation}
 that is we just need to consider the left coset where $R_{(t)}$ is a representative of an equivalence class
 \begin{equation}
-  \left[ R_{(t)} \right]
+  \qty[ R_{(t)} ]
   =
-  \left\lbrace R_{(t)} \sim \cO_{(t)} R_{(t)} \right\rbrace,
+  \qty{ R_{(t)} \sim \cO_{(t)} R_{(t)} },
 \end{equation}
-where $\cO_{(t)} = \rS\left( \OO{2} \times \OO{2} \right)$ is defined as
+where $\cO_{(t)} = \rS\qty( \OO{2} \times \OO{2} )$ is defined as
 \begin{equation}
   \cO_{(t)}
   =
@@ -135,7 +135,7 @@ where $\cO_{(t)} = \rS\left( \OO{2} \times \OO{2} \right)$ is defined as
 \end{equation}
 with $\cO^{\parallel}_{t} \in \OO{2}$, $\cO^{\perp}_{t} \in \OO{2}$ and $\det \cO_{(t)} = 1$.
 The superscript $\parallel$ represents any of the coordinates parallel to the D-brane, while $\perp$ any of the orthogonal.
-Notice that the additional $\Z_2$ factor in $\rS\left( \OO{2} \times \OO{2} \right)$ with respect to $\SO{2} \times \SO{2}$ can be used to set $g_{(t)}^{\perp} \ge 0$.
+Notice that the additional $\Z_2$ factor in $\rS\qty( \OO{2} \times \OO{2} )$ with respect to $\SO{2} \times \SO{2}$ can be used to set $g_{(t)}^{\perp} \ge 0$.
 
 
 \subsubsection{Boundary Conditions for Branes at Angles}
@@ -150,7 +150,7 @@ We define the usual upper plane coordinates:
   =
   e^{\tau_E + i \sigma}
   & \in &
-  \ccH \cup \left\lbrace z \in \C \mid \Im z = 0 \right\rbrace,
+  \ccH \cup \qty{ z \in \C \mid \Im z = 0 },
   \\
   \bu
   =
@@ -158,20 +158,20 @@ We define the usual upper plane coordinates:
   =
   e^{\tau_E - i \sigma}
   & \in &
-  \overline{\ccH} \cup \left\lbrace z \in \C \mid \Im z = 0 \right\rbrace,
+  \overline{\ccH} \cup \qty{ z \in \C \mid \Im z = 0 },
 \end{eqnarray}
-where $\ccH = \left\lbrace z \in \C \mid \Im z > 0 \right\rbrace$ is the upper complex plane and $\overline{\ccH} = \left\lbrace z \in \C \mid \Im z < 0 \right\rbrace$ is the lower complex plane.
+where $\ccH = \qty{ z \in \C \mid \Im z > 0 }$ is the upper complex plane and $\overline{\ccH} = \qty{ z \in \C \mid \Im z < 0 }$ is the lower complex plane.
 In conformal coordinates $u$ and $\bu$, D-branes at $\sigma = 0$ and $\sigma = \pi$ are mapped onto the real axis $\Im z = 0$.
 We use the symbol $D_{(t)}$ to label both the brane and the interval representing it on the real axis of the upper half plane:
 \begin{equation}
-  D_{(t)} = \left[ x_{(t)}, x_{(t-1)} \right],
+  D_{(t)} = \qty[ x_{(t)}, x_{(t-1)} ],
   \qquad
   t = 2,\, 3,\, \dots,\, N_B,
   \qquad
   x_{(t)} < x_{(t-1)}.
 \end{equation}
 The points $x_{(t)}$ and $x_{(t-1)}$ represent the worldsheet intersection points of the brane $D_{(t)}$ with the branes $D_{(t+1)}$ and $D_{(t-1)}$ respectively.
-The choice of the intervals must be carefully considered: since the D-branes are defined modulo $N_B$, the shorthand for the interval $D_{(1)} = \left[ x_{(1)}, x_{(N_B)} \right]$ should actually be:
+The choice of the intervals must be carefully considered: since the D-branes are defined modulo $N_B$, the shorthand for the interval $D_{(1)} = \qty[ x_{(1)}, x_{(N_B)} ]$ should actually be:
 \begin{equation}
   D_{(1)}
   =
@@ -193,11 +193,11 @@ In the global coordinates system associated to the subspace $\R^4 \subset \ccM^{
     \frac{1}{4 \pi \ap}
     \iint\limits_{\R \times \R^+}
     \dd{x}\dd{y}\,
-    \left(
+    \qty(
       \ipd{x} X^I\, \ipd{x} X^J
       +
       \ipd{y} X^I\, \ipd{y} X^J
-    \right)\,
+    )\,
     \eta_{IJ},
   \end{split}
   \label{eq:string_action}
@@ -208,7 +208,7 @@ The \eom in these coordinates are:
   \ipd{u} \ipd{\bu} X^I( u, \bu )
   =
   \frac{1}{4}
-  \left( \ipd{x}^2 + \ipd{y}^2 \right) X^I( x+iy, x-iy )
+  \qty( \ipd{x}^2 + \ipd{y}^2 ) X^I( x+iy, x-iy )
   =
   0.
   \label{eq:string_equation_of_motion}
@@ -235,29 +235,29 @@ In the well adapted frame~\eqref{eq:well-adapt-embed} we describe an open string
   m = 3,\, 4,
   \label{eq:dirichlet_bc}
 \end{eqnarray}
-where $x \in D_{(t)} = \left[ x_t, x_{t-1} \right]$ and the index $i$ labels the Neumann boundary conditions while $m$ labels the Dirichlet coordinates associated to the direction orthogonal to the D-branes.
+where $x \in D_{(t)} = \qty[ x_t, x_{t-1} ]$ and the index $i$ labels the Neumann boundary conditions while $m$ labels the Dirichlet coordinates associated to the direction orthogonal to the D-branes.
 
 As the presence of $g_{(t)}^m$ in \eqref{eq:brane_rotation} and \eqref{eq:dirichlet_bc} may complicate the analysis, we consider the derivative along the boundary direction of \eqref{eq:dirichlet_bc} to remove the dependence on the translation vector.
 This procedure produces simpler boundary conditions which are nevertheless not equivalent to the original~\eqref{eq:neumann_bc} and \eqref{eq:dirichlet_bc}: they will be recovered later by adding further constraints.
 The simpler boundary conditions we consider in the global coordinates are:
 \begin{eqnarray}
-  \tensor{\left( R_{(t)} \right)}{^i_J}
+  \tensor{\qty( R_{(t)} )}{^i_J}
   \eval{\ipd{\sigma} X^J( \tau, \sigma )}_{\sigma = 0}
   & = &
-  i\, \tensor{\left( R_{(t)} \right)}{^i_J}
-  \left(
+  i\, \tensor{\qty( R_{(t)} )}{^i_J}
+  \qty(
     \ipd{u} X^J( x + i\, 0^+ ) - \ipd{\bu} \bX^J( x - i\, 0^+ )
-  \right)
+  )
   =
   0,
   \\
-  \tensor{\left( R_{(t)} \right)}{^m_J}
+  \tensor{\qty( R_{(t)} )}{^m_J}
   \eval{\ipd{\tau} X^J( \tau, \sigma )}_{\sigma = 0}
   & = &
-  i\, \tensor{\left( R_{(t)} \right)}{^m_J}
-  \left(
+  i\, \tensor{\qty( R_{(t)} )}{^m_J}
+  \qty(
     \ipd{u} X^J( x + i\, 0^+ ) + \ipd{\bu} \bX^J( x - i\, 0^+ )
-  \right)
+  )
   =
   0,
 \end{eqnarray}
@@ -268,7 +268,7 @@ With the introduction of the target space embedding of the worldsheet interactio
   \begin{cases}
     \ipd{u} X^I( x + i\, 0^+ )
     & =
-    \tensor{\left( U_{(t)} \right)}{^I_J}
+    \tensor{\qty( U_{(t)} )}{^I_J}
     \ipd{\bu} \bX^J( x - i\, 0^+ ),
     \qquad
     x \in D_{(t)}
@@ -283,11 +283,11 @@ In the last expression we introduced the matrix
 \begin{equation}
   U_{(t)}
   =
-  \left( R_{(t)} \right)^{-1}\,
+  \qty( R_{(t)} )^{-1}\,
   \cS\,
   R_{(t)}
   \in
-  \frac{\SO{4}}{\rS\left( \OO{2} \times \OO{2} \right)},
+  \frac{\SO{4}}{\rS\qty( \OO{2} \times \OO{2} )},
   \label{eq:Umatrices}
 \end{equation}
 where
@@ -298,7 +298,7 @@ where
   \label{eq:reflection_S}
 \end{equation}
 embeds the difference between Neumann and Dirichlet conditions.
-Given its definition $U_{(t)}$ is such that $U_{(t)} = \left( U_{(t)} \right)^{-1} = \left( U_{(t)} \right)^T$.
+Given its definition $U_{(t)}$ is such that $U_{(t)} = \qty( U_{(t)} )^{-1} = \qty( U_{(t)} )^T$.
 
 The target space vector $f_{(t)}$ recovers the apparent loss of information suffered when losing $g_{(t)}$.
 Consider for instance the embedding equations~\eqref{eq:dirichlet_bc} for any two intersecting D-branes $D_{(t)}$ and $D_{(t+1)}$.
@@ -324,7 +324,7 @@ we can compute the intersection point as:
 \begin{equation}
   f_{(t)}
   =
-  \left( \cR_{(t,\, t+1)} \right)^{-1}\,
+  \qty( \cR_{(t,\, t+1)} )^{-1}\,
   \cG_{(t,\, t+1)}.
 \end{equation}
 Information on $g_{(t)}$ is thus recovered through the global boundary conditions in the second equation in \eqref{eq:discontinuity_bc}.
@@ -363,7 +363,7 @@ The boundary conditions in terms of the doubling field are:
   \ipd{z} \cX( x_t + \eta - i\, 0^+ ),
   \label{eq:bottom_monodromy}
 \end{eqnarray}
-for $0 < \eta < \min\left( \abs{x_{(t-1)} - x_{(t)}}, \abs{x_{(t)} - x_{(t+1)}} \right)$ in order to consider only the two adjacent D-branes $D_{(t)}$ and $D_{(t+1)}$.
+for $0 < \eta < \min\qty( \abs{x_{(t-1)} - x_{(t)}}, \abs{x_{(t)} - x_{(t+1)}} )$ in order to consider only the two adjacent D-branes $D_{(t)}$ and $D_{(t+1)}$.
 Matrices $\cU_{(t,\, t+1)}$ and $\widetilde{\cU}_{(t,\, t+1)}$ are the non trivial monodromies arising from the rotation of the D-branes.
 
 Since the relative rotations between consecutive D-branes are non Abelian, for each interaction point there are two monodromies \cU and $\widetilde{\cU}$ depending on the location of the base point of the closed loop: one for paths starting in the upper plane \ccH and one for paths starting in $\overline{\ccH}$.
@@ -451,7 +451,7 @@ We define the spinor representation of $X$ as:
 \begin{equation}
   X_{(s)}( u, \bu ) = X^I( u, \bu )\, \tau_I,
 \end{equation}
-where $\tau = \left( i\, \1_2,\, \vb{\sigma} \right)$ and $\vb{\sigma}$ is the vector of the Pauli matrices.
+where $\tau = \qty( i\, \1_2,\, \vb{\sigma} )$ and $\vb{\sigma}$ is the vector of the Pauli matrices.
 Consider then:
 \begin{equation}
   \ipd{z} \cX_{(s)}( z )
@@ -470,7 +470,7 @@ Consider then:
 \end{equation}
 
 As in the real representation the discontinuities on the D-branes can be cast into monodromy factors with respect to the D-brane $D_{(\bt)}$. Branch cut structure and considerations on the homotopy group are left unchanged as long as we consider both left and right sectors of $\SU{2}_L \times \SU{2}_R$ at the same time.
-Let $0 < \eta < \min\left( \abs{x_{(t)} - x_{(t-1)}}, \abs{x_{(t+1)} - x_{(t)}} \right)$.
+Let $0 < \eta < \min\qty( \abs{x_{(t)} - x_{(t-1)}}, \abs{x_{(t+1)} - x_{(t)}} )$.
 We find:
 \begin{eqnarray}
   \ipd{z} \cX_{(s)}( x_t + e^{2 \pi i}( \eta + i\, 0^+) )
@@ -749,7 +749,7 @@ We write any possible solution in a factorised form as
   (-\omega_z)^{A_{lr}}\,
   (1-\omega_z)^{B_{lr}}\,
   \cB_{\vb{0},\, l}^{(L)}(\omega_z)
-  \left( \cB_{\vb{0},\, r}^{(R)}(\omega_z) \right)^T,
+  \qty( \cB_{\vb{0},\, r}^{(R)}(\omega_z) )^T,
   \label{eq:formal_solution_lr}
 \end{equation}
 where  $l$ and $r$ label the parameters associates with the left and right sectors of the hypergeometric function.
@@ -790,14 +790,14 @@ We impose:
   &&\begin{cases}
     D^{(L)}\,
     \rM_{\vb{0}}^{(L)}\,
-    \left( D^{(L)} \right)^{-1}
+    \qty( D^{(L)} )^{-1}
     =
     e^{-2\pi i \delta_{\vb{0}}^{(L)}}\,
     \cL(\vb{n}_{\vb{0}})
     \\
     D^{(R)}\,
     \rM_{\vb{0}}^{(R)}\,
-    \left( D^{(R)} \right)^{-1}
+    \qty( D^{(R)} )^{-1}
     =
     e^{-2\pi i \delta_{\vb{0}}^{(R)}}\,
     \cR^*(\vb{m}_{\vb{0}})
@@ -815,14 +815,14 @@ We impose:
   &&\begin{cases}
     D^{(L)},
     \rM_{\vb{\infty}}^{(L)}\,
-    \left( D^{(L)} \right)^{-1}
+    \qty( D^{(L)} )^{-1}
     =
     e^{-2\pi i \delta_{\vb{\infty}}^{(L)}}\,
     \cL(\vb{n}_{\vb{\infty}})
     \\
     D^{(R)}\,
     \rM_{\vb{\infty}}^{(R)}\,
-    \left( D^{(R)} \right)^{-1}
+    \qty( D^{(R)} )^{-1}
     =
     e^{-2\pi i \delta_{\vb{\infty}}^{(R)}}\,
     \cR^*(\vb{m}_{\vb{\infty}})
@@ -964,7 +964,7 @@ We find:
   \frac{n^1_{\vb{\infty}}+ i\, n^2_{\vb{\infty}}}{n_{\vb{\infty}}},
 \label{eq:K_factor_value}
 \end{eqnarray}
-where $f^{(L)} \in \left\lbrace 0,\, 1 \right\rbrace$.
+where $f^{(L)} \in \qty{ 0,\, 1 }$.
 For the sake of brevity we defined two auxiliary functions, namely $\cG(a,\, b,\, c) = \gfun{1-a}\, \gfun{1-b}\, \gfun{a+1-c}\, \gfun{b+1-c}$ and $\cF(a,\, b,\, c) = \sin(\pi c)\, \sin(\pi(a-b))$.
 We also introduced the norm $n_{\vb{1}} = \norm{\vb{n}_{\vb{1}}}$ of the rotation vector around $\omega_{\bt+1} = 1$.
 Its dependence on the other parameters is encoded in~\eqref{eq:monodromy_relations}, where $\rM^+_{\vb{1}} = \rM^{-1}_{\vb{0}}\, \rM^{-1}_{\vb{\infty}}$, and the composition rule~\eqref{eq:product_in_SU2}:
@@ -1004,28 +1004,28 @@ We can use properties of the hypergeometric functions to show that any choice do
 Specifically we can start with certain values but we can recover the others through:
 \begin{equation}
   \rP
-  \left\lbrace
+  \qty{
     \mqty{
       0   & 1     & \infty &   \\
       0   & 0     & a      & z \\
       1-c & c-a-b & b      &
     }
-  \right\rbrace
+  }
   =
   (1-z)^{c-a-b}\,
   \rP
-  \left\lbrace
+  \qty{
     \mqty{
       0   & 1     & \infty &   \\
       0   & 0     & c-b    & z \\
       1-c & a+b-c & c-a    &
     }
-  \right\rbrace,
+  },
 \end{equation}
 where \rP is the Papperitz-Riemann symbol for the hypergeometric functions.
 We can then assign any admissible value to $f^{(L)}$ and $f^{(R)}$ and then recover the other through the identification:
 \begin{eqnarray}
-  f^{(L)}{}' & = & \left( 1 + f^{(L)} \right)~\text{mod}~2,
+  f^{(L)}{}' & = & \qty( 1 + f^{(L)} )~\text{mod}~2,
   \\
   \ffa_l' & = & \ffc_l - \ffb_l,
   \\
@@ -1073,7 +1073,7 @@ Using the \rP symbol the solutions can be symbolically written as
     \\
     &
     \times
-    \rP \left\lbrace
+    \rP \qty{
       \mqty{
           0
           &
@@ -1097,11 +1097,11 @@ Using the \rP symbol the solutions can be symbolically written as
           -n_{\vb{\infty}} + \ffb^{(L)}
           &
       }
-    \right\rbrace
+    }
     \\
     &
     \times
-    \rP \left\lbrace
+    \rP \qty{
       \mqty{
           0
           &
@@ -1125,7 +1125,7 @@ Using the \rP symbol the solutions can be symbolically written as
           -m_{\vb{\infty}} + \ffb^{(R)}
           &
       }
-      \right\rbrace.
+      }.
   \end{split}
   \label{eq:symbolic_solutions_using_P}
 \end{equation}
@@ -1226,9 +1226,9 @@ In fact we require the finiteness of the Euclidean action~\eqref{eq:action_doubl
 
 In principle it could appear obvious to use~\eqref{eq:contiguous_functions} to restrict the possible arbitrary integers to:
 \begin{eqnarray}
-  \ffa^{(L)} \in \left\lbrace -1,\, 0 \right\rbrace,
+  \ffa^{(L)} \in \qty{ -1,\, 0 },
   & \qquad &
-  \ffa^{(R)} \in \left\lbrace -1,\, 0 \right\rbrace,
+  \ffa^{(R)} \in \qty{ -1,\, 0 },
   \\
   \ffb^{(L)} = 0,
   & \qquad &
@@ -1248,15 +1248,15 @@ We could then use~\eqref{eq:reduction_F_F+} to write the possible solution as
     (1-\omega_z)^{n_{\vb{1}} + m_{\vb{1}}}
     \\
     & \times
-    \sum\limits_{\ffa^{(L,\,R)} \in \left\lbrace -1, 0 \right\rbrace} 
+    \sum\limits_{\ffa^{(L,\,R)} \in \qty{ -1, 0 }} 
     h(\omega_z,\, \ffa^{(L,R)})
     \times
     \\
     & \times
     \cB_{\vb{0}}^{(L)}(a^{(L)} + \ffa^{(L)},\, b,\, c;\, \omega_z)
-    \left(
+    \qty(
       \cB_{\vb{0}}^{(R)}(a^{(R)} + \ffa^{(R)},\, b,\, c;\, \omega_z)
-    \right)^T.
+    )^T.
   \end{split}
   \label{eq:doubling_field_expansion}
 \end{equation}
@@ -1285,10 +1285,10 @@ It can be verified that the convergence of the action both at finite and infinit
   \ipd{u'} \cX_{(s)}(u')
   +
   U_L^{\dagger}(\vb{n}_{{\bt}})
-  \left[
+  \qty[
     \finiteint{\bu'}{x_{(\bt-1)}}{\bu}
     \ipd{\bu'} \cX_{(s)}(\bu')
-  \right]
+  ]
   U_R(\vb{m}_{{\bt}}),
   \label{eq:classical_solution}
 \end{equation}
@@ -1319,7 +1319,7 @@ In this case~\eqref{eq:symbolic_solutions_using_P} becomes
 \begin{equation}
   (-\omega)^\ffA\,
   (1-\omega)^\ffB\,
-  \rP\left\lbrace
+  \rP\qty{
   \mqty{
     0
     &
@@ -1343,11 +1343,11 @@ In this case~\eqref{eq:symbolic_solutions_using_P} becomes
     -n_{\vb{\infty}} + \ffb^{(L)}
     &
   }
-  \right\rbrace.
+  }.
 \end{equation}
 The only possible solution compatible with~\eqref{eq:constraints_finite_X} is
 \begin{equation}
-  \rP\left\lbrace
+  \rP\qty{
   \mqty{
     0
     &
@@ -1371,7 +1371,7 @@ The only possible solution compatible with~\eqref{eq:constraints_finite_X} is
     -n_{\vb{\infty}} + 2
     &
   }
-  \right\rbrace,
+  },
   \label{eq:X_solution_pure_L}
 \end{equation}
 that is $\ffa^{(L)} = -1$, $\ffb^{(L)} = 0$, $\ffc^{(L)} = 0$, $\ffA = -1$ and  $\ffB = -1$.
@@ -1381,7 +1381,7 @@ For each possible case the solution is however unique and it is given by
 \begin{enumerate}
   \item $n_{\vb{0}} > m_{\vb{0}}$ and $n_{\vb{1}} > m_{\vb{1}}$:
     \begin{equation}
-      \rP\left\lbrace
+      \rP\qty{
         \mqty{
           0
           &
@@ -1405,8 +1405,8 @@ For each possible case the solution is however unique and it is given by
           -n_{\vb{\infty}} + 2
           &
         }
-      \right\rbrace
-      \rP\left\lbrace
+      }
+      \rP\qty{
         \mqty{
           0
           &
@@ -1430,13 +1430,13 @@ For each possible case the solution is however unique and it is given by
           -m_{\vb{\infty}} + 1
           &
         }
-      \right\rbrace,
+      },
       \label{eq:X_solution>>}
    \end{equation}
 
    \item $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} < m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$:
      \begin{equation}
-       \rP\left\lbrace
+       \rP\qty{
          \mqty{
            0
            &
@@ -1460,8 +1460,8 @@ For each possible case the solution is however unique and it is given by
            -n_{\vb{\infty}} + 2
            &
          }
-       \right\rbrace
-       \rP\left\lbrace
+       }
+       \rP\qty{
          \mqty{
            0
            &
@@ -1485,13 +1485,13 @@ For each possible case the solution is however unique and it is given by
            -m_{\vb{\infty}} + 1
            &
          }
-       \right\rbrace,
+       },
        \label{eq:X_solution><>}
      \end{equation}
 
    \item $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} < m_{\vb{1}}$ and $n_{\vb{\infty}} < m_{\vb{\infty}}$:
      \begin{equation}
-       \rP\left\lbrace
+       \rP\qty{
          \mqty{
            0
            &
@@ -1515,8 +1515,8 @@ For each possible case the solution is however unique and it is given by
            -n_{\vb{\infty}} + 1
            &
          }
-       \right\rbrace
-       \rP\left\lbrace
+       }
+       \rP\qty{
          \mqty{
            0
            &
@@ -1540,13 +1540,13 @@ For each possible case the solution is however unique and it is given by
            -m_{\vb{\infty}} + 2
            &
          }
-       \right\rbrace,
+       },
        \label{eq:X_solution><<}
      \end{equation}
 
    \item $n_{\vb{0}} < m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$:
      \begin{equation}
-       \rP\left\lbrace
+       \rP\qty{
          \mqty{
            0
            &
@@ -1570,8 +1570,8 @@ For each possible case the solution is however unique and it is given by
            -n_{\vb{\infty}} + 2
            &
          }
-       \right\rbrace
-       \rP\left\lbrace
+       }
+       \rP\qty{
          \mqty{
            0
            &
@@ -1595,13 +1595,13 @@ For each possible case the solution is however unique and it is given by
            -m_{\vb{\infty}} + 1
            &
          }
-       \right\rbrace,
+       },
        \label{eq:X_solution<>>}
      \end{equation}
 
    \item $n_{\vb{0}} < m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} < m_{\vb{\infty}}$:
      \begin{equation}
-       \rP\left\lbrace
+       \rP\qty{
          \mqty{
            0
            &
@@ -1625,8 +1625,8 @@ For each possible case the solution is however unique and it is given by
            -n_{\vb{\infty}} + 1
            &
          }
-       \right\rbrace
-       \rP\left\lbrace
+       }
+       \rP\qty{
          \mqty{
            0
            &
@@ -1650,13 +1650,13 @@ For each possible case the solution is however unique and it is given by
            -m_{\vb{\infty}} + 2
            &
          }
-       \right\rbrace,
+       },
        \label{eq:X_solution<><}
      \end{equation}
 
    \item $n_{\vb{0}} < m_{\vb{0}}$, $n_{\vb{1}} < m_{\vb{1}}$:
      \begin{equation}
-       \rP\left\lbrace
+       \rP\qty{
          \mqty{
            0
            &
@@ -1680,8 +1680,8 @@ For each possible case the solution is however unique and it is given by
            -n_{\vb{\infty}} + 1
            &
          }
-       \right\rbrace
-       \rP\left\lbrace
+       }
+       \rP\qty{
          \mqty{
            0
            &
@@ -1705,7 +1705,7 @@ For each possible case the solution is however unique and it is given by
            -m_{\vb{\infty}} + 2
            &
          }
-       \right\rbrace.
+       }.
        \label{eq:X_solution<<}
      \end{equation}
 \end{enumerate}
@@ -1737,7 +1737,7 @@ In the previous section we produced one solution for each ordering of the $n_{\o
 There are however other solutions connected to the $\Z_2$ equivalence class in the isomorphism between \SO{4} its double cover.
 Given a solution $(\vb{n}_{\vb{0}},\, \vb{n}_{\vb{1}},\, \vb{n}_{\vb{\infty}}) \oplus (\vb{m}_{\vb{0}},\, \vb{m}_{\vb{1}},\, \vb{m}_{\vb{\infty}})$, we can in fact replace any couple of $\vb{n}$ and $\vb{m}$ by $\widehat{\vb{n}}$ and $\widehat{\vb{m}}$ and get an apparently new solution.\footnotemark{}
 \footnotetext{%
-  We need to change two rotation vectors because the monodromies are constrained by \eqref{eq:monodromy_relations}.
+  We need to change two rotation vectors because the monodromies are constrained by~\eqref{eq:monodromy_relations}.
 }
 For instance we could consider $(\widehat{\vb{n}}_{\vb{0}},\, \widehat{\vb{n}}_{\vb{1}},\, \vb{n}_{\vb{\infty}}) \oplus (\vb{m}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \widehat{\vb{m}}_{\vb{\infty}})$.
 On the other hand the previous substitution would change the \SO{4} in both $\omega = 0$ and $\omega = \infty$: it does not represent a new solution.
@@ -2041,9 +2041,9 @@ Explicitly we impose the four real equations in spinorial formalism
   \ipd{\omega} \cX(\omega)
   +
   U_L^{\dagger}(\vb{n}_{{\bt}})
-  \left[
+  \qty[
     \finiteint{\bomega}{0}{1} \ipd{\bomega} \cX(\bomega)
-  \right]
+  ]
   U_R(\vb{m}_{{\bt}})
   =
   f_{{\bt+1}\, (s)} - f_{{\bt-1}\, (s)},
@@ -2181,9 +2181,9 @@ Results are summarised in~\Cref{tab:Left_Abelian_solutions} where we left some h
   \centering
   \begin{tabular}{@{}ccc@{}}
     \toprule
-    $\left( \ffa^{(L)},\, \ffb^{(L)},\, \ffc^{(L)} \right)$ &
+    $\qty( \ffa^{(L)},\, \ffb^{(L)},\, \ffc^{(L)} )$ &
     $n_{\vb{1}}$                                            &
-    $\left( \cB^{(L)}( z ) \right)^T$
+    $\qty( \cB^{(L)}( z ) )^T$
     \\
     \midrule
     \multirow{4}{*}{$(-1,\, 0,\, 0)$} &
@@ -2191,7 +2191,7 @@ Results are summarised in~\Cref{tab:Left_Abelian_solutions} where we left some h
     $\mqty( (1 - z)^{-2\, n_{\vb{\infty}} - 2\, n_{\vb{0}} + 1} & 0 )$
     \\
                                                       &
-    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
     $\mqty( 1 & 0 )$
     \\
                                    &
@@ -2212,7 +2212,7 @@ Results are summarised in~\Cref{tab:Left_Abelian_solutions} where we left some h
             & 0 )$
     \\
                                                       &
-    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
     $\mqty( 1 & 0 )$
     \\
                                    &
@@ -2229,7 +2229,7 @@ Results are summarised in~\Cref{tab:Left_Abelian_solutions} where we left some h
     $\mqty( (1-z)^{-2\, n_{\vb{\infty}} - 2\, n_{\vb{0}}} & 0 )$
     \\
                                                       &
-    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
     $\mqty( 0 & (1-z)^{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 2}\, (-z)^{1 - 2\, n_{\vb{0}}} )$
     \\
                                    &
@@ -2246,7 +2246,7 @@ Results are summarised in~\Cref{tab:Left_Abelian_solutions} where we left some h
     $\mqty( (1-z)^{-2\, n_{\vb{\infty}} - 2\, n_{\vb{0}}} + 1 & 0 )$
     \\
                                                       &
-    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
     $\mqty( 1 & 0 )$
     \\
                                    &
@@ -2263,7 +2263,7 @@ Results are summarised in~\Cref{tab:Left_Abelian_solutions} where we left some h
     $\mqty( 0 & (-z)^{-2\, n_{\vb{0}}} )$
     \\
                                                       &
-    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
     $\mqty( 0 & (1-z)^{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 1}\, (-z)^{-2\, n_{\vb{0}}} )$
     \\
                                    &
@@ -2280,7 +2280,7 @@ Results are summarised in~\Cref{tab:Left_Abelian_solutions} where we left some h
     $\mqty( (1-z)^{-2\, n_{\vb{\infty}} -2\, n_{\vb{0}}} & 0 )$
     \\
                                                       &
-    $1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ &
+    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
     $\mqty( 0 & (1-z)^{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 2}\, (-z)^{-2\, n_{\vb{0}}} )$
     \\
                                    &
@@ -2305,7 +2305,7 @@ This is the first specific case shown in~\Cref{sec:true_basis}.
 In this scenario the left solution $\cB^{(L)}$ is always the same and matches the previous computation, however the right sector seems to give different solutions when different Abelian limits are taken.
 Studying all possible solutions we find that all of them give the same answer in the limit $m_{\vb{t}} \to 0$, i.e.\ both $\cB^{(R)} = \mqty(1 & 0)^T$ and $\cB^{(R)} = \mqty(0 & 1)^T$.\footnotemark{}
 \footnotetext{%
-  We write ``possible solutions'' because $m_{\vb{1}} = 1 - \left( m_{\vb{0}} + m_{\vb{\infty}} \right)$ is not.
+  We write ``possible solutions'' because $m_{\vb{1}} = 1 - \qty( m_{\vb{0}} + m_{\vb{\infty}} )$ is not.
 }
 The difference is the solution obtained from $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$ or $n_{\vb{0}} > m_{\vb{0}}$, $\hat{n}_{\vb{1}} < \hat{m}_{\vb{1}}$ and $\hat{n}_{\vb{\infty}} < \hat{m}_{\vb{\infty}}$.
 In any case the solution is factorised in the form $\cB^{(L)}(z) \otimes \mqty(C & C')^T$ which is expected since the right sector plays no role.
@@ -2337,7 +2337,7 @@ Comparing with the case $m = 0$ given in~\eqref{eq:Abelian_vs_n_simple_case}, we
 
 \subsubsection{Recovering the Abelian Result: an Example}
 
-To show that the construction of the Abelian limit is indeed working, we consider the first case in~\Cref{sec:true_basis} with $n_{\vb{1}} = 1 - \left( n_{\vb{0}} + n_{\vb{\infty}} \right)$ and $m_{\vb{1}} = -m_{\vb{0}} + m_{\vb{\infty}}$.
+To show that the construction of the Abelian limit is indeed working, we consider the first case in~\Cref{sec:true_basis} with $n_{\vb{1}} = 1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ and $m_{\vb{1}} = -m_{\vb{0}} + m_{\vb{\infty}}$.
 This leads to two independent rational functions of $\omega_z$:
 \begin{equation}
   \begin{split}
@@ -2393,7 +2393,7 @@ such that $\sum\limits_{t} \varepsilon_{\vb{t}} = 1$, and
   \label{eq:Abelian_rotation_second}
 \end{equation}
 where $\sum\limits_{t} \varphi_{\vb{t}} = 2$, in order to approach the usual notation in the literature.
-As usual we have $\ipd{\omega_z} \cZ^1( \omega_z ) \neq \left[ \ipd{\omega_z} \overline{\cZ}^1( \omega_z ) \right]^*$.
+As usual we have $\ipd{\omega_z} \cZ^1( \omega_z ) \neq \qty[ \ipd{\omega_z} \overline{\cZ}^1( \omega_z ) ]^*$.
 
 We can now build the Abelian solution to show the analytical structure of the limit.
 We have
@@ -2415,7 +2415,7 @@ We have
 where we chose $R_{(\bt)} = \1_4$ so that $U_{(\bt)}$ in~\eqref{eq:Umatrices} is mapped to $(i \sigma_1, i \sigma_1) \in \SU{2} \times \SU{2}$.
 Notice however that $\vb{n}_{\vb{t}} = n_{\vb{t}}^3\, \vb{k}$ implies that $v^3_{(t)} = 0$ in~\eqref{eq:special_UL_brane_t}.
 Hence $U_L$ and $U_R$ are always off diagonal and their action on~\eqref{eq:Abelian_sol_example} is to fill the first column.
-From the previous relations we can also recover the usual holomorphicity $\overline{Z}^1(\bu) = \left[ Z^1(u) \right]^*$ of the sector with $\sum\limits_t \varepsilon_{\vb{t}} = 1$ and $\overline{Z}^2(\bu) = \left[ Z^2(u) \right]^*$ of the sector with $\sum\limits_t \varphi_{\vb{t}} = 2$.
+From the previous relations we can also recover the usual holomorphicity $\overline{Z}^1(\bu) = \qty[ Z^1(u) ]^*$ of the sector with $\sum\limits_t \varepsilon_{\vb{t}} = 1$ and $\overline{Z}^2(\bu) = \qty[ Z^2(u) ]^*$ of the sector with $\sum\limits_t \varphi_{\vb{t}} = 2$.
 
 
 \subsubsection{Abelian Limits}
@@ -2445,14 +2445,14 @@ We get:
   \sum\limits_{m \in \{3, 4\}}
   g_{(t)\, m}\,
   \finiteint{x}{x_{(t)}}{x_{(t-1)}}
-  \tensor{\left( R_{(t)} \right)}{_{mI}}
-  \eval{\left( X_L'(x) - X_R'(x) \right)^I}_{y=0^+},
+  \tensor{\qty( R_{(t)} )}{_{mI}}
+  \eval{\qty( X_L'(x) - X_R'(x) )^I}_{y=0^+},
   \label{eq:area_tmp}
 \end{equation}
 where indices $I = 1,\, 2,\, 3,\, 4$ are summed over and $m = 3,\, 4$ are the transverse directions in the well adapted frame with respect to the D-brane.
 As the number of D-branes is defined modulo $N_B = 3$, $D_{(1)}$ is split on two separate intervals:
 \begin{equation}
-  \left[ x_{(1)},\, x_{(3)} \right]
+  \qty[ x_{(1)},\, x_{(3)} ]
   =
   \left[ x_{(1)},\, +\infty \right)
   \cup
@@ -2488,7 +2488,7 @@ Now~\eqref{eq:area_tmp} becomes:
     \sum\limits_{m \in \{3, 4\}}
     \eval{%
       g_{(t)\, m}\,
-      \tensor{\Im \left( R_{(t)} \right)}{_{mI}}
+      \tensor{\Im \qty( R_{(t)} )}{_{mI}}
       X_L^I(x+i0^+)
     }^{x = x_{(t-1)}}_{x = x_{(t)}}
     \\
@@ -2501,9 +2501,9 @@ Now~\eqref{eq:area_tmp} becomes:
   \end{split}
   \label{eq:action_with_imaginary_part}
 \end{equation}
-where $g^{(\perp)}_{(t)\, I} = \sum_{m \in \{3, 4\}} \tensor{\left( R_{(t)}^{-1} \right)}{_{mI}}\, g_{(t)\, m}$ is the transverse shift of $D_{(t)}$ in the global coordinates of the target space:
+where $g^{(\perp)}_{(t)\, I} = \sum_{m \in \{3, 4\}} \tensor{\qty( R_{(t)}^{-1} )}{_{mI}}\, g_{(t)\, m}$ is the transverse shift of $D_{(t)}$ in the global coordinates of the target space:
 \begin{equation}
-  g^{(\perp)}_{(t)\, I}\, (f_{(t-1)} - f_{(t)})^I = 0.
+  g^{(\perp)}_{(t)\, I}\, \qty(f_{(t-1)} - f_{(t)})^I = 0.
   \label{eq:g_perp_Delta_f}
 \end{equation}
 
@@ -2514,20 +2514,20 @@ In this case there are global complex coordinates for which the string solution 
 \begin{equation}
   Z^i(u, \bu) = Z^i_L(u),
   \qquad
-  \overline{Z}^i(u, \bu) = \bar{Z}^i(\bu) = \left( Z^i_L(u) \right)^*,
+  \overline{Z}^i(u, \bu) = \bar{Z}^i(\bu) = \qty( Z^i_L(u) )^*,
 \end{equation}
 where $i = 1$ in the Abelian case and $i=1,\, 2$ in the \SU{2} case.
 We also have $f^i_{(t)} = Z^i_L(x_{(t)} + i\, 0^+)$.
 Equations~\eqref{eq:g_perp_Delta_f} and~\eqref{eq:action_with_imaginary_part} then become
 \begin{eqnarray}
-  \Re( g_{(t)\, i}^{(\perp)}\, \left( f_{(t-1)} - f_{(t)} \right)^i )
+  \Re( g_{(t)\, i}^{(\perp)}\, \qty( f_{(t-1)} - f_{(t)} )^i )
   & = &
   0,
   \\
   4 \pi \ap \eval{S_{\R^4}}_{\text{on-shell}}
   & = &
   -2 \finitesum{t}{1}{3}\,
-  \Im( g_{(t)\, i}^{(\perp)}\, \left( f_{(t-1)} - f_{(t)} \right)^i ),
+  \Im( g_{(t)\, i}^{(\perp)}\, \qty( f_{(t-1)} - f_{(t)} )^i ),
 \end{eqnarray}
 where the last equation shows that the action can be expressed using just the global data.
 
@@ -2540,10 +2540,10 @@ Since the action is positive then we can write
   =
   \frac{1}{2 \pi \ap}
   \finitesum{t}{1}{3}\,
-  \left(
+  \qty(
     \frac{1}{2} \abs{g^{(\perp)}_{(t)}} \,
     \abs{f_{(t-1)} - f_{(t)}}
-  \right),
+  ),
 \end{equation}
 where a factor $\frac{1}{2}$ comes from raising the complex index in $g^{(\perp)}_{(t)\, 1}$.
 The right hand side of the previous expression is the sum of the areas of the triangles having the interval between two intersection points on a given D-brane $D_{(t)}$ as base and the distance between the D-brane and the origin as height.
