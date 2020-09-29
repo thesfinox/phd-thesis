@@ -188,13 +188,13 @@ while its conservation $\partial^{\alpha} T_{\alpha\beta} = 0$ becomes:\footnote
   Since we fix $\gamma_{\alpha\beta}(\tau, \sigma) \propto \eta_{\alpha\beta}$ we do not need to account for the components of the connection and we can replace the covariant derivative $\nabla^{\alpha}$ with a standard derivative $\partial^{\alpha}$.
 }
 \begin{equation}
-  \bpd T_{\xi\xi}( \xi,\, \bxi ) = \pd \bT_{\bxi\bxi}( \xi,\, \bxi ) = 0.
+  \bpd T_{\xi\xi}( \xi,\, \bxi ) = \pd \barT_{\bxi\bxi}( \xi,\, \bxi ) = 0.
 \end{equation}
 The last equation finally implies
 \begin{equation}
   T_{\xi\xi}( \xi,\, \bxi ) = T_{\xi\xi}( \xi ) = T( \xi ),
   \qquad
-  \bT_{\bxi\bxi}( \xi,\, \bxi ) = \bT_{\bxi\bxi}( \bxi ) = \bT( \bxi ),
+  \barT_{\bxi\bxi}( \xi,\, \bxi ) = \barT_{\bxi\bxi}( \bxi ) = \barT( \bxi ),
 \end{equation}
 which are respectively the holomorphic and the anti-holomorphic components of the bidimensional stress energy tensor.
 
@@ -240,7 +240,7 @@ An additional conformal transformation
 \begin{equation}
   z = e^{\xi} = e^{\tau_e + i \sigma} \in \qty{ z \in \C | \Im z \ge 0 },
   \qquad
-  \bz = e^{\bxi} = e^{\tau_e - i \sigma} \in \qty{ z \in \C | \Im z \le 0 }
+  \barz = e^{\bxi} = e^{\tau_e - i \sigma} \in \qty{ z \in \C | \Im z \le 0 }
 \end{equation}
 maps the worldsheet of the string to the complex plane.
 On this Riemann surface the usual time ordering becomes a \emph{radial ordering} as constant time surfaces are circles around the origin (see the contours $\ccC_{(0)}$ and $\ccC_{(1)}$ in \Cref{fig:conf:complex_plane}). 
@@ -254,7 +254,7 @@ In these coordinates the conserved charge associated to the transformation $z \m
   +
   \cint{0}
   \ddbz
-  \bepsilon(\bz)\, \bT(\bz),
+  \bepsilon(\barz)\, \barT(\barz),
 \end{equation}
 where $\ccC_0$ is an anti-clockwise constant radial time path around the origin.
 The transformation on a field $\phi_{\omega, \bomega}$ of weight $(\omega, \bomega)$ is thus given by the commutator with $Q_{\epsilon, \bepsilon}$:
@@ -262,17 +262,17 @@ The transformation on a field $\phi_{\omega, \bomega}$ of weight $(\omega, \bome
   \begin{split}
     \delta_{\epsilon, \bepsilon} \phi_{\omega, \bomega}
     & =
-    \liebraket{Q_{\epsilon, \bepsilon}}{\phi_{\omega, \bomega}( w, \bw )}
+    \liebraket{Q_{\epsilon, \bepsilon}}{\phi_{\omega, \bomega}( w, \barw )}
     \\
     & =
-    \cint{0} \ddz \epsilon(z) \qty[ T(z), \phi_{\omega, \bomega}( w, \bw ) ]
+    \cint{0} \ddz \epsilon(z) \qty[ T(z), \phi_{\omega, \bomega}( w, \barw ) ]
     +
-    \cint{0} \ddbz \bepsilon(\bz) \qty[ \bT(\bz), \phi_{\omega, \bomega}( w, \bw ) ]
+    \cint{0} \ddbz \bepsilon(\barz) \qty[ \barT(\barz), \phi_{\omega, \bomega}( w, \barw ) ]
     \\
     & =
-    \cint{w} \ddz \epsilon(z)\, \rR\!\qty( T(z)\, \phi_{\omega, \bomega}( w, \bw ) )
+    \cint{w} \ddz \epsilon(z)\, \rR\!\qty( T(z)\, \phi_{\omega, \bomega}( w, \barw ) )
     +
-    \cint{\bw} \ddbz \bepsilon(\bz)\, \rR\!\qty( \bT(\bz)\, \phi_{\omega, \bomega}( w, \bw ) ),
+    \cint{\barw} \ddbz \bepsilon(\barz)\, \rR\!\qty( \barT(\barz)\, \phi_{\omega, \bomega}( w, \barw ) ),
   \end{split}
 \end{equation}
 where in the last passage we used the fact that the difference of ordered integrals becomes the contour integral of the radially ordered product computed surrounding $w$.
@@ -281,58 +281,58 @@ Equating the result with the expected variation
   \begin{split}
     \delta_{\epsilon, \bepsilon} \phi_{\omega, \bomega}
     & =
-    \omega\, \ipd{w} \epsilon( w )\, \phi_{\omega, \bomega}( w, \bw )
+    \omega\, \ipd{w} \epsilon( w )\, \phi_{\omega, \bomega}( w, \barw )
     +
-    \epsilon( w )\, \ipd{w} \phi_{\omega, \bomega}( w, \bw )
+    \epsilon( w )\, \ipd{w} \phi_{\omega, \bomega}( w, \barw )
     \\
     & +
-    \bomega\, \ipd{\bw} \bepsilon( \bw )\, \phi_{\omega, \bomega}( w, \bw )
+    \bomega\, \ipd{\barw} \bepsilon( \barw )\, \phi_{\omega, \bomega}( w, \barw )
     +
-    \epsilon( \bw )\, \ipd{\bw} \phi_{\omega, \bomega}( w, \bw )
+    \epsilon( \barw )\, \ipd{\barw} \phi_{\omega, \bomega}( w, \barw )
   \end{split}
 \end{equation}
-we find the short distance singularities of the components of the stress-energy tensor with the field $\phi_{\omega, \bomega}( w, \bw )$:
+we find the short distance singularities of the components of the stress-energy tensor with the field $\phi_{\omega, \bomega}( w, \barw )$:
 \begin{equation}
   \begin{split}
-    T( z )\, \phi_{\omega, \bomega}( w, \bw )
+    T( z )\, \phi_{\omega, \bomega}( w, \barw )
     & =
-    \frac{\omega}{(z - w)^2}\, \phi_{\omega, \bomega}( w, \bw )
+    \frac{\omega}{(z - w)^2}\, \phi_{\omega, \bomega}( w, \barw )
     +
-    \frac{1}{z - w}\, \ipd{w} \phi_{\omega, \bomega}( w, \bw )
+    \frac{1}{z - w}\, \ipd{w} \phi_{\omega, \bomega}( w, \barw )
     +
     \order{1},
     \\
-    \bT( \bz )\, \phi_{\omega, \bomega}( w, \bw )
+    \barT( \barz )\, \phi_{\omega, \bomega}( w, \barw )
     & =
-    \frac{\bomega}{(\bz - \bw)^2}\, \phi_{\omega, \bomega}( w, \bw )
+    \frac{\bomega}{(\barz - \barw)^2}\, \phi_{\omega, \bomega}( w, \barw )
     +
-    \frac{1}{\bz - \bw}\, \ipd{\bw} \phi_{\omega, \bomega}( w, \bw )
+    \frac{1}{\barz - \barw}\, \ipd{\barw} \phi_{\omega, \bomega}( w, \barw )
     +
     \order{1},
   \end{split}
   \label{eq:conf:primary}
 \end{equation}
 where we drop the radial ordering symbol $\rR$ for simplicity.
-Since the contour $\ccC_{w}$ is infinitely small around $w$, the conformal properties of $\phi_{\omega, \bomega}( w, \bw )$ are entirely defined by these relations.
-In fact $\phi_{\omega, \bomega}( w, \bw )$ is a \emph{primary field} if its short distance behaviour with the stress-energy tensor is as such.
+Since the contour $\ccC_{w}$ is infinitely small around $w$, the conformal properties of $\phi_{\omega, \bomega}( w, \barw )$ are entirely defined by these relations.
+In fact $\phi_{\omega, \bomega}( w, \barw )$ is a \emph{primary field} if its short distance behaviour with the stress-energy tensor is as such.
 This is an example of an \emph{operator product expansion} (\ope)
 \begin{equation}
-  \phi^{(i)}_{\omega_i, \bomega_i}( z, \bz )\, \phi^{(j)}_{\omega_j, \bomega_j}( w, \bw )
+  \phi^{(i)}_{\omega_i, \bomega_i}( z, \barz )\, \phi^{(j)}_{\omega_j, \bomega_j}( w, \barw )
   =
   \sum\limits_{k}
   \cC_{ijk}
   (z - w)^{\omega_k - \omega_i - \omega_j}\,
-  (\bz - \bw)^{\bomega_k - \bomega_i - \bomega_j}\,
-  \phi^{(k)}_{\omega_k, \bomega_k}( w, \bw )
+  (\barz - \barw)^{\bomega_k - \bomega_i - \bomega_j}\,
+  \phi^{(k)}_{\omega_k, \bomega_k}( w, \barw )
   \label{eq:conf:ope}
 \end{equation}
 which is an asymptotic expansion containing the full information on the singularities.\footnotemark{}
 \footnotetext{%
   The expression \eqref{eq:conf:ope} is valid assuming the normalisation of the 2-points function
   \begin{equation*}
-    \left\langle \phi^{(i)}_{\omega_i, \bomega_i}( z, \bz )\, \phi^{(j)}_{\omega_j, \bomega_j}( w, \bw ) \right\rangle
+    \left\langle \phi^{(i)}_{\omega_i, \bomega_i}( z, \barz )\, \phi^{(j)}_{\omega_j, \bomega_j}( w, \barw ) \right\rangle
     =
-    \frac{\delta_{ij}}{(z - w)^{\omega_i + \omega_j} (\bz - \bw)^{\bomega_i + \bomega_j}}.
+    \frac{\delta_{ij}}{(z - w)^{\omega_i + \omega_j} (\barz - \barw)^{\bomega_i + \bomega_j}}.
   \end{equation*}
 }
 The constant coefficients $\cC_{ijk}$ are subject to restrictive constraints given by the properties of the conformal theories to the point that a \cft is completely specified by the spectrum of the weights $(\omega_i, \bomega_i)$ and the coefficients $\cC_{ijk}$ \cite{Friedan:1986:ConformalInvarianceSupersymmetry}.
@@ -349,27 +349,27 @@ Focusing on the holomorphic component we find
     +
     \frac{1}{z - w}\, \ipd{w} T(w),
     \\
-    \bT( \bz )\, \bT( \bw )
+    \barT( \barz )\, \barT( \barw )
     & =
-    \frac{\frac{\overline{c}}{2}}{(\bz - \bw)^4}
+    \frac{\frac{\barc}{2}}{(\barz - \barw)^4}
     +
-    \frac{2}{(\bz - \bw)^2}\, \bT(\bw)
+    \frac{2}{(\barz - \barw)^2}\, \barT(\barw)
     +
-    \frac{1}{\bz - \bw}\, \ipd{\bw} \bT(\bw).
+    \frac{1}{\barz - \barw}\, \ipd{\barw} \barT(\barw).
   \end{split}
   \label{eq:conf:TTexpansion}
 \end{equation}
 The components of the stress-energy tensor are therefore not primary fields and show an anomaly in the behaviour encoded by the constant $c \in \R$.
-This is a reflection of the anomalous algebra of the operator modes $L_n$ and $\bL_n$ computed from the Laurent expansion
+This is a reflection of the anomalous algebra of the operator modes $L_n$ and $\barL_n$ computed from the Laurent expansion
 \begin{equation}
   \begin{split}
     T( z ) = \infinfsum{n} L_n\, z^{-n -2}
     & \Rightarrow
     L_n = \cint{0} \ddz z^{n + 1} T(z),
     \\
-    \bT( \bz ) = \infinfsum{n} \bL_n\, \bz^{-n -2}
+    \barT( \barz ) = \infinfsum{n} \barL_n\, \barz^{-n -2}
     & \Rightarrow
-    \bL_n = \cint{0} \ddbz \bz^{n + 1} \bT(\bz).
+    \barL_n = \cint{0} \ddbz \barz^{n + 1} \barT(\barz).
   \end{split}
   \label{eq:conf:Texpansion}
 \end{equation}
@@ -380,39 +380,39 @@ This ultimately leads to the quantum algebra
     & =
     (n - m)\, L_{n + m} + \frac{c}{12}\, n\, (n^2 - 1)\, \delta_{n, -m},
     \\
-    \liebraket{\bL_n}{\bL_m}
+    \liebraket{\barL_n}{\barL_m}
     & =
-    (n - m)\, \bL_{n + m} + \frac{\overline{c}}{12}\, n\, (n^2 - 1)\, \delta_{n, -m},
+    (n - m)\, \barL_{n + m} + \frac{\barc}{12}\, n\, (n^2 - 1)\, \delta_{n, -m},
     \\
-    \liebraket{L_n}{\bL_m}
+    \liebraket{L_n}{\barL_m}
     & =
     0,
   \end{split}
   \label{eq:conf:virasoro}
 \end{equation}
 known as Virasoro algebra, unique central extension of the classical de Witt algebra, with central charge $c$.
-Operators $L_n$ and $\bL_n$ are called Virasoro operators.\footnotemark{}
+Operators $L_n$ and $\barL_n$ are called Virasoro operators.\footnotemark{}
 \footnotetext{%
   Notice that the subset of Virasoro operators $\qty{ L_{-1}, L_0, L_1 }$ forms a closed subalgebra generating the group $\SL{2}{\R}$.
 }
-Notice that $L_0 + \bL_0$ is the generator of the dilations on the complex plane.
-In terms of radial quantization this translates to time translations and $L_0 + \bL_0$ can be considered to be the Hamiltonian of the theory.
+Notice that $L_0 + \barL_0$ is the generator of the dilations on the complex plane.
+In terms of radial quantization this translates to time translations and $L_0 + \barL_0$ can be considered to be the Hamiltonian of the theory.
 
 In the same fashion as~\eqref{eq:conf:Texpansion}, fields can be expanded in modes:
 \begin{equation}
-  \phi_{\omega, \bomega}( w, \bw )
+  \phi_{\omega, \bomega}( w, \barw )
   =
   \sum\limits_{n,\, m = -\infty}^{+\infty}
   \phi_{\omega, \bomega}^{(n, m)}\,
   z^{-n -\omega}\,
-  \bz^{-m -\bomega}.
+  \barz^{-m -\bomega}.
   \label{eq:conf:expansion}
 \end{equation}
 From the previous relations we can finally define the ``asymptotic'' in-states as one-to-one correspondence with conformal operators:
 \begin{equation}
   \ket{\phi_{\omega, \bomega}}
   =
-  \lim\limits_{z,\, \bz \to 0}
+  \lim\limits_{z,\, \barz \to 0}
   \phi_{\omega, \bomega}
   \regvacuum.
 \end{equation}
@@ -431,7 +431,7 @@ As a consequence also
 \begin{equation}
   L_n \regvacuum
   =
-  \bL_n \regvacuum
+  \barL_n \regvacuum
   =
   0,
   \qquad
@@ -442,16 +442,16 @@ Finally the definitions of the primary operators~\eqref{eq:conf:primary} define 
   \begin{split}
     L_0 \ket{\phi_{\omega, \bomega}} & = \omega \ket{\phi_{\omega, \bomega}},
     \\
-    \bL_0 \ket{\phi_{\omega, \bomega}} & = \bomega \ket{\phi_{\omega, \bomega}},
+    \barL_0 \ket{\phi_{\omega, \bomega}} & = \bomega \ket{\phi_{\omega, \bomega}},
     \\
-    L_n \ket{\phi_{\omega, \bomega}} & = \bL_n \ket{\phi_{\omega, \bomega}} = 0,
+    L_n \ket{\phi_{\omega, \bomega}} & = \barL_n \ket{\phi_{\omega, \bomega}} = 0,
     \quad
     n \ge 1.
   \end{split}
   \label{eq:conf:physical}
 \end{equation}
 
-From this definition we can build an entire representation of \emph{descendant} states applying any operator $L_{-n}$ (or $\bL_{-n}$) with $n \ge 1$ to $\ket{\phi_{\omega, \bomega}}$.
+From this definition we can build an entire representation of \emph{descendant} states applying any operator $L_{-n}$ (or $\barL_{-n}$) with $n \ge 1$ to $\ket{\phi_{\omega, \bomega}}$.
 Let $\phi_{\omega}( w )$ be a holomorphic field in the \cft for simplicity, and let $\ket{\phi_{\omega}}$ be its corresponding state.
 The generic state at level $m$ build from such state is
 \begin{equation}
@@ -474,30 +474,30 @@ They are however called \emph{highest weight} states from the mathematical liter
 The particular case of the \cft in \eqref{eq:conf:polyakov} can be cast in this language.
 In particular the solutions to the \eom factorise into a holomorphic and an anti-holomorphic contributions:
 \begin{equation}
-  \ipd{z} \ipd{\bz} X( z, \bz ) = 0
+  \ipd{z} \ipd{\barz} X( z, \barz ) = 0
   \qquad
   \Rightarrow
   \qquad
-  X( z, \bz ) = X( z ) + \bX( \bz ),
+  X( z, \barz ) = X( z ) + \barX( \barz ),
 \end{equation}
 and the components of the stress-energy tensor~\eqref{eq:conf:stringT} are
 \begin{equation}
   \begin{split}
     T( z ) & = \ipd{z} X( z ) \cdot \ipd{z} X( z ),
     \\
-    \bT( \bz ) & = \ipd{\bz} \bX( \bz ) \cdot \ipd{\bz} \bX( \bz ).
+    \barT( \barz ) & = \ipd{\barz} \barX( \barz ) \cdot \ipd{\barz} \barX( \barz ).
   \end{split}
   \label{eq:conf:bosonicstringT}
 \end{equation}
-Using the normalisation of the 2-points function $\left\langle X^{\mu}( z, \bz ) X^{\nu}( w, \bw ) \right\rangle = - \frac{1}{2} \eta^{\mu\nu} \ln\left| z - w \right|$ we can prove that $c = D$ in~\eqref{eq:conf:TTexpansion}, where $D$ is the dimensions of spacetime (or equivalently the number of scalar fields $X^{\mu}$ in the action).
-It can be shown that in order to cancel the central charge in bosonic string theory we need to introduce a pair of conformal ghosts $b(z)$ and $c(z)$ with conformal weights $(2, 0)$ and $(-1, 0)$ respectively, together with their anti-holomorphic counterparts $\overline{b}(z)$ and $\overline{c}(z)$.
+Using the normalisation of the 2-points function $\left\langle X^{\mu}( z, \barz ) X^{\nu}( w, \barw ) \right\rangle = - \frac{1}{2} \eta^{\mu\nu} \ln\left| z - w \right|$ we can prove that $c = D$ in~\eqref{eq:conf:TTexpansion}, where $D$ is the dimensions of spacetime (or equivalently the number of scalar fields $X^{\mu}$ in the action).
+It can be shown that in order to cancel the central charge in bosonic string theory we need to introduce a pair of conformal ghosts $b(z)$ and $c(z)$ with conformal weights $(2, 0)$ and $(-1, 0)$ respectively, together with their anti-holomorphic counterparts $\barb(z)$ and $\barc(z)$.
 The non vanishing components of their stress-energy tensor can be computed as:\footnotemark{}
 \footnotetext{%
   In general a system of ghosts $b( z )$ and $c( z )$ with weight $(\lambda, 0)$ and $(1 - \lambda, 0)$ can be introduced as a standalone \cft with action~\cite{Friedan:1986:ConformalInvarianceSupersymmetry,Polchinski:1998:StringTheorySuperstring}
   \begin{equation*}
-    S = \frac{1}{2 \pi} \iint \dd{z} \dd{\bz} b( z )\, \ipd{\bz} c( z ).
+    S = \frac{1}{2 \pi} \iint \dd{z} \dd{\barz} b( z )\, \ipd{\barz} c( z ).
   \end{equation*}
-  The equations of motion are $\ipd{\bz} c( z ) = \ipd{\bz} b( z ) = 0$.
+  The equations of motion are $\ipd{\barz} c( z ) = \ipd{\barz} b( z ) = 0$.
   The \ope is
   \begin{equation*}
     b( z )\, c( z ) = \frac{\varepsilon}{z - w} + \order{1},
@@ -527,9 +527,9 @@ The non vanishing components of their stress-energy tensor can be computed as:\f
     & =
     c( z )\, \ipd{z} b( z ) - 2\, b( z )\, \ipd{z} c( z ),
     \\
-    \bT_{\text{ghost}}( \bz )
+    \barT_{\text{ghost}}( \barz )
     & =
-    \overline{c}( \bz )\, \ipd{\bz} \overline{b}( \bz ) - 2\, \overline{b}( \bz )\, \ipd{\bz} \overline{c}( \bz ).
+    \barc( \barz )\, \ipd{\barz} \barb( \barz ) - 2\, \barb( \barz )\, \ipd{\barz} \barc( \barz ).
   \end{split}
 \end{equation}
 
@@ -537,7 +537,7 @@ From their 2-points functions
 \begin{equation}
   \left\langle b(z)\, c(w) \right\rangle = \frac{1}{z - w},
   \qquad
-  \left\langle \overline{b}(\bz)\, \overline{c}(\bw) \right\rangle = \frac{1}{\bz - \bw},
+  \left\langle \barb(\barz)\, \barc(\barw) \right\rangle = \frac{1}{\barz - \barw},
 \end{equation}
 we get the \ope of the components of their stress-energy tensor:
 \begin{equation}
@@ -550,22 +550,22 @@ we get the \ope of the components of their stress-energy tensor:
     +
     \frac{1}{z - w}\, \ipd{z} T_{\text{ghost}}(z),
     \\
-    \bT_{\text{ghost}}(\bz)\, \bT_{\text{ghost}}(\bw)
+    \barT_{\text{ghost}}(\barz)\, \barT_{\text{ghost}}(\barw)
     & =
-    \frac{-13}{(\bz - \bw)^4}
+    \frac{-13}{(\barz - \barw)^4}
     +
-    \frac{2}{(\bz - \bw)^2}\, \bT_{\text{ghost}}(\bz)
+    \frac{2}{(\barz - \barw)^2}\, \barT_{\text{ghost}}(\barz)
     +
-    \frac{1}{\bz - \bw}\, \ipd{\bz} \bT_{\text{ghost}}(\bz),
+    \frac{1}{\barz - \barw}\, \ipd{\barz} \barT_{\text{ghost}}(\barz),
   \end{split}
 \end{equation}
 which show that $c_{\text{ghost}} = - 26$.
 The central charge is therefore cancelled in the full theory (bosonic string and ghosts) when the spacetime dimensions are $D = 26$.
-In fact let $T_{\text{full}} = T + T_{\text{ghost}}$ and $\bT_{\text{full}} = \bT + \bT_{\text{ghost}}$, then:
+In fact let $T_{\text{full}} = T + T_{\text{ghost}}$ and $\barT_{\text{full}} = \barT + \barT_{\text{ghost}}$, then:
 \begin{equation}
   \eval{T_{\text{full}}( z )}_{\order{(z - w)^{-4}}}
   =
-  \eval{\bT_{\text{full}}( \bz )}_{\order{(\bz - \bw)^{-4}}}
+  \eval{\barT_{\text{full}}( \barz )}_{\order{(\barz - \barw)^{-4}}}
   =
   c + c_{\text{ghost}}
   =
@@ -591,11 +591,11 @@ In complex coordinates on the plane it is:
   S[ X, \psi ]
   =
   - \frac{1}{4 \pi}
-  \iint \dd{z} \dd{\bz}
+  \iint \dd{z} \dd{\barz}
   \qty(
-    \frac{2}{\ap}\, \ipd{\bz} X^{\mu}\, \ipd{z} X^{\nu}
+    \frac{2}{\ap}\, \ipd{\barz} X^{\mu}\, \ipd{z} X^{\nu}
     +
-    \psi^{\mu}\, \ipd{\bz} \psi^{\nu}
+    \psi^{\mu}\, \ipd{\barz} \psi^{\nu}
     +
     \bpsi^{\mu}\, \ipd{z} \bpsi^{\nu}
   )
@@ -606,7 +606,7 @@ In the last expression $\psi^{\mu}$ are $D$ two-dimensional holomorphic fermion 
 \begin{equation}
   \psi^{\mu}( z )\, \psi^{\nu}( w ) = \frac{\eta^{\mu\nu}}{z - w},
   \qquad
-  \bpsi^{\mu}( \bz )\, \bpsi^{\nu}( \bw ) = \frac{\eta^{\mu\nu}}{\bz - \bw}.
+  \bpsi^{\mu}( \barz )\, \bpsi^{\nu}( \barw ) = \frac{\eta^{\mu\nu}}{\barz - \barw}.
 \end{equation}
 In this case the components of the stress-energy tensor of the theory are:
 \begin{equation}
@@ -615,9 +615,9 @@ In this case the components of the stress-energy tensor of the theory are:
     & =
     -\frac{1}{\ap}\, \ipd{z} X( z ) \cdot \ipd{z} X( z ) - \frac{1}{2}\, \psi( z ) \cdot \ipd{z} \psi( z ),
     \\
-    \bT( \bz )
+    \barT( \barz )
     & =
-    -\frac{1}{\ap}\, \ipd{\bz} \bX( \bz ) \cdot \ipd{\bz} \bX( \bz ) - \frac{1}{2}\, \bpsi( \bz ) \cdot \ipd{\bz} \bpsi( \bz ).
+    -\frac{1}{\ap}\, \ipd{\barz} \barX( \barz ) \cdot \ipd{\barz} \barX( \barz ) - \frac{1}{2}\, \bpsi( \barz ) \cdot \ipd{\barz} \bpsi( \barz ).
   \end{split}
 \end{equation}
 
@@ -626,9 +626,9 @@ The action~\eqref{eq:super:action} is also invariant under the \emph{supersymmet
   \begin{split}
     \sqrt{\frac{2}{\ap}}\,
     \delta_{\epsilon, \bepsilon}
-    X^{\mu}( z, \bz )
+    X^{\mu}( z, \barz )
     & =
-    \epsilon( z )\, \psi^{\mu}( z ) + \bepsilon( \bz )\, \bpsi^{\mu}( \bz ),
+    \epsilon( z )\, \psi^{\mu}( z ) + \bepsilon( \barz )\, \bpsi^{\mu}( \barz ),
     \\
     \sqrt{\frac{2}{\ap}}\,
     \delta_{\epsilon} \psi^{\mu}( z )
@@ -636,21 +636,21 @@ The action~\eqref{eq:super:action} is also invariant under the \emph{supersymmet
     - \epsilon( z )\, \ipd{z} X^{\mu}( z ),
     \\
     \sqrt{\frac{2}{\ap}}\,
-    \delta_{\bepsilon} \bpsi^{\mu}( \bz )
+    \delta_{\bepsilon} \bpsi^{\mu}( \barz )
     & =
-    - \bepsilon( \bz )\, \ipd{\bz} \bX^{\mu}( \bz )
+    - \bepsilon( \barz )\, \ipd{\barz} \barX^{\mu}( \barz )
   \end{split}
 \end{equation}
-generated by the currents $J( z ) = \epsilon( z )\, T_F( z )$ and $\overline{J}( \bz ) = \bepsilon( \bz )\, \bT_F( \bz )$, where $\epsilon( z )$ and $\bepsilon( \bz ) = \qty( \epsilon( z ) )^*$ are anti-commuting fermions and
+generated by the currents $J( z ) = \epsilon( z )\, T_F( z )$ and $\barJ( \barz ) = \bepsilon( \barz )\, \barT_F( \barz )$, where $\epsilon( z )$ and $\bepsilon( \barz ) = \qty( \epsilon( z ) )^*$ are anti-commuting fermions and
 \begin{equation}
   \begin{split}
     T_F( z )
     & =
     i\, \sqrt{\frac{2}{\ap}}\, \psi( z ) \cdot \ipd{z} X( z ),
     \\
-    \bT_F( \bz )
+    \barT_F( \barz )
     & =
-    i\, \sqrt{\frac{2}{\ap}}\, \bpsi( \bz ) \cdot \ipd{\bz} \bX( \bz )
+    i\, \sqrt{\frac{2}{\ap}}\, \bpsi( \barz ) \cdot \ipd{\barz} \barX( \barz )
   \end{split}
 \end{equation}
 are the \emph{supercurrents}.
@@ -667,13 +667,13 @@ The central charge associated to the Virasoro algebra is in this case given by b
     +
     \order{1},
     \\
-    \bT( \bz )\, \bT( \bw )
+    \barT( \barz )\, \barT( \barw )
     & =
-    \frac{\frac{3 D}{4}}{( \bz - \bw )^4}
+    \frac{\frac{3 D}{4}}{( \barz - \barw )^4}
     +
-    \frac{2}{( \bz - \bw )^2} \bT( \bw )
+    \frac{2}{( \barz - \barw )^2} \barT( \barw )
     +
-    \frac{1}{\bz - \bw} \ipd{\bw} \bT( \bw )
+    \frac{1}{\barz - \barw} \ipd{\barw} \barT( \barw )
     +
     \order{1}.
   \end{split}
@@ -683,11 +683,11 @@ The central charge is therefore $c = \frac{3}{2} D$ for the \cft defined in~\eqr
 As in the case of the bosonic string, in order to cancel the central charge we introduce the reparametrisation anti-commuting ghosts $b( z )$ and $c( z )$ and their anti-holomorphic components as well as the commuting \emph{superghosts} $\beta( z )$ and $\gamma( z )$ and their anti-holomorphic counterparts.
 These are conformal fields with conformal weights $\qty( \frac{3}{2}, 0 )$ and $\qty( -\frac{1}{2}, 0 )$.
 Their central charge becomes $c_{\text{ghost}} = c_{bc} + c_{\beta\gamma} = -26 + 11 = -15$ (see \cref{note:conf:ghosts} for the general computation).
-When considering the full theory $T_{\text{full}} = T + T_{\text{ghost}}$ and $\bT_{\text{full}} = \bT + \bT_{\text{ghost}}$ the central charge vanishes only in 10-dimensional spacetime:
+When considering the full theory $T_{\text{full}} = T + T_{\text{ghost}}$ and $\barT_{\text{full}} = \barT + \barT_{\text{ghost}}$ the central charge vanishes only in 10-dimensional spacetime:
 \begin{equation}
   \eval{T_{\text{full}}( z )}_{\order{(z - w)^{-4}}}
   =
-  \eval{\bT_{\text{full}}( \bz )}_{\order{(\bz - \bw)^{-4}}}
+  \eval{\barT_{\text{full}}( \barz )}_{\order{(\barz - \barw)^{-4}}}
   =
   c + c_{\text{ghost}}
   =
@@ -767,9 +767,9 @@ A manifold $M$ is a \emph{complex} manifold if it is possible to define a comple
     \Rightarrow
     \ipd{x} f( x, y ) = -i \ipd{y} f( x, y )
     \Rightarrow
-    \ipd{\bz} f( z, \bz ) = 0
+    \ipd{\barz} f( z, \barz ) = 0
     \Rightarrow
-    f( z, \bz ) = f( z ).
+    f( z, \barz ) = f( z ).
   \end{equation*}
 }
 
@@ -808,7 +808,7 @@ $(M, J, g)$ is a \emph{Kähler} manifold if:
   \dd{\omega}
   =
   \qty( \pd + \bpd )
-  \omega(z, \bz)
+  \omega(z, \barz)
   =
   0,
   \label{eq:cy:kaehler}
@@ -826,58 +826,58 @@ In local coordinates a Hermitian metric is such that
 \begin{equation}
   g
   =
-  g_{a\overline{b}}\, \dd{z}^a \otimes \dd{\bz}^{\overline{b}}
+  g_{a \barb}\, \dd{z}^a \otimes \dd{\barz}^{\barb}
   +
-  g_{\overline{a}b}\, \dd{\bz}^{\overline{a}} \otimes \dd{z}^b,
+  g_{\bara b}\, \dd{\barz}^{\bara} \otimes \dd{z}^b,
 \end{equation}
-thus the Kähler form becomes $\omega = i g_{a\overline{b}}\, \dd{z}^a \wedge \dd{\bz}^{\overline{b}}$.
+thus the Kähler form becomes $\omega = i g_{a\barb}\, \dd{z}^a \wedge \dd{\barz}^{\barb}$.
 The relation~\eqref{eq:cy:kaehler} then translates into:
 \begin{equation}
-  \dd{\omega} = i\, \qty( \pd + \bpd )\, g_{a\overline{b}}\, \dd{z}^a \wedge \dd{\bz}^{\overline{b}}
+  \dd{\omega} = i\, \qty( \pd + \bpd )\, g_{a\barb}\, \dd{z}^a \wedge \dd{\barz}^{\barb}
   =
   0
   \quad
   \Leftrightarrow
   \quad
   \begin{cases}
-    \ipd{z^c} g_{a\overline{b}} & = \ipd{z^a} g_{c\overline{b}}
+    \ipd{z^c} g_{a\barb} & = \ipd{z^a} g_{c\barb}
     \\
-    \ipd{\bz^c} g_{\overline{a}b} & = \ipd{\bz^a} g_{\overline{c}b}
+    \ipd{\barz^c} g_{\bara b} & = \ipd{\barz^a} g_{\barc b}
   \end{cases}.
 \end{equation}
-The $(1,1)$-form $\omega$ can locally be written as $\omega = i\, \pd \bpd\, \phi( z, \bz )$ up to a constant.
+The $(1,1)$-form $\omega$ can locally be written as $\omega = i\, \pd \bpd\, \phi( z, \barz )$ up to a constant.
 This ultimately leads to
 \begin{equation}
-  g_{a\overline{b}}
+  g_{a\barb}
   =
-  \pdv{\phi( z, \bz )}{z^a}{\bz^{\overline{b}}}
+  \pdv{\phi( z, \barz )}{z^a}{\barz^{\barb}}
   =
-  \ipd{a} \ipd{\overline{b}}\, \phi( z, \bz ),
+  \ipd{a} \ipd{\barb}\, \phi( z, \barz ),
 \end{equation}
 Since $\omega$ is the Kähler form then the Levi-Civita connection has only fully holomorphic and anti-holomorphic components:
 \begin{equation}
   \tensor{\Gamma}{^a_{bc}}
   =
-  \tensor{g}{^{a\overline{d}}}\,
+  \tensor{g}{^{a\bard}}\,
   \ipd{b}\,
-  \tensor{g}{_{\overline{d}c}},
+  \tensor{g}{_{\bard c}},
   \qquad
-\tensor{\Gamma}{^{\overline{a}}_{\overline{b}\overline{c}}}
+\tensor{\Gamma}{^{\bara}_{\barb\barc}}
   =
-  \tensor{g}{^{\overline{a}d}}\,
-  \ipd{\overline{b}}\,
-  \tensor{g}{_{d\overline{c}}}.
+  \tensor{g}{^{\bara d}}\,
+  \ipd{\barb}\,
+  \tensor{g}{_{d\barc}}.
 \end{equation}
 As a consequence the Ricci tensor becomes
 \begin{equation}
-  \tensor{R}{_{\overline{a}b}}
+  \tensor{R}{_{\bara b}}
   =
   -
-  \pdv{\tensor{\Gamma}{^{\overline{c}}_{\overline{a}\overline{c}}}}{z^b}.
+  \pdv{\tensor{\Gamma}{^{\barc}_{\bara\barc}}}{z^b}.
 \end{equation}
 
 Since \cy manifolds have \SU{m} holonomy, the trace part of the coefficients of the connection vanishes.
-\cy manifolds thus have $\tensor{R}{_{\overline{a}b}} = 0$, that is they are complex Ricci-flat Kähler manifolds.
+\cy manifolds thus have $\tensor{R}{_{\bara b}} = 0$, that is they are complex Ricci-flat Kähler manifolds.
 
 
 \subsubsection{Cohomology and Hodge Numbers}
@@ -987,7 +987,7 @@ and naturally to the \emph{Neumann} boundary conditions:\footnotemark{}
 \end{equation}
 
 Closed strings are such that $X^{\mu}( \tau, \sigma + \ell ) = X^{\mu}( \tau, \sigma )$.
-The usual mode expansion in conformal coordinates $X^{\mu}( z, \bz ) = X( z ) + \bX( \bz )$ leads to
+The usual mode expansion in conformal coordinates $X^{\mu}( z, \barz ) = X( z ) + \barX( \barz )$ leads to
 \begin{equation}
   \begin{split}
     X^{\mu}( z )
@@ -1000,14 +1000,14 @@ The usual mode expansion in conformal coordinates $X^{\mu}( z, \bz ) = X( z ) + 
       + \sum\limits_{n \in \Z \setminus \{0\}} \frac{\alpha_n^{\mu}}{n} z^{-n}
     ),
     \\
-    \bX^{\mu}( \bz )
+    \barX^{\mu}( \barz )
     & =
-    \overline{x}_0^{\mu}
+    \barx_0^{\mu}
     +
     i\, \sqrt{\frac{\ap}{2}}\,
     \qty(
-      - \balpha_0^{\mu}\, \ln{\bz}
-      + \sum\limits_{n \in \Z \setminus \{0\}} \frac{\balpha_n^{\mu}}{n} \bz^{-n}
+      - \balpha_0^{\mu}\, \ln{\barz}
+      + \sum\limits_{n \in \Z \setminus \{0\}} \frac{\balpha_n^{\mu}}{n} \barz^{-n}
     ),
   \end{split}
   \label{eq:tduality:modes}
@@ -1022,9 +1022,9 @@ Now let
 \end{equation}
 where $S^1( R )$ is a compact $1$-dimensional circle of radius $R$ such that the boundary conditions for the compact coordinate are
 \begin{equation}
-  X^{D - 1}( z\, e^{2\pi i}, \bz\, e^{-2\pi i} )
+  X^{D - 1}( z\, e^{2\pi i}, \barz\, e^{-2\pi i} )
   =
-  X^{D - 1}( z, \bz ) + 2 \pi\, m\, R,
+  X^{D - 1}( z, \barz ) + 2 \pi\, m\, R,
   \qquad
   m \in \Z.
   \label{eq:dbranes:winding}
@@ -1066,7 +1066,7 @@ From~\eqref{eq:conf:Texpansion} and \eqref{eq:conf:bosonicstringT} we find
       \sum\limits_{n = 1}^{+\infty}\, \qty( 2 \alpha_{-n}^{\mu} \alpha_n^{\nu}\, \eta_{\mu\nu} + a )
     ),
     \\
-    \bL_0
+    \barL_0
     &=
     \frac{\ap}{2}\,
     \qty(
@@ -1079,23 +1079,23 @@ From~\eqref{eq:conf:Texpansion} and \eqref{eq:conf:bosonicstringT} we find
   \end{split}
 \end{equation}
 where $a$ is constant given by normal ordering, representing the zero point energy of the theory.
-Imposing physical conditions~\eqref{eq:conf:physical} and the \emph{level matching} $(L_0 - \bL_0) \ket{\phi} = 0$ for closed strings, we find
+Imposing physical conditions~\eqref{eq:conf:physical} and the \emph{level matching} $(L_0 - \barL_0) \ket{\phi} = 0$ for closed strings, we find
 \begin{equation}
   \begin{split}
     M^2
     & =
-    \frac{1}{\ap^2}\, \qty( n\, \frac{\ap}{R} + m\, R )^2
+    \frac{1}{(\ap)^2}\, \qty( n\, \frac{\ap}{R} + m\, R )^2
     +
     \frac{4}{\ap}\, \qty( \rN + a )
     \\
     & =
-    \frac{1}{\ap^2}\, \qty( n\, \frac{\ap}{R} - m\, R )^2
+    \frac{1}{(\ap)^2}\, \qty( n\, \frac{\ap}{R} - m\, R )^2
     +
-    \frac{4}{\ap}\, \qty( \overline{\rN} + a ),
+    \frac{4}{\ap}\, \qty( \brN + a ),
   \end{split}
   \label{eq:dbranes:closedspectrum}
 \end{equation}
-where $\rN = \sum\limits_{n = 1}^{+\infty}\, \alpha_{-n} \cdot \alpha_n$ and $\overline{\rN} = \sum\limits_{n = 1}^{+\infty}\, \balpha_{-n} \cdot \balpha_n$.
+where $\rN = \sum\limits_{n = 1}^{+\infty}\, \alpha_{-n} \cdot \alpha_n$ and $\brN = \sum\limits_{n = 1}^{+\infty}\, \balpha_{-n} \cdot \balpha_n$.
 We then notice that as $R \to \infty$ all states with $m \neq 0$ become infinitely massive while the states for $m = 0$ and all values of $n$ become a continuum.
 Conversely, as $R \to 0$ all states with $n \neq 0$ become infinitely heavy.
 In field theory this would translate into a reduction of the number of dimensions since the remaining fields would be independent of the compact coordinate~\cite{Polchinski:1996:TASILecturesDBranes,Zwiebach::FirstCourseString}.
@@ -1110,7 +1110,7 @@ At the level of the modes this \emph{T-duality} acts by swapping the sign of the
 \end{equation}
 defining the dual coordinate
 \begin{equation}
-  Y^{D-1}( z, \bz ) = Y^{D-1}( z ) + \overline{Y}^{D-1}( \bz ) =  X^{D-1}( z ) - \bX^{D-1}( \bz ).
+  Y^{D-1}( z, \barz ) = Y^{D-1}( z ) + \barY^{D-1}( \barz ) =  X^{D-1}( z ) - \barX^{D-1}( \barz ).
   \label{eq:tduality:compactdirection}
 \end{equation}
 
@@ -1121,15 +1121,15 @@ defining the dual coordinate
 Consider the case of open strings satisfying the \eom~\eqref{eq:tduality:eom} and the coundary conditions~\eqref{eq:tduality:bc}.
 The usual mode expansion~\eqref{eq:tduality:modes} here leads to
 \begin{equation}
-  X^{\mu}( z, \bz )
+  X^{\mu}( z, \barz )
   =
   x_0^{\mu}
   -
-  i\, \ap\, p^{\mu}\, \ln( z \bz )
+  i\, \ap\, p^{\mu}\, \ln( z \barz )
   +
   i\, \sqrt{\frac{\ap}{2}}\,
   \sum\limits_{n \in \Z \setminus \{0\}}
-  \frac{\alpha_n^{\mu}}{n} \qty( z^{-n} + \bz^{-n} )
+  \frac{\alpha_n^{\mu}}{n} \qty( z^{-n} + \barz^{-n} )
 \end{equation}
 and $\ell = \pi$.
 
@@ -1148,13 +1148,13 @@ In fact the original Neumann boundary condition~\eqref{eq:tduality:bc} becomes a
   \begin{split}
     \eval{\ipd{\sigma} X^{D-1}( \tau, \sigma )}^{\sigma = \pi}_{\sigma = 0}
     & =
-    \eval{\ipd{\sigma} X^{D-1}( e^{\tau_E + i \sigma} ) + \ipd{\sigma} \bX^{D-1}( e^{\tau_E - i \sigma} )}^{\sigma = \pi}_{\sigma = 0}
+    \eval{\ipd{\sigma} X^{D-1}( e^{\tau_E + i \sigma} ) + \ipd{\sigma} \barX^{D-1}( e^{\tau_E - i \sigma} )}^{\sigma = \pi}_{\sigma = 0}
     \\
     & =
-    \eval{i\, \ipd{\xi} X^{D-1}( e^{\xi} ) - i\, \ipd{\bxi} \bX^{D-1}( e^{\bxi} )}^{\Im \xi = \pi}_{\Im \xi = 0}
+    \eval{i\, \ipd{\xi} X^{D-1}( e^{\xi} ) - i\, \ipd{\bxi} \barX^{D-1}( e^{\bxi} )}^{\Im \xi = \pi}_{\Im \xi = 0}
     \\
     & =
-    \eval{i\, \ipd{\tau_E} Y^{D-1}( e^{\tau_E + i \sigma} ) + i\, \ipd{\tau_E} \overline{Y}^{D-1}( e^{\tau_E - i \sigma} )}^{\sigma = \pi}_{\sigma = 0}
+    \eval{i\, \ipd{\tau_E} Y^{D-1}( e^{\tau_E + i \sigma} ) + i\, \ipd{\tau_E} \barY^{D-1}( e^{\tau_E - i \sigma} )}^{\sigma = \pi}_{\sigma = 0}
     \\
     & =
     \eval{i\, \ipd{\tau} Y^{D-1}( \tau, \sigma )}^{\sigma = \pi}_{\sigma = 0}

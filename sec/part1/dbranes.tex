@@ -152,16 +152,16 @@ We define the usual upper plane coordinates:
   & \in &
   \ccH \cup \qty{ z \in \C \mid \Im z = 0 },
   \\
-  \bu
+  \baru
   =
   x - i y
   =
   e^{\tau_E - i \sigma}
   & \in &
-  \overline{\ccH} \cup \qty{ z \in \C \mid \Im z = 0 },
+  \bccH \cup \qty{ z \in \C \mid \Im z = 0 },
 \end{eqnarray}
-where $\ccH = \qty{ z \in \C \mid \Im z > 0 }$ is the upper complex plane and $\overline{\ccH} = \qty{ z \in \C \mid \Im z < 0 }$ is the lower complex plane.
-In conformal coordinates $u$ and $\bu$, D-branes at $\sigma = 0$ and $\sigma = \pi$ are mapped onto the real axis $\Im z = 0$.
+where $\ccH = \qty{ z \in \C \mid \Im z > 0 }$ is the upper complex plane and $\bccH = \qty{ z \in \C \mid \Im z < 0 }$ is the lower complex plane.
+In conformal coordinates $u$ and $\baru$, D-branes at $\sigma = 0$ and $\sigma = \pi$ are mapped onto the real axis $\Im z = 0$.
 We use the symbol $D_{(t)}$ to label both the brane and the interval representing it on the real axis of the upper half plane:
 \begin{equation}
   D_{(t)} = \qty[ x_{(t)}, x_{(t-1)} ],
@@ -185,8 +185,8 @@ In the global coordinates system associated to the subspace $\R^4 \subset \ccM^{
     & =
     \frac{1}{2 \pi \ap}
     \iint\limits_{\ccH}
-    \dd{u} \dd{\bu}\,
-    \ipd{u} X^I\, \ipd{\bu} X^J\,
+    \dd{u} \dd{\baru}\,
+    \ipd{u} X^I\, \ipd{\baru} X^J\,
     \eta_{IJ}
     \\
     & =
@@ -202,10 +202,10 @@ In the global coordinates system associated to the subspace $\R^4 \subset \ccM^{
   \end{split}
   \label{eq:string_action}
 \end{equation}
-where $2\, \ipd{u} = \ipd{x} - i\, \ipd{y}$ and $2\, \ipd{\bu} = \ipd{x} + i\, \ipd{y}$.
+where $2\, \ipd{u} = \ipd{x} - i\, \ipd{y}$ and $2\, \ipd{\baru} = \ipd{x} + i\, \ipd{y}$.
 The \eom in these coordinates are:
 \begin{equation}
-  \ipd{u} \ipd{\bu} X^I( u, \bu )
+  \ipd{u} \ipd{\baru} X^I( u, \baru )
   =
   \frac{1}{4}
   \qty( \ipd{x}^2 + \ipd{y}^2 ) X^I( x+iy, x-iy )
@@ -213,13 +213,13 @@ The \eom in these coordinates are:
   0.
   \label{eq:string_equation_of_motion}
 \end{equation}
-Their solution factorises as usual in holomorphic and anti-holomorphic components $X^I( u, \bu ) = X^I( u ) + \bX^I( \bu )$.
+Their solution factorises as usual in holomorphic and anti-holomorphic components $X^I( u, \baru ) = X^I( u ) + \barX^I( \baru )$.
 
 In the well adapted frame~\eqref{eq:well-adapt-embed} we describe an open string with one of the endpoints on $D_{(t)}$ through the relations:
 \begin{eqnarray}
   \eval{\ipd{\sigma} X^i_{(t)}( \tau, \sigma )}_{\sigma = 0}
   =
-  \eval{\ipd{y} X^i_{(t)}( u, \bu )}_{y = 0}
+  \eval{\ipd{y} X^i_{(t)}( u, \baru )}_{y = 0}
   & = &
   0,
   \qquad
@@ -246,7 +246,7 @@ The simpler boundary conditions we consider in the global coordinates are:
   & = &
   i\, \tensor{\qty( R_{(t)} )}{^i_J}
   \qty(
-    \ipd{u} X^J( x + i\, 0^+ ) - \ipd{\bu} \bX^J( x - i\, 0^+ )
+    \ipd{u} X^J( x + i\, 0^+ ) - \ipd{\baru} \barX^J( x - i\, 0^+ )
   )
   =
   0,
@@ -256,7 +256,7 @@ The simpler boundary conditions we consider in the global coordinates are:
   & = &
   i\, \tensor{\qty( R_{(t)} )}{^m_J}
   \qty(
-    \ipd{u} X^J( x + i\, 0^+ ) + \ipd{\bu} \bX^J( x - i\, 0^+ )
+    \ipd{u} X^J( x + i\, 0^+ ) + \ipd{\baru} \barX^J( x - i\, 0^+ )
   )
   =
   0,
@@ -269,7 +269,7 @@ With the introduction of the target space embedding of the worldsheet interactio
     \ipd{u} X^I( x + i\, 0^+ )
     & =
     \tensor{\qty( U_{(t)} )}{^I_J}
-    \ipd{\bu} \bX^J( x - i\, 0^+ ),
+    \ipd{\baru} \barX^J( x - i\, 0^+ ),
     \qquad
     x \in D_{(t)}
     \\
@@ -333,22 +333,22 @@ Information on $g_{(t)}$ is thus recovered through the global boundary condition
 \subsubsection{Doubling Trick and Branch Cut Structure}
 
 In conformal coordinates we thus introduced the discontinuities~\eqref{eq:discontinuity_bc} across each D-brane which define a non trivial cut structure on the plane.
-One way to deal with them is to introduce the \emph{doubling trick} by gluing the relations along an arbitrary but fixed D-brane $D_{(\bt)}$:
+One way to deal with them is to introduce the \emph{doubling trick} by gluing the relations along an arbitrary but fixed D-brane $D_{(\bart)}$:
 \begin{equation}
   \ipd{z} \cX(z) =
   \begin{cases}
     \ipd{u} X(u)
     &
     \qif
-    z = u \qand \Im z > 0 \qor z \in D_{(\bt)}
+    z = u \qand \Im z > 0 \qor z \in D_{(\bart)}
     \\
-    U_{(\bt)}\,
-    \ipd{\bu} \bX(\bu)
-    & \qif z = \bu \qand \Im z < 0 \qor z \in D_{(\bt)}
+    U_{(\bart)}\,
+    \ipd{\baru} \barX(\baru)
+    & \qif z = \baru \qand \Im z < 0 \qor z \in D_{(\bart)}
   \end{cases}.
   \label{eq:real_doubling_trick}
 \end{equation}
-Let then $\cU_{(t,\, t+1)} = U_{(t+1)}\, U_{(t)}$ and $\widetilde{\cU}_{(t,\, t+1)} = U_{(\bt)}\, U_{(t)}\, U_{(t+1)}\, U_{(\bt)}$.
+Let then $\cU_{(t,\, t+1)} = U_{(t+1)}\, U_{(t)}$ and $\tcU_{(t,\, t+1)} = U_{(\bart)}\, U_{(t)}\, U_{(t+1)}\, U_{(\bart)}$.
 The boundary conditions in terms of the doubling field are:
 \begin{eqnarray}
   \ipd{z} \cX( x_t + e^{2 \pi i}( \eta + i\, 0^+ ) )
@@ -359,27 +359,27 @@ The boundary conditions in terms of the doubling field are:
   \\
   \partial \cX( x_t + e^{2 \pi i}( \eta - i\, 0^+ ) )
   & = &
-  \widetilde{\cU}_{(t,\, t+1)}
+  \tcU_{(t,\, t+1)}
   \ipd{z} \cX( x_t + \eta - i\, 0^+ ),
   \label{eq:bottom_monodromy}
 \end{eqnarray}
 for $0 < \eta < \min\qty( \abs{x_{(t-1)} - x_{(t)}}, \abs{x_{(t)} - x_{(t+1)}} )$ in order to consider only the two adjacent D-branes $D_{(t)}$ and $D_{(t+1)}$.
-Matrices $\cU_{(t,\, t+1)}$ and $\widetilde{\cU}_{(t,\, t+1)}$ are the non trivial monodromies arising from the rotation of the D-branes.
+Matrices $\cU_{(t,\, t+1)}$ and $\tcU_{(t,\, t+1)}$ are the non trivial monodromies arising from the rotation of the D-branes.
 
-Since the relative rotations between consecutive D-branes are non Abelian, for each interaction point there are two monodromies \cU and $\widetilde{\cU}$ depending on the location of the base point of the closed loop: one for paths starting in the upper plane \ccH and one for paths starting in $\overline{\ccH}$.
+Since the relative rotations between consecutive D-branes are non Abelian, for each interaction point there are two monodromies \cU and $\tcU$ depending on the location of the base point of the closed loop: one for paths starting in the upper plane \ccH and one for paths starting in $\bccH$.
 As a consequence of the geometry of the rotations of the D-branes, a path on the complex plane enclosing all of them does not present a monodromy:
 \begin{equation}
   \finiteprod{t}{1}{N_B}\,
-  \cU_{(\bt - t, \bt + 1 - t)}
+  \cU_{(\bart - t, \bart + 1 - t)}
   =
   \finiteprod{t}{1}{N_B}\,
-  \widetilde{\cU}_{(\bt + t, \bt + 1 + t)}
+  \tcU_{(\bart + t, \bart + 1 + t)}
   =
   \1_4.
   \label{eq:homotopy_rep}
 \end{equation}
 The complex plane has therefore branch cuts running between the D-branes at finite as shown in \Cref{fig:finite_cuts}.
-We thus translated the rotations of the D-branes encoded in the matrices $R_{(t)}$ in terms of $\cU_{(t,\, t+1)}$ and $\widetilde{\cU}_{(t,\, t+1)}$ which are matrix representations of the homotopy group of the complex plane with the described branch cut structure.
+We thus translated the rotations of the D-branes encoded in the matrices $R_{(t)}$ in terms of $\cU_{(t,\, t+1)}$ and $\tcU_{(t,\, t+1)}$ which are matrix representations of the homotopy group of the complex plane with the described branch cut structure.
 
 \begin{figure}[tbp]
   \centering
@@ -408,10 +408,10 @@ In fact we can show that
   =
   \frac{1}{4 \pi \ap}
   \iint\limits_{\C}
-  \dd{z} \dd{\bz}\,
+  \dd{z} \dd{\barz}\,
   \ipd{z} \cX^T(z)\,
-  U_{(\bt)}\,
-  \ipd{\bz} \cX(\bz).
+  U_{(\bart)}\,
+  \ipd{\barz} \cX(\barz).
 \end{equation}
 As a matter of fact the action does not depend on the branch structure of the complex plane.
 
@@ -449,7 +449,7 @@ The task is then to find the parameters of the hypergeometric functions producin
 We recall some of the properties of the isomorphism~\eqref{eq:su2isomorphism} in~\Cref{sec:isomorphism}.
 We define the spinor representation of $X$ as:
 \begin{equation}
-  X_{(s)}( u, \bu ) = X^I( u, \bu )\, \tau_I,
+  X_{(s)}( u, \baru ) = X^I( u, \baru )\, \tau_I,
 \end{equation}
 where $\tau = \qty( i\, \1_2,\, \vb{\sigma} )$ and $\vb{\sigma}$ is the vector of the Pauli matrices.
 Consider then:
@@ -459,17 +459,17 @@ Consider then:
   \begin{cases}
     \ipd{u} X_{(s)}(u)
     & \qif
-    z \in \ccH \qor z \in D_{(\bt)}
+    z \in \ccH \qor z \in D_{(\bart)}
     \\
-    U_{L}(\vb{n}_{(\bt)})\,
-    \ipd{\bu} X_{(s)}(\bu)\,
-    U_{R}^{\dagger}(\vb{m}_{(\bt)})
-    & \qif z \in \overline{\ccH} \qor z \in D_{(\bt)}
+    U_{L}(\vb{n}_{(\bart)})\,
+    \ipd{\baru} X_{(s)}(\baru)\,
+    U_{R}^{\dagger}(\vb{m}_{(\bart)})
+    & \qif z \in \bccH \qor z \in D_{(\bart)}
   \end{cases}.
   \label{eq:spinor_doubling_trick}
 \end{equation}
 
-As in the real representation the discontinuities on the D-branes can be cast into monodromy factors with respect to the D-brane $D_{(\bt)}$. Branch cut structure and considerations on the homotopy group are left unchanged as long as we consider both left and right sectors of $\SU{2}_L \times \SU{2}_R$ at the same time.
+As in the real representation the discontinuities on the D-branes can be cast into monodromy factors with respect to the D-brane $D_{(\bart)}$. Branch cut structure and considerations on the homotopy group are left unchanged as long as we consider both left and right sectors of $\SU{2}_L \times \SU{2}_R$ at the same time.
 Let $0 < \eta < \min\qty( \abs{x_{(t)} - x_{(t-1)}}, \abs{x_{(t+1)} - x_{(t)}} )$.
 We find:
 \begin{eqnarray}
@@ -482,9 +482,9 @@ We find:
   \\
   \ipd{z} \cX_{(s)}( x_t + e^{2 \pi i}( \eta - i\, 0^+) )
   & = &
-  \widetilde{\cL}_{(t,\, t+1)}\,
+  \tcL_{(t,\, t+1)}\,
   \ipd{z} \cX_{(s)}( x_t + \eta - i\, 0^+ )\,
-  \widetilde{\cR}_{(t,\, t+1)}^{\dagger},
+  \tcR_{(t,\, t+1)}^{\dagger},
   \label{eq:bottom_spinor_monodromy}
 \end{eqnarray}
   where:
@@ -494,24 +494,24 @@ We find:
   U_{L}(\vb{n}_{(t+1)})\,
   U_{L}^{\dagger}(\vb{n}_{(t)}),
   \\
-  \widetilde{\cL}_{(t,\, t+1)}
+  \tcL_{(t,\, t+1)}
   & = &
-  U_{L}(\vb{n}_{(\bt)})\,
+  U_{L}(\vb{n}_{(\bart)})\,
   U_{L}^{\dagger}(\vb{n}_{(t)})\,
   U_{L}(\vb{n}_{(t+1)})\,
-  U_{L}^{\dagger}(\vb{n}_{(\bt)}),
+  U_{L}^{\dagger}(\vb{n}_{(\bart)}),
   \\
   \cR_{(t,\, t+1)}
   & = &
   U_{R}(\vb{m}_{(t+1)})\,
   U_{R}^{\dagger}(\vb{m}_{(t)}),
   \\
-  \widetilde{\cR}_{(t,\, t+1)}
+  \tcR_{(t,\, t+1)}
   & = &
-  U_{R}(\vb{m}_{(\bt)})\,
+  U_{R}(\vb{m}_{(\bart)})\,
   U_{R}^{\dagger}(\vb{m}_{(t)})\,
   U_{R}(\vb{m}_{(t+1)})\,
-  U_{R}^{\dagger}(\vb{m}_{(\bt)}).
+  U_{R}^{\dagger}(\vb{m}_{(\bart)}).
 \end{eqnarray}
 
 In spinor representation the action~\eqref{eq:string_action} becomes
@@ -521,18 +521,18 @@ In spinor representation the action~\eqref{eq:string_action} becomes
     & =
     \frac{1}{4 \pi \ap}
     \iint\limits_{\ccH}
-    \dd{u} \dd{\bu}\,
-    \tr(\ipd{u} X_{(s)}(u, \bu) \cdot \ipd{\bu} X^{\dagger}_{(s)}(u, \bu))
+    \dd{u} \dd{\baru}\,
+    \tr(\ipd{u} X_{(s)}(u, \baru) \cdot \ipd{\baru} X^{\dagger}_{(s)}(u, \baru))
     \\
     & =
     \frac{1}{8 \pi \ap}
     \iint\limits_{\C}
-    \dd{z} \dd{\bz}\,
+    \dd{z} \dd{\barz}\,
     \tr(
-      U_{L}(\vb{n}_{(\bt)})\,
-      \ipd{z} \cX_{(s)}(z, \bz)\,
-      U_{R}^{\dagger}(\vb{m}_{(\bt)})\,
-      \ipd{\bz} \cX_{(s)}^{\dagger}(z, \bz)
+      U_{L}(\vb{n}_{(\bart)})\,
+      \ipd{z} \cX_{(s)}(z, \barz)\,
+      U_{R}^{\dagger}(\vb{m}_{(\bart)})\,
+      \ipd{\barz} \cX_{(s)}^{\dagger}(z, \barz)
     ).
   \end{split}
   \label{eq:action_doubling_fields_spinor_representation}
@@ -586,25 +586,25 @@ In what follows we start the investigation of the relation between the hypergeom
 
 We build the spinorial representation with \SU{2} matrices and solutions of Fuchsian equations with $N_B$ regular singular points.
 We are specifically interested in a solution with $N_B = 3$.
-We fix the usual \SL{2}{\R} invariance by mapping the three intersection points $x_{(\bt-1)}$, $x_{(\bt+1)}$ and $x_{(\bt)}$ to $\omega_{\bt-1} = \omega_{x_{(\bt-1)}} = 0$, $\omega_{\bt+1} = \omega_{x_{(\bt+1)}} = 1$ and $\omega_{\bt} = \omega_{x_{(\bt)}} = \infty$ respectively through:
+We fix the usual \SL{2}{\R} invariance by mapping the three intersection points $x_{(\bart-1)}$, $x_{(\bart+1)}$ and $x_{(\bart)}$ to $\omega_{\bart-1} = \omega_{x_{(\bart-1)}} = 0$, $\omega_{\bart+1} = \omega_{x_{(\bart+1)}} = 1$ and $\omega_{\bart} = \omega_{x_{(\bart)}} = \infty$ respectively through:
 \begin{equation}
   \omega_{u}
   =
-  \frac{u - x_{(\bt-1)}}{u - x_{(\bt)}}
+  \frac{u - x_{(\bart-1)}}{u - x_{(\bart)}}
   \cdot
-  \frac{x_{(\bt+1)} - x_{(\bt-1)}}{x_{(\bt+1)} - x_{(\bt)}}
+  \frac{x_{(\bart+1)} - x_{(\bart-1)}}{x_{(\bart+1)} - x_{(\bart)}}
   \label{eq:def_omega}
 \end{equation}
 The cut structure for this choice is presented in~\Cref{fig:hypergeometric_cuts}.
-The map also defines $\arg(\omega_t - \omega_z) \in \left[ 0,\, 2\pi \right)$ for $t = \bt-1,\, \bt+1$.
-We choose $\bt = 1$ in what follows.
+The map also defines $\arg(\omega_t - \omega_z) \in \left[ 0,\, 2\pi \right)$ for $t = \bart-1,\, \bart+1$.
+We choose $\bart = 1$ in what follows.
 
 \begin{figure}[tbp]
   \centering
   \def\svgwidth{0.35\linewidth}
   \import{img}{threebranes_plane.pdf_tex}
   \caption{%
-    Fixing the \SL{2}{\R} invariance for $N_B = 3$ and $\bt = 1$ leads to a cut structure with all the cuts defined on the real axis towards $\omega_{\bt} = \infty$.}
+    Fixing the \SL{2}{\R} invariance for $N_B = 3$ and $\bart = 1$ leads to a cut structure with all the cuts defined on the real axis towards $\omega_{\bart} = \infty$.}
   \label{fig:hypergeometric_cuts}
 \end{figure}
 
@@ -642,7 +642,7 @@ The choice of the branch cuts follows from the cut on $\left[ 1, +\infty \right)
 
 As argued in~\eqref{eq:homotopy_rep}, the homotopy group of the complex plane with the branch cut structure of~\Cref{fig:hypergeometric_cuts} is such that a closed loop around all the singularities is homotopically trivial.
 The corresponding product of the monodromy matrices~\eqref{eq:homotopy_rep} is the unit matrix.
-Let for instance $\cM_{\omega_z}^{\pm}$ be the monodromy matrix which represents a closed loop around $\omega_z$ (the $+$ sign represents a path starting in $\ccH$, while $-$ is a path with base point in $\overline{\ccH}$).
+Let for instance $\cM_{\omega_z}^{\pm}$ be the monodromy matrix which represents a closed loop around $\omega_z$ (the $+$ sign represents a path starting in $\ccH$, while $-$ is a path with base point in $\bccH$).
 The triviality property is realised through:
 \begin{equation}
   \cM_{\vb{0}}^+\,
@@ -656,7 +656,7 @@ The triviality property is realised through:
   \1_2
   \label{eq:monodromy_relations}
 \end{equation}
-The monodromy matrix $\omega_{\bt+1} = 1$ can thus be recovered as a product of monodromies around $0$ and $\infty$ given the properties
+The monodromy matrix $\omega_{\bart+1} = 1$ can thus be recovered as a product of monodromies around $0$ and $\infty$ given the properties
 \begin{equation}
   \begin{split}
     \cM_{\vb{0}}^+
@@ -680,7 +680,7 @@ Using the basis in $z = 0$~\eqref{eq:basis_0} it is straightforward to find the 
   \rM_{\vb{0}}( c ) = \mqty( \dmat{1, e^{-2\pi i c}} ).
   \label{eq:monodromy_zero}
 \end{equation}
-The computation of the monodromy matrix $\rM_{\vb{\infty}}$ representing the monodromy in $\omega_z  =\infty$ in the basis \eqref{eq:basis_0} requires to first compute the monodromy representation $\widetilde{\rM}_{\vb{\infty}}$ of the abstract monodromy $\cM_{\vb{\infty}}$ in the basis of hypergeometric functions around $z = \infty$:
+The computation of the monodromy matrix $\rM_{\vb{\infty}}$ representing the monodromy in $\omega_z  =\infty$ in the basis \eqref{eq:basis_0} requires to first compute the monodromy representation $\trM_{\vb{\infty}}$ of the abstract monodromy $\cM_{\vb{\infty}}$ in the basis of hypergeometric functions around $z = \infty$:
 \begin{equation}
   B_{\vb{\infty}}(z)
   =
@@ -709,7 +709,7 @@ This basis is connected to~\eqref{eq:basis_0} through the transition matrix
 as $B_{\vb{0}}(z) = \cC(a,\, b,\, c)~B_{\vb{\infty}}(z)$.
 Through the loop $z \mapsto z e^{-2\pi i}$ we find:
 \begin{equation}
-  \widetilde{\rM}_{\vb{\infty}}( a,\, b )
+  \trM_{\vb{\infty}}( a,\, b )
   =
   \mqty( \dmat{e^{2\pi i a}, e^{2\pi i b}} ).
 \end{equation}
@@ -718,7 +718,7 @@ Finally we can build the desired monodromy:
   \rM_{\vb{\infty}}
   =
   \cC(a,\, b,\, c)\,
-  \widetilde{\rM}_{\vb{\infty}}(a,\, b)\,
+  \trM_{\vb{\infty}}(a,\, b)\,
   \cC^{-1}(a,\, b,\, c).
   \label{eq:monodromy_infty}
 \end{equation}
@@ -841,31 +841,31 @@ where we defined
 \begin{eqnarray}
   \cL(\vb{n}_{\vb{0}})
   & = &
-  \cL_{(\bt-1,\,\bt)}
+  \cL_{(\bart-1,\,\bart)}
   =
-  U_L(\vb{n}_{(\bt)})\,
-  U_L^{\dagger}(\vb{n}_{(\bt-1)}),
+  U_L(\vb{n}_{(\bart)})\,
+  U_L^{\dagger}(\vb{n}_{(\bart-1)}),
   \\
   \cL(\vb{n}_{\vb{\infty}})
   & = &
-  \cL_{(\bt,\, \bt+1)}
+  \cL_{(\bart,\, \bart+1)}
   =
-  U_L(\vb{n}_{(\bt+1)})
-  U_L^{\dagger}(\vb{n}_{(\bt)}),
+  U_L(\vb{n}_{(\bart+1)})
+  U_L^{\dagger}(\vb{n}_{(\bart)}),
   \\
   \cR(\vb{m}_{\vb{0}})
   & = &
-  \cR_{(\bt-1,\, \bt)}
+  \cR_{(\bart-1,\, \bart)}
   =
-  U_R(\vb{n}_{(\bt)})
-  U_R^{\dagger}(\vb{n}_{(\bt-1)}),
+  U_R(\vb{n}_{(\bart)})
+  U_R^{\dagger}(\vb{n}_{(\bart-1)}),
   \\
   \cR(\vb{m}_{\vb{\infty}})
   & = &
-  \cR_{(\bt,\, \bt+1)}
+  \cR_{(\bart,\, \bart+1)}
   =
-  U_R(\vb{n}_{(\bt+1)})
-  U_R^{\dagger}(\vb{n}_{(\bt)}).
+  U_R(\vb{n}_{(\bart+1)})
+  U_R^{\dagger}(\vb{n}_{(\bart)}).
 \end{eqnarray}
 The range of $\delta_{\vb{0}}^{(L)}$ is
 \begin{equation}
@@ -877,7 +877,7 @@ We then choose $\alpha = 0$ for simplicity.
 The same considerations hold true for all the other additional parameters $\delta_{\vb{0}}^{(R)}$ and $\delta_{\vb{\infty}}^{(L,\,R)}$.
 
 Since we are interested in relative rotations of the D-branes, we choose the
-rotation in $\omega_{\bt-1} = 0$ in the maximal torus of $\SU{2}_L \times \SU{2}_R$ without loss of generality: as we have two independent groups, we can in fact fix the orientation of both vectors $\vb{n}_{\vb{0}}$ and $\vb{m}_{\vb{0}}$.
+rotation in $\omega_{\bart-1} = 0$ in the maximal torus of $\SU{2}_L \times \SU{2}_R$ without loss of generality: as we have two independent groups, we can in fact fix the orientation of both vectors $\vb{n}_{\vb{0}}$ and $\vb{m}_{\vb{0}}$.
 In particular we set:
 \begin{eqnarray}
   \vb{n}_{\vb{0}}
@@ -895,7 +895,7 @@ In particular we set:
   \label{eq:maximal_torus_right}
 \end{eqnarray}
 where $n_{\vb{0}}^3 = 0$ is excluded to avoid considering a trivial rotation.
-We then define the parameters of the rotation in $\omega_{\bt} = \infty$ to be the most general
+We then define the parameters of the rotation in $\omega_{\bart} = \infty$ to be the most general
 \begin{equation}
   \begin{split}
     \vb{n}_{\vb{\infty}}
@@ -966,7 +966,7 @@ We find:
 \end{eqnarray}
 where $f^{(L)} \in \qty{ 0,\, 1 }$.
 For the sake of brevity we defined two auxiliary functions, namely $\cG(a,\, b,\, c) = \gfun{1-a}\, \gfun{1-b}\, \gfun{a+1-c}\, \gfun{b+1-c}$ and $\cF(a,\, b,\, c) = \sin(\pi c)\, \sin(\pi(a-b))$.
-We also introduced the norm $n_{\vb{1}} = \norm{\vb{n}_{\vb{1}}}$ of the rotation vector around $\omega_{\bt+1} = 1$.
+We also introduced the norm $n_{\vb{1}} = \norm{\vb{n}_{\vb{1}}}$ of the rotation vector around $\omega_{\bart+1} = 1$.
 Its dependence on the other parameters is encoded in~\eqref{eq:monodromy_relations}, where $\rM^+_{\vb{1}} = \rM^{-1}_{\vb{0}}\, \rM^{-1}_{\vb{\infty}}$, and the composition rule~\eqref{eq:product_in_SU2}:
 \begin{equation}
   \cos(2\pi n_{\vb{1}})
@@ -1266,7 +1266,7 @@ We could however use the symbolic solution~\eqref{eq:symbolic_solutions_using_P}
 As a matter of fact, finding the possible solutions with finite action can be recast to finding conditions such that the field $\ipd{z} \cX(z)$ is finite by itself.
 Linearity of this condition ensures a simpler approach with respect to the quadratic action of the string.
 From~\eqref{eq:action_doubling_fields_spinor_representation} it is clear that the action can be expressed as the sum of the product of any possible couple of elements of the expansion~\eqref{eq:formal_solution}.
-We thus need to take into examination all possible pairs of contributions $\ipd{z} \cX_{l_1 r_1}(z)~ \ipd{\bz} \cX_{l_2 r_2}(\bz)$.
+We thus need to take into examination all possible pairs of contributions $\ipd{z} \cX_{l_1 r_1}(z)~ \ipd{\barz} \cX_{l_2 r_2}(\barz)$.
 Near its singular points, the behavior of any element of solution~\eqref{eq:formal_solution} can be easily read from its symbolic representation~\eqref{eq:symbolic_solutions_using_P}:
 \begin{equation}
   \ipd{z} \cX(z)
@@ -1277,22 +1277,22 @@ Near its singular points, the behavior of any element of solution~\eqref{eq:form
 \end{equation}
 It can be verified that the convergence of the action both at finite and infinite intersection points is ensured by the same constraints found when imposing the convergence at any point of the classical solution
 \begin{equation}
-  X_{(s)}(u,\, \bu)
+  X_{(s)}(u,\, \baru)
   =
-  f_{(s)\, (\bt-1)}
+  f_{(s)\, (\bart-1)}
   +
-  \finiteint{u'}{x_{(\bt-1)}}{u}
+  \finiteint{u'}{x_{(\bart-1)}}{u}
   \ipd{u'} \cX_{(s)}(u')
   +
-  U_L^{\dagger}(\vb{n}_{{\bt}})
+  U_L^{\dagger}(\vb{n}_{{\bart}})
   \qty[
-    \finiteint{\bu'}{x_{(\bt-1)}}{\bu}
-    \ipd{\bu'} \cX_{(s)}(\bu')
+    \finiteint{\baru'}{x_{(\bart-1)}}{\baru}
+    \ipd{\baru'} \cX_{(s)}(\baru')
   ]
-  U_R(\vb{m}_{{\bt}}),
+  U_R(\vb{m}_{{\bart}}),
   \label{eq:classical_solution}
 \end{equation}
-which follows in spinor representation from~\eqref{eq:spinor_doubling_trick} and where $f_{(s),\, (\bt-1)} = f^I_{(\bt-1)}\, \tau_I$.
+which follows in spinor representation from~\eqref{eq:spinor_doubling_trick} and where $f_{(s),\, (\bart-1)} = f^I_{(\bart-1)}\, \tau_I$.
 We specifically find:
 \begin{equation}
   \begin{split}
@@ -2034,19 +2034,19 @@ The general solution for $\ipd{\omega} \cX$ is therefore:
 The final solution depends only on two complex constants, $C_1$ and $C_2$, which we can fix imposing the global conditions in \eqref{eq:discontinuity_bc}, that is the second equation in the solution \eqref{eq:classical_solution}.
 As the three intersection points in target space always define a triangle on a 2-dimensional plane, we impose the boundary conditions knowing two angles formed by the sides of the triangle (i.e.\ the branes between two intersections) and the length of one of them.
 Since we already fixed the parameters associated to the rotations, we need to compute the length of one of the sides.
-Consider for instance the length of $X(x_{\bt+1},\, x_{\bt+1}) - X(x_{\bt-1},\, x_{\bt-1})$.
+Consider for instance the length of $X(x_{\bart+1},\, x_{\bart+1}) - X(x_{\bart-1},\, x_{\bart-1})$.
 Explicitly we impose the four real equations in spinorial formalism
 \begin{equation}
   \finiteint{\omega}{0}{1}
   \ipd{\omega} \cX(\omega)
   +
-  U_L^{\dagger}(\vb{n}_{{\bt}})
+  U_L^{\dagger}(\vb{n}_{{\bart}})
   \qty[
     \finiteint{\bomega}{0}{1} \ipd{\bomega} \cX(\bomega)
   ]
-  U_R(\vb{m}_{{\bt}})
+  U_R(\vb{m}_{{\bart}})
   =
-  f_{{\bt+1}\, (s)} - f_{{\bt-1}\, (s)},
+  f_{{\bart+1}\, (s)} - f_{{\bart-1}\, (s)},
 \end{equation}
 where we used the mapping~\eqref{eq:def_omega} to write the integrals in the $\omega$ variables.
 This equation has enough degrees of freedom to fix completely the two complex parameters $C_1$ and $C_2$.
@@ -2393,29 +2393,29 @@ such that $\sum\limits_{t} \varepsilon_{\vb{t}} = 1$, and
   \label{eq:Abelian_rotation_second}
 \end{equation}
 where $\sum\limits_{t} \varphi_{\vb{t}} = 2$, in order to approach the usual notation in the literature.
-As usual we have $\ipd{\omega_z} \cZ^1( \omega_z ) \neq \qty[ \ipd{\omega_z} \overline{\cZ}^1( \omega_z ) ]^*$.
+As usual we have $\ipd{\omega_z} \cZ^1( \omega_z ) \neq \qty[ \ipd{\omega_z} \bcZ^1( \omega_z ) ]^*$.
 
 We can now build the Abelian solution to show the analytical structure of the limit.
 We have
 \begin{equation}
-  \mqty( i \overline{Z}^1( u,\, \bu ) & Z^2( u,\, \bu )
+  \mqty( i \barZ^1( u,\, \baru ) & Z^2( u,\, \baru )
          \\
-         \overline{Z}^2( u,\, \bu ) & i Z^1( u,\, \bu )
+         \barZ^2( u,\, \baru ) & i Z^1( u,\, \baru )
   )
   =
-  \mqty( i \overline{f}^1_{(\bt - 1)} + i \finiteint{\omega}{0}{\bomega_{\bu}}\, \ipd{\omega} \cZ^1
+  \mqty( i \barf^1_{(\bart - 1)} + i \finiteint{\omega}{0}{\bomega_{\baru}}\, \ipd{\omega} \cZ^1
          &
-         f^2_{(\bt -1)} + \finiteint{\omega}{0}{\omega_u}\, \ipd{\omega} \cZ^2
+         f^2_{(\bart -1)} + \finiteint{\omega}{0}{\omega_u}\, \ipd{\omega} \cZ^2
          \\
-         \overline{f}^2_{(\bt - 1)} + \finiteint{\omega}{0}{\bomega_{\bu}}\, \ipd{\omega} \cZ^2
+         \barf^2_{(\bart - 1)} + \finiteint{\omega}{0}{\bomega_{\baru}}\, \ipd{\omega} \cZ^2
          &
-         i f^1_{(\bt-1)} + i \finiteint{\omega}{0}{\omega_u}\, \ipd{\omega_z} \cZ^1
+         i f^1_{(\bart-1)} + i \finiteint{\omega}{0}{\omega_u}\, \ipd{\omega_z} \cZ^1
   )
 \end{equation}
-where we chose $R_{(\bt)} = \1_4$ so that $U_{(\bt)}$ in~\eqref{eq:Umatrices} is mapped to $(i \sigma_1, i \sigma_1) \in \SU{2} \times \SU{2}$.
+where we chose $R_{(\bart)} = \1_4$ so that $U_{(\bart)}$ in~\eqref{eq:Umatrices} is mapped to $(i \sigma_1, i \sigma_1) \in \SU{2} \times \SU{2}$.
 Notice however that $\vb{n}_{\vb{t}} = n_{\vb{t}}^3\, \vb{k}$ implies that $v^3_{(t)} = 0$ in~\eqref{eq:special_UL_brane_t}.
 Hence $U_L$ and $U_R$ are always off diagonal and their action on~\eqref{eq:Abelian_sol_example} is to fill the first column.
-From the previous relations we can also recover the usual holomorphicity $\overline{Z}^1(\bu) = \qty[ Z^1(u) ]^*$ of the sector with $\sum\limits_t \varepsilon_{\vb{t}} = 1$ and $\overline{Z}^2(\bu) = \qty[ Z^2(u) ]^*$ of the sector with $\sum\limits_t \varphi_{\vb{t}} = 2$.
+From the previous relations we can also recover the usual holomorphicity $\barZ^1(\baru) = \qty[ Z^1(u) ]^*$ of the sector with $\sum\limits_t \varepsilon_{\vb{t}} = 1$ and $\barZ^2(\baru) = \qty[ Z^2(u) ]^*$ of the sector with $\sum\limits_t \varphi_{\vb{t}} = 2$.
 
 
 \subsubsection{Abelian Limits}
@@ -2472,13 +2472,13 @@ For $x_{(t)} < x < x_{(t-1)}$ we have:
   X_R(x-iy) + Y,
 \end{equation}
 where $Y \in \R$ is a constant factor which cannot depend on the particular D-brane $D_{(t)}$.
-In fact the continuity of $X_L(u)$ and $X_R(\bu)$ on the worldsheet intersection point ensures that
+In fact the continuity of $X_L(u)$ and $X_R(\baru)$ on the worldsheet intersection point ensures that
 \begin{equation}
   \lim\limits_{x \to x_{(t)}^+} X(x, x)
   =
   \lim\limits_{x \to x_{(t)}^-} X(x, x),
 \end{equation}
-which does not allow $Y$ to depend on the specific D-brane while the reality of $X(u,\bu)$ implies that $\Im Y = 0$.
+which does not allow $Y$ to depend on the specific D-brane while the reality of $X(u,\baru)$ implies that $\Im Y = 0$.
 Now~\eqref{eq:area_tmp} becomes:
 \begin{equation}
   \begin{split}
@@ -2512,9 +2512,9 @@ where $g^{(\perp)}_{(t)\, I} = \sum_{m \in \{3, 4\}} \tensor{\qty( R_{(t)}^{-1} 
 
 In this case there are global complex coordinates for which the string solution is holomorphic:
 \begin{equation}
-  Z^i(u, \bu) = Z^i_L(u),
+  Z^i(u, \baru) = Z^i_L(u),
   \qquad
-  \overline{Z}^i(u, \bu) = \bar{Z}^i(\bu) = \qty( Z^i_L(u) )^*,
+  \barZ^i(u, \baru) = \bar{Z}^i(\baru) = \qty( Z^i_L(u) )^*,
 \end{equation}
 where $i = 1$ in the Abelian case and $i=1,\, 2$ in the \SU{2} case.
 We also have $f^i_{(t)} = Z^i_L(x_{(t)} + i\, 0^+)$.

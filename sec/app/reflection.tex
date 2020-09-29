@@ -1,0 +1,95 @@
+We provide details on how~\eqref{eq:reflection condition_out_field_generic_vacuum} can be computed.
+First we introduce the projector of positive frequency and negative frequency modes for the NS fermion as
+\begin{eqnarray}
+  P^{(+,\, 0)}(z,w)
+  & = &
+  \frac{+1}{z-w},
+  \qquad
+  \abs{z} > \abs{w}
+  \\
+  P^{(-,\, 0)}(z,w)
+  & = &
+  \frac{-1}{z-w},
+  \qquad
+  \abs{z} < \abs{w},
+\end{eqnarray}
+such that
+\begin{equation}
+  \oint\limits_{\abs{z} > \abs{w}} \ddw
+  P^{(+,\, 0)}(z,w)\,
+  \Psi^{(0)}( 0 )
+  =
+  \Psi^{(0,\, +)}( z ),
+\end{equation}
+and similarly for the negative frequency modes.
+Likewise we introduce the projectors for the field with defects as
+\begin{eqnarray}
+  P^{(+)}(z,\, w)
+  & = &
+  \frac{P\qty(z;\, \qty{x_{(t)},\, \rE_{(t)}} )\,
+        P\qty(w;\, \qty{x_{(t)},\, -\rE_{(t)}} )
+       }{z-w},
+  \qquad
+  \abs{z} > \abs{w}
+  \\
+  P^{(-)}(z,\, w)
+  & = &
+  -
+  \frac{P\qty(z;\, \qty{x_{(t)},\, \rE_{(t)}} )\,
+        P\qty(w;\, \qty{x_{(t)}, -\rE_{(t)}} )
+       }{z-w},
+  \qquad
+  \abs{z} < \abs{w},
+\end{eqnarray}
+with $P\qty(z;\, \qty{x_{(t)},\, \rE_{(t)}} ) = \finiteprod{t}{1}{N} \qty( 1- \frac{z}{x_{(t)}} )^{\rE_{(t)}}$ as in the main text.
+    
+We then compute
+\begin{equation}
+  \begin{split}
+    \qty(P^{(+)}\, P^{(+,\,0)})(z,\, w)
+    & =
+    \oint\limits_{\abs{z} > \abs{\zeta} > \abs{w}} \ddz
+    P^{(+)}(z,\, \zeta)\,
+    P^{(+,\, 0)}(\zeta,\, w)
+    =
+    P^{(+,\, 0)}(z,\, w)
+    \\
+    \qty(P^{(+)}\, P^{(-,\, 0)})(z,\, w)
+    & =
+    \frac{P\qty(z;\, \qty{x_{(t)},\, \rE_{(t)}} )\,
+          P\qty(w;\, \qty{x_{(t)},\, -\rE_{(t)}} ) -1
+         }{z-w}.
+  \end{split}
+\end{equation}
+The last equation is valid when $\rM=\finitesum{t}{1}{N} \rE_{(t)} \le 0$ and for $\abs{z}$ and $\abs{w}$ arbitrary.
+Specializing the previous expressions to $\Psi^{(out)}( z )$, we need to constrain $\abs{z} > x_{(1)}$ and $\abs{w} > x_{(1)}$.
+
+Finally the vacuum in presence of defects can be  described by
+\begin{equation}
+  \begin{split}
+    \Psi^{(+)}( z ) \Gexcvacket
+    & =
+    \qty(P^{(+)}\, \Psi)( z ) \Gexcvacket
+    \\
+    & =
+    \qty(P^{(+)}\, \Psi^{(out)})( z ) \Gexcvacket
+    \\
+    & =
+    \left\lbrace
+      \qty(P^{(+)}\, P^{(+,\, 0)}\, \Psi^{(out)})( z )
+    \right.
+    \\
+    & +
+    \left.
+      \qty(P^{(+)}\, P^{(-,\, 0)}\, \Psi^{(out)})( z )
+    \right\rbrace
+    \Gexcvacket
+    \\
+    & =
+    0,
+  \end{split}
+\end{equation}
+where we assumed $\abs{z} > x_{(1)}$.
+The expression finally becomes~\eqref{eq:reflection condition_out_field_generic_vacuum}.
+
+% vim: ft=tex
