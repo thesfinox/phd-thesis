@@ -2188,56 +2188,64 @@ From the usual definition of the stress-energy tensor in terms of the Virasoro g
   \end{split}
 \end{equation}
 
+We already hinted to the fact that the vacua state involved are not in general \SL{2}{R} invariant.
+In particular we can see that that the excited vacua \eexcvacket is a primary field
+\begin{equation}
+  \begin{split}
+    L_{(\rE)\, k} \eexcvacket
+    & =
+    0,
+    \qquad
+    k > 0,
+    \\
+    L_{(\rE)\, 0} \eexcvacket
+    & =
+    \frac{\rE^2}{2} \eexcvacket,
+  \end{split}
+\end{equation}
+with non trivial conformal dimensions $\Delta\qty( \eexcvacket ) =  \frac{\rE^2}{2}$.
+This operator is an excited spin field $\rS_{\rE_{(t)}}\qty( x )$ inserted at $x = 0$.
+Its equivalent expression using bosonisation is:
+\begin{equation}
+  \rS_{\rE}\qty( x ) = e^{i \rE \phi( x )},
+\end{equation}
+where $\phi$ is such that
+\begin{equation}
+  \left\langle \phi( z ) \phi( w ) \right\rangle
+  =
+  -\frac{1}{( z - w)^2}.
+\end{equation}
+The minimal conformal dimension is achieved for $n_{\rE}=n_{\brE}=0$, i.e.\ $\Delta\qty( \twsvacket ) =  \frac{\epsilon^2}{8}$, and identifies a plain spin field.
+We can further check this idea  by showing that the conformal dimensions are consistent.
+Using~\eqref{eq:usual-twisted-fermion-conformal-twisted} we get:
+\begin{equation}
+  \begin{split}
+    L_{(\rE)\, 0} \twsvacket
+    & =
+    L_0\,
+    \qty(%
+      b^{*\, ( \brE )}_0\,
+      b^{*\, ( \brE )}_{-1}\,
+      \dots\,
+      b^{*\, ( \brE )}_{2-n_{\rE}}
+      \eexcvacket
+    )
+    \\
+    & =
+    \left[%
+      \finitesum{n}{1}{n_{\rE}}
+      \qty( n - \frac{\rE +  1}{2} )
+      +
+      \frac{\rE^2}{2}
+    \right]
+    \twsvacket
+    =
+    \frac{\epsilon^2}{8} \twsvacket.
+  \end{split}
+\end{equation}
+
+
 %%% TODO %%%
-
-    Looking back at the analysis of the excited and twisted vacua, we already
-      hinted to the fact that they are not in general \SL{2}{R} invariant. 
-      In particular we can see that that the excited vacua  $\eexcvacket$
-      is a primary field
-      \begin{equation}
-        L_{(\rE) k > 0} \eexcvacket =0,
-        \qquad
-        L_{(\rE) 0} \eexcvacket = \frac{\rE^2}{2} \eexcvacket
-        ,
-        \end{equation}
-      with non trivial conformal dimensions
-      $\Delta\qty( \eexcvacket ) =  \frac{\rE^2}{2}$.
-      This operator is an excited spin field $\rS_{\rE_{(t)}}\qty( x )$
-      inserted at $x=0$ whose bosonized expression is given by
-      \begin{equation}
-        \rS_{\rE}\qty( x ) = e^{i \rE \phi( x )},
-      \end{equation}
-      where $\phi$ is such that
-      \begin{equation}
-        \left\langle \phi( z ) \phi( w ) \right\rangle = -\frac{1}{( z -
-          w)^2}
-        .
-      \end{equation}
-
-      In fact the minimal conformal dimension is achieved
-      for $n_{\rE}=n_{\brE}=0$, i.e.
-      $
-      \Delta\qty( \twsvacket ) =  \frac{\epsilon^2}{8}
-      $
-      and we know this is the basic spin field.
-      We can further check this idea 
-      by showing that the conformal dimensions are consistent.
-      Using \eqref{eq:usual-twisted-fermion-conformal-twisted} we get
-      \begin{equation}
-        \begin{split}
-          L_{(\rE) 0}\twsvacket
-          & =
-          L_0
-          \qty( b^{*\, ( \brE )}_0 b^{*\, ( \brE )}_{-1} \dots b^{*\, ( \brE )}_{2-n_{\rE}}   \eexcvacket)
-          \\
-          & =
-          \left[ \sum\limits^{n_{\rE}}_{n = 1} ( n - \frac{\rE +  1}{2} )
-            +\frac{\rE^2}{2}
-            \right] \twsvacket
-           = +\frac{1}{8} \epsilon^2\twsvacket .
-        \end{split}
-      \end{equation}
-
 
     \subsection{Generic Case With Defects}
 
