@@ -23,6 +23,11 @@
   pdfauthor={Riccardo Finotello}
 }
 
+%---- abbreviations
+\newcommand{\bo}{\textsc{bo}\xspace}
+\newcommand{\nbo}{\textsc{nbo}\xspace}
+\newcommand{\gnbo}{\textsc{gnbo}\xspace}
+
 %---- functions
 \newcommand{\hyp}[4]{\ensuremath{\mathrm{F}\left( #1,\, #2;\, #3;\, #4 \right)}}
 \newcommand{\poch}[2]{\ensuremath{\left( #1 \right)_{#2}}}
@@ -96,7 +101,7 @@
 \input{sec/outline.tex}
 
 %---- PARTICLE PHYSICS
-\thesispart{Conformal Symmetry and Geometry of the Wordlsheet}
+\thesispart{Conformal Symmetry and Geometry of the Worldsheet}
 \section{Introduction}
 \input{sec/part1/introduction.tex}
 \section{D-branes Intersecting at Angles}
@@ -105,9 +110,11 @@
 \input{sec/part1/fermions.tex}
 
 %---- COSMOLOGY
-\thesispart{Cosmology and Time Dependent Divergences}
+\thesispart{Cosmological Backgrounds and Divergences}
 \section{Introduction}
 \input{sec/part2/introduction.tex}
+\section{Time Dependent Orbifolds}
+\input{sec/part2/divergences.tex}
 
 %---- DEEP LEARNING
 \thesispart{Deep Learning the Geometry of String Theory}

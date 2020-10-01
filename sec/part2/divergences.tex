@@ -1,0 +1,76 @@
+\subsection{Motivation}
+
+Unfortunately and puzzlingly the first attempts to consider space-like~\cite{Craps:2002:StringPropagationPresence} or light-like singularities~\cite{Liu:2002:StringsTimeDependentOrbifold,Liu:2002:StringsTimeDependentOrbifolds} by means of orbifold  techniques yielded divergent four points \emph{closed string} amplitudes (see \cite{Cornalba:2004:TimedependentOrbifoldsString,Craps:2006:BigBangModels} for reviews).
+
+These singularities are commonly assumed to be connected to a large backreaction of the incoming matter into the singularity due to the exchange of a single graviton~\cite{Berkooz:2003:CommentsCosmologicalSingularities,Horowitz:2002:InstabilitySpacelikeNull}.
+This claim was already questioned in the literature where the $O$-plane orbifold was constructed.
+This orbifold should in fact be stable against the gravitational collapse but it exhibits divergences in the amplitudes (see the discussion in \cite{Cornalba:2004:TimedependentOrbifoldsString}).
+In what follows we show a direct computation showing that the presence of the divergence is not related to a gravitational response.
+
+What has gone unnoticed is that in the Null Boost Orbifold (\nbo) \cite{Liu:2002:StringsTimeDependentOrbifold} even the four \emph{open string} tachyons amplitude is divergent.
+Since we are working at tree level gravity is not an issue.
+In fact in Equation (6.16) of \cite{Liu:2002:StringsTimeDependentOrbifold} the four tachyons amplitude in the divergent region reads
+\begin{equation}
+  A_4 \sim \int\limits_{q \sim \infty} \frac{\dd{q}}{\abs{q}} \ccA( q )
+\end{equation}
+where $\ccA_{\text{closed}}( q ) \sim q^{4 - \ap \norm{\vb{p}_{\perp}}^2}$ and $\ccA_{\text{closed}}( q ) \sim q^{1 - \ap \norm{\vb{p}_{\perp}}^2} \tr\qty( \liebraket{T_1}{T_2}_+ \liebraket{T_3}{T_4}_+ )$ ($T_i$ for $i = 1,\, 2,\, 3,\, 4$ are Chan-Paton matrices).
+Moreover divergences in string amplitudes are not limited to four points: interestingly we show that the open string three point amplitude with two tachyons and the first massive state may be divergent when some \emph{physical} polarisations are chosen.
+The true problem is therefore not related to a gravitational issue but to the non existence of the effective field theory.
+In fact when we express the theory using the eigenmodes of the kinetic terms some coefficients do not exist, not even as a distribution.
+This holds true for both open and closed string sectors since it manifests also in the four scalar contact term.
+The issue can be roughly traced back to the vanishing volume of a subspace and the existence of a discrete zero mode of the Laplacian on this subspace.
+
+As an introduction to the problem we first deal with singularities of the open string sector.
+We try to build a consistent scalar \qed and show that the vertex with four scalar fields is ill defined.
+Divergences in scalar QED are due to the behaviour of the eigenfunctions of the scalar d'Alembertian near the singularity but in a somehow unexpected way.
+Near the singularity $u = 0$ in lightcone coordinates almost all eigenfunctions behave as $\frac{1}{\sqrt{\abs{u}}} e^{i \frac{\cA}{u}}$ with $\cA \neq 0$.
+The product of $N$ eigenfunctions gives a singularity $\abs{u}^{-N/2}$ which is technically not integrable.
+However the exponential term $e^{i \frac{\cA}{u}}$ allows for an interpretation as distribution when $\cA = 0$ is not an isolated point.
+When $\cA = 0$ is isolated the singularity is definitely not integrable and there is no obvious interpretation as a distribution.
+Specifically in the \nbo we find $\cA \sim \frac{l^2}{k_+}$ where $l$ is the momentum along the compact direction.
+As a consequence we find the eigenfunction associated to the discrete momentum $l = 0$ along the orbifold compact direction with an isolated $\cA = 0$.
+It is the eigenfunction which is constant along that direction and it is the root of all divergences.
+
+We then check whether the most obvious ways of regularizing the theory by making $\cA$ not vanishing may work.
+The first regularisation we try is to use a Wilson line along the compact direction even though the diverging three point string amplitude involves an anti-commutator of the Chan-Paton factor therefore it is divergent also for a neutral string, i.e.\ for a string with both ends attached to the same D-brane.
+This kind of string does not feel Wilson lines.
+Moreover anti-commutators are present in amplitudes with massive states in unoriented and supersymmetric strings and therefore neither worldsheet parity nor supersymmetry can help.
+The second obvious regularisation is the introduction of higher derivatives couplings to the Ricci tensor which is the only non vanishing tensor associated to the (regularised) metric.
+In any case it seems that a sensible regularisation must couple to all open string in the same way and this suggests a gravitational coupling.
+We then give a cursory look to whether closed string winding modes could help~\cite{Berkooz:2003:StringsElectricField}, as already suggested in~\cite{Liu:2002:StringsTimeDependentOrbifolds,Craps:2002:StringPropagationPresence} in analogy to the resolution of static singularities.
+Twisted closed strings become massless near the singularity and they should in some way be included.
+They generate a background potential $B_{\mu\nu}$ which is equivalent to a electromagnetic background from the open string perspective. 
+Under a plausible modification of the scalar action which is suggested by the two-tachyons---two-photons amplitude the problems seem to be solvable.
+
+In any case the origin of the string divergence seems to originate from the lack of contact terms in the effective field theory.
+Since these terms arise from string theory also through the exchange of massive string states we examine three point amplitudes with one massive state.
+A deeper understanding of the subject requires the study of the polarisations of the massive state on the orbifold as seen from the covering Minkowski space before the computation of the overlap of the wave functions.
+We then go back to string theory and we verify that in the \nbo the open string three points amplitude with two tachyons and one first level massive string state does indeed diverge when some physical polarisation are chosen.
+
+We then introduce the Generalized Null Boost Orbifold (\gnbo) as a generalization of the \nbo which still has a light-like singularity and is generated by one Killing vector.
+However in this model there are two directions associated with $\cA$, one compact and one non compact.
+We can then construct the scalar \qed and the effective field theory which extends it with the inclusion of higher order terms since all terms have a distributional interpretation.
+However if a second Killing vector is used to compactify the formerly non compact direction, the theory has again the same problems as in the \nbo.
+In the literature there are however also other attempts at regularizing the \nbo such as the Null Brane.
+This kind of orbifold was originally defined in \cite{Figueroa-OFarrill:2001:GeneralisedSupersymmetricFluxbranes,Cornalba:2004:TimedependentOrbifoldsString} and studied in perturbation theory in \cite{Liu:2002:StringsTimeDependentOrbifolds}.
+The Null Brane shares with the \gnbo the existence of a non compact direction on the orbifold.
+In this case it is indeed possible to build single particle wave functions which leads to the convergence of the smeared amplitudes.
+
+We finally present also a brief examination of the Boost Orbifold (\bo) where the divergences are generally milder~\cite{Horowitz:1991:SingularStringSolutions,Khoury:2002:BigCrunchBig}.
+The scalar eigenfunctions behave in time $t$ as $\abs{t}^{\pm i\, \frac{l}{\Delta}}$ near the singularity but there is one eigenfunction which behaves as $\log(\abs{t})$ and again it is the constant eigenfunction along the compact direction which is the origin of all divergences.
+In particular the scalar \qed on the \bo can be defined and the first term which gives a divergent contribution is of the form $\abs{\phi~\dphi}^2$, i.e.\ divergences are hidden into the derivative expansion of the effective field theory.
+Again three points open string amplitudes with one massive state diverge.
+
+
+\subsection{Summary and Conclusions}
+
+In the previous analysis it seems that string theory cannot do better than field theory when the latter does not exist, at least at the perturbative level where one deals with particles.
+Moreover when spacetime becomes singular, the string massive modes are not anymore spectators.
+Everything seems to suggest that issues with spacetime singularities are hidden into contact terms and interactions with massive states.
+This would explain in an intuitive way why the eikonal approach to gravitational scattering works well: the eikonal is indeed concerned with three point massless interactions.
+In fact it appears that the classical and quantum scattering on an electromagnetic wave~\cite{Jackiw:1992:ElectromagneticFieldsMassless} or gravitational wave \cite{tHooft:1987:GravitonDominanceUltrahighenergy} in \bo and \nbo are well behaved.
+From this point of view the ACV approach~\cite{Soldate:1987:PartialwaveUnitarityClosedstring,Amati:1987:SuperstringCollisionsPlanckian} may be more sensible, especially when considering massive external states~\cite{Black:2012:HighEnergyString}.
+Finally it seems that all issues are related with the Laplacian associated with the space-like subspace with vanishing volume at the singularity.
+If there is a discrete zero eigenvalue the theory develops divergences. 
+
+% vim: ft=tex
