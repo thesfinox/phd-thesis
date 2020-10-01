@@ -10,7 +10,7 @@ Despite the existence of an efficient method based on bosonization~\cite{Friedan
 We hope to be able to extend this approach to correlators involving twist fields and non Abelian spin and twist fields.
 We would also like to investigate the reason of the non existence of an approach equivalent to bosonization for twist fields.
 At the same time we are interested to explore what happens to a \cft in presence of defects.
-It turns out that, despite the defects, it is still possible to define a radial time dependent stress-energy tensor which satisfies the canonical \ope.
+It turns out that, despite the defects, it is still possible to define a radial time dependent stress-energy tensor which satisfies the canonical \ope
 Moreover the boundary changing defects in the construction can be associated with excited spin fields enabling the computation of correlators involving excited spin fields without resorting to bosonization.
 
 
@@ -216,7 +216,7 @@ Integration over the surface $\Sigma' = [ \tau_i, \tau_f ] \times [ 0, \pi ]$ yi
 \begin{equation}
   \int\limits_{\Sigma'} \dd{(\star j)}
   =
-  \int\limits_{\partial \Sigma'}
+  \int\limits_{\pd \Sigma'}
   \star j
   =
   0
@@ -473,7 +473,7 @@ In order to extract the ``coefficients'' $b_n$ we first introduce the dual basis
 
   \item the dual fields $\dual{\psi}_{n,\, \pm}$ (and $\dual{\Psi}_n$) can differ from $\psi_{n,\, \pm}$ (and $\Psi_n$) in their behavior at the boundary,
 
-  \item the functional form of $\dual{\psi}_{n,\, \pm}$ (and $\dual{\Psi}_n$) is fixed by the request of time invariance of the usual anti-commutation relations $\qty[ b_n, b_m^{\dagger} ]_+$ (that is $b_n$ and $b_n^{\dagger}$ can evolve in time, but their anti-commutation relations must remain constant).
+  \item the functional form of $\dual{\psi}_{n,\, \pm}$ (and $\dual{\Psi}_n$) is fixed by the request of time invariance of the usual anti-commutation relations $\liebraket{b_n}{b_m^{\dagger}}_+$ (that is $b_n$ and $b_n^{\dagger}$ can evolve in time, but their anti-commutation relations must remain constant).
 \end{itemize}
 We then define the conserved product for the ``double fields''~\eqref{eq:conserved-product-double-field} in such a way that:
 \begin{equation}
@@ -505,7 +505,7 @@ As a consequence of the canonical anti-commutation relations
 \end{equation}
 we have then:
 \begin{equation}
-  \eval{\qty[ b_n, b_m^{\dagger} ]_+}_{\tau = \tau_0}
+  \eval{\liebraket{b_n}{b_m^{\dagger}}_+}_{\tau = \tau_0}
   =
   \frac{2}{T} \cN \eval{\lconsprod{\dual{\Psi}_n}{\dual{\Psi}_m}}_{\tau = \tau_0}.
   \label{eq:Mink_can_anticomm_rel_ann_des}
@@ -548,7 +548,7 @@ where the Euclidean fermion on the strip is connected to the Minkowskian formula
   \psi_{\pm}^i( -i\xi,\, -i\bxi ).
 \end{equation}
 In the previous expressions we defined the coordinates $\xi = \tau_E + i \sigma$, $\bar \xi = \tau_E - i \sigma$ such that $\bxi = \xi^*$.
-Moreover we get $\ipd{\xi} = \pdv{\xi} = \frac{1}{2} \qty( \pdv{\tau_E} - i\pdv{\sigma} )$, $\ipd{\bxi} = \pdv{\bxi} = \frac{1}{2} \qty( \pdv{\tau_E} + i \pdv{\sigma} )$.
+Moreover we get $\ipd{\xi} = \pdv{\xi} = \frac{1}{2} \qty( \ipd{\tau_E} - i\, \ipd{\sigma} )$, $\ipd{\bxi} = \pdv{\bxi} = \frac{1}{2} \qty( \ipd{\tau_E} + i\, \ipd{\sigma} )$.
 As a consequence the Euclidean ``complex conjugation'' $\star$ (defined off-shell) acts as
 \begin{equation}
   \qty[
@@ -620,7 +620,7 @@ where $\halpha^*_E$ and $\hbeta_E$ are the Euclidean counterparts of the generic
 In the Euclidean context we have to explicitly write $\halpha^*_E$ because it is no longer the ``complex conjugate''  of $\halpha_E$ in the traditional sense.
 The product is conserved only when it couples two solutions which have different boundary conditions as in~\eqref{eq:bc_eu_strip}.
 
-The definition of the stress-energy tensor in~\eqref{eq:stress-energy-tensor-lightcone} requires a change in the numerical pre-factor to use the usual \cft normalization.
+The definition of the stress-energy tensor in~\eqref{eq:stress-energy-tensor-lightcone} requires a change in the numerical pre-factor to use the usual \cft normalisation.
 Introducing a spacetime variable central charge as well the components of the stress-energy tensor become:\footnotemark{}
 \footnotetext{%
   The canonical coefficient in front of the \cft stress-energy tensor is such that the Euclidean Hamiltonian $\rL_{0}$ is normalized such that
@@ -716,7 +716,7 @@ in order to extract the operators through the conserved product
 \end{equation}
 and get the anti-commutation relations at fixed Euclidean time as
 \begin{equation}
-  \eval{ \qty[ b_n,\, b^*_m ]_+ }_{\tau_E = \tau_{E,\, (0)}}
+  \eval{ \liebraket{b_n}{b^*_m}_+ }_{\tau_E = \tau_{E,\, (0)}}
   =
   \frac{2 \cN}{T}
   \lconsprod{\dual{\hpsi}^*_{E,\, n}}{\dual{\hpsi}_{E,\, m}}.
@@ -828,7 +828,7 @@ Operators are then extracted as
 \end{equation}
 Finally we get the anti-commutation relations as
 \begin{equation}
-  \eval{ \qty[ b_n, b^*_m ]_+ }_{\tau_E = \tau_{E,\, 0}}
+  \eval{ \liebraket{b_n}{b^*_m}_+ }_{\tau_E = \tau_{E,\, 0}}
   =
   \frac{2 \cN}{T} \lconsprod{\dual{\hPsi}^*_{n}}{\dual{\hPsi}_m}.
 \end{equation}
@@ -1015,7 +1015,7 @@ Finally the anti-commutation relations are
 \end{equation}
 which despite the strange look of the expression are perfectly compatible with the definition~\eqref{eq:upper-half-extraction} leading to:
 \begin{equation}
-  \qty[ b_n,\, b^*_m ]_+
+  \liebraket{b_n}{b^*_m}_+
   =
   \frac{2 \cN}{T}\,
   \lconsprod{\dual{\hpsi}^*_{E,\, n}}{\dual{\hpsi}_{E,\, m}}
@@ -1147,12 +1147,12 @@ The fields expansion in modes thus reads
 \end{equation}
 The anti-commutation relations among the operators are
 \begin{equation}
-  \qty[ b_n,\, b^*_m ]_+
+  \liebraket{b_n}{b^*_m}_+
   =
   \frac{2 \cN}{T}\, \lconsprod{\dual{\Psi}^*_{n}}{\dual{\Psi}_{m}},
 \end{equation}
 when we introduce the dual modes
-$\dual{\Psi}_{n}(z)$ and $\dual{\Psi}^*_{n}(z)$ whose normalization is
+$\dual{\Psi}_{n}(z)$ and $\dual{\Psi}^*_{n}(z)$ whose normalisation is
 \begin{equation}
   \lconsprod{\dual{\Psi}^*_{n}}{{\Psi}_{m}}
   =
@@ -1248,7 +1248,7 @@ then
 \end{eqnarray}
 and
 \begin{equation}
-  \qty[ b_{( n, i_0 )},\, b^*_{( m, j_0 )} ]_+
+  \liebraket{b_{( n, i_0 )}}{b^*_{( m, j_0 )}}_+
   =
   \frac{1}{\pi T \cN_{\Psi}^2}\, \delta_{i_0, j_0}\, \delta_{n + m, 1}.
   \label{eq:ns-algebra}
@@ -1391,7 +1391,7 @@ This way we compute the usual anti-commutation relations as
   =
   \frac{\delta_{n + m, 1 + \rL}}{2 \pi \cN\, \cN_{\Psi}^2}
   \quad \Rightarrow \quad
-  \qty[ b_n,\, b_m^* ]_+
+  \liebraket{b_n}{b_m^*}_+
   =
   \frac{1}{\pi T \cN_{\Psi}^2} \delta_{n + m, 1 + \rL},
   \label{eq:twisted-fermion-algebra}
@@ -1538,7 +1538,7 @@ such that
 \end{eqnarray}
 We can finally write
 \begin{equation}
-  \qty[ b_n,\, b^*_m ]_+
+  \liebraket{b_n}{b^*_m}_+
   =
   \frac{1}{\pi T \cN_{\Psi}^2}\, p_{1 - n - m},
   \qquad
@@ -1621,7 +1621,7 @@ that is
 \begin{equation}
   \excvacket
   =
-  \pi T \cN_{\Psi}^2 \qty[ b^{(\rE)}_n,\, b^{*\, ( \brE )}_{\rL + 1 - n} ]_+ \excvacket
+  \pi T \cN_{\Psi}^2 \liebraket{b^{(\rE)}_n}{b^{*\, ( \brE )}_{\rL + 1 - n}}_+ \excvacket
   =
   0,
 \end{equation}
@@ -1653,7 +1653,7 @@ For example when $\epsilon > 0$ we have:
   0
   =
   \pi T \cN_{\Psi}^2\,
-  \qty[ b^{(\rE)}_{1 + n_{\rE} },\, b^{*\, ( \brE )}_{n_{\brE} } ]_+
+  \liebraket{b^{(\rE)}_{1 + n_{\rE} }}{b^{*\, ( \brE )}_{n_{\brE} }}_+
   \twsvacket
   =
   \twsvacket,
@@ -1680,7 +1680,7 @@ This is a good definition of the vacuum as $-\frac{1}{2} < \frac{\epsilon}{2} = 
   0
   =
   \pi T \cN_{\Psi}^2\,
-  \qty[ b^{(\rE)}_{n},\, b^{*\, ( \brE )}_{m} ]_+
+  \liebraket{b^{(\rE)}_{n}}{b^{*\, ( \brE )}_{m}}_+
   \twsvacket
   =
   \delta_{n + m,\, \rE+\brE+1 }
@@ -2023,7 +2023,7 @@ From the same expression for $\Psi^{*\, (\text{out}, -)}( z )$ we deduce that $\
 \label{sec:contraction_and_T}
 
 Given the definition of the algebra of the operators and its representation, we can finally define the normal ordering operation and proceed to compute the contractions and \ope of the operators.
-The procedure ultimately leads to the definition of the stress-energy tensor. This is enough to show that the theory is a time dependent \cft since the stress-energy tensor satisfies the canonical \ope.
+The procedure ultimately leads to the definition of the stress-energy tensor. This is enough to show that the theory is a time dependent \cft since the stress-energy tensor satisfies the canonical \ope
 
 
 \subsubsection{NS Complex Fermion}
@@ -2048,7 +2048,7 @@ We then get the expression of the stress-energy tensor:
     \lim\limits_{w \to z}
     \qty[%
       -\frac{ \pi T }{2}
-      \qty( \Psi^*_i( z )\, \partial_w \Psi^i( w ) - \partial_z \Psi^*_i( z )\, \Psi^i( w ) )
+      \qty( \Psi^*_i( z )\, \ipd{w} \Psi^i( w ) - \ipd{z} \Psi^*_i( z )\, \Psi^i( w ) )
       +
       \frac{N_f}{ ( z - w )^2 }
     ]
@@ -2106,9 +2106,9 @@ We have two ways to construct it depending on the ordering of the classical expr
     \qty[%
       -\frac{\pi T}{2}
       \qty(%
-        \Psi^*( z ) \partial_w \Psi( w )
+        \Psi^*( z ) \ipd{w} \Psi( w )
         -
-        \partial_z \Psi^*( z ) \Psi( w )
+        \ipd{z} \Psi^*( z ) \Psi( w )
       )
       +
       \frac{1}{( z- w )^2}
@@ -2131,9 +2131,10 @@ or
     \qty[%
       -\frac{\pi T}{2}
       \qty(%
-        -\partial_z \Psi( z ) \Psi^*( w )
+        -
+        \ipd{z} \Psi( z )\, \Psi^*( w )
         +
-        \Psi( z ) \partial_w \Psi^*( w )
+        \Psi( z )\, \ipd{w} \Psi^*( w )
       )
     +
     \frac{1}{( z -  w )^2}
@@ -2205,7 +2206,7 @@ In particular we can see that that the excited vacua \eexcvacket is a primary fi
 \end{equation}
 with non trivial conformal dimensions $\Delta\qty( \eexcvacket ) =  \frac{\rE^2}{2}$.
 This operator is an excited spin field $\rS_{\rE_{(t)}}\qty( x )$ inserted at $x = 0$.
-Its equivalent expression using bosonisation is:
+Its equivalent expression using bosonization is:
 \begin{equation}
   \rS_{\rE}\qty( x ) = e^{i \rE \phi( x )},
 \end{equation}
@@ -2245,208 +2246,623 @@ Using~\eqref{eq:usual-twisted-fermion-conformal-twisted} we get:
 \end{equation}
 
 
-%%% TODO %%%
+\subsubsection{Generic Case With Defects}
 
-    \subsection{Generic Case With Defects}
+We then consider the generic case of one complex fermion in the presence of an arbitrary number of spin fields with respect to the vacuum we introduced in~\eqref{eq:generic_vacuum}.
+We consider the mode expansion~\eqref{eq:generic-case-basis} and~\eqref{eq:generic-case-basis-conjugate} as well as the anti-commutation relations~\eqref{eq:generic-case-anti-commutation}.
 
-    We will now apply the same procedure to the generic case of one complex
-    fermion in the presence of an arbitrary number of spin fields with respect
-    to the vacuum we introduced in \eqref{eq:generic_vacuum}. We will consider the mode expansion
-    \eqref{eq:generic-case-basis} and \eqref{eq:generic-case-basis-conjugate} as
-    well as the anti-commutation relations
-    \eqref{eq:generic-case-anti-commutation}.
+As in the usual twisted case we first consider the contraction of the field $\Psi$ and $\Psi^*$ and then move to the stress-energy tensor.
+Using the anti-commutation relations and
+\begin{equation}
+  \infinfsum{k} p_k z^k = \finiteprod{t}{1}{N} \qty( 1 - \frac{z}{x_{(t)}} )^{-\rL_{(t)}}
+\end{equation}
+where $p_k$ is defined in~\eqref{eq:generic-conserved-product-factor}.
+We have:
+\begin{equation}
+  \Psi( z )\, \Psi^*( w )
+  =
+  \no{ \Psi( z )\, \Psi^*( w ) }
+  +
+  \frac{1}{\pi T}\,
+  \frac{1}{z - w}\,
+  \finiteprod{t}{1}{N}
+  \qty( 1 - \frac{z}{x_{(t)}} )^{\rE_{(t)}}
+  \qty( 1 - \frac{w}{x_{(t)}} )^{-\rE_{(t)}},
+\end{equation}
+as well as
+\begin{equation}
+  \Psi^*( z )\, \Psi( w )
+  =
+  \no{ \Psi^*( z )\, \Psi( w ) }
+  +
+  \frac{1}{\pi T}\,
+  \frac{1}{z - w}\,
+  \finiteprod{t}{1}{N}
+  \qty( 1 - \frac{z}{x_{(t)}} )^{\brE_{(t)}}
+  \qty( 1 - \frac{w}{x_{(t)}} )^{-\brE_{(t)}},
+\end{equation}
+both for $\abs{w} < \abs{z}$.
+To assemble the expressions in a well defined continuous radial ordering $\rR\qty[ \Psi( z )\, \Psi^*( w ) ]$ we need to set $\rE_{(t)} = -\brE_{(t)}$ such that we can write
+\begin{equation}
+  \rR\qty[ \Psi( z )\, \Psi^*( w ) ]
+  =
+  \no{ \Psi( z )\, \Psi^*( w ) }
+  +
+  \frac{1}{\pi T}\,
+  \frac{1}{z - w}\,
+  \finiteprod{t}{1}{N}
+  \qty( 1 - \frac{z}{x_{(t)}})^{\rE_{(t)}}
+  \qty( 1 - \frac{w}{x_{(t)}} )^{-\rE_{(t)}}.
+  \label{eq:gen_Radial_order}
+\end{equation}
+We can then expand the results around $z$:
+\begin{equation}
+  \begin{split}
+    \rR\qty[\Psi( z )\, \Psi^*( w )]
+    & =
+    \no{ \qty(\Psi \Psi^*)( z ) }
+    +
+    \no{ \qty(\Psi\, \pd \Psi^*)( z ) }\, (w-z)
+    \\
+    & +
+    \frac{1}{\pi T}
+    \left[%
+      \frac{-1}{w- z}
+      +
+      \finitesum{t}{1}{N} \frac{\rE_{(t)}}{z - x_{(t)}}
+    \right.
+    \\
+    & \left.
+      -
+      \frac{1}{2}
+      \qty(%
+        \finitesum{t}{1}{N}
+        \sum\limits_{u \neq t}
+        \frac{\rE_{(t)}\, \rE_{(u)}}{( z - x_{(t)}) ( z - x_{(u)} )}
+        +
+        \finitesum{t}{1}{N}
+        \frac{\rE_{(t)}\, \qty( \rE_{(t)} - 1 )}{( z - x_{(t)} )^2}
+      )
+      \qty( w - z )
+    \right]
+    \\
+    & +
+    \order{( w - z )^2},
+  \end{split}
+\end{equation}
+and around $w$
+\begin{equation}
+  \begin{split}
+    \rR\qty[\Psi( z )\, \Psi^*( w )]
+    & =
+    \no{ \qty(\Psi \Psi^*)( w ) }
+    +
+    \no{ \qty(\pd \Psi\, \Psi^*)( w ) } (z-w)
+    \\
+    & +
+    \frac{1}{\pi T}
+    \left[%
+      \frac{1}{z- w}
+      +
+      \finitesum{t}{1}{N} \frac{\rE_{(t)}}{w - x_{(t)}}
+    \right.
+    \\
+    & \left.
+      + \frac{1}{2}
+      \qty(%
+        \finitesum{t}{1}{N}
+        \sum\limits_{u \neq t}
+        \frac{\rE_{(t)}\, \rE_{(u)}}{(w - x_{(t)}) (w - x_{(u)})}
+        +
+        \finitesum{t}{1}{N}
+        \frac{\rE_{(t)}\, \qty( \rE_{(t)} - 1 )}{( w - x_{(t)} )^2}
+      )
+      \qty( z - w )
+    \right]
+    \\
+    & +
+    \order{( z - w )^2},
+  \end{split}
+\end{equation}      
+so that the stress-energy tensor becomes:
+\begin{equation}
+  \begin{split}
+    \cT( z )
+    & =
+    -\frac{\pi T}{2}
+    \no{ \Psi( z ) \lripd{z} \Psi^*( z ) } 
+    +
+    \frac{1}{2}
+    \qty( \finitesum{t}{1}{N}  \frac{\rE_{(t)}}{z - x_{(t)}} )^2
+    \\
+    & =
+    \frac{\pi T }{2}\, \cN_{\Psi}^2
+    \infinfsum{n,\, m}
+    \no{b_n\, b^*_m}
+    z^{-n-m}
+    \qty[%
+      \frac{m-n}{z}
+      +
+      2\, \finitesum{t}{1}{N} \frac{\rE_{(t)}}{z-x_{(t)}}
+    ]
+    +
+    \frac{1}{2} \qty( \finitesum{t}{1}{N} \frac{\rE_{(t)}}{z - x_{(t)}} )^2.
+  \end{split}
+\end{equation}
+The last expression shows that the energy momentum tensor $\cT( z )$ is radial time dependent but it satisfies the usual \ope
+
+First of all we notice that the vacuum $\Gexcvacket$ is actually $\GGexcvacket$, i.e.\ it depends only on $x_{(t)}$ and $\rE_{(t)}$.
+We can try to interpret the previous result in the light of the usual \cft approach.
+In particular we can refine the idea we discussed after~\eqref{eq:asymp_beha_Psi_on_exc_vac} that the singularity in the modes~\eqref{eq:generic-case-basis} and~\eqref{eq:generic-case-basis-conjugate} at the point $x_{(t)}$ is associated with a primary conformal operator which creates \eexcvacket with $\rE = \rE_{(t)}$.
+By comparison with the stress energy tensor of an excited vacuum~\eqref{eq:T_excited_vacuum}, from the second order singularity we learn that at the points $x_{(t)}$ there is an operator which creates the excited vacuum \GGexcvacket from the \SL{2}{R} vacuum \regvacuum.
+Given the discussion in the previous section this is an excited spin field $\rS_{\rE_{(t)}}\qty( x_{(t)}) = e^{i \rE_{(t)} \phi( x_{(t)} )}$.
+The first order singularities in $x_{(u)} - x_{(t)}$ are then the result of the interaction between two of the previous excited spin fields.
+Using the \cft operator approach we postulate that the following identification holds
+\begin{equation}
+  \begin{split}
+    \GGexcvacket
+    & =
+    \cN(\qty{x_{(t)},\, \rE_{(t)}})~
+    \rS_{\rE_{(1)}}\qty( x_{(1)} )\,
+    \rS_{\rE_{(2)}}\qty( x_{(2)} )
+    \dots
+    \rS_{\rE_{(N)}}\qty( x_{(N)} )
+    \regvacuum
+    \\
+    & =
+    \cN(\qty{x_{(t)},\, \rE_{(t)} })~
+    \rR\qty[%
+      \finiteprod{t}{1}{N} \rS_{\rE_{(t)}}\qty( x_{(t) } )
+    ]
+    \regvacuum,
+    \label{eq:vacuum_R_prod_spin_fields}
+  \end{split}
+\end{equation}
+then we get
+\begin{equation}
+  \cT( z )
+  \GGexcvacket
+  =
+  \cN(\qty{x_{(t)},\, \rE_{(t)} })~
+  \rR\qty[%
+    \cT( z )
+    \finiteprod{t}{1}{N}
+    \rS_{\rE_{(t)}}\qty( x_{(t)} )
+  ]
+  \regvacuum.
+\end{equation}
+The fact that $\cT( z )$ enters the radial ordering may seem strange but the left hand side is well defined for all $z$ and the only well defined expression for the right hand side is with the radial ordering.
+In fact an operator expression like $\cT( z ) \rR\qty[ \ipd{x_{(1)}} \phi(x_{(1)})\, \ipd{x_{(2)}} \phi(x_{(2)})] \regvacuum$ is only defined for $\abs{z} > x_{(1),\, (2)}$.
+It then follows that
+\begin{equation}
+  \cT( z )
+  \GGexcvacket
+  =
+  \finitesum{t}{1}{N}
+  \qty(%
+    \frac{\rE_{(t)}^2 / 2}{(z - x_{(t)})^2}
+    +
+    \frac{\ipd{x_{(t)}} - \ipd{x_{(t)}} \log\cN}{z - x_{(t)}}
+  )
+  \GGexcvacket
+  +
+  \order{1},
+\end{equation}
+which allows us to write
+\begin{equation}
+  \begin{split}
+    &
+    \cN(\qty{x_{(t)}, \rE_{(t)} })~
+    \rR\qty[%
+      \ipd{x_{(t)}} \rS_{\rE_{(t)}}\qty( x_{(t)} )
+      \prod_{u \ne t} \rS_{\rE_{(u)}}\qty( x_{(u)} )
+    ]
+    \regvacuum
+    \\
+    = &
+    \rE_{(t)}\,
+    \qty[%
+      \pi T \cN_{\Psi}^2\,
+      \zeroinfsum{n,\, m}
+      \frac{b_n\, b^*_m}{x_{(t)}^{n + m}}
+      +
+      \sum_{u \ne t}
+      \frac{\rE_{(u)}}{x_{(t)} - x_{(u)}}
+    ]
+    \GGexcvacket.
+  \end{split}
+\end{equation}        
+This result shows the way non primary operators are represented in this formalism.
 
 
-      As in the usual twisted case, we will first consider the contraction of
-      the field $\Psi$ and $\Psi^*$ and then move to the stress-energy
-      tensor. Using the anti-commutation relations
-      and $\sum\limits_{k \in \mathds{Z}} p_k z^k = \finiteprod{t}{1}{N} \qty( 1 - \frac{z}{x_{(t)}} )^{-\rL_{(t)}}$
-      where $p_k$ is defined in \eqref{eq:generic-conserved-product-factor}.
-      We have:
-      \begin{equation}
-        \Psi( z ) \Psi^*( w ) = \no{ \Psi( z ) \Psi^*( w ) } +
-        \frac{1}{\pi T} \frac{1}{z - w} \finiteprod{t}{1}{N} \qty( 1 - \frac{z}{x_{(t)}}
-        )^{\rE_{(t)}} \qty( 1 - \frac{w}{x_{(t)}} )^{-\rE_{(t)}},
-      \end{equation}
-      as well as
-      \begin{equation}
-        \Psi^*( z ) \Psi( w ) = \no{ \Psi^*( z ) \Psi( w ) } +
-        \frac{1}{\pi T} \frac{1}{z - w} \finiteprod{t}{1}{N} \qty( 1 - \frac{z}{x_{(t)}}
-        )^{\brE_{(t)}} \qty( 1 - \frac{w}{x_{(t)}} )^{-\brE_{(t)}},
-      \end{equation}
-      both for $\abs{w} < \abs{z}$.
-      If we require that the previous results can be assembled in a
-      well defined continuous radial ordering
-      $ R\qty[ \Psi( z ) \Psi^*( w ) ]
-      $ we need to set $\rE_{(t)}=-\brE_{(t)}$ so we can write
-      \begin{equation}
-        R\qty[ \Psi( z ) \Psi^*( w ) ]
-        =
-        \no{ \Psi( z ) \Psi^*( w ) } +
-        \frac{1}{\pi T} \frac{1}{z - w}
-        \finiteprod{t}{1}{N} \qty( 1 - \frac{z}{x_{(t)}})^{\rE_{(t)}}
-        \qty( 1 - \frac{w}{x_{(t)}} )^{-\rE_{(t)}}
-        .
-        \label{eq:gen_Radial_order}
-        \end{equation}
-      We can then expand the results around $z$:
-      \begin{eqnarray}
-        \begin{aligned}
-          R\qty[\Psi( z ) \Psi^*( w )]
-          & =
-          \no{ \qty(\Psi\Psi^*)( z ) }
-          +
-          \no{ \qty(\Psi\partial\Psi^*)( z ) }\, (w-z)
-          \\
-          & + \frac{1}{\pi T} \left[
-            \frac{-1}{w- z}
-            + \finitesum{t}{1}{N} \frac{\rE_{(t)}}{z - x_{(t)}} \right.
-          \\
-          & \left.
-            - \frac{1}{2} \qty(
-            \finitesum{t}{1}{N} \sum\limits_{u \neq t}
-              \frac{\rE_{(t)} \rE_{(u)}}{( z - x_{(t)}) ( z - x_{(u)} )}
-            + \finitesum{t}{1}{N} \frac{\rE_{(t)} \qty( \rE_{(t)} - 1 )}{( z - x_{(t)} )^2} )
-            ( w - z )
-          \right]
-          \\
-          &  + \order{( w - z )^2}
-          ,
-        \end{aligned}
-      \end{eqnarray}
-      and around $w$
-      \begin{eqnarray}
-        \begin{aligned}
-          R\qty[\Psi( z ) \Psi^*( w )]
-          & =
-          \no{ \qty(\Psi\Psi^*)( w ) }
-          +
-          \no{ \qty(\partial\Psi\Psi^*)( w ) }\, (z-w)
-          \\
-          & + \frac{1}{\pi T} \left[
-            \frac{1}{z- w}
-            + \finitesum{t}{1}{N} \frac{\rE_{(t)}}{w - x_{(t)}} \right.
-          \\
-          & \left.
-            + \frac{1}{2} \qty(
-            \finitesum{t}{1}{N} \sum\limits_{u \neq t}
-              \frac{\rE_{(t)} \rE_{(u)}}{( w - x_{(t)}) ( w - x_{(u)} )}
-            + \finitesum{t}{1}{N} \frac{\rE_{(t)} \qty( \rE_{(t)} - 1 )}{( w - x_{(t)} )^2} )
-            ( z - w )
-          \right]
-          \\
-          &  + \order{( z - w )^2}
-          ,
-        \end{aligned}
-      \end{eqnarray}      
-      so that the stress-energy tensor      becomes:
-      \begin{align*}
-          \cT( z ) & = -\frac{\pi T}{2} \no{ \Psi( z ) \lripd{z}
-          \Psi^*( z ) } 
-        + \frac{1}{2} \qty( \finitesum{t}{1}{N}  \frac{\rE_{(t)}}{z - x_{(t)}})^2
-                             \nonumber\\
-        &=
-          \frac{\pi T }{2} \cN_{\Psi}^2
-          \sum_{n,m} : b_n b^*_m:
-          z^{-n-m}
-          \qty[ \frac{m-n}{z}+2\finitesum{t}{1}{N} \frac{\rE_{(t)}}{z-x_{(t)}} ]
-        + \frac{1}{2} \qty( \finitesum{t}{1}{N}  \frac{\rE_{(t)}}{z - x_{(t)}})^2
-          .
-      \end{align*}
-      The last expression shows that the energy momentum tensor $\cT( z )$
-      is radial time dependent but it satisfies the usual \ope.      
+\subsection{Hermitian Conjugation}
+\label{sec:hermitian_and_outvacuum}
 
-      Notice first of all that the vacuum $\Gexcvacket$ is actually
-      $\GGexcvacket$, i.e. it depends only on $x_{(t)}$ and $\rE_{(t)}$.
-      Then we can try to interpret the previous result in the light of the
-      usual \cft approach.
-      In particular we can refine the idea we discussed after
-      \eqref{eq:asymp_beha_Psi_on_exc_vac} that
-      the singularity in the modes \eqref{eq:generic-case-basis} and
-      \eqref{eq:generic-case-basis-conjugate}
-      at the point $x_{(t)}$
-      is associated with a primary conformal
-      operator which creates $\eexcvacket$ with $\rE=\rE_{(t)}$.
-      In fact  by comparison with the stress energy tensor of a
-      excited vacuum
-      \eqref{eq:T_excited_vacuum},
-      we can read from the second order singularity
-      that at the points $x_{(t)}$ there is an operator
-      which creates the excited vacuum $\GGexcvacket$ from the
-      \SL{2}{R} vacuum \regvacuum.
-      Given the discussion in the previous section this is an excited
-      spin field $\rS_{\rE_{(t)}}\qty( x_{(t)}) = e^{i \rE_{(t)} \phi( x_{(t)} )}$.
-      The first order singularities in $x_{(u)}-x_{(t)}$ are then the result
-      of the interaction between two of the previous excited spin
-      fields.
-      We can try to be more precise.
-      Using the usual \cft operatorial approach
-      we can suppose that the following
-      identification holds
-      \begin{align}
-        \GGexcvacket
-        &=
-        \cN(\{x_{(t)}, \rE_{(t)}\})~
-        \rS_{\rE_{(1)}}\qty( x_1 ) \dots \rS_{\rE_{(N)}}\qty( x_N ) \regvacuum
-          \nonumber\\
-        &=
-        \cN(\{x_{(t)}, \rE_{(t)} \})~
-        R\qty[ \finiteprod{t}{1}{N} \rS_{\rE_{(t)}}\qty( x_{(t) } ) ] \regvacuum
-        ,
-          \label{eq:vacuum_R_prod_spin_fields}
-      \end{align}
-      then we get
-      \begin{align*}
-          \cT( z )         \GGexcvacket
-        &=
-        \cN(\{x_{(t)}, \rE_{(t)} \})~
-          R\qty[
-          \cT( z )
-          \finiteprod{t}{1}{N} \rS_{\rE_{(t)}}\qty( x_{(t)} ) ] \regvacuum
-          .
-%           \label{eq:T_on_vacuum}
-      \end{align*}
-      The fact that $ \cT( z )$ enters the radial ordering may
-seem strange but the left hand side is well defined for all $z$ and
-the only well defined expression for the right hand side is the one
-with the radial ordering.
-In fact an operatorial expression like $\cT( z )
-R\qty[\partial\phi(x_1)\partial\phi(x_2)] \regvacuum$
-is only defined for $|z|> x_{1,2}$.
-      It then follows that
-    \begin{equation}
-          \cT( z )         \GGexcvacket
-       =
-          \finitesum{t}{1}{N} \qty(
-          \frac{\rE_{(t)}^2 /2 }{ (z-x_{(t)})^2}
-          +
-          \frac{\ \ipd{x_{(t)}} - \ipd{x_{(t)}} \log \cN }{ z-x_{(t)}}
-          ) \GGexcvacket
-          + \mbox{regular terms in $z$}
-          ,
-%        \label{eq:generic-case-stress-energy-tensor}
-      \end{equation}
-which allows to write
-\begin{align*}
-        \cN(\{x_{(t)}, \rE_{(t)} \})~
-          &R\qty[
-          \ipd{x_{(t)}} \rS_{\rE_{(t)}}\qty( x_{(t)} )
-          \prod_{u\ne t} \rS_{\rE_{(u)}}\qty( x_{(u)} ) ] \regvacuum
-            \nonumber\\
-            &=
-          \rE_{(t)}\,
-          \qty[
-          \pi T \cN_{\Psi}^2\,  
-          \sum_{n,m=0}^\infty \frac{ b_n b^*_m}{x_{(t)}^{n+m}}
-          +
-          \sum_{u\ne t} \frac{\rE_{(u)}}{x_{(t)}-x_{(u)}}
-          ]
-              \GGexcvacket
-              .
-\end{align*}        
-This result shows the way non primary operators are represented in
-this formalism and is consistent with the computation of the excited
-spin fields correlator performed in section \ref{sec:spin_correlators}.
+Before we can define the amplitudes involving spin and matter fields, we still need to introduce some of the necessary tools.
+In this section we focus on the operation of ``Hermitian conjugation'' in a broad sense: the usual Hermitian conjugation requires the existence of an inner product which is not yet available since we have not defined the out-vacuum.
+The operation we define is similar to the  $\star$ operator of $C^\star$ algebras even though the $\star$ operator sends an element of an algebra to another element of the same algebra.
+This is not what happens in the generic case since the $\star$ is essentially associated with the inversion $z \rightarrow \barz^{-1}$, i.e.\ in evolving from $\tau = +\infty$ to $\tau = -\infty$ so that the order of boundary singularities is reversed.
+  
 
+\subsubsection{Usual Twisted Fermions}
+
+In general for a chiral primary conformal operator of dimension $\Delta$ in $z$ coordinates the Euclidean Hermitian conjugation is
+\begin{equation}
+  \qty[ O(z) ]^\dagger = \eval{ \qty( w^{2\Delta} O(w) ) }_{w = \barz^{-1}}.
+\end{equation}
+As a matter of fact we cannot use the words ``Euclidean Hermitian conjugation'' since we do not have an inner product.
+We define the operation $\star$ which mimics its behavior.
+Therefore we define
+\begin{equation}
+  \qty[ \Psi\qty( z; \rE ) ]^{\star}
+  =
+  \eval{\qty[ w\, \tPsi^*\qty( w; -\trE ) ]}_{w = \barz^{-1}},
+  \qquad
+  \qty[ \Psi^*\qty( z; \rE ) ]^{\star}
+  = \eval{\qty( w\, \tPsi\qty( w; \trE ) )}_{w = \barz^{-1}}.
+  \label{eq:star_on_Psi}
+\end{equation}
+In the last expression we did not assume that the action of $\star$ is an automorphism and we wrote $\Psi\qty( z; \rE )$ to explicitly show the dependence on the parameter $\rE$ which enters in the modes.
+The previous action agrees with~\eqref{eq:complex-plane-conjugate}.
+In terms of the basis~\eqref{eq:usual-twisted-modes} we write:\footnotemark{}
+\footnotetext{%
+  The second possibility $\qty[ \Psi_n^{( \rE )}(z) ]^{\star} = \eval{\qty[ w\, \Psi_{-n}^{*\, ( -\rE-1 )}\qty( w ) ]}_{w = \barz^{-1}}$ is inconsistent with the anti-commutation relations.
+}
+\begin{equation}
+  \qty[ \Psi_n^{( \rE )}(z) ]^{\star}
+  =
+  \eval{\qty[ w\, \Psi_{1-n}^{*\, ( -\rE )}\qty( w ) ]}_{w = \barz^{-1}},
+  \qquad
+  \qty[ \Psi_n^{( -\rE )}(z) ]^{\star}
+  =
+  \eval{\qty[ w\, \Psi_{1-n}^{*\, ( \rE )}\qty( w ) ]}_{w = \barz^{-1}},
+\end{equation}
+which shows that in this case the image of the $\star$ operator is the same as the support.
+Using the mode expansion of \eqref{eq:star_on_Psi} it follows that
+\begin{equation}
+  \qty[ b^{(\rE)}_n ]^{\star} = b^{*\, ( \brE )}_{1-n},
+  \qquad
+  \qty[ b^{*\, ( \brE )}_n ]^{\star} = b^{(\rE)}_{1-n}.
+  \label{eq:star_usual_twisted}
+\end{equation}
+The $\star$ action is compatible with the anti-commutation relations as we can show by explicitly computing them:
+\begin{equation}
+  \qty(%
+    \liebraket{b^{(\rE)}_n}{b^{*\, ( \brE )}_m}_+
+  )^{\star}
+  =
+  \liebraket{b^{*\, ( \brE )}_{1-n}}{b^{(\rE)}_{1-m}}_+
+  =
+  \frac{1}{\pi T \cN_{\Psi}^2} \delta_{n+m, 1}.
+\end{equation}
+Furthermore $\star$ is involutive since:
+\begin{equation}
+  \qty[ \Psi_n^{( \rE )}( z ) ]^{\star \star} 
+  =
+  \Psi_n^{( \rE )}( z )
+  \quad
+  \Rightarrow
+  \quad
+  \qty[ b^{(\rE)}_n ]^{\star \star}
+  =
+  b^{(\rE)}_n.
+\end{equation}
+
+
+\subsubsection{Generic Case With Defects}
+
+Consider the modes~\eqref{eq:generic-case-basis}.
+We define the action of the $\star$ operator on them as:
+\begin{equation}
+  \begin{split}
+    \qty[ \Psi_{n}\qty( z;\, \qty{x_{(t)},\, \rE_{(t)}} ) ]^{\star}
+    & =
+    \cN_{\Psi}\,
+    \barz^{-n}\,
+    \finiteprod{t}{1}{N} \qty( 1 - \frac{\barz}{x_{(t)}} )^{\rE_{(t)}}
+    \\
+    & =
+    \eval{ \qty(
+    w \, \finiteprod{t}{1}{N} \qty( - \frac{1}{x_{(t)}} )^{\rE_{(t)}} \,
+    \widetilde{\Psi}_{M + 1 - n}^*
+    \qty(w; \qty{\tildex_{(t)}, \overline{\trE}_{(t)}})
+    ) }_{w = \barz^{-1}}
+  \end{split}
+\end{equation}
+where we used $\rM = \finitesum{t}{1}{N} \rE_{(t)}$ and $\tPsi_l( w;\, \qty{ y,\, \rF } ) = \cN_{\Psi}\, w^{-l}\, \finiteprod{t}{1}{N} \qty( 1 - \frac{w}{y} )^{-\rF}$.
+In this case the image of the $\star$ operator is a different space where the defects are located in $\tildex_{(t)}$ and the critical exponents are $\trE_{(t)}$ and $\overline{\trE}_{(t)}$ with
+\begin{equation}
+  \tildex_{(t)} = \frac{1}{x_{(t)}},
+  \qquad
+  \trE_{(t)} = -\rE_{(t)} = \brE_{(t)},
+  \qquad
+  \overline{\trE}_{(t)} = \rE_{(t)} = - \brE_{(t)},
+\end{equation}
+where we used $\rE_{(t)} + \brE_{(t)} = 0$.
+We can then compute the action of the $\star$ operator on the creation and annihilation operators:
+\begin{equation}
+  b_n^{\star}
+  =
+  \finiteprod{t}{1}{N}
+  \qty( - \frac{1}{x_{(t)}} )^{-\rE_{(t)}}~
+  \tildeb^*_{M + 1- n},
+  \qquad
+  \qty(b_n^*)^{\star}
+  =
+  \finiteprod{t}{1}{N}
+  \qty( - \frac{1}{x_{(t)}} )^{\rE_{(t)}}~
+  \tildeb_{-M + 1- n}.
+\end{equation}
+As in the previous situation the anti-commutation relations are preserved by the $\star$ operator.
+Explicitly we have:
+\begin{equation}
+  \qty( \liebraket{b_n}{b_m^*}_+ )^{\star}
+  =
+  \liebraket{\tildeb_{-M + 1 - m}}{\tildeb_{M + 1 - n}^*}_+
+  =
+  \frac{1}{\pi T \cN_{\Psi}^2}\,
+  \delta_{n + m, 1}.
+\end{equation}
+Finally the $\star$ operator is involutive.
+
+
+\subsection{Definition of the Out-Vacuum}
+\label{sec:out-vacuum}
+
+With the definition of the $\star$ operator we can now proceed to define the out-vacuum to as the Hermitian conjugation in the usual cases.
+It is a conceptually separated step from the definitions of the algebra of operators and their representation on the in-vacuum.
+We first consider the usual twisted theory from which we learn how to define the out-vacuum and then move to the generic case in the presence of multiple defects.
+
+
+\subsubsection{Usual Twisted Fermions}
+
+Consider the definition of the in-vacuum~\eqref{eq:usual-excited-vacuum} for the fields image of the $\star$ operator, i.e.\ $\tPsi\qty( w;\, \trE )$ and $\tPsi^*\qty( w;\, \overline{\trE} )$.
+It is defined as
+\begin{equation}
+  \tildeb^{( \trE )}_n \ket{\tildeT_{\trE ,\overline{\trE}}}
+  = 
+  \tildeb^{*\, ( \overline{\trE} )}_n \ket{\tildeT_{\trE ,\overline{\trE}}}
+  = 0,
+  \qquad
+  n \ge 1.
+\end{equation}
+The usual Hermitian conjugation gives
+\begin{equation}
+  \bra{\tildeT_{\trE ,\overline{\trE}}}
+  \qty( \tildeb^{( \trE )}_n)^\dagger 
+  = 
+  \bra{\tildeT_{\trE ,\overline{\trE}}}
+  \qty( \tildeb^{*\, ( \overline{\trE} )}_n)^\dagger 
+  = 0,
+  \qquad
+  n \ge 1.
+\end{equation}
+Given the action of the $\star$ operator~\eqref{eq:star_usual_twisted}, the identification with the Hermitian conjugate is possible if
+\begin{equation}
+  \eexcvacbra b^{(\rE)}_n = \eexcvacbra b^{*\, ( \brE )}_n = 0,
+  \qquad
+  n \le 0.
+\end{equation}
+
+
+\subsubsection{Generic Case With Defects}
+
+We can now analyse the case of an arbitrary number of defects.
+Following the steps of the previous section we define the in-vacuum for the tilded theory as
+\begin{equation}
+  \tildeb_n \GGexcvacket
+  = 
+  \tildeb_n \GGexcvacket
+  = 0,
+  \qquad
+  n \ge 1,
+\end{equation}
+and interpret it as the out-vacuum of the initial theory.     
+The definition of the out-vacuum is therefore:
+\begin{eqnarray}
+  \GGexcvacbra b_n & = & 0,
+  \qquad n \le \rM,
+  \\
+  \GGexcvacbra b^*_n & = & 0,
+  \qquad n \le -\rM.
+\end{eqnarray}
+Since the action of the $\star$ operator is compatible with the anti-commutation relations, the definition of the out-states is consistent.
+If we assume that
+\begin{equation}
+  \braket{\GGexcvac}{\GGexcvac} \neq 0,
+\end{equation}
+using the anti-commutation relations we get
+\begin{equation}
+  \begin{split}
+    \frac{1}{\pi T \cN_{\Psi}^2} \braket{\GGexcvac}{\GGexcvac}
+    & =
+    \GGexcvacbra
+    \liebraket{b_{\rM}}{b_{-\rM+1}^*}_+
+    \GGexcvacket
+    \\
+    & =
+    \GGexcvacbra
+    b_{-\rM+1}^*\,  b_{\rM}
+    \GGexcvacket
+    \neq 0,
+  \end{split}
+\end{equation}
+which requires $b_{\rM} \GGexcvacket \neq 0$.
+A similar condition exists for $b^*_{-\rM}$, thus we must require $\rM \le 0$ and $-\rM \le 0$:
+\begin{equation}
+ \rM =\finitesum{t}{1}{N} \rE_{(t)} = 0.
+\end{equation}
+The situation is therefore analogous to the case depicted in \Cref{fig:inconsistent-theories} where $\rM$ and $\brM$ have the same role of $\rL$ for the twisted fermion.
+
+
+\subsubsection{Asymptotic vacua}
+
+The discussion is essentially the same as in~\Cref{sect:asymp_fields} with the role of asymptotic in- and out-fields swapped.
+In particular we get
+\begin{equation}
+  \GGexcvacbra = \regvacuumoutconj,
+\end{equation}
+and
+\begin{equation}
+  \GGexcvacbra
+  =
+  \cN_{(in)}\qty(\qty{x_{(t)},\, \rE_{(t)}}) \regvacuuminconj
+  e^{%
+    \finitesum{m,\, n}{1}{+\infty}
+    \cM_{m n}\qty(\qty{x_{(t)},\, \rE_{(t)}})\,
+    b^{*\, (0)}_m b^{(0)}_n
+  }.
+\end{equation}
+
+
+\subsection{Correlators in the Presence of Spin Fields}
+\label{sec:spin_correlators}
       
+The definitions of the in- and out-vacua and the stress-energy tensor are critical to compute any correlation function of operators in the presence of the point-like defects.
+In fact we need to know both the algebra of the operators and their representation, usually defined on the in-vacuum (the ket vector), as well as their Hermitian conjugation in order to build the action of the operators on the out-vacuum (the bra vector).
+
+Starting from~\eqref{eq:vacuum_R_prod_spin_fields} we can compute the spin field correlators
+\begin{equation}
+  \braket{\GGexcvac}
+  =
+  \cN(\qty{x_{(t)},\, \rE_{(t)} })
+  \left\langle
+    \rR\qty[%
+      \finiteprod{t}{1}{N} \rS_{\rE_{(t)}}\qty(x_{(t)})
+    ]
+  \right\rangle.
+\end{equation}
+At first sight both \GGexcvacket and \GGexcvacbra might seem to contain $\rR\qty[ \finiteprod{t}{1}{N} \rS_{\rE_{(t)}}\qty(x_{(t)}) ]$.
+However this it is not the case and it can be seen in different ways.
+The simplest is to realise that such a square would be divergent while the product seems to be perfectly finite.
+A more rigorous way is to consider what the previous product is from the point of view of asymptotic out field: we have $\GGexcvacket= \cN_{(out)}\, \rR\qty[ \finiteprod{t}{1}{N} \rS_{\rE_{(t)}}\qty(x_{(t)}) ] \regvacuumout$ and $\GGexcvacbra= \regvacuumoutconj$ so that $\cN_{(out)} = \cN$.
+Moreover $\cT\qty(z) \underset{\abs{z} > x_{(1)}}{=} \cT_{(out)}\qty(z)$ when the two energy momentum tensors are normal ordered with respect to their different sets of operators which are related in~\eqref{eq:b_inf-b}.
+Hence all the expressions are surely valid for $\abs{z} > x_{(1)}$ and can be analytically extended to the whole plane. 
+The same result can be obtained from the point of view of asymptotic in-fields. 
+   
+Unfortunately the normalisation factor cannot be uniquely fixed.
+The result depends on the normalisation chosen for the single spin field and effectively shows only when we relate the $N$ points to $N-1$ points correlators, recursively down to two points correlators.
+Therefore we need to consider quantities where the normalisation is not present.
+In particular we consider
+\begin{equation}
+  \begin{split}
+    & \pdv{x_{(t)}}
+    \ln\left\langle
+      \rR\qty[%
+        \rS_{\rE_{(t)}}\qty(x_{(t)})
+        \prod\limits_{\substack{u = 1 \\ u \neq t}}^N \rS_{\rE_{(u)}}\qty(x_{(u)})
+      ]
+    \right\rangle
+    \\
+    = &
+    \oint\limits_{\abs{z} = x_{(t)}} \ddz
+    \frac{
+      \left\langle
+        \rR\qty[%
+          \cT( z )
+          \finiteprod{t}{1}{N} \rS_{\rE_{(t)}}\qty(x_{(t)})
+        ]
+      \right\rangle
+    }{
+      \left\langle
+        \rR\qty[%
+          \finiteprod{t}{1}{N} \rS_{\rE_{(t)}}\qty(x_{(t)})
+        ]
+      \right\rangle
+    }
+    \\
+    = &
+    \qty(%
+      \oint\limits_{\abs{z} > x_{(t)}} \ddz
+      -
+      \oint\limits_{\abs{z} < x_{(t)}} \ddz
+    )
+    \frac{\GGexcvacbra \cT( z ) \GGexcvacket}{\braket{\GGexcvac}}
+    \\
+    =  &
+    \frac{%
+      \GGexcvacbra
+      \qty(L_{-1}^{x_{(t)}^+} - L_{-1}^{x_{(t)}^-})
+      \GGexcvacket
+    }{\braket{\GGexcvac}}
+  \end{split},
+\end{equation}
+since $\liebraket{L_{-1}}{\cO_h( z )} = \ipd{z} \cO_h( z )$ for a quasi-primary operator $\cO_h$.
+From the definition of $\cT( z )$ it follows that:
+\begin{equation}
+  L_{-1}^{x_{(t)}^+} - L_{-1}^{x_{(t)}^-}
+  =
+  \oint\limits_{\cC_{x_{(t)}}} \ddz \cT( z )
+  =
+  \uppi T\, \cN_{\Psi}^2\, \rE_{(t)}\,
+  \infinfsum{n,\, m}
+  \no{b_n\, b^*_m}\,
+  x_{(t)}^{-m-n}
+  +
+  \sum\limits_{\substack{u = 1 \\ u \neq t}}^N
+  \frac{\rE_{(u)} \rE_{(t)}}{x_{(t)} - x_{(u)}},
+\end{equation}
+where $\cC_{x_{(t)}}$ is a small loop around $x_{(t)}$.
+Therefore we have
+\begin{equation}
+  \pdv{x_{(t)}}
+  \ln \left\langle
+    \rR\qty[%
+      \rS_{\rE_{(t)}}\qty(x_{(t)})
+      \prod\limits_{\substack{u = 1 \\ u \neq t}}^N
+      \rS_{\rE_{(u)}}\qty(x_{(u)})
+    ]
+  \right\rangle
+  =
+  \sum\limits_{u \neq t} \frac{\rE_{(u)} \rE_{(t)}}{x_{(t)} - x_{(u)}},
+\end{equation}
+which can be solved by
+\begin{equation}
+  \ln \left\langle
+    \rR\qty[%
+      \rS_{\rE_{(t)}}\qty(x_{(t)})
+      \prod\limits_{\substack{u = 1 \\ u \neq t}}^N
+      \rS_{\rE_{(u)}}\qty(x_{(u)})
+    ]
+  \right\rangle
+  =
+  \cN_0
+  \qty( \qty{\rE_{(t)}} )
+  \prod\limits_{\substack{t = 1}{t > u}}^N
+  \qty( x_{(u)} - x_{(t)} )^{\rE_{(u)} \rE_{(t)}}.
+\end{equation}
+The constant $\cN_0\qty( \qty{\rE_{(t)}} )$ which depends on the $\rE_{(t)}$ only can be fixed by using the \ope
+The last equation reproduces  the usual bosonization procedure.
+
+In similar way we can compute all correlators
+\begin{equation}
+  \begin{split}
+    &\frac{%
+      \GGexcvacbra
+      \rR\qty[ \prod\limits_i \Psi(x_i)\, \prod\limits_j \Psi^*(x_j) ]
+      \GGexcvacket
+    }{\braket{\GGexcvac}}
+    \\
+    & =
+    \frac{%
+      \left\langle
+        \rR\qty[
+          \prod\limits_i \Psi(x_i)\,
+          \prod\limits_j \Psi^*(x_j)\,
+          \finiteprod{t}{1}{N} \rS_{\rE_{(t)}}\qty(x_{(t)})
+        ]
+      \right\rangle
+    }{
+      \left\langle
+        \rR\qty[
+          \finiteprod{t}{1}{N} \rS_{\rE_{(t)}}\qty(x_{(t)})
+        ]
+      \right\rangle
+    },
+  \end{split}
+\end{equation}
+using Wick's theorem since the algebra and the action of creation and annihilation operators is the usual.
+In particular taking one $\Psi(z)$ and one $\Psi^*(w)$ we get the Green function which is nothing else but the contraction in equation~\eqref{eq:gen_Radial_order}.
+
+
 % vim: ft=tex
