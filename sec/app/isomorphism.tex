@@ -3,53 +3,53 @@ In this appendix we explain the conventions used for \SU{2} and show the details
 
 \subsection{Conventions}
 
-We parameterise \SU{2} matrices $U$ with a vector $\vb{n} \in \R^3$ such that:
+We parameterise \SU{2} matrices $U$ with a vector $\vec{n} \in \R^3$ such that:
 \begin{equation}
-  U(\vb{n})
+  U(\vec{n})
   =
   \cos(2 \pi n)\, \1_2
   +
-  i\, \frac{\vb{n} \cdot \vb{\sigma}}{n}\, \sin(2 \pi n),
+  i\, \frac{\vec{n} \cdot \vec{\sigma}}{n}\, \sin(2 \pi n),
   \label{eq:su2parametrisation}
 \end{equation}
-where $n = \norm{\vb{n}}$ and $0 \le n \le \frac{1}{2}$.
-We also identify all $\vb{n}$ when $n=\frac{1}{2}$ since in this case $U(\vb{n})= -\1_2$.
+where $n = \norm{\vec{n}}$ and $0 \le n \le \frac{1}{2}$.
+We also identify all $\vec{n}$ when $n=\frac{1}{2}$ since in this case $U(\vec{n})= -\1_2$.
 The parametrisation is such that:
 \begin{eqnarray}
-  U^*(\vb{n})
+  U^*(\vec{n})
   & = &
-  \sigma^2\, U(\vb{n})\, \sigma^2
+  \sigma^2\, U(\vec{n})\, \sigma^2
   =
-  U(\widetilde{\vb{n}}),
+  U(\widetilde{\vec{n}}),
   \\
-  U^{\dagger}(\vb{n})
+  U^{\dagger}(\vec{n})
   & = &
-  U^T(\widetilde{\vb{n}})
+  U^T(\widetilde{\vec{n}})
   =
-  U(-\vb{n}),
+  U(-\vec{n}),
   \\
-  -U(\vb{n})
+  -U(\vec{n})
   & = &
-  U(\widehat{\vb{n}})
+  U(\widehat{\vec{n}})
   \label{eq:U_props}
 \end{eqnarray}
-where $\sigma^2$ is the second Pauli matrix, $\widetilde{\vb{n}} = \qty( -n^1, n^2, -n^3 )$ and $\widehat{\vb{n}} = - \qty(\frac{1}{2} -n )\, \frac{\vb{n}}{n}$.
+where $\sigma^2$ is the second Pauli matrix, $\widetilde{\vec{n}} = \qty( -n^1, n^2, -n^3 )$ and $\widehat{\vec{n}} = - \qty(\frac{1}{2} -n )\, \frac{\vec{n}}{n}$.
 
-The group product of two elements $U(\vb{n} \circ \vb{m} ) = U(\vb{n})\,  U(\vb{m})$ has an explicit realisation as:
+The group product of two elements $U(\vec{n} \circ \vec{m} ) = U(\vec{n})\,  U(\vec{m})$ has an explicit realisation as:
 \begin{equation}
   \begin{split}
-    \cos(2 \pi \norm{\vb{n} \circ \vb{m}})
+    \cos(2 \pi \norm{\vec{n} \circ \vec{m}})
     & =
     \cos(2 \pi n)\, \cos(2 \pi m)
     -
-    \sin(2 \pi n)\, \sin(2\pi m)\, \frac{\vb{n} \cdot \vb{m}}{n\, m},
+    \sin(2 \pi n)\, \sin(2\pi m)\, \frac{\vec{n} \cdot \vec{m}}{n\, m},
     \\
-    \sin(2 \pi \norm{\vb{n} \circ \vb{m}})\,
-    \frac{\vb{n} \circ \vb{m}}{\norm{\vb{n} \circ \vb{m}}}
+    \sin(2 \pi \norm{\vec{n} \circ \vec{m}})\,
+    \frac{\vec{n} \circ \vec{m}}{\norm{\vec{n} \circ \vec{m}}}
     & =
-    \cos(2 \pi n)\, \sin(2\pi m)\, \frac{\vb{m}}{m}
+    \cos(2 \pi n)\, \sin(2\pi m)\, \frac{\vec{m}}{m}
     +
-    \sin(2 \pi n)\, \cos(2\pi m)\, \frac{\vb{n}}{n}.
+    \sin(2 \pi n)\, \cos(2\pi m)\, \frac{\vec{n}}{n}.
   \end{split}
   \label{eq:product_in_SU2}
 \end{equation}
@@ -58,9 +58,9 @@ The group product of two elements $U(\vb{n} \circ \vb{m} ) = U(\vb{n})\,  U(\vb{
 
 Let $I = 1,\, 2,\, 3,\, 4$ and define:
 \begin{equation}
-  \tau_I = \qty( i\, \1_2,\, \vb{\sigma} ),
+  \tau_I = \qty( i\, \1_2,\, \vec{\sigma} ),
 \end{equation}
-where $\vb{\sigma} = \qty( \sigma^1,\, \sigma^2,\, \sigma^3 )$ are the Pauli matrices.
+where $\vec{\sigma} = \qty( \sigma^1,\, \sigma^2,\, \sigma^3 )$ are the Pauli matrices.
 It is possible to show that:
 \begin{equation}
   \begin{split}
@@ -122,7 +122,7 @@ If the vector $X^I$ is real, using~\eqref{eq:tau_props} we have:
 
 A rotation in spinor representation is defined as:
 \begin{equation}
-  X'_{(s)} = U_{L}(\vb{n})\, X_{(s)}\, U_{R}^{\dagger}(\vb{m})
+  X'_{(s)} = U_{L}(\vec{n})\, X_{(s)}\, U_{R}^{\dagger}(\vec{m})
 \end{equation}
 and it is equivalent to:
 \begin{equation}
@@ -138,9 +138,9 @@ through
   \frac{1}{2}
   \tr(
     \qty( \tau_I )^{\dagger}\,
-    U_{L}(\vb{n})\,
+    U_{L}(\vec{n})\,
     \tau_J\,
-    U_{R}^{\dagger}(\vb{m})
+    U_{R}^{\dagger}(\vec{m})
   ).
 \end{equation}
 The matrix $R$ is the $4$-dimensional rotation matrix we are looking for since:

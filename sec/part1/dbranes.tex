@@ -451,7 +451,7 @@ We define the spinor representation of $X$ as:
 \begin{equation}
   X_{(s)}( u, \baru ) = X^I( u, \baru )\, \tau_I,
 \end{equation}
-where $\tau = \qty( i\, \1_2,\, \vb{\sigma} )$ and $\vb{\sigma}$ is the vector of the Pauli matrices.
+where $\tau = \qty( i\, \1_2,\, \vec{\sigma} )$ and $\vec{\sigma}$ is the vector of the Pauli matrices.
 Consider then:
 \begin{equation}
   \ipd{z} \cX_{(s)}( z )
@@ -461,9 +461,9 @@ Consider then:
     & \qif
     z \in \ccH \qor z \in D_{(\bart)}
     \\
-    U_{L}(\vb{n}_{(\bart)})\,
+    U_{L}(\vec{n}_{(\bart)})\,
     \ipd{\baru} X_{(s)}(\baru)\,
-    U_{R}^{\dagger}(\vb{m}_{(\bart)})
+    U_{R}^{\dagger}(\vec{m}_{(\bart)})
     & \qif z \in \bccH \qor z \in D_{(\bart)}
   \end{cases}.
   \label{eq:spinor_doubling_trick}
@@ -491,27 +491,27 @@ We find:
 \begin{eqnarray}
   \cL_{(t,\, t+1)}
   & = &
-  U_{L}(\vb{n}_{(t+1)})\,
-  U_{L}^{\dagger}(\vb{n}_{(t)}),
+  U_{L}(\vec{n}_{(t+1)})\,
+  U_{L}^{\dagger}(\vec{n}_{(t)}),
   \\
   \tcL_{(t,\, t+1)}
   & = &
-  U_{L}(\vb{n}_{(\bart)})\,
-  U_{L}^{\dagger}(\vb{n}_{(t)})\,
-  U_{L}(\vb{n}_{(t+1)})\,
-  U_{L}^{\dagger}(\vb{n}_{(\bart)}),
+  U_{L}(\vec{n}_{(\bart)})\,
+  U_{L}^{\dagger}(\vec{n}_{(t)})\,
+  U_{L}(\vec{n}_{(t+1)})\,
+  U_{L}^{\dagger}(\vec{n}_{(\bart)}),
   \\
   \cR_{(t,\, t+1)}
   & = &
-  U_{R}(\vb{m}_{(t+1)})\,
-  U_{R}^{\dagger}(\vb{m}_{(t)}),
+  U_{R}(\vec{m}_{(t+1)})\,
+  U_{R}^{\dagger}(\vec{m}_{(t)}),
   \\
   \tcR_{(t,\, t+1)}
   & = &
-  U_{R}(\vb{m}_{(\bart)})\,
-  U_{R}^{\dagger}(\vb{m}_{(t)})\,
-  U_{R}(\vb{m}_{(t+1)})\,
-  U_{R}^{\dagger}(\vb{m}_{(\bart)}).
+  U_{R}(\vec{m}_{(\bart)})\,
+  U_{R}^{\dagger}(\vec{m}_{(t)})\,
+  U_{R}(\vec{m}_{(t+1)})\,
+  U_{R}^{\dagger}(\vec{m}_{(\bart)}).
 \end{eqnarray}
 
 In spinor representation the action~\eqref{eq:string_action} becomes
@@ -529,9 +529,9 @@ In spinor representation the action~\eqref{eq:string_action} becomes
     \iint\limits_{\C}
     \dd{z} \dd{\barz}\,
     \tr(
-      U_{L}(\vb{n}_{(\bart)})\,
+      U_{L}(\vec{n}_{(\bart)})\,
       \ipd{z} \cX_{(s)}(z, \barz)\,
-      U_{R}^{\dagger}(\vb{m}_{(\bart)})\,
+      U_{R}^{\dagger}(\vec{m}_{(\bart)})\,
       \ipd{\barz} \cX_{(s)}^{\dagger}(z, \barz)
     ).
   \end{split}
@@ -548,30 +548,30 @@ In the left sector (i.e.\ $\SU{2}_L$ matrices) we have:
 \begin{equation}
   \cL_{(t,\, t+1)}
   =
-  U_{L}(\vb{n}_{(t+1)})\,
-  U_{L}^{\dagger}(\vb{n}_{(t)})\,
+  U_{L}(\vec{n}_{(t+1)})\,
+  U_{L}^{\dagger}(\vec{n}_{(t)})\,
   =
-  -\vb{v}_{(t+1)} \cdot \vb{v}_{(t)}
+  -\vec{v}_{(t+1)} \cdot \vec{v}_{(t)}
   +
-  i\, (\vb{v}_{(t+1)} \times \vb{v}_{(t)}) \cdot \vb{\sigma} ,
+  i\, (\vec{v}_{(t+1)} \times \vec{v}_{(t)}) \cdot \vec{\sigma} ,
 \end{equation}
-with $\norm{\vb{v}_{(t)}}^2 = 1$.
+with $\norm{\vec{v}_{(t)}}^2 = 1$.
 This is a consequence of the peculiar properties of the \SO{4} matrices $U_{(t)}$ defined in \eqref{eq:Umatrices}.
-Hence the corresponding $\SU{2}_L \times \SU{2}_R$ element $(U_{L}(\vb{n}_{(t)}),\, U_{R}(\vb{m}_{(t)}))$ reflects such characteristics.
+Hence the corresponding $\SU{2}_L \times \SU{2}_R$ element $(U_{L}(\vec{n}_{(t)}),\, U_{R}(\vec{m}_{(t)}))$ reflects such characteristics.
 In particular for the left part we have
 \begin{equation}
-  U_{L}(\vb{n}_{(t)})
+  U_{L}(\vec{n}_{(t)})
   =
-  i\, \vb{v}_{(t)} \cdot \vb{\sigma},
+  i\, \vec{v}_{(t)} \cdot \vec{\sigma},
   \qquad
-  \norm{\vb{v}_{(t)}}^2 = 1,
+  \norm{\vec{v}_{(t)}}^2 = 1,
   \label{eq:special_UL_brane_t}
 \end{equation}
 since $U_{(t)}^2 = \1_4$ implies that $U_{L}^2 = \pm \1_2$.
 The right sector clearly follows the same discussion.
 
 In fact \cS in~\eqref{eq:reflection_S} can be represented as $U_{L} = U_{R} = i\, \sigma_1$.
-Then any matrix $U_{L}(\vb{n}_{(t)})$ is of the form $U_{L}(\vb{n}_{(t)}) = i\, U(\vb{r}_{(t)}) \cdot \sigma_1 \cdot U^\dagger(\vb{r}_{(t)})$, for some $\vb{r}_{(t)}$ as follows from~\eqref{eq:Umatrices}.
+Then any matrix $U_{L}(\vec{n}_{(t)})$ is of the form $U_{L}(\vec{n}_{(t)}) = i\, U(\vec{r}_{(t)}) \cdot \sigma_1 \cdot U^\dagger(\vec{r}_{(t)})$, for some $\vec{r}_{(t)}$ as follows from~\eqref{eq:Umatrices}.
 Such matrix has vanishing trace and squares to $-\1_2$ hence the term  proportional to two-dimensional unit matrix in the expression of the generic \SU{2} element given in \Cref{sec:isomorphism} vanishes.
 As a consequence $n_{(t)} = \frac{1}{4}$ such that~\eqref{eq:special_UL_brane_t} follows.
 
@@ -628,7 +628,7 @@ The function \hyp{a}{b}{c}{z} is well defined for any value of its parameters.\f
 }
 We define a vector of independent hypergeometric functions:
 \begin{equation}
-  B_{\vb{0}}(z)
+  B_{0}(z)
   =
   \mqty(
     \hyp{a}{b}{c}{z}
@@ -645,13 +645,13 @@ The corresponding product of the monodromy matrices~\eqref{eq:homotopy_rep} is t
 Let for instance $\cM_{\omega_z}^{\pm}$ be the monodromy matrix which represents a closed loop around $\omega_z$ (the $+$ sign represents a path starting in $\ccH$, while $-$ is a path with base point in $\bccH$).
 The triviality property is realised through:
 \begin{equation}
-  \cM_{\vb{0}}^+\,
-  \cM_{\vb{1}}^+\,
-  \cM_{\vb{\infty}}^+
+  \cM_{0}^+\,
+  \cM_{1}^+\,
+  \cM_{\infty}^+
   =
-  \cM_{\vb{\infty}}^-\,
-  \cM_{\vb{1}}^-\,
-  \cM_{\vb{0}}^-
+  \cM_{\infty}^-\,
+  \cM_{1}^-\,
+  \cM_{0}^-
   =
   \1_2
   \label{eq:monodromy_relations}
@@ -659,30 +659,30 @@ The triviality property is realised through:
 The monodromy matrix $\omega_{\bart+1} = 1$ can thus be recovered as a product of monodromies around $0$ and $\infty$ given the properties
 \begin{equation}
   \begin{split}
-    \cM_{\vb{0}}^+
+    \cM_{0}^+
     & =
-    \cM_{\vb{0}}^-
+    \cM_{0}^-
     =
-    \cM_{\vb{0}},
+    \cM_{0},
     \\
-    \cM_{\vb{\infty}}^+
+    \cM_{\infty}^+
     & =
-    \cM_{\vb{\infty}}^-
+    \cM_{\infty}^-
     =
-    \cM_{\vb{\infty}},
+    \cM_{\infty},
   \end{split}
 \end{equation}
 which encode the peculiar branch cut structure due to the doubling trick gluing the intervals on one arbitrary D-brane.
 These matrices are an abstract representation of the monodromy group since they are in an arbitrary basis.
 
-Using the basis in $z = 0$~\eqref{eq:basis_0} it is straightforward to find the explicit representation $\rM_{\vb{0}}$ of the abstract monodromy $\cM_{\vb{0}}$:
+Using the basis in $z = 0$~\eqref{eq:basis_0} it is straightforward to find the explicit representation $\rM_{0}$ of the abstract monodromy $\cM_{0}$:
 \begin{equation}
-  \rM_{\vb{0}}( c ) = \mqty( \dmat{1, e^{-2\pi i c}} ).
+  \rM_{0}( c ) = \mqty( \dmat{1, e^{-2\pi i c}} ).
   \label{eq:monodromy_zero}
 \end{equation}
-The computation of the monodromy matrix $\rM_{\vb{\infty}}$ representing the monodromy in $\omega_z  =\infty$ in the basis \eqref{eq:basis_0} requires to first compute the monodromy representation $\trM_{\vb{\infty}}$ of the abstract monodromy $\cM_{\vb{\infty}}$ in the basis of hypergeometric functions around $z = \infty$:
+The computation of the monodromy matrix $\rM_{\infty}$ representing the monodromy in $\omega_z  =\infty$ in the basis \eqref{eq:basis_0} requires to first compute the monodromy representation $\trM_{\infty}$ of the abstract monodromy $\cM_{\infty}$ in the basis of hypergeometric functions around $z = \infty$:
 \begin{equation}
-  B_{\vb{\infty}}(z)
+  B_{\infty}(z)
   =
   \mqty(
     (-z)^{-a}~\hyp{a}{a+1-c}{a+1-b}{z^{-1}}
@@ -706,19 +706,19 @@ This basis is connected to~\eqref{eq:basis_0} through the transition matrix
   ),
   \label{eq:transition_matrix}
 \end{equation}
-as $B_{\vb{0}}(z) = \cC(a,\, b,\, c)~B_{\vb{\infty}}(z)$.
+as $B_{0}(z) = \cC(a,\, b,\, c)~B_{\infty}(z)$.
 Through the loop $z \mapsto z e^{-2\pi i}$ we find:
 \begin{equation}
-  \trM_{\vb{\infty}}( a,\, b )
+  \trM_{\infty}( a,\, b )
   =
   \mqty( \dmat{e^{2\pi i a}, e^{2\pi i b}} ).
 \end{equation}
 Finally we can build the desired monodromy:
 \begin{equation}
-  \rM_{\vb{\infty}}
+  \rM_{\infty}
   =
   \cC(a,\, b,\, c)\,
-  \trM_{\vb{\infty}}(a,\, b)\,
+  \trM_{\infty}(a,\, b)\,
   \cC^{-1}(a,\, b,\, c).
   \label{eq:monodromy_infty}
 \end{equation}
@@ -748,18 +748,18 @@ We write any possible solution in a factorised form as
   =
   (-\omega_z)^{A_{lr}}\,
   (1-\omega_z)^{B_{lr}}\,
-  \cB_{\vb{0},\, l}^{(L)}(\omega_z)
-  \qty( \cB_{\vb{0},\, r}^{(R)}(\omega_z) )^T,
+  \cB_{0,\, l}^{(L)}(\omega_z)
+  \qty( \cB_{0,\, r}^{(R)}(\omega_z) )^T,
   \label{eq:formal_solution_lr}
 \end{equation}
 where  $l$ and $r$ label the parameters associates with the left and right sectors of the hypergeometric function.
 We introduce the left basis element
 \begin{equation}
   \begin{split}
-    \cB_{\vb{0},\, l}^{(L)}(\omega_z)
+    \cB_{0,\, l}^{(L)}(\omega_z)
     & =
     D^{(L)}_l~
-    B_{\vb{0},\,l}^{(L)}(\omega_z)
+    B_{0,\,l}^{(L)}(\omega_z)
     \\
     & =
     \mqty( 1 & 0 \\ 0 & K_l^{(L)} )\,
@@ -789,24 +789,24 @@ We impose:
 \begin{eqnarray}
   &&\begin{cases}
     D^{(L)}\,
-    \rM_{\vb{0}}^{(L)}\,
+    \rM_{0}^{(L)}\,
     \qty( D^{(L)} )^{-1}
     =
-    e^{-2\pi i \delta_{\vb{0}}^{(L)}}\,
-    \cL(\vb{n}_{\vb{0}})
+    e^{-2\pi i \delta_{0}^{(L)}}\,
+    \cL(\vec{n}_{0})
     \\
     D^{(R)}\,
-    \rM_{\vb{0}}^{(R)}\,
+    \rM_{0}^{(R)}\,
     \qty( D^{(R)} )^{-1}
     =
-    e^{-2\pi i \delta_{\vb{0}}^{(R)}}\,
-    \cR^*(\vb{m}_{\vb{0}})
+    e^{-2\pi i \delta_{0}^{(R)}}\,
+    \cR^*(\vec{m}_{0})
     =
-    e^{-2\pi i \delta_{\vb{0}}^{(R)}}\,
-    \cR(\widetilde{\vb{m}}_{\vb{0}})
+    e^{-2\pi i \delta_{0}^{(R)}}\,
+    \cR(\widetilde{\vec{m}}_{0})
     \\
-    e^{2\pi i ( A_{lr} - \delta_{\vb{0}}^{(L)} -
-    \delta_{\vb{0}}^{(R)} )}
+    e^{2\pi i ( A_{lr} - \delta_{0}^{(L)} -
+    \delta_{0}^{(R)} )}
     =
     1
     \end{cases},
@@ -814,24 +814,24 @@ We impose:
   \\
   &&\begin{cases}
     D^{(L)},
-    \rM_{\vb{\infty}}^{(L)}\,
+    \rM_{\infty}^{(L)}\,
     \qty( D^{(L)} )^{-1}
     =
-    e^{-2\pi i \delta_{\vb{\infty}}^{(L)}}\,
-    \cL(\vb{n}_{\vb{\infty}})
+    e^{-2\pi i \delta_{\infty}^{(L)}}\,
+    \cL(\vec{n}_{\infty})
     \\
     D^{(R)}\,
-    \rM_{\vb{\infty}}^{(R)}\,
+    \rM_{\infty}^{(R)}\,
     \qty( D^{(R)} )^{-1}
     =
-    e^{-2\pi i \delta_{\vb{\infty}}^{(R)}}\,
-    \cR^*(\vb{m}_{\vb{\infty}})
+    e^{-2\pi i \delta_{\infty}^{(R)}}\,
+    \cR^*(\vec{m}_{\infty})
     =
-    e^{-2\pi i \delta_{\vb{\infty}}^{(R)}}\,
-    \cR(\widetilde{\vb{m}}_{\vb{\infty}})
+    e^{-2\pi i \delta_{\infty}^{(R)}}\,
+    \cR(\widetilde{\vec{m}}_{\infty})
     \\
-    e^{2\pi i ( A_{lr} + B_{lr} - \delta_{\vb{\infty}}^{(L)} -
-    \delta_{\vb{\infty}}^{(R)} )}
+    e^{2\pi i ( A_{lr} + B_{lr} - \delta_{\infty}^{(L)} -
+    \delta_{\infty}^{(R)} )}
     =
     1
   \end{cases},
@@ -839,75 +839,75 @@ We impose:
 \end{eqnarray}
 where we defined
 \begin{eqnarray}
-  \cL(\vb{n}_{\vb{0}})
+  \cL(\vec{n}_{0})
   & = &
   \cL_{(\bart-1,\,\bart)}
   =
-  U_L(\vb{n}_{(\bart)})\,
-  U_L^{\dagger}(\vb{n}_{(\bart-1)}),
+  U_L(\vec{n}_{(\bart)})\,
+  U_L^{\dagger}(\vec{n}_{(\bart-1)}),
   \\
-  \cL(\vb{n}_{\vb{\infty}})
+  \cL(\vec{n}_{\infty})
   & = &
   \cL_{(\bart,\, \bart+1)}
   =
-  U_L(\vb{n}_{(\bart+1)})
-  U_L^{\dagger}(\vb{n}_{(\bart)}),
+  U_L(\vec{n}_{(\bart+1)})
+  U_L^{\dagger}(\vec{n}_{(\bart)}),
   \\
-  \cR(\vb{m}_{\vb{0}})
+  \cR(\vec{m}_{0})
   & = &
   \cR_{(\bart-1,\, \bart)}
   =
-  U_R(\vb{n}_{(\bart)})
-  U_R^{\dagger}(\vb{n}_{(\bart-1)}),
+  U_R(\vec{n}_{(\bart)})
+  U_R^{\dagger}(\vec{n}_{(\bart-1)}),
   \\
-  \cR(\vb{m}_{\vb{\infty}})
+  \cR(\vec{m}_{\infty})
   & = &
   \cR_{(\bart,\, \bart+1)}
   =
-  U_R(\vb{n}_{(\bart+1)})
-  U_R^{\dagger}(\vb{n}_{(\bart)}).
+  U_R(\vec{n}_{(\bart+1)})
+  U_R^{\dagger}(\vec{n}_{(\bart)}).
 \end{eqnarray}
-The range of $\delta_{\vb{0}}^{(L)}$ is
+The range of $\delta_{0}^{(L)}$ is
 \begin{equation}
-  \alpha \le \delta_{\vb{0}}^{(L)} \le  \alpha + \frac{1}{2},
+  \alpha \le \delta_{0}^{(L)} \le  \alpha + \frac{1}{2},
 \end{equation}
 that is the width of the range is only $\frac{1}{2}$ and not $1$ as one would naively expect.
-This is a consequence of the fact that $e^{- 4 \pi i \delta_{\vb{0}}^{(L)}}$ is the determinant of the right hand side of the first equation in \eqref{eq:parameters_equality_zero}.
+This is a consequence of the fact that $e^{- 4 \pi i \delta_{0}^{(L)}}$ is the determinant of the right hand side of the first equation in \eqref{eq:parameters_equality_zero}.
 We then choose $\alpha = 0$ for simplicity.
-The same considerations hold true for all the other additional parameters $\delta_{\vb{0}}^{(R)}$ and $\delta_{\vb{\infty}}^{(L,\,R)}$.
+The same considerations hold true for all the other additional parameters $\delta_{0}^{(R)}$ and $\delta_{\infty}^{(L,\,R)}$.
 
 Since we are interested in relative rotations of the D-branes, we choose the
-rotation in $\omega_{\bart-1} = 0$ in the maximal torus of $\SU{2}_L \times \SU{2}_R$ without loss of generality: as we have two independent groups, we can in fact fix the orientation of both vectors $\vb{n}_{\vb{0}}$ and $\vb{m}_{\vb{0}}$.
+rotation in $\omega_{\bart-1} = 0$ in the maximal torus of $\SU{2}_L \times \SU{2}_R$ without loss of generality: as we have two independent groups, we can in fact fix the orientation of both vectors $\vec{n}_{0}$ and $\vec{m}_{0}$.
 In particular we set:
 \begin{eqnarray}
-  \vb{n}_{\vb{0}}
+  \vec{n}_{0}
   =
-  ( 0,\, 0,\, n_{\vb{0}}^3 ) \in \R^3,
+  ( 0,\, 0,\, n_{0}^3 ) \in \R^3,
   & \qquad &
-  0 < n_{\vb{0}}^3 < \frac{1}{2},
+  0 < n_{0}^3 < \frac{1}{2},
   \label{eq:maximal_torus_left}
   \\
-  \widetilde{\vb{m}}_{\vb{0}}
+  \widetilde{\vec{m}}_{0}
   =
-  ( 0,\, 0,\, -m_{\vb{0}}^3 ) \in \R^3,
+  ( 0,\, 0,\, -m_{0}^3 ) \in \R^3,
   & \qquad &
-  0 < m_{\vb{0}}^3 < \frac{1}{2},
+  0 < m_{0}^3 < \frac{1}{2},
   \label{eq:maximal_torus_right}
 \end{eqnarray}
-where $n_{\vb{0}}^3 = 0$ is excluded to avoid considering a trivial rotation.
+where $n_{0}^3 = 0$ is excluded to avoid considering a trivial rotation.
 We then define the parameters of the rotation in $\omega_{\bart} = \infty$ to be the most general
 \begin{equation}
   \begin{split}
-    \vb{n}_{\vb{\infty}}
+    \vec{n}_{\infty}
     & =
-    ( n_{\vb{\infty}}^1,\, n_{\vb{\infty}}^2,\, n_{\vb{\infty}}^3 ),
+    ( n_{\infty}^1,\, n_{\infty}^2,\, n_{\infty}^3 ),
     \\
-    \widetilde{\vb{m}}_{\vb{\infty}}
+    \widetilde{\vec{m}}_{\infty}
     & =
-    ( -m_{\vb{\infty}}^1,\, m_{\vb{\infty}}^2,\, -m_{\vb{\infty}}^3 ),
+    ( -m_{\infty}^1,\, m_{\infty}^2,\, -m_{\infty}^3 ),
 \end{split}
 \end{equation}
-We could actually set $n_{\vb{\infty}}^2 = m_{\vb{\infty}}^2 = 0$ since the choice of the ``gauge''~\eqref{eq:maximal_torus_left} and~\eqref{eq:maximal_torus_right} is preserved by \U{1} rotations mixing $n_{\vb{\infty}}^1$ and $n_{\vb{\infty}}^2$.
+We could actually set $n_{\infty}^2 = m_{\infty}^2 = 0$ since the choice of the ``gauge''~\eqref{eq:maximal_torus_left} and~\eqref{eq:maximal_torus_right} is preserved by \U{1} rotations mixing $n_{\infty}^1$ and $n_{\infty}^2$.
 We nevertheless keep the general expression in order to check the computations.
 
 Solving~\eqref{eq:parameters_equality_zero} and~\eqref{eq:parameters_equality_infty} connects the parameters of the hypergeometric function to the parameter of the rotations (see \Cref{sec:parameters}) thus reproducing the boundary conditions of the intersecting D-branes through the non trivial monodromies of the basis of hypergeometric functions.
@@ -915,11 +915,11 @@ We find:
 \begin{eqnarray}
   a_l^{(L)}
   =
-  n_{\vb{0}}
+  n_{0}
   +
-  (-1)^{f^{(L)}}\, n_{\vb{1}}
+  (-1)^{f^{(L)}}\, n_{1}
   +
-  n_{\vb{\infty}}
+  n_{\infty}
   +
   \ffa^{(L)}_l,
   & \qquad &
@@ -927,11 +927,11 @@ We find:
   \\
   b_l^{(L)}
   =
-  n_{\vb{0}}
+  n_{0}
   +
-  (-1)^{f^{(L)}}\, n_{\vb{1}}
+  (-1)^{f^{(L)}}\, n_{1}
   -
-  n_{\vb{\infty}}
+  n_{\infty}
   +
   \ffb^{(L)}_l,
   & \qquad &
@@ -939,58 +939,58 @@ We find:
   \\
   c_l^{(L)}
   =
-  2\, n_{\vb{0}}
+  2\, n_{0}
   +
   \ffc^{(L)}_l,
   & \qquad &
   \ffc^{(L)}_l \in \Z,
   \\
-  \delta_{\vb{0}}^{(L)}
+  \delta_{0}^{(L)}
   =
-  n_{\vb{0}},
+  n_{0},
   \\
-  \delta_{\vb{\infty}}^{(L)}
+  \delta_{\infty}^{(L)}
   =
   -
-  n_{\vb{0}}
+  n_{0}
   -
-  (-1)^{f^{(L)}}\, n_{\vb{1}},
+  (-1)^{f^{(L)}}\, n_{1},
   \\
   K^{(L)}_l
   =
   -\frac{1}{2 \pi^2}\,
   \cG(a_l^{(L)},\, b_l^{(L)},\, c_l^{(L)})\,
   \cF(a_l^{(L)},\, b_l^{(L)},\, c_l^{(L)})\,
-  \frac{n^1_{\vb{\infty}}+ i\, n^2_{\vb{\infty}}}{n_{\vb{\infty}}},
+  \frac{n^1_{\infty}+ i\, n^2_{\infty}}{n_{\infty}},
 \label{eq:K_factor_value}
 \end{eqnarray}
 where $f^{(L)} \in \qty{ 0,\, 1 }$.
 For the sake of brevity we defined two auxiliary functions, namely $\cG(a,\, b,\, c) = \gfun{1-a}\, \gfun{1-b}\, \gfun{a+1-c}\, \gfun{b+1-c}$ and $\cF(a,\, b,\, c) = \sin(\pi c)\, \sin(\pi(a-b))$.
-We also introduced the norm $n_{\vb{1}} = \norm{\vb{n}_{\vb{1}}}$ of the rotation vector around $\omega_{\bart+1} = 1$.
-Its dependence on the other parameters is encoded in~\eqref{eq:monodromy_relations}, where $\rM^+_{\vb{1}} = \rM^{-1}_{\vb{0}}\, \rM^{-1}_{\vb{\infty}}$, and the composition rule~\eqref{eq:product_in_SU2}:
+We also introduced the norm $n_{1} = \norm{\vec{n}_{1}}$ of the rotation vector around $\omega_{\bart+1} = 1$.
+Its dependence on the other parameters is encoded in~\eqref{eq:monodromy_relations}, where $\rM^+_{1} = \rM^{-1}_{0}\, \rM^{-1}_{\infty}$, and the composition rule~\eqref{eq:product_in_SU2}:
 \begin{equation}
-  \cos(2\pi n_{\vb{1}})
+  \cos(2\pi n_{1})
   =
-  \cos(2\pi n_{\vb{0}})\,
-  \cos(2\pi n_{\vb{\infty}})
+  \cos(2\pi n_{0})\,
+  \cos(2\pi n_{\infty})
   -
-  \sin(2\pi n_{\vb{0}})\,
-  \sin(2\pi n_{\vb{\infty}})\,
-  \frac{n_{\vb{\infty}}^3}{n_{\vb{\infty}}}.
+  \sin(2\pi n_{0})\,
+  \sin(2\pi n_{\infty})\,
+  \frac{n_{\infty}^3}{n_{\infty}}.
   \label{eq:dependent_monodromy_main_text}
 \end{equation}
-Relations for the right sector follow under the interchange of $(L)$ with $(R)$ and $\vb{n} \leftrightarrow \vb{m}$.
+Relations for the right sector follow under the interchange of $(L)$ with $(R)$ and $\vec{n} \leftrightarrow \vec{m}$.
 
 Parameters $A_{lr}$ and $B_{lr}$ follow the previous results and equations~\eqref{eq:parameters_equality_zero} and \eqref{eq:parameters_equality_infty}:
 \begin{eqnarray}
   A_{lr}
   =
-  n_{\vb{0}} + m_{\vb{0}} + \ffA_{lr},
+  n_{0} + m_{0} + \ffA_{lr},
   & \qquad &
   \ffA_{lr} \in \Z,
   \\
   B_{lr}
-  (-1)^{f^{(L)}}\, n_{\vb{1}} + (-1)^{f^{(R)}}\, m_{\vb{1}} + \ffB_{lr},
+  (-1)^{f^{(L)}}\, n_{1} + (-1)^{f^{(R)}}\, m_{1} + \ffB_{lr},
   & \qquad &
   \ffB_{lr} \in \Z.
 \end{eqnarray}
@@ -1055,11 +1055,11 @@ We require:
 \end{eqnarray}
 
 The relations between the parameters of the hypergeometric functions and the monodromies associated to the rotation of the intersecting D-brane are more general than needed.
-The number of parameters necessary to fix the configuration is $6$, that is the amount of parameters to uniquely determine $n_{\vb{0}}^3$, $n_{\vb{\infty}}^1$, $n_{\vb{\infty}}^3$ and $m_{\vb{0}}^3$, $m_{\vb{\infty}}^1$, $m_{\vb{\infty}}^3$.
-As noticed before we can in fact fix $n_{\vb{\infty}}^2 = m_{\vb{\infty}}^2 = 0$.
+The number of parameters necessary to fix the configuration is $6$, that is the amount of parameters to uniquely determine $n_{0}^3$, $n_{\infty}^1$, $n_{\infty}^3$ and $m_{0}^3$, $m_{\infty}^1$, $m_{\infty}^3$.
+As noticed before we can in fact fix $n_{\infty}^2 = m_{\infty}^2 = 0$.
 This is a consequence of the fact that all parameters depend on the norm of the rotation vectors exception made for $K^{(L)}$ and $K^{(R)}$.
-They depend on $n_{\vb{\infty}}^1 + i n_{\vb{\infty}}^2$ and $m_{\vb{\infty}}^1 + i m_{\vb{\infty}}^2$.
-Performing a $\SU{2}_L$ and $\SU{2}_R$ rotation around the third axis and a shift of the parameters $\delta_{\vb{\infty}}$, the phases of the normalisation factors $K$ can vanish.
+They depend on $n_{\infty}^1 + i n_{\infty}^2$ and $m_{\infty}^1 + i m_{\infty}^2$.
+Performing a $\SU{2}_L$ and $\SU{2}_R$ rotation around the third axis and a shift of the parameters $\delta_{\infty}$, the phases of the normalisation factors $K$ can vanish.
 
 
 \subsubsection{The Importance of the Normalization Factors}
@@ -1082,19 +1082,19 @@ Using the \rP symbol the solutions can be symbolically written as
           \infty
           &
           \\
-          n_{\vb{0}}
+          n_{0}
           &
-          n_{\vb{1}}
+          n_{1}
           &
-          n_{\vb{\infty}} + \ffa^{(L)}
+          n_{\infty} + \ffa^{(L)}
           &
           \omega
           \\
-          -n_{\vb{0}} + 1 - \ffc^{(L)}
+          -n_{0} + 1 - \ffc^{(L)}
           &
-          -n_{\vb{1}} - \ffa^{(L)} - \ffb^{(L)} + \ffc^{(L)}
+          -n_{1} - \ffa^{(L)} - \ffb^{(L)} + \ffc^{(L)}
           &
-          -n_{\vb{\infty}} + \ffb^{(L)}
+          -n_{\infty} + \ffb^{(L)}
           &
       }
     }
@@ -1110,19 +1110,19 @@ Using the \rP symbol the solutions can be symbolically written as
           \infty
           &
           \\
-          m_{\vb{0}}
+          m_{0}
           &
-          m_{\vb{1}}
+          m_{1}
           &
-          m_{\vb{\infty}} + \ffa^{(R)}
+          m_{\infty} + \ffa^{(R)}
           &
           \omega
           \\
-          -m_{\vb{0}} + 1 - \ffc^{(R)}
+          -m_{0} + 1 - \ffc^{(R)}
           &
-          -m_{\vb{1}} - \ffa^{(R)} - \ffb^{(R)} + \ffc^{(R)}
+          -m_{1} - \ffa^{(R)} - \ffb^{(R)} + \ffc^{(R)}
           &
-          -m_{\vb{\infty}} + \ffb^{(R)}
+          -m_{\infty} + \ffb^{(R)}
           &
       }
       }.
@@ -1163,7 +1163,7 @@ Similarly we use a shorthand notation for the basis of the hypergeometric functi
   See for instance~\eqref{eq:K_factor_value} and~\eqref{eq:n12+n22}.
 }
 \begin{equation}
-  \cB_{\vb{0}}(a,\, b,\, c;\, z)
+  \cB_{0}(a,\, b,\, c;\, z)
   =
   \mqty(
     \hyp{a}{b}{c}{z}
@@ -1190,29 +1190,29 @@ We can then algorithmically apply the following relations
 \end{equation}
 to eliminate unwanted integer factors and keep only \hyp{a}{b}{c}{z} and any of its contiguous functions.
 
-Notice that $\cB_{\vb{0}}$ is a basis element of the possible solutions of the classical and quantum string \eom
-Using any relation in~\eqref{eq:contiguous_functions} we can change $a$, $b$ or $c$ by one unit coherently in both hypergeometric functions contained in $\cB_{\vb{0}}$.
+Notice that $\cB_{0}$ is a basis element of the possible solutions of the classical and quantum string \eom
+Using any relation in~\eqref{eq:contiguous_functions} we can change $a$, $b$ or $c$ by one unit coherently in both hypergeometric functions contained in $\cB_{0}$.
 For example from the first equation in~\eqref{eq:contiguous_functions} we expect:
 \begin{equation}
-  (c-a)\, \cB_{\vb{0}}(a-1)
+  (c-a)\, \cB_{0}(a-1)
   +
-  (2a-c+(b-a)z)\, \cB_{\vb{0}}
+  (2a-c+(b-a)z)\, \cB_{0}
   -
-  a(1-z)\, \cB_{\vb{0}}(a+1)
+  a(1-z)\, \cB_{0}(a+1)
   =
   0,
 \end{equation}
 which can be used to lower and rise the integer factors in $a$.
 The relation holds only because the normalisation factor $K$ is present.
-In fact coefficients in this equation equal those in the relation for the first component of $\cB_{\vb{0}}$.
+In fact coefficients in this equation equal those in the relation for the first component of $\cB_{0}$.
 It is not trivial for the second component where the factor $K$ is key to the consistency.
 Similarly the relation needed to lower $c$ reads:
 \begin{equation}
-  (a-c)(b-c)\, \cB_{\vb{0}}(c+1)
+  (a-c)(b-c)\, \cB_{0}(c+1)
   +
-  (a+(b-c)z)\, \cB_{\vb{0}}
+  (a+(b-c)z)\, \cB_{0}
   -
-  a(1-z) \cB_{\vb{0}}(a+1)
+  a(1-z) \cB_{0}(a+1)
   =
   0.
 \end{equation}
@@ -1244,8 +1244,8 @@ We could then use~\eqref{eq:reduction_F_F+} to write the possible solution as
     \ipd{z} \cX(z)
     & =
     \pdv{\omega_z}{z}\,
-    (-\omega_z)^{n_{\vb{0}} + m_{\vb{0}}}\,
-    (1-\omega_z)^{n_{\vb{1}} + m_{\vb{1}}}
+    (-\omega_z)^{n_{0} + m_{0}}\,
+    (1-\omega_z)^{n_{1} + m_{1}}
     \\
     & \times
     \sum\limits_{\ffa^{(L,\,R)} \in \qty{ -1, 0 }} 
@@ -1253,9 +1253,9 @@ We could then use~\eqref{eq:reduction_F_F+} to write the possible solution as
     \times
     \\
     & \times
-    \cB_{\vb{0}}^{(L)}(a^{(L)} + \ffa^{(L)},\, b,\, c;\, \omega_z)
+    \cB_{0}^{(L)}(a^{(L)} + \ffa^{(L)},\, b,\, c;\, \omega_z)
     \qty(
-      \cB_{\vb{0}}^{(R)}(a^{(R)} + \ffa^{(R)},\, b,\, c;\, \omega_z)
+      \cB_{0}^{(R)}(a^{(R)} + \ffa^{(R)},\, b,\, c;\, \omega_z)
     )^T.
   \end{split}
   \label{eq:doubling_field_expansion}
@@ -1284,12 +1284,12 @@ It can be verified that the convergence of the action both at finite and infinit
   \finiteint{u'}{x_{(\bart-1)}}{u}
   \ipd{u'} \cX_{(s)}(u')
   +
-  U_L^{\dagger}(\vb{n}_{{\bart}})
+  U_L^{\dagger}(\vec{n}_{{\bart}})
   \qty[
     \finiteint{\baru'}{x_{(\bart-1)}}{\baru}
     \ipd{\baru'} \cX_{(s)}(\baru')
   ]
-  U_R(\vb{m}_{{\bart}}),
+  U_R(\vec{m}_{{\bart}}),
   \label{eq:classical_solution}
 \end{equation}
 which follows in spinor representation from~\eqref{eq:spinor_doubling_trick} and where $f_{(s),\, (\bart-1)} = f^I_{(\bart-1)}\, \tau_I$.
@@ -1328,19 +1328,19 @@ In this case~\eqref{eq:symbolic_solutions_using_P} becomes
     \infty
     &
     \\
-    n_{\vb{0}}
+    n_{0}
     &
-    n_{\vb{1}}
+    n_{1}
     &
-    n_{\vb{\infty}} + \ffa^{(L)}
+    n_{\infty} + \ffa^{(L)}
     &
     \omega
     \\
-    -n_{\vb{0}} + 1 -\ffc^{(L)}
+    -n_{0} + 1 -\ffc^{(L)}
     &
-    -n_{\vb{1}} - \ffa^{(L)} - \ffb^{(L)} + \ffc^{(L)}
+    -n_{1} - \ffa^{(L)} - \ffb^{(L)} + \ffc^{(L)}
     &
-    -n_{\vb{\infty}} + \ffb^{(L)}
+    -n_{\infty} + \ffb^{(L)}
     &
   }
   }.
@@ -1356,19 +1356,19 @@ The only possible solution compatible with~\eqref{eq:constraints_finite_X} is
     \infty
     &
     \\
-    n_{\vb{0}} - 1
+    n_{0} - 1
     &
-    n_{\vb{1}} - 1
+    n_{1} - 1
     &
-    n_{\vb{\infty}} + 1
+    n_{\infty} + 1
     &
     \omega
     \\
-    -n_{\vb{0}}
+    -n_{0}
     &
-    -n_{\vb{1}}
+    -n_{1}
     &
-    -n_{\vb{\infty}} + 2
+    -n_{\infty} + 2
     &
   }
   },
@@ -1376,10 +1376,10 @@ The only possible solution compatible with~\eqref{eq:constraints_finite_X} is
 \end{equation}
 that is $\ffa^{(L)} = -1$, $\ffb^{(L)} = 0$, $\ffc^{(L)} = 0$, $\ffA = -1$ and  $\ffB = -1$.
 
-In the general the solution is more complicated and it depends on the relation between the rotation vectors $\vb{n}_{\vb{0},\, \vb{1},\, \vb{\infty}}$, $\vb{m}_{\vb{0},\, \vb{1},\, \vb{\infty}}$.
+In the general the solution is more complicated and it depends on the relation between the rotation vectors $\vec{n}_{0,\, 1,\, \infty}$, $\vec{m}_{0,\, 1,\, \infty}$.
 For each possible case the solution is however unique and it is given by
 \begin{enumerate}
-  \item $n_{\vb{0}} > m_{\vb{0}}$ and $n_{\vb{1}} > m_{\vb{1}}$:
+  \item $n_{0} > m_{0}$ and $n_{1} > m_{1}$:
     \begin{equation}
       \rP\qty{
         \mqty{
@@ -1390,19 +1390,19 @@ For each possible case the solution is however unique and it is given by
           \infty
           &
           \\
-          n_{\vb{0}} - 1
+          n_{0} - 1
           &
-          n_{\vb{1}} - 1
+          n_{1} - 1
           &
-          n_{\vb{\infty}} + 1
+          n_{\infty} + 1
           &
           \omega
           \\
-          -n_{\vb{0}}
+          -n_{0}
           &
-          -n_{\vb{1}}
+          -n_{1}
           &
-          -n_{\vb{\infty}} + 2
+          -n_{\infty} + 2
           &
         }
       }
@@ -1415,26 +1415,26 @@ For each possible case the solution is however unique and it is given by
           \infty
           &
           \\
-          m_{\vb{0}}
+          m_{0}
           &
-          m_{\vb{1}}
+          m_{1}
           &
-          m_{\vb{\infty}}
+          m_{\infty}
           &
           \omega
           \\
-          -m_{\vb{0}} + 1
+          -m_{0} + 1
           &
-          -m_{\vb{1}}
+          -m_{1}
           &
-          -m_{\vb{\infty}} + 1
+          -m_{\infty} + 1
           &
         }
       },
       \label{eq:X_solution>>}
    \end{equation}
 
-   \item $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} < m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$:
+   \item $n_{0} > m_{0}$, $n_{1} < m_{1}$ and $n_{\infty} > m_{\infty}$:
      \begin{equation}
        \rP\qty{
          \mqty{
@@ -1445,19 +1445,19 @@ For each possible case the solution is however unique and it is given by
            \infty
            &
            \\
-           n_{\vb{0}} - 1
+           n_{0} - 1
            &
-           n_{\vb{1}}
+           n_{1}
            &
-           n_{\vb{\infty}}
+           n_{\infty}
            &
            \omega
            \\
-           -n_{\vb{0}}
+           -n_{0}
            &
-           -n_{\vb{1}}
+           -n_{1}
            &
-           -n_{\vb{\infty}} + 2
+           -n_{\infty} + 2
            &
          }
        }
@@ -1470,26 +1470,26 @@ For each possible case the solution is however unique and it is given by
            \infty
            &
            \\
-           m_{\vb{0}}
+           m_{0}
            &
-           m_{\vb{1}} - 1
+           m_{1} - 1
            &
-           m_{\vb{\infty}} + 1
+           m_{\infty} + 1
            &
            \omega
            \\
-           -m_{\vb{0}}
+           -m_{0}
            &
-           -m_{\vb{1}}
+           -m_{1}
            &
-           -m_{\vb{\infty}} + 1
+           -m_{\infty} + 1
            &
          }
        },
        \label{eq:X_solution><>}
      \end{equation}
 
-   \item $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} < m_{\vb{1}}$ and $n_{\vb{\infty}} < m_{\vb{\infty}}$:
+   \item $n_{0} > m_{0}$, $n_{1} < m_{1}$ and $n_{\infty} < m_{\infty}$:
      \begin{equation}
        \rP\qty{
          \mqty{
@@ -1500,19 +1500,19 @@ For each possible case the solution is however unique and it is given by
            \infty
            &
            \\
-           n_{\vb{0}} - 1
+           n_{0} - 1
            &
-           n_{\vb{1}}
+           n_{1}
            &
-           n_{\vb{\infty}} + 1
+           n_{\infty} + 1
            &
            \omega
            \\
-           -n_{\vb{0}}
+           -n_{0}
            &
-           -n_{\vb{1}}
+           -n_{1}
            &
-           -n_{\vb{\infty}} + 1
+           -n_{\infty} + 1
            &
          }
        }
@@ -1525,26 +1525,26 @@ For each possible case the solution is however unique and it is given by
            \infty
            &
            \\
-           m_{\vb{0}}
+           m_{0}
            &
-           m_{\vb{1}} - 1
+           m_{1} - 1
            &
-           m_{\vb{\infty}}
+           m_{\infty}
            &
            \omega
            \\
-           -m_{\vb{0}}
+           -m_{0}
            &
-           -m_{\vb{1}}
+           -m_{1}
            &
-           -m_{\vb{\infty}} + 2
+           -m_{\infty} + 2
            &
          }
        },
        \label{eq:X_solution><<}
      \end{equation}
 
-   \item $n_{\vb{0}} < m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$:
+   \item $n_{0} < m_{0}$, $n_{1} > m_{1}$ and $n_{\infty} > m_{\infty}$:
      \begin{equation}
        \rP\qty{
          \mqty{
@@ -1555,19 +1555,19 @@ For each possible case the solution is however unique and it is given by
            \infty
            &
            \\
-           n_{\vb{0}}
+           n_{0}
            &
-           n_{\vb{1}} - 1
+           n_{1} - 1
            &
-           n_{\vb{\infty}}
+           n_{\infty}
            &
            \omega
            \\
-           -n_{\vb{0}}
+           -n_{0}
            &
-           -n_{\vb{1}}
+           -n_{1}
            &
-           -n_{\vb{\infty}} + 2
+           -n_{\infty} + 2
            &
          }
        }
@@ -1580,26 +1580,26 @@ For each possible case the solution is however unique and it is given by
            \infty
            &
            \\
-           m_{\vb{0}} - 1
+           m_{0} - 1
            &
-           m_{\vb{1}}
+           m_{1}
            &
-           m_{\vb{\infty}} + 1
+           m_{\infty} + 1
            &
            \omega
            \\
-           -m_{\vb{0}}
+           -m_{0}
            &
-           -m_{\vb{1}}
+           -m_{1}
            &
-           -m_{\vb{\infty}} + 1
+           -m_{\infty} + 1
            &
          }
        },
        \label{eq:X_solution<>>}
      \end{equation}
 
-   \item $n_{\vb{0}} < m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} < m_{\vb{\infty}}$:
+   \item $n_{0} < m_{0}$, $n_{1} > m_{1}$ and $n_{\infty} < m_{\infty}$:
      \begin{equation}
        \rP\qty{
          \mqty{
@@ -1610,19 +1610,19 @@ For each possible case the solution is however unique and it is given by
            \infty
            &
            \\
-           n_{\vb{0}}
+           n_{0}
            &
-           n_{\vb{1}} - 1
+           n_{1} - 1
            &
-           n_{\vb{\infty}} + 1
+           n_{\infty} + 1
            &
            \omega
            \\
-           -n_{\vb{0}}
+           -n_{0}
            &
-           -n_{\vb{1}}
+           -n_{1}
            &
-           -n_{\vb{\infty}} + 1
+           -n_{\infty} + 1
            &
          }
        }
@@ -1635,26 +1635,26 @@ For each possible case the solution is however unique and it is given by
            \infty
            &
            \\
-           m_{\vb{0}} - 1
+           m_{0} - 1
            &
-           m_{\vb{1}}
+           m_{1}
            &
-           m_{\vb{\infty}}
+           m_{\infty}
            &
            \omega
            \\
-           -m_{\vb{0}}
+           -m_{0}
            &
-           -m_{\vb{1}}
+           -m_{1}
            &
-           -m_{\vb{\infty}} + 2
+           -m_{\infty} + 2
            &
          }
        },
        \label{eq:X_solution<><}
      \end{equation}
 
-   \item $n_{\vb{0}} < m_{\vb{0}}$, $n_{\vb{1}} < m_{\vb{1}}$:
+   \item $n_{0} < m_{0}$, $n_{1} < m_{1}$:
      \begin{equation}
        \rP\qty{
          \mqty{
@@ -1665,19 +1665,19 @@ For each possible case the solution is however unique and it is given by
            \infty
            &
            \\
-           n_{\vb{0}}
+           n_{0}
            &
-           n_{\vb{1}}
+           n_{1}
            &
-           n_{\vb{\infty}}
+           n_{\infty}
            &
            \omega
            \\
-           -n_{\vb{0}}
+           -n_{0}
            &
-           -n_{\vb{1}}
+           -n_{1}
            &
-           -n_{\vb{\infty}} + 1
+           -n_{\infty} + 1
            &
          }
        }
@@ -1690,19 +1690,19 @@ For each possible case the solution is however unique and it is given by
            \infty
            &
            \\
-           m_{\vb{0}} - 1
+           m_{0} - 1
            &
-           m_{\vb{1}} - 1
+           m_{1} - 1
            &
-           m_{\vb{\infty}} + 1
+           m_{\infty} + 1
            &
            \omega
            \\
-           -m_{\vb{0}}
+           -m_{0}
            &
-           -m_{\vb{1}}
+           -m_{1}
            &
-           -m_{\vb{\infty}} + 2
+           -m_{\infty} + 2
            &
          }
        }.
@@ -1717,12 +1717,12 @@ The parameters associated to this list of solutions are summarised in~\Cref{tab:
     \toprule
     & & & \ffA & \ffB & $\ffa^{(L)}$ & $\ffb^{(L)}$ & $\ffc^{(L)}$ & $\ffa^{(R)}$ & $\ffb^{(R)}$ & $\ffc^{(R)}$ \\
     \midrule
-    $n_{\vb{0}} > m_{\vb{0}}$ & $n_{\vb{1}} > m_{\vb{1}}$ & $n_{\vb{\infty}} \lessgtr m_{\vb{\infty}}$ & -1 & -1 & -1 & 0 & 0 & 0 & +1 & +1 \\
-    $n_{\vb{0}} > m_{\vb{0}}$ & $n_{\vb{1}} < m_{\vb{1}}$ & $n_{\vb{\infty}} > m_{\vb{\infty}}$ & -1 & -1 & -1 & +1 & 0 & 0 & 0 & +1 \\
-    $n_{\vb{0}} > m_{\vb{0}}$ & $n_{\vb{1}} < m_{\vb{1}}$ & $n_{\vb{\infty}} < m_{\vb{\infty}}$ & -1 & -1 & 0 & 0 & 0 & -1 & +1 & +1 \\
-    $n_{\vb{0}} < m_{\vb{0}}$ & $n_{\vb{1}} > m_{\vb{1}}$ & $n_{\vb{\infty}} > m_{\vb{\infty}}$ & -1 & -1 & -1 & +1 & +1 & 0 & 0 & 0 \\
-    $n_{\vb{0}} < m_{\vb{0}}$ & $n_{\vb{1}} > m_{\vb{1}}$ & $n_{\vb{\infty}} < m_{\vb{\infty}}$ & -1 & -1 & 0 & 0 & +1 & -1 & +1 & 0 \\
-    $n_{\vb{0}} < m_{\vb{0}}$ & $n_{\vb{1}} < m_{\vb{1}}$ & $n_{\vb{\infty}} \lessgtr m_{\vb{\infty}}$ & -1 & -1 & 0 & +1 & +1 & -1 & 0 & 0 \\
+    $n_{0} > m_{0}$ & $n_{1} > m_{1}$ & $n_{\infty} \lessgtr m_{\infty}$ & -1 & -1 & -1 & 0 & 0 & 0 & +1 & +1 \\
+    $n_{0} > m_{0}$ & $n_{1} < m_{1}$ & $n_{\infty} > m_{\infty}$ & -1 & -1 & -1 & +1 & 0 & 0 & 0 & +1 \\
+    $n_{0} > m_{0}$ & $n_{1} < m_{1}$ & $n_{\infty} < m_{\infty}$ & -1 & -1 & 0 & 0 & 0 & -1 & +1 & +1 \\
+    $n_{0} < m_{0}$ & $n_{1} > m_{1}$ & $n_{\infty} > m_{\infty}$ & -1 & -1 & -1 & +1 & +1 & 0 & 0 & 0 \\
+    $n_{0} < m_{0}$ & $n_{1} > m_{1}$ & $n_{\infty} < m_{\infty}$ & -1 & -1 & 0 & 0 & +1 & -1 & +1 & 0 \\
+    $n_{0} < m_{0}$ & $n_{1} < m_{1}$ & $n_{\infty} \lessgtr m_{\infty}$ & -1 & -1 & 0 & +1 & +1 & -1 & 0 & 0 \\
     \bottomrule
   \end{tabular}
   \caption{Integer shifts in the parameters of the hypergeometric function.}
@@ -1735,38 +1735,38 @@ The parameters associated to this list of solutions are summarised in~\Cref{tab:
 
 In the previous section we produced one solution for each ordering of the $n_{\omega_z}$ with respect to $m_{\omega_z}$.
 There are however other solutions connected to the $\Z_2$ equivalence class in the isomorphism between \SO{4} its double cover.
-Given a solution $(\vb{n}_{\vb{0}},\, \vb{n}_{\vb{1}},\, \vb{n}_{\vb{\infty}}) \oplus (\vb{m}_{\vb{0}},\, \vb{m}_{\vb{1}},\, \vb{m}_{\vb{\infty}})$, we can in fact replace any couple of $\vb{n}$ and $\vb{m}$ by $\widehat{\vb{n}}$ and $\widehat{\vb{m}}$ and get an apparently new solution.\footnotemark{}
+Given a solution $(\vec{n}_{0},\, \vec{n}_{1},\, \vec{n}_{\infty}) \oplus (\vec{m}_{0},\, \vec{m}_{1},\, \vec{m}_{\infty})$, we can in fact replace any couple of $\vec{n}$ and $\vec{m}$ by $\widehat{\vec{n}}$ and $\widehat{\vec{m}}$ and get an apparently new solution.\footnotemark{}
 \footnotetext{%
   We need to change two rotation vectors because the monodromies are constrained by~\eqref{eq:monodromy_relations}.
 }
-For instance we could consider $(\widehat{\vb{n}}_{\vb{0}},\, \widehat{\vb{n}}_{\vb{1}},\, \vb{n}_{\vb{\infty}}) \oplus (\vb{m}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \widehat{\vb{m}}_{\vb{\infty}})$.
+For instance we could consider $(\widehat{\vec{n}}_{0},\, \widehat{\vec{n}}_{1},\, \vec{n}_{\infty}) \oplus (\vec{m}_{0},\, \widehat{\vec{m}}_{1},\, \widehat{\vec{m}}_{\infty})$.
 On the other hand the previous substitution would change the \SO{4} in both $\omega = 0$ and $\omega = \infty$: it does not represent a new solution.
 We are left therefore with three possibilities besides the original one:
 \begin{equation}
   \begin{split}
-    (\widehat{\vb{n}}_{\vb{0}},\, \widehat{\vb{n}}_{\vb{1}},\, \vb{n}_{\vb{\infty}})
+    (\widehat{\vec{n}}_{0},\, \widehat{\vec{n}}_{1},\, \vec{n}_{\infty})
     & \oplus
-    (\widehat{\vb{m}}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \vb{m}_{\vb{\infty}}),
+    (\widehat{\vec{m}}_{0},\, \widehat{\vec{m}}_{1},\, \vec{m}_{\infty}),
     \\
-    (\widehat{\vb{n}}_{\vb{0}},\, \vb{n}_{\vb{1}},\, \widehat{\vb{n}}_{\vb{\infty}})
+    (\widehat{\vec{n}}_{0},\, \vec{n}_{1},\, \widehat{\vec{n}}_{\infty})
     & \oplus
-    (\vb{m}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \widehat{\vb{m}}_{\vb{\infty}}),
+    (\vec{m}_{0},\, \widehat{\vec{m}}_{1},\, \widehat{\vec{m}}_{\infty}),
     \\
-    (\widehat{\vb{n}}_{\vb{0}},\, \vb{n}_{\vb{1}},\, \widehat{\vb{n}}_{\vb{\infty}})
+    (\widehat{\vec{n}}_{0},\, \vec{n}_{1},\, \widehat{\vec{n}}_{\infty})
     & \oplus
-    (\vb{m}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \widehat{\vb{m}}_{\vb{\infty}}).
+    (\vec{m}_{0},\, \widehat{\vec{m}}_{1},\, \widehat{\vec{m}}_{\infty}).
   \end{split}
 \end{equation}
-We can gauge fix the $\Z_2$ choice by letting $\vb{n}_{\vb{0}}^3,\, \vb{m}_{\vb{0}}^3 > 0$ as required by~\eqref{eq:maximal_torus_left} and~\eqref{eq:maximal_torus_right}.
+We can gauge fix the $\Z_2$ choice by letting $\vec{n}_{0}^3,\, \vec{m}_{0}^3 > 0$ as required by~\eqref{eq:maximal_torus_left} and~\eqref{eq:maximal_torus_right}.
 We are thus left with two possible solutions
 \begin{align}
-  (\vb{n}_{\vb{0}},\, \vb{n}_{\vb{1}},\, \vb{n}_{\vb{\infty}})
+  (\vec{n}_{0},\, \vec{n}_{1},\, \vec{n}_{\infty})
   & \oplus
-  (\vb{m}_{\vb{0}},\, \vb{m}_{\vb{1}},\, \vb{m}_{\vb{\infty}}),
+  (\vec{m}_{0},\, \vec{m}_{1},\, \vec{m}_{\infty}),
   \\
-  (\vb{n}_{\vb{0}},\, \widehat{\vb{n}}_{\vb{1}},\, \widehat{\vb{n}}_{\vb{\infty}})
+  (\vec{n}_{0},\, \widehat{\vec{n}}_{1},\, \widehat{\vec{n}}_{\infty})
   & \oplus
-  (\vb{m}_{\vb{0}},\, \widehat{\vb{m}}_{\vb{1}},\, \widehat{\vb{m}}_{\vb{\infty}}).
+  (\vec{m}_{0},\, \widehat{\vec{m}}_{1},\, \widehat{\vec{m}}_{\infty}).
 \end{align}
 These are the original and a modified solution obtained by acting with a parity operator $P_2$ on the rotation parameters at $\omega = 1,\, \infty$ on both left and right sector at the same time.
 We then need to ensure its independence in order to accept it as a possible solution.
@@ -1775,30 +1775,30 @@ As shown in~\Cref{tab:coeffs_k}, there are only two different cases up to left-r
 The first is
 \begin{equation}
   \Big\lbrace
-    (n_{\vb{0}} > m_{\vb{0}},\, n_{\vb{1}} > m_{\vb{1}},\, n_{\vb{\infty}} >  m_{\vb{\infty}} ),~
-    (n_{\vb{0}} > m_{\vb{0}},\, \hat{n}_{\vb{1}} < \hat{m}_{\vb{1}},\, \hat{n}_{\vb{\infty}} < \hat{m}_{\vb{\infty}})
+    (n_{0} > m_{0},\, n_{1} > m_{1},\, n_{\infty} >  m_{\infty} ),~
+    (n_{0} > m_{0},\, \hat{n}_{1} < \hat{m}_{1},\, \hat{n}_{\infty} < \hat{m}_{\infty})
   \Big\rbrace,
 \end{equation}
 which is mapped to
 \begin{equation}
   \Big\lbrace
-    (n_{\vb{0}} < m_{\vb{0}},\, n_{\vb{1}} < m_{\vb{1}},\, n_{\vb{\infty}} <  m_{\vb{\infty}} ),~
-    (n_{\vb{0}} < m_{\vb{0}},\, \hat{n}_{\vb{1}} > \hat{m}_{\vb{1}},\, \hat{n}_{\vb{\infty}} > \hat{m}_{\vb{\infty}})
+    (n_{0} < m_{0},\, n_{1} < m_{1},\, n_{\infty} <  m_{\infty} ),~
+    (n_{0} < m_{0},\, \hat{n}_{1} > \hat{m}_{1},\, \hat{n}_{\infty} > \hat{m}_{\infty})
   \Big\rbrace
 \end{equation}
 by the left-right symmetry.
 The second is
 \begin{equation}
   \Big\lbrace
-    (n_{\vb{0}} > m_{\vb{0}},\, n_{\vb{1}} > m_{\vb{1}},\, n_{\vb{\infty}} <  m_{\vb{\infty}} ),~
-    (n_{\vb{0}} > m_{\vb{0}},\, \hat{n}_{\vb{1}} < \hat{m}_{\vb{1}},\, \hat{n}_{\vb{\infty}} > \hat{m}_{\vb{\infty}})
+    (n_{0} > m_{0},\, n_{1} > m_{1},\, n_{\infty} <  m_{\infty} ),~
+    (n_{0} > m_{0},\, \hat{n}_{1} < \hat{m}_{1},\, \hat{n}_{\infty} > \hat{m}_{\infty})
   \Big\rbrace,
 \end{equation}
 which is mapped to
 \begin{align}
   \Big\lbrace
-    (n_{\vb{0}} < m_{\vb{0}},\, n_{\vb{1}} < m_{\vb{1}},\, n_{\vb{\infty}} >  m_{\vb{\infty}} ),~
-    (n_{\vb{0}} < m_{\vb{0}},\, \hat{n}_{\vb{1}} > \hat{m}_{\vb{1}},\, \hat{n}_{\vb{\infty}} < \hat{m}_{\vb{\infty}})
+    (n_{0} < m_{0},\, n_{1} < m_{1},\, n_{\infty} >  m_{\infty} ),~
+    (n_{0} < m_{0},\, \hat{n}_{1} > \hat{m}_{1},\, \hat{n}_{\infty} < \hat{m}_{\infty})
   \Big\rbrace
 \end{align}
 by the same symmetry.
@@ -1808,19 +1808,19 @@ We first perform the computations common to both cases and then we explicitly sp
 Computing the parameters of the hypergeometric functions of the first solution leads to:
 \begin{equation}
   \begin{cases}
-    a^{(L)} & = n_{\vb{0}} + n_{\vb{1}} + n_{\vb{\infty}} + \ffa^{(L)}
+    a^{(L)} & = n_{0} + n_{1} + n_{\infty} + \ffa^{(L)}
     \\
-    b^{(L)} & = n_{\vb{0}} + n_{\vb{1}} - n_{\vb{\infty}} + \ffb^{(L)}
+    b^{(L)} & = n_{0} + n_{1} - n_{\infty} + \ffb^{(L)}
     \\
-    c^{(L)} & = 2\, n_{\vb{0}} + \ffc^{(L)}
+    c^{(L)} & = 2\, n_{0} + \ffc^{(L)}
   \end{cases},
   \qquad
   \begin{cases}
-    a^{(R)} & = m_{\vb{0}} + m_{\vb{1}} + m_{\vb{\infty}} + \ffa^{(R)}
+    a^{(R)} & = m_{0} + m_{1} + m_{\infty} + \ffa^{(R)}
     \\
-    b^{(R)} & = m_{\vb{0}} + m_{\vb{1}} - m_{\vb{\infty}} + \ffb^{(R)}
+    b^{(R)} & = m_{0} + m_{1} - m_{\infty} + \ffb^{(R)}
     \\
-    c^{(R)} & = 2\, m_{\vb{0}} + 1 + \ffc^{(R)}
+    c^{(R)} & = 2\, m_{0} + 1 + \ffc^{(R)}
   \end{cases}.
 \end{equation}
 The values of the constants are in \Cref{tab:coeffs_k}.
@@ -1830,8 +1830,8 @@ The first solution reads:
   \begin{split}
     \ipd{\omega} \cX_1
     & =
-    (-\omega)^{n_{\vb{0}} + m_{\vb{0}} - 1}\,
-    (1-\omega)^{n_{\vb{1}} + m_{\vb{1}} - 1}\,
+    (-\omega)^{n_{0} + m_{0} - 1}\,
+    (1-\omega)^{n_{1} + m_{1} - 1}\,
     \\
     & \times
     \mqty(
@@ -1859,19 +1859,19 @@ The parameters of the second solution read
     \begin{cases}
       \hat{a}^{(L)}
       & =
-      n_{\vb{0}} + \hat{n}_{\vb{1}} + \hat{n}_{\vb{\infty}} + \hat{\ffa}^{(L)}
+      n_{0} + \hat{n}_{1} + \hat{n}_{\infty} + \hat{\ffa}^{(L)}
       =
       c^{(L)} - a^{(L)} + \ffa^{(L)} - \ffc^{(L)} + \hat{\ffa}^{(L)} + 1
       \\
       \hat{b}^{(L)}
       & =
-      n_{\vb{0}} + \hat{n}_{\vb{1}} - \hat{n}_{\vb{\infty}} + \hat{\ffb}^{(L)}
+      n_{0} + \hat{n}_{1} - \hat{n}_{\infty} + \hat{\ffb}^{(L)}
       =
       c^{(L)} - b^{(L)} + \ffb^{(L)} - \ffc^{(L)} + \hat{\ffb}^{(L)}
       \\
       \hat{c}^{(L)}
       & =
-      2\, n_{\vb{0}} + \hat{\ffc}^{(L)}
+      2\, n_{0} + \hat{\ffc}^{(L)}
       =
       c^{(L)} - \ffc^{(L)} + \hat{\ffc}^{(L)}
     \end{cases}
@@ -1880,19 +1880,19 @@ The parameters of the second solution read
     \begin{cases}
       \hat{a}^{(R)}
       & =
-      m_{\vb{0}} + \hat{n}_{\vb{1}} + \hat{n}_{\vb{\infty}} + \hat{\ffa}^{(R)}
+      m_{0} + \hat{n}_{1} + \hat{n}_{\infty} + \hat{\ffa}^{(R)}
       =
       c^{(R)} - a^{(R)} + \ffa^{(R)} - \ffc^{(R)} + \hat{\ffa}^{(R)} + 1
       \\
       \hat{b}^{(R)}
       & =
-      m_{\vb{0}} + \hat{n}_{\vb{1}} - \hat{n}_{\vb{\infty}} + \hat{\ffb}^{(R)}
+      m_{0} + \hat{n}_{1} - \hat{n}_{\infty} + \hat{\ffb}^{(R)}
       =
       c^{(R)} - b^{(R)} + \ffb^{(R)} - \ffc^{(R)} + \hat{\ffb}^{(R)}
       \\
       \hat{c}^{(R)}
       & =
-      2\, m_{\vb{0}} + \hat{\ffc}^{(R)}
+      2\, m_{0} + \hat{\ffc}^{(R)}
       =
       c^{(R)} - \ffc^{(R)} + \hat{\ffc}^{(R)}
     \end{cases}
@@ -1903,8 +1903,8 @@ The two cases differ only for constant factors and not in structure.
 
 \paragraph{Case 1}
 
-Consider $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$.
-The associated second solution is $n_{\vb{0}} > m_{\vb{0}}$, $\hat{n}_{\vb{1}} < \hat{m}_{\vb{1}}$ and $\hat{n}_{\vb{\infty}} < \hat{m}_{\vb{\infty}}$.
+Consider $n_{0} > m_{0}$, $n_{1} > m_{1}$ and $n_{\infty} > m_{\infty}$.
+The associated second solution is $n_{0} > m_{0}$, $\hat{n}_{1} < \hat{m}_{1}$ and $\hat{n}_{\infty} < \hat{m}_{\infty}$.
 Its parameters are:
 \begin{equation}
   \begin{cases}
@@ -1938,8 +1938,8 @@ we can write the second solution as
   \begin{split}
     \ipd{\omega} \cX_2
     & =
-    (-\omega)^{n_{\vb{0}} + m_{\vb{0}} - 1}\,
-    (1-\omega)^{n_{\vb{1}} + m_{\vb{1}}}\,
+    (-\omega)^{n_{0} + m_{0} - 1}\,
+    (1-\omega)^{n_{1} + m_{1}}\,
     \\
     & \times
     \mqty(
@@ -1963,8 +1963,8 @@ In this solution the left basis is exactly the same as in the first solution~\eq
 
 \paragraph{Case 2}
 
-Consider now the second option $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} < m_{\vb{\infty}}$.
-For the second solution we have $n_{\vb{0}} > m_{\vb{0}}$, $\hat{n}_{\vb{1}} < \hat{m}_{\vb{1}}$ and $\hat{n}_{\vb{\infty}} > \hat{m}_{\vb{\infty}}$ and the parameters are explicitly:
+Consider now the second option $n_{0} > m_{0}$, $n_{1} > m_{1}$ and $n_{\infty} < m_{\infty}$.
+For the second solution we have $n_{0} > m_{0}$, $\hat{n}_{1} < \hat{m}_{1}$ and $\hat{n}_{\infty} > \hat{m}_{\infty}$ and the parameters are explicitly:
 \begin{equation}
   \begin{cases}
     \hat{a}^{(L)} & = c^{(L)} - a^{(L)} - 1
@@ -1998,8 +1998,8 @@ Using Euler relation we write the second solution for the second case as
   \begin{split}
     \ipd{\omega} \cX_2
     & =
-    (-\omega)^{n_{\vb{0}} + m_{\vb{0}} - 1}\,
-    (1-\omega)^{n_{\vb{1}} + m_{\vb{1}}}\,
+    (-\omega)^{n_{0} + m_{0} - 1}\,
+    (1-\omega)^{n_{1} + m_{1}}\,
     \\
     & \times
     \mqty(
@@ -2040,11 +2040,11 @@ Explicitly we impose the four real equations in spinorial formalism
   \finiteint{\omega}{0}{1}
   \ipd{\omega} \cX(\omega)
   +
-  U_L^{\dagger}(\vb{n}_{{\bart}})
+  U_L^{\dagger}(\vec{n}_{{\bart}})
   \qty[
     \finiteint{\bomega}{0}{1} \ipd{\bomega} \cX(\bomega)
   ]
-  U_R(\vb{m}_{{\bart}})
+  U_R(\vec{m}_{{\bart}})
   =
   f_{{\bart+1}\, (s)} - f_{{\bart-1}\, (s)},
 \end{equation}
@@ -2064,52 +2064,52 @@ The Abelian solution emerges from this construction as a limit and produces the 
   \centering
   \begin{tabular}{@{}rr|cc|cr|c@{}}
     \toprule
-    $\vb{n}_{\vb{0}}$                 &
-    $\vb{n}_{\vb{\infty}}$            &
+    $\vec{n}_{0}$                 &
+    $\vec{n}_{\infty}$            &
     \multicolumn{2}{c|}{relations}    &
-    $n_{\vb{1}}$                      &
-    $\vb{n}_{\vb{1}}$                 &
-    $\sum\limits_{t} \vb{n}_{\vb{t}}$
+    $n_{1}$                      &
+    $\vec{n}_{1}$                 &
+    $\sum\limits_{t} \vec{n}_{\vec{t}}$
     \\
     \midrule
-    $n_{\vb{0}}\, \vb{k}$                        &
-    $n_{\vb{\infty}}\, \vb{k}$                   &
-    $n_{\vb{0}} + n_{\vb{\infty}} < \frac{1}{2}$ &
-    $n_{\vb{0}} \lessgtr n_{\vb{\infty}}$        &
-    $n_{\vb{0}} + n_{\vb{\infty}}$               &
-    $-n_{\vb{1}}\, \vb{k}$                       &
-    $\vb{0}$
+    $n_{0}\, \vec{k}$                        &
+    $n_{\infty}\, \vec{k}$                   &
+    $n_{0} + n_{\infty} < \frac{1}{2}$ &
+    $n_{0} \lessgtr n_{\infty}$        &
+    $n_{0} + n_{\infty}$               &
+    $-n_{1}\, \vec{k}$                       &
+    $0$
     \\
-    $n_{\vb{0}}\, \vb{k}$                        &
-    $n_{\vb{\infty}}\, \vb{k}$                   &
-    $n_{\vb{0}} + n_{\vb{\infty}} > \frac{1}{2}$ &
-    $n_{\vb{0}} \lessgtr n_{\vb{\infty}}$        &
-    $1 - (n_{\vb{0}} + n_{\vb{\infty}})$         &
-    $n_{\vb{1}}\, \vb{k}$                        &
-    $\vb{k}$
+    $n_{0}\, \vec{k}$                        &
+    $n_{\infty}\, \vec{k}$                   &
+    $n_{0} + n_{\infty} > \frac{1}{2}$ &
+    $n_{0} \lessgtr n_{\infty}$        &
+    $1 - (n_{0} + n_{\infty})$         &
+    $n_{1}\, \vec{k}$                        &
+    $\vec{k}$
     \\
-    $n_{\vb{0}}\, \vb{k}$                               &
-    $-n_{\vb{\infty}}\, \vb{k}$                         &
-    $n_{\vb{0}} + n_{\vb{\infty}} \lessgtr \frac{1}{2}$ &
-    $n_{\vb{0}} > n_{\vb{\infty}}$                      &
-    $n_{\vb{0}} - n_{\vb{\infty}}$                      &
-    $-n_{\vb{1}}\, \vb{k}$                              &
-    $\vb{0}$
+    $n_{0}\, \vec{k}$                               &
+    $-n_{\infty}\, \vec{k}$                         &
+    $n_{0} + n_{\infty} \lessgtr \frac{1}{2}$ &
+    $n_{0} > n_{\infty}$                      &
+    $n_{0} - n_{\infty}$                      &
+    $-n_{1}\, \vec{k}$                              &
+    $0$
     \\
-    $n_{\vb{0}}\, \vb{k}$                               &
-    $-n_{\vb{\infty}}\, \vb{k}$                         &
-    $n_{\vb{0}} + n_{\vb{\infty}} \lessgtr \frac{1}{2}$ &
-    $n_{\vb{0}} < n_{\vb{\infty}}$                      &
-    $-n_{\vb{0}} + n_{\vb{\infty}}$                     &
-    $n_{\vb{1}}\, \vb{k}$                               &
-    $\vb{0}$
+    $n_{0}\, \vec{k}$                               &
+    $-n_{\infty}\, \vec{k}$                         &
+    $n_{0} + n_{\infty} \lessgtr \frac{1}{2}$ &
+    $n_{0} < n_{\infty}$                      &
+    $-n_{0} + n_{\infty}$                     &
+    $n_{1}\, \vec{k}$                               &
+    $0$
     \\
     \bottomrule
   \end{tabular}
   \caption{Abelian limit of \SU{2} monodromies}
   \label{tab:Abelian_composition}
 \end{table}
-Here we compute the parameter $\vb{n}_{\vb{1}}$ given two Abelian rotation in $\omega = 0$ and $\omega = \infty$ using the standard expression for two \SU{2} element multiplication given in~\eqref{eq:product_in_SU2} in~\Cref{sec:isomorphism}.
+Here we compute the parameter $\vec{n}_{1}$ given two Abelian rotation in $\omega = 0$ and $\omega = \infty$ using the standard expression for two \SU{2} element multiplication given in~\eqref{eq:product_in_SU2} in~\Cref{sec:isomorphism}.
 Results are shown in~\Cref{tab:Abelian_composition}.
 
 \begin{figure}[tbp]
@@ -2118,7 +2118,7 @@ Results are shown in~\Cref{tab:Abelian_composition}.
     \import{img}{abelian_angles_case1.pdf_tex}
     \caption{%
       The Abelian limit when the triangle has all acute angles.
-      This corresponds to the cases  $n_{\vb{0}} + n_{\vb{\infty}}< \frac{1}{2}$ and $n_{\vb{0}}< n_{\vb{\infty}}$ which are exchanged under the parity $P_2$.}
+      This corresponds to the cases  $n_{0} + n_{\infty}< \frac{1}{2}$ and $n_{0}< n_{\infty}$ which are exchanged under the parity $P_2$.}
     \label{fig:Abelian_angles_1}
 \end{figure}
 
@@ -2128,25 +2128,25 @@ Results are shown in~\Cref{tab:Abelian_composition}.
     \import{img}{abelian_angles_case2.pdf_tex}
     \caption{%
       The Abelian limit when the triangle has one obtuse angle.
-      This corresponds to the cases $n_{\vb{0}} + n_{\vb{\infty}}> \frac{1}{2}$ and $n_{\vb{0}}> n_{\vb{\infty}}$ which are exchanged under the parity $P_2$.}
+      This corresponds to the cases $n_{0} + n_{\infty}> \frac{1}{2}$ and $n_{0}> n_{\infty}$ which are exchanged under the parity $P_2$.}
     \label{fig:Abelian_angles_2}
 \end{figure}
 
 Under the parity transformation $P_2$ the previous four cases are grouped
-into two sets $\{ n_{\vb{1}} = n_{\vb{0}} + n_{\vb{\infty}},\, \hat{n}_{\vb{1}} = -n_{\vb{0}} + \hat{n}_{\vb{\infty}} \}$ and $\{ n_{\vb{1}} = 1 - (n_{\vb{0}} + n_{\vb{\infty}}),\, \hat{n}_{\vb{1}} = n_{\vb{0}} - \hat{n}_{\vb{\infty}} \}$.
+into two sets $\{ n_{1} = n_{0} + n_{\infty},\, \hat{n}_{1} = -n_{0} + \hat{n}_{\infty} \}$ and $\{ n_{1} = 1 - (n_{0} + n_{\infty}),\, \hat{n}_{1} = n_{0} - \hat{n}_{\infty} \}$.
 Geometrically the first group corresponds to the same geometry which is depicted in~\Cref{fig:Abelian_angles_1} while the second in~\Cref{fig:Abelian_angles_2}.
 We can in fact arbitrarily fix the orientation of $D_{(3)}$ to obtain these geometrical interpretations.
-Since $n^3_{\vb{0}} > 0$ we can then fix the orientation of $D_{{1}}$.
-$D_{{2}}$ is then fixed relatively to $D_{{1}}$ by the sign of $n^3_{\vb{\infty}}$.
-The sign of $n^3_{\vb{1}}$ then follows.
+Since $n^3_{0} > 0$ we can then fix the orientation of $D_{{1}}$.
+$D_{{2}}$ is then fixed relatively to $D_{{1}}$ by the sign of $n^3_{\infty}$.
+The sign of $n^3_{1}$ then follows.
 
 Differently from the usual geometric Abelian case, this group analytical approach distinguishes between the possible orientations of the D-branes.
 In fact we can compare all possible D-brane orientation and the group parameter $n^3$ with the angles in the Abelian configuration in~\Cref{fig:usual_Abelian_angles}.
-The relation between the usual Abelian paramter $\epsilon_{\vb{t}}$ and $n_{\vb{t}}^3$ is
+The relation between the usual Abelian paramter $\epsilon_{\vec{t}}$ and $n_{\vec{t}}^3$ is
 \begin{equation}
-  \varepsilon_{\vb{t}}
+  \varepsilon_{\vec{t}}
   =
-  n_{\vb{t}}^3 + \theta(-n^3_{\vb{t}})
+  n_{\vec{t}}^3 + \theta(-n^3_{\vec{t}})
   \label{eq:Abelian_vs_n_simple_case},
 \end{equation}
 when all $m = 0$.
@@ -2165,7 +2165,7 @@ when all $m = 0$.
 
 \subsubsection{The Abelian Limit of the Left Solutions}
 
-We can then compute the basis element for the entries of~\Cref{tab:coeffs_k} for any value of $n_{\vb{1}}$ given in~\Cref{tab:Abelian_composition}.
+We can then compute the basis element for the entries of~\Cref{tab:coeffs_k} for any value of $n_{1}$ given in~\Cref{tab:Abelian_composition}.
 For simplicity we consider the left sector of the solution and drop the notation identifying it to avoid cluttering the equations.
 The right sector follows in a similar way.
 
@@ -2182,114 +2182,114 @@ Results are summarised in~\Cref{tab:Left_Abelian_solutions} where we left some h
   \begin{tabular}{@{}ccc@{}}
     \toprule
     $\qty( \ffa^{(L)},\, \ffb^{(L)},\, \ffc^{(L)} )$ &
-    $n_{\vb{1}}$                                            &
+    $n_{1}$                                            &
     $\qty( \cB^{(L)}( z ) )^T$
     \\
     \midrule
     \multirow{4}{*}{$(-1,\, 0,\, 0)$} &
-    $n_{\vb{0}} + n_{\vb{\infty}}$    &
-    $\mqty( (1 - z)^{-2\, n_{\vb{\infty}} - 2\, n_{\vb{0}} + 1} & 0 )$
+    $n_{0} + n_{\infty}$    &
+    $\mqty( (1 - z)^{-2\, n_{\infty} - 2\, n_{0} + 1} & 0 )$
     \\
                                                       &
-    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
+    $1 - \qty( n_{0} + n_{\infty} )$ &
     $\mqty( 1 & 0 )$
     \\
                                    &
-    $n_{\vb{0}} - n_{\vb{\infty}}$ &
-    $\mqty( 1 & (-z)^{1 - 2\, n_{\vb{0}}} )$
+    $n_{0} - n_{\infty}$ &
+    $\mqty( 1 & (-z)^{1 - 2\, n_{0}} )$
     \\
                                      &
-    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
+    $- n_{0} + n_{\infty}$ &
     $\mqty( 1 & 0 )$
     \\
     \midrule
     \multirow{4}{*}{$(-1,\, 1,\, 0)$} &
-    $n_{\vb{0}} + n_{\vb{\infty}}$    &
-    $\mqty( \hyp{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 1}
-                {2\, n_{\vb{0}} + 1}
-                {2\, n_{\vb{0}}}
+    $n_{0} + n_{\infty}$    &
+    $\mqty( \hyp{2\, n_{\infty} + 2\, n_{0} - 1}
+                {2\, n_{0} + 1}
+                {2\, n_{0}}
                 {z}
             & 0 )$
     \\
                                                       &
-    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
+    $1 - \qty( n_{0} + n_{\infty} )$ &
     $\mqty( 1 & 0 )$
     \\
                                    &
-    $n_{\vb{0}} - n_{\vb{\infty}}$ &
-    $\mqty( 0 & (-z)^{1 - 2\, n_{\vb{0}}} )$
+    $n_{0} - n_{\infty}$ &
+    $\mqty( 0 & (-z)^{1 - 2\, n_{0}} )$
     \\
                                      &
-    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
-    $\mqty( 0 & (1-z)^{2\, n_{\vb{0}} - 2\, n_{\vb{\infty}}}\, (-z)^{1 - 2\, n_{\vb{0}}} )$
+    $- n_{0} + n_{\infty}$ &
+    $\mqty( 0 & (1-z)^{2\, n_{0} - 2\, n_{\infty}}\, (-z)^{1 - 2\, n_{0}} )$
     \\
     \midrule
     \multirow{4}{*}{$(0,\, 0,\, 0)$} &
-    $n_{\vb{0}} + n_{\vb{\infty}}$    &
-    $\mqty( (1-z)^{-2\, n_{\vb{\infty}} - 2\, n_{\vb{0}}} & 0 )$
+    $n_{0} + n_{\infty}$    &
+    $\mqty( (1-z)^{-2\, n_{\infty} - 2\, n_{0}} & 0 )$
     \\
                                                       &
-    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
-    $\mqty( 0 & (1-z)^{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 2}\, (-z)^{1 - 2\, n_{\vb{0}}} )$
+    $1 - \qty( n_{0} + n_{\infty} )$ &
+    $\mqty( 0 & (1-z)^{2\, n_{\infty} + 2\, n_{0} - 2}\, (-z)^{1 - 2\, n_{0}} )$
     \\
                                    &
-    $n_{\vb{0}} - n_{\vb{\infty}}$ &
-    $\mqty( (1-z)^{2\, n_{\vb{\infty}} - 2\, n_{\vb{0}}} & 0 )$
+    $n_{0} - n_{\infty}$ &
+    $\mqty( (1-z)^{2\, n_{\infty} - 2\, n_{0}} & 0 )$
     \\
                                      &
-    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
+    $- n_{0} + n_{\infty}$ &
     $\mqty( 1 & 0 )$
     \\
     \midrule
     \multirow{4}{*}{$(-1,\, 1,\, 1)$} &
-    $n_{\vb{0}} + n_{\vb{\infty}}$    &
-    $\mqty( (1-z)^{-2\, n_{\vb{\infty}} - 2\, n_{\vb{0}}} + 1 & 0 )$
+    $n_{0} + n_{\infty}$    &
+    $\mqty( (1-z)^{-2\, n_{\infty} - 2\, n_{0}} + 1 & 0 )$
     \\
                                                       &
-    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
+    $1 - \qty( n_{0} + n_{\infty} )$ &
     $\mqty( 1 & 0 )$
     \\
                                    &
-    $n_{\vb{0}} - n_{\vb{\infty}}$ &
-    $\mqty( 0 & (-z)^{-2\, n_{\vb{0}}})\, \hyp{-1}{1 - 2\, n_{\vb{\infty}}}{1 - 2\, n_{\vb{0}}}{z} )$
+    $n_{0} - n_{\infty}$ &
+    $\mqty( 0 & (-z)^{-2\, n_{0}})\, \hyp{-1}{1 - 2\, n_{\infty}}{1 - 2\, n_{0}}{z} )$
     \\
                                      &
-    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
-    $\mqty( 0 & (1-z)^{-2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} + 1}\, (-z)^{-2\, n_{\vb{0}}} )$
+    $- n_{0} + n_{\infty}$ &
+    $\mqty( 0 & (1-z)^{-2\, n_{\infty} + 2\, n_{0} + 1}\, (-z)^{-2\, n_{0}} )$
     \\
     \midrule
     \multirow{4}{*}{$(0,\, 0,\, 1)$} &
-    $n_{\vb{0}} + n_{\vb{\infty}}$    &
-    $\mqty( 0 & (-z)^{-2\, n_{\vb{0}}} )$
+    $n_{0} + n_{\infty}$    &
+    $\mqty( 0 & (-z)^{-2\, n_{0}} )$
     \\
                                                       &
-    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
-    $\mqty( 0 & (1-z)^{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 1}\, (-z)^{-2\, n_{\vb{0}}} )$
+    $1 - \qty( n_{0} + n_{\infty} )$ &
+    $\mqty( 0 & (1-z)^{2\, n_{\infty} + 2\, n_{0} - 1}\, (-z)^{-2\, n_{0}} )$
     \\
                                    &
-    $n_{\vb{0}} - n_{\vb{\infty}}$ &
-    $\mqty( 0 & (-z)^{-2\, n_{\vb{0}}}) )$
+    $n_{0} - n_{\infty}$ &
+    $\mqty( 0 & (-z)^{-2\, n_{0}}) )$
     \\
                                      &
-    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
+    $- n_{0} + n_{\infty}$ &
     $\mqty( 1 & 0 )$
     \\
     \midrule
     \multirow{4}{*}{$(0,\, 1,\, 1)$} &
-    $n_{\vb{0}} + n_{\vb{\infty}}$    &
-    $\mqty( (1-z)^{-2\, n_{\vb{\infty}} -2\, n_{\vb{0}}} & 0 )$
+    $n_{0} + n_{\infty}$    &
+    $\mqty( (1-z)^{-2\, n_{\infty} -2\, n_{0}} & 0 )$
     \\
                                                       &
-    $1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ &
-    $\mqty( 0 & (1-z)^{2\, n_{\vb{\infty}} + 2\, n_{\vb{0}} - 2}\, (-z)^{-2\, n_{\vb{0}}} )$
+    $1 - \qty( n_{0} + n_{\infty} )$ &
+    $\mqty( 0 & (1-z)^{2\, n_{\infty} + 2\, n_{0} - 2}\, (-z)^{-2\, n_{0}} )$
     \\
                                    &
-    $n_{\vb{0}} - n_{\vb{\infty}}$ &
-    $\mqty( 0 & (-z)^{-2\, n_{\vb{0}}}) )$
+    $n_{0} - n_{\infty}$ &
+    $\mqty( 0 & (-z)^{-2\, n_{0}}) )$
     \\
                                      &
-    $- n_{\vb{0}} + n_{\vb{\infty}}$ &
-    $\mqty( 0 & (1-z)^{2\, n_{\vb{0}} - 2\, n_{\vb{\infty}}}\, (-z)^{-2\, n_{\vb{0}}} )$
+    $- n_{0} + n_{\infty}$ &
+    $\mqty( 0 & (1-z)^{2\, n_{0} - 2\, n_{\infty}}\, (-z)^{-2\, n_{0}} )$
     \\
     \bottomrule
   \end{tabular}
@@ -2300,20 +2300,20 @@ Results are summarised in~\Cref{tab:Left_Abelian_solutions} where we left some h
 
 \subsubsection{The \texorpdfstring{$\SU{2}_L$}{Left SU(2)} Limit}
 
-We recover the non Abelian \SU{2} solution by considering $m_{\vb{t}}\sim 0$.
+We recover the non Abelian \SU{2} solution by considering $m_{\vec{t}}\sim 0$.
 This is the first specific case shown in~\Cref{sec:true_basis}.
 In this scenario the left solution $\cB^{(L)}$ is always the same and matches the previous computation, however the right sector seems to give different solutions when different Abelian limits are taken.
-Studying all possible solutions we find that all of them give the same answer in the limit $m_{\vb{t}} \to 0$, i.e.\ both $\cB^{(R)} = \mqty(1 & 0)^T$ and $\cB^{(R)} = \mqty(0 & 1)^T$.\footnotemark{}
+Studying all possible solutions we find that all of them give the same answer in the limit $m_{\vec{t}} \to 0$, i.e.\ both $\cB^{(R)} = \mqty(1 & 0)^T$ and $\cB^{(R)} = \mqty(0 & 1)^T$.\footnotemark{}
 \footnotetext{%
-  We write ``possible solutions'' because $m_{\vb{1}} = 1 - \qty( m_{\vb{0}} + m_{\vb{\infty}} )$ is not.
+  We write ``possible solutions'' because $m_{1} = 1 - \qty( m_{0} + m_{\infty} )$ is not.
 }
-The difference is the solution obtained from $n_{\vb{0}} > m_{\vb{0}}$, $n_{\vb{1}} > m_{\vb{1}}$ and $n_{\vb{\infty}} > m_{\vb{\infty}}$ or $n_{\vb{0}} > m_{\vb{0}}$, $\hat{n}_{\vb{1}} < \hat{m}_{\vb{1}}$ and $\hat{n}_{\vb{\infty}} < \hat{m}_{\vb{\infty}}$.
+The difference is the solution obtained from $n_{0} > m_{0}$, $n_{1} > m_{1}$ and $n_{\infty} > m_{\infty}$ or $n_{0} > m_{0}$, $\hat{n}_{1} < \hat{m}_{1}$ and $\hat{n}_{\infty} < \hat{m}_{\infty}$.
 In any case the solution is factorised in the form $\cB^{(L)}(z) \otimes \mqty(C & C')^T$ which is expected since the right sector plays no role.
 
 
 \subsubsection{Relating the Abelian Angles with the Group Parameters}
 
-Using the explicit form of the \SO{4} and $\SU{2} \times \SU{2}$ matrices, we can verify that when the left and right $\SU{2}$ parameters are $\vb{n} = n^3\, \vb{k}$ and $\vb{m} = m^3\, \vb{k}$ the rotation of the D-branes in the plane $14$ is a \SO{2} element
+Using the explicit form of the \SO{4} and $\SU{2} \times \SU{2}$ matrices, we can verify that when the left and right $\SU{2}$ parameters are $\vec{n} = n^3\, \vec{k}$ and $\vec{m} = m^3\, \vec{k}$ the rotation of the D-branes in the plane $14$ is a \SO{2} element
 \begin{equation}
   \mqty( \cos(\theta) & \sin(\theta) \\ -\sin(\theta)&  \cos(\theta) ),
   \qquad
@@ -2323,13 +2323,13 @@ while in plane $23$ the angle is $\theta = n^3 + m^3$.
 Comparing with the case $m = 0$ given in~\eqref{eq:Abelian_vs_n_simple_case}, we then guess that the general relation between the group parameters and the usual Abelian angles is:
 \begin{equation}
   \begin{split}
-    \varepsilon_{\vb{t}}
+    \varepsilon_{\vec{t}}
     & =
-    n_{\vb{t}}^3 - m_{\vb{t}}^3 + \theta( -(n^3_{\vb{t}} - m_{\vb{t}}^3) ),
+    n_{\vec{t}}^3 - m_{\vec{t}}^3 + \theta( -(n^3_{\vec{t}} - m_{\vec{t}}^3) ),
     \\
-    \varphi_{\vb{t}}
+    \varphi_{\vec{t}}
     & =
-    n_{\vb{t}}^3 + m_{\vb{t}}^3 + \theta( -(n^3_{\vb{t}} + m_{\vb{t}}^3) ).
+    n_{\vec{t}}^3 + m_{\vec{t}}^3 + \theta( -(n^3_{\vec{t}} + m_{\vec{t}}^3) ).
   \end{split}
   \label{eq:Abelian_vs_n_general_case}
 \end{equation}
@@ -2337,7 +2337,7 @@ Comparing with the case $m = 0$ given in~\eqref{eq:Abelian_vs_n_simple_case}, we
 
 \subsubsection{Recovering the Abelian Result: an Example}
 
-To show that the construction of the Abelian limit is indeed working, we consider the first case in~\Cref{sec:true_basis} with $n_{\vb{1}} = 1 - \qty( n_{\vb{0}} + n_{\vb{\infty}} )$ and $m_{\vb{1}} = -m_{\vb{0}} + m_{\vb{\infty}}$.
+To show that the construction of the Abelian limit is indeed working, we consider the first case in~\Cref{sec:true_basis} with $n_{1} = 1 - \qty( n_{0} + n_{\infty} )$ and $m_{1} = -m_{0} + m_{\infty}$.
 This leads to two independent rational functions of $\omega_z$:
 \begin{equation}
   \begin{split}
@@ -2361,13 +2361,13 @@ This leads to two independent rational functions of $\omega_z$:
     & =
     \mqty( 0 &
            C_1\,
-           (1-\omega_z)^{\varepsilon_{\vb{1}}-1}\,
-           (-\omega_z)^{\varepsilon_{\vb{0}}-1}
+           (1-\omega_z)^{\varepsilon_{1}-1}\,
+           (-\omega_z)^{\varepsilon_{0}-1}
            \\
            0 &
            C_2\,
-           (1-\omega_z)^{-\varphi_{\vb{1}}}\,
-           (-\omega_z)^{-\varphi_{\vb{0}}}
+           (1-\omega_z)^{-\varphi_{1}}\,
+           (-\omega_z)^{-\varphi_{0}}
     ),
   \end{split}
   \label{eq:Abelian_sol_example}
@@ -2377,22 +2377,22 @@ This is the known result in the presence of Abelian rotations of the D-branes: w
 $\U{1}_1 \times \U{1}_2 \subset \SU{2}_L \times \SU{2}_R$.
 In particular we used~\eqref{eq:Abelian_vs_n_general_case} to write the relation between the usual Abelian angles and the group parameters as
 \begin{equation}
-  \varepsilon_{\vb{0}} = n_{\vb{0}} - m_{\vb{0}},
+  \varepsilon_{0} = n_{0} - m_{0},
   \qquad
-  \varepsilon_{\vb{1}} = n_{\vb{1}} - m_{\vb{1}},
+  \varepsilon_{1} = n_{1} - m_{1},
   \qquad
-  \varepsilon_{\vb{\infty}} = n_{\vb{\infty}} + m_{\vb{\infty}}
+  \varepsilon_{\infty} = n_{\infty} + m_{\infty}
 \end{equation}
-such that $\sum\limits_{t} \varepsilon_{\vb{t}} = 1$, and
+such that $\sum\limits_{t} \varepsilon_{\vec{t}} = 1$, and
 \begin{equation}
-  \varphi_{\vb{0}} = n_{\vb{0}} + m_{\vb{0}},
+  \varphi_{0} = n_{0} + m_{0},
   \qquad
-  \varphi_{\vb{1}} = n_{\vb{1}} + m_{\vb{1}},
+  \varphi_{1} = n_{1} + m_{1},
   \qquad
-  \varphi_{\vb{\infty}} = n_{\vb{\infty}} - m_{\vb{\infty}},
+  \varphi_{\infty} = n_{\infty} - m_{\infty},
   \label{eq:Abelian_rotation_second}
 \end{equation}
-where $\sum\limits_{t} \varphi_{\vb{t}} = 2$, in order to approach the usual notation in the literature.
+where $\sum\limits_{t} \varphi_{\vec{t}} = 2$, in order to approach the usual notation in the literature.
 As usual we have $\ipd{\omega_z} \cZ^1( \omega_z ) \neq \qty[ \ipd{\omega_z} \bcZ^1( \omega_z ) ]^*$.
 
 We can now build the Abelian solution to show the analytical structure of the limit.
@@ -2413,18 +2413,18 @@ We have
   )
 \end{equation}
 where we chose $R_{(\bart)} = \1_4$ so that $U_{(\bart)}$ in~\eqref{eq:Umatrices} is mapped to $(i \sigma_1, i \sigma_1) \in \SU{2} \times \SU{2}$.
-Notice however that $\vb{n}_{\vb{t}} = n_{\vb{t}}^3\, \vb{k}$ implies that $v^3_{(t)} = 0$ in~\eqref{eq:special_UL_brane_t}.
+Notice however that $\vec{n}_{\vec{t}} = n_{\vec{t}}^3\, \vec{k}$ implies that $v^3_{(t)} = 0$ in~\eqref{eq:special_UL_brane_t}.
 Hence $U_L$ and $U_R$ are always off diagonal and their action on~\eqref{eq:Abelian_sol_example} is to fill the first column.
-From the previous relations we can also recover the usual holomorphicity $\barZ^1(\baru) = \qty[ Z^1(u) ]^*$ of the sector with $\sum\limits_t \varepsilon_{\vb{t}} = 1$ and $\barZ^2(\baru) = \qty[ Z^2(u) ]^*$ of the sector with $\sum\limits_t \varphi_{\vb{t}} = 2$.
+From the previous relations we can also recover the usual holomorphicity $\barZ^1(\baru) = \qty[ Z^1(u) ]^*$ of the sector with $\sum\limits_t \varepsilon_{\vec{t}} = 1$ and $\barZ^2(\baru) = \qty[ Z^2(u) ]^*$ of the sector with $\sum\limits_t \varphi_{\vec{t}} = 2$.
 
 
 \subsubsection{Abelian Limits}
 
-From the example in the previous section it is possible to consider both cases given in~\Cref{sec:true_basis} and all possible combinations of the expression of $n_{\vb{1}}$ and $m_{\vb{1}}$ for a total of $2 \times 4 \times 4 = 32$ possible combinations.
+From the example in the previous section it is possible to consider both cases given in~\Cref{sec:true_basis} and all possible combinations of the expression of $n_{1}$ and $m_{1}$ for a total of $2 \times 4 \times 4 = 32$ possible combinations.
 In almost all cases (in fact all but six) the solution in spinorial formalism is a $2 \times 2$ matrix which has two non vanishing entries, hence two independent Abelian solutions.
 In the remaining cases the matrix has only one non vanishing entry but the constraints on $n$ and $m$ are not compatible, thus they should not be considered.
-In the first case encountered in~\Cref{sec:true_basis} the inconsistent combinations are $\{ n_{\vb{1}} = n_{\vb{0}} + n_{\vb{\infty}},~ m_{\vb{1}} = 1 - (m_{\vb{0}} + m_{\vb{\infty}}) \}$ and $\{ n_{\vb{1}} = 1 - (n_{\vb{0}} + n_{\vb{\infty}}),~ m_{\vb{1}} = 1 - (m_{\vb{0}} + m_{\vb{\infty}}) \}$.
-In the second case in~\Cref{sec:true_basis} the incompatible constraints appear when $n_{\vb{1}} = -n_{\vb{0}} + n_{\vb{\infty}}$.
+In the first case encountered in~\Cref{sec:true_basis} the inconsistent combinations are $\{ n_{1} = n_{0} + n_{\infty},~ m_{1} = 1 - (m_{0} + m_{\infty}) \}$ and $\{ n_{1} = 1 - (n_{0} + n_{\infty}),~ m_{1} = 1 - (m_{0} + m_{\infty}) \}$.
+In the second case in~\Cref{sec:true_basis} the incompatible constraints appear when $n_{1} = -n_{0} + n_{\infty}$.
 
 
 \subsection{The Physical Interpretation}
