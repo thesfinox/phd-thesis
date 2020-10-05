@@ -70,10 +70,16 @@
 
 %---- coordinates
 \newcommand{\pX}{\ensuremath{X'}\xspace}
-\newcommand{\kmkr}{\ensuremath{\qty{k_+,\, l,\, \vb{k},\, r}}}
-\newcommand{\kmkrN}[1]{\ensuremath{\qty{k_{\qty(#1)\, +},\, l_{\qty(#1)},\, \vb{k}_{\qty(#1)},\, r_{\qty(#1)}}}}
-\newcommand{\mkmkr}{\ensuremath{\qty{-k_+,\, -l,\, -\vb{k},\, r}}}
-\newcommand{\mkmkrN}[1]{\ensuremath{\qty{-k_{\qty(#1)\, +},\, -l_{\qty(#1)},\, -\vb{k}_{\qty(#1)},\, r_{\qty(#1)}}}}
+\newcommand{\kmkr}{\ensuremath{\qty{k_+,\, l,\, \vec{k},\, r}}}
+\newcommand{\kmr}{\ensuremath{\qty{k_+,\, k_-,\, l,\, r}}}
+\newcommand{\kmkrN}[1]{\ensuremath{\qty{k_{\qty(#1)\, +},\, l_{\qty(#1)},\, \vec{k}_{\qty(#1)},\, r_{\qty(#1)}}}}
+\newcommand{\kmrN}[1]{\ensuremath{\qty{k_{\qty(#1)\, +},\, k_{\qty(#1)\, -},\,l_{\qty(#1)},\, r_{\qty(#1)}}}}
+\newcommand{\mkmkr}{\ensuremath{\qty{-k_+,\, -l,\, -\vec{k},\, r}}}
+\newcommand{\mkmkrN}[1]{\ensuremath{\qty{-k_{\qty(#1)\, +},\, -l_{\qty(#1)},\, -\vec{k}_{\qty(#1)},\, r_{\qty(#1)}}}}
+\newcommand{\pol}[1]{\ensuremath{\mathcal{E}_{\kmkr\, \underline{#1}}}}
+\newcommand{\polN}[2]{\ensuremath{\mathcal{E}_{\kmkrN{#2}\, \underline{#1}}}}
+\newcommand{\polabbrN}[2]{\ensuremath{\mathcal{E}_{\qty(#2)\, \underline{#1}}}}
+\newcommand{\genpolN}[1]{\ensuremath{\mathcal{E}_{\kmkrN{#1}}}}
 
 %---- BEGIN DOCUMENT
 
@@ -140,6 +146,14 @@
 \section{Reflection Conditions on the Vacuum}
 \label{sec:details_reflection}
 \input{sec/app/reflection.tex}
+
+\section{Tensor Wave Functions on NBO}
+\label{sec:NO_tensor_wave}
+\input{sec/app/tensor_wave.tex}
+
+\section{Overlap of Second Level Massive States on NBO}
+\label{sec:NO_full_TTS}
+\input{sec/app/massive.tex}
 
 
 %---- BIBLIOGRAPHY
