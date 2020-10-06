@@ -250,9 +250,9 @@ We study the eigenmodes of the Laplacian operator to diagonalize the scalar kine
     )
     \\
     & =
-    \int \dd[D-3]{\vec{x}}\,
-    \int \dd{u}\,
-    \int \dd{v}\,
+    \int\limits_{\R^{D-3}} \dd[D-3]{\vec{x}}\,
+    \infinfint{u}\,
+    \infinfint{v}\,
     \finiteint{z}{0}{2\pi}
     \abs{\Delta u}
     \\
@@ -316,8 +316,9 @@ We chose the numeric factor in order to get a canonical normalisation:
     \qty( \phi_{k_-krN{1}},\,  \phi_{k_-krN{2}} )
     \\
     = &
-    \int \dd[D-1]{\vec{x}}\,
-    \int \dd{u}\, \int \dd{v}\,
+    \int\limits_{\R^{D-3}} \dd[D-3]{\vec{x}}\,
+    \infinfint{u}\,
+    \infinfint{v}\,
     \finiteint{z}{0}{2\pi}
     \abs{\Delta u}\,
     \phi_{k_-krN{1}}\, \phi_{k_-krN{2}}
@@ -333,9 +334,9 @@ We can then perform the off-shell expansion
 \begin{equation}
   \phi\qty(u,\, v,\, z,\, \vec{x})
   =
-  \int \dd[D-3]{\vec{k}}
-  \int \dd{k_+}
-  \int \dd{r}
+  \int\limits_{\R^{D-3}} \dd[D-3]{\vec{k}}
+  \infinfint{k_+}
+  \infinfint{r}
   \infinfsum{l}
   \cA_{k_-kr}\,
   \phi_{k_-kr}\qty(u,\, v,\, z,\, \vec{x}),
@@ -344,9 +345,9 @@ such that the scalar kinetic term becomes
 \begin{equation}
   \rS_{\text{s}\qed}^{(\text{kinetic})}\qty[ \cA ]
   =
-  \int \dd[D-3]{\vec{k}}\,
-  \int \dd{k_+} 
-  \int \dd{r}
+  \int\limits_{\R^{D-3}} \dd[D-3]{\vec{k}}\,
+  \infinfint{k_+} 
+  \infinfint{r}
   \infinfsum{l}
   \qty(r - M^2)\,
   \cA_{k_-kr}\,
@@ -401,7 +402,7 @@ Explicitly we have:
       +
       \frac{1}{\Delta^2 u^2} \ipd{z}^2
       +
-      \eta^{ij} \ipd{i} \partial_j
+      \eta^{ij} \ipd{i} \ipd{j}
     ]
     a_u,
     \\
@@ -415,7 +416,7 @@ Explicitly we have:
       +
       \frac{1}{\Delta^2 u^2} \ipd{z}^2
       +
-      \eta^{ij} \ipd{i} \partial_j
+      \eta^{ij} \ipd{i} \ipd{j}
     ]
     a_v,
     \\
@@ -432,7 +433,7 @@ Explicitly we have:
       +
       \frac{1}{\Delta^2 u^2} \ipd{z}^2
       +
-      \eta^{ij} \ipd{i} \partial_j
+      \eta^{ij} \ipd{i} \ipd{j}
     ]
     a_z,
     \\
@@ -446,14 +447,14 @@ Explicitly we have:
       +
       \frac{1}{\Delta^2 u^2} \ipd{z}^2
       +
-      \eta^{ij} \ipd{i} \partial_j
+      \eta^{ij} \ipd{i} \ipd{j}
     ]
     a_i.
   \end{split}
 \end{equation}
 
 As in the previous scalar case we are actually interested in solving
-the eigenmodes problem $\qty(\square a)_\alpha= r \,a_\alpha$.
+the eigenmodes problem $\qty(\square a_r)_\alpha= r \,a_{r\, \alpha}$.
 We proceed hierarchically: first we solve for $a_v$ and $a_i$ whose equations are the same as in the scalar field, then we insert the solutions as a source in the equation for $a_z$ and eventually we solve for $a_u$.\footnotemark{}
 \footnotetext{%
   Notice that inside the square brackets of the differential equation for $a_z$ there is a different sign for the term $\frac{1}{u} \ipd{v}$ with respect to the equation for the scalar field.
@@ -476,7 +477,7 @@ We get the solutions:
     \sum\limits_{%
       \underline{\alpha}
       \in 
-      \qty{ \underline{u}, \underline{v}, \underline{z},\underline{i} }
+      \qty{ \underu, \underv, \underz,\underi }
     }
     \pol{\alpha}
     \norm{\tildea^{\underline{\alpha}}_{k_-kr\, \alpha}(u)}
@@ -545,7 +546,7 @@ then we can expand the off-shell fields as
   \sum\limits_{%
     \underline{\alpha}
     \in
-    \qty{ \underline{u}, \underline{v}, \underline{z},\underline{i} }
+    \qty{ \underu, \underv, \underz,\underi }
   }
   \infinfsum{l}
   \pol{\alpha}\,
@@ -558,16 +559,16 @@ where
   \tildea^{\underline{\alpha}}_{k_-kr\, \alpha}(u)\,
   e^{i\, \qty( k_+ v + l z + \vec{k} \cdot \vec{x})}
 \end{equation}
-and $\int \ccD k = \int \dd[D-3]{\vec{k}} \int \dd{k_+} \int \dd{r}$.
+and $\int \ccD k = \int\limits_{\R^{D-3}} \dd[D-3]{\vec{k}} \infinfint{k_+} \infinfint{r}$.
 
 We can also compute the normalisation as
 \begin{equation}
   \begin{split}
     \qty(a_{\qty(1)},\, a_{\qty(2)})
     & =
-    \int \dd[D-3]{\vec{x}}
-    \int \dd{u}
-    \int \dd{v}
+    \int\limits_{\R^{D-3}} \dd[D-3]{\vec{x}}
+    \infinfint{u}
+    \infinfint{v}
     \finiteint{z}{0}{2\pi}
     \abs{\Delta u}
     \\
@@ -604,7 +605,7 @@ where:\footnotemark{}
 \end{equation}
 Finally the Lorenz gauge reads
 \begin{equation}
-   \eta^{i \underline{j}}\, k_i\, \pol{j}
+   \eta^{i \underj}\, k_i\, \pol{j}
    -
    k_+\, \pol{u}
    -
@@ -619,9 +620,9 @@ The photon kinetic term becomes
 \begin{equation}
   \rS_{\text{s}\qed}^{(\text{kinetic})}\qty[ \cE ]
   =
-  \int \dd[D-3]{\vec{k}}
-  \int \dd{k_+}
-  \int \dd{r}
+  \int\limits_{\R^{D-3}} \dd[D-3]{\vec{k}}
+  \infinfint{k_+}
+  \infinfint{r}
   \infinfsum{l}\,
   \frac{r}{2}\,
   \cE_{k_-kr}\,
@@ -706,18 +707,20 @@ and we get:\footnotemark{}
     & =
     \finiteprod{i}{1}{3}
     \qty[%
-      \int \dd[D-3]{\vec{k}_{\qty(i)}}\,
-      \dd{r_{\qty(i)}}\,
-      \dd{k_{\qty(i)\, +}}
+      \int\limits_{\R^{D-3}} \dd[D-3]{\vec{k}_{\qty(i)}}\,
+      \infinfint{r_{\qty(i)}}\,
+      \infinfint{k_{\qty(i)\, +}}
       \sum_{l_{\qty(i)}}
     ]\,
     \qty(2\pi)^{D-1}
-    \delta\qty(\finitesum{i}{1}{3} \vec{k}_{\qty(i)})\,
-    \delta\qty(\finitesum{i}{1}{3} k_{\qty(i)\, +})\,
     \\
     & \times
     e~
-    \delta_{l_{\qty(1)} + l_{\qty(2)} + l_{\qty(3)},\, 0}\,
+    \delta\qty(\finitesum{i}{1}{3} \vec{k}_{\qty(i)})\,
+    \delta\qty(\finitesum{i}{1}{3} k_{\qty(i)\, +})\,
+    \delta_{\finitesum{i}{1}{3} l_{\qty(i)},\, 0}\,
+    \\
+    & \times
     \qty(\cA_{\mkmkrN{2}})^*\, \cA_{k_-krN{3}}
     \\
     & \times
@@ -740,7 +743,7 @@ and we get:\footnotemark{}
       \ccF\qty(k_{\qty(1)\, +},\, l_{\qty(1)},\, k_{\qty(2)\, +},\, l_{\qty(2)},\, r_{\qty(2)},\, \vec{k}_{\qty(2)})
       \\
       & -
-      \eta^{\underline{i}\, j}\,
+      \eta^{\underi\, j}\,
       \polN{i}{1}\,
       k_{\qty(2)_j}\,
       \cI_{\qty{3}}^{\qty[0]}\,
@@ -828,7 +831,7 @@ which can be expressed using the modes as:
     & \times
     \delta\qty( \finitesum{i}{1}{4} \vec{k}_{\qty(i)} )\,
     \delta\qty( \finitesum{i}{1}{4} k_{\qty(i)\, +} )\,
-    \delta_{l_{\qty(1)} + l_{\qty(2)} + l_{\qty(3)} + l_{\qty(4)},\, 0}
+    \delta_{\finitesum{i}{1}{4} l_{\qty(i)},\, 0}
     \\
     & \times
     \Biggl\lbrace
@@ -1079,9 +1082,9 @@ As the two-tachyons---two-photons amplitude suggests, suppose that the action fo
     )
     \\
     & =
-    \int \dd[D-3]{\vec{x}}\,
-    \int \dd{u}\,
-    \int \dd{v}\,
+    \int\limits_{\R^{D-3}} \dd[D-3]{\vec{x}}\,
+    \infinfint{u}\,
+    \infinfint{v}\,
     \finiteint{z}{0}{2\pi}
     \abs{\Delta u}\,
     \frac{1}{2}\,
@@ -1122,7 +1125,7 @@ We recover the eigenfunctions from the covering Minkowski space in order to eluc
 Moreover we generalise the result to a symmetric two index tensor which is the polarisation of the first massive state to compute the two-tachyons--one-massive-state amplitude in the next section and to show that it diverges.
 
 
-\subsubsection{Spin 0 Wave Function from Minkowski space}
+\subsubsection{Spin-0 Wave Function from Minkowski space}
 
 We start with the usual plane wave in flat space and we express it in the new coordinates (we do not write the dependence on $\vec{x}$ since it is trivial):
 \begin{equation}
@@ -1293,7 +1296,7 @@ The fact that $\Psi$ depends only on the equivalence class $\qty[k_+\, k_-\, k_2
 \end{equation}
 
 
-\subsubsection{Spin 1 Wave Function from Minkowski space}
+\subsubsection{Spin-1 Wave Function from Minkowski space}
 
 We go through the steps in the previous case for an electromagnetic wave.
 We concentrate on $x^+$, $x^-$ and $x^2$ coordinates and reinstate $\vec{x}$ at the end.
@@ -1302,14 +1305,14 @@ We use the notation $\psi^{[1]}_{k_+\, k_-\, k_2;\, \epsilon_+\, \epsilon_-\, \e
 \begin{equation}
   A_{\mu}(x)\, \dd{x}^{\mu}
   =
-  \int \dd[3]{k}\,
+  \int\limits_{\R^3} \dd[3]{k}\,
   \sum_{\qty{\epsilon_+,\, \epsilon_-,\, \epsilon_2}}
   \psi^{[1]}_{k_+\, k_-\, k_2;\, \epsilon_+\, \epsilon_-\, \epsilon_2},
 \end{equation}
 where the sum  is performed over $\epsilon_+$, $\epsilon_-$, $\epsilon_2$ independent and compatible with $k$.
 The explicit expression for the eigenfunction with constant $\epsilon_+$, $\epsilon_-$ and $\epsilon_2$ is:\footnotemark{}
 \footnotetext{%
-  We introduce the normalization factor $\cN$ in order to have a less cluttered relation between $\epsilon$ and $\cE$.
+  We introduce the normalisation factor $\cN$ in order to have a less cluttered relation between $\epsilon$ and $\cE$.
 }
 \begin{equation}
   \begin{split}
@@ -1606,7 +1609,7 @@ If the definition of orbifold polarisations is right the result cannot depend on
 Taking into account $k_- = \frac{\norm{\vec{k}}^2+ k_2^2 + r}{2 k_+}$ in $\vec{k} \cdot \vec{\epsilon} = 0$ we get exactly the expression for the Lorenz gauge for orbifold polarisations~\eqref{eq:Lorenz_gauge}. 
 
 
-\subsubsection{Tensor Wave Function from Minkowski space}
+\subsubsection{Tensor Wave Function (Spin-2) from Minkowski space}
 
 We can use the analysis of the previous section in the case of a second order symmetric tensor wave function.
 Again we suppress the dependence on $\vec{x}$ and $\vec{k}$ with a caveat: the Minkowskian polarisations $S_{+\, i}$, $S_{-\, i}$ and $S_{2\, i}$ transform non trivially, therefore we give the full expressions in \Cref{sec:NO_tensor_wave} even if these components behave effectively as a vector of the orbifold.
@@ -1898,7 +1901,7 @@ and the transversality conditions
     & =
     \qty(\vec{k} \cdot S)_{2}
     -
-    K~ \qty(vec{k} \cdot S)_{+}
+    K~ \qty(\vec{k} \cdot S)_{+}
     =
     -\frac{\qty(r + \norm{\vec{k}}^2)}{2\, k_+}\,
     \cS_{v\,z}
@@ -1912,7 +1915,7 @@ and the transversality conditions
     -
     K~ \qty(\vec{k} \cdot S)_{2}
     +
-    \frac{1}{2} K^2 \qty(vec{k} \cdot S)_{+}
+    \frac{1}{2} K^2 \qty(\vec{k} \cdot S)_{+}
     =
     -\frac{\qty(r + \norm{\vec{k}}^2)}{2\, k_+}\,
     \cS_{u\,v}
@@ -2245,7 +2248,7 @@ We have:
         +
         \frac{l_{\qty(2)}^2}{k_{\qty(2)\, +}} \frac{1}{2 \Delta^2\, u^2}
         +
-        \frac{\rN{2}}{2 k_{\qty(2)\, +}}
+        \frac{r_{\qty(i)}}{2 k_{\qty(2)\, +}}
       ]
       \\
       & +
@@ -2658,7 +2661,7 @@ Such amplitude can then be expressed using an overlap:
     \int\limits_{\Omega} \dd^3x\,
     g^{\alpha\beta}\, g^{\gamma\delta}\,
     \Psi^{[2]}_{\qty[k_{\qty(3)},\, S_{\qty(3)}]\, \alpha\gamma}\qty(\qty[x])\,
-    D_{\beta} \partial_{\delta} \Psi_{\qty[k_{\qty(2)}] }\qty(\qty[x])\,
+    D_{\beta} \ipd{\delta} \Psi_{\qty[k_{\qty(2)}] }\qty(\qty[x])\,
     \Psi_{\qty[k_{\qty(1)}] }\qty(\qty[x])
     \\
     & \times
@@ -2667,6 +2670,1944 @@ Such amplitude can then be expressed using an overlap:
 \end{equation}
 As discussed in~\Cref{sec:overlap} the integral is divergent when $S_{+\, +} =\cS_{v\, v} \neq 0$ and the divergence cannot be avoided even introducing a Wilson line around $z$ since the amplitude involves an anticommutator which does not vanish in the Abelian sector.
 
+
+\subsection{Scalar QED on the Generalised NBO and Divergences}
+\label{sect:genNOscalarQED}
+
+The issues related to the vanishing volume of the compact directions lead to incurable divergences.
+We introduce the \gnbo by inserting one additional non compact direction with respect to the \nbo and show that divergences no longer occur.
+As for the \nbo, we first present the geometry of the \gnbo and study scalar and spin-1 eigenfunctions to build the scalar \qed on the orbifold.
+We then show how the presence of a non compact direction can cure the theory when considering amplitudes and overlaps.
+
+
+\subsubsection{Geometric Preliminaries}
+
+Consider Minkowski spacetime $\ccM^{1,D-1}$ and the change of coordinates from the lightcone set $( x^{\mu} ) = ( x^+, x^-, x^2, x^3, \vec{x} )$ to $( x^{\alpha} ) = ( u, v, w, z, \vec{x} )$:
+\begin{equation}
+  \begin{split}
+    &\begin{cases}
+      x^- & = u
+      \\
+      x^+ & = v + \frac{\Delta_2^2}{2} u ( z + w )^2 + \frac{\Delta_3^2}{2} u ( z - w )^2
+      \\
+      x^2 & = \Delta_2 u ( z + w )
+      \\
+      x^3 & = \Delta_3 u ( z - w )
+    \end{cases}
+    \\
+    \Leftrightarrow
+    &\begin{cases}
+      u & = x^-
+      \\
+      v & = x^+ - \frac{1}{2 x^-} \left( (x^2)^2 + (x^3)^2 \right)
+      \\
+      w & = \frac{1}{2x^-} \left( \frac{x^2}{\Delta_2} - 
+                                  \frac{x^3}{\Delta_3} \right)
+      \\
+      z & = \frac{1}{2x^-} \left( \frac{x^2}{\Delta_2} +
+                                  \frac{x^3}{\Delta_3} \right)
+    \end{cases}
+  \end{split}
+  \label{eq:orbifold_coordinates}
+\end{equation}
+where we do not perform any change on the transverse coordinates $\vec{x}$.
+The metric in these coordinates is non diagonal:
+\begin{equation}
+  \dd{s}^2 = - 2 \dd{u}\dd{v} 
+           + ( \Delta_2^2 + \Delta_3^2 ) u^2 ( \dd{w}^2 + \dd{z}^2 )
+           + 2 ( \Delta_2^2 - \Delta_3^2 ) u^2 \dd{w}\dd{z}
+           + \eta_{ij}\, \dd{x}^i \dd{x}^j,
+  \label{eq:orbifold_metric}
+\end{equation}
+and its determinant is:
+\begin{equation}
+  - \det g  = 4\, \Delta_2^2 \Delta_3^2\, u^4.
+\end{equation}
+From the previous expressions we can also derive the non vanishing Christoffel symbols:
+\begin{equation}
+  \begin{split}
+    \tensor{\Gamma}{_w^v_w}
+    =
+    \tensor{\Gamma}{_z^v_z} & = ( \Delta_2^2 + \Delta_3^2 ) u,
+    \\
+    \tensor{\Gamma}{_w^v_z} & = ( \Delta_2^2 - \Delta_3^2 ) u,
+    \\
+    \tensor{\Gamma}{_u^w_w}
+    =
+    \tensor{\Gamma}{_u^z_z} & = u^{-1},
+  \end{split}
+\end{equation}
+which however produce a vanishing Ricci tensor and curvature scalar since we are considering Minkowski spacetime anyway and~\eqref{eq:orbifold_coordinates} is just a map from $\ccM^{1,D-1}$ to the \gnbo.
+
+We introduce the \gnbo by identifying points in space along the orbits of the Killing vector:
+\begin{equation}
+  \begin{split}
+    \kappa & = - 2 \pi i\, ( \Delta_2 J_{+2} + \Delta_3 J_{+3} )
+    \\
+           & = 2 \pi\, ( \Delta_2 x^2 + \Delta_3 x^3 ) \ipd{+}
+             + 2 \pi \Delta_2 x^- \ipd{2} 
+             + 2 \pi \Delta_3 x^- \ipd{3}
+    \\
+           & = 2 \pi\, \ipd{z}
+  \end{split}
+\label{eq:gnbo_killing_vector}
+\end{equation}
+in such a way that
+\begin{equation}
+  x^{\mu} \sim e^{n\kappa} x^{\mu}, \qquad n \in \Z
+\end{equation}
+leads to the identifications
+\begin{equation}
+  x
+  =
+  \mqty( x^- \\ x^2 \\ x^3 \\ x^+ \\ \vec{x} )
+  \equiv
+  \cK^{n} x
+  =
+  \mqty(%
+    x^-
+    \\
+    x^2 + 2 \pi n \Delta_3^-
+    \\
+    x^3 + 2 \pi n \Delta_3x^-
+    \\
+    x^+ + 2 \pi n \Delta_3^2
+    + 2 \pi n \Delta_3x^3
+    + (2 \pi n)^2 \frac{\Delta_2^2+\Delta_3^2}{2} x^-
+    \\
+    \vec{x}
+  ),
+\end{equation}
+or to the simpler
+\begin{equation}
+  \qty( u,\, v,\, w,\, z ) \sim \qty( u,\, v,\, w,\, z + 2 \pi n )
+\label{eq:orbifold_identifications}
+\end{equation}
+using the map to the orbifold coordinates~\eqref{eq:orbifold_coordinates} where the Killing vector $\kappa = 2 \pi\, \ipd{z}$ does not depend on the local spacetime configuration.
+As in the previous case, the difference between Minkowski spacetime and the \gnbo is therefore global.
+
+The geodesic distance between the n-th copy and the base point on the orbifold can be computed in any set of coordinates and is:
+\begin{equation}
+  \Delta s^2_{(n)}
+  =
+  \qty( \Delta_2^2 + \Delta_3^2 )\,
+  \qty( 2 \pi n x^- )^2
+  \ge 0.
+\end{equation}
+Closed time-like curves are therefore avoided on the \gnbo, but there are closed null curves on the surface $x^- = u = 0$ where the Killing vector $\kappa$ vanishes.
+
+
+\subsubsection{Free Scalar Field}
+
+In order to build a quantum theory on the \gnbo using Feynman's approach to quantization, we first solve the eigenvalue equations for the fields and then build their off-shell expansion.
+We start from a complex scalar field and then consider the free photon before moving to the scalar \qed interactions on the \gnbo.
+
+Consider the action for a complex scalar field:
+\begin{equation}
+  \begin{split}
+    \rS_{\text{s}\qed}^{(\text{kinetic})}\qty[ \phi ]
+    & =
+    \int\limits_{\Omega} \dd[D]{x}
+    \sqrt{-\det g }
+    \qty(%
+      -g^{\mu\nu} \ipd{\mu} \phi^* \ipd{\nu} \phi - M^2 \phi^* \phi
+    )
+    \\
+    & =
+    \int\limits_{\R^{D-4}} \dd[D-4]{\vec{x}}
+    \infinfint{u} \infinfint{v} \infinfint{w}
+    \int_0^{2\pi} \dd z\,
+    2\, \abs{\Delta_2 \Delta_3}\, u^2
+    \\
+    & \times
+    \Biggl[%
+      \ipd{u} \phi^*\, \ipd{v} \phi
+      +
+      \ipd{v} \phi^*\, \ipd{u} \phi
+      -
+      \frac{1}{4 u^2}
+      \Biggl(
+        \qty( \frac{1}{\Delta_2^2} + \frac{1}{\Delta_3^2} )
+        \qty( \ipd{w} \phi^*\, \ipd{w} \phi + \ipd{z} \phi^*\, \ipd{z} \phi )
+    \\
+        & +
+        \qty( \frac{1}{\Delta_2^2} - \frac{1}{\Delta_3^2} )
+        \qty( \ipd{w} \phi^*\, \ipd{z} \phi + \ipd{z} \phi^*\, \ipd{w} \phi )
+      \Biggr)
+      -
+      \eta^{ij}\, \ipd{i} \phi^*\, \ipd{j} \phi
+      -
+      M^2 \phi^* \phi
+   \Biggr].
+  \end{split}
+\end{equation}
+As in the case of the \nbo, the solutions to the \eom are necessary to provide the modes of the quantum fields.
+We study the eigenvalue equation $\square \phi_r = r \phi_r$, where $r$ is $2\, k_+ k_- - \vec{k}$ by comparison with the flat case ($k$ is the momentum associated to the flat coordinates).
+We therefore need solve:
+\begin{equation}
+  \begin{split}
+    \Biggl\lbrace
+        &
+        -2\, \ipd{u} \ipd{v}
+        - \frac{2}{u} \ipd{v}
+        + \frac{1}{4 u^2}
+        \Biggl[
+            \qty( \frac{1}{\Delta_2^2} + \frac{1}{\Delta_3^2} )
+            \qty( \ipd{w}^2 + \ipd{z}^2 )
+    \\
+            & +
+            2\, \qty( \frac{1}{\Delta_2^2} - \frac{1}{\Delta_3^2} )
+            \ipd{w} \ipd{z}          
+        \Biggr]
+        +
+        \eta^{ij}\, \ipd{i} \ipd{j}
+        - r
+    \Bigg\rbrace
+    \phi_r
+    =
+    0.
+  \end{split}
+  \label{eq:scalar_eom}
+\end{equation}
+To this purpose, we introduce a Fourier transformation over $v,\, w,\, z,\, \vec{x}$:
+\begin{equation}
+  \phi_r\qty( u,\, v,\, w,\, z,\, \vec{x})
+  =
+  \infinfsum{l}\,
+  \int\limits_{\R^{D-4}} \dd[D-4]{\vec{k}}
+  \infinfint{k_+}
+  \infinfint{p}\,
+  e^{i\, \qty( k_+ v + p w + l z + \vec{k} \cdot \vec{x} )}
+  \tphi_{k_-krgen}(u),
+\end{equation}
+where we defined $k_+,\, p,\, l,\, \vec{k}$ as associated momenta to $v,\, w,\, z,\, \vec{x}$ respectively.
+We find:
+\begin{equation}
+  \phi_{k_-krgen}\qty( u,\, v,\, w,\, z,\, \vec{x} )
+  =
+  e^{i\, \qty( k_+ v + p w + l z + \vec{k} \cdot \vec{x} )}
+  \tphi_{k_-krgen}( u ).
+\end{equation}
+where
+\begin{equation}
+  \tphi_{k_-krgen}( u )
+  =
+  \frac{1}{2 \sqrt{\qty(2 \pi)^D \abs{\Delta_2 \Delta_3 k_+}}}\,
+  \frac{1}{\abs{u}}
+  e^{%
+    -i\, \qty(%
+      \frac{1}{8 k_+ u}
+      \qty[ \frac{(l + p)^2}{\Delta_2^2} + \frac{(l - p)^2}{\Delta_3^2} ]
+      -
+      \frac{\vec{k}^2 + r}{2 k_+} u
+    )
+  }.
+  \label{eq:GNBO_reg_wave_functions}
+\end{equation}
+These solutions present the right normalisation, as we can verify through the product:
+\begin{equation}
+  \begin{split}
+    & \left( \phi_{k_-krgenN{1}},\, \phi_{k_-krgenN{2}} \right)
+    \\
+    & =
+    \int\limits_{\R^{D-4}} \dd[D-4]{\vec{x}}
+    \infinfint{u}
+    \infinfint{v}
+    \infinfint{w}
+    \finiteint{z}{0}{2\pi}\,
+    2 \abs{\Delta_2 \Delta_3} u^2
+    \\
+    & \times
+    \phi_{k_-krgenN{1}}~
+    \phi_{k_-krgenN{2}}
+    \\
+    & =
+    \delta^{D - 4}\qty( \vec{k}_{\qty(1)} + \vec{k}_{\qty(2)} )\,
+    \delta\qty( k_{\qty(1)\, +} + k_{\qty(2)\, +} )\,
+    \delta\qty( p_{\qty(1)} + p_{\qty(2)} )
+    \delta\qty( r_{\qty(i)} + r_{\qty(i)} )\,
+    \delta_{l_{\qty(1)},\, l_{\qty(2)}}.
+  \end{split}
+\end{equation}
+
+Then we have the off-shell expansion:
+\begin{equation}
+  \begin{split}
+    \phi_r\qty( u,\, v,\, w,\, z,\, \vec{x} )
+    & =
+    \frac{1}{2 \sqrt{\qty( 2 \pi )^D \abs{\Delta_2 \Delta_3 k_+}}}
+    \infinfsum{l}\,
+    \int\limits_{\R^{D-4}} \dd[D-4]{\vec{k}}
+    \infinfint{k_+}
+    \infinfint{p}
+    \infinfint{r}
+    \\
+    & \times
+    \frac{\cA_{k_-krgen}}{\abs{u}}
+    e^{%
+      i\, \qty(%
+        k_+ v + p w + l z + \vec{k} \cdot \vec{x}
+        -
+        \frac{1}{8 k_+ u}
+        \qty[ \frac{(l + p)^2}{\Delta_2^2} + \frac{(l - p)^2}{\Delta_3^2} ]
+        +
+        \frac{\vec{k}^2 + r}{2 k_+} u
+      )
+    }.
+  \end{split}
+\end{equation}
+
+
+\subsubsection{Free Photon Action}
+
+We then study the action of the free photon field $a$ using the Lorenz gauge which in the orbifold coordinates it reads:
+\begin{equation}
+  \begin{split}
+    D^{\alpha} a_{\alpha}
+    &
+    =
+    - \frac{2}{u} a_{v}
+    - \ipd{v} a_u
+    - \ipd{u} a_v
+    \\
+    &
+    + \frac{1}{4 u^2}
+    \qty(%
+      \qty( \frac{1}{\Delta_2^2} + \frac{1}{\Delta_3^2} )\,
+      \qty( \ipd{w} a_w + \ipd{z} a_z )
+      +
+      \qty( \frac{1}{\Delta_2^2} - \frac{1}{\Delta_3^2} )\,
+      \qty( \ipd{w} a_z + \ipd{z} a_w )
+    )
+    \\
+    &
+    + \eta^{ij}\, \ipd{i} a_j
+    =
+    0.
+  \end{split}
+\end{equation}
+
+We then solve the eigenvalue equations $\qty( \square a_r )_{\nu} = r a_{r\,\nu}$, which in components read:
+\begin{equation}
+  \begin{split}
+    \qty( \square a_r )_u
+    & =
+    \frac{2}{u^2} a_{r\,v}
+    \\
+    & -
+    \frac{1}{2 u^3}
+    \qty[%
+      \qty( \frac{1}{\Delta_2^2} + \frac{1}{\Delta_3^2} )
+      \qty( \ipd{w} a_{r\,w} + \ipd{z} a_{r\,z} )
+      +
+      \qty( \frac{1}{\Delta_2^2} - \frac{1}{\Delta_3^2} )
+      \qty( \ipd{w} a_{r\,z} + \ipd{z} a_{r\,w} )
+    ]
+    \\
+    & +
+    \Biggl\lbrace
+      - 2 \ipd{u} \ipd{v}
+      - \frac{2}{u} \ipd{v}
+      \\
+      & +
+      \frac{1}{4 u^2}
+      \qty[
+        \qty( \frac{1}{\Delta_2^2} + \frac{1}{\Delta_3^2} )
+        \qty( \ipd{w}^2 + \ipd{z}^2 )
+        +
+        \qty( \frac{1}{\Delta_2^2} - \frac{1}{\Delta_3^2} )
+        2 \ipd{w} \ipd{z}
+      ]
+      + \nabla^2_T
+    \Biggr\rbrace
+    a_{r\,u},
+    \\
+    \qty( \square a_r )_v
+    & =
+    \Biggl\lbrace
+      - 2 \ipd{u} \ipd{v}
+      - \frac{2}{u} \ipd{v}
+      \\
+      & +
+      \frac{1}{4 u^2}
+      \qty[%
+        \qty( \frac{1}{\Delta_2^2} + \frac{1}{\Delta_3^2} )
+        \qty( \ipd{w}^2 + \ipd{z}^2 )
+        +
+        \qty( \frac{1}{\Delta_2^2} - \frac{1}{\Delta_3^2} )
+        2 \ipd{w} \ipd{z}
+      ]
+      + \nabla^2_T
+    \Biggr\rbrace
+    a_{r\,v},
+    \\
+    \qty( \square a_r )_w
+    & =
+    - \frac{2}{u} \ipd{w} a_{r\,v}
+    \\
+    & +
+    \Biggl\lbrace
+      - 2 \ipd{u} \ipd{v} 
+      \\
+      & +
+      \frac{1}{4 u^2}
+      \qty[%
+        \qty( \frac{1}{\Delta_2^2} + \frac{1}{\Delta_3^2} )
+        \qty( \ipd{w}^2 + \ipd{z}^2 )
+        + 
+        \qty( \frac{1}{\Delta_2^2} - \frac{1}{\Delta_3^2} )
+        2\, \ipd{w} \ipd{z}
+      ]
+      + \nabla^2_T
+    \Biggr\rbrace
+    a_{r\,w},
+    \\
+    \qty( \square a )_z
+    & =
+    - \frac{2}{u} \ipd{z} a_{r\,v}
+    \\
+    & +
+    \Biggl\lbrace
+      - 2 \ipd{u} \ipd{v}
+      \\
+      & +
+      \frac{1}{4 u^2}
+      \qty[%
+        \qty( \frac{1}{\Delta_2^2} + \frac{1}{\Delta_3^2} )
+        \qty( \ipd{w}^2 + \ipd{z}^2 )
+        + 
+        \qty( \frac{1}{\Delta_2^2} - \frac{1}{\Delta_3^2} )
+        2 \ipd{w} \ipd{z}
+      ]
+      + \nabla^2_T
+    \Biggr\rbrace
+    a_{r\,z},
+    \\
+    \qty( \square a )_i
+    & =
+    \Biggl\lbrace
+      - 2 \ipd{u} \ipd{v}
+      - \frac{2}{u} \ipd{v}
+      \\
+      & +
+      \frac{1}{4 u^2}
+      \qty[%
+        \qty( \frac{1}{\Delta_2^2} + \frac{1}{\Delta_3^2} )
+        \qty( \ipd{w}^2 + \ipd{z}^2 )
+        +
+        \qty( \frac{1}{\Delta_2^2} - \frac{1}{\Delta_3^2} )
+        2 \ipd{w} \ipd{z}
+      ]
+      + \nabla^2_T
+    \Biggr\rbrace
+    a_{r\,i},
+  \end{split}
+\end{equation}
+where $\nabla^2_T = \eta^{ij}\, \ipd{i} \ipd{j}$ is the Laplace operator in the transverse coordinates $\vec{x}$.
+These equations can be solved using standard techniques through a Fourier transform:
+\begin{equation}
+  \begin{split}
+    a_{r\, \alpha}\qty( u,\, v,\, w,\, z,\, \vec{x})
+    & =
+    \infinfsum{l}\,
+    \int\limits_{\R^{D-4}} \dd[D-4]{\vec{k}}
+    \infinfint{k_+}
+    \infinfint{p}\,
+    \\
+    & \times
+    e^{i\, \qty( k_+ v + p w + l z + \vec{k} \cdot \vec{x} )}
+    \tildea_{k_-krgen\, \alpha}(u).
+  \end{split}
+\end{equation}
+We first solve the equations for $\tildea_{k_-krgen\, v}$ and $\tildea_{k_-krgen\, i}$ since they are identical to the scalar equation~\eqref{eq:scalar_eom}.
+We then insert their solutions as sources for the equations for $\tildea_{k_-krgen\, u}$, $\tildea_{k_-krgen\, w}$ and $\tildea_{k_-krgen\, z}$.
+The solutions can be written as the expansion:
+\begin{equation}
+  \begin{split}
+    \norm{\tildea_{k_-krgen\, \alpha}(u)}
+    & =
+    \mqty(%
+      \tildea_u
+      \\
+      \tildea_v
+      \\
+      \tildea_w
+      \\
+      \tildea_z
+      \\
+      \tildea_i
+    )
+    \\
+    & =
+    \sum\limits_{\ualpha \in \qty{\underu, \underv, \underw, \underz, \underi}}
+    \cE_{k_-krgen\, \ualpha}\,
+    \norm{\tildea^{\ualpha}_{k_-krgen\, \alpha}(u)}
+    \\
+    & =
+    \cE_{k_-krgen\, \underu}\,
+    \mqty( 1 \\ 0 \\ 0 \\ 0 \\ 0 )\,
+    \tphi_{k_-krgen}
+    \\
+    & +
+    \cE_{k_-krgen\, \underv}\,
+    \mqty(%
+      \frac{i}{2 k_+ u}
+      +
+      \frac{1}{8 k_+^2 u^2}
+      \qty( \frac{(l + p)^2}{\Delta_2^2} + \frac{(l - p)^2}{\Delta_3^2} )
+      \\
+      1
+      \\
+      \frac{p}{k_+}
+      \\
+      \frac{l}{k_+}
+      \\
+      0
+    )\,
+    \tphi_{k_-krgen}
+    \\
+    & +
+    \cE_{k_-krgen\, \underw}\,
+    \mqty(
+      \frac{1}{4 k_+ \abs{u}}
+      \qty( \frac{l + p}{\Delta_2^2} - \frac{l - p}{\Delta_3^2} )
+      \\
+      0
+      \\
+      \abs{u}
+      \\
+      0
+      \\
+      0
+    )\,
+    \tphi_{k_-krgen}
+    \\
+    & +
+    \cE_{k_-krgen\, \underz}\,
+    \mqty(
+      \frac{1}{4 k_+ \abs{u}}
+      \qty( \frac{l + p}{\Delta_2^2} + \frac{l - p}{\Delta_3^2} )
+      \\
+      0
+      \\
+      0
+      \\
+      \abs{u}
+      \\
+      0
+    )\,
+    \tphi_{k_-krgen}
+    \\
+    & +
+    \cE_{k_-krgen\, \underj}\,
+    \mqty( 0 \\ 0 \\ 0 \\ 0 \\ \delta_{\underline{i j}} )\,
+    \tphi_{k_-krgen}
+  \end{split}
+\end{equation}
+Consider the Fourier transformed functions:
+\begin{equation}
+  a^{\ualpha}_{k_-krgen\, \alpha}\qty( u,\, v,\, w,\, z,\, \vec{x} )
+  =
+  e^{i\, \qty(k_+ v + p w + l z + \vec{k} \cdot \vec{x})}
+  \tildea^{\ualpha}_{k_-krgen\, \alpha}( u ),
+\end{equation}
+then we can expand the off shell fields as
+\begin{equation}
+  \begin{split}
+    a_{\alpha}(x)
+    & =
+    \infinfsum{l}\,
+    \int\limits_{\R^{D-4}} \dd[D-4]{\vec{k}}\,
+    \infinfint{k_+}
+    \infinfint{p}
+    \infinfint{r}
+    \\
+    & \times
+    \sum_{\ualpha \in \qty{\underu, \underv, \underw, \underz, \underi}}
+    \cE_{k_-krgen\, \alpha}\,
+    a^{\ualpha}_{k_-krgen\, \alpha}(x).
+  \end{split}
+\end{equation}
+
+We can compute the normalisation as:
+\begin{equation}
+  \begin{split}
+    \qty( a_{(1)},\, a_{(2)} )
+    & =
+    \int\limits_{\R^{D-4}} \dd[D-4]{\vec{x}}
+    \infinfint{u}
+    \infinfint{v}
+    \infinfint{w}
+    \finiteint{z}{0}{2\pi}\,
+    2 \abs{\Delta_2 \Delta_3} u^2
+    \\
+    & \times
+    \qty(g^{\alpha\beta}\, a_{k_-krgenN{1}\, \alpha}\, a_{k_-krgenN{2}\, \beta})
+    \\
+    & =
+    \delta^{D-4}\qty( \vec{k}_{\qty(1)} + \vec{k}_{\qty(2)} )\,
+    \delta\qty( p_{(1)} + p_{(2)} )\,
+    \delta\qty( k_{\qty(1)\, +} + k_{\qty(2)\, +} )\,
+    \delta_{l_{(1)} + l_{(2)}, 0}
+    \delta\qty( r_1 - r_2 )
+    \\
+    & \times
+    \cE_{k_-krgenN{1}} \circ \cE_{k_-krgenN{2}},
+  \end{split}
+\end{equation}
+where
+\begin{equation}
+  \begin{split}
+    \cE_{(1)} \circ \cE_{(2)}
+    & =
+    -\cE_{(1)\, \underu}\, \cE_{(2)\, \underv}
+    -\cE_{(1)\, \underv}\, \cE_{(2)\, \underu}
+    \\
+    &
+    +\frac{1}{4}
+    \Biggl[
+        \qty( \frac{1}{\Delta_2^2} + \frac{1}{\Delta_3^2} )
+        \qty(%
+          \cE_{(1)\, \underw}\, \cE_{(2)\, \underw}
+          +
+          \cE_{(1)\, \underz}\, \cE_{(2)\, \underz}
+        )
+    \\
+        & +
+        \qty( \frac{1}{\Delta_2^2} - \frac{1}{\Delta_3^2} )
+        \qty(%
+          \cE_{(1)\, \underw}\, \cE_{(2)\, \underz}
+          +
+          \cE_{(1)\, \underz}\, \cE_{(2)\, \underw}
+        )
+    \Biggr]
+  \end{split}    
+\end{equation}
+is independent of the coordinates.
+The Lorenz gauge now reads:
+\begin{equation}
+  \eta^{i\underj}\, k_i \, \cE_{{k_-krgen} \underj}
+  -
+  k_+
+  \cE_{k_-krgen\, \underu}
+  -
+  \frac{\vec{k}^2 + r}{2 k_+}
+  \cE_{k_-krgen\, \underv}
+  = 0.
+\end{equation}
+As in the previous case, the constraint equation does not pose any condition on the transverse polarisations $\cE_{k_-krgen\, \underw}$ and $\cE_{k_-krgen\, \underz}$.
+
+
+\subsubsection{Cubic Interaction}
+
+As previously studied on the \nbo, we show the scalar \qed 3-points vertex computation using the previously computed eigenmodes.
+The presence of a continuous momentum in the non compact direction plays a major role in saving the convergence of the integrals.
+In the case of the \gnbo we find:
+\begin{equation}
+  \begin{split}
+    \rS_{\text{s}\qed}^{(\text{cubic})}\qty[\phi,\, a]
+    & =
+    \int\limits_{\Omega} \dd[D]{x} \sqrt{-\det g}\,
+    \qty(%
+      - i e g^{\mu\nu}\,
+      a_{\mu}
+      \qty( \phi^*\, \ipd{\nu} \phi - \ipd{\nu} \phi^*\, \phi )
+    )
+    \\
+    & =
+    \finiteprod{i}{1}{3}
+    \infinfsum{l_{\qty(i)}}\,
+    \int\limits_{\R^{D-4}} \dd[D-4]{\vec{k}_{\qty(i)}}
+    \infinfint{k_{\qty(i)\, +}}
+    \infinfint{p_{(i)}}
+    \infinfint{r_{(i)}}
+    \\
+    & \times
+    \qty( 2 \pi )^{D-1}\,
+    \delta^{D-4}\qty( \finitesum{i}{1}{3} \vec{k}_{\qty(i)} )\,
+    \delta\qty( \finitesum{i}{1}{3} p_{(i)} )\,
+    \delta\qty( \finitesum{i}{1}{3} k_{\qty(i)\, +} )\,
+    \delta_{\finitesum{i}{1}{3} l_{(i)},\, 0}
+    \\
+    & \times
+    e~
+    \cA^*_{\mkmkrgenN{2}}
+    \cA_{k_-krgenN{3}}
+    \\
+    & \times
+    \Biggl\lbrace
+      \cE_{k_-krgenN{1}\, \underu}~
+      k_{\qty(2)\, +}~
+      \cI_{\qty{3}}^{\qty[0]}
+      \\
+      & +
+      \cE_{k_-krgenN{1}\, \underv}~
+      \Biggl[
+        \qty( \frac{\vec{k}_{\qty(2)}^2 + r_{(2)}}{2 k_{\qty(2)\, +}} )\,
+        \cI_{\qty{3}}^{\qty[0]}
+        +
+        i \frac{k_{\qty(2)\, +}}{k_{\qty(1)\, +}}\,
+        \cI_{\qty{3}}^{\qty[-1]}
+        \\
+        & +
+        \frac{k_{\qty(2)\, +}}{8}
+        \Biggl[%
+            \frac{1}{\Delta_2^2}
+            \qty(%
+              \frac{l_{(1)} + p_{(1)}}{k_{\qty(1)\, +}}
+              +
+              \frac{l_{(2)} + p_{(2)}}{k_{\qty(2)\, +}}
+            )^2
+            \\
+            & +
+            \frac{1}{\Delta_3^2}
+            \qty(%
+              \frac{l_{(1)} - p_{(1)}}{k_{\qty(1)\, +}}
+              +
+              \frac{l_{(2)} - p_{(2)}}{k_{\qty(2)\, +}}
+            )^2
+        \Biggr]\,
+        \cI_{\qty{3}}^{\qty[-2]}
+      \Biggr]
+      \\
+      & +
+      \qty( \cE_{k_-krgenN{1}\, \underw} - \cE_{k_-krgenN{1}\, \underz} )
+      \\
+      & \times
+      \Biggl[
+          \frac{1}{\Delta_2^2}
+          \qty(%
+            \frac{k_{\qty(1)\, +} \qty( l_{(2)} + p_{(2)} )
+                  +
+                  k_{\qty(2)\, +} \qty( l_{(1)} + p_{(1)} )}{k_{\qty(1)\, +}}
+          )
+          \\
+          & -
+          \frac{1}{\Delta_3^2}
+          \qty(%
+            \frac{k_{\qty(1)\, +} \qty( l_{(2)} - p_{(2)} )
+                  +
+                  k_{\qty(2)\, +} \qty( l_{(1)} - p_{(1)} )} {k_{\qty(1)\, +}}
+          )
+      \Biggr]\,
+      \cJ_{\qty{3}}^{\qty[-1]}
+      \\
+      & +
+      \qty( (2) \leftrightarrow (3) )
+    \Biggr\rbrace
+  \end{split}
+\end{equation}
+where we defined:
+\begin{equation}
+  \begin{split}
+    \cI_{\qty{N}}^{\qty[\nu]}
+    & =
+    \infinfint{u}
+    2\, \abs{\Delta_2 \Delta_3} u^2\, u^{\nu}\, \finiteprod{i}{1}{N} \tphi_{k_-krgenN{i}},
+    \\
+    \cJ_{\qty{N}}^{\qty[\nu]}
+    & =
+    \infinfint{u}
+    2\, \abs{\Delta_2 \Delta_3} u^2\, \abs{u}^{\nu}\, \finiteprod{i}{1}{N} \tphi_{k_-krgenN{i}}.
+  \end{split}
+\end{equation}
+
+
+While in the \nbo case we need to regularise the integrals at least taking their principal part when all $l_{(*)} = 0$ in~\eqref{eq:nbo_div_integral}, the \gnbo does not need any specific manipulation.
+In fact the form of $\tphi_{k_-krgenN{i}}$ in~\eqref{eq:GNBO_reg_wave_functions} prevents the formation of isolated zeros in the phase factor proportional to $u^{-1}$: the presence of the continuous momentum $p$, contrary to the \nbo where all momenta are discrete, gives the integrals a distributional interpretation, similar to a derivative of a Dirac $\delta$ function.
+
+
+\subsubsection{Quartic Interactions}
+
+As for the \nbo, we consider the quartic interaction for the scalar \qed action:
+\begin{equation}
+  \begin{split}
+    \rS_{\text{s}\qed}^{(\text{quartic})}\qty[ \phi,\, a ]
+    & =
+    \int\limits_{\Omega} \dd[D]{x} \sqrt{-\det g}\,
+    \qty(%
+      e^2\, g^{\mu\nu}\, a_{\mu} a_{\nu} \abs{\phi}^2
+      -
+      \frac{g_4}{4} \abs{\phi}^4
+    )
+    \\
+    & =
+    \finiteprod{i}{1}{3}
+    \qty(%
+      \frac{1}{4\pi \sqrt{\qty(2\pi)^D \abs{\Delta_2\Delta_3 k_{\qty(i)\, +}}}}
+    )
+    \\
+    & \times
+    \infinfsum{l_{(i)}}\,
+    \int\limits_{\R^{D-4}} \dd[D-4]{\vec{k}_{\qty(i)}}
+    \infinfint{k_{\qty(i)\, +}}
+    \infinfint{p_{(i)}}
+    \infinfint{r_{(i)}}
+    \\
+    & \times
+    \qty( 2 \pi )^{D-1}\,
+    \delta^{D-4}\qty( \finitesum{i}{1}{3} \vec{k}_{\qty(i)} )\,
+    \delta\qty( \finitesum{i}{1}{3} p_{(i)} )\,
+    \delta\qty( \finitesum{i}{1}{3} k_{\qty(i)\, +} )\,
+    \delta_{\finitesum{i}{1}{3} l_{(i)},\, 0}
+    \\
+    & \times
+    \Biggl\lbrace
+      e^2
+      \cA^*_{\mkmkrgenN{3}}
+      \cA_{k_-krgenN{4}}
+      \\
+      & \times
+      \Biggl[
+        \cE_{k_-krgenN{1}} \circ \cE_{k_-krgenN{2}}\,
+        \cI_{\qty{4}}^{\qty[0]}
+        \\
+        & - i
+        \cE_{k_-krgenN{1}\, \underv}\,
+        \cE_{k_-krgenN{2}\, \underv}
+        \\
+        & \times
+        \Biggl(
+          \qty( \frac{1}{k_{\qty(1)\, +}} + \frac{1}{k_{\qty(2)\, +}} )\,
+          \cI_{\qty{4}}^{\qty[-1]}
+          \\
+          & - i
+          \qty(
+              \frac{\cG_{+\,(1,2)}}{\Delta_2^2}
+              +
+              \frac{\cG_{-\,(1,2)}}{\Delta_3^2}
+          )\,
+          \cI_{\qty{4}}^{\qty[-2]}
+        \Biggr)
+        \\
+        & +
+        \frac{1}{4}
+        \Biggl(
+          \tilde{\cE}_{+\,(1,2)}\,
+          \frac{\cG_{+\,(1,2)}}{\Delta_2^2}
+          -
+          \tilde{\cE}_{-\,(1,2)}\,
+          \frac{\cG_{-\,(1,2)}}{\Delta_2^2}
+        \Biggr)\,
+        \cJ_{\qty{4}}^{\qty[-1]}
+      \Biggr]
+      \\
+      & -
+      \frac{g_4}{4}
+      \cA^*_{\mkmkrgenN{1}}
+      \cA^*_{\mkmkrgenN{2}}
+      \\
+      & \times
+      \cA_{k_-krgenN{3}}
+      \cA_{k_-krgenN{4}}
+      \cI_{\qty{4}}^{\qty[0]}
+    \Biggr\rbrace,
+  \end{split}
+\end{equation}
+where we defined:
+\begin{equation}
+  \begin{split}
+    \cG_{\pm\,\left( a, b \right)}
+    & =
+    \frac{l_{(a)} \pm p_{(a)}}{k_{\qty(a)\, +}}
+    -
+    \frac{l_{(b)} \pm p_{(b)}}{k_{\qty(b)\, +}},
+    \\
+    \tilde{\cE}_{\pm\,\left( a, b \right)}
+    & =
+    \cE_{k_-krgenN{a}\, \underv}
+    \\
+    & \times
+    \qty( \cE_{k_-krgenN{b}\, \underw} \pm \cE_{k_-krgenN{b}\, \underz} )
+    \\
+    & -
+    \cE_{k_-krgenN{b}\, \underv}
+    \\
+    & \times
+    \qty( \cE_{k_-krgenN{a}\, \underw} \pm \cE_{k_-krgenN{a}\, \underz} )
+  \end{split}
+\end{equation}
+for simplicity.
+
+As the four points function in the \nbo case shows with clear evidence the presence of divergences when all $l_{(*)} = 0$, the \gnbo allows a distributional interpretation of the integrals $\cI_{\qty{N}}^{\qty[\nu]}$ and $\cJ_{\qty{N}}^{\qty[\nu]}$ in the previous expression.
+In fact the regularization occurs in the same way as in the three points function in the \gnbo: the phase factor proportional to $u^{-1}$ has a continuous value due to the continous momentum $p$ and it does not present isolated zeros which would prevent the interpretation as distribution.
+
+
+\subsubsection{Resurgence of Divergences and Null Brane Regularisation}
+
+Looking back at the metric~\eqref{eq:orbifold_metric} and at the identifications~\eqref{eq:orbifold_identifications} it seems reasonable to wonder what would happen if we acted in the same way over $w$, since $2 \pi \ipd{w}$ is a Killing vector as well and it commutes with $2 \pi \ipd{z}$.
+However from the analysis of \nbo and \gnbo, in the absence of at least one continuous transverse direction it is not possible to avoid the divergences associated with discrete zero energy modes and this is exactly what happens.
+
+As mentioned in the introductory section, there have been attempts to regularise the \nbo using the Null Brane.
+Differently from the \nbo, in this case the orbifold generator~\eqref{eq:nbo_killing_vector} includes an additional translation along an extra spatial dimension, namely:
+\begin{equation}
+  \begin{split}
+    \kappa & = - 2 \pi i \Delta\, J_{+2} - 2 \pi i R P_3
+    \\
+    & =
+    2 \pi\, (\Delta\, \ipd{z} + R,\ \ipd{3}).
+  \end{split}
+\end{equation}
+with metric
+\begin{equation}
+  \dd{s}^2
+  =
+  -2 \dd{u} \dd{v}
+  +
+  \Delta^2 u^2 \qty(\dd{z})^2
+  +
+  \qty(\dd{x^3})^2
+  +
+  \eta_{ij}\, \dd{x}^i \dd{x}^j.
+\end{equation}
+Even though similar in appearance to the \gnbo Killing vector, this Killing vector is substantially different from~\eqref{eq:gnbo_killing_vector}.
+
+The scalar field satisfies the same equation of motion as in the \nbo:
+\begin{equation}
+  \qty(%
+    -2 \ipd{u} \ipd{v}
+    - \frac{1}{u} \ipd{v}
+    + \frac{1}{\qty(u \Delta)^2} \ipd{z}^2
+    + \ipd{x^3}^2
+    + \eta^{ij}\, \ipd{i} \ipd{j}
+  )
+  \phi_r
+  =
+  r \phi_r,
+\end{equation}
+where $i,\, j = 4,\, 5,\, \dots D - 1$.
+The solution is:
+\begin{equation}
+  \tilde{\phi}_{\qty{ k_+\, k_z\, {k}_3\, \vec{k}\, r}}( u )
+  \propto
+  \frac{1}{\sqrt{\abs{u}}}
+  e^{-i \frac{k_z^2}{2 k_+ } \frac{1}{u}
+     + i \frac{{k}_3^2 + \vec{k}^2 + r}{2 k_+} u}.
+\end{equation}
+but with different periodicity conditions:
+\begin{equation}
+  e^{i 2 \pi n ( \Delta k_z + R k_3)}
+  =
+  1.
+\end{equation}
+This obscures the issue of the presence of a non compact direction.
+To show the non compact direction hidden in this system we define the coordinates $\hatz = \frac{1}{2} \qty( \frac{x^3}{R} + \frac{z}{\Delta} )$ and $\hatx^3 = \frac{1}{2} \qty( \frac{x^3}{R} - \frac{z}{\Delta} )$ such that $\kappa = 2 \pi \ipd{\hatz}$ and
+\begin{equation}
+  \mqty( \hatz \\ \hatx^3 )
+  \equiv
+  \mqty( \hatz + 2 \pi n \\ \hatx^3 )
+\end{equation}
+upon the orbifold identification.
+Then the momenta are $\hatk_{\hatz} = \hatl \in \Z$ and $\hatk_3\in \R$ and they are related to the momenta of the other coordinates as:
+\begin{equation}
+  k_3
+  =
+  \frac{\hatl + \hatk_3}{2 R},
+  \qquad
+  k_z
+  =
+  \frac{\hatl - \hatk_3}{2 \Delta},
+\end{equation}
+so that the solution can be written as
+\begin{equation}
+    \tilde{\phi}_{\qty{ k_+\, \hatl\, \hatk_3\, \vec{k}\, r}}( u )
+    \propto
+    \frac{1}{\sqrt{\abs{u}}}
+    e^{-i \frac{(\hatl - \hatk_3)^2}{8 \Delta^2 k_+ } \frac{1}{u}
+      + i \frac{(2 R)^{-2}(\hatk_3-\hat l)^2 + \vec{k}^2 + r}{2 k_+} u},
+\end{equation}
+which shows in a clear way that there is a non compact direction which allows a distributional interpretation as discussed in~\cite{Liu:2002:StringsTimeDependentOrbifolds}.
+However this direction cannot be easily decoupled from the compact one.
+
+
+\subsection{Comments on the BO}
+\label{sec:BO}
+
+In this section we would like to quickly show the analysis performed in the previous sections for the \nbo but in the case of the \bo.
+The results are not very different apart from the fact that divergences are milder.
+It is in fact possible to construct the full scalar \qed but nevertheless it is impossible to consider higher derivative terms in the effective theory.
+Moreover some three point amplitudes with a massive state diverge.
+
+
+\subsubsection{Geometric Preliminaries}
+
+In $\ccM^{1,1}$ we consider the change of coordinates:
+\begin{equation}
+  \begin{cases}
+    x^+ = t\, e^{+ \Delta \varphi}
+    \\
+    x^- = \sigma_-\, t\, e^{- \Delta \varphi}
+  \end{cases}
+  \qquad
+  \Leftrightarrow
+  \qquad
+  \begin{cases}
+    t = \sgn(x^+)\, \sqrt{ \abs{x^+ x^-} }
+    \\
+    \varphi = \frac{ 1 }{ 2 \Delta} \log \abs{\frac{x^+}{x^-}}
+    \\
+    \sigma_- = \sgn( x^+ x^-)
+  \end{cases}
+\end{equation}
+where $\sigma_- = \pm 1$ and $t,\, \varphi \in \R$.
+The metric reads:
+\begin{equation}
+  \begin{split}
+    \dss[2]{s}
+    & =
+    -2\, \dd{x^+} \dd{x^+}
+    \\
+    & = -2 \sigma_- \qty( \dss[2]{t} - \qty(\Delta t)^2\, \dss[2]{\varphi} ).
+  \end{split}
+\end{equation}
+Its determinant is:
+\begin{equation}
+  -\det g = 4 \Delta^2 t^2.
+\end{equation}
+In orbifold coordinates the non vanishing Christoffel symbols are:
+\begin{equation}
+  \tensor{\Gamma}{_\varphi^t_\varphi} = \Delta^2 t,
+  \qquad
+  \tensor{\Gamma}{_t^\varphi_\varphi} = t^{-1}.
+\end{equation}
+
+Using the orbifold coordinates $\qty(t,\, \varphi)$, the \bo is obtained by requiring the identification $\varphi \equiv \varphi + 2 \pi$ along the orbit of the global Killing vector $\kappa_{\varphi} = 2 \pi \ipd{\varphi}$.
+We will therefore use the recurrent parameter $\Lambda = e^{2\pi \Delta}$ as shorthand notation.
+
+
+\subsubsection{Free Scalar Action}
+
+The action for a complex scalar $\phi$ is given by
+\begin{equation}
+  \begin{split}
+    \rS_{\text{s}\qed}^{(\text{kinetic})}\qty[ \phi ]
+    & =
+    \int\limits_{\Omega} \dd[D]{x}\,
+    \sqrt{- \det g}
+    \qty(
+      -g^{\mu\nu}\, \ipd{\mu} \phi^*\, \ipd{\nu} \phi
+      -M^2  \phi^* \phi
+    )
+    \\
+    & =
+    \sum_{\sigma_- \in \qty{\pm 1}}\,
+    \int\limits_{\R^{D-2}} \dd[D-2]{\vec{x}}
+    \infinfint{t}
+    \finiteint{\varphi}{0}{2\pi}\,
+    \Delta \abs{t}
+    \\
+    & \times
+    \qty(
+      \frac{1}{2} \sigma_-\,
+      \ipd{t} \phi^*\, \ipd{t} \phi\,
+      +
+      \frac{1}{2}\, \frac{\sigma_-}{\qty(\Delta t)^2}
+      \ipd{\varphi} \phi^*\, \ipd{\varphi}  \phi\,
+      -
+      \eta^{ij}\, \ipd{i} \phi^* \ipd{j} \phi
+      -
+      M^2 \phi^* \phi
+    ).
+  \end{split}
+\end{equation}
+As before we solve the associated eigenfunction problem for the d'Alembertian operator
+\begin{align}
+  \qty(
+    -
+    \frac{1}{2} \sigma_-\, \ipd{t}^2
+    -
+    \frac{1}{2} \sigma_-\, \frac{1}{t} \ipd{t}
+    +
+    \frac{1}{2} \sigma_-\, \frac{1}{\qty(\Delta\, t)^2} \ipd{\varphi}^2
+    +
+    \ipd{i}^2
+  )
+  \phi_r
+  =
+  r \phi_r
+  .
+\end{align}
+with
+\begin{equation}
+  r = 2\, k_+ k_- - \vec{k}^2 = 2 \zeta_- m^2  - \vec{k}^2      
+\end{equation}
+where for later convenience (see the transformation of $k$ under the induced action of the Killing vector~\eqref{eq:BO_kpkp_equivalence}) we parameterise the momenta as:
+\begin{equation}
+  \begin{cases}
+    k_+ & = m\, e^{+ \Delta \beta}
+    \\
+    k_- & = \zeta_- m\, e^{- \Delta \beta}
+  \end{cases}
+  \qquad
+  \Leftrightarrow
+  \qquad
+  \begin{cases}
+    m & = \sgn(k_+)\, \sqrt{ \abs{k_+ k_-} }
+    \\
+    \beta & = \frac{1}{2 \Delta} \log\abs{\frac{k_+}{k_-}}
+    \\
+    \zeta_- & = \sgn(k_+ k_-)
+  \end{cases}
+  \label{eq:kpkm_parametrization}
+\end{equation}
+where $\zeta_- = \pm 1$ and $m,\, \beta \in \R$.
+To solve the problem we use standard techniques and perform the Fourier transform with respect to $\vec{x}$ and $\phi$ as :
+\begin{equation}
+  \phi\qty(t,\, \varphi,\, \vec{x})
+  =
+  \infinfsum{l}\,
+  \int\limits_{\R^{D-2}} \dd[D-2]{\vec{x}}\,
+  e^{i\, \vec{k} \cdot \vec x}
+  e^{i\, l \varphi}
+  H_{\lkrsi}(t),
+\end{equation}
+so that the new function $H_{\lkrsi}$ satisfies
+\begin{align}
+  \ipd{t}^2 H_{\lkrsi}
+  +
+  \frac{1}{t} \ipd{t} H_{\lkrsi}
+  +
+  \qty[
+    \frac{l^2}{\qty(\Delta\, t)^2} 
+    +
+    2 \sigma_-
+    \qty( r + \vec{k}^2 )
+  ]
+  H_{\lkrsi}
+  =
+  0,
+\end{align}
+which, upon the introduction of the natural quantities (see also~\eqref{eq:BO_PSI0_tau_lambda} for an explanation of the naturalness of $\lambda$)
+\begin{equation}
+  \tau = m\, t,
+  \qquad
+  \lambda = e^{\Delta\qty(\varphi + \beta)},
+  \qquad
+  \hsigma_- = \sigma_-\, \zeta_-,
+\end{equation}
+shows that the actual dependence on parameters is
+\begin{equation}
+  H_{\lkrsi}(t) = \tphi_{\lsi}\qty(\tau),
+\end{equation}
+so that
+\begin{align}
+  \ipd{\tau}^2 \tphi_{\lsi}
+  +
+  \frac{1}{\tau} \ipd{\tau} \tphi_{\lsi}
+  +
+  \qty[
+    \frac{l^2}{\qty(\Delta\, \tau)^2} 
+    +
+    4 \hsigma_-
+  ]
+  \tphi_{\lsi}
+  =
+  0.
+  \label{eq:BO_eq_diff_tilde_phi}
+\end{align}
+The asymptotic behaviour of the solutions is:
+\begin{equation}
+  \tphi_{\lsi} \sim
+  \begin{cases}
+    A_+ \abs{\tau}^{i \frac{l}{\Delta}}
+    +
+    A_- \abs{\tau}^{-i \frac{l}{\Delta}}
+    & \qfor
+    l \neq 0
+    \\
+    A_+ \log\abs{\tau} + A_-
+    & \qfor
+    l = 0
+  \end{cases}.
+  \label{eq:BO_asymtotics}
+\end{equation}
+    
+\subsubsection{Eigenmodes on BO from Covering Space}
+
+We now repeat the essential part of the analysis performed in the \nbo case.
+As on the \nbo we say ``wave function'' and not eigenfunction since eigenfunctions for non scalar states require some  constraints on polarisations which we do not impose.
+
+
+\paragraph{Scalar Wave Function}
+
+We start as usual from the Minkowskian wave function and we write only the dependence on $x^+$ and $x^-$ since all the other coordinates are spectators
+\begin{equation}
+  \begin{split}
+    \psi_{k_+\, k_-}\qty(x^+,\, x^-)
+    & =
+    e^{i\, \qty( k_+ x^+ + k_- x^- )}
+    \\
+    & =
+    e^{%
+      i\, m\, t\, \qty[%
+        e^{\Delta \qty( \varphi + \beta )} + \hsigma_-\, t\, e^{\Delta \qty( \varphi - \beta )}
+      ]
+    }
+    \\
+    & =
+    \psi_{k_+\, k_-}\qty(t,\, \varphi,\, \sigma_-).
+  \end{split}
+\end{equation}
+We can compute the wave function on the orbifold by summing over all images:
+\begin{equation}
+  \begin{split}
+    \Psi_{\qty[k_+\, k_-]}\qty(\qty[x^+,\, x^-])
+    & =
+    \infinfsum{n}
+    \psi_{k_+\, k_-}\qty( \cK^n \qty(x^+,\, x^-))
+    \\
+    & =
+    \infinfsum{n}
+    \psi_{k_+\, k_-}\qty(x^+ e^{2\pi\Delta\,n},\, x^- e^{-2\pi\Delta\,n})
+    \\
+    & =
+    \infinfsum{n}
+    e^{%
+      i \qty{%
+        \qty[ k_+ e^{2\pi\Delta\,n} ] x^+ + \qty[ k_- e^{-2\pi\Delta\,n} ] x^-
+      }
+    }
+    \\
+    & =
+    \infinfsum{n}
+    \psi_{\cK^{-n}\qty( k_+\, k_-)}\qty( x^+,\, x^- ),
+  \end{split}
+\end{equation}
+where we write $\qty[k_+\, k_-]$ because the function depends on the equivalence class of $k_+ k_-$ only.
+The equivalence relation is given by
+\begin{equation}
+  k
+  =
+  \mqty( k_+ \\ k_- )
+  \equiv
+  \cK^{-n} k
+  =
+  \mqty( k_+ e^{2\pi\Delta\,n} \\ k_- e^{-2\pi\Delta\,n} ).
+  \label{eq:BO_kpkp_equivalence}
+\end{equation}
+The previous equation explains the rationale for the parametrization~\eqref{eq:kpkm_parametrization} so that we can always choose a representative 
+\begin{equation}
+  0 \le \beta < 2 \pi, \qquad m \neq 0,
+\end{equation}
+or differently said $\beta \equiv \beta + 2 \pi$ and therefore we can use the dual quantum number $l$ using a Fourier transform.
+Using the well adapted set of coordinates we can write the spin-0 wave function in a way to show the natural variables as
+\begin{equation}
+  \begin{split}
+    \Psi_{\qty[k_+\, k_-]}\qty(\qty[x^+,\, x^-])
+    & =
+    \infinfsum{n}
+    e^{%
+      i\, \tau \qty[%
+        \lambda e^{+2\pi\Delta\,n}
+        +
+        \hsigma_- \lambda^{-1} e^{ -2\pi\Delta\,n} 
+      ]
+    }  
+    =
+    \hPsi\qty(\tau,\, \lambda,\, \hsigma_-).
+  \end{split}
+  \label{eq:BO_PSI0_tau_lambda}
+\end{equation}
+Again the scalar eigenfunction has a unique equivalence class which mixes
+coordinates and momenta.
+
+Now we use the basic trick used in Poisson resummation
+\begin{equation}
+  \begin{split}
+    \Psi_{\qty[k_+\, k_-]}\qty(\qty[x^+,\, x^-])
+    & =
+    \infinfint{s}
+    \delta_P(s)\,
+    e^{%
+      i\, \qty{%
+        k_+  x^+ \Lambda^s
+        +
+        k_-  x^- \Lambda^{-s}
+      }
+    }
+    \\
+    & =
+    \frac{1}{2\pi}
+    \infinfsum{l}
+    \abs{\frac{k_+ x^+}{k_- x^-}}^{-i \frac{l}{2 \Delta} }\,
+    \infinfint{s}
+    e^{i\, 2 \pi\, l\, s}
+    e^{i\, \sgn(k_+\, x^+) \sqrt{\abs{k_+ k_- x^+ x^-}}
+      \qty{
+        \Lambda^s
+        +
+        \sigma_- \zeta_- \Lambda^{-s}
+      }
+    }
+    \\
+    & =
+    \frac{1}{2\pi}
+    \infinfsum{l}
+    \qty( e^{\Delta \qty( \varphi + \beta )} )^{-i \frac{l}{\Delta}}\,
+    \infinfint{s}
+    e^{i\, 2 \pi\, l\, s}
+    e^{%
+      i\, m t\, \qty{
+        \Lambda^s
+        +
+        \sigma_- \zeta_- \Lambda^{-s}
+      }
+    }
+    \\
+    & =
+    \frac{1}{2\pi}
+    \infinfsum{l}
+    e^{i\, l \beta}
+    \qty[%
+      e^{i\, l \varphi}\,
+      \infinfint{s}
+      e^{-i\, 2\pi l s}
+      e^{%
+        i\, m t\, \qty{
+          \Lambda^s
+          +
+          \sigma_- \zeta_- \Lambda^{-s}
+        }
+      }
+    ],    
+  \end{split}
+\end{equation}
+where the last line represents the change of quantum number from $m\, \beta$ to $m\, l$ and allows us to identify
+\begin{equation}
+  \cN_{\text{BO}}
+  \tphi_{\lsi}(\tau)
+  =
+  \frac{1}{2\pi}\,
+  \infinfint{s}
+  e^{-i\, 2 \pi\, l\, s}
+  e^{%
+    i\, \tau\, \qty{
+      \Lambda^s
+      +
+      \hsigma_- \Lambda^{-s}
+    }
+  },    
+\end{equation}
+where $\cN_{\text{BO}}$ is a constant which depends on the normalization chosen for $\tphi_{\lsi}$. 
+This expression gives an integral representation of the \ode solutions.
+
+
+\paragraph{Tensor Wave Function (Spin-2)}
+
+We consider the tensor wave function in Minkowski space.
+We focus on $x^+,\, x^-$ and $x^2$ since all other directions behave as $x^2$.
+Differently from scalar function we need to keep the dependence on $x^2$ since it is needed for non trivial physical polarisations and it enters in the transversality conditions.
+Explicitly we find
+\begin{equation}
+  \begin{split}
+    \cN_{\text{BO}}
+    \psi^{[2]}_{k\, S}\qty(x^+,\, x^-,\, x^2)
+    & =
+    S_{\mu\nu}\,
+    \dd{x}^{\mu} \dd{x}^{\nu}\,
+    \psi_k(x)
+    \\
+    & =
+    \Biggl[
+      S_{++}\, \qty(\dd{x^+})^2  
+      +
+      2\, S_{+-}\, \dd{x^+} \dd{x^-}
+      +
+      2\, S_{+2}\, \dd{x^+}  \dd{x^2}
+      \\
+      & +
+      S_{--}\, (\dd{x^-})^2
+      +
+      2\, S_{-2}\, \dd{x^2} \dd{x^2}
+      \\
+      & +
+      S_{22}\, (\dd{x^2})^2
+    \Biggr]\,
+    e^{i\, \qty( k_+ x^+ + k_- x^- + k_2 x^2 )},
+  \end{split}
+\end{equation}
+which we rewrite in orbifold coordinates 
+\begin{equation}
+  \begin{split}
+    \cN_{\text{BO}}\,
+    \psi^{[2]}_{k\,S}\qty(t,\, \varphi,\, x^2,\, \sigma_-)
+    & =
+    S_{\alpha\beta}\,
+    \dd{x}^{\alpha} \dd{x}^{\beta}\,
+    \psi_k(x)
+    \\
+    & \times
+    \Biggl[
+      \dss[2]{t}\,
+      \qty(%
+        2\, S_{+\,-}\, \sigma_-
+        +
+        S_{+\,+}\, e^{2\,\Delta\, \varphi}
+        +
+        S_{-\,-}\, e^{- 2\,\Delta\, \varphi}
+      )
+      \\
+      & +
+      2\, \Delta\, t\,
+      \dd{t}\, \dd{\varphi}\,
+      \qty(%
+        S_{+\,+}\, e^{2\,\Delta\, \varphi}
+        -
+        S_{-\,-}\, e^{-2\,\Delta\, \varphi}
+      )
+      \\
+      & +
+      \Delta^2\, t^2
+      \dss[2]{\varphi}\,
+      \qty(%
+        -2\, S_{+\,-}\, \sigma_-
+        +
+        S_{+\,+}\, e^{2\,\Delta\, \varphi}
+        +
+        S_{-\,-}\, e^{- 2\, \Delta\, \varphi}
+      )
+      \\
+      & +
+      2\, \dd{t}\, \dd{x^2}\,
+      \qty(%
+        S_{-\,2}\,e^ {- \Delta\,\varphi }\,\sigma_-
+        +
+        S_{+\,2}\, e^{\Delta\,\varphi}
+      )
+      \\
+      & +
+      2 \Delta\, t\,
+      \dd{x^2}\, \dd{\varphi}\,
+      \qty(%
+        S_{+\,2}\, e^{\Delta\, \varphi}
+        -
+        S_{-\,2}\, e^{-\Delta\, \varphi}\, \sigma_-
+      )
+      \\
+      & +
+      \qty(\dd{x^2})^2\, S_{2\,2}
+    \Biggr]
+    e^{%
+      i\, m\, t\, \qty[%
+        e^{\Delta \qty( \varphi + \beta )}
+        +
+        \hsigma_- e^{\Delta \qty( \varphi - \beta )}
+      ]
+      + i\, k_2 x^2
+    }.
+  \end{split}
+\end{equation}
+
+Now we define the tensor wave on the orbifold as a sum over all images as
+\begin{equation}
+  \begin{split}
+    \cN_{\text{BO}}\,
+    \Psi^{[2]}_{\qty[k\, S]}\qty(\qty[x])
+    & =
+    \infinfsum{n}
+    \qty( \cK^n\, \dd{x} ) \cdot S \cdot \qty( \cK^n\, \dd{x} )\,
+    \psi_{k}( \cK^n x)
+    \\
+    & =
+    \infinfsum{n}
+    \dd{x} \cdot \qty( \cK^{-n}\, S ) \cdot \dd{x}\,
+    \psi_{ \cK^{-n}\, k}(x).
+  \end{split}
+\end{equation}
+In the last line we have defined the induced action of the Killing vector on $\qty(k,\, S)$ which can be explicitly written as:
+\begin{equation}
+  \cK^{-n}
+  \mqty(%
+    S_{ +\, + } \\
+    S_{ +\, - } \\
+    S_{ -\, - } \\
+    S_{ +\, 2 } \\
+    S_{ -\,  2} \\
+    S_{ 2\, 2 }
+  )
+  =
+  \mqty(
+    e^{2 n \Delta \varphi}\, S_{ +\, + } \\
+    S_{ +\, - } \\
+    e^{-2 n \Delta \varphi}\, S_{ -\, - } \\
+    e^{n \Delta \varphi}\, S_{ +\, 2 } \\
+    e^{-n \Delta \varphi}\, S_{-\, 2} \\
+    S_{ 2\, 2 } 
+  )
+  ,
+\end{equation}
+and it amounts to a trivial scaling.
+In orbifold coordinates computing the tensor wave simply amounts to sum over all the shifts $\varphi \rightarrow \varphi + 2 \pi n$.
+Then we have to give a close  expression for the sum involving powers $e^{2 \pi \Delta n}$.
+Explicitly we find:
+\begin{equation}
+  \begin{split}
+    & \infinfsum{n}
+    \qty( e^{2 \pi \Delta n} )^N
+    e^{%
+      i\, \tau \qty[%
+        \lambda e^{+2\pi\Delta\,n}
+        +
+        \hsigma_- \frac{1}{\lambda} e^{-2\pi\Delta\,n} 
+      ]
+    }
+    \\
+    & =
+    \begin{cases}
+      \qty[%
+        \frac{1}{2}
+        \qty(%
+          \frac{1}{\lambda} \ipd{\tau}
+          +
+          \frac{1}{\tau} \ipd{\lambda}
+        )
+      ]^N\,
+      \hPsi\qty(\tau,\, \lambda,\, \hsigma_-)
+      & \qfor
+      N > 0
+      \\
+      \qty[%
+        \frac{1}{2}
+        \qty(%
+          \lambda \ipd{\tau}
+          -
+          \frac{\lambda^2}{\tau} \ipd{\lambda}
+        )
+      ]^N\,
+      \hPsi\qty(\tau,\, \lambda,\, \hsigma_-)
+      & \qfor
+      N < 0
+    \end{cases},
+  \end{split}
+\end{equation}
+where $\tau$ derivatives of $\tphi_{\lsi}$ of order higher than $2$  can be reduced with the help of the differential equation~\eqref{eq:BO_eq_diff_tilde_phi}.
+  
+We now have to identify the basic polaritazions on the orbifold.
+However the quantum number $\beta$ is no longer a good quantum number on the orbifold and it is replaced by $l$.
+The relations among orbifold polarisations and Minkowski polarisations may depend on $\beta$ as long as the traceless and transversality conditions on the orbifold are independent of it.\footnotemark{}
+\footnotetext{%
+  These conditions may be a linear combinations of the ones in Minkowski.
+}
+Finally it seems reasonable to use the natural variable $\lambda = e^{\Delta \qty( \varphi + \beta )}$.
+Therefore we have:
+\begin{equation}
+  \begin{split}
+    \cS_{t\,t} & = e^ {- 2\,\Delta\,\beta }\,S_{+\,+},
+    \\
+    \cS_{t\,\varphi} & = S_{+\,-},
+    \\
+    \cS_{t\,2} & = e^ {- \Delta\,\beta }\,S_{+\,2},
+    \\
+    \cS_{\varphi\,\varphi} & = e^{2\,\Delta\,\beta}\,S_{-\,-},
+    \\
+    \cS_{\varphi\,2} & = e^{\Delta\,\beta}\,S_{-\,2},
+    \\
+    \cS_{2\,2} & = S_{2\,2},
+  \end{split}
+\end{equation}
+which can be trivially inverted as
+\begin{equation}
+  \begin{split}
+    S_{+\,+} & = e^{2\,\Delta\,\beta}\,\cS_{t\,t},
+    \\
+    S_{+\,-} & = \cS_{t\,\varphi},
+    \\
+    S_{+\,2} & = e^{\Delta\,\beta}\,\cS_{t\,2},
+    \\
+    S_{-\,-} & = e^ {- 2\,\Delta\,\beta }\,\cS_{\varphi\,\varphi},
+    \\
+    S_{-\,2} & = e^ {- \Delta\,\beta }\,\cS_{\varphi\,2},
+    \\
+    S_{2\,2} & = \cS_{2\,2}.
+  \end{split}
+\end{equation}
+We can then compute the trace:
+\begin{equation}
+  \tr(S) = -2\, \cS_{t\,\varphi} + \cS_{2\,2},
+\end{equation}
+while the transversality conditions become
+\begin{equation}
+  \begin{split}
+    \qty(k \cdot S)_+
+    & =
+    -
+    e^{\Delta\, \beta}\,
+    \qty(%
+      m\, \hsigma_-\, \sigma_-\, \cS_{t\,t}
+      +
+      m\, \cS_{t\,\varphi}
+      -
+      k_{2}\, \cS_{t\,2}
+    )
+    \\
+    \qty(k \cdot S)_-
+    & =
+    -
+    e^{-\Delta\, \beta}\,
+    \qty(%
+      m\, \hsigma_-\, \sigma_-\, \cS_{t\,\varphi}
+      +
+      m\, \cS_{\varphi\,\varphi}
+      -
+      k_{2}\, \cS_{\varphi\,2}
+    )
+    \\
+    \qty(k \cdot S)_2
+    & =
+    -
+    \qty(%
+      m\, \hsigma_-\, \sigma_-\, \cS_{t\,2}
+      +
+      m\, \cS_{\varphi\,2}
+      -
+      k_{2}\, \cS_{2\,2}
+    ),
+  \end{split}
+\end{equation}
+which are independent from $\beta$ when it is set to zero.
+
+The final expression of the wave function for the symmetric tensor on the orbifold is:
+\begin{equation}
+  \begin{split}
+    \Psi^{[2]}_{\qty[k\, S]}\qty(\qty[x])
+    & =
+    \infinfsum{l} e^{i\, l \beta}
+    \Biggl[
+      S_{m\, l,\, t t}\, \dss[2]{t}  
+      +
+      2\, S_{m\, l,\, t \varphi}\, \dd{t} \dd{\varphi}
+      +
+      2\, S_{m\, l,\, t 2}\, \dd{t} \dd{x^2}
+      \\
+      & +
+      S_{m\, l,\, \varphi \varphi}\, \dss[2]\varphi
+      +
+      2\, S_{m\, l,\, \varphi 2}\, \dd{\varphi} \dd{x^2}
+      \\
+      & +
+      S_{m\, l,\, 22}\, \dd{x^2}^2
+    \Biggr],
+  \end{split}
+\end{equation}
+where the explicit expressions for the components are
+\begin{equation}
+  \begin{split}
+    S_{m\, l,\, tt}
+    & =
+    \qty[%
+      -
+      \frac{\tphi_{\lsi}(\tau)\, l\, \lambda^{\frac{i\,l}{\Delta}}\,
+      \qty(%
+        l\,\cS_{t\,t}
+        +
+        i\,\Delta\,\cS_{t\,t}
+        +
+        l\,\cS_{\varphi\,\varphi}
+        -
+        i\,\Delta\,\cS_{\varphi\,\varphi}
+      )
+      }{2\,\Delta^2}
+    ]
+    \frac{1}{\tau^2}
+    \\
+    & +
+    \qty[%
+      \frac{1}{2\,\Delta}
+      \dv{\tau}\, \tphi_{\lsi}(\tau)\,\lambda^\frac{i\,l}{\Delta}\,
+      \qty(%
+        i\,l\,\cS_{t\,t}
+        -i\,l\,\cS_{\varphi\,\varphi}
+        -\Delta\,\cS_{t\,t}
+        -\Delta\,\cS_{\varphi\,\varphi}
+      )
+    ]
+    \frac{1}{\tau}
+    \\
+    & +
+    \qty[%
+      \tphi_{\lsi}(\tau)\,\lambda^\frac{{i\,l}{\Delta}}\,
+      \qty(%
+        \hsigma_-\,\cS_{t\,t}
+        +
+        2\,\sigma_-\,\cS_{t\,\varphi}
+        +
+        \hsigma_-\,\cS_{\varphi\,\varphi}
+      )
+    ],              
+  \end{split}
+\end{equation}
+\begin{equation}
+  \begin{split}
+    S_{m\, l,\, t \varphi}
+    & =
+    \qty[
+      -\frac{\tphi_{\lsi}(\tau)\,l\,\lambda^\frac{{i\,l}{\Delta}}\,\qty(l\,\cS_{t\,t}+i\,\Delta\,\cS_{t\,t}-l\,\cS_{\varphi\,\varphi}+i\,\Delta\,\cS_{\varphi\,\varphi})}
+      {2\,\Delta\,{m}}
+    ]
+    \frac{1}{\tau}
+    \\
+    & +
+    \qty[
+    \frac{\dv{\tau}\,\tphi_{\lsi}(\tau)\,
+      \lambda^\frac{{i\,l}{\Delta}}\,
+      \qty(
+      i\,l\,\cS_{t\,t}
+      -\Delta\,\cS_{t\,t}+
+      i\,l\,\cS_{\varphi\,\varphi}
+      +\Delta\,\cS_{\varphi\,\varphi}
+      )}{2\,{m}}
+    ]
+    \\
+    & +
+    \qty[
+      \frac{\Delta\, \hsigma_-\, \tphi_{\lsi}(\tau)\,
+      \lambda^\frac{{i\,l}{\Delta}}\, \qty(\cS_{t\,t}-\cS_{\varphi\,\varphi})}{m}
+    ]
+    \tau,
+  \end{split}
+\end{equation}
+\begin{equation}
+  \begin{split}
+    S_{m\, l,\, \varphi\varphi}
+    & =
+    \qty[
+      -
+      \frac{1}{2\,m^2}
+      \tphi_{\lsi}(\tau)\,
+      l\,
+      \lambda^\frac{{i\,l}{\Delta}}\,
+      \qty(
+      l\, ( \cS_{t\,t} +\cS_{\varphi\,\varphi} )
+      +i\,\Delta\, ( \cS_{t\,t} - \cS_{\varphi\,\varphi} )
+      )
+    ]
+    \\
+    & +
+    \qty[
+      \frac{1}{2\,m^2}
+      \Delta\,
+      \qty(\dv{\tau}\,\tphi_{\lsi}(\tau))\,
+      \lambda^\frac{{i\,l}{\Delta}}\,
+      \qty(
+      i\,l\,\cS_{t\,t}
+      -i\,l\,\cS_{\varphi\,\varphi}
+      -\Delta\,\cS_{t\,t}
+      -\Delta\,\cS_{\varphi\,\varphi}
+      )
+    ]
+    \tau
+    \\
+    & +
+    \qty[
+      \frac{1}{m^2}
+      \Delta^2\,
+      \tphi_{\lsi}(\tau)\,
+      \lambda^\frac{{i\,l}{\Delta}}\,
+      \qty(
+      \hsigma_-\,\cS_{t\,t}
+      +\hsigma_-\,\cS_{\varphi\,\varphi}
+      -2\,\sigma_-\,\cS_{t\,\varphi}
+      )
+    ]
+    \tau^2,
+  \end{split}
+\end{equation}
+together with the effectively vector components in the orbifold directions:
+\begin{equation}
+  \begin{split}
+    S_{m\, l,\, t2}
+    & =
+    \qty[
+      \frac{i}{2\,\Delta}
+      \tphi_{\lsi}(\tau)\,
+      l\,
+      \lambda^\frac{{i\,l}{\Delta}}\,
+      \qty(\cS_{t\,2}-\cS_{\varphi\,2}\,\sigma_-)
+    ]
+    \frac{1}{\tau}
+    \\
+    & +
+    \qty[
+      \frac{1}{2}
+      \dv{\tau}\,\tphi_{\lsi}(\tau)\,
+      \lambda^\frac{{i\,l}{\Delta}}\,
+      \qty(\cS_{t\,2}+\cS_{\varphi\,2}\,\sigma_-)
+    ],
+  \end{split}
+\end{equation}
+and
+\begin{equation}
+  \begin{split}
+    S_{m\, l,\, \varphi 2}
+    & =
+    \qty[
+      \frac{i}{2\,m}
+      \tphi_{\lsi}(\tau)\,
+      l\,
+      \lambda^\frac{{i\,l}{\Delta}}\,
+      \qty(\cS_{t\,2}+\cS_{\varphi\,2}\,\sigma_-)
+    ]
+    \\
+    & +
+    \qty[
+      \frac{1}{2\,m}
+      \Delta\,
+      \qty(\frac{d}{d\,\tau}\,\tphi_{\lsi}(\tau))\,
+      \lambda^\frac{{i\,l}{\Delta}}\,
+      \qty(\cS_{t\,2}-\cS_{\varphi\,2}\,\sigma_-)
+    ]
+    \tau,
+  \end{split}
+\end{equation}
+and the effectively scalar component:
+\begin{equation}
+  S_{m\, l,\, 22}
+  =
+  \cS_{2\,2}\,
+  \tphi_{\lsi}(\tau)\,
+  \lambda^\frac{i\,l}{\Delta}.
+\end{equation}
+
+
+\subsection{Overlaps and Divergent Three Points String Amplitudes}
+\label{sec:BOoverlap}
+
+We consider some overlaps as done for the \nbo.
+The connection between the overlaps on the orbifold and the sums of images remains unchanged when we change the Killing vector $\cK$, hence we can limit ourselves to discuss the integrals on the orbifold space.  
+
+
+\subsubsection{Overlaps Without Derivatives}
+
+Let us start with the simplest case of the overlap of $N$ scalar wave functions:
+\begin{equation}
+  \begin{split}
+    I^{(N)}
+    & =
+    \int\limits_{\Omega} \dd[3]{x}\,
+    \sqrt{- \det g}
+    \finiteprod{i}{1}{N}
+    \Psi_{\qty[k_{\qty(i)\, +}\, k_{\qty(i)\, -}]}(\qty[x^+,\, x^-,\, x^2]))
+    \\
+    & =
+    \cN_{\text{BO}}^N
+    \sum_{ \qty{l_{\qty(i)} } \in \Z^N } 
+    e^{i \finitesum{i}{1}{N} l_{\qty(i)} \beta_{(i)} }
+    \int\limits_{\Omega} \dd[3]{x}\,
+    \sqrt{-\det g}
+    \finiteprod{i}{1}{N} \phi_{\lsiN{i}}.
+  \end{split}
+\end{equation}
+This is always a distribution since the problematic $l_{\qty(*)} = 0$ sector gives a divergence $\qty(\log\abs{t})^N$ when $t \sim 0$.
+All other sectors have no issues because of the asymptotic behaviours~\eqref{eq:BO_asymtotics}. 
+
+
+\subsubsection{An Overlap With Two Derivatives}
+
+We consider in orbifold coordinates the overlap needed for the amplitude involving two tachyons and one massive state, i.e.:
+\begin{equation}
+  K
+  =
+  \int\limits_{\Omega} \dd[3]{x}\,
+  \sqrt{-\det g}\,
+  g^{\alpha\beta}\, g^{\gamma\delta}\,
+  \Psi^{[2]}_{\qty[k_{\qty(3)}, S_{\qty(3)}]\, \alpha\gamma}\qty(\qty[x])\,
+  D_{\beta} \ipd{\delta} \Psi_{\qty[k_{\qty(2)}]}\qty(\qty[x])\,
+  \Psi_{\qty[k_{\qty(1)}]}\qty(\qty[x]).
+\end{equation}
+Since we use the traceless condition we need to keep all momenta and polarisations.
+We write:
+\begin{equation}
+  \begin{split}
+    K
+    & =
+    \int\limits_{\Omega} \dd[3]{x}\,
+    \sqrt{-\det g}
+    \Biggl[
+      \Psi^{[2]}_{\qty[k_{\qty(3)}, S_{\qty(3)}]\,  t t }\,
+      \ipd{t}^2 \Psi_{ \qty[k_{\qty(2)}] }
+      \\
+      & -
+      2\, \qty(\frac{1}{\Delta t})^2
+      \Psi^{[2]}_{\qty[k_{\qty(3)}, S_{\qty(3)}]\,  t \varphi }\,
+      \qty(%
+        \ipd{t} \ipd{\varphi} \Psi_{ \qty[k_{\qty(2)}] }
+        -
+        \frac{1}{t} \ipd{\varphi} \Psi_{ \qty[k_{\qty(2)}] }
+      )
+      \\
+      & +
+      \qty(\frac{1}{\Delta t})^4
+      \Psi^{[2]}_{\qty[k_{\qty(3)}, S_{\qty(3)}]\,  \varphi \varphi }\,
+      \qty(%
+        \ipd{\varphi}^2 \Psi_{ \qty[k_{\qty(2)}] }
+        -
+        \Delta^2 t \ipd{t} \Psi_{ \qty[k_{\qty(2)}] }
+      )
+      \\
+      & -
+      2\, \Psi^{[2]}_{\qty[k_{\qty(3)}, S_{\qty(3)}]\,  t 2 }\,
+      \ipd{t} \ipd{2} \Psi_{ \qty[k_{\qty(2)}] }
+      \\
+      & +
+      2\, \qty(\frac{1}{\Delta t})^2
+      \Psi^{[2]}_{\qty[k_{\qty(3)}, S_{\qty(3)}]\,  \varphi 2 }\,
+      \ipd{\varphi} \ipd{2} \Psi_{ \qty[k_{\qty(2)}] }
+      \\
+      & +
+      \Psi^{[2]}_{\qty[k_{\qty(3)}, S_{\qty(3)}]\,  2 2 }\,
+      \ipd{2}^2 \Psi_{ \qty[k_{\qty(2)}] }
+    \Biggr]
+    \Psi_{ \qty[k_{\qty(1)}] }.
+  \end{split}
+\end{equation}
+
+Now consider the behaviour for $l_{\qty(*)} = 0$ for small $t$.
+All the $\ipd{\varphi}$ can be dropped since they lower a $l_{\qty(2)}$.
+The leading contributions from spin-2 components are $S_{m\, l\, t t} \sim \frac{1}{t^2}$, $S_{m\, l\, \varphi \varphi}, S_{m\, l\, 2\,2} \sim 1$ and $S_{m\, l\, t 2} \sim \frac{1}{t}$.
+The leading $\frac{1}{t^4}$ reads:
+\begin{equation}
+  \begin{split}
+    K
+    & \sim
+    \int\limits_{t \sim 0} \dd{t}\,
+    \abs{t}\,
+    \Biggl[
+      -
+      \frac{1}{2}
+      \dv{\tau}\,
+      \tphi_{\lsi}\,
+      \qty( \cS_{t\,t} + \cS_{\varphi\,\varphi} )
+      \frac{1}{\tau}\,
+      \ipd{t}^2 \Psi_{ [k_{\qty(2)}] }
+      \\
+      & +
+      \qty(\frac{1}{\Delta t})^4\,
+      \frac{-\Delta^2}{2\,m^2}
+      \dv{\tau}\,
+      \tphi_{\lsi}\,
+      \qty( \cS_{t\,t} + \cS_{\varphi\,\varphi} )
+      \tau\,
+      \qty( - \Delta^2 t \ipd{t} \Psi_{ [k_{\qty(2)}] })
+    \Biggr]
+    \Psi_{ \qty[k_{\qty(3)}] }
+  \end{split}
+\end{equation}
+In the limit of our interest $\eval{\Psi_{ \qty[k] }}_{l = 0} \sim \eval {\tphi_{\lsi}}_{l = 0} \sim \log\abs{t}$.
+The two terms add together because of sign of the covariant derivative to give:
+\begin{equation}
+  K
+  \sim
+  \int\limits_{t \sim 0} \dd{t}\, \abs{t}\,
+  \qty[
+    \qty( \frac{1}{2} + \frac{1}{2} )
+    \frac{\cS_{t\,t} + \cS_{\varphi\,\varphi}}{ m^4}
+    \frac{\log\abs{t}}{t^4}
+    +
+    \order{\frac{\qty(\log\abs{t})}{t}}
+  ],
+\end{equation}
+which is divergent for the physical polarisation $\cS_{t\,t} = \cS_{\varphi\,\varphi} = -\hsigma_- \sigma_- \cS_{t\,\varphi} = -\frac{1}{2} \hsigma_- \sigma_- \cS_{2 2}$.
+  
 
 \subsection{Summary and Conclusions}
 
