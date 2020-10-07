@@ -703,6 +703,7 @@ When considering the full theory $T_{\text{full}} = T + T_{\text{ghost}}$ and $\
 
 
 \subsection{Extra Dimensions and Compactification}
+\label{sec:CYmanifolds}
 
 We are ultimately interested in building a consistent phenomenology in the framework of string theory.
 Any theoretical infrastructure has then to be able to support matter states made of fermions.
@@ -881,6 +882,7 @@ Since \cy manifolds have \SU{m} holonomy, the trace part of the coefficients of 
 
 
 \subsubsection{Cohomology and Hodge Numbers}
+\label{sec:cohomology_hodge}
 
 \cy manifolds $M$ of complex dimension $m$ present geometric characteristics of general interest both in pure mathematics and string theory.
 They can be characterised in different ways.
@@ -910,29 +912,29 @@ The cohomology group in this case is $H^{(r,s)}_{\bpd}( M, \C )$ and the relatio
   \bigoplus\limits_{p = r + s}\,
   H^{(r,s)}_{\bpd}( M, \C ).
 \end{equation}
-As in the case of Betti numbers, we can define the complex equivalents, the \emph{Hodge numbers}, $h^{r,s} = \dim\limits_{\C} H^{(r,s)}_{\bpd}( M, \C )$ which count the number of harmonic $(r, s)$-forms on $M$.
-Notice that in this case $h^{r,s}$ is the complex dimension $\dim\limits_{\C}$ of the cohomology group.
+As in the case of Betti numbers, we can define the complex equivalents, the \emph{Hodge numbers}, $\hodge{r}{s} = \dim\limits_{\C} H^{(r,s)}_{\bpd}( M, \C )$ which count the number of harmonic $(r, s)$-forms on $M$.
+Notice that in this case $\hodge{r}{s}$ is the complex dimension $\dim\limits_{\C}$ of the cohomology group.
 
 For \cy manifolds it is possible to show that the \SU{m} holonomy of $g$ implies that the vector space of $(r, 0)$-forms is \C if $r = 0$ or $r = m$.
-Therefore $h^{0,0} = h^{m,0} = 1$, while $h^{r,0} = 0$ if $r \neq 0,\, m$.
+Therefore $\hodge{0}{0} = \hodge{m}{0} = 1$, while $\hodge{r}{0} = 0$ if $r \neq 0,\, m$.
 Exploiting symmetries of the cohomology groups, Hodge numbers are usually collected in \emph{Hodge diamonds}.
 In string theory we are ultimately interested in \cy manifolds of real dimensions $6$, thus we focus mainly on \cy $3$-folds (i.e.\ having $m = 3$).
 The diamond in this case is
 \begin{equation}
   \mqty{%
-            &         &         & h^{0,0} &         &         & 
+            &         &         & \hodge{0}{0} &         &         & 
     \\
-            &         & h^{1,0} &         & h^{0,1} &         & 
+            &         & \hodge{1}{0} &         & \hodge{0}{1} &         & 
     \\
-            & h^{2,0} &         & h^{1,1} &         & h^{0,2} & 
+            & \hodge{2}{0} &         & \hodge{1}{1} &         & \hodge{0}{2} & 
     \\
-    h^{3,0} &         & h^{2,1} &         & h^{1,2} &         & h^{0,3}
+    \hodge{3}{0} &         & \hodge{2}{1} &         & \hodge{1}{2} &         & \hodge{0}{3}
     \\
-            & h^{3,1} &         & h^{2,2} &         & h^{1,3} & 
+            & \hodge{3}{1} &         & \hodge{2}{2} &         & \hodge{1}{3} & 
     \\
-            &         & h^{3,2} &         & h^{2,3} &         & 
+            &         & \hodge{3}{2} &         & \hodge{2}{3} &         & 
     \\
-            &         &         & h^{3,3} &         &         & 
+            &         &         & \hodge{3}{3} &         &         & 
   }
   \quad
   =
@@ -942,18 +944,18 @@ The diamond in this case is
     \\
             &         &    0    &         &    0    &         & 
     \\
-            &    0    &         & h^{1,1} &         &    0    & 
+            &    0    &         & \hodge{1}{1} &         &    0    & 
     \\
-        1   &         & h^{2,1} &         & h^{2,1} &         &    1
+        1   &         & \hodge{2}{1} &         & \hodge{2}{1} &         &    1
     \\
-            &    0    &         & h^{1,1} &         &    0    & 
+            &    0    &         & \hodge{1}{1} &         &    0    & 
     \\
             &         &    0    &         &    0    &         & 
     \\
             &         &         &    1    &         &         & 
   },
 \end{equation}
-where we used $h^{r,s} = h^{m-r, m-s}$ to stress the fact that the only independent Hodge numbers are $h^{1,1}$ and $h^{2,1}$ for $m = 3$.
+where we used $\hodge{r}{s} = h^{m-r, m-s}$ to stress the fact that the only independent Hodge numbers are $\hodge{1}{1}$ and $\hodge{2}{1}$ for $m = 3$.
 These results will also be the starting point of~\Cref{part:deeplearning} in which the ability to predict the values of the Hodge numbers using \emph{artificial intelligence} is tested.
 
 
