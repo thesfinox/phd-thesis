@@ -92,31 +92,32 @@ The simplest CYs are constructed by considering the complete intersection of hyp
 Such hypersurfaces are defined by homogeneous polynomial equations: a Calabi--Yau $X$ is described by the solution to the system of equations, i.e.\ by the intersection of all these surfaces.
 The intersection is ``complete'' in the sense that the hypersurface is non-degenerate.
 
-%%% TODO %%%
-
 To gain some intuition, consider the case of a single projective space $\mathds{P}^n$ with (homogeneous) coordinates $Z^I$, $I = 0, \ldots, n$.
-In this case, a codimension $1$ subspace is obtained by imposing a single homogeneous polynomial equation of degree $a$ on the coordinates
+A codimension $1$ subspace is obtained by imposing a single homogeneous polynomial equation of degree $a$ on the coordinates:
 \begin{equation}
-  \begin{gathered}
-    p_a(Z^0, \ldots, Z^n)
-            = P_{I_1 \cdots I_a} Z^{I_1} \cdots Z^{I_a}
-            = 0,
+  \begin{split}
+    p_a\qty(Z^0,\, \dots,\, Z^n)
+    & =
+    P_{I_1 \dots I_a}\, Z^{I_1} \dots Z^{I_a}
+    = 0,
     \\
-    p_a(\lambda Z^0, \ldots, \lambda Z^n) = \lambda^a \, p_a(Z^0, \ldots, Z^n).
-  \end{gathered}
+    p_a\qty(\lambda Z^0,\, \dots,\, \lambda Z^n)
+    & =
+    \lambda^a \, p_a\qty(Z^0,\, \dots,\, Z^n).
+  \end{split}
 \end{equation}
-Each choice of the polynomial coefficients $P_{I_1 \cdots I_a}$ leads to a different manifold.
-However, it can be shown that the manifolds are (generically) topologically equivalent.
-Since we are interested only in classifying the CY as topological manifolds and not as complex manifolds, the information about $P_{I_1 \cdots I_a}$ can be forgotten and it is sufficient to keep track only on the dimension $n$ of the projective space and of the degree $a$ of the equation.
-The resulting hypersurface is denoted equivalently as $[\mathds{P}^n \mid a] = [n \mid a]$.
-Finally, $[\mathds{P}^n \mid a]$ is $3$-dimensional if $n = 4$ (the equation reduces the dimension by one), and it is a CY (the “quintic”) if $a = n + 1 = 5$ (this is required for the vanishing of its first Chern class).
-The simplest representative of this class if Fermat's quintic defined by the equation
+Each choice of the polynomial coefficients $P_{I_1 \dots I_a}$ leads to a different manifold.
+However it can be shown that the manifolds are in general topologically equivalent.
+Since we are interested only in classifying the \cy as topological manifolds and not as complex manifolds, the information on $P_{I_1 \dots I_a}$ can be discarded and it is sufficient to keep track only of the dimension $n$ of the projective space and of the degree $a$ of the equation.
+The resulting hypersurface is denoted equivalently as $\qty[\mathds{P}^n \mid a] = \qty[n \mid a]$.
+Notice that $\qty[\mathds{P}^n \mid a]$ is $3$-dimensional if $n = 4$ (the equation reduces the dimension by one), and it is a \cy (the ``quintic'') if $a = n + 1 = 5$ (this is required for the vanishing of its first Chern class).
+The simplest representative of this class if Fermat's quintic defined by the equation:
 \begin{equation}
   \finitesum{I}{0}{4} \qty( Z^I )^5 = 0.
 \end{equation}
 
-This construction can be generalized to include $m$ projective spaces and $k$ equations, which can mix the coordinates of the different spaces.
-A CICY $3$-fold $X$ as a topological manifold is completely specified by a \emph{configuration matrix} denoted by the same symbol as the manifold:
+This construction can be generalized to include $m$ projective spaces and $k$ equations which can mix the coordinates of the different spaces.
+A \cicy $3$-fold $X$ as a topological manifold is completely specified by a \emph{configuration matrix} denoted by the same symbol as the manifold:
 \begin{equation}
   X =
   \left[
@@ -138,73 +139,55 @@ where the coefficients $a^r_{\alpha}$ are positive integers and satisfy the foll
   \forall r \in \qty{1,\, 2,\, \dots,\, m}.
   \label{eq:cicy-constraints}
 \end{equation}
-The first relation states that the dimension of the ambient space minus the number of equations equals the dimension of the CY $3$-fold.
-The second set of constraints arise from the vanishing of its first Chern class; they imply that the $n_i$ can be recovered from the matrix elements.
-
-In this case also, two manifolds described by the same configuration matrix but different polynomials are equivalent as real manifold (they are diffeomorphic) -- and thus as topological manifolds --, but they are different as complex manifolds.
-Hence, it makes sense to write only the configuration matrix.
+The first relation states that the difference between the dimension of the ambient space and the number of equations is the dimension of the \cy $3$-fold.
+The second set of constraints arises from the vanishing of its first Chern class.
+It implies that the $n_i$ can be recovered from the matrix elements.
+Two manifolds described by the same configuration matrix but different polynomials are diffeomorphic as real manifold, and thus as topological manifolds, but they are different as complex manifolds.
+Hence it makes sense to write only the configuration matrix.
 
 A given topological manifold is not described by a unique configuration matrix.
-First, any permutation of the lines and columns leave the intersection unchanged (it amounts to relabelling the projective spaces and equations).
+First, any permutation of the lines and columns leave the intersection unchanged as it amounts to relabelling the projective spaces and equations.
 Secondly, two intersections can define the same manifold.
 The ambiguity in the line and column permutations is often fixed by imposing some ordering of the coefficients.
-Moreover, in most cases, there is an optimal representation of the manifold $X$, called favourable~\cite{Anderson:2017:FibrationsCICYThreefolds}: in such a form, topological properties of $X$ can be more easily derived from the ambient space $\cA$.
+Moreover there is an optimal representation of the manifold $X$, called \emph{favourable}~\cite{Anderson:2017:FibrationsCICYThreefolds}: in such form topological properties of $X$ can be more conveniently derived from the ambient space $\cA$.
+Finally, simple arguments~\cite{Green:1987:CalabiYauManifoldsComplete, Candelas:1988:CompleteIntersectionCalabiYau, Lutken:1988:RecentProgressCalabiYauology} show that the number of \cicy is necessarily finite due to the constraints~\eqref{eq:cicy-constraints} together with identities between complete intersection manifolds.
 
 
 \subsection{Datasets}
 \label{sec:data:datasets}
 
-
-Simple arguments~\cite{Green:1987:CalabiYauManifoldsComplete, Candelas:1988:CompleteIntersectionCalabiYau, Lutken:1988:RecentProgressCalabiYauology} show that the number of CICY is necessarily finite due to the constraints \eqref{eq:cicy-constraints} together with identities between complete intersection manifolds.
-The classification of the CICY $3$-folds has been tackled in~\cite{Candelas:1988:CompleteIntersectionCalabiYau}, which established a dataset of $7890$ CICY.\footnotemark{}
-\footnotetext{%
-	However, there are redundancies in this set~\cite{Candelas:1988:CompleteIntersectionCalabiYau, Anderson:2008:MonadBundlesHeterotic, Anderson:2017:FibrationsCICYThreefolds}; this fact will be ignored in this paper.
-}%
+The classification of the \cicy $3$-folds has been tackled in~\cite{Candelas:1988:CompleteIntersectionCalabiYau}.
+The analysis established a dataset of $7890$ \cicy.
 The topological properties of each of these manifolds have been computed in~\cite{Green:1989:AllHodgeNumbers}.
-More recently, a new classification has been performed~\cite{Anderson:2017:FibrationsCICYThreefolds} in order to find the favourable representation of each manifold whenever it is possible.
+More recently a new classification has been performed~\cite{Anderson:2017:FibrationsCICYThreefolds} in order to find the favourable representation of each manifold whenever it is possible.
 
-Below we show a list of the CICY properties and of their configuration matrices:
+Below we show a list of the \cicy properties and of their configuration matrices:
 \begin{itemize}
-  \item general properties
+  \item general properties:
   \begin{itemize}
     \item number of configurations: $7890$
-
     \item number of product spaces (block diagonal matrix): $22$
-
-    \item $h^{11} \in [0, 19]$, $18$ distinct values (\Cref{fig:data:hist-h11})
-
-    \item $h^{21} \in [0, 101]$, $65$ distinct values (\Cref{fig:data:hist-h21})
-
-
+    \item $h^{11} \in [0, 19]$ with $18$ distinct values (\Cref{fig:data:hist-h11})
+    \item $h^{21} \in [0, 101]$ with $65$ distinct values (\Cref{fig:data:hist-h21})
     \item unique Hodge number combinations: $266$
   \end{itemize}
 
-  \item “original dataset”~\cite{Candelas:1988:CompleteIntersectionCalabiYau, Green:1989:AllHodgeNumbers}
-
+  \item ``original dataset''~\cite{Candelas:1988:CompleteIntersectionCalabiYau, Green:1989:AllHodgeNumbers}
   \begin{itemize}
     \item maximal size of the configuration matrices: $12 \times 15$
-
     \item number of favourable matrices (excluding product spaces): $4874$ ($\num{61.8}\%$)
-
     \item number of non-favourable matrices (excluding product spaces): $2994$
-
     \item number of different ambient spaces: $235$
   \end{itemize}
 
-
-  \item “favourable dataset”~\cite{Anderson:2017:FibrationsCICYThreefolds}
-
+  \item ``favourable dataset''~\cite{Anderson:2017:FibrationsCICYThreefolds}
   \begin{itemize}
     \item maximal size of the configuration matrices: $15 \times 18$
-
     \item number of favourable matrices (excluding product spaces): $7820$ ($\num{99.1}\%$)
-
     \item number of non-favourable matrices (excluding product spaces): $48$
-
     \item number of different ambient spaces: $126$
   \end{itemize}
 \end{itemize}
-
 
 \begin{figure}[tbp]
   \centering
@@ -225,18 +208,12 @@ Below we show a list of the CICY properties and of their configuration matrices:
   \label{fig:data:hist-hodge}
 \end{figure}
 
-
-The configuration matrix completely encodes the information of the CICY and all topological quantities can be derived from it.
-However, the computations are involved and there is often no closed-form expression.
-This situation is typical in algebraic geometry, and it can be even worse for some problems, in the sense that it is not even known how to compute the desired quantity (think to the metric of CYs).
-For these reasons, it is interesting to study how we can retrieve these properties using ML algorithms.
-In the current paper, following~\cite{He:2017:MachinelearningStringLandscape, Bull:2018:MachineLearningCICY}, we focus on the computation of the Hodge numbers with the initial scheme:
-\begin{equation}
-  \text{Input: configuration matrix}
-  \quad \longrightarrow \quad
-  \text{Output: Hodge numbers}
-\end{equation}
-To provide a good test case for the use of ML in context where the mathematical theory is not completely understood, we will make no use of known formulas.
+The configuration matrix completely encodes the information of the \cicy and all topological quantities can be derived from it.
+However the computations are involved and there is often no closed-form expression.
+This situation is typical in algebraic geometry and it can be even worse for some problems, in the sense that it is not even known how to compute the desired quantity (e.g. the metric of \cy manifolds).
+For these reasons it is interesting to study how to retrieve these properties using \ml algorithms.
+In what follows we focus on the prediction of the Hodge numbers.
+To provide a good test case for the use of \ml in context where the mathematical theory is not completely understood, we make no use of known formulas.
 
 
 % vim: ft=tex
