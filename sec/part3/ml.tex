@@ -791,28 +791,27 @@ We will present the results of \emph{random forests} of trees which increase the
 
 The random forest algorithm is implemented with Scikit's \texttt{ensemble.RandomForestRegressor}.
 
-%%% TODO %%%
+
 \paragraph{Parameters}
 
 Hyperparameter tuning for decision trees can in general be quite challenging.
-From the general theory on random forests (\Cref{sec:app:trees}), we can try and look for particular shapes of the trees: this ensemble learning technique usually prefers a small number of fully grown trees.
+From the general theory on random forests (see~\Cref{sec:app:trees} for salient features) we can try and look for particular shapes of the trees: this ensemble learning technique usually prefers a small number of fully grown trees.
 We performed only 25 iterations of the optimisation process due to the very long time taken to train all the decision trees.
 
-In \Cref{tab:hyp:rndfor}, we show the hyperparameters used for the predictions.
+In~\Cref{tab:hyp:rndfor} we show the hyperparameters used for the predictions.
 As we can see from \texttt{n\_estimator}, random forests are usually built with a small number of fully grown (specified by \texttt{max\_depth} and \texttt{max\_leaf\_nodes}) trees (not always the case, though).
 In order to avoid overfit we also tried to increase the number of samples necessary to split a branch or create a leaf node using \texttt{min\_samples\_leaf} and \texttt{min\_samples\_split} (introducing also a weight on the samples in the leaf nodes specified by \texttt{min\_weight\_fraction\_leaf} to balance the tree).
-Finally the \texttt{criterion} chosen by the optimisation reflects the choice of the trees to measure the impurity of the predictions using either the mean squared error (\texttt{mse}) or the mean absolute error (\texttt{mae}) of the predictions (see \Cref{sec:app:trees}).
+Finally the \texttt{criterion} chosen by the optimisation reflects the choice of the trees to measure the impurity of the predictions using either the mean squared error or the mean absolute error of the predictions (see \Cref{sec:app:trees}).
 
-
-\begin{table}[htp]
+\begin{table}[tbp]
 \centering
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}lccccccccc@{}}
 \toprule
                                                       &           & \multicolumn{2}{c}{\textbf{matrix}}  & \multicolumn{2}{c}{\textbf{num\_cp}}        & \multicolumn{2}{c}{\textbf{eng. feat.}} & \multicolumn{2}{c}{\textbf{PCA}} \\ \midrule
                                                       &           & \textit{old}         & \textit{fav.} & \textit{old}         & \textit{fav.}        & \textit{old}   & \textit{fav.}          & \textit{old}   & \textit{fav.}   \\ \midrule
-\multirow{2}{*}{\texttt{criterion}}                            & \hodge{1}{1} & \texttt{mse}         & \texttt{mse}  & \texttt{mae}         & \texttt{mae}         & \texttt{mae}   & \texttt{mse}           & \texttt{mae}   & \texttt{mae}    \\
-                                                      & \hodge{2}{1} & \texttt{mae}         & \texttt{mae}  & \texttt{mae}         & \texttt{mae}         & \texttt{mae}   & \texttt{mae}           & \texttt{mae}   & \texttt{mae}    \\ \midrule
+\multirow{2}{*}{\texttt{criterion}}                            & \hodge{1}{1} & \mse         & \mse  & \mae         & \mae         & \mae   & \mse           & \mae   & \mae    \\
+                                                      & \hodge{2}{1} & \mae         & \mae  & \mae         & \mae         & \mae   & \mae           & \mae   & \mae    \\ \midrule
 \multirow{2}{*}{\texttt{max\_depth}}                  & \hodge{1}{1} & 100                  & 100           & 100                  & 30                   & 90             & 30                     & 30             & 60              \\
                                                       & \hodge{2}{1} & 90                   & 100           & 90                   & 75                   & 100            & 100                    & 100            & 60              \\ \midrule
 \multirow{2}{*}{\texttt{max\_leaf\_nodes}}            & \hodge{1}{1} & 100                  & 80            & 90                   & 20                   & 20             & 35                     & 90             & 90              \\
@@ -834,19 +833,18 @@ Finally the \texttt{criterion} chosen by the optimisation reflects the choice of
 
 \paragraph{Results}
 
-In \Cref{tab:res:rndfor}, we summarise the accuracy reached using random forests of decision trees as estimators.
+In~\Cref{tab:res:rndfor} we summarise the accuracy reached using random forests of decision trees as estimators.
 As we already expected, the contribution of the number of projective spaces helps the algorithm to generate better predictions.
 In general, it seems that the engineered features alone can already provide a good basis for predictions.
-In the case of \hodge{2}{1}, the introduction of the principal components of the configuration matrix also increases the prediction capabilities.
-As in most other cases, we used the floor function for the predictions on the original dataset and the rounding to next integer for the favourable one.
+In the case of \hodge{2}{1} the introduction of the principal components of the configuration matrix also increases the prediction capabilities.
+As in most other cases we used the floor function for the predictions on the original dataset and the rounding to next integer for the favourable one.
 
-As usual, in \Cref{fig:res:rndfor} we show the histograms of the distribution of the residual errors and the scatter plots of the residuals.
+As usual in~\Cref{fig:res:rndfor} we show the histograms of the distribution of the residual errors and the scatter plots of the residuals.
 While the distributions of the errors are slightly wider than the \svm algorithms, the scatter plots of the residual show a strong heteroscedasticity in the case of the fit using the number of projective spaces: though quite accurate, the model is strongly incomplete.
 The inclusion of the other engineered features definitely helps and also leads to better predictions.
-Learning curves are displayed in \Cref{fig:lc:rndfor}.
+Learning curves are displayed in~\Cref{fig:lc:rndfor}.
 
-
-\begin{table}[htp]
+\begin{table}[tbp]
 \centering
 \begin{tabular}{@{}cccccc@{}}
   \toprule
@@ -862,52 +860,48 @@ Learning curves are displayed in \Cref{fig:lc:rndfor}.
 \label{tab:res:rndfor}
 \end{table}
 
-
-\begin{figure}[htp]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/rnd_for_orig}
-	\caption{Plots of the residual errors for the random forests.}
-	\label{fig:res:rndfor}
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.9\linewidth]{img/rnd_for_orig}
+  \caption{Plots of the residual errors for the random forests.}
+  \label{fig:res:rndfor}
 \end{figure}
 
-
-\begin{figure}[htp]
-	\centering
-
-	\begin{subfigure}[c]{0.45\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{img/forest_learning_curve_matrix_outliers}
-		\caption{input: \lstinline!matrix!, default parameters}
-	\end{subfigure}
-	\qquad
-	\begin{subfigure}[c]{0.45\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{img/forest_learning_curve_all_outliers}
-		\caption{input: all, default parameters}
-	\end{subfigure}
-
-	\caption{Learning curves for the random forest (original dataset), including outliers and using a single model for both Hodge numbers.}
-	\label{fig:lc:rndfor}
+\begin{figure}[tbp]
+  \centering
+  \begin{subfigure}[c]{0.45\linewidth}
+          \centering
+          \includegraphics[width=\linewidth]{img/forest_learning_curve_matrix_outliers}
+          \caption{input: \lstinline!matrix!, default parameters}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[c]{0.45\linewidth}
+          \centering
+          \includegraphics[width=\linewidth]{img/forest_learning_curve_all_outliers}
+          \caption{input: all, default parameters}
+  \end{subfigure}
+  \caption{%
+    Learning curves for the random forest (original dataset) including outliers and using a single model for both Hodge numbers.
+  }
+  \label{fig:lc:rndfor}
 \end{figure}
 
 
 \subsubsection{Gradient Boosted Trees}
 
-
-We used the class \lstinline!ensemble.GradientBoostingRegressor! from Scikit in order to implement the gradient boosted trees.
+We used the class \texttt{ensemble.GradientBoostingRegressor} in \texttt{scikit-learn} to implement the gradient boosted trees.
 
 
 \paragraph{Parameters}
 
 Hyperparameter optimisation has been performed using 25 iterations of the Bayes search algorithm since by comparison the gradient boosting algorithms took the longest learning time.
-We show the chosen hyperparameters in \Cref{tab:hyp:grdbst}.
+We show the chosen hyperparameters in~\Cref{tab:hyp:grdbst}.
 
 With respect to the random forests, for the gradient boosting we also need to introduce the \texttt{learning\_rate} (or \emph{shrinking parameter}) which controls the gradient descent of the optimisation which is driven by the choice of the \texttt{loss} parameters (\texttt{ls} is the ordinary least squares loss, \texttt{lad} is the least absolute deviation and \texttt{huber} is a combination of the previous two losses weighted by the hyperparameter $\alpha$).
 We also introduce the \texttt{subsample} hyperparameter which chooses a fraction of the samples to be fed into the algorithm at each iteration.
 This procedure has both a regularisation effect on the trees, which should not adapt too much to the training set, and speeds up the training (at least by a very small amount).
 
-
-\begin{table}[htp]
+\begin{table}[tbp]
 \centering
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{@{}lccccccccc@{}}
@@ -916,8 +910,8 @@ This procedure has both a regularisation effect on the trees, which should not a
                                                       &           & \textit{old}     & \textit{fav.}    & \textit{old}           & \textit{fav.} & \textit{old}           & \textit{fav.}          & \textit{old}   & \textit{fav.}   \\ \midrule
 \multirow{2}{*}{$\alpha$}                             & \hodge{1}{1} & 0.4              & ---              & ---                    & ---           & ---                    & ---                    & ---            & ---             \\
                                                       & \hodge{2}{1} & ---              & 0.11             & ---                    & ---           & 0.99                   & ---                    & ---            & ---             \\ \midrule
-\multirow{2}{*}{\texttt{criterion}}                   & \hodge{1}{1} & \texttt{mae}     & \texttt{mae}     & \texttt{friedman\_mse} & \texttt{mae}  & \texttt{friedman\_mse} & \texttt{friedman\_mse} & \texttt{mae}   & \texttt{mae}    \\
-                                                      & \hodge{2}{1} & \texttt{mae}     & \texttt{mae}     & \texttt{friedman\_mse} & \texttt{mae}  & \texttt{mae}           & \texttt{mae}           & \texttt{mae}   & \texttt{mae}    \\ \midrule
+\multirow{2}{*}{\texttt{criterion}}                   & \hodge{1}{1} & \mae     & \mae     & \texttt{friedman\_mse} & \mae  & \texttt{friedman\_mse} & \texttt{friedman\_mse} & \mae   & \mae    \\
+                                                      & \hodge{2}{1} & \mae     & \mae     & \texttt{friedman\_mse} & \mae  & \mae           & \mae           & \mae   & \mae    \\ \midrule
 \multirow{2}{*}{\texttt{learning\_rate}}              & \hodge{1}{1} & 0.3              & 0.04             & 0.6                    & 0.03          & 0.15                   & 0.5                    & 0.04           & 0.03            \\
                                                       & \hodge{2}{1} & 0.6              & 0.5              & 0.3                    & 0.5           & 0.04                   & 0.02                   & 0.03           & 0.07            \\ \midrule
 \multirow{2}{*}{\texttt{loss}}                        & \hodge{1}{1} & huber            & ls               & lad                    & ls            & ls                     & lad                    & ls             & ls              \\
@@ -941,14 +935,12 @@ This procedure has both a regularisation effect on the trees, which should not a
 
 \paragraph{Results}
 
-We show the results of gradient boosting in \Cref{tab:res:grdbst}.
-As usual, the linear dependence of \hodge{1}{1} on the number of projective spaces is evident and in this case also produces the best accuracy result (using the floor function for the original dataset and rounding to the next integer for the favourable dataset) for \hodge{1}{1}.
+We show the results of gradient boosting in~\Cref{tab:res:grdbst}.
+As usual the linear dependence of \hodge{1}{1} on the number of projective spaces is evident and in this case also produces the best accuracy result (using the floor function for the original dataset and rounding to the next integer for the favourable dataset) for \hodge{1}{1}.
 \hodge{2}{1} is once again strongly helped by the presence of the redundant features.
+In~\Cref{fig:res:grdbst} we finally show the histograms and the scatter plots of the residual errors for the original dataset showing that also in this case the choice of the floor function can be justified and that the addition of the engineered features certainly improves the overall variance of the residuals.
 
-In \Cref{fig:res:grdbst}, we finally show the histograms and the scatter plots of the residual errors for the original dataset showing that also in this case the choice of the floor function can be justified and that the addition of the engineered features certainly improves the overall variance of the residuals.
-
-
-\begin{table}[htp]
+\begin{table}[tbp]
 \centering
 \begin{tabular}{@{}cccccc@{}}
   \toprule
@@ -964,40 +956,36 @@ In \Cref{fig:res:grdbst}, we finally show the histograms and the scatter plots o
 \label{tab:res:grdbst}
 \end{table}
 
-
-\begin{figure}[htp]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/grd_bst_orig}
-	\caption{Plots of the residual errors for the gradient boosted trees.}
-	\label{fig:res:grdbst}
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.9\linewidth]{img/grd_bst_orig}
+  \caption{Plots of the residual errors for the gradient boosted trees.}
+  \label{fig:res:grdbst}
 \end{figure}
 
 
 \subsection{Neural Networks}
 
-
-In this section we approach the problem of predicting the Hodge numbers using artificial neural networks (ANN), which we briefly review in \Cref{sec:app:nn}.
+In this section we approach the problem of predicting the Hodge numbers using artificial neural networks (\ann), which we briefly review in~\Cref{sec:app:nn}.
 We use Google's \emph{Tensorflow} framework and \emph{Keras}, its high-level API, to implement the architectures and train the networks~\cite{Abadi:2015:TensorFlowLargescaleMachine}.
 We explore different architectures and discuss the results.
 
 Differently from the previous algorithms, we do not perform a cross-validation scoring but we simply retain \SI{10}{\percent} of the total set as a holdout validation set (also referred to as \emph{development} set) due to the computation power available.
-Thus, we use \SI{80}{\percent} of the samples for training, \SI{10}{\percent} for evaluation and \SI{10}{\percent} as a test set.
+Thus we use \SI{80}{\percent} of the samples for training, \SI{10}{\percent} for evaluation, and \SI{10}{\percent} as a test set.
 For the same reason, the optimisation of the algorithm has been performed manually.
 
 We always use the Adam optimiser with default learning rate $\num{e-3}$ to perform the gradient descent and a fix batch size of $32$.
 The network is trained for a large number of epochs to avoid missing possible local optima.
-In order to avoid overshooting the minimum, we dynamically reduce the learning rate both using the \emph{Adam} optimiser, which implements learning rate decay, and through the callback \texttt{callbacks.ReduceLROnPlateau} in Keras, which scales the learning rate by a given factor when the monitored quantity (e.g.\ the validation loss) does not decrease): we choose to reduce it by $0.3$ when the validation loss does not improve for at least $75$ epochs.
-Moreover, we stop training when the validation loss does not improve during $200$ epochs.
-Clearly, we then keep only the weights of the neural networks which gave the best results.
-Batch normalisation layers are used with a momentum of $0. 99$.
-
-Training and evaluation were performed on a \texttt{NVidia GeForce 940MX} laptop GPU with \SI{2}{\giga B} of RAM memory.
+In order to avoid overshooting the minimum of the loss function, we dynamically reduce the learning rate both using the \emph{Adam} optimiser which implements learning rate decay, and through the callback \texttt{callbacks.ReduceLROnPlateau} in Keras, which scales the learning rate by a given factor when the monitored quantity (in our case the validation loss) does not decrease): we choose to reduce it by $0.3$ when the validation loss does not improve for at least $75$ epochs.
+Moreover we stop training when the validation loss does not improve during $200$ epochs.
+We then keep only the weights of the neural networks which gave the best results.
+Batch normalisation layers are used with a momentum of $0.99$.
+Training and evaluation were performed on a \texttt{NVidia GeForce 940MX} laptop GPU with \SI{2}{\giga\byte} of RAM memory.
 
 
 \subsubsection{Fully Connected Network}
 
-
-First, we reproduce the analysis from~\cite{Bull:2018:MachineLearningCICY} for the prediction of \hodge{1}{1}.
+First we reproduce the analysis in~\cite{Bull:2018:MachineLearningCICY} for the prediction of \hodge{1}{1}.
 
 
 \paragraph{Model}
@@ -1007,7 +995,7 @@ All layers (including the output layer) are followed by a ReLU activation and by
 This network contains roughly $\num{1.58e6}$ parameters.
 
 The other hyperparameters (like the optimiser, batch size, number of epochs, regularisation, etc.) are not mentioned.
-In order to reproduce the results, we have filled the gap as follows:
+In order to reproduce the results, we fill the gap as follows:
 \begin{itemize}
     \item Adam optimiser with batch size of $32$;
     
@@ -1021,174 +1009,167 @@ In order to reproduce the results, we have filled the gap as follows:
 \end{itemize}
 
 
-
 \paragraph{Results}
 
-We have first reproduced the results from~\cite{Bull:2018:MachineLearningCICY}, which are summarized in \Cref{tab:res:neuralnet-bull}.
-The training process was very quick and the loss function is reported in \Cref{fig:nn:bull_et_al_loss}.
+We reproduce the results from~\cite{Bull:2018:MachineLearningCICY}, which are summarised in~\Cref{tab:res:neuralnet-bull}.
+The training process was very quick and the loss function is reported in~\Cref{fig:nn:bull_et_al_loss}.
 We obtain an accuracy of \SI{77}{\percent} both on the development and the test set of the original dataset with \SI{80}{\percent} of training data (see \Cref{tab:res:ann}).
-Using the same network, we also achieved \SI{97}{\percent} of accuracy in the favourable dataset.
+Using the same network we also achieve \SI{97}{\percent} of accuracy in the favourable dataset.
 
-
-\begin{figure}[htp]
+\begin{figure}[tbp]
+  \centering
+  \begin{subfigure}[c]{0.475\linewidth}
     \centering
-    \begin{minipage}[t]{0.475\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{img/fc}
-        \caption{Architecture of the fully connected network to predict \hodge{1}{1}.
-        For simplicity we do not draw the dropout and batch normalisation layers present after every FC layer.}
-        \label{fig:nn:dense}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.475\linewidth}
-        \centering
-        \includegraphics[width=\linewidth, trim={0 0 6in 0}, clip]{img/loss-lr_fc_orig}
-        \caption{Loss function of the FC network in the original dataset.}
-        \label{fig:nn:bull_et_al_loss}
-    \end{minipage}
+    \includegraphics[width=\linewidth]{img/fc}
+    \caption{Architecture of the network.}
+    \label{fig:nn:dense}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[c]{0.475\linewidth}
+    \centering
+    \includegraphics[width=\linewidth, trim={0 0 6in 0}, clip]{img/loss-lr_fc_orig}
+    \caption{Loss function on the original dataset.}
+    \label{fig:nn:bull_et_al_loss}
+  \end{subfigure}
+  \caption{%
+    Fully connected network for the prediction of \hodge{1}{1}.
+    For simplicity we do not draw the dropout and batch normalisation layers present after every FC layer.
+  }
+  \label{fig:nn:fcnetwork}
 \end{figure}
 
-
-\begin{table}[htb]
-        \centering
-        \begin{tabular}{@{}cccccc@{}}
-            \toprule
-            &
-            \multicolumn{5}{c}{\textbf{training data}}
-            \\
-                &
-                    \SI{10}{\percent} &
-                    \SI{30}{\percent} &
-                    \SI{50}{\percent} &
-                    \SI{70}{\percent} &
-                    \SI{90}{\percent}
-                \\
-                \midrule
-                regression &
-                        \SI{58}{\percent} &
-                        \SI{68}{\percent} &
-                        \SI{72}{\percent} &
-                        \SI{75}{\percent} &
-                        \SI{75}{\percent}
-                \\
-                classification &
-                        \SI{68}{\percent} &
-                        \SI{78}{\percent} &
-                        \SI{82}{\percent} &
-                        \SI{85}{\percent} &
-                        \SI{88}{\percent}
-                \\
-                \bottomrule
-        \end{tabular}
-        \caption{Accuracy (approximate) for \hodge{1}{1} obtained in \cite[Figure~1]{Bull:2018:MachineLearningCICY}.}
-        \label{tab:res:neuralnet-bull}
+\begin{table}[tbp]
+  \centering
+  \begin{tabular}{@{}cccccc@{}}
+      \toprule
+      &
+      \multicolumn{5}{c}{\textbf{training data}}
+      \\
+          &
+              \SI{10}{\percent} &
+              \SI{30}{\percent} &
+              \SI{50}{\percent} &
+              \SI{70}{\percent} &
+              \SI{90}{\percent}
+          \\
+          \midrule
+          regression &
+                  \SI{58}{\percent} &
+                  \SI{68}{\percent} &
+                  \SI{72}{\percent} &
+                  \SI{75}{\percent} &
+                  \SI{75}{\percent}
+          \\
+          classification &
+                  \SI{68}{\percent} &
+                  \SI{78}{\percent} &
+                  \SI{82}{\percent} &
+                  \SI{85}{\percent} &
+                  \SI{88}{\percent}
+          \\
+          \bottomrule
+  \end{tabular}
+  \caption{Accuracy (approximate) for \hodge{1}{1} obtained in \cite[Figure~1]{Bull:2018:MachineLearningCICY}.}
+  \label{tab:res:neuralnet-bull}
 \end{table}
 
 
 \subsubsection{Convolutional Network}
 
-
-We then present a new purely convolutional network to predict \hodge{1}{1} and \hodge{2}{1}, separately or together.
+We then present a new purely convolutional neural network (\cnn) to predict \hodge{1}{1} and \hodge{2}{1}, separately or together.
 The advantage of such networks is that it requires a smaller number of parameters and is insensitive to the size of the inputs.
-The latter point can be helpful to work without padding the matrices (of the same or different representations), but the use of a flatten layer removes this benefit.
+The latter point can help to work without padding the matrices (of the same or different representations), but the use of a flatten layer removes this benefit.
 
 
 \paragraph{Model}
 
 The neural network has $4$ convolutional layers.
 They are connected to the output layer with a intermediate flatten layer.
-After each convolutional layer, we use the ReLU activation function and a batch normalisation layer (with momentum 0.99).
-Convolutional layers use the padding option \lstinline!same! and a kernel of size $(5, 5)$ to be able to extract more meaningful representations of the input, treating the configuration matrix somewhat similarly to an object segmentation task~\cite{Peng:2017:LargeKernelMattersa}.
+After each convolutional layer, we use the ReLU activation function and a batch normalisation layer (with momentum $0.99$).
+Convolutional layers use the padding option \texttt{same} and a kernel of size $(5, 5)$ to be able to extract more meaningful representations of the input, treating the configuration matrix somewhat similarly to an object segmentation task~\cite{Peng:2017:LargeKernelMattersa}.
 The output layer is also followed by a ReLU activation in order to force the prediction to be a positive number.
-We use a dropout layer only after the convolutional network (before the flatten layer), but we introduced a combination of $\ell_2$ and $\ell_1$ regularisation to reduce the variance.
-The dropout rate is 0.2 in the original dataset and 0.4 for the favourable dataset, while $\ell_1$ and $\ell_2$ regularisation are set to $10^{-5}$.
+We use a dropout layer only after the convolutional network (before the flatten layer) but we introduced a combination of $\ell_2$ and $\ell_1$ regularisation to reduce the variance.
+The dropout rate is $0.2$ in the original dataset and $0.4$ for the favourable dataset, while $\ell_1$ and $\ell_2$ regularisation are set to $10^{-5}$.
 We train the model using the \emph{Adam} optimiser with a starting learning rate of $10^{-3}$ and a mini-batch size of $32$.
 
 The architecture is more similar in style to the old \emph{LeNet} presented for the first time in 1998 by Y.\ LeCun during the ImageNet competition.
-In our implementation, however, we do not include the pooling operations and swap the usual order of batch normalisation and activation function by first putting the ReLU activation.
-
-In \Cref{fig:nn:lenet}, we show the model architecture in the case of the original dataset and of predicting \hodge{1}{1} alone.
+In our implementation however we do not include the pooling operations and swap the usual order of batch normalisation and activation function by first putting the ReLU activation.
+In~\Cref{fig:nn:lenet} we show the model architecture in the case of the original dataset and of predicting \hodge{1}{1} alone.
 The convolution layers have $180$, $100$, $40$ and $20$ units each.
 
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.75\linewidth]{img/ccnn}
-    \caption{%
-		Pure convolutional neural network for redicting \hodge{1}{1}.
-		It is made of $4$ modules composed by convolutional layer, ReLU activation, batch normalisation (in this order), followed by a dropout layer, a flatten layer and the output layer (in this order).
-    }
-    \label{fig:nn:lenet}
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.75\linewidth]{img/ccnn}
+  \caption{%
+    Pure convolutional neural network for redicting \hodge{1}{1}.
+    It is made of $4$ modules composed by convolutional layer, ReLU activation, batch normalisation (in this order), followed by a dropout layer, a flatten layer and the output layer (in this order).
+  }
+  \label{fig:nn:lenet}
 \end{figure}
 
 
 \paragraph{Results}
 
 With this setup, we were able to achieve an accuracy of \SI{94}{\percent} on both the development and the test sets for the ``old'' database and \SI{99}{\percent} for the favourable dataset in both validation and test sets (results are briefly summarised in \Cref{tab:res:ann}).
-We thus improved the results of the densely connected network and proved that convolutional networks can be valuable assets when dealing with the extraction of a good representation of the input data: not only are CNNs very good at recognising patterns and rotationally invariant objects inside pictures or general matrices of data, but deep architectures are also capable of transforming the input using non linear transformations~\cite{Mallat:2016:UnderstandingDeepConvolutional} to create new patterns which can then be used for predictions.
+We thus improved the results of the densely connected network and proved that convolutional networks can be valuable assets when dealing with the extraction of a good representation of the input data: not only are convolutional networks very good at recognising patterns and rotationally invariant objects inside pictures or general matrices of data, but deep architectures are also capable of transforming the input using non linear transformations~\cite{Mallat:2016:UnderstandingDeepConvolutional} to create new patterns which can then be used for predictions.
 
-Even though the convolution operation is very time consuming, another advantage of CNN is the extremely reduced number of parameters with respect to FC networks.\footnotemark{}
+Even though the convolution operation is very time consuming another advantage of \cnn is the extremely reduced number of parameters with respect to FC networks.\footnotemark{}
 \footnotetext{%
-	It took around 4 hours of training (and no optimisation) for each Hodge number in each dataset.
-}%
+  It took around 4 hours of training (and no optimisation) for each Hodge number in each dataset.
+  The use use of modern generation GPUs with tensor cores can however speed up the training by order of magnitudes.
+}
 The architectures we used were in fact made of approximately $\num{5.8e5}$ parameters: way less than half the number of parameters used in the FC network.
-Ultimately, this leads to a smaller number of training epochs necessary to achieve good predictions (see \Cref{fig:cnn:class-ccnn}).
+Ultimately, this leads to a smaller number of training epochs necessary to achieve good predictions (see~\Cref{fig:cnn:class-ccnn}).
 
-
-\begin{figure}[htp]
+\begin{figure}[tbp]
+  \centering
+  \begin{subfigure}[c]{0.45\linewidth}
     \centering
-    \begin{subfigure}[c]{0.45\linewidth}
-      \centering
-      \includegraphics[width=\linewidth, trim={0 0 6in 0}, clip]{img/loss-lr_ccnn_h11_orig}
-      \caption{Loss function of \hodge{1}{1}.}
-    \end{subfigure}
-    \quad
-    \begin{subfigure}[c]{0.45\linewidth}
-      \centering
-      \includegraphics[width=\linewidth, trim={0 0 6in 0}, clip]{img/loss-lr_ccnn_h21_orig}
-      \caption{Loss function of \hodge{2}{1}.}
-    \end{subfigure}
-    \caption{
-		Loss function of the networks for the prediction of \hodge{1}{1} and \hodge{2}{1}.
-		We can see that the validation loss flattens out while the training loss keeps decreasing: we took care of the overfit by using the weights of the network when the validation loss reached its minimum.
-		The use of mini-batch gradient descent also completely spoils the monotonicity of the loss functions which can therefore increase moving from one epoch to the other, while keeping the descending trend for most of its evolution.
-	}
-    \label{fig:cnn:class-ccnn}
+    \includegraphics[width=\linewidth, trim={0 0 6in 0}, clip]{img/loss-lr_ccnn_h11_orig}
+    \caption{Loss function of \hodge{1}{1}.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[c]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth, trim={0 0 6in 0}, clip]{img/loss-lr_ccnn_h21_orig}
+    \caption{Loss function of \hodge{2}{1}.}
+  \end{subfigure}
+  \caption{%
+    Loss function of the networks for the prediction of \hodge{1}{1} and \hodge{2}{1}.
+    We can see that the validation loss flattens out while the training loss keeps decreasing: we took care of the overfit by using the weights of the network when the validation loss reached its minimum.
+    The use of mini-batch gradient descent also completely spoils the monotonicity of the loss functions which can therefore increase moving from one epoch to the other, while keeping the descending trend for most of its evolution.
+  }
+  \label{fig:cnn:class-ccnn}
 \end{figure}
 
-
-Using this classic setup, we tried different architectures.
+Using this classic setup we tried different architectures.
 The network for the original dataset seems to work best in the presence of larger kernels, dropping by roughly \SI{5}{\percent} in accuracy when a more ``classical'' $3 \times 3$ kernel is used.
-We also tried to use to set the padding to \lstinline!valid!, reducing the input from a $12 \times 15$ matrix to a $1 \times 1$ feature map over the course of $5$ layers with $180$, $100$, $75$, $40$ and $20$ filters.
+We also tried to use to set the padding to \texttt{valid}, reducing the input from a $12 \times 15$ matrix to a $1 \times 1$ feature map over the course of $5$ layers with $180$, $100$, $75$, $40$ and $20$ filters.
 The advantage is the reduction of the number of parameters (namely $\sim \num{4.9e5}$) mainly due to the small FC network at the end, but accuracy dropped to \SI{87}{\percent}.
-The favourable dataset seems instead to be more independent of the specific architecture, retaining accuracy also with smaller kernels.
+The favourable dataset seems instead to be more independent of the specific architecture retaining accuracy also with smaller kernels.
 
 The analysis for \hodge{2}{1} follows the same prescriptions.
-For both the original and favourable dataset, we opted for 4 convolutional layers with 250, 150, 100 and 50 filters and no FC network for a total amount of $\num{2.1e6}$ parameters.
-
-In this scenario we were able to achieve \SI{36}{\percent} of accuracy in the development set and \SI{40}{\percent} on the test set for \hodge{2}{1} in the ``old'' dataset and \SI{31}{\percent} in both development and test sets in the favourable set (see \Cref{tab:res:ann}).
-
+For both the original and favourable dataset, we opted for 4 convolutional layers with \numlist{250;150;100;50} filters and no FC network for a total amount of $\num{2.1e6}$ parameters.
+In this scenario we were able to achieve \SI{36}{\percent} of accuracy in the development set and \SI{40}{\percent} on the test set for \hodge{2}{1} in the ``old'' dataset and \SI{31}{\percent} in both development and test sets in the favourable set (see~\Cref{tab:res:ann}).
 The learning curves for both Hodge numbers are given in \Cref{fig:lc:class-ccnn}.
-This model uses the same architecture as the one for predicting \hodge{1}{1} only, which explains why it is less accurate as it needs to also adapt to compute \hodge{2}{1} -- a difficult task, as we have seen (see for example \Cref{fig:lc:inception}).
+This model uses the same architecture as the one for predicting \hodge{1}{1} only, which explains why it is less accurate as it needs to also adapt to compute \hodge{2}{1} (see for example \Cref{fig:lc:inception}).
 
-
-\begin{figure}[htp]
-	\centering
-
-	\includegraphics[width=0.6\linewidth]{img/conv_nn_learning_curve}
-
-	\caption{%
-		Learning curves for the classic convolutional neural network (original dataset), using a single model for both Hodge numbers.
-	}
-	\label{fig:lc:class-ccnn}
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{img/conv_nn_learning_curve}
+  \caption{%
+    Learning curves for the classic convolutional neural network (original dataset), using a single model for both Hodge numbers.
+  }
+  \label{fig:lc:class-ccnn}
 \end{figure}
 
 
+%%% TODO %%%
 \subsubsection{Inception-like Neural Network}
 \label{sec:ml:nn:inception}
 
 
-In the effort to find a better architecture, we took inspiration from Google's winning CNN in the annual \href{https://image-net.org/challenges/LSVRC/}{\emph{ImageNet challenge}} in 2014~\cite{Szegedy:2015:GoingDeeperConvolutions, Szegedy:2016:RethinkingInceptionArchitecture, Szegedy:2016:Inceptionv4InceptionresnetImpact}.
+In the effort to find a better architecture, we took inspiration from Google's winning \cnn in the annual \href{https://image-net.org/challenges/LSVRC/}{\emph{ImageNet challenge}} in 2014~\cite{Szegedy:2015:GoingDeeperConvolutions, Szegedy:2016:RethinkingInceptionArchitecture, Szegedy:2016:Inceptionv4InceptionresnetImpact}.
 The architecture presented uses \emph{inception} modules in which separate $3 \times 3$, $5 \times 5$ convolutions are performed side by side (together with \emph{max pooling} operations) before recombining the outputs.
 The modules are then repeated until the output layer is reached.
 This has two evident advantages: users can avoid taking a completely arbitrary decision on the type of convolution to use since the network will take care of it tuning the weights, and the number of parameters is extremely restricted as the network can learn complicated functions using fewer layers.
@@ -1219,7 +1200,7 @@ In both datasets, we use batch normalisation layers (with momentum $0.99$) after
 For both \hodge{1}{1} and \hodge{2}{1} (in both datasets), we used 3 modules made by 32, 64 and 32 filters for the first Hodge number, and 128, 128 and 64 filters for the second.
 We also included $\ell_1$ and $\ell_2$ regularisation of magnitude $10^{-4}$ in all cases.
 The number of parameters was thus restricted to $\num{2.3e5}$ parameters for \hodge{1}{1} in the original dataset and $\num{2.9e5}$ in the favourable set, and $\num{1.1e6}$ parameters for \hodge{2}{1} in the original dataset and $\num{1.4e6}$ in the favourable dataset.
-In all cases, the number of parameters has decreased by a significant amount: in the case of \hodge{1}{1} they are roughly $\frac{1}{3}$ of the parameters used in the classical CNN and around $\frac{1}{6}$ of those used in the FC network.
+In all cases, the number of parameters has decreased by a significant amount: in the case of \hodge{1}{1} they are roughly $\frac{1}{3}$ of the parameters used in the classical \cnn and around $\frac{1}{6}$ of those used in the FC network.
 
 For training we used the \emph{Adam} gradient descent with an initial learning rate of $10^{-3}$ and a batch size of $32$.
 The callbacks helped to contain the training time (without optimisation) under 5 hours for each Hodge number in each dataset.
