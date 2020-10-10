@@ -620,7 +620,7 @@ We rounded the predictions to the floor for the original dataset and to the next
 \end{tabular}%
 }
 \caption{%
-  Hyperparameter choices of the linear \svm regression.
+  Hyperparameter choices of the linear support vector regression.
   The parameter \texttt{intercept\_scaling} is clearly only relevant when the intercept is used.
   The different losses used simply distinguish between the $\ell_1$ norm of the $\epsilon$-dependent boundary where no penalty is assigned and its $\ell_2$ norm.
 }
@@ -974,7 +974,7 @@ Differently from the previous algorithms, we do not perform a cross-validation s
 Thus we use \SI{80}{\percent} of the samples for training, \SI{10}{\percent} for evaluation, and \SI{10}{\percent} as a test set.
 For the same reason, the optimisation of the algorithm has been performed manually.
 
-We always use the Adam optimiser with default learning rate $\num{e-3}$ to perform the gradient descent and a fix batch size of $32$.
+We always use the Adam optimiser with default learning rate \num{e-3} to perform the gradient descent and a fix batch size of $32$.
 The network is trained for a large number of epochs to avoid missing possible local optima.
 In order to avoid overshooting the minimum of the loss function, we dynamically reduce the learning rate both using the \emph{Adam} optimiser which implements learning rate decay, and through the callback \texttt{callbacks.ReduceLROnPlateau} in Keras, which scales the learning rate by a given factor when the monitored quantity (in our case the validation loss) does not decrease): we choose to reduce it by $0.3$ when the validation loss does not improve for at least $75$ epochs.
 Moreover we stop training when the validation loss does not improve during $200$ epochs.
@@ -991,8 +991,8 @@ First we reproduce the analysis in~\cite{Bull:2018:MachineLearningCICY} for the 
 \paragraph{Model}
 
 The neural network presented in~\cite{Bull:2018:MachineLearningCICY} for the regression task contains $5$ hidden layers with $876$, $461$, $437$, $929$ and $404$ units (\Cref{fig:nn:dense}).
-All layers (including the output layer) are followed by a ReLU activation and by a dropout layer with a rate of $\num{0.2072}$.
-This network contains roughly $\num{1.58e6}$ parameters.
+All layers (including the output layer) are followed by a ReLU activation and by a dropout layer with a rate of \num{0.2072}.
+This network contains roughly \num{1.58e6} parameters.
 
 The other hyperparameters (like the optimiser, batch size, number of epochs, regularisation, etc.) are not mentioned.
 In order to reproduce the results, we fill the gap as follows:
@@ -1033,7 +1033,7 @@ Using the same network we also achieve \SI{97}{\percent} of accuracy in the favo
   \end{subfigure}
   \caption{%
     Fully connected network for the prediction of \hodge{1}{1}.
-    For simplicity we do not draw the dropout and batch normalisation layers present after every FC layer.
+    For simplicity we do not draw the dropout and batch normalisation layers present after every densely connected layer.
   }
   \label{fig:nn:fcnetwork}
 \end{figure}
@@ -1113,12 +1113,12 @@ The convolution layers have $180$, $100$, $40$ and $20$ units each.
 With this setup, we were able to achieve an accuracy of \SI{94}{\percent} on both the development and the test sets for the ``old'' database and \SI{99}{\percent} for the favourable dataset in both validation and test sets (results are briefly summarised in \Cref{tab:res:ann}).
 We thus improved the results of the densely connected network and proved that convolutional networks can be valuable assets when dealing with the extraction of a good representation of the input data: not only are convolutional networks very good at recognising patterns and rotationally invariant objects inside pictures or general matrices of data, but deep architectures are also capable of transforming the input using non linear transformations~\cite{Mallat:2016:UnderstandingDeepConvolutional} to create new patterns which can then be used for predictions.
 
-Even though the convolution operation is very time consuming another advantage of \cnn is the extremely reduced number of parameters with respect to FC networks.\footnotemark{}
+Even though the convolution operation is very time consuming another advantage of \cnn is the extremely reduced number of parameters with respect to fully connected (\fc) networks.\footnotemark{}
 \footnotetext{%
   It took around 4 hours of training (and no optimisation) for each Hodge number in each dataset.
   The use use of modern generation GPUs with tensor cores can however speed up the training by order of magnitudes.
 }
-The architectures we used were in fact made of approximately $\num{5.8e5}$ parameters: way less than half the number of parameters used in the FC network.
+The architectures we used were in fact made of approximately \num{5.8e5} parameters: way less than half the number of parameters used in the \fc network.
 Ultimately, this leads to a smaller number of training epochs necessary to achieve good predictions (see~\Cref{fig:cnn:class-ccnn}).
 
 \begin{figure}[tbp]
@@ -1145,11 +1145,11 @@ Ultimately, this leads to a smaller number of training epochs necessary to achie
 Using this classic setup we tried different architectures.
 The network for the original dataset seems to work best in the presence of larger kernels, dropping by roughly \SI{5}{\percent} in accuracy when a more ``classical'' $3 \times 3$ kernel is used.
 We also tried to use to set the padding to \texttt{valid}, reducing the input from a $12 \times 15$ matrix to a $1 \times 1$ feature map over the course of $5$ layers with $180$, $100$, $75$, $40$ and $20$ filters.
-The advantage is the reduction of the number of parameters (namely $\sim \num{4.9e5}$) mainly due to the small FC network at the end, but accuracy dropped to \SI{87}{\percent}.
+The advantage is the reduction of the number of parameters (namely $\sim \num{4.9e5}$) mainly due to the small \fc network at the end, but accuracy dropped to \SI{87}{\percent}.
 The favourable dataset seems instead to be more independent of the specific architecture retaining accuracy also with smaller kernels.
 
 The analysis for \hodge{2}{1} follows the same prescriptions.
-For both the original and favourable dataset, we opted for 4 convolutional layers with \numlist{250;150;100;50} filters and no FC network for a total amount of $\num{2.1e6}$ parameters.
+For both the original and favourable dataset, we opted for 4 convolutional layers with \numlist{250;150;100;50} filters and no \fc network for a total amount of \num{2.1e6} parameters.
 In this scenario we were able to achieve \SI{36}{\percent} of accuracy in the development set and \SI{40}{\percent} on the test set for \hodge{2}{1} in the ``old'' dataset and \SI{31}{\percent} in both development and test sets in the favourable set (see~\Cref{tab:res:ann}).
 The learning curves for both Hodge numbers are given in \Cref{fig:lc:class-ccnn}.
 This model uses the same architecture as the one for predicting \hodge{1}{1} only, which explains why it is less accurate as it needs to also adapt to compute \hodge{2}{1} (see for example \Cref{fig:lc:inception}).
@@ -1164,81 +1164,79 @@ This model uses the same architecture as the one for predicting \hodge{1}{1} onl
 \end{figure}
 
 
-%%% TODO %%%
 \subsubsection{Inception-like Neural Network}
 \label{sec:ml:nn:inception}
 
-
 In the effort to find a better architecture, we took inspiration from Google's winning \cnn in the annual \href{https://image-net.org/challenges/LSVRC/}{\emph{ImageNet challenge}} in 2014~\cite{Szegedy:2015:GoingDeeperConvolutions, Szegedy:2016:RethinkingInceptionArchitecture, Szegedy:2016:Inceptionv4InceptionresnetImpact}.
-The architecture presented uses \emph{inception} modules in which separate $3 \times 3$, $5 \times 5$ convolutions are performed side by side (together with \emph{max pooling} operations) before recombining the outputs.
+The architecture in its original presentation uses \emph{inception} modules in which separate $1 \times 1$, $3 \times 3$ and  $5 \times 5$ convolutions are performed side by side (together with \emph{max pooling} operations) before recombining the outputs.
 The modules are then repeated until the output layer is reached.
 This has two evident advantages: users can avoid taking a completely arbitrary decision on the type of convolution to use since the network will take care of it tuning the weights, and the number of parameters is extremely restricted as the network can learn complicated functions using fewer layers.
 As a consequence the architecture of such models can be made very deep while keeping the number of parameters contained, thus being able to learn very difficult representations of the input and producing accurate predictions.
-Moreover, while the training phase might become very long due to the complicated convolutional operations, the small number of parameters is such that predictions can be generated in a very small amount of time, making inception-like models extremely appropriate whenever quick predictions are necessary.
-Another advantage of the architecture is the presence of different kernel sizes inside each module: the network automatically learns features at different scales and different positions, thus leveraging the advantages of a deep architecture with the ability to learn different representations at the same time and compare them.
+Moreover while the training phase might become very long due to the complicated convolutional operations, the small number of parameters is such that predictions can be generated in a very small amount of time making inception-like models extremely appropriate whenever quick predictions are necessary.
+Another advantage of the architecture is the presence of different kernel sizes inside each module: the network automatically learns features at different scales and different positions thus leveraging the advantages of a deep architecture with the ability to learn different representations at the same time and compare them.
 
 
 \paragraph{Model}
 
-In \Cref{fig:nn:inception}, we show a schematic of our implementation.
+In~\Cref{fig:nn:inception} we show a schematic of our implementation.
 Differently from the image classification task, we drop the pooling operation and implement two side-by-side convolution over rows ($12 \times 1$ kernel for the original dataset, $15 \times 1$ for the favourable) and one over columns ($1 \times 15$ and $1 \times 18$ respectively).\footnotemark{}
 \footnotetext{%
-	Pooling operations are used to shrink the size of the input.
-	Similar to convolutions, they use a window of a given size to scan the input and select particular values inside.
-	For instance, we could select the average value inside the small portion selected, performing an \emph{average pooling} operation, or the maximum value, a \emph{max pooling} operation.
-	This usually improves image classification and object detection tasks as it can be used to sharpen edges and borders.
-}%
+  Pooling operations are used to shrink the size of the input.
+  Similar to convolutions, they use a window of a given size to scan the input and select particular values inside.
+  For instance, we could select the average value inside the small portion selected, performing an \emph{average pooling} operation, or the maximum value, a \emph{max pooling} operation.
+  This usually improves image classification and object detection tasks as it can be used to sharpen edges and borders.
+}
 We use \texttt{same} as padding option.
 The output of the convolutions are then concatenated in the filter dimensions before repeating the ``inception'' module.
 The results from the last module are directly connected to the output layer through a flatten layer.
-In both datasets, we use batch normalisation layers (with momentum $0.99$) after each concatenation layer and a dropout layer (with rate $0.2$) before the FC network.\footnotemark{}
+In both datasets we use batch normalisation layers (with momentum $0.99$) after each concatenation layer and a dropout layer (with rate $0.2$) before the \fc network.\footnotemark{}
 \footnotetext{%
-	The position of the batch normalisation is extremely important as the parameters computed by such layer directly influence the following batch.
-	We however opted to wait for the scan over rows and columns to finish before normalising the outcome to avoid biasing the resulting activation function.
-}%
+  The position of the batch normalisation is extremely important as the parameters computed by such layer directly influence the following batch.
+  We however opted to wait for the scan over rows and columns to finish before normalising the outcome to avoid biasing the resulting activation function.
+}
 
-For both \hodge{1}{1} and \hodge{2}{1} (in both datasets), we used 3 modules made by 32, 64 and 32 filters for the first Hodge number, and 128, 128 and 64 filters for the second.
-We also included $\ell_1$ and $\ell_2$ regularisation of magnitude $10^{-4}$ in all cases.
-The number of parameters was thus restricted to $\num{2.3e5}$ parameters for \hodge{1}{1} in the original dataset and $\num{2.9e5}$ in the favourable set, and $\num{1.1e6}$ parameters for \hodge{2}{1} in the original dataset and $\num{1.4e6}$ in the favourable dataset.
-In all cases, the number of parameters has decreased by a significant amount: in the case of \hodge{1}{1} they are roughly $\frac{1}{3}$ of the parameters used in the classical \cnn and around $\frac{1}{6}$ of those used in the FC network.
-
-For training we used the \emph{Adam} gradient descent with an initial learning rate of $10^{-3}$ and a batch size of $32$.
+For both \hodge{1}{1} and \hodge{2}{1} (in both datasets) we used 3 modules made by \numlist{32;64;32} filters for the first Hodge number, and \numlist{128;128;64} filters for the second.
+We also included $\ell_1$ and $\ell_2$ regularisation of magnitude \num{e-4} in all cases.
+The number of parameters was thus restricted to \num{2.3e5} parameters for \hodge{1}{1} in the original dataset and \num{2.9e5} in the favourable set, and \num{1.1e6} parameters for \hodge{2}{1} in the original dataset and \num{1.4e6} in the favourable dataset.
+In all cases the number of parameters has decreased by a significant amount: in the case of \hodge{1}{1} they are roughly $\frac{1}{3}$ of the parameters used in the classical \cnn and around $\frac{1}{6}$ of those used in the \fc network.
+During training we used the \emph{Adam} gradient descent with an initial learning rate of $10^{-3}$ and a batch size of $32$.
 The callbacks helped to contain the training time (without optimisation) under 5 hours for each Hodge number in each dataset.
 
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.9\linewidth]{img/icnn}
-    \caption{%
-    	In each concatenation module (here shown for the ``old'' dataset) we operate with separate convolution operations over rows and columns, then concatenate the results. The overall architecture is composed of 3 ``inception'' modules made by two separate convolutions, a concatenation layer and a batch normalisation layer (strictly in this order), followed by a dropout layer, a flatten layer and the output layer with ReLU activation (in this order).}
-    \label{fig:nn:inception}
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.9\linewidth]{img/icnn}
+  \caption{%
+    In each concatenation module (here shown for the ``old'' dataset) we operate with separate convolution operations over rows and columns, then concatenate the results.
+    The overall architecture is composed of 3 ``inception'' modules made by two separate convolutions, a concatenation layer and a batch normalisation layer (strictly in this order), followed by a dropout layer, a flatten layer and the output layer with ReLU activation (in this order).
+  }
+  \label{fig:nn:inception}
 \end{figure}
 
 
 \paragraph{Results}
 
-With these architectures, we were able to achieve more than \SI{99}{\percent} of accuracy for \hodge{1}{1} in the test set (same for the development set) and \SI{50}{\percent} of accuracy for \hodge{2}{1} (a slightly smaller value for the development set).
-We report the results in \Cref{tab:res:ann}.
+With these architectures we were able to achieve more than \SI{99}{\percent} of accuracy for \hodge{1}{1} in the test set (same for the development set) and \SI{50}{\percent} of accuracy for \hodge{2}{1} (a slightly smaller value for the development set).
+We report the results in~\Cref{tab:res:ann}.
 
 We therefore increased the accuracy for both Hodge numbers (especially \hodge{2}{1}) compared to what can achieve a simple sequential network, while at the same time reducing significantly the number of parameters of the network.\footnotemark{}
-This increases the robustness of the method and its generalisation properties.
 \footnotetext{%
-	In an attempt to improve the results for \hodge{2}{1} even further, we also considered to first predict $\ln( 1 + \hodge{2}{1} )$ and then transform it back. However, the predictions dropped by almost \SI{10}{\percent} in accuracy even using the ``inception'' network: the network seems to be able to approximate quite well the results (not better nor worse than simply \hodge{2}{1}) but the subsequent exponentiation is taking apart predictions and true values.
-	Choosing a correct rounding strategy then becomes almost impossible.
+  In an attempt to improve the results for \hodge{2}{1} even further, we also considered to first predict $\ln( 1 + \hodge{2}{1} )$ and then transform it back.
+  However, the predictions dropped by almost \SI{10}{\percent} in accuracy even using the ``inception'' network: the network seems to be able to approximate quite well the results (not better nor worse than simply \hodge{2}{1}) but the subsequent exponentiation is taking apart predictions and true values.
+  Choosing a correct rounding strategy then becomes almost impossible.
 }
+This increases the robustness of the method and its generalisation properties.
 
-In \Cref{fig:nn:inception_errors}, we show the distribution of the residuals and their scatter plot, showing that the distribution of the errors does not present pathological behaviour and the variance of the residuals is well distributed over the predictions.
-
-In fact, this neural network is much more powerful than the previous networks we considered, as can be seen by studying the learning curves (\Cref{fig:lc:inception}).
-When predicting only \hodge{1}{1}, it surpasses \SI{97}{\percent} accuracy using only \SI{30}{\percent} of the data for training.
-While it seems that the predictions suffer when using a single network for both Hodge numbers, this remains much better than any other algorithm.
-It may seem counter-intuitive that convolutions work well on this data since they are not translation or rotation invariant, but only permutation invariant.
-However, convolution alone is not sufficient to ensure invariances under these transformations but it must be supplemented with pooling operations~\cite{Bengio:2017:DeepLearning}, which we do not use.
-Moreover, convolution layers do more than just taking translation properties into account: they allow to make highly complicated combinations of the inputs and to share weights among components, which allow to find subtler patterns than standard fully connected layers.
+In~\Cref{fig:nn:inception_errors} we show the distribution of the residuals and their scatter plot.
+The distribution of the errors does not present pathological behaviour and the variance of the residuals is well distributed over the predictions.
+In fact this neural network is much more powerful than the previous networks we considered, as can be seen by studying the learning curves in~\Cref{fig:lc:inception}.
+When predicting only \hodge{1}{1} it surpasses \SI{97}{\percent} accuracy using only \SI{30}{\percent} of the data for training.
+While it seems that the predictions suffer when using a single network for both Hodge numbers this remains much better than any other algorithm.
+It may seem counter-intuitive that convolutions work well on this data since they are not translation or rotation invariant but only permutation invariant.
+However convolution alone is not sufficient to ensure invariances under these transformations but it must be supplemented with pooling operations~\cite{Bengio:2017:DeepLearning} which we do not use.
+Moreover convolution layers do more than just taking translation properties into account: they allow to make highly complicated combinations of the inputs and to share weights among components to find subtler patterns than standard fully connected layers.
 This network is more studied in more details in~\cite{Erbin:2020:InceptionNeuralNetwork}.
 
-
-\begin{figure}[htp]
+\begin{figure}[tbp]
   \centering
   \begin{subfigure}[c]{0.45\linewidth}
     \centering
@@ -1251,155 +1249,139 @@ This network is more studied in more details in~\cite{Erbin:2020:InceptionNeural
     \includegraphics[width=\linewidth, trim={0 0 6in 0}, clip]{img/loss-lr_icnn_h21_orig}
     \caption{Loss of \hodge{2}{1}.}
   \end{subfigure}
-  \caption{The loss functions of ``inception'' network for \hodge{1}{1} and \hodge{2}{1} in the original dataset show that the number of epochs required for training is definitely larger than for simpler architectures, despite the reduced number of parameters.}
+  \caption{%
+    The loss functions of ``inception'' network for \hodge{1}{1} and \hodge{2}{1} in the original dataset show that the number of epochs required for training is definitely larger than for simpler architectures, despite the reduced number of parameters.
+  }
   \label{fig:cnn:inception-loss}
 \end{figure}
 
-
-\begin{figure}[htp]
+\begin{figure}[tbp]
   \centering
   \begin{subfigure}[c]{\linewidth}
     \centering
     \includegraphics[width=0.8\linewidth]{img/errors_icnn_h11_orig}
     \caption{Residuals of \hodge{1}{1}.}
   \end{subfigure}
-  \quad
+  \hfill
   \begin{subfigure}[c]{\linewidth}
     \centering
     \includegraphics[width=0.8\linewidth]{img/errors_icnn_h21_orig}
     \caption{Residuals of \hodge{2}{1}.}
   \end{subfigure}
-  \caption{Histograms of the residual errors and residual plots of the Inception network.}
+  \caption{%
+    Histograms of the residual errors and residual plots of the Inception network.
+  }
   \label{fig:nn:inception_errors}
 \end{figure}
 
-
-\begin{figure}[htp]
-	\centering
-
-	\begin{subfigure}[c]{0.45\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{img/inc_nn_learning_curve}
-		\caption{predicting both \hodge{1}{1} and \hodge{2}{1}}
-	\end{subfigure}
-	\qquad
-	\begin{subfigure}[c]{0.45\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{img/inc_nn_learning_curve_h11}
-		\caption{predicting \hodge{1}{1} only}
-	\end{subfigure}
-
-	\caption{Learning curves for the Inception neural network (original dataset).}
-	\label{fig:lc:inception}
+\begin{figure}[tbp]
+  \centering
+  \begin{subfigure}[c]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/inc_nn_learning_curve}
+    \caption{predicting both \hodge{1}{1} and \hodge{2}{1}}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[c]{0.45\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{img/inc_nn_learning_curve_h11}
+    \caption{predicting \hodge{1}{1} only}
+  \end{subfigure}
+  \caption{Learning curves for the Inception neural network (original dataset).}
+  \label{fig:lc:inception}
 \end{figure}
 
-
 \begin{table}[htb]
-\centering
-	\begin{tabular}{@{}ccccccc@{}}
-		\toprule
-		& \multicolumn{2}{c}{\textbf{DenseNet}}
-		& \multicolumn{2}{c}{\textbf{classic ConvNet}}
-		& \multicolumn{2}{c}{\textbf{inception ConvNet}}
-		\\
-		& \emph{old} & \emph{fav.}
-		& \emph{old} & \emph{fav.}
-		& \emph{old} & \emph{fav.}
-		\\
-		\midrule
-		\hodge{1}{1}
-		& \SI{77}{\percent}  & \SI{97}{\percent}
-		& \SI{94}{\percent}  & \SI{99}{\percent}
-		& \SI{99}{\percent}  & \SI{99}{\percent}
-		\\
-		\hodge{2}{1}
-		& -     & -
-		& \SI{36}{\percent}  & \SI{31}{\percent}
-		& \SI{50}{\percent}  & \SI{48}{\percent}
-		\\
-		\bottomrule
-\end{tabular}
-\caption{Accuracy using \emph{rint} rounding on the predictions of the ANNs on \hodge{1}{1} and \hodge{2}{1} on the test set.}
-\label{tab:res:ann}
+  \centering
+  \begin{tabular}{@{}ccccccc@{}}
+    \toprule
+    & \multicolumn{2}{c}{\textbf{DenseNet}}
+    & \multicolumn{2}{c}{\textbf{classic ConvNet}}
+    & \multicolumn{2}{c}{\textbf{inception ConvNet}}
+    \\
+    & \emph{old} & \emph{fav.}
+    & \emph{old} & \emph{fav.}
+    & \emph{old} & \emph{fav.}
+    \\
+    \midrule
+    \hodge{1}{1}
+    & \SI{77}{\percent}  & \SI{97}{\percent}
+    & \SI{94}{\percent}  & \SI{99}{\percent}
+    & \SI{99}{\percent}  & \SI{99}{\percent}
+    \\
+    \hodge{2}{1}
+    & -     & -
+    & \SI{36}{\percent}  & \SI{31}{\percent}
+    & \SI{50}{\percent}  & \SI{48}{\percent}
+    \\
+    \bottomrule
+  \end{tabular}
+  \caption{%
+    Accuracy using \emph{rint} rounding on the predictions of the ANNs on \hodge{1}{1} and \hodge{2}{1} on the test set.
+  }
+  \label{tab:res:ann}
 \end{table}
 
 
 \subsubsection{Boosting the Inception-like Model}
 
-
-To improve further the accuracy of \hodge{2}{1}, we have tried to modify the network by adding engineered features as auxiliary inputs.
+To improve further the accuracy of \hodge{2}{1} we modify the network by adding engineered features as auxiliary inputs.
 This can be done by adding inputs to the inception neural network and merging the different branches at different stages.
-There are two possibilities to train such a network: 1) train all the network directly, or 2) train the inception network alone, then freeze its weights and connect it to the additional inputs, training only the new layer.
+There are two possibilities to train such a network: train the whole network directly or train the inception network alone, then freeze its weights and connect it to the additional inputs, training only the new layer.
 We found that the architectures we tried did not improve the accuracy, but we briefly describe our attempts for completeness.
-
 We focused in particular on the number of projective spaces, the vector of dimensions of the projective spaces and the vector of dimensions of the principal cohomology group) and predicting \hodge{1}{1} and \hodge{2}{1} at the same time.
-The core of the neural network is the Inception network described in \Cref{sec:ml:nn:inception}.
-Then, the engineered features are processed using fully connected layers and merged to the predictions from the Inception branch using a concatenation layer.
-Obviously, output layers for \hodge{1}{1} and \hodge{2}{1} can be located on different branches, which allow for different processing of the features.
+The core of the neural network is the Inception network described earlier in~\Cref{sec:ml:nn:inception}.
+The engineered features are processed using fully connected layers and merged to the predictions from the Inception branch using a concatenation layer.
+Obviously output layers for \hodge{1}{1} and \hodge{2}{1} can be located on different branches which allow for different processing of the features.
 
 As mentioned earlier, a possible approach is to first train the Inception branch alone, before freezing its weights and connecting it to the rest of the network.
 This can prevent spoiling the already good predictions and speed up the new learning process.
 This is a common technique called \emph{transfer learning}: we can use a model previously trained on a slightly different task and use its weights as part of the new architecture.
-
-Our trials involved shallow fully connected layers ($1$--$3$ layers with $10$ to $150$ units) between the engineered features and after the concatenation layer.
-Since the \eda analysis (\Cref{sec:data:eda}) shows a correlation between both Hodge numbers, we tried architectures where the result for \hodge{1}{1} is used to predict \hodge{2}{1}.
-
-For the training phase, we also tried an alternative to the canonical choice of optimising the sum of the losses.
+Our trials involved shallow fully connected layers ($1$ to $3$ layers with $10$ to $150$ units) between the engineered features and after the concatenation layer.
+Since the \eda analysis in~\Cref{sec:data:eda} shows a correlation between both Hodge numbers, we tried architectures where the result for \hodge{1}{1} is used to predict \hodge{2}{1}.
+For the training phase we also tried an alternative to the canonical choice of optimising the sum of the losses.
 We first train the network and stop the process when the validation loss for \hodge{1}{1} does not longer improve, load back the best weights and save the results, keep training and stop when the loss for \hodge{2}{1} reaches a plateau.
 
-
-
-
 With this setup we were able to slightly improve the predictions of \hodge{1}{1} in the original dataset, reaching almost \SI{100}{\percent} of accuracy in the predictions, while the favourable dataset stayed at around \SI{99}{\percent} of accuracy.
-The only few missed predictions (4 manifolds out of 786 in the test set) are in very peculiar regions of the distribution of the Hodge number.
+The only few missed predictions (\num{4} manifolds out of \num{786} in the test set) are in very peculiar regions of the distribution of the Hodge number.
 For \hodge{2}{1} no improvement has been noticed.
-
 
 
 \subsection{Ensemble Learning: Stacking}
 
-
 We conclude the \ml analysis by describing a method very popular in \ml competitions: ensembling.
 This consists in taking several \ml algorithms and combining together the predictions of each individual model to obtain a more precise predictions.
 Using this technique it is possible to decrease the variance and improve generalization by compensating weaknesses of algorithms with strengths of others.
-Indeed, the idea is to put together algorithms which perform best in different zones of the label distribution in order to combine them to build an algorithm better than any individual component.
-
-The simplest such algorithm is \emph{stacking} whose principle is summarised in \Cref{fig:stack:def}.
-First, the original training set is split in two parts (not necessarily even).
-Second, a certain number of \emph{first-level learners} is trained over the first split and used to generate predictions over the second split.
-Third, a ``meta learner'' is trained of the second split to combine the predictions from the first-level learners.
+Indeed the idea is to put together algorithms which perform best in different zones of the label distribution in order to combine them to build an algorithm better than any individual component.
+The simplest such algorithm is \emph{stacking} whose principle is summarised in~\Cref{fig:stack:def}.
+First the original training set is split in two parts (not necessarily even).
+Second a certain number of \emph{first-level learners} is trained over the first split and used to generate predictions over the second split.
+Third a ``meta learner'' is trained of the second split to combine the predictions from the first-level learners.
 Predictions for the test set are obtained by applying both level of models one after the other.
 
-We have selected the following models for the first level: linear gression, \svm with the Gaussian kernel, the random forest and the ``inception'' neural network.
+We have selected the following models for the first level: linear regression, \svm with the Gaussian kernel, the random forest and the ``inception'' neural network.
 The meta-learner is a simple linear regression with $\ell_1$ regularisation (Lasso).
 The motivations for the first-level algorithms is that stacking works best with a group of algorithms which work in the most diverse way among them.
-
-Also in this case, we use a cross-validation strategy with 5 splits for each level of the training: from \SI{90}{\percent} of total training set, we split into two halves containing each \SI{45}{\percent} of the total samples and then use 5 splits to grade the algorithm, thus using \SI{9}{\percent} of each split for cross correlation at each iteration) and the Bayes optimisation for all algorithms but the ANN (50 iterations for elastic net, \svm and lasso and 25 for the random forests).
-The ANN was trained using a holdout validation set containing the same number of samples as each cross-validation fold, namely \SI{9}{\percent} of the total set.
+Also in this case, we use a cross-validation strategy with 5 splits for each level of the training: from \SI{90}{\percent} of total training set, we split into two halves containing each \SI{45}{\percent} of the total samples and then use 5 splits to grade the algorithm, thus using \SI{9}{\percent} of each split for cross correlation at each iteration) and the Bayes optimisation for all algorithms but the \ann (50 iterations for elastic net, \svm and lasso and 25 for the random forests).
+The \ann was trained using a holdout validation set containing the same number of samples as each cross-validation fold, namely \SI{9}{\percent} of the total set.
 The accuracy is then computed as usual using \texttt{numpy.rint} for \svm, neural networks, the meta learner and \hodge{1}{1} in the original dataset in general, and \texttt{numpy.floor} in the other cases.
 
-In \Cref{tab:res:stack}, we show the accuracy of the ensemble learning.
+In~\Cref{tab:res:stack}, we show the accuracy of the ensemble learning.
 We notice that accuracy improves slightly only for \hodge{2}{1} (original dataset) compared to the first-level learners.
-However, this is much lower than what has been achieved in \Cref{sec:ml:nn:inception}.
+However this is much lower than what has been achieved in~\Cref{sec:ml:nn:inception}.
 The reason is that the learning suffers from the reduced size of the training set.
 Another reason is that the different algorithms may perform similarly well in the same regions.
 
-
-\begin{figure}[htp]
-	\centering
-	\includegraphics[width=0.65\linewidth]{img/stacking}
-	\caption{Stacking ensemble learning with two level learning.
-	The original training set is split into two training folds and the first level learners are trained on the first.
-	The trained models are then used to generate a new training set (here the ``1st level labels'') using the second split as input features.
-	The same also applies to the test set.
-	Finally a ``meta-learner'' uses the newly generated training set to produce the final predictions on the test set.}
-	\label{fig:stack:def}
+\begin{figure}[tbp]
+  \centering
+  \includegraphics[width=0.65\linewidth]{img/stacking}
+  \caption{Stacking ensemble learning with two level learning.}
+  \label{fig:stack:def}
 \end{figure}
 
-
-\begin{table}[htb]
-\centering
-\begin{tabular}{@{}cccccc@{}}
+\begin{table}[tbp]
+  \centering
+  \begin{tabular}{@{}cccccc@{}}
     \toprule
     &
     & \multicolumn{2}{c}{\hodge{1}{1}}
@@ -1411,7 +1393,7 @@ Another reason is that the different algorithms may perform similarly well in th
     \\
     \midrule
     \multirow{4}{*}{\emph{1st level}}
-    & EN
+    & \textsc{en}
         & \SI{65}{\percent}  & \SI{100}{\percent}
         & \SI{19}{\percent}  & \SI{19}{\percent}
     \\
@@ -1419,11 +1401,11 @@ Another reason is that the different algorithms may perform similarly well in th
         & \SI{70}{\percent}  & \SI{100}{\percent}
         & \SI{30}{\percent}  & \SI{34}{\percent}
     \\
-    & RF
+    & \textsc{rf}
         & \SI{61}{\percent}  & \SI{98}{\percent}
         & \SI{18}{\percent}  & \SI{24}{\percent}
     \\
-    & ANN
+    & \ann
         & \SI{98}{\percent}  & \SI{98}{\percent}
         & \SI{33}{\percent}  & \SI{30}{\percent}
     \\
@@ -1434,9 +1416,12 @@ Another reason is that the different algorithms may perform similarly well in th
         & \SI{36}{\percent}  & \SI{33}{\percent}
     \\
     \bottomrule
-\end{tabular}
-\caption{Accuracy of the first and second level predictions of the stacking ensemble for elastic net regression (EN), support vector with \texttt{rbf} kernel (SVR), random forest (RF) and the artificial neural network (ANN) as first level learners and lasso regression as meta learner.}
-\label{tab:res:stack}
+  \end{tabular}
+  \caption{%
+    Accuracy of the first and second level predictions of the stacking ensemble for elastic net regression (\textsc{en}), support vector with \texttt{rbf} kernel (\svm), random forest (\textsc{rf}) and the artificial neural network (\ann) as first level learners and lasso regression as meta learner.
+  }
+  \label{tab:res:stack}
 \end{table}
+
 
 % vim: ft=tex

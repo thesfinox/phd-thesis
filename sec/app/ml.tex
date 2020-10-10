@@ -1,0 +1,411 @@
+In this appendix we give a brief review and definition of the main \ml algorithms used in the text.
+We highlight the specific characteristics of interest in the analysis.
+
+\subsection{Linear regression}
+\label{sec:app:linreg}
+
+Consider a set of $F$ features $\qty{ x_n }$ where $n = 1, \ldots, F$.
+A linear model learns a function
+\begin{equation}
+  f(x_n) = \finitesum{n}{1}{F} w_n x_n + b,
+\end{equation}
+where $w$ and $b$ are the \emph{weights} and \emph{intercept} of the fit.
+
+One of the key assumptions behind a linear fit is the independence of the residual error between the predicted point and the value of the model, which can therefore be assumed to be sampled from a normal distribution peaked at the average value~\cite{Lista:2017:StatisticalMethodsData, Caffo::DataScienceSpecialization}.
+The parameters of the fit are then chosen to maximise their \emph{likelihood} function, or conversely to minimise its logarithm with a reversed sign (the $\chi^2$ function).
+A related task is to minimise the mean squared error without assuming a statistical distribution of the residual error: \ml for regression usually implements this as loss function of the estimators.
+In this sense loss functions for regression are more general than a likelihood approach but they are nonetheless related.
+For plain linear regression the associated loss is:
+\begin{equation}
+  \cL(w,\, b)
+  =
+  \frac{1}{2N}\,
+  \finitesum{i}{1}{N}
+  \finitesum{n}{1}{F}
+  \qty( y^{(i)} - (w_n x_n^{(i)} + b) )^2,
+\end{equation}
+where $N$ is the number of samples and $x_n^{(i)}$ the $n$th feature of the $i$-th sample.
+The values of the parameters will therefore be:
+\begin{equation}
+  \qty(w, b) = \underset{w,\, b}{\mathrm{argmin}}~ \cL(w, b).
+\end{equation}
+This usually requires looping over all samples and all features, thus the \emph{least squares} method has a time complexity of $\order{ F \times N }$: while the increase of the number of samples might be an issue, the number of engineered features and matrix components usually does not change and does not represent a huge effort in terms of rescaling the algorithm.
+
+There are however different versions of possible regularisation which we might add to constrain the parameters of the fit and avoid adapting too well to the training set.
+In particular we may be interested in adding a $\ell_1$ regularisation:
+\begin{equation}
+  \cL_1(w) = \sqrt{\finitesum{n}{1}{F} w_n^2},
+\end{equation}
+or the $\ell_2$ version:
+\begin{equation}
+  \cL_2(w) = \finitesum{n}{1}{F} w_n^2.
+\end{equation}
+Notice that in general we do not regularise the intercept.
+These terms can be added to the plain loss function to try and avoid large parameters to influence the predictions and to keep better generalisation properties:
+\begin{itemize}
+  \item add both $\ell_1$ and $\ell_2$ regularisation (this is called \emph{elastic net}):
+    \begin{equation}
+      \cL_{\textsc{en}}(w, b;~\alpha_{\textsc{en}}, L) = \cL(w,b) + \alpha_{\textsc{en}} \cdot L \cdot \cL_1(w) + \frac{\alpha_{\textsc{en}}}{2} \cdot (1 - L) \cdot \cL_2(w),
+    \end{equation}
+
+  \item keep only $\ell_1$ regularisation (i.e.\ the \emph{lasso} regression):
+    \begin{equation}
+      \cL_{\textsc{lss}}(w, b;~\alpha_{\textsc{lss}}) = \cL(w,b) + \alpha_{\textsc{lss}} \cdot \cL_1(w),
+    \end{equation}
+
+  \item keep only $\ell_2$ regularisation (\emph{ridge} regression):
+    \begin{equation}
+      \cL_{\textsc{rdg}}(w, b;~\alpha_{\textsc{rdg}}) = \cL(w,b) + \alpha_{\textsc{rdg}} \cdot \cL_2(w).
+      \label{eq:ridge:loss}
+    \end{equation}
+\end{itemize}
+The role of the hyperparameter $L$ is to balance the contribution of the additional terms.
+For larger values of the hyperparameter $\alpha$, $w$ (and $b$) assume smaller values and adapt less to the particular training set.
+
+
+\subsection{Support Vector Machines for Regression}
+\label{sec:app:svr}
+
+This family of supervised \ml algorithms were created with classification tasks in mind~\cite{Cortes:1995:SupportvectorNetworks} but have proven to be effective also for regression problems~\cite{Drucker:1997:SupportVectorRegression}.
+Differently from the linear regression, instead of minimising the squared distance of each sample, the algorithm assigns a penalty to predictions of samples $x^{(i)} \in \R^F$ (for $i = 1, 2, \dots, N$) which are further away than a certain hyperparameter $\varepsilon$ from their true value $y$, allowing however a \textit{soft margin} of tolerance represented by the penalties $\zeta$ above and $\xi$ below.
+This is achieved by minimising $w,\, b,\, \zeta$ and $\xi$ in the function:\footnotemark{}
+\footnotetext{%
+  In a classification task the training objective would be the minimisation of the opposite of the log-likelihood function of predicting a positive class, that is $y^{(i)}\, \qty( w_n \phi_n\qty(x^{(i)}) + b )$, which should equal the unity for good predictions (we can consider $\varepsilon = 1$), instead of the regression objective $y^{(i)} - w_n \phi_n\qty(x^{(i)}) - b$.
+  The differences between \svm for classification purposes and regression follow as shown.
+}
+\begin{equation}
+  \begin{split}
+    \cL\qty(w, b, \zeta, \xi)
+    & =
+    \frac{1}{2} \finitesum{n}{1}{F'} w_n^2
+    +
+    C \finitesum{i}{1}{N} \qty( \zeta^{(i)} + \xi^{(i)} )
+    \\
+    & +
+    \finitesum{i}{1}{N} \finitesum{n}{1}{F'} \alpha^{(i)}
+    \qty( y^{(i)} - w_n \phi_n\qty(x^{(i)}) - b - \varepsilon - \zeta^{(i)} )
+    \\
+    & +
+    \finitesum{i}{1}{N} \finitesum{n}{1}{F'} \beta^{(i)}
+    \qty( w_n \phi_n\qty(x^{(i)}) + b - y^{(i)} - \varepsilon - \xi^{(i)} )
+    \\
+    & -
+    \finitesum{i}{1}{N} \qty( \rho^{(i)} \zeta^{(i)} + \sigma^{(i)} \xi^{(i)} )
+  \end{split}
+  \label{eq:svr:loss}
+\end{equation}
+where $\alpha^{(i)},\, \beta^{(i)},\, \rho^{(i)},\, \sigma^{(i)} \ge 0$ such that the previous expression encodes the constraints
+\begin{equation}
+  \begin{cases}
+    y^{(i)} - \finitesum{n}{1}{F'} w_n \phi_n\qty(x^{(i)}) - b & \le \varepsilon + \zeta^{(i)},
+    \qquad
+    \varepsilon \ge 0,
+    \quad
+    \zeta^{(i)} \ge 0,
+    \quad
+    i = 1, 2, \dots, N
+    \\
+    \finitesum{n}{1}{F'} w_n \phi_n\qty(x^{(i)}) + b  - y^{(i)} & \le \varepsilon + \xi^{(i)},
+    \qquad
+    \varepsilon \ge 0,
+    \quad
+    \xi^{(i)} \ge 0,
+    \quad
+    i = 1, 2, \dots, N
+  \end{cases}
+  \label{eq:svr:constraints}
+\end{equation}
+and where $\phi\qty(x^{(i)}) \in \R^{F'}$ is a function mapping the feature vector $x^{(i)} \in \R^F$ in a higher dimensional space ($F' > F$), whose interpretation will become clear in an instant.
+The minimisation problem leads to
+\begin{equation}
+  \begin{cases}
+    w_n - \finitesum{i}{1}{N} \qty( \alpha^{(i)} - \beta^{(i)} ) \phi_n\qty(x^{(i)}) = 0
+    \\
+    \finitesum{i}{1}{N} \qty( \alpha^{(i)} - \beta^{(i)} ) = 0
+    \\
+    \finitesum{i}{1}{N} \qty( \alpha^{(i)} + \rho^{(i)} )
+    =
+    \finitesum{i}{1}{N} \qty( \beta^{(i)} + \sigma^{(i)} )
+    =
+    C
+  \end{cases}
+\end{equation}
+such that $0 \le \alpha^{(i)},\, \beta^{(i)} \le C,~\forall\, i = 1, 2, \dots, N$. This can be reformulated as a \textit{dual} problem in finding the extrema of $\alpha^{(i)}$ and $\beta^{(i)}$ in
+\begin{equation}
+  W(\alpha, \beta)
+  =
+  \frac{1}{2} \sum\limits_{i, j = 1}^N \theta^{(i)} \theta^{(j)} \rK( x^{(i)}, x^{(j)} )
+  -
+  \varepsilon \finitesum{i}{1}{N} \qty( \alpha^{(i)} + \beta^{(i)} )
+  +
+  \finitesum{i}{1}{N} y^{(i)} \theta^{(i)},
+  \label{eq:svr:loss-v2}
+\end{equation}
+where $\theta = \alpha - \beta$ are called \textit{dual coefficients} (accessible through the attribute \texttt{dual\_coef\_} of \texttt{svm.SVR} in \texttt{scikit-learn}) and $\rK\qty( x^{(i)}, x^{(j)} ) = \finitesum{n}{1}{F'} \phi_n\qty(x^{(i)}) \phi_n\qty( x^{(j)} )$ is the \textit{kernel} function.
+Notice that the Lagrange multipliers $\alpha^{(i)}$ and $\beta^{(i)}$ are non vanishing only for particular sets of vectors $l^{(i)}$ which lie outside the $\varepsilon$ dependent bounds of \eqref{eq:svr:constraints} and operate as landmarks for the others.
+They are called \textit{support vectors} (accessible using the attribute \texttt{support\_vectors\_} in \texttt{svm.SVR}), hence the name of the algorithm. There can be at most $N$ when $\varepsilon \to 0^+$.
+As a consequence any sum involving $\alpha^{(i)}$ or $\beta^{(i)}$ can be restricted to the subset of support vectors.
+Using the kernel notation, the predictions will therefore be
+\begin{equation}
+  y_{pred}^{(i)}
+  =
+  y_{pred}\qty(x^{(i)})
+  =
+  \finitesum{n}{1}{F'} w_n \phi_n\qty(x^{(i)}) + b
+  =
+  \sum\limits_{a \in A} \theta^{(a)} \rK\qty( x^{(i)}, l^{(a)} ) + b,
+\end{equation}
+where $A \subset \lbrace 1, 2, \dots, N \rbrace$ is the subset of labels of the support vectors.
+
+In~\Cref{sec:res:svr} we consider two different implementations of the \svm algorithm:
+\begin{itemize}
+  \item the \textit{linear kernel}, namely the case when $K \equiv \fid$ and the loss, in the \texttt{scikit-learn} implementation of \texttt{svm.LinearSVR}, can be simplified to
+  \begin{equation}
+    \cL(w, b)
+    =
+    \rC \finitesum{i}{1}{N} \finitesum{n}{1}{F'} \max\qty( 0, \abs{ y^{(i)} - w_n \phi_n\qty( x^{(i)} - b) } - \varepsilon ) + \frac{1}{2} \finitesum{n}{1}{F'} w_j^2,
+  \end{equation}
+  without resolving to the dual formulation of the problem.
+
+  \item the Gaussian kernel (called \texttt{rbf}, from \textit{radial basis function}) in which
+  \begin{equation}
+    \rK\qty(x^{(i)},\, l^{(a)})
+    =
+    \exp\qty( - \gamma \finitesum{n}{1}{F} \qty( x^{(i)}_n - l^{(a)}_n )^2 ).
+  \end{equation}
+\end{itemize}
+From the definition of the loss function in ~\eqref{eq:svr:loss} and the kernels, we can appreciate the role of the main hyperparameters of the algorithm.
+While the interpretation of $\varepsilon$ is straightforward as the margin allowed without penalty for the prediction, $\gamma$ represents the width of the normal distribution used to map the features in the higher dimensional space.
+Furthermore, $C$ plays a similar role to the $l_2$ additional term in~\eqref{eq:ridge:loss} by controlling the entity of the penalty for samples outside the $\varepsilon$-dependent bound, however its relation to the linear regularisation is $\alpha_{ridge} = C^{-1}$, thus $C > 0$ by definition.
+
+Given the nature of the algorithm, support vectors are powerful tools which usually grant better results in both classification and regression tasks with respect to logistic and linear regression, but they scale poorly with the number of samples used during training.
+In particular the time complexity is at worst $\order{F \times N^3}$ due to the quadratic nature of~\eqref{eq:svr:loss-v2} and the computation of the kernel function for all samples: for large datasets ($N \gtrsim 10^4$) they are usually outperformed by neural networks.\footnotemark{}
+\footnotetext{%
+  In general it is plausible that the time complexity is $\order{F \times N^2}$ based on good implementations of caching in the algorithm.
+}
+
+
+\subsection{Decision Trees, Random Forests and Gradient Boosting}
+\label{sec:app:trees}
+
+Decision trees are supervised \ml algorithms which model simple decision rules based on the input data~\cite{Quinlan:1986:InductionDecisionTrees, Wittkowski:1986:ClassificationRegressionTrees}.
+They are informally referred to with the acronym CART (as in \textit{Classification And Regression Trees}) and their name descends from the binary tree structure coming from such decision functions separating the input data at each iteration (\textit{node}), thus creating a bifurcating structure with \textit{branches} (the different paths, or decisions made) and \textit{leaves} (the samples in each branch): the basic idea behind them is an \textit{if\dots then\dots else} structure.
+In \texttt{scikit-learn} this is implemented in the classes \texttt{tree.DecisionTreeClassifier} and \texttt{tree.DecisionTreeRegressor}.
+
+The idea behind it is to take input samples $x^{(i)} \in \R^F$ (for $i = 1, 2, \dots, N$) and partition the space in such a way that data with the same label $y^{(i)} \in \R$ is on the same subset of samples (while for classification this may be natural to visualise, for regression this amounts to approximate the input data with a step function whose value is constant inside the partition).
+Let in fact $j = 1, 2, \dots, F$ be a feature and $x^{(i)}_j$ the corresponding value for the sample $i$, at each node $n$ of the tree we partition the set of input data $\cM_n$ into two subsets:
+\begin{equation}
+  \begin{split}
+    \cM^{[1]}_n\qty( t_{j,\, n} )
+    & =
+    \qty{ \qty(x^{(i)},\, y^{(i)}) \in \R^F \times \R \quad \vert \quad x^{(i)}_j < t_{j,\, n} \quad \forall i \in A_n },
+    \\
+    \cM^{[2]}_n\qty( t_{j,\, n} )
+    & =
+    \cM_n \setminus \cM^{[1]}_n\qty( t_{j,\, n} ),
+  \end{split}
+\end{equation}
+where $A_n$ is the full set of labels of the data samples in the node $n$ and $t_{j,\, n} \in \R$ is a threshold value for the feature $j$ at node $n$.
+
+The measure of the ability of the split to reach the objective (classifying or creating a regression model to predict the labels) is modelled through an \textit{impurity} function (i.e. the measure of how often a random data point would be badly classified or how much it would be badly predicted).
+Common choices in classification tasks are the Gini impurity, a special quadratic case of the Tsallis entropy (which in turn is a generalisation of the Boltzmann-Gibbs entropy, recovered as the first power of the Tsallis entropy) and the information theoretic definition of the entropy.
+In regression tasks it is usually given by the $l_1$ and $l_2$ norms of the deviation from different estimators (mean and median) for each node $n$:
+\begin{itemize}
+  \item \textit{mean absolute error}
+  \begin{equation}
+    H^{[l]}_n\qty(x;\, t_{j,\, n})
+    =
+    \frac{1}{\abs{\cM^{[l]}_n( t_{j,\, n} )}} \sum\limits_{i \in A^{[l]}_n} \abs{y^{(i)} - \tilde{y}^{[l]}_{pred,\, n}( x )},
+    \quad
+    \qty( x^{(i)},\, y^{(i)} ) \in \cM_n\qty( t_{j,\, n} ),
+  \end{equation}
+
+  \item \textit{mean squared error}:
+  \begin{equation}
+  H^{[l]}_n\qty(x;\, t_{j,\, n})
+  =
+  \frac{1}{\abs{\cM^{[l]}_n( t_{j,\, n} )}} \sum\limits_{i \in A^{[l]}_n} \qty( y^{(i)} - \bar{y}^{[l]}_{pred,\, n}( x ) )^2,
+  \quad
+  \qty( x^{(i)}, y^{(i)} ) \in \cM_n( t_{j,\, n} ),
+  \end{equation}
+\end{itemize}
+where $\abs{\cM^{[l]}_n\qty( t_{j,\, n} )}$ is the cardinality of the set $\cM^{[l]}_n\qty( t_{j,\, n} )$ for $l = 1, 2$ and
+\begin{equation}
+  \tilde{y}^{[l]}_{pred,\, n}( x )
+  =
+  \underset{i \in A^{[l]}_n}{\mathrm{median}}~ y_{pred}\qty(x^{(i)}),
+  \qquad
+  \bar{y}^{[l]}_{pred,\, n}( x )
+  =
+  \frac{1}{\abs{A^{[l]}_n}} \sum\limits_{i \in A^{[l]}_n} y_{pred}\qty(x^{(i)}),
+\end{equation}
+where $A_n^{[l]} \subset A_n$ are the subset of labels in the left and right splits ($l = 1$ and $l = 2$, that is) of the node $n$.
+
+The full measure of the impurity of the node $n$ and for a feature $j$ is then:
+\begin{equation}
+  G_{j,\, n}(\cM;\, t_{j,\, n})
+  =
+  \frac{\abs{\cM_n^{[1]}( t_{j,\, n} )}}{\abs{\cM_n}} H^{[1]}_n( x;\, t_{j,\, n} )
+  +
+  \frac{\abs{\cM_n^{[2]}( t_{j,\, n} )}}{\abs{\cM_n}} H^{[2]}_n( x;\, t_{j,\, n} ),
+\end{equation}
+from which we select the parameters
+\begin{equation}
+  \hatt_{j,\, n}
+  =
+  \underset{t_{j,\, n}}{\mathrm{argmin}}~ G_n( \cM_n;\, t_{j,\, n} ).
+  \label{eq:trees:lossmin}
+\end{equation}
+We then recurse over all $\cM_n^{[l]}\qty( \hatt_{j,\, n} )$ (for $l = 1, 2$) until we reach the maximum allowed depth of the tree (at most $\abs{\cM_n} = 1$).
+
+Other than just predicting a class or a numeric value, decision trees provide a criterion to assign the importance of each feature appearing in the nodes.
+The implementation of the procedure can however vary between different libraries: in \texttt{scikit-learn} the importance of a feature is computed by the total reduction in the objective function due to the presence of the feature, normalised over all nodes.
+Namely it is defined as the difference between the total impurity normalised by the total amount of samples in the node and the sum of the separate impurities of the left and right split normalised over the number of samples in the respective splits, summed over all the nodes.
+Thus features with a high \textit{variable ranking} (or \textit{variable importance}) are those with a higher impact in reducing the loss of the algorithm and can be expected to be seen in the initial branches of the tree.
+A measure of the variable importance is in general extremely useful for feature engineering and feature selection since it gives a natural way to pick features with a higher chance to provide a good prediction of the labels.
+
+By nature decision trees have a query time complexity of $\order{ \log(N) }$ as most binary search algorithms.
+However their definition requires running over all $F$ features to find the best split for each sample thus increasing the time complexity to $\order{ F \times N \log( N ) }$.
+Summing over all samples in the whole node structure leads to the worst case scenario of a time complexity $\order{ F \times N^2 \log( N ) }$.
+Well balanced trees (that is, nodes are approximately symmetric with the same amount of data samples inside) can usually reduce that time by a factor $N$, but it may not always be the case.
+
+Decision trees have the advantage to be very good at classifying or creating regression relations in the presence of ``well separable'' data samples and they usually provide very good predictions in a reasonable amount of time (especially when balanced).
+However if $F$ is very large, a small variation of the data will almost always lead to a huge change in the decision thresholds and they are usually prone to overfit.
+There are however smart ways to compensate this behaviour based on \textit{ensemble} learning such as \textit{bagging} and \textit{boosting} as well as \textit{pruning} methods such as limiting the depth of the tree or the number of splits and introducing a dropout parameter to remove certain nodes of the tree.\footnotemark{}
+\footnotetext{%
+  The term \textit{bagging} comes from the contraction of \textit{bootstrap} and \textit{aggregating}: predictions are in fact made over randomly sampled partitions of the training set with substitution (i.e.\ samples can appear in different partitions, known as \textit{bootstrap} approach) and then averaged together (\textit{aggregating}).
+  Random forests are an improvement to this simple idea and work best for decision trees: while it is possible to bag simple trees and take their predictions, using the random subsampling as described usually leads to better performance and results.
+}
+Also random forests of trees provide a variable ranking system by averaging the importance of each feature across all base estimators in the bagging aggregator.
+
+As a reference, \textit{random forests} of decision trees (as in \texttt{ensemble.RandomForestRegressor} in \texttt{scikit-learn}) are ensemble learning algorithms based on fully grown (deep) decision trees.
+They were created to overcome the issues related to overfitting and variability of the input data and are based on random sampling of the training data~\cite{Ho:1995:RandomDecisionForests}.
+The idea is to take $K$ random partitions of the training data and train a different decision tree for each of them and combine the results: for a classification task this would resort to averaging the \textit{a posteriori} (or conditional) probability of predicting the class $c$ given an input $x$ (i.e.\ the Bayesan probability $P\qty(c \mid x)$) over the $K$ trees, while for regression this amount to averaging the predictions of the trees $y_{pred,\, \hatn}^{(i)\, \lbrace k \rbrace}$ where $k = 1, 2, \dots, K$ and $\hatn$ is the final node (i.e. the node containing the final predictions).
+This defines what has been called a \textit{random forest} of trees which can usually help in improving the predictions by reducing the variance due to trees adapting too much to training sets.
+
+\textit{Boosting} methods are another implementation of ensemble learning algorithms in which more \textit{weak learners}, in this case shallow decision trees, are trained over the training dataset~\cite{Friedman:2001:GreedyFunctionApproximation, Friedman:2002:StochasticGradientBoosting}.
+In general parameters $\hatt_{j,\, n}$ in~\eqref{eq:trees:lossmin} can be approximated by an expansion
+\begin{equation}
+  t_{j,\, n}( x )
+  =
+  \finitesum{m}{0}{M} t^{\qty{m}}_{j,\, n}( x )
+  =
+  \finitesum{m}{0}{M} \beta^{\qty{m}}_{j,\, n} g( x;\, a^{\qty{m}}_{j,\, n} ),
+  \label{eq:trees:par}
+\end{equation}
+where $g( x;\, a^{\qty{m}}_{j,\, n})$ are called \textit{base learners} and $M$ is the number of iterations.\footnotemark{}
+\footnotetext{%
+  Different implementations of the algorithm refer to the number of iterations in different way.
+  For instance \texttt{scikit-learn} calls them \texttt{n\_estimators} in the class \texttt{ensemble.GradientBoostingRegressor} in analogy to the random forest where the same name is given to the number of trained decision trees, while \texttt{XGBoost} prefers \texttt{num\_boost\_rounds} and \texttt{num\_parallel\_tree} to name the number of boosting rounds (the iterations) and the number of trees trained in parallel in a forest.
+}
+The values of $a^{\qty{m}}_{j,\, n}$ and $\beta^{\qty{m}}_{j,\, n}$ are enough to specify the value of $t_{j,\, n}( x )$ and can be compute by iterating \eqref{eq:trees:lossmin}:
+\begin{equation}
+  \qty( a^{\qty{m}}_{j,\, n},\, \beta^{\qty{m}}_{j,\, n} )
+  =
+  \underset{\qty{a_{j,\, n};\, \beta_{j,\, n}}}{\mathrm{argmin}}~
+  G_{j,\, n}\qty( \cM_n;\, t^{\qty{m-1}}_{j,\, n}( x ) + \beta_{j,\, n} g\qty( x;\, a_{j,\, n} ) ).
+  \label{eq:trees:iter}
+\end{equation}
+The specific case of boosted trees is simpler since the base learner predicts a constant value $g\qty( x;\, a^{\qty{m}}_{j,\, n} )$, thus~\eqref{eq:trees:iter} simplifies to
+\begin{equation}
+  \gamma^{\qty{m}}_{j,\, n}
+  =
+  \underset{\gamma_{j,\, n}}{\mathrm{argmin}}~
+  G_{j,\, n}\qty( \cM_n;\, t^{\qty{m-1}}_{j,\, n}( x ) + \gamma_{j,\, n} ).
+\end{equation}
+Ultimatelythe value of the parameters in~\eqref{eq:trees:par} are updated using gradient descent as
+\begin{equation}
+  t^{\qty{m}}_{j,\, n}( x )
+  =
+  t^{\qty{m-1}}_{j,\, n}( x ) + \nu\, \gamma_{j,\, n}^{\qty{m}},
+\end{equation}
+where $0 \le \nu \le 1$ is the \textit{learning rate} which controls the magnitude of the update.
+Through this procedure, boosted trees can usually vastly improve the predictions of very small decision trees by increasing variance over bias.
+Another way to prevent overfitting the training set is to randomly \textit{subsample} the features vector by taking a subset of them (in \texttt{scikit-learn} it is represented as a percentage of the total number of features).
+Moreover \texttt{scikit-learn} introduces various ways to control the loss of gradient boosting: apart from the aforementioned \textit{least squares} and \textit{least absolute deviation}, we can have hybrid versions of these such as the \textit{huber} loss which combines the two previous losses with an additional hyperparameter $\alpha$ \cite{Fawcett:2001:UsingRuleSets}. While more implementations are present, also the boosted trees provide a way to measure the importance of the variables as any decision tree algorithm.
+
+
+\subsection{Artificial Neural Networks}
+\label{sec:app:nn}
+
+\ann are a state of the art algorithm in \ml.
+They usually outperform any other algorithm in very large datasets (the size of our dataset is roughly at the threshold) and can learn very complicated decision boundaries and functions.\footnotemark{}
+\footnotetext{%
+  Despite their fame in the face of the general public, even small networks can prove to be extremely good at learning complicated functions in a small amount of time.
+}
+In the main text we used two types of neural networks: \textit{fully connected} (\fc) networks and \textit{convolutional neural networks} (\cnn).
+They both rely on being built in a layered structure, starting from the input layers (e.g. the configuration matrix of CY manifolds or an RGB image or several engineered features) going towards the output layers (e.g. the Hodge numbers or the classification class of the image).
+
+In \fc networks the input of layer $l$ is a feature vector $a^{(i)\, \qty{l}} \in \R^{n_l}$ (for $i = 1, 2, \dots, N$) and, as shown in~\Cref{fig:nn:dense}, each layer is densely connected to the following.\footnotemark{}
+\footnotetext{%
+  The input vector $x \in \R^F$ is equivalent to the vector $a^{\qty{0}}$ and $n_0 = F$.
+  Inputs to each layer are here represented as a matrix $a^{\qty{l}}$ whose columns are made by samples and whose rows are filled with the values of the features.
+}
+In other words, each entry of the vectors $a^{(i)\, \qty{l}}_j$ (for $j = 1, 2, \dots, n_l$) is mapped through a function $\psi$ to all the components of the following layer $a^{\qty{l+1}} \in \R^{n_{l+1}}$:
+\begin{equation}
+  \begin{split}
+  \psi\colon & \R^{n_l} \quad \longrightarrow \quad \R^{n_{l+1}}
+  \\
+  & a^{(i)\, \qty{l}} \quad \longmapsto \quad a^{(i)\, \qty{l+1}} = \psi_j( a^{(i)\, \qty{l}} ),
+  \end{split}
+\end{equation}
+such that
+\begin{equation}
+  a^{(i)\, \qty{l+1}}_j
+  =
+  \psi_j( a^{(i)\, \qty{l}} )
+  =
+  \phi\qty( \finitesum{k}{1}{n_l} a^{(i)\, \qty{l}}_k W^{\qty{l}}_{kj} + b^{\qty{l}}\, \1_{j} ),
+\end{equation}
+where $\1 \in \R^{n_{l+1}}$ is an identity vector.
+The matrix $W^{\qty{l}}$ is \textit{weight matrix} and $b^{\qty{l}}$ is the \textit{bias} term.
+The function $\phi$ is a non linear function and plays a fundamental role: without it the successive application of the linear map $a^{\qty{l}} \cdot W^{\qty{l}} + b\, g$ would prevent the network from learning more complicated decision boundaries or functions as the ANN would only be capable of reproducing linear relations.
+$\phi$ is known as \textit{activation function} and can assume different forms, as long as its non linearity is preserved (e.g. a \textit{sigmoid} function in the output layer of a network squeezes the results in the interval $[0, 1]$ thus reproducing the probabilities of of a classification).
+A common choice is the \textit{rectified linear unit} ($\mathrm{ReLU}$) function
+\begin{equation}
+  \phi( z ) = \mathrm{ReLU}( z ) = \max( 0, z ),
+\end{equation}
+which has been proven to be better at training deep learning architectures~\cite{Glorot:2011:DeepSparseRectifier}, or its modified version $\mathrm{LeakyReLU}( z ) = \max( \alpha z, z )$ which introduces a slope $\alpha > 0$ to improve the computational performance near the non differentiable point in the origin.
+
+\cnn architectures were born in the context of computer vision and object localisation~\cite{Tompson:2015:EfficientObjectLocalization}.
+As one can suspect looking at~\Cref{fig:nn:lenet} for instance, the fundamental difference with \fc networks is that they use a convolution operation $K^{\qty{l}} * a^{(i)\, \qty{l}}$ instead of a linear map to transform the output of the layers, before applying the activation function.\footnotemark{}
+\footnotetext{%
+  In general the input of each layer can be a generic tensor with an arbitrary number of axis.
+  For instance, an RGB image can be represented by a three dimensional tensor with indices representing the width of the image, its height and the number of filters (in this case $3$, one for each colour channel).
+}
+This way the network is no longer densely connected, as the results of the convolution (\textit{feature map}) depends only on a restricted neighbourhood of the original feature, depending on the size of the \textit{kernel} window $K^{\qty{l}}$ used and the shape of the input $a^{(i) \qty{l}}$, which is no longer limited to flattened vectors.
+In turn its size influences the convolution operator which we can compute: one way to see this is to visualise an image being scanned by a smaller window function over all pixels or by skipping some a certain number of them (the length of the \textit{stride} of the kernel).
+In general the output will therefore be different than the input, unless the latter is \textit{padded} (with zeros usually) before the convolution. The size of the output is therefore:
+\begin{equation}
+  O_n = \frac{I_n - k_n + 2 p_n}{S_n} + 1, \qquad n = 1, 2, \dots,
+\end{equation}
+where $O$ is the output size, $I$ the input size, $k$ the size of the kernel used, $p$ the amount of padding (symmetric at the start and end of the axis considered) and $S$ the stride.
+In the formula, $n$ runs over the number of components of the input tensor.
+While any padding is possible, we are usually interested in two kinds of possible convolutions:
+\begin{itemize}
+  \item ``same'' convolutions for which $O_n = I_n$, thus $p_n = \frac{I_n ( S_n - 1 ) - S_n + k_n}{2}$,
+
+  \item ``valid'' convolutions for which $O_n < I_n$ and $p_n = 0$.
+\end{itemize}
+
+In both cases the learning process aims to minimise the loss function defined for the task: in our regression implementation of the architecture we used the mean squared error of the predictions.
+The objective is to find best possible values of weight and bias terms $W^{\qty{l}}$ and $b^{\qty{l}}$) or to build the best filter kernel $K^{\qty{l}}$ through \textit{backpropagation}~\cite{Rumelhart:1986:LearningRepresentationsBackpropagating}, that is by reconstructing the gradient of the loss function climbing back the network from the output layer to the input and then using the usual gradient descent procedure to select the optimal parameters.
+For instance, in the case of \fc networks we need to find
+\begin{equation}
+  \qty( \hatW^{\qty{l}},\, \hatb^{\qty{l}} )
+  =
+  \underset{W^{\qty{l}},\, b^{\qty{l}}}{\mathrm{argmin}} \frac{1}{2 N} \finitesum{i}{1}{N} \qty( y^{(i)} - a^{(i)\, \qty{L}} )^2
+  \quad
+  \forall l = 1, 2, \dots, L,
+\end{equation}
+where $L$ is the total number of layers in the network.
+A similar relation holds in the case of CNN architectures.
+In the main text we use the \textit{Adam}~\cite{Kingma:2017:AdamMethodStochastic} implementation of gradient descent and add batch normalisation layers to improve the convergence of the algorithm.
+
+As we can see from their definition, neural networks are capable of learning very complex structures at the cost of having a large number of parameters to tune.
+The risk of overfitting the training set is therefore quite evident.
+There are in general several techniques to counteract the tendency to adapt the training set, one of them being the introduction of regularisation ($l_2$ and $l_1$) in the same fashion of a linear model (we show it in~\Cref{sec:app:linreg}).
+Another successful way is to introduce \textit{dropout} layers~\cite{Srivastava:2014:DropoutSimpleWay} where connections are randomly switched off according to a certain retention probability (or its complementary, the dropout \textit{rate}): this regularisation technique allows to keep good generalisation properties since the prediction can rely in a less incisive way on the particular architecture since which is randomly modified during training (dropout layers however act as the identity during predictions to avoid producing random results).
+
+
+% vim: ft=tex

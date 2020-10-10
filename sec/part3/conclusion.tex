@@ -1,0 +1,22 @@
+We have proved how a proper data analysis can lead to improvements in predictions of Hodge numbers \hodge{1}{1} and \hodge{2}{1} for \cicy $3$-folds.
+Moreover considering more complex neural networks inspired by the computer vision applications~\cite{Szegedy:2015:GoingDeeperConvolutions, Szegedy:2016:RethinkingInceptionArchitecture, Szegedy:2016:Inceptionv4InceptionresnetImpact} allowed us to reach close to \SI{100}{\percent} accuracy for \hodge{1}{1} with much less data and less parameters than in previous works.
+While our analysis improved the accuracy for \hodge{2}{1} over what can be expected from a simple sequential neural network, we barely reached \SI{50}{\percent}.
+Hence it would be interesting to push further our study to improve the accuracy.
+Possible solutions would be to use a deeper Inception network, find a better architecture including engineered features, and refine the ensembling.
+
+Another interesting question to probe is related to representation learning, i.e.\ finding a better description of the \cy.
+Indeed one of the main difficulty in making predictions is the redundancy of the possible descriptions of a single manifold.
+For instance we could try to set up a map from any matrix to its favourable representation (if it exists).
+This could be the basis for the use of adversarial networks~\cite{Goodfellow:2014:GenerativeAdversarialNets} capable of generating the favourable embedding from the first.
+Or on the contrary one could generate more matrices for the same manifold in order to increase the size of the training set.
+Another possibility is to use the graph representation of the configuration matrix to which is automatically invariant under permutations~\cite{Hubsch:1992:CalabiyauManifoldsBestiary} (another graph representation has been decisive in~\cite{Krippendorf:2020:DetectingSymmetriesNeural} to get a good accuracy).
+Techniques such as (variational) autoencoders~\cite{Kingma:2014:AutoEncodingVariationalBayes, Rezende:2014:StochasticBackpropagationApproximate, Salimans:2015:MarkovChainMonte}, cycle GAN~\cite{Zhu:2017:UnpairedImagetoimageTranslation}, invertible neural networks~\cite{Ardizzone:2019:AnalyzingInverseProblems}, graph neural networks~\cite{Gori:2005:NewModelLearning, Scarselli:2004:GraphicalbasedLearningEnvironments} or more generally techniques from geometric deep learning~\cite{Monti:2017:GeometricDeepLearning} could be helpful.
+
+Finally, our techniques apply directly to \cicy $4$-folds~\cite{Gray:2013:AllCompleteIntersection, Gray:2014:TopologicalInvariantsFibration}.
+However there are much more manifolds in this case, such that one can expect to reach a better accuracy for the different Hodge numbers (the different learning curves for the $3$-folds indicate that the model training would benefit from more data).
+Another interesting class of manifolds to explore with our techniques are generalized \cicy $3$-folds~\cite{Anderson:2016:NewConstructionCalabiYau}.
+
+These and others will indeed be ground for future investigations.
+
+
+% vim: ft=tex

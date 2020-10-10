@@ -7,7 +7,7 @@
 \usepackage{import}
 
 \author{Riccardo Finotello}
-\title{Theoretical and Computational Aspects for Phenomenology in String Theory}
+\title{String Theory and Phenomenology: \\ Theoretical and Computational Aspects From D-branes to Artificial Intelligence}
 \advisor{Igor Pesando}
 \institution{Università degli Studi di Torino}
 \school{Scuola di Dottorato}
@@ -20,12 +20,13 @@
 \fancyhead[R]{\rightmark}
 
 \hypersetup{%
+  pdftitle={String Theory and Phenomenology: Theoretical and Computational Aspects From D-branes to Artificial Intelligence},
   pdfauthor={Riccardo Finotello}
 }
 
 %---- abbreviations
 \newcommand{\ml}{\textsc{ml}\xspace}
-\newcommand{\nn}{\textsc{nn}\xspace}
+\newcommand{\fc}{\textsc{fc}\xspace}
 \newcommand{\eda}{\textsc{eda}\xspace}
 \newcommand{\pca}{\textsc{pca}\xspace}
 \newcommand{\svm}{\textsc{svm}\xspace}
@@ -131,6 +132,8 @@
 \input{sec/part1/dbranes.tex}
 \section{Fermions With Boundary Defects}
 \input{sec/part1/fermions.tex}
+\section{Summary and Conclusion}
+\input{sec/part1/conclusion.tex}
 
 %---- COSMOLOGY
 \thesispart{Cosmological Backgrounds and Divergences}
@@ -138,6 +141,8 @@
 \input{sec/part2/introduction.tex}
 \section{Time Dependent Orbifolds}
 \input{sec/part2/divergences.tex}
+\section{Summary and Conclusion}
+\input{sec/part2/conclusion.tex}
 
 %---- DEEP LEARNING
 \thesispart{Deep Learning the Geometry of String Theory}
@@ -146,6 +151,10 @@
 \input{sec/part3/introduction.tex}
 \section{Machine and Deep Learning for CICY Manifolds}
 \input{sec/part3/ml.tex}
+\section{Summary and Conclusion}
+\label{sec:conclusion}
+\input{sec/part3/conclusion.tex}
+
 
 %---- APPENDIX
 \thesispart{Appendix}
@@ -170,10 +179,13 @@
 \label{sec:NO_full_TTS}
 \input{sec/app/massive.tex}
 
+\section{Machine Learning Algorithms}
+\label{app:ml-algo}
+\input{sec/app/ml.tex}
+
 
 %---- BIBLIOGRAPHY
 \cleardoubleplainpage{}
-\small
 \printbibliography[heading=bibintoc]
 
 \end{document}
