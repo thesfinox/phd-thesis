@@ -201,7 +201,7 @@
   \thispagestyle{plain}
 
   \noindent {\Large \sc Abstract} \\
-  \rule{0.99\linewidth}{\sepwidth}
+  \rule{0.99\linewidth}{\sepwidth} \\[2ex]
 }
 {%
   \vfill
@@ -214,7 +214,7 @@
   \thispagestyle{plain}
 
   \noindent {\Large \sc Acknowledgements} \\
-  \rule{0.99\linewidth}{\sepwidth}
+  \rule{0.99\linewidth}{\sepwidth} \\[2ex]
 }
 {%
   \vspace{\parskip}

@@ -324,7 +324,7 @@
 @online{Ardizzone:2019:AnalyzingInverseProblems,
   title = {Analyzing {{Inverse Problems}} with {{Invertible Neural Networks}}},
   author = {Ardizzone, Lynton and Kruse, Jakob and Wirkert, Sebastian and Rahner, Daniel and Pellegrini, Eric W. and Klessen, Ralf S. and Maier-Hein, Lena and Rother, Carsten and Köthe, Ullrich},
-  date = {2019-02-06},
+  date = {2019},
   url = {http://arxiv.org/abs/1808.04730},
   urldate = {2020-10-10},
   abstract = {In many tasks, in particular in natural science, the goal is to determine hidden system parameters from a set of measurements. Often, the forward process from parameter- to measurement-space is a well-defined function, whereas the inverse problem is ambiguous: one measurement may map to multiple different sets of parameters. In this setting, the posterior parameter distribution, conditioned on an input measurement, has to be determined. We argue that a particular class of neural networks is well suited for this task -- so-called Invertible Neural Networks (INNs). Although INNs are not new, they have, so far, received little attention in literature. While classical neural networks attempt to solve the ambiguous inverse problem directly, INNs are able to learn it jointly with the well-defined forward process, using additional latent output variables to capture the information otherwise lost. Given a specific measurement and sampled latent variables, the inverse pass of the INN provides a full distribution over parameter space. We verify experimentally, on artificial data and real-world problems from astrophysics and medicine, that INNs are a powerful analysis tool to find multi-modalities in parameter space, to uncover parameter correlations, and to identify unrecoverable parameters.},
@@ -336,17 +336,22 @@
   primaryClass = {cs, stat}
 }
 
-@online{Arduino:2020:OriginDivergencesTimeDependent,
+@article{Arduino:2020:OriginDivergencesTimeDependent,
   title = {On the {{Origin}} of {{Divergences}} in {{Time}}-{{Dependent Orbifolds}}},
   author = {Arduino, Andrea and Finotello, Riccardo and Pesando, Igor},
   date = {2020},
+  journaltitle = {The European Physical Journal C},
+  shortjournal = {Eur. Phys. J. C},
+  volume = {80},
+  pages = {476},
+  issn = {1434-6044, 1434-6052},
   doi = {10.1140/epjc/s10052-020-8010-y},
   abstract = {We consider time-dependent orbifolds in String Theory and we show that divergences are not associated with a gravitational backreaction since they appear in the open string sector too. They are related to the non existence of the underlying effective field theory as in several cases fourth and higher order contact terms do not exist. Since contact terms may arise from the exchange of string massive states, we investigate and show that some three points amplitudes with one massive state in the open string sector are divergent on the time-dependent orbifolds. To check that divergences are associated with the existence of a discrete zero eigenvalue of the Laplacian of the subspace with vanishing volume, we construct the Generalized Null Boost Orbifold where this phenomenon can be turned on and off.},
   archivePrefix = {arXiv},
   eprint = {2002.11306},
   eprinttype = {arxiv},
-  file = {/home/riccardo/.local/share/zotero/files/arduino_et_al_2020_on_the_origin_of_divergences_in_time-dependent_orbifolds.pdf},
-  primaryClass = {gr-qc, physics:hep-th}
+  file = {/home/riccardo/.local/share/zotero/files/arduino_et_al_2020_on_the_origin_of_divergences_in_time-dependent_orbifolds2.pdf;/home/riccardo/.local/share/zotero/storage/QNJXWD2H/2002.html},
+  number = {5}
 }
 
 @online{Ashmore:2020:MachineLearningCalabiYau,
@@ -1722,19 +1727,15 @@
 }
 
 @online{Erbin:2020:InceptionNeuralNetwork,
-  ids = {Erbin:2020:InceptionNeuralNetworka},
   title = {Inception {{Neural Network}} for {{Complete Intersection Calabi}}-{{Yau}} 3-Folds},
   author = {Erbin, Harold and Finotello, Riccardo},
   date = {2020},
-  url = {http://arxiv.org/abs/2007.13379},
-  urldate = {2020-08-06},
   abstract = {We introduce a neural network inspired by Google's Inception model to compute the Hodge number \$h\^\{1,1\}\$ of complete intersection Calabi-Yau (CICY) 3-folds. This architecture improves largely the accuracy of the predictions over existing results, giving already 97\% of accuracy with just 30\% of the data for training. Moreover, accuracy climbs to 99\% when using 80\% of the data for training. This proves that neural networks are a valuable resource to study geometric aspects in both pure mathematics and string theory.},
   archivePrefix = {arXiv},
   eprint = {2007.13379},
   eprinttype = {arxiv},
   file = {/home/riccardo/.local/share/zotero/files/erbin_finotello_2020_inception_neural_network_for_complete_intersection_calabi-yau_3-folds.pdf},
-  keywords = {⛔ No DOI found},
-  primaryClass = {hep-th}
+  keywords = {⛔ No DOI found}
 }
 
 @online{Erbin:2020:MachineLearningComplete,
@@ -1742,15 +1743,12 @@
   shorttitle = {Machine Learning for Complete Intersection {{Calabi}}-{{Yau}} Manifolds},
   author = {Erbin, Harold and Finotello, Riccardo},
   date = {2020},
-  url = {http://arxiv.org/abs/2007.15706},
-  urldate = {2020-08-06},
   abstract = {We revisit the question of predicting both Hodge numbers \$h\^\{1,1\}\$ and \$h\^\{2,1\}\$ of complete intersection Calabi-Yau (CICY) 3-folds using machine learning (ML), considering both the old and new datasets built respectively by Candelas-Dale-Lutken-Schimmrigk / Green-H\textbackslash "ubsch-Lutken and by Anderson-Gao-Gray-Lee. In real world applications, implementing a ML system rarely reduces to feed the brute data to the algorithm. Instead, the typical workflow starts with an exploratory data analysis (EDA) which aims at understanding better the input data and finding an optimal representation. It is followed by the design of a validation procedure and a baseline model. Finally, several ML models are compared and combined, often involving neural networks with a topology more complicated than the sequential models typically used in physics. By following this procedure, we improve the accuracy of ML computations for Hodge numbers with respect to the existing literature. First, we obtain 97\% (resp. 99\%) accuracy for \$h\^\{1,1\}\$ using a neural network inspired by the Inception model for the old dataset, using only 30\% (resp. 70\%) of the data for training. For the new one, a simple linear regression leads to almost 100\% accuracy with 30\% of the data for training. The computation of \$h\^\{2,1\}\$ is less successful as we manage to reach only 50\% accuracy for both datasets, but this is still better than the 16\% obtained with a simple neural network (SVM with Gaussian kernel and feature engineering and sequential convolutional network reach at best 36\%). This serves as a proof of concept that neural networks can be valuable to study the properties of geometries appearing in string theory.},
   archivePrefix = {arXiv},
   eprint = {2007.15706},
   eprinttype = {arxiv},
   file = {/home/riccardo/.local/share/zotero/files/erbin_finotello_2020_machine_learning_for_complete_intersection_calabi-yau_manifolds.pdf},
-  keywords = {⛔ No DOI found},
-  primaryClass = {hep-th}
+  keywords = {⛔ No DOI found}
 }
 
 @article{Erler:1993:HigherTwistedSector,
@@ -1854,19 +1852,15 @@
   title = {{{2D Fermion}} on the {{Strip}} with {{Boundary Defects}} as a {{CFT}} with {{Excited Spin Fields}}},
   author = {Finotello, Riccardo and Pesando, Igor},
   date = {2019},
-  url = {http://arxiv.org/abs/1912.07617},
-  urldate = {2020-02-27},
   abstract = {We consider a two-dimensional fermion on the strip in the presence of an arbitrary number of zero-dimensional boundary changing defects. We show that the theory is still conformal with time dependent stress-energy tensor and that the allowed defects can be understood as excited spin fields. Finally we compute correlation functions involving these excited spin fields without using bosonization.},
   archivePrefix = {arXiv},
   eprint = {1912.07617},
   eprinttype = {arxiv},
   file = {/home/riccardo/.local/share/zotero/files/finotello_pesando_2019_2d_fermion_on_the_strip_with_boundary_defects_as_a_cft_with_excited_spin_fields.pdf},
-  keywords = {⛔ No DOI found},
-  primaryClass = {hep-th}
+  keywords = {⛔ No DOI found}
 }
 
 @article{Finotello:2019:ClassicalSolutionBosonic,
-  ids = {Finotello:2019:ClassicalSolutionBosonica},
   title = {The {{Classical Solution}} for the {{Bosonic String}} in the {{Presence}} of {{Three D}}-Branes {{Rotated}} by {{Arbitrary SO}}(4) {{Elements}}},
   author = {Finotello, Riccardo and Pesando, Igor},
   date = {2019},
@@ -1877,7 +1871,6 @@
   issn = {05503213},
   doi = {10.1016/j.nuclphysb.2019.02.010},
   abstract = {We consider the classical instantonic contribution to the open string configuration associated with three D-branes with relative rotation matrices in SO(4) which corresponds to the computation of the classical part of the correlator of three non Abelian twist fields. We write the classical solution as a sum of a product of two hypergeometric functions. Differently from all the previous cases with three D-branes, the solution is not holomorphic and suggests that the classical bosonic string knows when the configuration may be supersymmetric. We show how this configuration reduces to the standard Abelian twist field computation. From the phenomenological point of view, the Yukawa couplings between chiral matter at the intersection in this configuration are more suppressed with respect to the factorized case in the literature.},
-  annotation = {ZSCC: 0000000},
   archivePrefix = {arXiv},
   eprint = {1812.04643},
   eprinttype = {arxiv},
