@@ -3,9 +3,9 @@ The ultimate goal of the analysis is to provide some insights on the predictive 
 As already argued in~\Cref{sec:CYmanifolds} the procedure is however quite challenging as there are different ways to match string theory with the experimental reality, that is there are several different vacuum configurations arising from the compactification of the extra-dimensions.
 The investigation of feasible phenomenological models in a string framework has therefore to deal also with computational aspects related to the exploration of the \emph{landscape}~\cite{Douglas:2003:StatisticsStringTheory} of possible vacua.
 Unfortunately the number of possibilities is huge (numbers as high as $\num{e272000}$ have been suggested for some models)~\cite{Lerche:1987:ChiralFourdimensionalHeterotic, Douglas:2003:StatisticsStringTheory, Ashok:2004:CountingFluxVacua, Douglas:2004:BasicResultsVacuum, Douglas:2007:FluxCompactification, Taylor:2015:FtheoryGeometryMost, Schellekens:2017:BigNumbersString, Halverson:2017:AlgorithmicUniversalityFtheory, Taylor:2018:ScanningSkeleton4D, Constantin:2019:CountingStringTheory}, the mathematical objects entering the compactifications are complex and typical problems are often NP-complete, NP-hard, or even undecidable~\cite{Denef:2007:ComputationalComplexityLandscape, Halverson:2019:ComputationalComplexityVacua, Ruehle:2020:DataScienceApplications}, making an exhaustive classification impossible.
-Additionally, there is no single framework to describe all the possible (flux) compactifications.
-As a consequence, each class of models must be studied with different methods.
-This has prevented any precise connection to the existing and tested theories (in particular, the \sm of particle physics).
+Additionally there is no single framework to describe all the possible (flux) compactifications.
+As a consequence each class of models must be studied with different methods.
+This has in general discouraged, or at least rendered challenging, precise connections to the existing and tested theories (in particular, the \sm of particle physics).
 
 Until recently the string landscape has been studied using different methods such as analytic computations for simple examples, general statistics, random scans or algorithmic enumerations of possibilities.
 This has been a large endeavor of the string community~\cite{Grana:2006:FluxCompactificationsString, Lust:2009:SeeingStringLandscape, Ibanez:2012:StringTheoryParticle, Brennan:2018:StringLandscapeSwampland, Halverson:2018:TASILecturesRemnants, Ruehle:2020:DataScienceApplications}.
@@ -19,6 +19,7 @@ This motivates two main applications to string theory: the systematic exploratio
 The last few years have seen a major uprising of \ml, and more particularly of neural networks (\nn)~\cite{Bengio:2017:DeepLearning, Chollet:2018:DeepLearningPython, Geron:2019:HandsOnMachineLearning}.
 This technology is efficient at discovering and predicting patterns and now pervades most fields of applied sciences and of the industry.
 One of the most critical places where progress can be expected is in understanding the geometries used to describe string compactifications and this will be the object of study in the following analysis.
+We mainly refer to~\cite{Geron:2019:HandsOnMachineLearning, Chollet:2018:DeepLearningPython, Bengio:2017:DeepLearning} for reviews in \ml and deep learning techniques, and to~\cite{Ruehle:2020:DataScienceApplications, Skiena:2017:DataScienceDesign, Zheng:2018:FeatureEngineeringMachine} for applications of data science techniques.
 
 We address the question of computing the Hodge numbers $\hodge{1}{1} \in \N$ and $\hodge{2}{1} \in \N$ for \emph{complete intersection Calabi--Yau} (\cicy) $3$-folds~\cite{Green:1987:CalabiYauManifoldsComplete} using different \ml algorithms.
 A \cicy is completely specified by its \emph{configuration matrix} (whose entries are positive integers) which is the basic input of the algorithms.
@@ -48,8 +49,8 @@ A good validation strategy is also needed to ensure that the predictions appropr
 For instance, we find that a simple linear regression using the configuration matrix as input gives \SIrange{43.6}{48.8}{\percent} for \hodge{1}{1} and \SIrange{9.6}{10.4}{\percent} for \hodge{2}{1} using from $20\%$ to $80\%$ of data for training.
 Hence any algorithm \emph{must} do better than this to be worth considering.
 
-In the dataset we use for accomplishing the task there is a finite number of $7890$ \cicy $3$-folds.
-Due to the freedom in representing the configuration matrix, two datasets have been constructed: the \emph{original dataset}~\cite{Candelas:1988:CompleteIntersectionCalabiYau, Green:1989:AllHodgeNumbers} and the \emph{favourable dataset}~\cite{Anderson:2017:FibrationsCICYThreefolds}.
+The datasets we use for task contains $7890$ \cicy $3$-folds.
+Due to the freedom in representing the configuration matrix, we need to consider two datasets which have been constructed: the \emph{original dataset}~\cite{Candelas:1988:CompleteIntersectionCalabiYau, Green:1989:AllHodgeNumbers} and the \emph{favourable dataset}~\cite{Anderson:2017:FibrationsCICYThreefolds}.
 Our analysis continues and generalises~\cite{He:2017:MachinelearningStringLandscape, Bull:2018:MachineLearningCICY} at different levels.
 For example we compute \hodge{2}{1} which has been ignored in~\cite{He:2017:MachinelearningStringLandscape, Bull:2018:MachineLearningCICY}, where the authors argue that it can be computed from \hodge{1}{1} and from the Euler characteristics (a simple formula exists for the latter).
 In our case, we want to push the idea of using \ml to learn about the physics (or the mathematics) of \cy to its very end: we assume that we do not know anything about the mathematics of the \cicy, except that the configuration matrix is sufficient to derive all quantities.
@@ -58,8 +59,8 @@ Thus getting also \hodge{2}{1} from \ml techniques is an important first step to
 Finally regression is also more useful for extrapolating results: a classification approach assumes that we already know all the possible values of the Hodge numbers and has difficulties to predict labels which do not appear in the training set.
 This is necessary when we move to a dataset for which not all topological quantities have been computed, for instance CY constructed from the Kreuzer--Skarke list of polytopes~\cite{Kreuzer:2000:CompleteClassificationReflexive}.
 
-The data analysis and \ml are programmed in Python using standard open-source packages: \texttt{pandas}~\cite{WesMcKinney:2010:DataStructuresStatistical}, \texttt{matplotlib}~\cite{Hunter:2007:Matplotlib2DGraphics}, \texttt{seaborn}~\cite{Waskom:2020:MwaskomSeabornV0}, \texttt{scikit-learn}~\cite{Pedregosa:2011:ScikitlearnMachineLearning}, \texttt{scikit-optimize}~\cite{Head:2020:ScikitoptimizeScikitoptimize}, \texttt{tensorflow}~\cite{Abadi:2015:TensorFlowLargescaleMachine} (and its high level API \emph{Keras}).
-The code and its description are available on \href{https://thesfinox.github.io/ml-cicy/}{Github}.
+The data analysis and \ml are programmed in Python using open-source packages: \texttt{pandas}~\cite{WesMcKinney:2010:DataStructuresStatistical}, \texttt{matplotlib}~\cite{Hunter:2007:Matplotlib2DGraphics}, \texttt{seaborn}~\cite{Waskom:2020:MwaskomSeabornV0}, \texttt{scikit-learn}~\cite{Pedregosa:2011:ScikitlearnMachineLearning}, \texttt{scikit-optimize}~\cite{Head:2020:ScikitoptimizeScikitoptimize}, \texttt{tensorflow}~\cite{Abadi:2015:TensorFlowLargescaleMachine} (and its high level API \emph{Keras}).
+Code is available on \href{https://thesfinox.github.io/ml-cicy/}{Github}.
 
 
 \subsection{Complete Intersection Calabi--Yau Manifolds}
@@ -70,7 +71,7 @@ An equivalent definition is the vanishing of its first Chern class.
 A standard reference for the physicist is~\cite{Hubsch:1992:CalabiyauManifoldsBestiary} (see also~\cite{Anderson:2018:TASILecturesGeometric, He:2020:CalabiYauSpacesString} for useful references).
 The compactification on a \cy leads to the breaking of large part of the supersymmetry which is phenomenologically more realistic than the very high energy description with intact supersymmetry.
 
-Calabi--Yau manifolds are characterised by a certain number of topological properties (see~\Cref{sec:cohomology_hodge}), the most salient being the Hodge numbers \hodge{1}{1} and \hodge{2}{1}, counting respectively the Kähler and complex structure deformations, and the Euler characteristics:\footnotemark{}
+\cy manifolds are characterised by a certain number of topological properties (see~\Cref{sec:cohomology_hodge}), the most salient being the Hodge numbers \hodge{1}{1} and \hodge{2}{1}, counting respectively the Kähler and complex structure deformations, and the Euler characteristics:\footnotemark{}
 \footnotetext{%
   In full generality, the Hodge numbers \hodge{p}{q} count the numbers of harmonic $\qty(p,\, q)$-forms.
 }%
@@ -78,21 +79,21 @@ Calabi--Yau manifolds are characterised by a certain number of topological prope
   \chi = 2 \qty(\hodge{1}{1} - \hodge{2}{1}).
   \label{eq:cy:euler}
 \end{equation}
-Interestingly, topological properties of the manifold directly translates into features of the $4$-dimensional effective action (in particular, the number of fields, the representations and the gauge symmetry)~\cite{Hubsch:1992:CalabiyauManifoldsBestiary, Becker:2006:StringTheoryMTheory}.\footnotemark{}
+Interestingly topological properties of the manifold directly translate into features of the $4$-dimensional effective action (in particular the number of fields, the representations and the gauge symmetry)~\cite{Hubsch:1992:CalabiyauManifoldsBestiary, Becker:2006:StringTheoryMTheory}.\footnotemark{}
 \footnotetext{%
-	Another reason for sticking to topological properties is that there is no CY for which the metric is known.
-	Hence, it is not possible to perform explicitly the Kaluza--Klein reduction in order to derive the $4$-dimensional theory.
+  Another reason for sticking to topological properties is that there is no \cy manifold for which the metric is known.
+  Hence it is not possible to perform explicitly the Kaluza--Klein reduction in order to derive the $4$-dimensional theory.
 }%
-In particular, the Hodge numbers count the number of chiral multiplets (in heterotic compactifications) and the number of hyper- and vector multiplets (in type II compactifications): these are related to the number of fermion generations ($3$ in the Standard Model) and is thus an important measure of the distance to the Standard Model.
+In particular the Hodge numbers count the number of chiral multiplets (in heterotic compactifications) and the number of hyper- and vector multiplets (in type II compactifications): these are related to the number of fermion generations ($3$ in the Standard Model) and is thus an important measure of the distance to the Standard Model.
 
-The simplest CYs are constructed by considering the complete intersection of hypersurfaces in a product $\cA$ of projective spaces $\mathds{P}^{n_i}$ (called the ambient space)~\cite{Green:1987:CalabiYauManifoldsComplete, Green:1987:PolynomialDeformationsCohomology, Candelas:1988:CompleteIntersectionCalabiYau, Green:1989:AllHodgeNumbers, Anderson:2017:FibrationsCICYThreefolds, Anderson:2018:TASILecturesGeometric}:
+The simplest \cy manifolds are constructed by considering the complete intersection of hypersurfaces in a product $\cA$ of projective spaces $\mathds{P}^{n_i}$ (called the ambient space)~\cite{Green:1987:CalabiYauManifoldsComplete, Green:1987:PolynomialDeformationsCohomology, Candelas:1988:CompleteIntersectionCalabiYau, Green:1989:AllHodgeNumbers, Anderson:2017:FibrationsCICYThreefolds, Anderson:2018:TASILecturesGeometric}:
 \begin{equation}
   \cA = \mathds{P}^{n_1} \times \cdots \times \mathds{P}^{n_m}.
 \end{equation}
-Such hypersurfaces are defined by homogeneous polynomial equations: a Calabi--Yau $X$ is described by the solution to the system of equations, i.e.\ by the intersection of all these surfaces.
+Such hypersurfaces are defined by homogeneous polynomial equations: a \cicy manifold $X$ is described by the solution to the system of equations, i.e.\ by the intersection of all these surfaces.
 The intersection is ``complete'' in the sense that the hypersurface is non-degenerate.
 
-To gain some intuition, consider the case of a single projective space $\mathds{P}^n$ with (homogeneous) coordinates $Z^I$, $I = 0, \ldots, n$.
+To gain some intuition, consider the case of a single projective space $\mathds{P}^n$ with (homogeneous) coordinates $Z^I$, where $I = 0,\, 1,\, \dots,\, n$.
 A codimension $1$ subspace is obtained by imposing a single homogeneous polynomial equation of degree $a$ on the coordinates:
 \begin{equation}
   \begin{split}
@@ -109,7 +110,7 @@ A codimension $1$ subspace is obtained by imposing a single homogeneous polynomi
 Each choice of the polynomial coefficients $P_{I_1 \dots I_a}$ leads to a different manifold.
 However it can be shown that the manifolds are in general topologically equivalent.
 Since we are interested only in classifying the \cy as topological manifolds and not as complex manifolds, the information on $P_{I_1 \dots I_a}$ can be discarded and it is sufficient to keep track only of the dimension $n$ of the projective space and of the degree $a$ of the equation.
-The resulting hypersurface is denoted equivalently as $\qty[\mathds{P}^n \mid a] = \qty[n \mid a]$.
+The resulting hypersurface is denoted as $\qty[\mathds{P}^n \mid a] = \qty[n \mid a]$.
 Notice that $\qty[\mathds{P}^n \mid a]$ is $3$-dimensional if $n = 4$ (the equation reduces the dimension by one), and it is a \cy (the ``quintic'') if $a = n + 1 = 5$ (this is required for the vanishing of its first Chern class).
 The simplest representative of this class if Fermat's quintic defined by the equation:
 \begin{equation}
@@ -208,12 +209,9 @@ Below we show a list of the \cicy properties and of their configuration matrices
   \label{fig:data:hist-hodge}
 \end{figure}
 
-The configuration matrix completely encodes the information of the \cicy and all topological quantities can be derived from it.
-However the computations are involved and there is often no closed-form expression.
-This situation is typical in algebraic geometry and it can be even worse for some problems, in the sense that it is not even known how to compute the desired quantity (e.g. the metric of \cy manifolds).
-For these reasons it is interesting to study how to retrieve these properties using \ml algorithms.
-In what follows we focus on the prediction of the Hodge numbers.
+We then move to the data science analysis of the data.
 To provide a good test case for the use of \ml in context where the mathematical theory is not completely understood, we make no use of known formulas.
+In fact we try to push as far as possible the capabilities of \ml algorithms to play a role in discovering patterns which can be used in phenomenology and algebraic geometry.
 
 
 % vim: ft=tex

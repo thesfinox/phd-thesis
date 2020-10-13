@@ -1,14 +1,14 @@
-In the previous part we mainly focused on the mathematical tools needed to compute amplitudes in a phenomenologically valid string theory framework of particle physics.
-This ultimately led to the introduction of intersecting D-branes and point-like defects to perform the calculation of correlation functions involving twist and spin fields, inevitably necessary fields when considering chiral matter fields.
+In the previous part we mainly focused on the mathematical tools needed to compute amplitudes in a (semi-)phenomenologically viable string theory framework of particle physics.
+This ultimately led to the introduction of intersecting D-branes and point-like defects to perform the calculation of correlation functions involving twist and spin fields, inevitably necessary when considering chiral matter fields.
 While this is indeed a good starting point to build an entire string phenomenology, the theory cannot be limited to the study of particle physics models.
-String Theory is in fact considered to be one of the candidate theories for the description of quantum gravity alongside the nuclear interactions.
+String theory is in fact considered to be one of the candidate theories for the description of quantum gravity alongside the nuclear interactions.
 As a \emph{theory of everything} it is therefore fascinating to analyse cosmological implications as seen from its description.
-In this part of the thesis we focus on the implications of the string theory when considering for instance the Big Bang singularity, or, broadly speaking, singularities which exist in one point in time.\footnotemark{}
+In this part of the thesis we focus on the implications of the string theory when considering for instance the Big Bang singularity, or, broadly speaking, singularities which exist in one point in time (i.e.\ space-like).\footnotemark{}
 \footnotetext{%
   They are intended as distinct from time-like singularities such as black holes which are present for extended periods of time in one spatial point.
-  The space-like singularities we consider are the opposite: they exist in a given instant.
+  The space-like singularities we consider are the opposite: they exist in a given instant in time but could in principle cover an extended hypersurface in space.
 }
-Among the different possible descriptions of such space-like singularities~\cite{Berkooz:2007:ShortReviewTime} we concentrate on string theory solutions on time-dependent orbifolds.
+Among the different possible descriptions of such space-like singularities~\cite{Berkooz:2007:ShortReviewTime} we concentrate on string theory solutions on time-dependent orbifolds as they represent the simplest models describing such phenomena.
 Before delving into the subject we briefly present their definition and the reason behind their relevance in what follows~\cite{CaramelloJr:2019:IntroductionOrbifolds,Bachas:2002:NullBraneIntersections,Bachas:2003:RelativisticStringPulse}.
 
 
@@ -16,9 +16,9 @@ Before delving into the subject we briefly present their definition and the reas
 
 First of all we recall the formal definition of orbifold to better introduce the idea of a manifold locally isomorphic to a quotient space.
 Let therefore $M$ be a topological space and $G$ a group with an action $\ccG: G \times M \to M$ defined by $\ccG(g,\, p) = g p$ for $g \in G$ and $p \in M$.
-Then the \emph{isotropy subgroup} (or \emph{stabiliser}) of $p \in M$ is $G_p = \qty{ g \in G \mid g p = p }$ such that $G_{gp} = g\, G_p\, g^{-1}$.
+Then the \emph{isotropy subgroup} (or \emph{stabiliser}) of $p \in M$ is $G_p = \qty{ g \in G \mid g p = p }$ such that $G_{gp} = g^{-1}\, G_p\, g$.
 Given an element $p \in M$ its \emph{orbit} is $Gp = \qty{ gp \in M \mid g \in G }$.
-The action of the group is said \emph{transitive} if $Gp = M$ and \emph{effective} if its $\ker{\ccG} = \qty{ \1 }$.
+The action of the group is said \emph{transitive} if $Gp = M$ and \emph{effective} if its kernel is trivial, i.e.\ $\ker{\ccG} = \qty{ \1 }$.
 The \emph{orbit space} $M / G$ is the set of equivalence classes given by the orbital partitions and inherits the quotient topology from $M$.
 
 Let now $M$ be a manifold and $G$ a Lie group acting continuously and transitively on $M$.
@@ -29,8 +29,8 @@ For every point $p \in M$ we can define a continuous bijection $\lambda_p \colon
 }
 Such map is a diffeomorphism if $M$ and $G$ are locally compact spaces and $M / G$ is in turn a manifold itself.
 If $G$ is a discrete or finite group the action is called \emph{properly discontinuous}, that is for every $U \subset M$ then $\qty{ g \in G \mid U \cap g U \neq \emptyset }$ is finite.
-The definition of orbifold intuitively includes quotient manifolds such as $M / G$: analogously to manifold which are locally Euclidean, in the broad sense orbifolds are locally modelled by quotients with actions given by finite groups.
 
+The definition of orbifold intuitively includes quotient manifolds such as $M / G$: analogously to manifold which are locally Euclidean, in the broad sense orbifolds are locally modelled by quotients with actions given by finite groups.
 An \emph{orbifold chart} $\qty( \tildeU,\, G,\, \phi )$ of dimension $n \in \N$ for an open subset $U \in M$ is made of:
 \begin{itemize}
   \item a connected open subset $\tildeU \subset \R^n$,
@@ -51,12 +51,13 @@ The $n$-dimensional \emph{orbifold} $\ccO$ is finally defined as a paracompact H
 }
 
 
-\subsection{Orbifolds and Strings}
+\subsubsection{Orbifolds and Strings}
 
 In string theory the notion of orbifold has a more stringent characterisation with respect to pure mathematics.
 Differently from the general definition, orbifolds in physics usually appear as a global orbit space $M / G$ where $M$ is a manifold and $G$ the group of its isometries, often leading to the presence of \emph{fixed points} (i.e.\ points in the manifold which are left invariant by the action of $G$) where singularities emerge due to the presence of additional degrees of freedom given by \emph{twisted states} of the string~\cite{Dixon:1985:StringsOrbifolds,Dixon:1986:StringsOrbifoldsII}.
 They are commonly introduced as singular limits of \cy manifolds~\cite{Candelas:1985:VacuumConfigurationsSuperstrings}, which in turn can be recovered using algebraic geometry to smoothen the singular points.
 However they can also be used to model peculiar time-dependent backgrounds~\cite{Horowitz:1991:SingularStringSolutions,Khoury:2002:BigCrunchBig,Figueroa-OFarrill:2001:GeneralisedSupersymmetricFluxbranes,Cornalba:2002:NewCosmologicalScenario,Cornalba:2004:TimedependentOrbifoldsString,Craps:2006:BigBangModels,Bachas:2002:NullBraneIntersections,Bachas:2003:RelativisticStringPulse}.
-They are in fact good toy models to study Big Bang scenarios in string theory and we focus specifically on the study of such cosmological singularity in the framework of string theory.
+They are in fact good toy models to study Big Bang scenarios in string theory.
+We focus specifically on the study of such cosmological singularities in the framework of string theory defined on time-dependent orbifolds.
 
 % vim: ft=tex

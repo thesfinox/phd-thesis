@@ -1,48 +1,48 @@
 In this first part we focus on aspects of string theory directly connected with its worldsheet description and symmetries.
 The underlying idea is to build technical tools to address the study of viable phenomenological models in this framework.
-The construction of realistic string models of particle physics is the key to better understanding the nature of a theory of everything such as string theory.
+The construction of realistic string models of particle physics is key to better understanding the nature of a theory of everything such as string theory.
 
-As a first test of validity, the string theory should properly extend the known Standard Model (\sm) of particle physics, which is arguably one of the most experimentally backed theoretical frameworks in modern physics.
+As a first test of validity, the string theory should properly extend the known Standard Model (\sm) of particle physics which is arguably one of the most experimentally backed theoretical frameworks in modern physics.
 In particular its description in terms of fundamental strings should be able to include a gauge algebra isomorphic to the algebra of the group
 \begin{equation}
   \SU{3}_{\rC} \otimes \SU{2}_{\rL} \otimes \U{1}_{\rY}
   \label{eq:intro:smgroup}
 \end{equation}
 in order to reproduce known results.
-For instance, a good string theory could provide a unified framework by predicting the existence of a larger gauge group containing the \sm as a subset.
+For instance a good string theory could provide a unified framework by predicting the existence of a larger gauge group containing the \sm as a subset.
 In what follows we deal with the definition of mathematical tools to compute amplitudes to be used in phenomenological calculations related to the study of particles.
 
-In this introduction we present instruments and preparatory frameworks used throughout the manuscript as many other aspects are strongly connected and their definitions are interdependent.
-In particular we recall some results on the symmetries of string theory and how to recover a realistic description of physics.
+In this introduction we present instruments and frameworks used throughout the manuscript as many other aspects are strongly connected and their definitions are interdependent.
+In particular we recall some results on the symmetries of string theory and how to recover a realistic description of $4$-dimensional physics.
 
 
 \subsection{Properties of String Theory and Conformal Symmetry}
 
 Strings are extended one-dimensional objects.
-They are curves in spacetime parametrized by a coordinate $\sigma \in \qty[0, \ell ]$.
-When propagating they span a two-dimensional surface, the \emph{worldsheet}, described by the position of the string at given values of $\sigma$ at a time $\tau$, i.e.\ $X^{\mu}(\tau, \sigma)$ where $\mu = 0, 1, \dots, D - 1$ indexes the coordinates.
-Such surface can have different topologies according to the nature of the object propagating in spacetime: strings can be \emph{closed} if $X^{\mu}(\tau, 0) = X^{\mu}(\tau, \ell)$ or \emph{open} if the endpoints in $\sigma = 0$ and $\sigma = \ell$ do not coincide.
+They are curves in spacetime parametrized by a coordinate $\sigma \in \qty[ 0, \ell ]$.
+When propagating they span a two-dimensional surface, the \emph{worldsheet}, described by the position of the string at given values of $\sigma$ at a time $\tau$, i.e.\ $X^{\mu}\qty(\tau, \sigma)$ where $\mu = 0, 1, \dots, D - 1$ indexes the coordinates.
+Such surface can have different topologies according to the nature of the object propagating in spacetime: strings can be \emph{closed} if $X^{\mu}\qty(\tau, 0) = X^{\mu}\qty(\tau, \ell)$ or \emph{open} if the endpoints in $\sigma = 0$ and $\sigma = \ell$ do not coincide.
 
 
 \subsubsection{Action Principle}
 
 As the action of a point particle is proportional to the length of its trajectory (its \emph{worldline}), the same object for a string is proportional to the area of the worldsheet in the original formulation by Nambu and Goto.
 The solutions of the classical equations of motion (\eom) are therefore strings spanning a worldsheet of extremal area.
-While Nambu and Goto's formulation is fairly direct in its definition, it usually best to work with Polyakov's action~\cite{Polyakov:1981:QuantumGeometryBosonic}:
+While Nambu and Goto's formulation is fairly direct in its definition, it si usually best to work with Polyakov's action~\cite{Polyakov:1981:QuantumGeometryBosonic}:
 \begin{equation}
-  S_P[ \gamma, X ]
+  S_P\qty[ \gamma, X ]
   =
   -\frac{1}{4 \pi \ap}
   \infinfint{\tau}
   \finiteint{\sigma}{0}{\ell}
-  \sqrt{- \det \gamma(\tau, \sigma)}\,
-  \gamma^{\alpha\beta}(\tau, \sigma)\,
-  \ipd{\alpha} X^{\mu}(\tau, \sigma)\,
-  \ipd{\beta} X^{\nu}(\tau, \sigma)\,
+  \sqrt{- \det \gamma\qty(\tau, \sigma)}\,
+  \gamma^{\alpha\beta}\qty(\tau, \sigma)\,
+  \ipd{\alpha} X^{\mu}\qty(\tau, \sigma)\,
+  \ipd{\beta} X^{\nu}\qty(\tau, \sigma)\,
   \eta_{\mu\nu}.
   \label{eq:conf:polyakov}
 \end{equation}
-The \eom for the string $X^{\mu}(\tau, \sigma)$ is therefore:
+The \eom for the string $X^{\mu}\qty(\tau, \sigma)$ is therefore:
 \begin{equation}
   \frac{1}{\sqrt{- \det \gamma}}\,
   \ipd{\alpha}
@@ -58,18 +58,18 @@ The \eom for the string $X^{\mu}(\tau, \sigma)$ is therefore:
   \qquad
   \alpha,\, \beta = 0, 1.
 \end{equation}
-In this formulation $\gamma_{\alpha\beta}$ is the worldsheet metric with Lorentzian signature $(-, +)$.
+In this formulation $\gamma_{\alpha\beta}$ is the worldsheet metric with Lorentzian signature $\qty(-,\, +)$.
 As there are no derivatives of $\gamma_{\alpha\beta}$, its \eom is a constraint ensuring the equivalence of Polyakov's and Nambu and Goto's formulations.
 In fact
 \begin{equation}
-  \fdv{S_P[\gamma, X]}{\gamma^{\alpha\beta}}
+  \fdv{S_P\qty[\gamma,\, X]}{\gamma^{\alpha\beta}}
   =
   - \frac{1}{4 \pi \ap}
   \sqrt{- \det \gamma}\,
   \qty(
     \ipd{\alpha} X \cdot \ipd{\beta} X
     -
-    \frac{1}{2}
+    \frac{1}{2}\,
     \gamma_{\alpha\beta}\,
     \gamma^{\lambda\rho}\,
     \ipd{\lambda} X \cdot \ipd{\rho} X
@@ -80,7 +80,7 @@ In fact
 \end{equation}
 implies
 \begin{equation}
-  \eval{S_P[\gamma, X]}_{\fdv{S_P[\gamma, X]}{\gamma^{\alpha\beta}} = 0}
+  \eval{S_P\qty[\gamma,\, X]}_{\fdv{S_P\qty[\gamma,\, X]}{\gamma^{\alpha\beta}} = 0}
   =
   - \frac{1}{2 \pi \ap}
   \infinfint{\tau}
@@ -91,35 +91,35 @@ implies
 \end{equation}
 where $S_{NG}[X]$ is the Nambu--Goto action for the classical string, $\dotX = \ipd{\tau} X$ and $\pX = \ipd{\sigma} X$.
 
-The symmetries of $S_P[\gamma, X]$ are the keys to the success of the string theory framework~\cite{Polchinski:1998:StringTheoryIntroduction}.
+The symmetries of $S_P\qty[\gamma,\, X]$ are keys to the success of the string theory framework~\cite{Polchinski:1998:StringTheoryIntroduction}.
 Specifically~\eqref{eq:conf:polyakov} displays symmetries under:
 \begin{itemize}
   \item $D$-dimensional Poincaré transformations
     \begin{equation}
       \begin{split}
-        X'^{\mu}(\tau, \sigma)
+        X'^{\mu}\qty(\tau, \sigma)
         & =
-        \tensor{\Lambda}{^{\mu}_{\nu}}\, X^{\mu}(\tau, \sigma) + c^{\nu},
+        \tensor{\Lambda}{^{\mu}_{\nu}}\, X^{\nu}\qty(\tau, \sigma) + c^{\mu},
         \\
-        \gamma'_{\alpha\beta}(\tau, \sigma)
+        \gamma'_{\alpha\beta}\qty(\tau, \sigma)
         & =
-        \gamma_{\alpha\beta}(\tau, \sigma)
+        \gamma_{\alpha\beta}\qty(\tau, \sigma)
       \end{split}
     \end{equation}
-    where $\Lambda \in \SO{1, D-1}$ and $c \in \R^D$,
+    where $\Lambda \in \SO{1,\, D-1}$ and $c \in \R^D$,
 
   \item 2-dimensional diffeomorphisms
     \begin{equation}
       \begin{split}
-        X'^{\mu}(\tau', \sigma')
+        X'^{\mu}\qty(\tau', \sigma')
         & =
-        X^{\mu}(\tau, \sigma)
+        X^{\mu}\qty(\tau, \sigma)
         \\
-        \gamma'_{\alpha\beta}(\tau', \sigma')
+        \gamma'_{\alpha\beta}\qty(\tau', \sigma')
         & =
         \pdv{\sigma'^{\lambda}}{\sigma^{\alpha}}\,
         \pdv{\sigma'^{\rho}}{\sigma^{\beta}}\,
-        \gamma_{\lambda\rho}(\tau, \sigma)
+        \gamma_{\lambda\rho}\qty(\tau, \sigma)
       \end{split}
     \end{equation}
     where $\sigma^0 = \tau$ and $\sigma^1 = \sigma$,
@@ -127,29 +127,29 @@ Specifically~\eqref{eq:conf:polyakov} displays symmetries under:
   \item Weyl transformations
     \begin{equation}
       \begin{split}
-        X'^{\mu}(\tau', \sigma')
+        X'^{\mu}\qty(\tau', \sigma')
         & =
-        X^{\mu}(\tau, \sigma)
+        X^{\mu}\qty(\tau, \sigma)
         \\
-        \gamma'_{\alpha\beta}(\tau, \sigma)
+        \gamma'_{\alpha\beta}\qty(\tau, \sigma)
         & =
-        e^{2 \omega(\tau, \sigma)}\, \gamma_{\alpha\beta}(\tau, \sigma)
+        e^{2 \omega\qty(\tau, \sigma)}\, \gamma_{\alpha\beta}\qty(\tau, \sigma)
       \end{split}
     \end{equation}
-    for arbitrary $\omega(\tau, \sigma)$.
+    for an arbitrary function $\omega\qty(\tau, \sigma)$.
 \end{itemize}
-Notice that the last is not a symmetry of the Nambu--Goto action and it only appears in Polyakov's formulation of the action.
+Notice that the last is not a symmetry of the Nambu--Goto action and it only appears in Polyakov's formulation.
 
 
 \subsubsection{Conformal Invariance}
 
-The definition of the 2-dimensional stress-energy tensor is a direct consequence of~\eqref{eq:conf:worldsheetmetric} \cite{Green:1988:SuperstringTheoryIntroduction}.
+The definition of the 2-dimensional stress-energy tensor is a direct consequence of~\eqref{eq:conf:worldsheetmetric}~\cite{Green:1988:SuperstringTheoryIntroduction}.
 In fact the classical constraint on the tensor is simply
 \begin{equation}
   T_{\alpha\beta}
   =
   \frac{4 \pi}{\sqrt{- \det \gamma}}
-  \fdv{S_P[\gamma, X]}{\gamma^{\alpha\beta}}
+  \fdv{S_P\qty[\gamma,\, X]}{\gamma^{\alpha\beta}}
   =
   -\frac{1}{\ap}
   \qty(
@@ -172,10 +172,10 @@ In other words, the $(1 + 1)$-dimensional theory of massless scalars $X^{\mu}$ i
 Using the invariances of the actions we can set $\gamma_{\alpha\beta}(\tau, \sigma) = e^{\phi(\tau, \sigma)}\, \eta_{\alpha\beta}$, known as \emph{conformal gauge} where $\eta_{\alpha\beta} = \mathrm{diag}(-1, 1)$.
 This gauge choice is however preserved by the residual \emph{pseudoconformal} transformations
 \begin{equation}
-  \tau \pm \sigma = \sigma_{\pm} \mapsto f_{\pm}(\sigma_{\pm}),
+  \tau \pm \sigma = \sigma_{\pm} \quad \mapsto \quad f_{\pm}\qty(\sigma_{\pm}),
   \label{eq:conf:residualgauge}
 \end{equation}
-where $f_{\pm}(\xi)$ are arbitrary functions.
+where $f_{\pm}$ is an arbitrary function of its argument.
 
 It is natural to introduce a Wick rotation $\tau_E = i \tau$ and the complex coordinates $\xi = \tau_E + i \sigma$ and $\bxi = \xi^*$.
 The transformation maps the Lorentzian worldsheet to a new surface: an infinite Euclidean strip for open strings or a cylinder for closed strings.
@@ -185,36 +185,48 @@ In these terms, the tracelessness of the stress-energy tensor translates to
 \end{equation}
 while its conservation $\partial^{\alpha} T_{\alpha\beta} = 0$ becomes:\footnotemark{}
 \footnotetext{%
-  Since we fix $\gamma_{\alpha\beta}(\tau, \sigma) \propto \eta_{\alpha\beta}$ we do not need to account for the components of the connection and we can replace the covariant derivative $\nabla^{\alpha}$ with a standard derivative $\partial^{\alpha}$.
+  Since we fix $\gamma_{\alpha\beta}\qty(\tau, \sigma) \propto \eta_{\alpha\beta}$ we do not need to account for the components of the connection and we can replace the covariant derivative $\nabla^{\alpha}$ with a standard derivative $\partial^{\alpha}$.
 }
 \begin{equation}
-  \bpd T_{\xi\xi}( \xi,\, \bxi ) = \pd \barT_{\bxi\bxi}( \xi,\, \bxi ) = 0.
+  \bpd T_{\xi\xi}\qty( \xi,\, \bxi )
+  =
+  \pd \barT_{\bxi\bxi}\qty( \xi,\, \bxi )
+  =
+  0.
 \end{equation}
 The last equation finally implies
 \begin{equation}
-  T_{\xi\xi}( \xi,\, \bxi ) = T_{\xi\xi}( \xi ) = T( \xi ),
+  T_{\xi\xi}\qty( \xi,\, \bxi )
+  =
+  T_{\xi\xi}\qty( \xi )
+  =
+  T\qty( \xi ),
   \qquad
-  \barT_{\bxi\bxi}( \xi,\, \bxi ) = \barT_{\bxi\bxi}( \bxi ) = \barT( \bxi ),
+  \barT_{\bxi\bxi}\qty( \xi,\, \bxi )
+  =
+  \barT_{\bxi\bxi}\qty( \bxi )
+  =
+  \barT\qty( \bxi ),
 \end{equation}
 which are respectively the holomorphic and the anti-holomorphic components of the bidimensional stress energy tensor.
 
 The previous properties define what is known as a bidimensional \emph{conformal field theory} (\cft).
 Ordinary tensor fields
 \begin{equation}
-  \phi_{\omega, \bomega}( \xi,\, \bxi )
+  \phi_{\omega, \bomega}\qty( \xi, \bxi )
   =
-  \phi_{\underbrace{\xi \dots \xi}\limits_{\omega~\text{times}}\, \underbrace{\bxi \dots \bxi}\limits_{\bomega~\text{times}}}( \xi,\, \bxi )
+  \phi_{\underbrace{\xi \dots \xi}\limits_{\omega~\text{times}}\, \underbrace{\bxi \dots \bxi}\limits_{\bomega~\text{times}}}\qty( \xi, \bxi )
   \qty( \dd{\xi} )^{\omega}
   \qty( \dd{\bxi} )^{\bomega}
 \end{equation}
 are classified according to their weight $\qty( \omega,\, \bomega )$ referring to the holomorphic and anti-holomorphic parts respectively.
 In fact a transformation $\xi \mapsto \chi(\xi)$ and $\bxi \mapsto \bchi(\bxi)$ maps the conformal fields to
 \begin{equation}
-  \phi_{\omega, \bomega}( \chi, \bchi )
+  \phi_{\omega, \bomega}\qty( \chi, \bchi )
   =
   \qty( \dv{\chi}{\xi} )^{\omega}\,
   \qty( \dv{\bchi}{\bxi} )^{\bomega}\,
-  \phi_{\omega, \bomega}( \xi,\, \bxi ).
+  \phi_{\omega, \bomega}\qty( \xi, \bxi ).
 \end{equation}
 
 \begin{figure}[tbp]
@@ -262,17 +274,17 @@ The transformation on a field $\phi_{\omega, \bomega}$ of weight $(\omega, \bome
   \begin{split}
     \delta_{\epsilon, \bepsilon} \phi_{\omega, \bomega}
     & =
-    \liebraket{Q_{\epsilon, \bepsilon}}{\phi_{\omega, \bomega}( w, \barw )}
+    \liebraket{Q_{\epsilon, \bepsilon}}{\phi_{\omega, \bomega}\qty( w, \barw )}
     \\
     & =
-    \cint{0} \ddz \epsilon(z) \qty[ T(z), \phi_{\omega, \bomega}( w, \barw ) ]
+    \cint{0} \ddz \epsilon(z) \qty[ T(z), \phi_{\omega, \bomega}\qty( w, \barw ) ]
     +
-    \cint{0} \ddbz \bepsilon(\barz) \qty[ \barT(\barz), \phi_{\omega, \bomega}( w, \barw ) ]
+    \cint{0} \ddbz \bepsilon(\barz) \qty[ \barT(\barz), \phi_{\omega, \bomega}\qty( w, \barw ) ]
     \\
     & =
-    \cint{w} \ddz \epsilon(z)\, \rR\!\qty( T(z)\, \phi_{\omega, \bomega}( w, \barw ) )
+    \cint{w} \ddz \epsilon(z)\, \rR\qty( T(z)\, \phi_{\omega, \bomega}( w, \barw ) )
     +
-    \cint{\barw} \ddbz \bepsilon(\barz)\, \rR\!\qty( \barT(\barz)\, \phi_{\omega, \bomega}( w, \barw ) ),
+    \cint{\barw} \ddbz \bepsilon(\barz)\, \rR\qty( \barT(\barz)\, \phi_{\omega, \bomega}( w, \barw ) ),
   \end{split}
 \end{equation}
 where in the last passage we used the fact that the difference of ordered integrals becomes the contour integral of the radially ordered product computed surrounding $w$.
@@ -281,32 +293,32 @@ Equating the result with the expected variation
   \begin{split}
     \delta_{\epsilon, \bepsilon} \phi_{\omega, \bomega}
     & =
-    \omega\, \ipd{w} \epsilon( w )\, \phi_{\omega, \bomega}( w, \barw )
+    \omega\, \ipd{w} \epsilon( w )\, \phi_{\omega, \bomega}\qty( w, \barw )
     +
-    \epsilon( w )\, \ipd{w} \phi_{\omega, \bomega}( w, \barw )
+    \epsilon( w )\, \ipd{w} \phi_{\omega, \bomega}\qty( w, \barw )
     \\
     & +
-    \bomega\, \ipd{\barw} \bepsilon( \barw )\, \phi_{\omega, \bomega}( w, \barw )
+    \bomega\, \ipd{\barw} \bepsilon( \barw )\, \phi_{\omega, \bomega}\qty( w, \barw )
     +
-    \epsilon( \barw )\, \ipd{\barw} \phi_{\omega, \bomega}( w, \barw )
+    \epsilon( \barw )\, \ipd{\barw} \phi_{\omega, \bomega}\qty( w, \barw )
   \end{split}
 \end{equation}
 we find the short distance singularities of the components of the stress-energy tensor with the field $\phi_{\omega, \bomega}( w, \barw )$:
 \begin{equation}
   \begin{split}
-    T( z )\, \phi_{\omega, \bomega}( w, \barw )
+    T( z )\, \phi_{\omega, \bomega}\qty( w, \barw )
     & =
-    \frac{\omega}{(z - w)^2}\, \phi_{\omega, \bomega}( w, \barw )
+    \frac{\omega}{(z - w)^2}\, \phi_{\omega, \bomega}\qty( w, \barw )
     +
-    \frac{1}{z - w}\, \ipd{w} \phi_{\omega, \bomega}( w, \barw )
+    \frac{1}{z - w}\, \ipd{w} \phi_{\omega, \bomega}\qty( w, \barw )
     +
     \order{1},
     \\
-    \barT( \barz )\, \phi_{\omega, \bomega}( w, \barw )
+    \barT( \barz )\, \phi_{\omega, \bomega}\qty( w, \barw )
     & =
-    \frac{\bomega}{(\barz - \barw)^2}\, \phi_{\omega, \bomega}( w, \barw )
+    \frac{\bomega}{(\barz - \barw)^2}\, \phi_{\omega, \bomega}\qty( w, \barw )
     +
-    \frac{1}{\barz - \barw}\, \ipd{\barw} \phi_{\omega, \bomega}( w, \barw )
+    \frac{1}{\barz - \barw}\, \ipd{\barw} \phi_{\omega, \bomega}\qty( w, \barw )
     +
     \order{1},
   \end{split}
@@ -335,10 +347,9 @@ which is an asymptotic expansion containing the full information on the singular
     \frac{\delta_{ij}}{(z - w)^{\omega_i + \omega_j} (\barz - \barw)^{\bomega_i + \bomega_j}}.
   \end{equation*}
 }
-The constant coefficients $\cC_{ijk}$ are subject to restrictive constraints given by the properties of the conformal theories to the point that a \cft is completely specified by the spectrum of the weights $(\omega_i, \bomega_i)$ and the coefficients $\cC_{ijk}$ \cite{Friedan:1986:ConformalInvarianceSupersymmetry}.
+The constant coefficients $\cC_{ijk}$ are subject to restrictive constraints given by the properties of the conformal theories to the point that a \cft is completely specified by the spectrum of the weights $(\omega_i, \bomega_i)$ and the coefficients $\cC_{ijk}$ \cite{Friedan:1986:ConformalInvarianceSupersymmetry, Ginsparg:1988:AppliedConformalField}.
 
-The \ope can also be computed on the stress-energy tensor itself.
-Focusing on the holomorphic component we find
+The \ope can also be computed on the stress-energy tensor itself:
 \begin{equation}
   \begin{split}
     T( z )\, T( w )
@@ -382,7 +393,7 @@ This ultimately leads to the quantum algebra
     \\
     \liebraket{\barL_n}{\barL_m}
     & =
-    (n - m)\, \barL_{n + m} + \frac{\barc}{12}\, n\, (n^2 - 1)\, \delta_{n, -m},
+    (n - m)\, \barL_{n + m} + \frac{c}{12}\, n\, (n^2 - 1)\, \delta_{n, -m},
     \\
     \liebraket{L_n}{\barL_m}
     & =
@@ -393,10 +404,10 @@ This ultimately leads to the quantum algebra
 known as Virasoro algebra, unique central extension of the classical de Witt algebra, with central charge $c$.
 Operators $L_n$ and $\barL_n$ are called Virasoro operators.\footnotemark{}
 \footnotetext{%
-  Notice that the subset of Virasoro operators $\qty{ L_{-1}, L_0, L_1 }$ forms a closed subalgebra generating the group $\SL{2}{\R}$.
+  Notice that the subset of Virasoro operators $\qty{ L_{-1},\, L_0,\, L_1 }$ forms a closed subalgebra generating the group $\SL{2}{\R}$.
 }
 Notice that $L_0 + \barL_0$ is the generator of the dilations on the complex plane.
-In terms of radial quantization this translates to time translations and $L_0 + \barL_0$ can be considered to be the Hamiltonian of the theory.
+In terms of radial quantization this maps to time translations and $L_0 + \barL_0$ can be considered to be the Hamiltonian of the theory.
 
 In the same fashion as~\eqref{eq:conf:Texpansion}, fields can be expanded in modes:
 \begin{equation}
@@ -424,7 +435,7 @@ The regularity of \eqref{eq:conf:expansion} requires
   0,
   \qquad
   n > \omega,
-  \quad
+  \qquad
   m > \bomega.
 \end{equation}
 As a consequence also
@@ -453,7 +464,7 @@ Finally the definitions of the primary operators~\eqref{eq:conf:primary} define 
 
 From this definition we can build an entire representation of \emph{descendant} states applying any operator $L_{-n}$ (or $\barL_{-n}$) with $n \ge 1$ to $\ket{\phi_{\omega, \bomega}}$.
 Let $\phi_{\omega}( w )$ be a holomorphic field in the \cft for simplicity, and let $\ket{\phi_{\omega}}$ be its corresponding state.
-The generic state at level $m$ build from such state is
+The generic state at level $m$ built from such state is
 \begin{equation}
   \ket{\phi_{\omega}^{\lbrace n_1, n_2, \dots, n_m \rbrace}}
   =
@@ -462,7 +473,7 @@ The generic state at level $m$ build from such state is
   \qquad
   \finitesum{i}{1}{m} n_i = m \ge 0.
 \end{equation}
-From the commutation relations~\eqref{eq:conf:virasoro} we finally compute its conformal weight as eigenvalue of $L_0$:
+From the commutation relations~\eqref{eq:conf:virasoro} we finally compute its conformal weight as eigenvalue of the (holomorphic) Hamiltonian $L_0$:
 \begin{equation}
   L_0 \ket{\phi_{\omega}^{\lbrace n_1, n_2, \dots, n_m \rbrace}}
   =
@@ -489,13 +500,13 @@ and the components of the stress-energy tensor~\eqref{eq:conf:stringT} are
   \end{split}
   \label{eq:conf:bosonicstringT}
 \end{equation}
-Using the normalisation of the 2-points function $\left\langle X^{\mu}( z, \barz ) X^{\nu}( w, \barw ) \right\rangle = - \frac{1}{2} \eta^{\mu\nu} \ln\left| z - w \right|$ we can prove that $c = D$ in~\eqref{eq:conf:TTexpansion}, where $D$ is the dimensions of spacetime (or equivalently the number of scalar fields $X^{\mu}$ in the action).
+Using the normalisation of the 2-points function $\left\langle X^{\mu}( z, \barz )\, X^{\nu}( w, \barw ) \right\rangle = - \frac{1}{2} \eta^{\mu\nu} \ln\left| z - w \right|$ and the Wick theorem, we can prove that $c = D$ in~\eqref{eq:conf:TTexpansion}, where $D$ is the dimensions of spacetime (or equivalently the number of scalar fields $X^{\mu}$ in the action).
 It can be shown that in order to cancel the central charge in bosonic string theory we need to introduce a pair of conformal ghosts $b(z)$ and $c(z)$ with conformal weights $(2, 0)$ and $(-1, 0)$ respectively, together with their anti-holomorphic counterparts $\barb(z)$ and $\barc(z)$.
 The non vanishing components of their stress-energy tensor can be computed as:\footnotemark{}
 \footnotetext{%
-  In general a system of ghosts $b( z )$ and $c( z )$ with weight $(\lambda, 0)$ and $(1 - \lambda, 0)$ can be introduced as a standalone \cft with action~\cite{Friedan:1986:ConformalInvarianceSupersymmetry,Polchinski:1998:StringTheorySuperstring}
+  In general a system of ghosts $b( z )$ and $c( z )$ with weight $(\lambda,\, 0)$ and $(1 - \lambda,\, 0)$ can be introduced as a standalone \cft with action~\cite{Friedan:1986:ConformalInvarianceSupersymmetry, Polchinski:1998:StringTheorySuperstring}
   \begin{equation*}
-    S = \frac{1}{2 \pi} \iint \dd{z} \dd{\barz} b( z )\, \ipd{\barz} c( z ).
+    S = \frac{1}{2 \pi} \iint \dd{z} \dd{\barz}\, b( z )\, \ipd{\barz} c( z ).
   \end{equation*}
   The equations of motion are $\ipd{\barz} c( z ) = \ipd{\barz} b( z ) = 0$.
   The \ope is
@@ -509,7 +520,7 @@ The non vanishing components of their stress-energy tensor can be computed as:\f
   \end{equation*}
   Their central charge is therefore $c_{\text{ghost}} = \varepsilon\, ( 1 - 3 \cQ^2)$, where $\cQ = \varepsilon\,( 1 - 2 \lambda )$.
 
-  Notice finally that this ghost \cft has in general an additional \emph{ghost number} \U{1} symmetry generated by the current
+  The ghost \cft has in general an additional \emph{ghost number} \U{1} symmetry generated by the current
   \begin{equation*}
     j( z ) = - b( z )\, c( z ).
   \end{equation*}
@@ -560,7 +571,7 @@ we get the \ope of the components of their stress-energy tensor:
   \end{split}
 \end{equation}
 which show that $c_{\text{ghost}} = - 26$.
-The central charge is therefore cancelled in the full theory (bosonic string and ghosts) when the spacetime dimensions are $D = 26$.
+The central charge is therefore cancelled in the full theory (bosonic string and reparametrisation ghosts) when the spacetime dimensions are $D = 26$.
 In fact let $T_{\text{full}} = T + T_{\text{ghost}}$ and $\barT_{\text{full}} = \barT + \barT_{\text{ghost}}$, then:
 \begin{equation}
   \eval{T_{\text{full}}( z )}_{\order{(z - w)^{-4}}}
@@ -581,14 +592,14 @@ In fact let $T_{\text{full}} = T + T_{\text{ghost}}$ and $\barT_{\text{full}} = 
 
 \subsection{Superstrings}
 
-As bosonic string theory deals with commuting fields $X^{\mu}$, it is impossible to build spacetime fermions and a consistent phenomenology.
+As bosonic string theory deals with commuting fields $X^{\mu}$, it is impossible to build spacetime fermions and consequently a consistent phenomenology.
 It is in fact necessary to introduce worldsheet fermions (i.e.\ anti-commuting variables on the string worldsheet) as an extension to the bosonic coordinates \cite{Friedan:1986:ConformalInvarianceSupersymmetry,Polchinski:1998:StringTheorySuperstring}.
-We schematically and briefly recall some results due to the extension of bosonic string theory to the superstring as they will be used in what follows and mainly follow from the previous discussion.
+We schematically and briefly recall some results due to the extension of bosonic string theory to the superstring as they will be used in what follows and mainly descend from the previous discussion.
 
 The superstring action is built as an addition to the bosonic equivalent~\eqref{eq:conf:polyakov}.
-In complex coordinates on the plane it is:
+In complex coordinates on the plane it is~\cite{Polchinski:1998:StringTheorySuperstring}:
 \begin{equation}
-  S[ X, \psi ]
+  S\qty[ X,\, \psi ]
   =
   - \frac{1}{4 \pi}
   \iint \dd{z} \dd{\barz}
@@ -602,7 +613,7 @@ In complex coordinates on the plane it is:
   \eta_{\mu\nu}.
   \label{eq:super:action}
 \end{equation}
-In the last expression $\psi^{\mu}$ are $D$ two-dimensional holomorphic fermion fields with conformal weight $(\frac{1}{2}, 0)$ and $\bpsi^{\mu}$ are their anti-holomorphic counterparts with weight $(0, \frac{1}{2})$. Their short-distance behaviour is
+In the last expression, $\psi^{\mu}$ are $D$ two-dimensional holomorphic fermion fields with conformal weight $\qty(\frac{1}{2}, 0)$ and $\bpsi^{\mu}$ are their anti-holomorphic counterparts with weight $\qty(0, \frac{1}{2})$. Their short-distance behaviour is
 \begin{equation}
   \psi^{\mu}( z )\, \psi^{\nu}( w ) = \frac{\eta^{\mu\nu}}{z - w},
   \qquad
@@ -680,8 +691,8 @@ The central charge associated to the Virasoro algebra is in this case given by b
 \end{equation}
 The central charge is therefore $c = \frac{3}{2} D$ for the \cft defined in~\eqref{eq:super:action}.
 
-As in the case of the bosonic string, in order to cancel the central charge we introduce the reparametrisation anti-commuting ghosts $b( z )$ and $c( z )$ and their anti-holomorphic components as well as the commuting \emph{superghosts} $\beta( z )$ and $\gamma( z )$ and their anti-holomorphic counterparts.
-These are conformal fields with conformal weights $\qty( \frac{3}{2}, 0 )$ and $\qty( -\frac{1}{2}, 0 )$.
+As in the case of the bosonic string, in order to cancel the central charge of superstring theory we introduce the reparametrisation anti-commuting ghosts $b( z )$ and $c( z )$ and their anti-holomorphic components as well as the commuting \emph{superghosts} $\beta( z )$ and $\gamma( z )$ and their anti-holomorphic counterparts.
+These are conformal fields with conformal weights $\qty( \frac{3}{2},\, 0 )$ and $\qty( -\frac{1}{2},\, 0 )$.
 Their central charge becomes $c_{\text{ghost}} = c_{bc} + c_{\beta\gamma} = -26 + 11 = -15$ (see \cref{note:conf:ghosts} for the general computation).
 When considering the full theory $T_{\text{full}} = T + T_{\text{ghost}}$ and $\barT_{\text{full}} = \barT + \barT_{\text{ghost}}$ the central charge vanishes only in 10-dimensional spacetime:
 \begin{equation}
@@ -706,8 +717,8 @@ When considering the full theory $T_{\text{full}} = T + T_{\text{ghost}}$ and $\
 \label{sec:CYmanifolds}
 
 We are ultimately interested in building a consistent phenomenology in the framework of string theory.
-Any theoretical infrastructure has then to be able to support matter states made of fermions.
-In what follows we thus consider the superstring formulation in $D = 10$ dimensions even when we deal with bosonic string theory only.
+Any theoretical infrastructure has to be able to support matter states made of fermions.
+In what follows we thus consider the superstring formulation in $D = 10$ dimensions even when we focus only on its bosonic components.
 
 It is however clear that low energy phenomena need to be explained by a $4$-dimensional theory in order to be comparable with other theoretical frameworks and experimental evidence.
 In this section we briefly review for completeness the necessary tools to be able to reproduce consistent models capable of describing particle physics and beyond.
@@ -725,10 +736,10 @@ where $\ccX_6$ is a generic $6$-dimensional manifold at this stage.
 This \emph{internal} manifold $\ccX_6$ is however subject to very stringent restrictions due to mathemtical consistency conditions and physical requests.
 In particular $\ccX_6$ should be a compact manifold to ``hide'' the 6 extra-dimensions computed in~\eqref{eq:super:dimensions}.
 Moreover the geometry of $\ccM^{1,3}$ should be a maximally symmetric space and there should be a $N = 1$ unbroken supersymmetry in $4$ dimensions.
-Finally the gauge group of and the spectrum of fermions should be realistic (e.g.\ it should be possible to define chiral fermion states) \cite{Candelas:1985:VacuumConfigurationsSuperstrings}.
-These manifolds were first conjectured to exist by Eugenio Calabi~\cite{Calabi:1957:KahlerManifoldsVanishing}.
-Their existence was later proved by Shing-Tung Yau~\cite{Yau:1977:CalabiConjectureNew}, hence the name Calabi-Yau (\cy) manifolds.
-They are defined as complex Ricci-flat Kähler manifolds $M$ of dimensions $2m$ and with holonomy \SU{3} (see for instance \cite{Joyce:2000:CompactManifoldsSpecial,Joyce:2002:LecturesCalabiYauSpecial,Greene:1997:StringTheoryCalabiYau}).
+Finally the arising gauge group and the spectrum of fermions should be realistic (e.g.\ it should be possible to define chiral fermion states)~\cite{Candelas:1985:VacuumConfigurationsSuperstrings}.
+These manifolds were first conjectured to exist by Eugenio Calabi~\cite{Calabi:1957:KahlerManifoldsVanishing} and their existence was later proved by Shing-Tung Yau~\cite{Yau:1977:CalabiConjectureNew}, hence the name Calabi-Yau (\cy) manifolds.
+They are defined as complex Ricci-flat Kähler manifolds $M$ of dimensions $2m$ and with holonomy \SU{m} (see for instance~\cite{Joyce:2000:CompactManifoldsSpecial,Joyce:2002:LecturesCalabiYauSpecial,Greene:1997:StringTheoryCalabiYau}).
+More on this topic is also presented in~\Cref{part:deeplearning} of this thesis where we compute topological properties of a subset of \cy manifolds.
 
 
 \subsubsection{Complex and Kähler Manifolds}
@@ -753,28 +764,34 @@ The tensor $J$ is called \emph{complex structure} if there exist a tensor $N$ su
 for any $v_p,\, w_p \in \rT_p M$, where $\liebraket{\cdot}{\cdot}\colon\, \rT_p M \times \rT_p M \to \rT_p M$ is the Lie braket of vector fields.
 A manifold $M$ is a \emph{complex} manifold if it is possible to define a complex structure $J$ on it.\footnotemark{}
 \footnotetext{%
-  Notice that a smooth function $f\colon\, M \to \C$ whose pushforward of $v_p \in \rT_p M$ is $f_{*\, p}\colon\, \rT_p M \to \rT_{f(p)} \C$ is called holomorphic if $(J\, f_{*\, p}( v_p ))^a = i ( f_{*\, p}( v_p ) )^a$ as such expression encodes the Cauchy-Riemann equations.
+  Notice that a smooth function $f\colon\, M \to \C$ whose pushforward of $v_p \in \rT_p M$ is $f_{*\, p}\colon\, \rT_p M \to \rT_{f(p)} \C \simeq \C$ is called holomorphic if $(J\, f_{*\, p}( v_p ))^a = i ( f_{*\, p}( v_p ) )^a$ as such expression encodes the Cauchy-Riemann equations.
   Let in fact $f( x, y ) = f_1( x, y ) + i\, f_2( x, y )$, then the expression implies
   \begin{equation*}
     \begin{cases}
-      \ipd{x} f_1( x, y )
+      \ipd{x} f_1\qty( x, y )
       & =
-      \ipd{y} f_2( x, y )
+      \ipd{y} f_2\qty( x, y )
       \\
-      \ipd{x} f_2( x, y )
+      \ipd{x} f_2\qty( x, y )
       & =
-      -\ipd{y} f_1( x, y )
+      -\ipd{y} f_1\qty( x, y )
     \end{cases}
+    \quad
     \Rightarrow
-    \ipd{x} f( x, y ) = -i \ipd{y} f( x, y )
+    \quad
+    \ipd{x} f\qty( x, y ) = -i \ipd{y} f\qty( x, y )
+    \quad
     \Rightarrow
-    \ipd{\barz} f( z, \barz ) = 0
+    \quad
+    \ipd{\barz} f\qty( z, \barz ) = 0
+    \quad
     \Rightarrow
-    f( z, \barz ) = f( z ).
+    \quad
+    f\qty( z, \barz ) = f( z ).
   \end{equation*}
 }
 
-Let then $(M, J, g)$ be a complex manifold with a Riemannian metric $g$.
+Let then $\qty(M,\, J,\, g)$ be a complex manifold with a Riemannian metric $g$.
 The metric is \emph{Hermitian} if
 \begin{equation}
   g( v_p, w_p ) = g( J\, v_p, J\, w_p )
@@ -815,7 +832,7 @@ $(M, J, g)$ is a \emph{Kähler} manifold if:
   \label{eq:cy:kaehler}
 \end{equation}
 or equivalently $\nabla J = 0$ or $\nabla \omega = 0$, where $\nabla$ is the connection of $g$.
-Notice that the operators $\pd$ and $\bpd$ are operators such that $\pd^2 = \bpd^2 = 0$: they replace the \emph{de Rham cohomology} operator $\mathrm{d}^2 = 0$ in complex space with the holomorphic and antiholomorphic \emph{Dolbeault cohomology} operators.
+Notice that the operators $\pd$ and $\bpd$ are such that $\pd^2 = \bpd^2 = 0$: they replace the \emph{de Rham cohomology} operator $\mathrm{d}^2 = 0$ in complex space with the holomorphic and antiholomorphic \emph{Dolbeault cohomology} operators.
 The covariant conservation of $J$ and $\omega$ implies that the holonomy group must preserve these objects in $\R^{2m}$.
 Thus we have $\mathrm{Hol}(g) \subseteq \U{m} \subset \OO{2m}$.
 
@@ -823,7 +840,7 @@ Thus we have $\mathrm{Hol}(g) \subseteq \U{m} \subset \OO{2m}$.
 \subsubsection{Calabi-Yau Manifolds}
 
 With the general definitions of the Kähler geometry we can now explicitly compute the conditions needed for a \cy manifold.
-In local coordinates a Hermitian metric is such that
+In local complex coordinates a Hermitian metric is such that
 \begin{equation}
   g
   =
@@ -834,7 +851,9 @@ In local coordinates a Hermitian metric is such that
 thus the Kähler form becomes $\omega = i g_{a\barb}\, \dd{z}^a \wedge \dd{\barz}^{\barb}$.
 The relation~\eqref{eq:cy:kaehler} then translates into:
 \begin{equation}
-  \dd{\omega} = i\, \qty( \pd + \bpd )\, g_{a\barb}\, \dd{z}^a \wedge \dd{\barz}^{\barb}
+  \dd{\omega}
+  =
+  i\, \qty( \pd + \bpd )\, g_{a\barb}\, \dd{z}^a \wedge \dd{\barz}^{\barb}
   =
   0
   \quad
@@ -853,20 +872,20 @@ This ultimately leads to
   =
   \pdv{\phi( z, \barz )}{z^a}{\barz^{\barb}}
   =
-  \ipd{a} \ipd{\barb}\, \phi( z, \barz ),
+  \ipd{z^a} \ipd{\barz^b}\, \phi( z, \barz ),
 \end{equation}
 Since $\omega$ is the Kähler form then the Levi-Civita connection has only fully holomorphic and anti-holomorphic components:
 \begin{equation}
   \tensor{\Gamma}{^a_{bc}}
   =
   \tensor{g}{^{a\bard}}\,
-  \ipd{b}\,
+  \ipd{z^b}\,
   \tensor{g}{_{\bard c}},
   \qquad
-\tensor{\Gamma}{^{\bara}_{\barb\barc}}
+  \tensor{\Gamma}{^{\bara}_{\barb\barc}}
   =
   \tensor{g}{^{\bara d}}\,
-  \ipd{\barb}\,
+  \ipd{\barz^b}\,
   \tensor{g}{_{d\barc}}.
 \end{equation}
 As a consequence the Ricci tensor becomes
@@ -877,8 +896,8 @@ As a consequence the Ricci tensor becomes
   \pdv{\tensor{\Gamma}{^{\barc}_{\bara\barc}}}{z^b}.
 \end{equation}
 
-Since \cy manifolds have \SU{m} holonomy, the trace part of the coefficients of the connection vanishes.
-\cy manifolds thus have $\tensor{R}{_{\bara b}} = 0$, that is they are complex Ricci-flat Kähler manifolds.
+Since \cy manifolds present $\mathrm{Hol}(g) \subseteq \SU{m}$, the trace part of the coefficients of the connection vanishes.
+\cy manifolds thus have $\tensor{R}{_{\bara b}} = 0$, that is they are complex Ricci-flat Kähler manifolds with \SU{m} holonomy.
 
 
 \subsubsection{Cohomology and Hodge Numbers}
@@ -888,18 +907,18 @@ Since \cy manifolds have \SU{m} holonomy, the trace part of the coefficients of 
 They can be characterised in different ways.
 For instance the study of the cohomology groups of the manifold has a direct connection with the analysis of topological invariants.
 
-For real manifolds $M$ of dimension $2m$, closed $p$-forms $\omega$ are always defined up to an \emph{exact} term.
+For real manifolds $\tildeM$ of dimension $2m$, closed $p$-forms $\omega$ are always defined up to an \emph{exact} term.
 In fact:
 \begin{equation}
   \dd{\omega'_{(p)}} = \dd{(\omega_{(p)} + \dd{\eta_{(p-1)}})} = 0
   \label{eq:cy:closedform}
 \end{equation}
 implies an equivalence relation $\omega'_{(p)} \sim \omega_{(p)} + \dd{\eta_{(p-1)}}$.
-This translates in the fact that elements of the de Rham cohomology group $H^{(p)}_{\mathrm{d}}(M, \R)$ are equivalence classes $[ \omega ]$ computed through the operator $\mathrm{d}$.
-The term $b^{p} = \dim{H^{(p)}_{\mathrm{d}}( M, \R )}$ counts the total number of possible $p$-forms we can build on $X$, up to \emph{gauge transformations}.
+This translates to the fact that elements of the de Rham cohomology group $H^{(p)}_{\mathrm{d}}\qty(\tildeM, \R)$ are equivalence classes $[ \omega ]$ computed through the operator $\mathrm{d}$.
+The term $b^{p} = \dim{H^{(p)}_{\mathrm{d}}( \tildeM, \R )}$ counts the total number of possible $p$-forms we can build on $\tildeM$, up to \emph{gauge transformations}.
 These are known as \emph{Betti numbers}.
 
-The extension to the Dolbeault cohomology in complex space is possible through the operators $\pd$ and $\bpd$ over $(r, s)$-forms on manifolds $M$ of real dimension $2m$.
+The extension to the Dolbeault cohomology in complex space is possible through the operators $\pd$ and $\bpd$ over $(r, s)$-forms on manifolds $M$ of complex dimension $m$.
 The equivalence relation~\eqref{eq:cy:closedform} has a similar expression in complex space as
 \begin{equation}
   \omega'_{(r,s)} \sim \omega_{(r,s)} + \bpd \omega_{(r,s-1)},
@@ -972,14 +991,14 @@ We are ultimately interested in their study to construct Yukawa couplings in str
 As a first approach to the definition of D-branes, consider the action~\eqref{eq:conf:polyakov}.
 The variation of such action with respect to $\delta X$ leads to the equation of motion
 \begin{equation}
-  \partial_{\alpha} \partial^{\alpha}\, X^{\mu}( \tau, \sigma ) = 0
+  \partial_{\alpha} \partial^{\alpha} X^{\mu}( \tau, \sigma ) = 0
   \qquad
   \mu = 0, 1, \dots, D - 1,
   \label{eq:tduality:eom}
 \end{equation}
 and naturally to the \emph{Neumann} boundary conditions:\footnotemark{}
 \footnotetext{%
-  As~\cite{Polchinski:1996:TASILecturesDBranes} shows, \emph{Dirichlet} conditions can be shown to descend from T-duality.
+  As~\cite{Polchinski:1996:TASILecturesDBranes} shows, \emph{Dirichlet} conditions can descend from T-duality which is introduced later.
 }
 \begin{equation}
   \eval{\ipd{\sigma} X^{\mu}( \tau, \sigma )}_{\sigma = 0}^{\sigma = \ell} = 0,
@@ -987,7 +1006,6 @@ and naturally to the \emph{Neumann} boundary conditions:\footnotemark{}
   \mu = 0, 1, \dots, D - 1.
   \label{eq:tduality:bc}
 \end{equation}
-
 Closed strings are such that $X^{\mu}( \tau, \sigma + \ell ) = X^{\mu}( \tau, \sigma )$.
 The usual mode expansion in conformal coordinates $X^{\mu}( z, \barz ) = X( z ) + \barX( \barz )$ leads to
 \begin{equation}
@@ -1054,7 +1072,7 @@ We finally have
 \end{equation}
 
 An interesting phenomenon involving these quantities appears when computing the mass spectrum of the theory.
-From~\eqref{eq:conf:Texpansion} and \eqref{eq:conf:bosonicstringT} we find
+From~\eqref{eq:conf:Texpansion} and~\eqref{eq:conf:bosonicstringT} we find
 \begin{equation}
   \begin{split}
     L_0
@@ -1063,9 +1081,9 @@ From~\eqref{eq:conf:Texpansion} and \eqref{eq:conf:bosonicstringT} we find
     \qty(
       \qty( \alpha_0^{D-1} )^2
       +
-      \sum\limits_{i = 0}^{D-2}\, \qty( \alpha_0^i )^2
+      \finitesum{i}{0}{D-2}\, \qty( \alpha_0^i )^2
       +
-      \sum\limits_{n = 1}^{+\infty}\, \qty( 2 \alpha_{-n}^{\mu} \alpha_n^{\nu}\, \eta_{\mu\nu} + a )
+      \finitesum{n}{1}{+\infty}\, \qty( 2\, \alpha_{-n}^{\mu} \alpha_n^{\nu}\, \eta_{\mu\nu} + a )
     ),
     \\
     \barL_0
@@ -1074,9 +1092,9 @@ From~\eqref{eq:conf:Texpansion} and \eqref{eq:conf:bosonicstringT} we find
     \qty(
       \qty( \balpha_0^{D-1} )^2
       +
-      \sum\limits_{i = 0}^{D-2}\, \qty( \balpha_0^i )^2
+      \finitesum{i}{0}{D-2}\, \qty( \balpha_0^i )^2
       +
-      \sum\limits_{n = 1}^{+\infty}\, \qty( 2 \balpha_{-n}^{\mu} \balpha_n^{\nu}\, \eta_{\mu\nu} + a )
+      \finitesum{n}{1}{+\infty}\, \qty( 2\, \balpha_{-n}^{\mu} \balpha_n^{\nu}\, \eta_{\mu\nu} + a )
     ),
   \end{split}
 \end{equation}
@@ -1086,18 +1104,18 @@ Imposing physical conditions~\eqref{eq:conf:physical} and the \emph{level matchi
   \begin{split}
     M^2
     & =
-    \frac{1}{(\ap)^2}\, \qty( n\, \frac{\ap}{R} + m\, R )^2
+    \frac{1}{\qty(\ap)^2}\, \qty( n\, \frac{\ap}{R} + m\, R )^2
     +
     \frac{4}{\ap}\, \qty( \rN + a )
     \\
     & =
-    \frac{1}{(\ap)^2}\, \qty( n\, \frac{\ap}{R} - m\, R )^2
+    \frac{1}{\qty(\ap)^2}\, \qty( n\, \frac{\ap}{R} - m\, R )^2
     +
     \frac{4}{\ap}\, \qty( \brN + a ),
   \end{split}
   \label{eq:dbranes:closedspectrum}
 \end{equation}
-where $\rN = \sum\limits_{n = 1}^{+\infty}\, \alpha_{-n} \cdot \alpha_n$ and $\brN = \sum\limits_{n = 1}^{+\infty}\, \balpha_{-n} \cdot \balpha_n$.
+where $\rN = \finitesum{n}{1}{+\infty}\, \alpha_{-n} \cdot \alpha_n$ and $\brN = \finitesum{n}{1}{+\infty}\, \balpha_{-n} \cdot \balpha_n$.
 We then notice that as $R \to \infty$ all states with $m \neq 0$ become infinitely massive while the states for $m = 0$ and all values of $n$ become a continuum.
 Conversely, as $R \to 0$ all states with $n \neq 0$ become infinitely heavy.
 In field theory this would translate into a reduction of the number of dimensions since the remaining fields would be independent of the compact coordinate~\cite{Polchinski:1996:TASILecturesDBranes,Zwiebach::FirstCourseString}.
@@ -1121,7 +1139,7 @@ defining the dual coordinate
 \subsubsection{D-branes from T-duality}
 
 Consider the case of open strings satisfying the \eom~\eqref{eq:tduality:eom} and the coundary conditions~\eqref{eq:tduality:bc}.
-The usual mode expansion~\eqref{eq:tduality:modes} here leads to
+The usual mode expansion~\eqref{eq:tduality:modes} here leads to:
 \begin{equation}
   X^{\mu}( z, \barz )
   =
@@ -1187,7 +1205,7 @@ The coordinate of the endpoint in the compact direction is therefore fixed and c
 \end{equation}
 The only difference in the position of the endpoints can only be a multiple of the radius of the compactified dimension.
 Otherwise they lie on the same hypersurface.
-The procedure can be generalises to $p$ coordinates and constraining the string to live on a $(D - p - 1)$-brane.
+The procedure can be generalised to $p$ coordinates, constraining the string to live on a $(D - p - 1)$-brane.
 
 This geometric interpretation of the Dirichlet branes and boundary conditions is the basis for the definition of more complex scenarios in which multiple D-branes are inserted in spacetime.
 D-branes are however much more than mathematical entities.
@@ -1203,14 +1221,14 @@ Reproducing the \sm or beyond \sm spectra are however strong constraints on the 
 Many of the physical requests usually involve the introduction of D-branes and the study of open strings in order to be able to define chiral fermions and realist gauge groups.
 
 As seen in the previous section, D-branes introduce preferred directions of motion by restricting the hypersurface on which the open string endpoints live.
-Specifically a Dp-branes breaks the original \SO{1, D-1} symmetry to $\SO{1, p} \otimes \SO{D - 1 - p}$.\footnotemark{}
+Specifically a Dp-brane breaks the original \SO{1,\, D-1} symmetry to $\SO{1,\, p} \otimes \SO{D - 1 - p}$.\footnotemark{}
 \footnotetext{%
-  Notice that usually $D = 10$, but we keep a generic indication of the spacetime dimensions when possible.
+  Notice that usually $D = 10$ in the superstring formulation ($D = 26$ for purely bosonic strings), but we keep a generic indication of the spacetime dimensions when possible.
 }
 The massless spectrum of the theory on the D-brane is easily computed in lightcone gauge~\cite{Goddard:1973:QuantumDynamicsMassless,Polchinski:1998:StringTheoryIntroduction,Green:1988:SuperstringTheoryIntroduction,Angelantonj:2002:OpenStrings}.
-Using the residual symmetries~\eqref{eq:conf:residualgauge} of the two-dimensional diffeomorphism (i.e.\ armonic functions of $\tau$ and $\sigma$) we can set
+Using the residual symmetries~\eqref{eq:conf:residualgauge} of the two-dimensional diffeomorphism (i.e.\ harmonic functions of $\tau$ and $\sigma$) we can set
 \begin{equation}
-  X^+( \tau, \sigma ) = x_0^+ + 2 \ap\, p^+\, \tau,
+  X^+\qty( \tau, \sigma ) = x_0^+ + 2 \ap\, p^+\, \tau,
 \end{equation}
 where $X^{\pm} = \frac{1}{\sqrt{2}} (X^0 \pm X^{D-1})$.
 The vanishing of the stress-energy tensor fixes the oscillators in $X^-$ in terms of the physical transverse modes.
@@ -1238,8 +1256,7 @@ we find that at the massless level we have a single \U{1} gauge field in the rep
   \qquad
   \alpha_{-1}^i \regvacuum.
 \end{equation}
-
-The introduction of a Dp-brane however breaks the Lorentz invariance down to $\SO{1, p} \otimes \SO{D - 1 - p}$.
+The introduction of a Dp-brane however breaks the Lorentz invariance down to $\SO{1,\, p} \otimes \SO{D - 1 - p}$.
 Thus the gauge field in the original theory is split into
 \begin{equation}
   \begin{split}
@@ -1288,14 +1305,14 @@ They have no dynamics and do not spoil Poincaré or conformal invariance in the 
 Each state can then be labelled by $i$ and $j$ running from $1$ to $N$.
 Matrices $\tensor{\lambda}{^a_{ij}}$ thus form a basis for expanding wave functions and states:
 \begin{equation}
-  \ket{n;\, a} = \sum\limits_{i,\, j = 1}^N \ket{n;\, i, j}\, \lambda^a_{ij}.
+  \ket{n;\, a} = \sum\limits_{i,\, j = 1}^N \ket{n;\, i, j}\, \tensor{\lambda}{^a_i_j}.
 \end{equation}
 In general Chan-Paton factors label the D-brane on which the endpoint of the string lives as in the left of~\Cref{fig:dbranes:chanpaton}.
-Notice that strings stretching across different D-branes present an additional term in the mass shell condition proportional to the distance between the hypersurfaces: fields built using strings with Chan-Paton factors $\lambda^a_{ij}$ for which $i \neq j$ will therefore be massive.
-However when $N$ D-branes coincide in space and form a stack their mass vanishes again: it then possible to organise the $N^2$ resulting massless fields in a representation of the gauge group \U{N}, thus promoting the symmetry $\bigotimes\limits_{a = 1}^N \rU_a( 1 )$ of $N$ separate D-branes.
+Notice that strings stretching across different D-branes present an additional term in the mass shell condition proportional to the distance between the hypersurfaces: fields built using strings with Chan-Paton factors $\tensor{\lambda}{^a_i_j}$ for which $i \neq j$ will therefore be massive.
+However when $N$ D-branes coincide in space and form a stack their mass vanishes again: it then possible to organise the $N^2$ resulting massless fields in a representation of the gauge group \U{N}, thus promoting the symmetry $\bigotimes\limits_{a = 1}^N \rU_a( 1 )$ of $N$ separate D-branes to a larger gauge group.
 It is also possible to show that in the field theory limit the resulting gauge theory is a Super Yang-Mills gauge theory.
 
-Eventually the massless spectrum of $N$ coincident $Dp-branes$ is formed by \U{N} gauge bosons in the adjoint representation, $N^2 \times (D - 1 - p)$ scalars and $N^2$ sets of $(p+1)$-dimensional fermions~\cite{Uranga:2005:TASILecturesString}.
+Eventually the massless spectrum of $N$ coincident Dp-branes is formed by \U{N} gauge bosons in the adjoint representation, $N^2 \times (D - 1 - p)$ scalars and $N^2$ sets of $(p+1)$-dimensional fermions~\cite{Uranga:2005:TASILecturesString}.
 These are the basic building blocks for a consistent string phenomenology involving both gauge bosons and matter.
 
 
@@ -1307,25 +1324,24 @@ For instance there is no way to describe chirality by simply using parallel D-br
 
 For instance, in the low energy limit it is possible to build a gauge theory of the strong force using a stack of $3$ coincident D-branes and an electroweak sector using $2$ D-branes.
 These stacks would separately lead to a $\U{3} \times \U{2}$ gauge theory.
-It would however be theory of pure force, without matter content.
-Moreover we should also worry about the extra \U{1} groups appearing: these need careful consideration but go beyond the necessary analysis for what follows.
+It would however be a theory of pure force, without matter content.
+Moreover we should also worry about the extra \U{1} groups appearing: these need careful consideration but go beyond the necessary analysis presented in what follows.
 
-Matter fields are notoriously fermions transforming in the bi-fundamental representation $(\vec{N}, \vec{M})$ of the \sm gauge group~\eqref{eq:intro:smgroup}.
-For example left handed quarks in the \sm transform under the $(\vec{3}, \vec{2})$ representation of the group $\SU{3}_C \otimes \SU{2}_L$.
+Matter fields are fermions transforming in the bi-fundamental representation $\qty(\vb{N}, \vb{M})$ of the \sm gauge group~\eqref{eq:intro:smgroup}.
+For example left handed quarks in the \sm transform under the $\qty(\vb{3}, \vb{2})$ representation of the group $\SU{3}_C \otimes \SU{2}_L$.
 This is realised in string theory by a string stretched across two stacks of $3$ and $2$ D-branes as in the right of~\Cref{fig:dbranes:chanpaton}.
 The fermion would then be characterised by the charge under the gauge bosons living on the D-branes.
-The corresponding anti-particle would then simply be a string oriented in the opposite direction.
-Things get complicated when introducing also left handed leptons transforming in the $(\vec{1}, \vec{2})$ representation: they cannot have endpoints on the same stack of D-branes as quarks since they do not have colour charge.
+The corresponding anti-particle would then be modelled as a string oriented in the opposite direction.
+Things get complicated when introducing also left handed leptons transforming in the $\qty(\vb{1}, \vb{2})$ representation: they cannot have endpoints on the same stack of D-branes as quarks since they do not have colour charge.
 We therefore need to introduce more D-branes to account for all the possible combinations.
 
 An additional issue comes from the requirement of chirality.
 Strings stretched across D-branes are naturally massive but, in the field theory limit, a mass term would mix different chiralities.
 We thus need to include a symmetry preserving mechanism for generating the mass of fermions.
 In string theory there are ways to deal with the requirement~\cite{Uranga:2003:ChiralFourdimensionalString,Uranga:2005:TASILecturesString,Zwiebach::FirstCourseString,Aldazabal:2000:DBranesSingularitiesBottomUp}.
-These range from D-branes located at singular points of orbifolds to D-branes intersecting at angles~\cite{Finotello:2019:ClassicalSolutionBosonic}.
-We focus in particular on the latter.
-Specifically we focus on intersecting D6-branes filling the $4$-dimensional spacetime and whose additional $3$ dimensions are embedded in a \cy 3-fold (e.g.\ as lines in a factorised torus $T^6 = T^2 \times T^2 \times T^2$).
-This D-brane geometry supports chiral fermion at their intersection: while some of the modes of the stretched string become indeed massive, the spectrum of the fields is proportional to combinations of the angles and some of the modes can stay massless.
+These range from D-branes located at singular points of orbifolds to D-branes intersecting at angles.
+In this manuscript we focus on intersecting D6-branes filling the $4$-dimensional spacetime and whose additional $3$ dimensions are embedded in a \cy 3-fold (e.g.\ as lines in a factorised torus $T^6 = T^2 \times T^2 \times T^2$).
+This D-brane geometry supports chiral fermion states at their intersection: while some of the modes of the stretched string become indeed massive, the spectrum of the fields is proportional to combinations of the angles and some of the modes can remain massless.
 The light spectrum is thus composed of the desired matter content alongside with other particles arising from the string compactification.
 
 \begin{figure}[tbp]
@@ -1340,20 +1356,21 @@ The light spectrum is thus composed of the desired matter content alongside with
 \end{figure}
 
 It is therefore possible to recover a \sm-like construction using multiple D-branes at angles as in~\Cref{fig:dbranes:smbranes}, where the angles have been drawn perpendicular but can in principle be arbitrary~\cite{Ibanez:2001:GettingJustStandard,Grimm:2005:EffectiveActionType,Sheikh-Jabbari:1998:ClassificationDifferentBranes,Berkooz:1996:BranesIntersectingAngles}.
-For instance quarks are localised at the intersection of the \emph{baryonic} stack of D-branes, yielding the colour symmetry generators, with the \emph{left} and \emph{right} stacks, leading to the $( \vec{3}, \vec{2} )$ and $( \vec{3}, \vec{1})$ representations.
+For instance quarks are localised at the intersection of the \emph{baryonic} stack of D-branes, yielding the colour symmetry generators, with the \emph{left} and \emph{right} stacks, leading to the $\qty( \vb{3}, \vb{2} )$ and $\qty( \vb{3}, \vb{1})$ representations.
 The same applies to leptons created by strings attached to the \emph{leptonic} stack.
 Combinations of the additional \U{1} factors in the resulting gauge group finally lead to the definition of the hypercharge $Y$.
 
 Physics in $4$ dimensions is eventually recovered by compactifying the extra-dimensions of the superstring.\footnotemark{}
 \footnotetext{%
-  In general we reviewed particle physics interactions.
+  We specifically reviewed particle physics interactions.
   Gravitational interactions in general remain untouched by these constructions and still propagate in $10$-dimensional spacetime.
 }
 Fermions localised at the intersection of the D-branes are however naturally $4$-dimensional as they only propagate in the non compact Minkowski space $\ccM^{1,3}$.
 The presence of compactified dimensions however leads to phenomena such as \emph{family replications} of the fermions.
 With accurate calibration it is in fact possible to recover the quark and lepton families in the \sm.
 Consider for example the simple \cy factorised manifold $T^6 = T^2 \times T^2 \times T^2$ and introduce stacks of D6-branes as lines in each of the bi-tori.
-Even though the lines might never intersect on a plane, they can come across on a torus due to the identifications~\cite{Zwiebach::FirstCourseString}.
+Even though the lines might never intersect on a plane, they can have points in common on a torus due to the identifications~\cite{Zwiebach::FirstCourseString}.
 Since each intersections supports a different set of fermions with different spectrum, the angles of the intersecting branes can be calibrated to reproduce the separation in mass of the families of quarks and leptons in the \sm.
+
 
 % vim: ft=tex

@@ -1,40 +1,37 @@
-The thesis follows my research work as Ph.D.\ student and candidate at the \emph{Università degli Studi di Torino}, Italy.
-During my programme I mainly dealt with the topic of string theory and its relation with phenomenology: I tried to cover mathematical aspects related to amplitudes in intersecting D-branes scenarios and in the presence of defects on the worldsheet, but I also worked on computational issues of the application of recent deep learning and machine learning techniques to the compactification of the extra-dimensions of string theory.
+This thesis follows my research work as a Ph.D.\ student and candidate at the \emph{Università degli Studi di Torino}, Italy.
+During my programme I mainly dealt with the topic of string theory and its relation with a viable formulation of phenomenology in this framework.
+I tried to cover mathematical aspects related to amplitudes in intersecting D-branes scenarios and in the presence of defects on the worldsheet, but I also worked on computational issues such as the application of recent deep learning and machine learning techniques to the compactification of the extra-dimensions of superstrings.
+In this manuscript I present the original results obtained over the course of my Ph.D.\ programme.
+They are mainly based on published work~\cite{Finotello:2019:ClassicalSolutionBosonic, Arduino:2020:OriginDivergencesTimeDependent} and preprints~\cite{Finotello:2019:2DFermionStrip, Erbin:2020:InceptionNeuralNetwork, Erbin:2020:MachineLearningComplete}.
+However I also include some hints to future directions to cover which might expand the work shown here.
+The thesis is organised in three main parts plus a fourth with appendices and notes.
 
-In this manuscript we present the original results obtained over the course of my Ph.D.\ programme.
-They are mainly based on published~\cite{Finotello:2019:ClassicalSolutionBosonic, Arduino:2020:OriginDivergencesTimeDependent} and preprint~\cite{Finotello:2019:2DFermionStrip, Erbin:2020:InceptionNeuralNetwork, Erbin:2020:MachineLearningComplete} works.
-We however also include some hints to future directions to cover which might expand the work shown here.
-The thesis is organised in three main parts plus a fourth with appendices and useful notes.
-
-We dedicate~\Cref{part:cft} to set the stage for the entire thesis and to present mathematical tools used to compute amplitudes with phenomenological relevance in string theory.
-Namely we begin with and introduction on conformal symmetry (clearly we focus only on aspects relevant to the discussion as many reviews on the subject have already been written) and the role of compactification and D-branes in replicating results obtained in particle physics.
-We then move to analyse a specific setup involving angled D-branes in non factorised internal space: this is a generalisation of the usual scenario with D6-branes embedded as lines in factorised tori.\footnotemark{}
+\Cref{part:cft} of the manuscript is dedicated to set the stage for the entire discussion and to present mathematical tools used to compute amplitudes with phenomenological relevance in string theory.
+Namely it starts with an introduction on conformal symmetry (clearly focusing only on aspects relevant to the discussion as many reviews on the subject have already been written) and the role of compactification and D-branes in replicating results obtained in particle physics.
+Then the analysis of a specific setup involving angled D6-branes intersecting in non factorised internal space is presented.\footnotemark{}
 \footnotetext{%
-  For instance this is a generalisation of the typical setup involving D6-branes filling entirely the $4$-dimensional spacetime and embedded as lines in $T^2 \times T^2 \times T^2$, where the possible rotations performed by the branes are Abelian $\SO{2} \sim \U{1}$ rotations.
+  For instance this is a generalisation of the typical setup involving D6-branes filling entirely the $4$-dimensional spacetime and embedded as lines in $T^2 \times T^2 \times T^2$, where the possible rotations performed by the D-branes are parametrised by Abelian $\SO{2} \simeq \U{1}$ rotations.
 }
-Here we present a general framework to deal with \SO{4} rotated D-branes.
-We then compute the leading term of amplitudes involving an arbitrary number of non Abelian twist fields located at their intersection, that is we calculate the exponential contribution of the classical bosonic string in this geometry.
-We finally consider point-like defects along the time direction of the (super)string worldsheet and study the propagation of fermions.
-We discover that the stress-energy tensor presents a time dependence but still respects the usual operator product expansion.
+Here a general framework to deal with \SO{4} rotated D-branes is presented alongside the computation of the leading term of amplitudes involving an arbitrary number of non Abelian twist fields located at their intersection, that is the exponential contribution of the classical bosonic string in this geometry.
+Finally point-like defects along the time direction of the (super)string worldsheet are introduced and the propagation of fermions on such surface studied in detail.
+In this setup the stress-energy tensor presents a time dependence but it still respects the usual operator product expansion.
 Thus the theory is still conformal though time dependence is due to the defects where spin fields are located.
-Through the study of the operator algebra we find a way to compute amplitudes in the presence of spin fields and matter fields alternative to the usual bosonization, but which may be expanded also to twist fields and to more general configurations.
+Through the study of the operator algebra the computation of amplitudes in the presence of spin fields and matter fields are computed with a method alternative to the usual bosonization, but which may be expanded also to twist fields and to more general configurations.
 
-In~\Cref{part:cosmo} we deal with cosmological singularities in string and field theory.
-We specifically focus on time-dependent orbifolds as simple models of Big Bang-like singularities in string theory: we first briefly introduce the concept of orbifold from the mathematical and the physical point of views and then immediately move to define the Null Boost Orbifold.
-Differently from what usually referred, we find that the divergences appearing in the amplitudes are not a consequence of gravitational feedback, but they appear also at the tree level of open string amplitudes.
-We therefore first show the source of the divergences in string and field theory amplitudes due to the presence of the compact dimension and its conjugated momentum which prevents the interpretation of the amplitudes even as a distribution.
-We then show that the introduction of a non compact direction of motion on the orbifold restores the physical interpretation of the amplitude, hence the origin of the divergences comes from geometrical aspects of the orbifold models.
+\Cref{part:cosmo} deals with cosmological singularities in string and field theory.
+The main focus is on time-dependent orbifolds as simple models of Big Bang-like singularities in string theory: after a brief introduction on the concept of orbifold from the mathematical and the physical point of views, the Null Boost Orbifold is introduced as first example.
+Differently from what usually referred, the divergences appearing in the amplitudes are not a consequence of gravitational feedback, but they appear also at the tree level of open string amplitudes.
+The source of the divergences are shown in string and field theory amplitudes due to the presence of the compact dimension and its conjugated momentum which prevents the interpretation of the amplitudes even as a distribution.
+In fact the introduction of a non compact direction of motion on the orbifold restores the physical interpretation of the amplitude, hence the origin of the divergences comes from geometrical aspects of the orbifold models.
 Namely it is hidden in contact terms and interaction with massive string states which are no longer spectators, thus invalidating the usual approach with the inheritance principle.
 
 \Cref{part:deeplearning} is dedicated to state-of-the-art application of deep learning techniques to the field of string theory compactifications.
-We focus on predicting the Hodge numbers of Complete Intersection Calabi--Yau $3$-folds through a rigorous machine learning analysis.
-In fact we show that the blind application of neural networks to the configuration matrix of the manifolds can be improved by exploratory data analysis and feature engineering, which allow us to infer behaviour and relations in topological quantities invisibly hidden in the configuration matrix.
-We then concentrate on deep learning techniques applied to the manifolds to obtain the Hodge numbers as a regression task.\footnotemark{}
+The Hodge numbers of Complete Intersection Calabi--Yau $3$-folds are computed through a rigorous data science and machine learning analysis.
+In fact the blind application of neural networks to the configuration matrix of the manifolds can be improved by exploratory data analysis and feature engineering, from which to infer behaviour and relations of topological quantities invisibly hidden in the configuration matrix.
+Deep learning techniques are then applied to the manifolds to obtain the Hodge numbers as a regression task.\footnotemark{}
 \footnotetext{%
   Many previous approaches have proposed classification tasks to get the best performance out of machine learning models.
   This however implies specific knowledge of the definition interval of the Hodge numbers and does not generalise well to unknown examples of Complete Intersection Calabi--Yau manifolds.
 }
-We introduce a new neural network architecture based on recent computer vision advancements in the field of computer science: we use parallel convolutional kernels to extract the Hodge numbers from the configuration matrix and reach near perfect accuracy on the prediction of \hodge{1}{1}.
-We also include good preliminary results for \hodge{2}{1}.
-
-We also include details and reviews in~\Cref{part:appendix} for completeness.
+A new neural network architecture based on recent computer vision advancements in the field of computer science is eventually introduced: it utilises parallel convolutional kernels to extract the Hodge numbers from the configuration matrix and it reaches near perfect accuracy on the prediction of \hodge{1}{1}.
+Such model also leads to good preliminary results for \hodge{2}{1} which has been mostly ignored by previous attempts.
