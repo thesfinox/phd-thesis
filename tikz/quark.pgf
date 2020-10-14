@@ -1,0 +1,21 @@
+﻿\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows}
+
+\begin{tikzpicture}
+
+% draw the D-branes
+\draw[thick] (0cm, 0cm) node[anchor=north] (r) {$r$} -- (1cm, 0.5cm) -- (1cm, 4cm) -- (0cm, 3.5cm) -- cycle;
+\draw[thick] (0.3cm, 0cm) node[anchor=north] (g) {$g$} -- (1.3cm, 0.5cm) -- (1.3cm, 4cm) -- (0.3cm, 3.5cm) -- cycle;
+\draw[thick] (0.6cm, 0cm) node[anchor=north] (b) {$b$} -- (1.6cm, 0.5cm) -- (1.6cm, 4cm) -- (0.6cm, 3.5cm) -- cycle;
+
+\draw[thick] (4cm, 0cm) node[anchor=north] (u) {$u$} -- (5cm, 0.5cm) -- (5cm, 4cm) -- (4cm, 3.5cm) -- cycle;
+\draw[thick] (4.3cm, 0cm) node[anchor=north] (d) {$d$} -- (5.3cm, 0.5cm) -- (5.3cm, 4cm) -- (4.3cm, 3.5cm) -- cycle;
+
+% draw the strings
+\draw[decorate, decoration={snake, segment length=1cm}, dash pattern=on 3.35cm off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt, postaction={decoration={markings, mark=at position 0.5 with {\arrow{>}}}, decorate}] (0.85cm, 2.5cm) -- (4.25cm, 2.5cm);
+\draw[decorate, decoration={snake, segment length=1cm}, dash pattern=on 3.35cm off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt, postaction={decoration={markings, mark=at position 0.5 with {\arrow{<}}}, decorate}] (0.85cm, 1.5cm) -- (4.25cm, 1.5cm);
+
+\end{tikzpicture}
+
+% vim: ft=tex

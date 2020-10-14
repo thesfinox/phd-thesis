@@ -1,0 +1,27 @@
+﻿\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows}
+
+\begin{tikzpicture}
+
+% draw the D-branes
+\draw[thick] (0cm, 0cm) -- (1cm, 0.5cm) -- (1cm, 4cm) -- (0cm, 3.5cm) -- cycle;
+\draw[thick] (2.5cm, 0cm) -- (3.5cm, 0.5cm) -- (3.5cm, 4cm) -- (2.5cm, 3.5cm) -- cycle;
+\draw[thick] (5cm, 0cm) -- (6cm, 0.5cm) -- (6cm, 4cm) -- (5cm, 3.5cm) -- cycle;
+
+% draw strings
+\draw[decorate, decoration={snake, segment length=1cm}, dash pattern=on 2.45cm off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt, postaction={decoration={markings, mark=at position 0.5 with {\arrow{>}}}, decorate}] (0.5cm, 3cm) -- (3cm, 1.5cm);
+\node[anchor=base] (l1) at (1.75cm, 2.75cm) {$\tensor{\lambda}{^1_1_2}$};
+
+\draw[decorate, decoration={snake, segment length=1cm}, dash pattern=on 2.45cm off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt, postaction={decoration={markings, mark=at position 0.5 with {\arrow{>}}}, decorate}] (3cm, 3cm) -- (5.5cm, 1.5cm);
+\node[anchor=base] (l2) at (4.25cm, 2.75cm) {$\tensor{\lambda}{^2_2_3}$};
+
+\draw[decorate, decoration={snake, segment length=1cm}, postaction={decoration={markings, mark=at position 0.765 with {\arrow{>}}}, decorate}] (3cm, 2.5cm) .. controls (3.5cm, 2cm) and (3.5cm, 1cm) .. (3cm, 0.5cm);
+\node[anchor=base] (l3) at (4cm, 1.5cm) {$\tensor{\lambda}{^3_2_2}$};
+
+\draw[decorate, decoration={snake, segment length=1cm}, dash pattern=on 5.15cm off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt on 1pt off 1pt, postaction={decoration={markings, mark=at position 0.5 with {\arrow{<}}}, decorate}] (0.5cm, 1cm) .. controls (1.5cm, 0cm) and (4cm, 0cm) .. (5.5cm, 1cm);
+\node[anchor=base] (l4) at (3cm, -0.5cm) {$\tensor{\lambda}{^4_3_1}$};
+
+\end{tikzpicture}
+
+% vim: ft=tex

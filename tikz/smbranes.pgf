@@ -1,0 +1,35 @@
+﻿\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows}
+
+\begin{tikzpicture}
+
+% draw the baryonic stack
+\draw[thick] (-2.5cm, 5cm) -- (2.5cm, 5cm);
+\draw[thick] (-2.5cm, 4.9cm) -- (2.5cm, 4.9cm) node[anchor=west] (baryonic) {baryonic $\qty(Y = \frac{1}{3} )$};
+\draw[thick] (-2.5cm, 4.8cm) -- (2.5cm, 4.8cm);
+
+% draw the left stack
+\draw[thick] (-2.25cm, 5.25cm) -- (-2.25cm, 0cm);
+\draw[thick] (-2.15cm, 5.25cm) -- (-2.15cm, 0cm) node[anchor=north east] (left) {left $\qty( Y = - \frac{1}{2} )$};
+
+% draw leptonic and right stacks
+\draw[thick] (-2.5cm, 2.5cm) -- (2.5cm, 2.5cm) node[anchor=west] (l1) {leptonic $\qty( Y = 0 )$};
+\draw[thick] (-2.5cm, 0.5cm) -- (2.5cm, 0.5cm) node[anchor=west] (l2) {leptonic $\qty( Y = -1 )$};
+\draw[thick] (0cm, 5.25cm) -- (0cm, 0cm) node[anchor=north] (r1) {right $\qty( Y = -1 )$};
+\draw[thick] (2.25cm, 5.25cm) -- (2.25cm, 0cm) node[anchor=north west] (r2) {right $\qty( Y = 0 )$};
+
+% draw left quarks
+\draw[decorate, decoration={snake, segment length=0.5cm}, postaction={decoration={markings, mark=at position 0.5 with {\arrow{>}}}, decorate}] (-2.15cm, 3.5cm) node[anchor=south east] {$\mqty( u_L \\ d_L )$} -- (-1cm, 4.8cm);
+% draw up right quark
+\draw[decorate, decoration={snake, segment length=0.5cm}, postaction={decoration={markings, mark=at position 0.5 with {\arrow{<}}}, decorate}] (0cm, 3.5cm) node[anchor=east] {$\baru_R$} -- (1cm, 4.8cm);
+% draw down right quark
+\draw[decorate, decoration={snake, segment length=0.5cm}, postaction={decoration={markings, mark=at position 0.5 with {\arrow{<}}}, decorate}] (2.25cm, 3.5cm) node[anchor=west] {$\bard_R$} -- (1.15cm, 4.8cm);
+% draw left leptons
+\draw[decorate, decoration={snake, segment length=0.5cm}, postaction={decoration={markings, mark=at position 0.5 with {\arrow{>}}}, decorate}] (-2.15cm, 0.9cm) node[anchor=south east] {$\mqty( \nu^e_L \\ e^-_L )$} -- (-1cm, 2.5cm);
+% draw right leptons
+\draw[decorate, decoration={snake, segment length=0.5cm}, postaction={decoration={markings, mark=at position 0.5 with {\arrow{<}}}, decorate}] (0cm, 0.9cm) node[anchor=east] {$\bare^+_R$} -- (1cm, 2.5cm);
+
+\end{tikzpicture}
+
+% vim: ft=tex

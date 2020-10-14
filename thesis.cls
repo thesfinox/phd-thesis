@@ -37,6 +37,8 @@
 \RequirePackage{changepage} %------------------- change page layout
 \RequirePackage{lastpage} %--------------------- reference to last page
 \RequirePackage{tocloft} %---------------------- modify table of contents
+\RequirePackage{tikz} %------------------------- TikZ pictures
+\RequirePackage{pgf} %-------------------------- pgf plots
 \RequirePackage[type={CC},
                 modifier={by-nc-nd},
                 version={4.0}]{doclicense} %---- licence

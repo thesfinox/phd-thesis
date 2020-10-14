@@ -1,0 +1,35 @@
+﻿\begin{tikzpicture}
+
+% draw axis
+\draw[thick, ->] (-3cm, 0cm) -- (3cm, 0cm) node[anchor=south] {$X^1$};
+\draw[thick, ->] (0cm, -3cm) -- (0cm, 3cm) node[anchor=east] {$X^2$};
+
+% draw the D-branes
+\draw[dash pattern=on 5pt off 2pt on 5pt off 2pt on 4cm off 2pt] (-2.5cm, -1cm) -- (2.75cm, -2.15cm);
+\draw[dash pattern=on 5pt off 2pt on 5pt off 2pt on 5pt off 2pt on 5pt off 2pt on 4.5cm off 2pt] (-2.5cm, -2cm) -- (1cm, 2.75cm);
+\draw[dash pattern=on 5pt off 2pt on 5pt off 2pt on 4.5cm off 2pt] (0.6cm, 2.9cm) -- (2cm, -2.75cm);
+
+% give the D-branes names
+\node[anchor=base] (D1) at (-0.75cm, -2.25cm) {$D_{(1)}$};
+\node[anchor=base] (D2) at (-1.25cm, 1cm) {$D_{(2)}$};
+\node[anchor=base] (D3) at (1.7cm, 0.8cm) {$D_{(3)}$};
+
+% draw the distance of each side from the center
+\draw[thin] (0cm, 0cm) -- (-0.3cm, -1.47cm) node[anchor=north] {$g_{(1)}$};
+\draw[thin] (0cm, 0cm) -- (-0.7cm, 0.45cm) node[anchor=east] {$g_{(2)}$};
+\draw[thin] (0cm, 0cm) -- (1.27cm, 0.22cm) node[anchor=west] {$g_{(3)}$};
+
+% prolong the end points
+\draw[dotted] (1.3cm, -1.925cm) node[anchor=north] {$f_{(1)}$} -- (3cm, -1.925cm);
+\draw[dotted] (0.3cm, 2.4cm) -- (2cm, 2.4cm) node[anchor=north east] {$f_{(2)}$};
+\draw[dotted] (-2.3cm, -1.14cm) node[anchor=north east] {$f_{(3)}$} -- (-0.6cm, -1.14cm);
+
+% draw the arcs for the angles
+
+\draw[thin, <-] (2.6cm, -2.12cm) arc (0:30:0.4cm) node[anchor=south] {$\pi \alpha_{(1)}$};
+\draw[thin, <-] (-2.1cm, -1.5cm) arc (250:360:0.4cm) node[anchor=south west] {$\pi \alpha_{(2)}$};
+\draw[thin, <-] (1.1cm, 2.4cm) arc (0:100:0.4cm) node[anchor=south] {$\pi \alpha_{(3)}$};
+
+\end{tikzpicture}
+
+% vim: ft=tex

@@ -1,0 +1,13 @@
+﻿\begin{tikzpicture}
+
+% draw the D-brane
+\draw (0cm, 0cm) -- (5cm, -1cm) -- (6cm, 3cm) -- (1.5cm, 4cm) node[anchor=south west] {$D_{(t)}$} -- cycle;
+
+% draw a triad of axis
+\draw[thick, ->] (3cm, 1cm) -- (2.7cm, 0.1cm) node[anchor=east] {$X^1_{(t)}$};
+\draw[thick, ->] (3cm, 1cm) -- (5cm, 0.6cm) node[anchor=south] {$X^2_{(t)}$};
+\draw[thick, ->] (3cm, 1cm) -- (3cm, 2.75cm) node[anchor=east] {$X^3_{(t)}$};
+
+\end{tikzpicture}
+
+% vim: ft=tex
