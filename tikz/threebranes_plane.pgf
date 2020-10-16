@@ -1,0 +1,21 @@
+﻿\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
+
+\begin{tikzpicture}
+
+% draw axis
+\draw[thick, ->] (-0.5cm, 0cm) -- (5cm, 0cm) node[anchor=south] {$\Re \omega$};
+\draw[thick, ->] (0cm, -1cm) -- (0cm, 3cm) node[anchor=east] {$\Im \omega$};
+
+% draw branching cuts
+\filldraw[fill=black!30, draw=black, dashed] (0cm, 2pt) rectangle (4.8cm, -2pt);
+\filldraw[fill=black!10, draw=black, dashed] (1cm, 1pt) rectangle (4.8cm, -1pt);
+
+% draw branching points
+\filldraw[fill=white, draw=black] (4.8cm, 0cm) circle (2pt) node[anchor=north] (x1) {$\infty$};
+\filldraw[fill=white, draw=black] (1cm, 0cm) circle (2pt) node[anchor=north] (x2) {$1$};
+\filldraw[fill=white, draw=black] (0cm, 0cm) circle (2pt) node[anchor=north east] (x3) {$0$};
+
+\end{tikzpicture}
+
+% vim: ft=tex

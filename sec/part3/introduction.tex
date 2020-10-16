@@ -59,7 +59,7 @@ Thus getting also \hodge{2}{1} from \ml techniques is an important first step to
 Finally regression is also more useful for extrapolating results: a classification approach assumes that we already know all the possible values of the Hodge numbers and has difficulties to predict labels which do not appear in the training set.
 This is necessary when we move to a dataset for which not all topological quantities have been computed, for instance CY constructed from the Kreuzer--Skarke list of polytopes~\cite{Kreuzer:2000:CompleteClassificationReflexive}.
 
-The data analysis and \ml are programmed in Python using open-source packages: \texttt{pandas}~\cite{WesMcKinney:2010:DataStructuresStatistical}, \texttt{matplotlib}~\cite{Hunter:2007:Matplotlib2DGraphics}, \texttt{seaborn}~\cite{Waskom:2020:MwaskomSeabornV0}, \texttt{scikit-learn}~\cite{Pedregosa:2011:ScikitlearnMachineLearning}, \texttt{scikit-optimize}~\cite{Head:2020:ScikitoptimizeScikitoptimize}, \texttt{tensorflow}~\cite{Abadi:2015:TensorFlowLargescaleMachine} (and its high level API \emph{Keras}).
+The data analysis and \ml are programmed in Python using known open-source packages such as \texttt{pandas}~\cite{WesMcKinney:2010:DataStructuresStatistical}, \texttt{matplotlib}~\cite{Hunter:2007:Matplotlib2DGraphics}, \texttt{seaborn}~\cite{Waskom:2020:MwaskomSeabornV0}, \texttt{scikit-learn}~\cite{Pedregosa:2011:ScikitlearnMachineLearning}, \texttt{scikit-optimize}~\cite{Head:2020:ScikitoptimizeScikitoptimize}, \texttt{tensorflow}~\cite{Abadi:2015:TensorFlowLargescaleMachine} (and its high level API \emph{Keras}).
 Code is available on \href{https://thesfinox.github.io/ml-cicy/}{Github}.
 
 
@@ -192,14 +192,14 @@ Below we show a list of the \cicy properties and of their configuration matrices
 
 \begin{figure}[tbp]
   \centering
-  \begin{subfigure}[c]{.45\linewidth}
+  \begin{subfigure}[b]{.45\linewidth}
     \centering
     \includegraphics[width=\linewidth, trim={0 0.45in 6in 0}, clip]{img/label-distribution_orig}
     \caption{\hodge{1}{1}}
     \label{fig:data:hist-h11}
   \end{subfigure}
   \hfill
-  \begin{subfigure}[c]{.45\linewidth}
+  \begin{subfigure}[b]{.45\linewidth}
     \centering
     \includegraphics[width=\linewidth, trim={6in 0.45in 0 0}, clip]{img/label-distribution_orig}
     \caption{\hodge{2}{1}}

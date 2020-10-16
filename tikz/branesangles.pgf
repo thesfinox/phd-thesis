@@ -28,7 +28,7 @@
 
 \draw[thin, <-] (2.6cm, -2.12cm) arc (0:30:0.4cm) node[anchor=south] {$\pi \alpha_{(1)}$};
 \draw[thin, <-] (-2.1cm, -1.5cm) arc (250:360:0.4cm) node[anchor=south west] {$\pi \alpha_{(2)}$};
-\draw[thin, <-] (1.1cm, 2.4cm) arc (0:100:0.4cm) node[anchor=south] {$\pi \alpha_{(3)}$};
+\draw[thin, ->] (1.1cm, 2.4cm) arc (0:100:0.4cm) node[anchor=south] {$\pi \alpha_{(3)}$};
 
 \end{tikzpicture}
 

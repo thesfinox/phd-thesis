@@ -1,0 +1,29 @@
+﻿\usetikzlibrary{decorations.pathmorphing}
+
+\begin{tikzpicture}
+
+% draw axis
+\draw[thick, ->] (-3cm, 0cm) -- (3cm, 0cm) node[anchor=south] {$\tau$};
+\draw[thick, ->] (-0.75cm, -1cm) -- (-0.75cm, 3cm) node[anchor=east] {$\sigma$};
+
+% draw defects
+\filldraw[fill=white, draw=black] (-2cm, 0cm) circle (2pt) node[anchor=north] {$\htau_{(t+1)}$};
+\filldraw[fill=white, draw=black] (0.25cm, 0cm) circle (2pt) node[anchor=north] {$\htau_{(t)}$};
+\filldraw[fill=white, draw=black] (2.25cm, 0cm) circle (2pt) node[anchor=north] {$\htau_{(t-1)}$};
+
+% draw the endlines
+\draw[dotted] (-2cm, 2pt) -- (-2cm, 2cm);
+\draw[dotted] (0.25cm, 2pt) -- (0.25cm, 2cm);
+\draw[dotted] (2.25cm, 2pt) -- (2.25cm, 2cm);
+
+% draw the second D-brane
+\draw[dashed] (-3cm, 2cm) -- (3cm, 2cm);
+\node[anchor=south west] at (-0.75cm, 2cm) {$\pi$};
+
+% draw the string
+\draw[decorate, decoration={snake, segment length=0.75cm}] (1cm, 0cm) -- (1cm, 2cm);
+\draw[->] (1.1cm, 1cm) -- (1.6cm, 1cm);
+
+\end{tikzpicture}
+
+% vim: ft=tex

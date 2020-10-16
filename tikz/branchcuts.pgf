@@ -1,0 +1,32 @@
+﻿\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.pathmorphing}
+
+\begin{tikzpicture}
+
+% draw axis
+\draw[thick, ->] (-3cm, 0cm) -- (3cm, 0cm) node[anchor=south] {$x$};
+\draw[thick, ->] (-0.4cm, -1cm) -- (-0.4cm, 3cm) node[anchor=east] {$y$};
+
+% draw branching cuts
+\filldraw[fill=black!50, draw=black, dashed] (-2cm, 3pt) rectangle (2.5cm, -3pt);
+\filldraw[fill=black!30, draw=black, dashed] (-0.75cm, 2pt) rectangle (2.5cm, -2pt);
+\filldraw[fill=black!10, draw=black, dashed] (1cm, 1pt) rectangle (2.5cm, -1pt);
+
+% draw branching points
+\filldraw[fill=white, draw=black] (2.5cm, 0cm) circle (2pt) node[anchor=north, below=3pt] (x1) {$x_{(1)}$};
+\filldraw[fill=white, draw=black] (1cm, 0cm) circle (2pt) node[anchor=north, below=3pt] (x2) {$x_{(2)}$};
+\filldraw[fill=white, draw=black] (-0.75cm, 0cm) circle (2pt) node[anchor=north, below=3pt] (x3) {$x_{(3)}$};
+\filldraw[fill=white, draw=black] (-2cm, 0cm) circle (2pt) node[anchor=north, below=3pt] (x4) {$x_{(4)}$};
+
+% assign the D-branes
+\draw[thin, decorate, decoration={brace}] (1cm, 0.3cm) -- (2.5cm, 0.3cm) node[midway, anchor=south] {$D_{(2)}$};
+\draw[thin, decorate, decoration={brace}] (-0.75cm, 0.3cm) -- (1cm, 0.3cm) node[midway, anchor=south] {$D_{(3)}$};
+\draw[thin, decorate, decoration={brace}] (-2cm, 0.3cm) -- (-0.75cm, 0.3cm) node[midway, anchor=south] {$D_{(4)}$};
+
+% draw the remaining D-brane
+\draw[thin, ->, dash pattern=on 2pt off 2pt on 2pt off 2pt on 2pt off 2pt on 2pt off 2pt on 2pt off 2pt on 2pt off 2pt on 1cm] (-2cm, 2pt) -- (-2cm, 1cm)-- (-2.75cm, 1cm) node[midway, anchor=south] {$D_{(1)}$} ;
+\draw[thin, ->, dash pattern=on 2pt off 2pt on 2pt off 2pt on 2pt off 2pt on 2pt off 2pt on 2pt off 2pt on 2pt off 2pt on 1cm] (2.5cm, 2pt) -- (2.5cm, 1cm)-- (3cm, 1cm) node[midway, anchor=south] {$D_{(1)}$} ;
+
+\end{tikzpicture}
+
+% vim: ft=tex

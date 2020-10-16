@@ -1,22 +1,19 @@
-﻿\usetikzlibrary{decorations.markings}
-\usetikzlibrary{arrows}
-
-\begin{tikzpicture}
+﻿\begin{tikzpicture}
 
 % draw axis
 \draw[thick, ->] (-3cm, 0cm) -- (3cm, 0cm) node[anchor=south] {$\Re z$};
 \draw[thick, ->] (0cm, -3cm) -- (0cm, 3cm) node[anchor=east] {$\Im z$};
 
 % draw closed loops
-\draw[dotted, decorate, decoration={markings, mark=at position 0.0 with {\arrow{latex}}}] (0cm, 0cm) circle [radius=1.0cm];
-\draw[dotted, decorate, decoration={markings, mark=at position 0.0 with {\arrow{latex}}}] (0cm, 0cm) circle [radius=2.5cm];
+\draw[dotted, -latex] (1cm, 0cm) arc (0:360:1cm);
+\draw[dotted, -latex] (2.5cm, 0cm) arc (0:360:2.5cm);
 
 % draw arrows
-\draw[-latex] (0,0) -- (1.75cm, 1.75cm) node[anchor=south west] (z1) {$\abs{z_{(1)}} = e^{\tau_{E\, (1)}}$};
-\draw[-latex] (0,0) -- (0.45cm, -0.9cm) node[anchor=north west] (z0) {$\abs{z_{(0)}} = e^{\tau_{E\, (0)}}$};
+\draw[-latex] (0,0) -- (1.75cm, 1.75cm) node[anchor=south] (z1) {$\abs{z_{(1)}} = e^{\tau_{E\, (1)}}$};
+\draw[-latex] (0,0) -- (0.45cm, -0.9cm) node[anchor=north] (z0) {$\abs{z_{(0)}} = e^{\tau_{E\, (0)}}$};
 
 % draw isolated point
-\draw[fill] (-1.5cm, 1.1cm) circle [radius=2pt] node[anchor=south west] (w) {$w$};
+\draw[fill] (-1.5cm, 1.1cm) circle (2pt) node[anchor=south west] (w) {$w$};
 
 % draw the names of the paths (use $\mathcal{C}$ instead of $\ccC$ if it does not compile)
 \node (c0) at (-0.7cm, -1.2cm) {$\ccC_{(0)}$};

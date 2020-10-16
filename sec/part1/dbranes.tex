@@ -381,8 +381,7 @@ We thus translated the rotations of the D-branes encoded in the matrices $R_{(t)
 
 \begin{figure}[tbp]
   \centering
-  \def\svgwidth{0.5\textwidth}
-  \import{img}{branchcuts.pdf_tex}
+  \import{tikz}{branchcuts.pgf}
   \caption{%
     Branch cut structure of the complex plane with $N_B = 4$.
     Cuts are pictured as solid coloured blocks running from one intersection point to another at finite.
@@ -599,8 +598,7 @@ We choose $\bart = 1$ in what follows.
 
 \begin{figure}[tbp]
   \centering
-  \def\svgwidth{0.35\linewidth}
-  \import{img}{threebranes_plane.pdf_tex}
+  \import{tikz}{threebranes_plane.pgf}
   \caption{%
     Fixing the \SL{2}{\R} invariance for $N_B = 3$ and $\bart = 1$ leads to a cut structure with all the cuts defined on the real axis towards $\omega_{\bart} = \infty$.}
   \label{fig:hypergeometric_cuts}
@@ -2111,23 +2109,41 @@ Here we compute the parameter $\vec{n}_{1}$ given two Abelian rotation in $\omeg
 Results are shown in~\Cref{tab:Abelian_composition}.
 
 \begin{figure}[tbp]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
     \centering
-    \def\svgwidth{0.8\textwidth}
-    \import{img}{abelian_angles_case1.pdf_tex}
-    \caption{%
-      The Abelian limit when the triangle has all acute angles.
-      This corresponds to the cases  $n_{0} + n_{\infty}< \frac{1}{2}$ and $n_{0}< n_{\infty}$ which are exchanged under the parity $P_2$.}
-    \label{fig:Abelian_angles_1}
+    \import{tikz}{abelian_angles_case1_a.pgf}
+    \caption{Case 1.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \import{tikz}{abelian_angles_case1_b.pgf}
+    \caption{Case 2.}
+  \end{subfigure}
+  \caption{%
+    The Abelian limit when the triangle has all acute angles.
+    This corresponds to the cases  $n_{0} + n_{\infty}< \frac{1}{2}$ and $n_{0}< n_{\infty}$ which are exchanged under the parity $P_2$.}
+  \label{fig:Abelian_angles_1}
 \end{figure}
 
 \begin{figure}[tbp]
+  \centering
+  \begin{subfigure}[b]{0.45\linewidth}
     \centering
-    \def\svgwidth{0.8\textwidth}
-    \import{img}{abelian_angles_case2.pdf_tex}
-    \caption{%
-      The Abelian limit when the triangle has one obtuse angle.
-      This corresponds to the cases $n_{0} + n_{\infty}> \frac{1}{2}$ and $n_{0}> n_{\infty}$ which are exchanged under the parity $P_2$.}
-    \label{fig:Abelian_angles_2}
+    \import{tikz}{abelian_angles_case2_a.pgf}
+    \caption{Case 1.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \import{tikz}{abelian_angles_case2_b.pgf}
+    \caption{Case 2.}
+  \end{subfigure}
+  \caption{%
+    The Abelian limit when the triangle has one obtuse angle.
+    This corresponds to the cases $n_{0} + n_{\infty}> \frac{1}{2}$ and $n_{0}> n_{\infty}$ which are exchanged under the parity $P_2$.}
+  \label{fig:Abelian_angles_2}
 \end{figure}
 
 Under the parity transformation $P_2$ the previous four cases are grouped
@@ -2151,8 +2167,17 @@ when all $m = 0$.
 
 \begin{figure}[tbp]
   \centering
-  \def\svgwidth{0.8\textwidth}
-  \import{img}{usual_abelian_angles.pdf_tex}
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \import{tikz}{usual_abelian_angles_a.pgf}
+    \caption{Case 1.}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\linewidth}
+    \centering
+    \import{tikz}{usual_abelian_angles_b.pgf}
+    \caption{Case 2.}
+  \end{subfigure}
   \caption{%
     The geometrical angles used in the usual geometrical approach to the Abelian configuration do not distinguish among the possible branes orientations.
     In fact we have $0 \le \alpha < 1$ and $0 < \varepsilon < 1$.
@@ -2552,8 +2577,7 @@ Each term of the action can be interpreted again as an area of a triangle where 
 
 \begin{figure}[tbp]
   \centering
-  \def\svgwidth{0.35\textwidth}
-  \import{img/}{brane3d.pdf_tex}
+  \import{tikz}{brane3d.pgf}
   \caption{%
     Pictorial $3$-dimensional representation of two D2-branes intersecting in the Euclidean space $\R^3$ along a line (in $\R^4$ the intersection is a point since the co-dimension of each D-brane is 2): since it is no longer constrained on a bi-dimensional plane, the string must be deformed in order to stretch between two consecutive D-branes.
     Its action can be larger than the planar area.

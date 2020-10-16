@@ -1,0 +1,193 @@
+﻿%\newlength{\layer}
+%\newlength{\layerheight}
+%\newlength{\perspective}
+%\newlength{\filters}
+%\newlength{\unit}
+\newlength{\upperlevel}
+\newlength{\bottomlevel}
+\newlength{\concatheight}
+
+\setlength{\layer}{3cm}
+\setlength{\layerheight}{3cm}
+\setlength{\perspective}{1cm}
+\setlength{\filters}{0.01cm}
+\setlength{\unit}{0.225cm}
+\setlength{\upperlevel}{2.25cm}
+\setlength{\bottomlevel}{-2.25cm}
+\setlength{\concatheight}{0cm}
+
+\usetikzlibrary{decorations.pathreplacing}
+
+\begin{tikzpicture}
+
+% input layer
+\filldraw[fill=cyan!20, draw=black, fill opacity=0.5] (1cm, 0cm) -- (1cm + \perspective, \perspective) -- (1cm + \perspective, \perspective + \layerheight) -- (1cm, \layerheight) -- cycle;
+\node[anchor=south west, scale=0.65, rotate=45] at (1cm, \layerheight) {$1 @ 12 \times 15$};
+\node[anchor=north west, scale=0.65] at (1cm, 0cm) {input layer};
+
+% first layer
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (\layer, \upperlevel) -- (\layer + 32 * \filters, \upperlevel) -- (\layer + 32 * \filters + \perspective, \upperlevel + \perspective) -- (\layer + \perspective, \upperlevel + \perspective) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (\layer + \perspective, \upperlevel + \perspective) -- (\layer + 32 * \filters + \perspective, \upperlevel + \perspective) -- (\layer + 32 * \filters + \perspective, \upperlevel + \perspective + \layerheight) -- (\layer + \perspective, \upperlevel + \perspective + \layerheight) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (\layer, \upperlevel) -- (\layer + \perspective, \upperlevel + \perspective) -- (\layer + \perspective, \upperlevel + \perspective + \layerheight) -- (\layer, \upperlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (\layer, \upperlevel) -- (\layer + 32 * \filters, \upperlevel) -- (\layer + 32 * \filters, \upperlevel + \layerheight) -- (\layer, \upperlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (\layer + 32 * \filters, \upperlevel) -- (\layer + 32 * \filters + \perspective, \upperlevel + \perspective) -- (\layer + 32 * \filters + \perspective, \upperlevel + \perspective + \layerheight) -- (\layer + 32 * \filters, \upperlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (\layer, \upperlevel + \layerheight) -- (\layer + 32 * \filters, \upperlevel + \layerheight) -- (\layer + 32 * \filters + \perspective, \upperlevel + \perspective + \layerheight) -- (\layer + \perspective, \upperlevel + \perspective + \layerheight) -- cycle;
+\node[anchor=south west, scale=0.65, rotate=45] at (\layer, \upperlevel + \layerheight) {$32 @ 12 \times 15$};
+
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (\layer, \bottomlevel) -- (\layer + 32 * \filters, \bottomlevel) -- (\layer + 32 * \filters + \perspective, \bottomlevel + \perspective) -- (\layer + \perspective, \bottomlevel + \perspective) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (\layer + \perspective, \bottomlevel + \perspective) -- (\layer + 32 * \filters + \perspective, \bottomlevel + \perspective) -- (\layer + 32 * \filters + \perspective, \bottomlevel + \perspective + \layerheight) -- (\layer + \perspective, \bottomlevel + \perspective + \layerheight) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (\layer, \bottomlevel) -- (\layer + \perspective, \bottomlevel + \perspective) -- (\layer + \perspective, \bottomlevel + \perspective + \layerheight) -- (\layer, \bottomlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (\layer, \bottomlevel) -- (\layer + 32 * \filters, \bottomlevel) -- (\layer + 32 * \filters, \bottomlevel + \layerheight) -- (\layer, \bottomlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (\layer + 32 * \filters, \bottomlevel) -- (\layer + 32 * \filters + \perspective, \bottomlevel + \perspective) -- (\layer + 32 * \filters + \perspective, \bottomlevel + \perspective + \layerheight) -- (\layer + 32 * \filters, \bottomlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (\layer, \bottomlevel + \layerheight) -- (\layer + 32 * \filters, \bottomlevel + \layerheight) -- (\layer + 32 * \filters + \perspective, \bottomlevel + \perspective + \layerheight) -- (\layer + \perspective, \bottomlevel + \perspective + \layerheight) -- cycle;
+\node[anchor=south west, scale=0.65, rotate=45] at (\layer, \bottomlevel + \layerheight) {$32 @ 12 \times 15$};
+
+% first concatenation
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (2 * \layer, \concatheight) -- (2 * \layer + 64 * \filters, \concatheight) -- (2 * \layer + 64 * \filters + \perspective, \concatheight + \perspective) -- (2 * \layer + \perspective, \concatheight + \perspective) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (2 * \layer + \perspective, \concatheight + \perspective) -- (2 * \layer + 64 * \filters + \perspective, \concatheight + \perspective) -- (2 * \layer + 64 * \filters + \perspective, \concatheight + \perspective + \layerheight) -- (2 * \layer + \perspective, \concatheight + \perspective + \layerheight) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (2 * \layer, \concatheight) -- (2 * \layer + \perspective, \concatheight + \perspective) -- (2 * \layer + \perspective, \concatheight + \perspective + \layerheight) -- (2 * \layer, \concatheight + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (2 * \layer, \concatheight) -- (2 * \layer + 64 * \filters, \concatheight) -- (2 * \layer + 64 * \filters, \concatheight + \layerheight) -- (2 * \layer, \concatheight + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (2 * \layer + 64 * \filters, \concatheight) -- (2 * \layer + 64 * \filters + \perspective, \concatheight + \perspective) -- (2 * \layer + 64 * \filters + \perspective, \concatheight + \perspective + \layerheight) -- (2 * \layer + 64 * \filters, \concatheight + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (2 * \layer, \concatheight + \layerheight) -- (2 * \layer + 64 * \filters, \concatheight + \layerheight) -- (2 * \layer + 64 * \filters + \perspective, \concatheight + \perspective + \layerheight) -- (2 * \layer + \perspective, \concatheight + \perspective + \layerheight) -- cycle;
+\node[anchor=south west, scale=0.65, rotate=45] at (2 * \layer, \concatheight + \layerheight) {$64 @ 12 \times 15$};
+
+\draw (\layer + 32 * \filters + 1.2 * \perspective, \upperlevel + 0.5 * \layerheight) -- (\layer + 32 * \filters + 1.7 * \perspective, \upperlevel + 0.5 * \layerheight) -- (\layer + 32 * \filters + 1.7 * \perspective, \bottomlevel + 0.5 * \layerheight) -- (\layer + 32 * \filters + 1.2 * \perspective, \bottomlevel + 0.5 * \layerheight);
+\filldraw[fill=red!20, draw=black] (\layer + 32 * \filters + 1.7 * \perspective, \concatheight + 0.5 * \layerheight) node[anchor=center, scale=0.8] {$C$} circle (\unit);
+\draw[-latex] (\layer + 32 * \filters + 1.7 * \perspective + \unit, \concatheight + 0.5 * \layerheight) -- (\layer + 32 * \filters + 1.7 * \perspective + 3 * \unit, \concatheight + 0.5 * \layerheight);
+
+% second layer
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer, \upperlevel) -- (3 * \layer + 64 * \filters, \upperlevel) -- (3 * \layer + 64 * \filters + \perspective, \upperlevel + \perspective) -- (3 * \layer + \perspective, \upperlevel + \perspective) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer + \perspective, \upperlevel + \perspective) -- (3 * \layer + 64 * \filters + \perspective, \upperlevel + \perspective) -- (3 * \layer + 64 * \filters + \perspective, \upperlevel + \perspective + \layerheight) -- (3 * \layer + \perspective, \upperlevel + \perspective + \layerheight) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer, \upperlevel) -- (3 * \layer + \perspective, \upperlevel + \perspective) -- (3 * \layer + \perspective, \upperlevel + \perspective + \layerheight) -- (3 * \layer, \upperlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer, \upperlevel) -- (3 * \layer + 64 * \filters, \upperlevel) -- (3 * \layer + 64 * \filters, \upperlevel + \layerheight) -- (3 * \layer, \upperlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer + 64 * \filters, \upperlevel) -- (3 * \layer + 64 * \filters + \perspective, \upperlevel + \perspective) -- (3 * \layer + 64 * \filters + \perspective, \upperlevel + \perspective + \layerheight) -- (3 * \layer + 64 * \filters, \upperlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer, \upperlevel + \layerheight) -- (3 * \layer + 64 * \filters, \upperlevel + \layerheight) -- (3 * \layer + 64 * \filters + \perspective, \upperlevel + \perspective + \layerheight) -- (3 * \layer + \perspective, \upperlevel + \perspective + \layerheight) -- cycle;
+\node[anchor=south west, scale=0.65, rotate=45] at (3 * \layer, \upperlevel + \layerheight) {$64 @ 12 \times 15$};
+
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer, \bottomlevel) -- (3 * \layer + 64 * \filters, \bottomlevel) -- (3 * \layer + 64 * \filters + \perspective, \bottomlevel + \perspective) -- (3 * \layer + \perspective, \bottomlevel + \perspective) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer + \perspective, \bottomlevel + \perspective) -- (3 * \layer + 64 * \filters + \perspective, \bottomlevel + \perspective) -- (3 * \layer + 64 * \filters + \perspective, \bottomlevel + \perspective + \layerheight) -- (3 * \layer + \perspective, \bottomlevel + \perspective + \layerheight) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer, \bottomlevel) -- (3 * \layer + \perspective, \bottomlevel + \perspective) -- (3 * \layer + \perspective, \bottomlevel + \perspective + \layerheight) -- (3 * \layer, \bottomlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer, \bottomlevel) -- (3 * \layer + 64 * \filters, \bottomlevel) -- (3 * \layer + 64 * \filters, \bottomlevel + \layerheight) -- (3 * \layer, \bottomlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer + 64 * \filters, \bottomlevel) -- (3 * \layer + 64 * \filters + \perspective, \bottomlevel + \perspective) -- (3 * \layer + 64 * \filters + \perspective, \bottomlevel + \perspective + \layerheight) -- (3 * \layer + 64 * \filters, \bottomlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (3 * \layer, \bottomlevel + \layerheight) -- (3 * \layer + 64 * \filters, \bottomlevel + \layerheight) -- (3 * \layer + 64 * \filters + \perspective, \bottomlevel + \perspective + \layerheight) -- (3 * \layer + \perspective, \bottomlevel + \perspective + \layerheight) -- cycle;
+\node[anchor=south west, scale=0.65, rotate=45] at (3 * \layer, \bottomlevel + \layerheight) {$64 @ 12 \times 15$};
+
+% second concatenation
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (4 * \layer, \concatheight) -- (4 * \layer + 128 * \filters, \concatheight) -- (4 * \layer + 128 * \filters + \perspective, \concatheight + \perspective) -- (4 * \layer + \perspective, \concatheight + \perspective) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (4 * \layer + \perspective, \concatheight + \perspective) -- (4 * \layer + 128 * \filters + \perspective, \concatheight + \perspective) -- (4 * \layer + 128 * \filters + \perspective, \concatheight + \perspective + \layerheight) -- (4 * \layer + \perspective, \concatheight + \perspective + \layerheight) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (4 * \layer, \concatheight) -- (4 * \layer + \perspective, \concatheight + \perspective) -- (4 * \layer + \perspective, \concatheight + \perspective + \layerheight) -- (4 * \layer, \concatheight + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (4 * \layer, \concatheight) -- (4 * \layer + 128 * \filters, \concatheight) -- (4 * \layer + 128 * \filters, \concatheight + \layerheight) -- (4 * \layer, \concatheight + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (4 * \layer + 128 * \filters, \concatheight) -- (4 * \layer + 128 * \filters + \perspective, \concatheight + \perspective) -- (4 * \layer + 128 * \filters + \perspective, \concatheight + \perspective + \layerheight) -- (4 * \layer + 128 * \filters, \concatheight + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (4 * \layer, \concatheight + \layerheight) -- (4 * \layer + 128 * \filters, \concatheight + \layerheight) -- (4 * \layer + 128 * \filters + \perspective, \concatheight + \perspective + \layerheight) -- (4 * \layer + \perspective, \concatheight + \perspective + \layerheight) -- cycle;
+\node[anchor=south west, scale=0.65, rotate=45] at (4 * \layer, \concatheight + \layerheight) {$128 @ 12 \times 15$};
+
+\draw (3 * \layer + 64 * \filters + 1.1 * \perspective, \upperlevel + 0.5 * \layerheight) -- (3 * \layer + 64 * \filters + 1.6 * \perspective, \upperlevel + 0.5 * \layerheight) -- (3 * \layer + 64 * \filters + 1.6 * \perspective, \bottomlevel + 0.5 * \layerheight) -- (3 * \layer + 64 * \filters + 1.1 * \perspective, \bottomlevel + 0.5 * \layerheight);
+\filldraw[fill=red!20, draw=black] (3 * \layer + 64 * \filters + 1.6 * \perspective, \concatheight + 0.5 * \layerheight) node[anchor=center, scale=0.8] {$C$} circle (\unit);
+\draw[-latex] (3 * \layer + 64 * \filters + 1.6 * \perspective + \unit, \concatheight + 0.5 * \layerheight) -- (3 * \layer + 64 * \filters + 1.6 * \perspective + 3 * \unit, \concatheight + 0.5 * \layerheight);
+
+% third layer
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer, \upperlevel) -- (5 * \layer + 32 * \filters, \upperlevel) -- (5 * \layer + 32 * \filters + \perspective, \upperlevel + \perspective) -- (5 * \layer + \perspective, \upperlevel + \perspective) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer + \perspective, \upperlevel + \perspective) -- (5 * \layer + 32 * \filters + \perspective, \upperlevel + \perspective) -- (5 * \layer + 32 * \filters + \perspective, \upperlevel + \perspective + \layerheight) -- (5 * \layer + \perspective, \upperlevel + \perspective + \layerheight) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer, \upperlevel) -- (5 * \layer + \perspective, \upperlevel + \perspective) -- (5 * \layer + \perspective, \upperlevel + \perspective + \layerheight) -- (5 * \layer, \upperlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer, \upperlevel) -- (5 * \layer + 32 * \filters, \upperlevel) -- (5 * \layer + 32 * \filters, \upperlevel + \layerheight) -- (5 * \layer, \upperlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer + 32 * \filters, \upperlevel) -- (5 * \layer + 32 * \filters + \perspective, \upperlevel + \perspective) -- (5 * \layer + 32 * \filters + \perspective, \upperlevel + \perspective + \layerheight) -- (5 * \layer + 32 * \filters, \upperlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer, \upperlevel + \layerheight) -- (5 * \layer + 32 * \filters, \upperlevel + \layerheight) -- (5 * \layer + 32 * \filters + \perspective, \upperlevel + \perspective + \layerheight) -- (5 * \layer + \perspective, \upperlevel + \perspective + \layerheight) -- cycle;
+\node[anchor=south west, scale=0.65, rotate=45] at (5 * \layer, \upperlevel + \layerheight) {$32 @ 12 \times 15$};
+
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer, \bottomlevel) -- (5 * \layer + 32 * \filters, \bottomlevel) -- (5 * \layer + 32 * \filters + \perspective, \bottomlevel + \perspective) -- (5 * \layer + \perspective, \bottomlevel + \perspective) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer + \perspective, \bottomlevel + \perspective) -- (5 * \layer + 32 * \filters + \perspective, \bottomlevel + \perspective) -- (5 * \layer + 32 * \filters + \perspective, \bottomlevel + \perspective + \layerheight) -- (5 * \layer + \perspective, \bottomlevel + \perspective + \layerheight) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer, \bottomlevel) -- (5 * \layer + \perspective, \bottomlevel + \perspective) -- (5 * \layer + \perspective, \bottomlevel + \perspective + \layerheight) -- (5 * \layer, \bottomlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer, \bottomlevel) -- (5 * \layer + 32 * \filters, \bottomlevel) -- (5 * \layer + 32 * \filters, \bottomlevel + \layerheight) -- (5 * \layer, \bottomlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer + 32 * \filters, \bottomlevel) -- (5 * \layer + 32 * \filters + \perspective, \bottomlevel + \perspective) -- (5 * \layer + 32 * \filters + \perspective, \bottomlevel + \perspective + \layerheight) -- (5 * \layer + 32 * \filters, \bottomlevel + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (5 * \layer, \bottomlevel + \layerheight) -- (5 * \layer + 32 * \filters, \bottomlevel + \layerheight) -- (5 * \layer + 32 * \filters + \perspective, \bottomlevel + \perspective + \layerheight) -- (5 * \layer + \perspective, \bottomlevel + \perspective + \layerheight) -- cycle;
+\node[anchor=south west, scale=0.65, rotate=45] at (5 * \layer, \bottomlevel + \layerheight) {$32 @ 12 \times 15$};
+
+% third concatenation
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (6 * \layer, \concatheight) -- (6 * \layer + 64 * \filters, \concatheight) -- (6 * \layer + 64 * \filters + \perspective, \concatheight + \perspective) -- (6 * \layer + \perspective, \concatheight + \perspective) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (6 * \layer + \perspective, \concatheight + \perspective) -- (6 * \layer + 64 * \filters + \perspective, \concatheight + \perspective) -- (6 * \layer + 64 * \filters + \perspective, \concatheight + \perspective + \layerheight) -- (6 * \layer + \perspective, \concatheight + \perspective + \layerheight) -- cycle;
+\filldraw[dashed, fill=orange!20, draw=black, fill opacity=0.5] (6 * \layer, \concatheight) -- (6 * \layer + \perspective, \concatheight + \perspective) -- (6 * \layer + \perspective, \concatheight + \perspective + \layerheight) -- (6 * \layer, \concatheight + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (6 * \layer, \concatheight) -- (6 * \layer + 64 * \filters, \concatheight) -- (6 * \layer + 64 * \filters, \concatheight + \layerheight) -- (6 * \layer, \concatheight + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (6 * \layer + 64 * \filters, \concatheight) -- (6 * \layer + 64 * \filters + \perspective, \concatheight + \perspective) -- (6 * \layer + 64 * \filters + \perspective, \concatheight + \perspective + \layerheight) -- (6 * \layer + 64 * \filters, \concatheight + \layerheight) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black, fill opacity=0.5] (6 * \layer, \concatheight + \layerheight) -- (6 * \layer + 64 * \filters, \concatheight + \layerheight) -- (6 * \layer + 64 * \filters + \perspective, \concatheight + \perspective + \layerheight) -- (6 * \layer + \perspective, \concatheight + \perspective + \layerheight) -- cycle;
+\node[anchor=south west, scale=0.65, rotate=45] at (6 * \layer, \concatheight + \layerheight) {$64 @ 12 \times 15$};
+
+\draw (5 * \layer + 32 * \filters + 1.2 * \perspective, \upperlevel + 0.5 * \layerheight) -- (5 * \layer + 32 * \filters + 1.7 * \perspective, \upperlevel + 0.5 * \layerheight) -- (5 * \layer + 32 * \filters + 1.7 * \perspective, \bottomlevel + 0.5 * \layerheight) -- (5 * \layer + 32 * \filters + 1.2 * \perspective, \bottomlevel + 0.5 * \layerheight);
+\filldraw[fill=red!20, draw=black] (5 * \layer + 32 * \filters + 1.7 * \perspective, \concatheight + 0.5 * \layerheight) node[anchor=center, scale=0.8] {$C$} circle (\unit);
+\draw[-latex] (5 * \layer + 32 * \filters + 1.7 * \perspective + \unit, \concatheight + 0.5 * \layerheight) -- (5 * \layer + 32 * \filters + 1.7 * \perspective + 3 * \unit, \concatheight + 0.5 * \layerheight);
+
+% flatten layer
+\foreach \x in {0,...,4} {
+	\filldraw[fill=cyan!10, draw=black] (6 * \layer + 3cm, \concatheight + \unit +  0.75  * \x cm) circle (\unit);
+	\draw (6 * \layer + 3cm + \unit, \concatheight + \unit +  0.75  * \x cm) -- (7 * \layer + 2cm - \unit, \concatheight + \unit + 0.5 * \layerheight);
+};
+\node[anchor=north, scale=0.5, below=15pt, align=center] at (6 * \layer + 3cm, \concatheight + \unit) {flatten};
+
+% draw the "flatenisation"
+\draw[dashed] (6 * \layer + 64 * \filters, \layerheight) -- (6 * \layer + 3 cm, 3cm + 2 * \unit) -- (6 * \layer + 64 * \filters + \perspective, \layerheight + \perspective) -- cycle;
+\draw[dashed] (6 * \layer + 64 * \filters, 0cm) -- (6 * \layer + 3 cm, 0cm) -- (6 * \layer + 64 * \filters + \perspective, \perspective) -- cycle;
+
+% output layer
+\filldraw[fill=cyan!10, draw=black] (7 * \layer + 2cm, \concatheight + \unit + 0.5 * \layerheight - \unit) -- (7 * \layer + 2cm, \concatheight + \unit + 0.5 * \layerheight) circle (\unit) -- (7 * \layer + 2cm, \concatheight + \unit + 0.5 * \layerheight + \unit);
+\draw (7 * \layer + 2cm + 0.05cm, \concatheight + \unit + 0.5 * \layerheight) node[anchor=north, below=10pt, text width=2cm, scale=0.35, align=center] {output layer [1 unit]} -- (7 * \layer + 2cm + 0.10cm, \concatheight + \unit + 0.5 * \layerheight) -- (7 * \layer + 2cm + 0.15cm, \concatheight + \unit + 0.5 * \layerheight + 0.05cm);
+
+% draw the first convolution
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (1cm, 0.9 * \layerheight) -- (1cm + \perspective, 0.9 * \layerheight + \perspective) -- (1cm + \perspective, \layerheight + \perspective) -- (1cm, \layerheight) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (1cm, 0.9 * \layerheight) -- (\layer, \upperlevel + 0.9 * \layerheight) -- (1cm + \perspective, 0.9 * \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (1cm, \layerheight) -- (\layer, \upperlevel + 0.9 * \layerheight) -- (1cm + \perspective, \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (1cm + \perspective, 0.9 * \layerheight + \perspective) -- (\layer, \upperlevel + 0.9 * \layerheight) -- (1cm + \perspective, \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (1cm, 0.9 * \layerheight) -- (\layer, \upperlevel + 0.9 * \layerheight) -- (1cm, \layerheight) -- cycle;
+
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (1cm, 0cm) -- (1cm + 0.2 * \perspective, 0.2 * \perspective) -- (1cm + 0.2 * \perspective, \layerheight + 0.2 * \perspective) -- (1cm, \layerheight) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (1cm, 0cm) -- (\layer, \bottomlevel + 0.9 * \layerheight) -- (1cm + 0.2 * \perspective, 0.2 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (1cm + 0.2 * \perspective, 0.2 * \perspective) -- (\layer, \bottomlevel + 0.9 * \layerheight) -- (1cm + 0.2 * \perspective, \layerheight + 0.2 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (1cm + 0.2 * \perspective, \layerheight + 0.2 * \perspective) -- (\layer, \bottomlevel + 0.9 * \layerheight) -- (1cm, \layerheight) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (1cm, 0cm) -- (\layer, \bottomlevel + 0.9 * \layerheight) -- (1cm, \layerheight) -- cycle;
+
+% draw the second convolution
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters, 0.4 * \layerheight) -- (2 * \layer + 64 * \filters + \perspective, 0.4 * \layerheight + \perspective) -- (2 * \layer + 64 * \filters + \perspective, 0.5 * \layerheight + \perspective) -- (2 * \layer + 64 * \filters, 0.5 * \layerheight) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters, 0.4 * \layerheight) -- (3 * \layer, \upperlevel + 0.6 * \layerheight) -- (2 * \layer + 64 * \filters + \perspective, 0.4 * \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters, 0.5 * \layerheight) -- (3 * \layer, \upperlevel + 0.6 * \layerheight) -- (2 * \layer + 64 * \filters + \perspective, 0.5 * \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + \perspective, 0.4 * \layerheight + \perspective) -- (3 * \layer, \upperlevel + 0.6 * \layerheight) -- (2 * \layer + 64 * \filters + \perspective, 0.5 * \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters, 0.4 * \layerheight) -- (3 * \layer, \upperlevel + 0.6 * \layerheight) -- (2 * \layer + 64 * \filters, 0.5 * \layerheight) -- cycle;
+
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + 0.3 * \perspective, 0.3 * \perspective) -- (2 * \layer + 64 * \filters + 0.4 * \perspective, 0.4 * \perspective) -- (2 * \layer + 64 * \filters + 0.4 * \perspective, \layerheight + 0.4 * \perspective) -- (2 * \layer + 64 * \filters + 0.3 * \perspective, \layerheight + 0.3 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + 0.3 * \perspective, 0.3 * \perspective) -- (3 * \layer, \bottomlevel + 0.9 * \layerheight) -- (2 * \layer + 64 * \filters + 0.4 * \perspective, 0.4 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + 0.4 * \perspective, 0.4 * \perspective) -- (3 *  \layer, \bottomlevel + 0.9 * \layerheight) -- (2 * \layer + 64 * \filters + 0.4 * \perspective, \layerheight + 0.4 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + 0.4 * \perspective, \layerheight + 0.4 * \perspective) -- (3 * \layer, \bottomlevel + 0.9 * \layerheight) -- (2 * \layer + 64 * \filters + 0.3 * \perspective, \layerheight + 0.3 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + 0.3 * \perspective, 0.3 * \perspective) -- (3 * \layer, \bottomlevel + 0.9 * \layerheight) -- (2 * \layer + 64 * \filters + 0.3 * \perspective, \layerheight + 0.3 * \perspective) -- cycle;
+
+% draw the second convolution
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters, 0.4 * \layerheight) -- (2 * \layer + 64 * \filters + \perspective, 0.4 * \layerheight + \perspective) -- (2 * \layer + 64 * \filters + \perspective, 0.5 * \layerheight + \perspective) -- (2 * \layer + 64 * \filters, 0.5 * \layerheight) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters, 0.4 * \layerheight) -- (3 * \layer, \upperlevel + 0.6 * \layerheight) -- (2 * \layer + 64 * \filters + \perspective, 0.4 * \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters, 0.5 * \layerheight) -- (3 * \layer, \upperlevel + 0.6 * \layerheight) -- (2 * \layer + 64 * \filters + \perspective, 0.5 * \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + \perspective, 0.4 * \layerheight + \perspective) -- (3 * \layer, \upperlevel + 0.6 * \layerheight) -- (2 * \layer + 64 * \filters + \perspective, 0.5 * \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters, 0.4 * \layerheight) -- (3 * \layer, \upperlevel + 0.6 * \layerheight) -- (2 * \layer + 64 * \filters, 0.5 * \layerheight) -- cycle;
+
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + 0.3 * \perspective, 0.3 * \perspective) -- (2 * \layer + 64 * \filters + 0.4 * \perspective, 0.4 * \perspective) -- (2 * \layer + 64 * \filters + 0.4 * \perspective, \layerheight + 0.4 * \perspective) -- (2 * \layer + 64 * \filters + 0.3 * \perspective, \layerheight + 0.3 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + 0.3 * \perspective, 0.3 * \perspective) -- (3 * \layer, \bottomlevel + 0.9 * \layerheight) -- (2 * \layer + 64 * \filters + 0.4 * \perspective, 0.4 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + 0.4 * \perspective, 0.4 * \perspective) -- (3 *  \layer, \bottomlevel + 0.9 * \layerheight) -- (2 * \layer + 64 * \filters + 0.4 * \perspective, \layerheight + 0.4 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + 0.4 * \perspective, \layerheight + 0.4 * \perspective) -- (3 * \layer, \bottomlevel + 0.9 * \layerheight) -- (2 * \layer + 64 * \filters + 0.3 * \perspective, \layerheight + 0.3 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (2 * \layer + 64 * \filters + 0.3 * \perspective, 0.3 * \perspective) -- (3 * \layer, \bottomlevel + 0.9 * \layerheight) -- (2 * \layer + 64 * \filters + 0.3 * \perspective, \layerheight + 0.3 * \perspective) -- cycle;
+
+% draw the third convolution
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (4 * \layer + 128 * \filters, 0.4 * \layerheight) -- (4 * \layer + 128 * \filters + \perspective, 0.4 * \layerheight + \perspective) -- (4 * \layer + 128 * \filters + \perspective, 0.5 * \layerheight + \perspective) -- (4 * \layer + 128 * \filters, 0.5 * \layerheight) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (4 * \layer + 128 * \filters, 0.4 * \layerheight) -- (5 * \layer, \upperlevel + 0.6 * \layerheight) -- (4 * \layer + 128 * \filters + \perspective, 0.4 * \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (4 * \layer + 128 * \filters, 0.5 * \layerheight) -- (5 * \layer, \upperlevel + 0.6 * \layerheight) -- (4 * \layer + 128 * \filters + \perspective, 0.5 * \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (4 * \layer + 128 * \filters + \perspective, 0.4 * \layerheight + \perspective) -- (5 * \layer, \upperlevel + 0.6 * \layerheight) -- (4 * \layer + 128 * \filters + \perspective, 0.5 * \layerheight + \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (4 * \layer + 128 * \filters, 0.4 * \layerheight) -- (5 * \layer, \upperlevel + 0.6 * \layerheight) -- (4 * \layer + 128 * \filters, 0.5 * \layerheight) -- cycle;
+
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (4 * \layer + 128 * \filters + 0.3 * \perspective, 0.3 * \perspective) -- (4 * \layer + 128 * \filters + 0.4 * \perspective, 0.4 * \perspective) -- (4 * \layer + 128 * \filters + 0.4 * \perspective, \layerheight + 0.4 * \perspective) -- (4 * \layer + 128 * \filters + 0.3 * \perspective, \layerheight + 0.3 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (4 * \layer + 128 * \filters + 0.3 * \perspective, 0.3 * \perspective) -- (5 * \layer, \bottomlevel + 0.9 * \layerheight) -- (4 * \layer + 128 * \filters + 0.4 * \perspective, 0.4 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (4 * \layer + 128 * \filters + 0.4 * \perspective, 0.4 * \perspective) -- (5 *  \layer, \bottomlevel + 0.9 * \layerheight) -- (4 * \layer + 128 * \filters + 0.4 * \perspective, \layerheight + 0.4 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (4 * \layer + 128 * \filters + 0.4 * \perspective, \layerheight + 0.4 * \perspective) -- (5 * \layer, \bottomlevel + 0.9 * \layerheight) -- (4 * \layer + 128 * \filters + 0.3 * \perspective, \layerheight + 0.3 * \perspective) -- cycle;
+\filldraw[fill=red!50, draw=black, fill opacity=0.2] (4 * \layer + 128 * \filters + 0.3 * \perspective, 0.3 * \perspective) -- (5 * \layer, \bottomlevel + 0.9 * \layerheight) -- (4 * \layer + 128 * \filters + 0.3 * \perspective, \layerheight + 0.3 * \perspective) -- cycle;
+
+% hidden layer labels
+\draw[decorate, decoration={brace}] (\layer, \upperlevel + 1.25 * \layerheight + \perspective) -- (2 * \layer + 64  * \filters + \perspective, \upperlevel + 1.25 * \layerheight + \perspective)  node[midway, anchor=south, above=2cm, align=center] {concatenation module 1} node[midway, anchor=south, above=0.8cm, align=center, text width=4cm] {hor: $1 \times 15$ kernel ver: $12 \times 1$ kernel} node[midway, anchor=south] {(ReLU activation)};
+\draw[decorate, decoration={brace}] (3 * \layer, \upperlevel + 1.25 * \layerheight + \perspective) -- (4 * \layer + 128  * \filters + \perspective, \upperlevel + 1.25 * \layerheight + \perspective)  node[midway, anchor=south, above=2cm, align=center] {concatenation module 2} node[midway, anchor=south, above=0.8cm, align=center, text width=4cm] {hor: $1 \times 15$ kernel ver: $12 \times 1$ kernel} node[midway, anchor=south] {(ReLU activation)};
+\draw[decorate, decoration={brace}] (5 * \layer, \upperlevel + 1.25 * \layerheight + \perspective) -- (6  * \layer + 64  * \filters + \perspective, \upperlevel + 1.25 * \layerheight + \perspective)  node[midway, anchor=south, above=2cm, align=center] {concatenation module 3} node[midway, anchor=south, above=0.8cm, align=center, text width=4cm] {hor: $1 \times 15$ kernel ver: $12 \times 1$ kernel} node[midway, anchor=south] {(ReLU activation)};
+
+
+\end{tikzpicture}
+
+% vim: ft=texft=texft=texft=texft=tex

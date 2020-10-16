@@ -1,0 +1,25 @@
+﻿\usetikzlibrary{decorations.pathmorphing}
+
+\begin{tikzpicture}
+
+% draw branes
+\draw[thick] (-0.35cm, 0cm) -- (-3cm, -2cm) -- (-3cm, 3cm) -- (1cm, 5cm) -- (1cm, 4cm);
+\draw[dashed] (1cm, 4cm) -- (1cm, 1cm) -- (-0.35cm, 0cm);
+
+\draw[thick] (-3cm, 2cm) -- (-4cm, 4cm) -- (1.5cm, 4cm) -- (3.5cm, 0cm) -- (-0.35cm, 0cm);
+\draw[dashed] (-3cm, 2cm) -- (-2cm, 0cm) -- (-0.35cm, 0cm);
+
+\draw[dotted] (-0.35cm, 0cm) -- (-1cm, 4.01cm);
+
+% draw names
+\node[anchor=base] at (0.15cm, 5cm) {$D_{(t)}$};
+\node[anchor=base] at (2.5cm, -0.5cm) {$D_{(t+1)}$};
+
+% draw string
+\draw[thick, decorate, decoration={snake, segment length=1cm}] (1.5cm, 2cm) .. controls (1.1cm, 1.1cm) and (-1cm, 0.1cm) .. (-1.8cm, 0.3cm);
+\filldraw[fill=black, draw=black] (1.5cm, 2cm) circle (2pt);
+\filldraw[fill=black, draw=black] (-1.8cm, 0.3cm) circle (2pt);
+
+\end{tikzpicture}
+
+% vim: ft=tex

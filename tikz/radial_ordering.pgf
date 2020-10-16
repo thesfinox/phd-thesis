@@ -1,17 +1,14 @@
-﻿\usetikzlibrary{decorations.markings}
-\usetikzlibrary{arrows}
-
-\begin{tikzpicture}
+﻿\begin{tikzpicture}
 
 % draw axis
 \draw[thick, ->] (-3cm, 0cm) -- (3cm, 0cm) node[anchor=south] (ascissa) {$\Re z$};
 \draw[thick, ->] (0cm, -3cm) -- (0cm, 3cm) node[anchor=east] (ordinata) {$\Im z$};
 
 % draw isolated point
-\draw[fill] (-1.5cm, 1.1cm) circle [radius=2pt] node[anchor=south west] (w) {$w$};
+\draw[fill] (-1.5cm, 1.1cm) circle (2pt) node[anchor=south west] (w) {$w$};
 
 % draw closed loops
-\draw[dotted, decorate, decoration={markings, mark=at position 0.0 with {\arrow{latex}}}] (-1.5cm, 1.1cm) circle [radius=0.6cm];
+\draw[dotted, -latex] (-0.9cm, 1.1cm) arc (0:360:0.6cm);
 
 % draw the names of the paths (use $\mathcal{C}$ instead of $\ccC$ if it does not compile)
 \node (c0) at (-2.1cm, 0.3cm) {$\ccC_{(w)}$};

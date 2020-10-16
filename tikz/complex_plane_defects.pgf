@@ -1,0 +1,21 @@
+﻿\begin{tikzpicture}
+
+% draw axis
+\draw[thick, ->] (-3cm, 0cm) node[anchor=north] {$0$} -- (2.5cm, 0cm) node[anchor=south] {$x$};
+\draw[thick, ->] (-2.75cm, -1cm) -- (-2.75cm, 3cm) node[anchor=east] {$y$};
+
+% draw branching cuts
+\filldraw[fill=black!30, draw=black, dashed] (-2cm, 2pt) rectangle (2.25cm, -2pt);
+\filldraw[fill=black!10, draw=black, dashed] (0.25cm, 1pt) rectangle (2.25cm, -1pt);
+
+% draw branching points
+\filldraw[fill=white, draw=black] (-2cm, 0cm) circle (2pt) node[anchor=north] {$x_{(t+1)}$};
+\filldraw[fill=white, draw=black] (0.25cm, 0cm) circle (2pt) node[anchor=north] {$x_{(t)}$};
+\filldraw[fill=white, draw=black] (2.25cm, 0cm) circle (2pt) node[anchor=north] {$x_{(t-1)}$};
+
+% draw closed loop
+\draw[dotted, ->] (1cm, 2pt) arc (0:350:0.75cm);
+
+\end{tikzpicture}
+
+% vim: ft=tex

@@ -1020,7 +1020,7 @@ Using the same network we also achieve \SI{97}{\percent} of accuracy in the favo
   \centering
   \begin{subfigure}[c]{0.475\linewidth}
     \centering
-    \includegraphics[width=\linewidth]{img/fc}
+    \import{tikz}{fc.pgf}
     \caption{Architecture of the network.}
     \label{fig:nn:dense}
   \end{subfigure}
@@ -1099,7 +1099,7 @@ The convolution layers have $180$, $100$, $40$ and $20$ units each.
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.75\linewidth]{img/ccnn}
+  \import{tikz}{ccnn.pgf}
   \caption{%
     Pure convolutional neural network for redicting \hodge{1}{1}.
     It is made of $4$ modules composed by convolutional layer, ReLU activation, batch normalisation (in this order), followed by a dropout layer, a flatten layer and the output layer (in this order).
@@ -1204,7 +1204,7 @@ The callbacks helped to contain the training time (without optimisation) under 5
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.9\linewidth]{img/icnn}
+  \resizebox{\linewidth}{!}{\import{tikz}{icnn.pgf}}
   \caption{%
     In each concatenation module (here shown for the ``old'' dataset) we operate with separate convolution operations over rows and columns, then concatenate the results.
     The overall architecture is composed of 3 ``inception'' modules made by two separate convolutions, a concatenation layer and a batch normalisation layer (strictly in this order), followed by a dropout layer, a flatten layer and the output layer with ReLU activation (in this order).
@@ -1374,7 +1374,7 @@ Another reason is that the different algorithms may perform similarly well in th
 
 \begin{figure}[tbp]
   \centering
-  \includegraphics[width=0.65\linewidth]{img/stacking}
+  \resizebox{0.65\linewidth}{!}{\import{tikz}{stacking.pgf}}
   \caption{Stacking ensemble learning with two level learning.}
   \label{fig:stack:def}
 \end{figure}

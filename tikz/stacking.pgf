@@ -1,0 +1,43 @@
+﻿\begin{tikzpicture}
+
+% draw first level
+\filldraw[thick, fill=cyan!20, draw=black] (0cm, 0cm) -- (7cm, 0cm) node[midway, anchor=south, align=center, text width=3cm, above=5pt] {training set} -- (7cm, 1cm) -- (0cm, 1cm) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black] (7.1cm, 0cm) -- (10cm, 0cm) node[midway, anchor=south, align=center, text width=2cm, above=8pt] {test set} -- (10cm, 1cm) -- (7.1cm, 1cm) -- cycle;
+
+\draw[-latex] (3.5cm, 0cm) -- (1.75cm, -0.8cm);
+\draw[-latex] (3.5cm, 0cm) -- (5.25cm, -0.8cm);
+
+% draw second level
+\filldraw[thick, fill=cyan!20, draw=black] (0cm, -2cm) -- (3.45cm, -2cm) node[midway, anchor=south, align=center, text width=3cm, above=5pt] {training set 1} -- (3.45cm, -1cm) -- (0cm, -1cm) -- cycle;
+\filldraw[thick, fill=cyan!20, draw=black] (3.55cm, -2cm) -- (7cm, -2cm) node[midway, anchor=south, align=center, text width=3cm, above=5pt] {training set 2} -- (7cm, -1cm) -- (3.55cm, -1cm) -- cycle;
+\filldraw[thick, fill=orange!20, draw=black] (7.1cm, -2cm) -- (10cm, -2cm) node[midway, anchor=south, align=center, text width=2cm, above=8pt] {test set} -- (10cm, -1cm) -- (7.1cm, -1cm) -- cycle;
+
+\draw[-latex] (1.75cm, -2cm) -- (1.75cm, -2.65cm) node[anchor=south west] {training};
+
+% 1st level trainers
+\filldraw[thick, fill=green!20, draw=black] (1.725cm, -3.5cm) ellipse [x radius=1.5cm,y radius=0.75cm] node[anchor=center, align=center, text width=3cm] {1st level learners};
+
+\draw[-latex] (5.25cm, -2cm) -- (5.25cm, -4.85cm) node[anchor=south west] {predictions};
+\draw[-latex] (8.5cm, -2cm) -- (8.5cm, -4.85cm) node[anchor=south west] {predictions};
+
+\filldraw (3.25cm, -3.5cm) -- (8.5cm, -3.5cm) circle (2pt);
+\draw  (1.75cm, -4.25cm) -- (1.75cm, -4.45cm) -- (5.25cm, -4.45cm);
+\filldraw (5.25cm, -4.45cm) circle (2pt);
+
+% 1st level labels
+\filldraw[thick, fill=red!20, draw=black] (3.55cm, -6cm) -- (7cm, -6cm) node[midway, anchor=south, align=center, scale=0.8] {\begin{tabular}{c} test set 2 \\ (1st level labels) \\ \end{tabular}} -- (7cm, -5cm) -- (3.55cm, -5cm) -- cycle;
+\filldraw[thick, fill=blue!20, draw=black] (7.1cm, -6cm) -- (10cm, -6cm) node[midway, anchor=south, align=center, scale=0.8] {\begin{tabular}{c} test set 1 \\ (1st level labels) \\ \end{tabular}} -- (10cm, -5cm) -- (7.1cm, -5cm) -- cycle;
+
+\draw[-latex] (5.25cm, -6cm) -- (5.25cm, -6.65cm);
+\draw[-latex] (8.5cm, -6cm) -- (8.5cm, -8.85cm) node[anchor=south west] {predictions};
+\filldraw (6.75cm, -7.5cm) -- (8.5cm, -7.5cm) circle (2pt);
+
+% 2nd level trainers
+\filldraw[thick, fill=black!20, draw=black] (5.25cm, -7.5cm) ellipse [x radius=1.5cm,y radius=0.75cm] node[anchor=center, align=center, text width=3cm] {meta learner};
+
+% final predictions
+\filldraw[thick, fill=yellow!20, draw=black] (7.1cm, -10cm) -- (10cm, -10cm) node[midway, anchor=south, align=center, scale=0.8] {\begin{tabular}{c} test set 1 \\ (1st level labels) \\ \end{tabular}} -- (10cm, -9cm) -- (7.1cm, -9cm) -- cycle;
+
+\end{tikzpicture}
+
+% vim: ft=tex
