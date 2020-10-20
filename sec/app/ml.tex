@@ -11,7 +11,7 @@ A linear model learns a function
 \end{equation}
 where $w$ and $b$ are the \emph{weights} and \emph{intercept} of the fit.
 
-One of the key assumptions behind a linear fit is the independence of the residual error between the predicted point and the value of the model, which can therefore be assumed to be sampled from a normal distribution peaked at the average value~\cite{Lista:2017:StatisticalMethodsData, Caffo::DataScienceSpecialization}.
+One of the key assumptions behind a linear fit is the independence of the residual error between the predicted point and the value of the model, which can therefore be assumed to be sampled from a normal distribution peaked at the average value~\cite{Skiena:2017:DataScienceDesign, Caffo::DataScienceSpecialization}.
 The parameters of the fit are then chosen to maximise their \emph{likelihood} function, or conversely to minimise its logarithm with a reversed sign (the $\chi^2$ function).
 A related task is to minimise the mean squared error without assuming a statistical distribution of the residual error: \ml for regression usually implements this as loss function of the estimators.
 In this sense loss functions for regression are more general than a likelihood approach but they are nonetheless related.
@@ -147,9 +147,9 @@ They are called \textit{support vectors} (accessible using the attribute \texttt
 As a consequence any sum involving $\alpha^{(i)}$ or $\beta^{(i)}$ can be restricted to the subset of support vectors.
 Using the kernel notation, the predictions will therefore be
 \begin{equation}
-  y_{pred}^{(i)}
+  y_{\text{pred}}^{(i)}
   =
-  y_{pred}\qty(x^{(i)})
+  y_{\text{pred}}\qty(x^{(i)})
   =
   \finitesum{n}{1}{F'} w_n \phi_n\qty(x^{(i)}) + b
   =
@@ -215,7 +215,7 @@ In regression tasks it is usually given by the $l_1$ and $l_2$ norms of the devi
   \begin{equation}
     H^{[l]}_n\qty(x;\, t_{j,\, n})
     =
-    \frac{1}{\abs{\cM^{[l]}_n( t_{j,\, n} )}} \sum\limits_{i \in A^{[l]}_n} \abs{y^{(i)} - \tilde{y}^{[l]}_{pred,\, n}( x )},
+    \frac{1}{\abs{\cM^{[l]}_n( t_{j,\, n} )}} \sum\limits_{i \in A^{[l]}_n} \abs{y^{(i)} - \tilde{y}^{[l]}_{\text{pred},\, n}( x )},
     \quad
     \qty( x^{(i)},\, y^{(i)} ) \in \cM_n\qty( t_{j,\, n} ),
   \end{equation}
@@ -224,20 +224,20 @@ In regression tasks it is usually given by the $l_1$ and $l_2$ norms of the devi
   \begin{equation}
   H^{[l]}_n\qty(x;\, t_{j,\, n})
   =
-  \frac{1}{\abs{\cM^{[l]}_n( t_{j,\, n} )}} \sum\limits_{i \in A^{[l]}_n} \qty( y^{(i)} - \bar{y}^{[l]}_{pred,\, n}( x ) )^2,
+  \frac{1}{\abs{\cM^{[l]}_n( t_{j,\, n} )}} \sum\limits_{i \in A^{[l]}_n} \qty( y^{(i)} - \bar{y}^{[l]}_{\text{pred},\, n}( x ) )^2,
   \quad
   \qty( x^{(i)}, y^{(i)} ) \in \cM_n( t_{j,\, n} ),
   \end{equation}
 \end{itemize}
 where $\abs{\cM^{[l]}_n\qty( t_{j,\, n} )}$ is the cardinality of the set $\cM^{[l]}_n\qty( t_{j,\, n} )$ for $l = 1, 2$ and
 \begin{equation}
-  \tilde{y}^{[l]}_{pred,\, n}( x )
+  \tilde{y}^{[l]}_{\text{pred},\, n}( x )
   =
-  \underset{i \in A^{[l]}_n}{\mathrm{median}}~ y_{pred}\qty(x^{(i)}),
+  \underset{i \in A^{[l]}_n}{\mathrm{median}}~ y_{\text{pred}}\qty(x^{(i)}),
   \qquad
-  \bar{y}^{[l]}_{pred,\, n}( x )
+  \bar{y}^{[l]}_{\text{pred},\, n}( x )
   =
-  \frac{1}{\abs{A^{[l]}_n}} \sum\limits_{i \in A^{[l]}_n} y_{pred}\qty(x^{(i)}),
+  \frac{1}{\abs{A^{[l]}_n}} \sum\limits_{i \in A^{[l]}_n} y_{\text{pred}}\qty(x^{(i)}),
 \end{equation}
 where $A_n^{[l]} \subset A_n$ are the subset of labels in the left and right splits ($l = 1$ and $l = 2$, that is) of the node $n$.
 
@@ -280,7 +280,7 @@ Also random forests of trees provide a variable ranking system by averaging the 
 
 As a reference, \textit{random forests} of decision trees (as in \texttt{ensemble.RandomForestRegressor} in \texttt{scikit-learn}) are ensemble learning algorithms based on fully grown (deep) decision trees.
 They were created to overcome the issues related to overfitting and variability of the input data and are based on random sampling of the training data~\cite{Ho:1995:RandomDecisionForests}.
-The idea is to take $K$ random partitions of the training data and train a different decision tree for each of them and combine the results: for a classification task this would resort to averaging the \textit{a posteriori} (or conditional) probability of predicting the class $c$ given an input $x$ (i.e.\ the Bayesan probability $P\qty(c \mid x)$) over the $K$ trees, while for regression this amount to averaging the predictions of the trees $y_{pred,\, \hatn}^{(i)\, \lbrace k \rbrace}$ where $k = 1, 2, \dots, K$ and $\hatn$ is the final node (i.e. the node containing the final predictions).
+The idea is to take $K$ random partitions of the training data and train a different decision tree for each of them and combine the results: for a classification task this would resort to averaging the \textit{a posteriori} (or conditional) probability of predicting the class $c$ given an input $x$ (i.e.\ the Bayesan probability $P\qty(c \mid x)$) over the $K$ trees, while for regression this amount to averaging the predictions of the trees $y_{\text{pred},\, \hatn}^{(i)\, \lbrace k \rbrace}$ where $k = 1, 2, \dots, K$ and $\hatn$ is the final node (i.e. the node containing the final predictions).
 This defines what has been called a \textit{random forest} of trees which can usually help in improving the predictions by reducing the variance due to trees adapting too much to training sets.
 
 \textit{Boosting} methods are another implementation of ensemble learning algorithms in which more \textit{weak learners}, in this case shallow decision trees, are trained over the training dataset~\cite{Friedman:2001:GreedyFunctionApproximation, Friedman:2002:StochasticGradientBoosting}.
@@ -343,11 +343,13 @@ In \fc networks the input of layer $l$ is a feature vector $a^{(i)\, \qty{l}} \i
 }
 In other words, each entry of the vectors $a^{(i)\, \qty{l}}_j$ (for $j = 1, 2, \dots, n_l$) is mapped through a function $\psi$ to all the components of the following layer $a^{\qty{l+1}} \in \R^{n_{l+1}}$:
 \begin{equation}
-  \begin{split}
-  \psi\colon & \R^{n_l} \quad \longrightarrow \quad \R^{n_{l+1}}
-  \\
-  & a^{(i)\, \qty{l}} \quad \longmapsto \quad a^{(i)\, \qty{l+1}} = \psi_j( a^{(i)\, \qty{l}} ),
-  \end{split}
+  \centering
+  \begin{tabular}{@{}rlll@{}}
+    $\psi\colon$ & $\R^{n_l}$ & $\longrightarrow$ & $\R^{n_{l+1}}$
+    \\
+               & $a^{\qty(i)\, \qty{l}}$ & $\longmapsto$ & $a^{\qty(i)\, \qty{l+1}} = \psi_j\qty( a^{\qty(i)\, \qty{l}} )$,
+    \\
+  \end{tabular}
 \end{equation}
 such that
 \begin{equation}
@@ -367,7 +369,7 @@ A common choice is the \textit{rectified linear unit} ($\mathrm{ReLU}$) function
 \end{equation}
 which has been proven to be better at training deep learning architectures~\cite{Glorot:2011:DeepSparseRectifier}, or its modified version $\mathrm{LeakyReLU}( z ) = \max( \alpha z, z )$ which introduces a slope $\alpha > 0$ to improve the computational performance near the non differentiable point in the origin.
 
-\cnn architectures were born in the context of computer vision and object localisation~\cite{Tompson:2015:EfficientObjectLocalization}.
+\cnn architectures rose to fame in the context of computer vision and object localisation~\cite{Tompson:2015:EfficientObjectLocalization}.
 As one can suspect looking at~\Cref{fig:nn:lenet} for instance, the fundamental difference with \fc networks is that they use a convolution operation $K^{\qty{l}} * a^{(i)\, \qty{l}}$ instead of a linear map to transform the output of the layers, before applying the activation function.\footnotemark{}
 \footnotetext{%
   In general the input of each layer can be a generic tensor with an arbitrary number of axis.

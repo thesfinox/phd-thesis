@@ -10,7 +10,7 @@
 
 % draw arrows
 \draw[-latex] (0,0) -- (1.75cm, 1.75cm) node[anchor=south] (z1) {$\abs{z_{(1)}} = e^{\tau_{E\, (1)}}$};
-\draw[-latex] (0,0) -- (0.45cm, -0.9cm) node[anchor=north] (z0) {$\abs{z_{(0)}} = e^{\tau_{E\, (0)}}$};
+\draw[-latex] (0,0) -- (0.45cm, -0.9cm) node[anchor=north west] (z0) {$\abs{z_{(0)}} = e^{\tau_{E\, (0)}}$};
 
 % draw isolated point
 \draw[fill] (-1.5cm, 1.1cm) circle (2pt) node[anchor=south west] (w) {$w$};

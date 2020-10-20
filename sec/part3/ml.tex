@@ -302,7 +302,7 @@ Obviously the very small percentage of outliers makes the effect of removing the
 We compare the performances of different \ml algorithms: linear regression, support vector machines (\svm), random forests, gradient boosted trees and (deep) neural networks.
 We obtain the best results using deep \emph{convolutional} neural networks.
 In fact we present a new neural network architecture, inspired by the Inception model~\cite{Szegedy:2015:GoingDeeperConvolutions, Szegedy:2016:RethinkingInceptionArchitecture, Szegedy:2016:Inceptionv4InceptionresnetImpact} which has been developed in the field of computer vision.
-We provide some details on the different algorithms in~\Cref{app:ml-algo} and refer the reader to the literature~\cite{Bengio:2017:DeepLearning, Chollet:2018:DeepLearningPython, Geron:2019:HandsOnMachineLearning, Skiena:2017:DataScienceDesign, Mehta:2019:HighbiasLowvarianceIntroduction, Carleo:2019:MachineLearningPhysical, Ruehle:2020:DataScienceApplications} for more details.
+We provide some details on the different algorithms in~\Cref{app:ml-algo} and refer the reader to the literature~\cite{Goodfellow:2017:DeepLearning, Chollet:2018:DeepLearningPython, Geron:2019:HandsOnMachineLearning, Skiena:2017:DataScienceDesign, Ruehle:2020:DataScienceApplications} for more details.
 
 
 \subsubsection{Feature Extraction}
@@ -394,7 +394,7 @@ For the same reason, the latter are not displayed for the favourable dataset.
 \paragraph{Visualisation of the performance}
 
 Complementary to the predictions and the accuracy results, we also provide different visualisations of the performance of the models in the form of univariate plots (histograms) and multivariate distributions (scatter plots).
-In fact the usual assumption behind the statistical inference of a distribution is that the difference between the observed data and the predicted values can be modelled by a random variable called \textit{residual}~\cite{Lista:2017:StatisticalMethodsData,Caffo::DataScienceSpecialization}.\footnotemark{}
+In fact the usual assumption behind the statistical inference of a distribution is that the difference between the observed data and the predicted values can be modelled by a random variable called \textit{residual}~\cite{Skiena:2017:DataScienceDesign,Caffo::DataScienceSpecialization}.\footnotemark{}
 \footnotetext{%
   The difference between the non observable \textit{true} value of the model and the observed data is known as \textit{statistical error}.
   The difference between residuals and errors is subtle but the two definitions have different interpretations in the context of the regression analysis: in a sense, residuals are an estimate of the errors.
@@ -1232,7 +1232,7 @@ In fact this neural network is much more powerful than the previous networks we 
 When predicting only \hodge{1}{1} it surpasses \SI{97}{\percent} accuracy using only \SI{30}{\percent} of the data for training.
 While it seems that the predictions suffer when using a single network for both Hodge numbers this remains much better than any other algorithm.
 It may seem counter-intuitive that convolutions work well on this data since they are not translation or rotation invariant but only permutation invariant.
-However convolution alone is not sufficient to ensure invariances under these transformations but it must be supplemented with pooling operations~\cite{Bengio:2017:DeepLearning} which we do not use.
+However convolution alone is not sufficient to ensure invariances under these transformations but it must be supplemented with pooling operations~\cite{Goodfellow:2017:DeepLearning} which we do not use.
 Moreover convolution layers do more than just taking translation properties into account: they allow to make highly complicated combinations of the inputs and to share weights among components to find subtler patterns than standard fully connected layers.
 This network is more studied in more details in~\cite{Erbin:2020:InceptionNeuralNetwork}.
 
