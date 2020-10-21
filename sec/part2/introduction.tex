@@ -18,13 +18,13 @@ First of all we recall the formal definition of orbifold to better introduce the
 Let therefore $M$ be a topological space and $G$ a group with an action $\ccG: G \times M \to M$ defined by $\ccG(g,\, p) = g p$ for $g \in G$ and $p \in M$.
 Then the \emph{isotropy subgroup} (or \emph{stabiliser}) of $p \in M$ is $G_p = \qty{ g \in G \mid g p = p }$ such that $G_{gp} = g^{-1}\, G_p\, g$.
 Given an element $p \in M$ its \emph{orbit} is $Gp = \qty{ gp \in M \mid g \in G }$.
-The action of the group is said \emph{transitive} if $Gp = M$ and \emph{effective} if its kernel is trivial, i.e.\ $\ker{\ccG} = \qty{ \1 }$.
+The action of the group is said \emph{transitive} if $Gp = M$ and \emph{effective} if its kernel is trivial, i.e.\ $\ker{\ccG} = \qty{ \1 }_{\ccM}$.
 The \emph{orbit space} $M / G$ is the set of equivalence classes given by the orbital partitions and inherits the quotient topology from $M$.
 
 Let now $M$ be a manifold and $G$ a Lie group acting continuously and transitively on $M$.
 For every point $p \in M$ we can define a continuous bijection $\lambda_p \colon G / G_p \to Gp = M$.\footnotemark{}
 \footnotetext{%
-  For any $U \subset M$ and a given $p \in M$ then $\lambda_p^{-1}\qty( U ) = \pi_p\qty( \qty{ g \in G \mid g p \in U } )$ where $\pi_p \colon G \to G / G_p$ is the projection map.
+  For any $U \subset M$ and a given $p \in M$ then $\lambda_p^{-1}\qty( U ) = \pi_p\qty( \qty{ g \in G \mid g p \in U } )$ where $\pi_p \colon G \to G / G_p$ is a projection map.
   Thus $\lambda_p^{-1}\qty( U )$ is an open subset if $U$ is open: the bijection is continuous.
 }
 Such map is a diffeomorphism if $M$ and $G$ are locally compact spaces and $M / G$ is in turn a manifold itself.
