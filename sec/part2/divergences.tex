@@ -287,14 +287,14 @@ We therefore have
 \end{equation}
 Using Fourier transforms it follows that the eigenmodes are
 \begin{equation}
-  \phi_{k_-kr}\qty(u,\, v,\, z,\, \vec{x})
+  \phi_{\kmkr}\qty(u,\, v,\, z,\, \vec{x})
   =
   e^{i k_+ v + i l z + i \vec{k} \cdot \vec{x}}\,
-  \tphi_{k_-kr}(u),
+  \tphi_{\kmkr}(u),
 \end{equation}
 with
 \begin{equation}
-  \tphi_{k_-kr}(u)
+  \tphi_{\kmkr}(u)
   =
   \frac{1}{\sqrt{\qty( 2 \pi )^D~ \abs{2 \Delta k_+\, u}}}
   e^{
@@ -304,7 +304,7 @@ with
 \end{equation}
 and
 \begin{equation}
-  \phi^*_{k_-kr}\qty(u,\, v,\, z,\, \vec{x})
+  \phi^*_{\kmkr}\qty(u,\, v,\, z,\, \vec{x})
   =
   \phi_{\mkmkr}\qty(u,\, v,\, z,\, \vec{x}).
 \end{equation}
@@ -312,7 +312,7 @@ We chose the numeric factor in order to get a canonical normalisation:
 \begin{equation}
   \begin{split}
     &
-    \qty( \phi_{k_-krN{1}},\,  \phi_{k_-krN{2}} )
+    \qty( \phi_{\kmkrN{1}},\,  \phi_{\kmkrN{2}} )
     \\
     = &
     \int\limits_{\R^{D-3}} \dd[D-3]{\vec{x}}\,
@@ -320,7 +320,7 @@ We chose the numeric factor in order to get a canonical normalisation:
     \infinfint{v}\,
     \finiteint{z}{0}{2\pi}
     \abs{\Delta u}\,
-    \phi_{k_-krN{1}}\, \phi_{k_-krN{2}}
+    \phi_{\kmkrN{1}}\, \phi_{\kmkrN{2}}
     \\
     = &
     \delta^{D-3}( \vec{k}_{\qty(1)} + \vec{k}_{\qty(2)})\,
@@ -337,8 +337,8 @@ We can then perform the off-shell expansion
   \infinfint{k_+}
   \infinfint{r}
   \infinfsum{l}
-  \cA_{k_-kr}\,
-  \phi_{k_-kr}\qty(u,\, v,\, z,\, \vec{x}),
+  \cA_{\kmkr}\,
+  \phi_{\kmkr}\qty(u,\, v,\, z,\, \vec{x}),
 \end{equation}
 such that the scalar kinetic term becomes 
 \begin{equation}
@@ -349,8 +349,8 @@ such that the scalar kinetic term becomes
   \infinfint{r}
   \infinfsum{l}
   \qty(r - M^2)\,
-  \cA_{k_-kr}\,
-  \cA_{k_-kr}^*.
+  \cA_{\kmkr}\,
+  \cA_{\kmkr}^*.
 \end{equation}
 
 
@@ -461,7 +461,7 @@ We proceed hierarchically: first we solve for $a_v$ and $a_i$ whose equations ar
 We get the solutions:
 \begin{equation}
   \begin{split}
-    \norm{\tildea_{k_-kr\, \alpha}(u)}
+    \norm{\tildea_{\kmkr\, \alpha}(u)}
     \,=
     \mqty(%
       \tildea_u
@@ -479,7 +479,7 @@ We get the solutions:
       \qty{ \underu, \underv, \underz,\underi }
     }
     \pol{\alpha}
-    \norm{\tildea^{\underline{\alpha}}_{k_-kr\, \alpha}(u)}
+    \norm{\tildea^{\underline{\alpha}}_{\kmkr\, \alpha}(u)}
     \\
     & =
     \pol{u}
@@ -492,7 +492,7 @@ We get the solutions:
       \\
       0
     )\,
-    \tphi_{k_-kr}(u)
+    \tphi_{\kmkr}(u)
     \\
     & +
     \pol{v}
@@ -507,7 +507,7 @@ We get the solutions:
       \\
       0
     )\,
-    \tphi_{k_-kr}(u)
+    \tphi_{\kmkr}(u)
     \\
     & +
     \pol{z}
@@ -520,7 +520,7 @@ We get the solutions:
       \\
       0
     )\,
-    \tphi_{k_-kr}(u)
+    \tphi_{\kmkr}(u)
     \\
     & +
     \pol{j}
@@ -533,7 +533,7 @@ We get the solutions:
       \\
       \delta_{\underline{ij}}
     )\,
-    \tphi_{k_-kr}(u),
+    \tphi_{\kmkr}(u),
     \label{eq:Orbifold_spin1_pol}
   \end{split}
 \end{equation}
@@ -549,13 +549,13 @@ then we can expand the off-shell fields as
   }
   \infinfsum{l}
   \pol{\alpha}\,
-  {a}^{\underline{\alpha}}_{k_-kr\, \alpha}\qty(u,\, v,\, z,\, \vec{x} ),
+  {a}^{\underline{\alpha}}_{\kmkr\, \alpha}\qty(u,\, v,\, z,\, \vec{x} ),
 \end{equation}
 where
 \begin{equation}
-  a^{\underline{\alpha}}_{k_-kr\, \alpha}\qty(u,\, v,\, z,\, \vec{x})
+  a^{\underline{\alpha}}_{\kmkr\, \alpha}\qty(u,\, v,\, z,\, \vec{x})
   =
-  \tildea^{\underline{\alpha}}_{k_-kr\, \alpha}(u)\,
+  \tildea^{\underline{\alpha}}_{\kmkr\, \alpha}(u)\,
   e^{i\, \qty( k_+ v + l z + \vec{k} \cdot \vec{x})}
 \end{equation}
 and $\int \ccD k = \int\limits_{\R^{D-3}} \dd[D-3]{\vec{k}} \infinfint{k_+} \infinfint{r}$.
@@ -573,7 +573,7 @@ We can also compute the normalisation as
     \\
     & \times
     g^{\alpha\beta}\,
-    a_{k_-krN{1}\, \alpha}\,  a_{k_-krN{2}\, \beta}
+    a_{\kmkrN{1}\, \alpha}\,  a_{\kmkrN{2}\, \beta}
     \\
     & =
     \genpolN{1} \circ \genpolN{2}
@@ -624,9 +624,9 @@ The photon kinetic term becomes
   \infinfint{r}
   \infinfsum{l}\,
   \frac{r}{2}\,
-  \cE_{k_-kr}\,
+  \cE_{\kmkr}\,
   \circ
-  \cE_{k_-kr}^*.
+  \cE_{\kmkr}^*.
 \end{equation}
 
 
@@ -654,7 +654,7 @@ Its computation involves integrals such as
   \int \dd{u}\,
   \abs{\Delta u}\,
   \qty(\frac{l}{u})^2
-  \finiteprod{i}{1}{3} \tphi_{k_-krN{i}}
+  \finiteprod{i}{1}{3} \tphi_{\kmkrN{i}}
   \sim
   \int\limits_{u \sim 0} \dd{u}\, 
   \qty(\frac{l^2}{\abs{u}^{\frac{5}{2}}})
@@ -668,7 +668,7 @@ and
   \int \dd{u}\,
   \abs{\Delta u}\,
   \qty(\frac{1}{u})
-  \finiteprod{i}{1}{3} \tphi_{k_-krN{i}}
+  \finiteprod{i}{1}{3} \tphi_{\kmkrN{i}}
   \sim
   \int\limits_{u \sim 0} \dd{u}\, 
   \qty(\frac{1}{u\, \abs{u}^{\frac{1}{2}}})
@@ -720,7 +720,7 @@ and we get:\footnotemark{}
     \delta_{\finitesum{i}{1}{3} l_{\qty(i)},\, 0}\,
     \\
     & \times
-    \qty(\cA_{\mkmkrN{2}})^*\, \cA_{k_-krN{3}}
+    \qty(\cA_{\mkmkrN{2}})^*\, \cA_{\kmkrN{3}}
     \\
     & \times
     \Biggl\lbrace
@@ -782,19 +782,19 @@ In the previous expressions we also defined for future use:
   \infinfint{u}\,
   \abs{\Delta u}\, u^{\nu}\,
   \finiteprod{i}{1}{N}
-  \tphi_{k_-krN{i}}
+  \tphi_{\kmkrN{i}}
   \\
   \cJ_{\qty{N}}^{\qty[\nu]}
   & = &
   \infinfint{u}\,
   \abs{\Delta}\, \abs{u}^{1 + \nu}
-  \finiteprod{i}{1}{N} \tphi_{k_-krN{i}}.
+  \finiteprod{i}{1}{N} \tphi_{\kmkrN{i}}.
 \end{eqnarray}
 For the sake of brevity from now on we use
 \begin{eqnarray}
-  \tphi_{\qty(i)} & = & \tphi_{k_-krN{i}},
+  \tphi_{\qty(i)} & = & \tphi_{\kmkrN{i}},
   \\
-  \tphi_{\qty(i)} & = & \tphi_{k_-krN{i}}
+  \tphi_{\qty(i)} & = & \tphi_{\kmkrN{i}}
 \end{eqnarray}
 when not causing confusion.
 
@@ -835,7 +835,7 @@ which can be expressed using the modes as:
     & \times
     \Biggl\lbrace
       e^2\,
-      \qty(\cA_{\mkmkrN{3}})^* \cA_{k_-krN{4}}
+      \qty(\cA_{\mkmkrN{3}})^* \cA_{\kmkrN{4}}
       \\
       & \times
       \Biggl[
@@ -879,8 +879,8 @@ where
     \qty(\cA_{\mkmkrN{2}})^*\,
     \\
     & \times
-    \cA_{k_-krN{3}}\,
-    \cA_{k_-krN{4}}.
+    \cA_{\kmkrN{3}}\,
+    \cA_{\kmkrN{4}}.
   \end{split}
 \end{equation}
 When setting $l_{\qty(*)} = 0$ all the surviving terms are divergent.
@@ -896,12 +896,12 @@ From the discussion in the previous section the origin of the divergences is the
 When $l = 0$ the highest order singularity of the Fourier transformed d'Alembertian equation vanishes.
 Explicitly we have:
 \begin{equation}
-  A\, \ipd{u} \tphi_{k_-kr}
+  A\, \ipd{u} \tphi_{\kmkr}
   +
-  B(u)\, \tphi_{k_-kr}
+  B(u)\, \tphi_{\kmkr}
   =
   A\, e^{-\int^u \frac{B(u)}{A} du}\, 
-  \ipd{u} \qty[ e^{+\int^u \frac{B(u)}{A} du} \tphi_{k_-kr} ]
+  \ipd{u} \qty[ e^{+\int^u \frac{B(u)}{A} du} \tphi_{\kmkr} ]
   =
   0,
 \end{equation}
@@ -1269,7 +1269,7 @@ to finally get:\footnotemark{}
     & =
     \cN\,
     \infinfsum{l}
-    \phi_{k_-kr}\qty(u,\, v,\, z,\, \vec{x})    
+    \phi_{\kmkr}\qty(u,\, v,\, z,\, \vec{x})    
     e^{i\, l\, \frac{k_2}{\Delta k_+}},
   \end{split}
 \label{eq:Psi_phi}
@@ -1284,7 +1284,7 @@ when $k_+ \neq 0$ and where
 The fact that $\Psi$ depends only on the equivalence class $\qty[k_+\, k_-\, k_2\, k]$ allows us to restrict $0 \le \frac{k_2}{\Delta\, \abs{k_+}} < 2 \pi$ so that we can invert the previous expression and get:
 \begin{equation}
   \begin{split}
-    \phi_{k_-kr}\qty(u,\, v,\, z,\, \vec{x})    
+    \phi_{\kmkr}\qty(u,\, v,\, z,\, \vec{x})    
     & =
     \frac{1}{\cN}\,
     \frac{1}{2 \pi \Delta \abs{k_+}}
@@ -1336,7 +1336,7 @@ The explicit expression for the eigenfunction with constant $\epsilon_+$, $\epsi
     }
     \\
     & =
-    \cN
+    \cN\,
     \psi^{[1]}_{k_+\, k_-\, k_2;\, \epsilon_+\, \epsilon_-\, \epsilon_2}\qty(u,\, v,\, z),
   \end{split}
 \end{equation}
@@ -1370,7 +1370,7 @@ Building the corresponding function on the orbifold amounts to summing the image
     \psi_{k}\qty( \cK^n x)
     =
     \infinfsum{n}
-    \cK^{-n}
+    \cK^{-n}\,
     \vec{\epsilon} \cdot \dd{x}~
     \psi_{\cK^{-n} k}\qty(x).
   \end{split}
@@ -1508,7 +1508,7 @@ Then it follows that
   \label{eq:a_uvz_from_covering}
 \end{equation}
 Many coefficients of $\Psi$ or its derivatives contain $k_2$. 
-They cannot be expressed using the quantum numbers $k_-kr$ of the orbifold but are invariant on it.
+They cannot be expressed using the quantum numbers $\kmkr$ of the orbifold but are invariant on it.
 They are new orbifold quantities we interpret as orbifold polarisations.
 Using~\eqref{eq:Psi_phi} we can finally write
 \begin{equation}
@@ -1516,7 +1516,7 @@ Using~\eqref{eq:Psi_phi} we can finally write
     \Psi^{[1]}_{[k,\, \epsilon]}\qty(\qty[x])
     & =
     \infinfsum{l}
-    \phi_{k_-kr}\qty(u,\, v,\, z,\, \vec{x})    
+    \phi_{\kmkr}\qty(u,\, v,\, z,\, \vec{x})    
     e^{i\, l \frac{k_2}{\Delta k_+}}
     \\
     & \times
@@ -1931,7 +1931,7 @@ The final expression for the orbifold symmetric tensor is
     \Psi^{[2]}_{\qty[\vec{k},\, S]}\qty(\qty[x])
     & =
     \infinfsum{l}
-    \phi_{k_-kr}\qty(u,\, v,\, z,\, \vec{x})    
+    \phi_{\kmkr}\qty(u,\, v,\, z,\, \vec{x})    
     e^{i\, l \frac{k_2}{\Delta k_+}}
     \\
     & \times
@@ -2870,26 +2870,29 @@ We therefore need solve:
 \end{equation}
 To this purpose, we introduce a Fourier transformation over $v,\, w,\, z,\, \vec{x}$:
 \begin{equation}
-  \phi_r\qty( u,\, v,\, w,\, z,\, \vec{x})
-  =
-  \infinfsum{l}\,
-  \int\limits_{\R^{D-4}} \dd[D-4]{\vec{k}}
-  \infinfint{k_+}
-  \infinfint{p}\,
-  e^{i\, \qty( k_+ v + p w + l z + \vec{k} \cdot \vec{x} )}
-  \tphi_{k_-krgen}(u),
+  \begin{split}
+    & \phi_r\qty( u,\, v,\, w,\, z,\, \vec{x})
+    \\
+    & =
+    \infinfsum{l}\,
+    \int\limits_{\R^{D-4}} \dd[D-4]{\vec{k}}
+    \infinfint{k_+}
+    \infinfint{p}\,
+    e^{i\, \qty( k_+ v + p w + l z + \vec{k} \cdot \vec{x} )}
+    \tphi_{\kmkrgen}(u),
+  \end{split}
 \end{equation}
 where we defined $k_+,\, p,\, l,\, \vec{k}$ as associated momenta to $v,\, w,\, z,\, \vec{x}$ respectively.
 We find:
 \begin{equation}
-  \phi_{k_-krgen}\qty( u,\, v,\, w,\, z,\, \vec{x} )
+  \phi_{\kmkrgen}\qty( u,\, v,\, w,\, z,\, \vec{x} )
   =
   e^{i\, \qty( k_+ v + p w + l z + \vec{k} \cdot \vec{x} )}
-  \tphi_{k_-krgen}( u ).
+  \tphi_{\kmkrgen}( u ).
 \end{equation}
 where
 \begin{equation}
-  \tphi_{k_-krgen}( u )
+  \tphi_{\kmkrgen}( u )
   =
   \frac{1}{2 \sqrt{\qty(2 \pi)^D \abs{\Delta_2 \Delta_3 k_+}}}\,
   \frac{1}{\abs{u}}
@@ -2906,7 +2909,7 @@ where
 These solutions present the right normalisation, as we can verify through the product:
 \begin{equation}
   \begin{split}
-    & \left( \phi_{k_-krgenN{1}},\, \phi_{k_-krgenN{2}} \right)
+    & \left( \phi_{\kmkrgenN{1}},\, \phi_{\kmkrgenN{2}} \right)
     \\
     & =
     \int\limits_{\R^{D-4}} \dd[D-4]{\vec{x}}
@@ -2917,8 +2920,8 @@ These solutions present the right normalisation, as we can verify through the pr
     2 \abs{\Delta_2 \Delta_3} u^2
     \\
     & \times
-    \phi_{k_-krgenN{1}}~
-    \phi_{k_-krgenN{2}}
+    \phi_{\kmkrgenN{1}}~
+    \phi_{\kmkrgenN{2}}
     \\
     & =
     \delta^{D - 4}\qty( \vec{k}_{\qty(1)} + \vec{k}_{\qty(2)} )\,
@@ -2942,7 +2945,7 @@ Then we have the off-shell expansion:
     \infinfint{r}
     \\
     & \times
-    \frac{\cA_{k_-krgen}}{\abs{u}}
+    \frac{\cA_{\kmkrgen}}{\abs{u}}
     e^{%
       i\, \qty(%
         k_+ v + p w + l z + \vec{k} \cdot \vec{x}
@@ -3115,15 +3118,15 @@ These equations can be solved using standard techniques through a Fourier transf
     \\
     & \times
     e^{i\, \qty( k_+ v + p w + l z + \vec{k} \cdot \vec{x} )}
-    \tildea_{k_-krgen\, \alpha}(u).
+    \tildea_{\kmkrgen\, \alpha}(u).
   \end{split}
 \end{equation}
-We first solve the equations for $\tildea_{k_-krgen\, v}$ and $\tildea_{k_-krgen\, i}$ since they are identical to the scalar equation~\eqref{eq:scalar_eom}.
-We then insert their solutions as sources for the equations for $\tildea_{k_-krgen\, u}$, $\tildea_{k_-krgen\, w}$ and $\tildea_{k_-krgen\, z}$.
+We first solve the equations for $\tildea_{\kmkrgen\, v}$ and $\tildea_{\kmkrgen\, i}$ since they are identical to the scalar equation~\eqref{eq:scalar_eom}.
+We then insert their solutions as sources for the equations for $\tildea_{\kmkrgen\, u}$, $\tildea_{\kmkrgen\, w}$ and $\tildea_{\kmkrgen\, z}$.
 The solutions can be written as the expansion:
 \begin{equation}
   \begin{split}
-    \norm{\tildea_{k_-krgen\, \alpha}(u)}
+    \norm{\tildea_{\kmkrgen\, \alpha}(u)}
     & =
     \mqty(%
       \tildea_u
@@ -3139,16 +3142,16 @@ The solutions can be written as the expansion:
     \\
     & =
     \sum\limits_{\ualpha \in \qty{\underu, \underv, \underw, \underz, \underi}}
-    \cE_{k_-krgen\, \ualpha}\,
-    \norm{\tildea^{\ualpha}_{k_-krgen\, \alpha}(u)}
+    \cE_{\kmkrgen\, \ualpha}\,
+    \norm{\tildea^{\ualpha}_{\kmkrgen\, \alpha}(u)}
     \\
     & =
-    \cE_{k_-krgen\, \underu}\,
+    \cE_{\kmkrgen\, \underu}\,
     \mqty( 1 \\ 0 \\ 0 \\ 0 \\ 0 )\,
-    \tphi_{k_-krgen}
+    \tphi_{\kmkrgen}
     \\
     & +
-    \cE_{k_-krgen\, \underv}\,
+    \cE_{\kmkrgen\, \underv}\,
     \mqty(%
       \frac{i}{2 k_+ u}
       +
@@ -3163,10 +3166,10 @@ The solutions can be written as the expansion:
       \\
       0
     )\,
-    \tphi_{k_-krgen}
+    \tphi_{\kmkrgen}
     \\
     & +
-    \cE_{k_-krgen\, \underw}\,
+    \cE_{\kmkrgen\, \underw}\,
     \mqty(
       \frac{1}{4 k_+ \abs{u}}
       \qty( \frac{l + p}{\Delta_2^2} - \frac{l - p}{\Delta_3^2} )
@@ -3179,10 +3182,10 @@ The solutions can be written as the expansion:
       \\
       0
     )\,
-    \tphi_{k_-krgen}
+    \tphi_{\kmkrgen}
     \\
     & +
-    \cE_{k_-krgen\, \underz}\,
+    \cE_{\kmkrgen\, \underz}\,
     \mqty(
       \frac{1}{4 k_+ \abs{u}}
       \qty( \frac{l + p}{\Delta_2^2} + \frac{l - p}{\Delta_3^2} )
@@ -3195,20 +3198,20 @@ The solutions can be written as the expansion:
       \\
       0
     )\,
-    \tphi_{k_-krgen}
+    \tphi_{\kmkrgen}
     \\
     & +
-    \cE_{k_-krgen\, \underj}\,
+    \cE_{\kmkrgen\, \underj}\,
     \mqty( 0 \\ 0 \\ 0 \\ 0 \\ \delta_{\underline{i j}} )\,
-    \tphi_{k_-krgen}
+    \tphi_{\kmkrgen}
   \end{split}
 \end{equation}
 Consider the Fourier transformed functions:
 \begin{equation}
-  a^{\ualpha}_{k_-krgen\, \alpha}\qty( u,\, v,\, w,\, z,\, \vec{x} )
+  a^{\ualpha}_{\kmkrgen\, \alpha}\qty( u,\, v,\, w,\, z,\, \vec{x} )
   =
   e^{i\, \qty(k_+ v + p w + l z + \vec{k} \cdot \vec{x})}
-  \tildea^{\ualpha}_{k_-krgen\, \alpha}( u ),
+  \tildea^{\ualpha}_{\kmkrgen\, \alpha}( u ),
 \end{equation}
 then we can expand the off shell fields as
 \begin{equation}
@@ -3223,8 +3226,8 @@ then we can expand the off shell fields as
     \\
     & \times
     \sum_{\ualpha \in \qty{\underu, \underv, \underw, \underz, \underi}}
-    \cE_{k_-krgen\, \alpha}\,
-    a^{\ualpha}_{k_-krgen\, \alpha}(x).
+    \cE_{\kmkrgen\, \alpha}\,
+    a^{\ualpha}_{\kmkrgen\, \alpha}(x).
   \end{split}
 \end{equation}
 
@@ -3241,7 +3244,7 @@ We can compute the normalisation as:
     2 \abs{\Delta_2 \Delta_3} u^2
     \\
     & \times
-    \qty(g^{\alpha\beta}\, a_{k_-krgenN{1}\, \alpha}\, a_{k_-krgenN{2}\, \beta})
+    \qty(g^{\alpha\beta}\, a_{\kmkrgenN{1}\, \alpha}\, a_{\kmkrgenN{2}\, \beta})
     \\
     & =
     \delta^{D-4}\qty( \vec{k}_{\qty(1)} + \vec{k}_{\qty(2)} )\,
@@ -3251,7 +3254,7 @@ We can compute the normalisation as:
     \delta\qty( r_1 - r_2 )
     \\
     & \times
-    \cE_{k_-krgenN{1}} \circ \cE_{k_-krgenN{2}},
+    \cE_{\kmkrgenN{1}} \circ \cE_{\kmkrgenN{2}},
   \end{split}
 \end{equation}
 where
@@ -3285,16 +3288,16 @@ where
 is independent of the coordinates.
 The Lorenz gauge now reads:
 \begin{equation}
-  \eta^{i\underj}\, k_i \, \cE_{{k_-krgen} \underj}
+  \eta^{i\underj}\, k_i \, \cE_{{\kmkrgen} \underj}
   -
   k_+
-  \cE_{k_-krgen\, \underu}
+  \cE_{\kmkrgen\, \underu}
   -
   \frac{\vec{k}^2 + r}{2 k_+}
-  \cE_{k_-krgen\, \underv}
+  \cE_{\kmkrgen\, \underv}
   = 0.
 \end{equation}
-As in the previous case, the constraint equation does not pose any condition on the transverse polarisations $\cE_{k_-krgen\, \underw}$ and $\cE_{k_-krgen\, \underz}$.
+As in the previous case, the constraint equation does not pose any condition on the transverse polarisations $\cE_{\kmkrgen\, \underw}$ and $\cE_{\kmkrgen\, \underz}$.
 
 
 \subsubsection{Cubic Interaction}
@@ -3331,16 +3334,16 @@ In the case of the \gnbo we find:
     & \times
     e~
     \cA^*_{\mkmkrgenN{2}}
-    \cA_{k_-krgenN{3}}
+    \cA_{\kmkrgenN{3}}
     \\
     & \times
     \Biggl\lbrace
-      \cE_{k_-krgenN{1}\, \underu}~
+      \cE_{\kmkrgenN{1}\, \underu}~
       k_{\qty(2)\, +}~
       \cI_{\qty{3}}^{\qty[0]}
       \\
       & +
-      \cE_{k_-krgenN{1}\, \underv}~
+      \cE_{\kmkrgenN{1}\, \underv}~
       \Biggl[
         \qty( \frac{\vec{k}_{\qty(2)}^2 + r_{(2)}}{2 k_{\qty(2)\, +}} )\,
         \cI_{\qty{3}}^{\qty[0]}
@@ -3370,7 +3373,7 @@ In the case of the \gnbo we find:
       \Biggr]
       \\
       & +
-      \qty( \cE_{k_-krgenN{1}\, \underw} - \cE_{k_-krgenN{1}\, \underz} )
+      \qty( \cE_{\kmkrgenN{1}\, \underw} - \cE_{\kmkrgenN{1}\, \underz} )
       \\
       & \times
       \Biggl[
@@ -3402,18 +3405,18 @@ where we defined:
     \cI_{\qty{N}}^{\qty[\nu]}
     & =
     \infinfint{u}
-    2\, \abs{\Delta_2 \Delta_3} u^2\, u^{\nu}\, \finiteprod{i}{1}{N} \tphi_{k_-krgenN{i}},
+    2\, \abs{\Delta_2 \Delta_3} u^2\, u^{\nu}\, \finiteprod{i}{1}{N} \tphi_{\kmkrgenN{i}},
     \\
     \cJ_{\qty{N}}^{\qty[\nu]}
     & =
     \infinfint{u}
-    2\, \abs{\Delta_2 \Delta_3} u^2\, \abs{u}^{\nu}\, \finiteprod{i}{1}{N} \tphi_{k_-krgenN{i}}.
+    2\, \abs{\Delta_2 \Delta_3} u^2\, \abs{u}^{\nu}\, \finiteprod{i}{1}{N} \tphi_{\kmkrgenN{i}}.
   \end{split}
 \end{equation}
 
 
 While in the \nbo case we need to regularise the integrals at least taking their principal part when all $l_{(*)} = 0$ in~\eqref{eq:nbo_div_integral}, the \gnbo does not need any specific manipulation.
-In fact the form of $\tphi_{k_-krgenN{i}}$ in~\eqref{eq:GNBO_reg_wave_functions} prevents the formation of isolated zeros in the phase factor proportional to $u^{-1}$: the presence of the continuous momentum $p$, contrary to the \nbo where all momenta are discrete, gives the integrals a distributional interpretation, similar to a derivative of a Dirac $\delta$ function.
+In fact the form of $\tphi_{\kmkrgenN{i}}$ in~\eqref{eq:GNBO_reg_wave_functions} prevents the formation of isolated zeros in the phase factor proportional to $u^{-1}$: the presence of the continuous momentum $p$, contrary to the \nbo where all momenta are discrete, gives the integrals a distributional interpretation, similar to a derivative of a Dirac $\delta$ function.
 
 
 \subsubsection{Quartic Interactions}
@@ -3454,16 +3457,16 @@ As for the \nbo, we consider the quartic interaction for the scalar \qed action:
     \Biggl\lbrace
       e^2
       \cA^*_{\mkmkrgenN{3}}
-      \cA_{k_-krgenN{4}}
+      \cA_{\kmkrgenN{4}}
       \\
       & \times
       \Biggl[
-        \cE_{k_-krgenN{1}} \circ \cE_{k_-krgenN{2}}\,
+        \cE_{\kmkrgenN{1}} \circ \cE_{\kmkrgenN{2}}\,
         \cI_{\qty{4}}^{\qty[0]}
         \\
         & - i
-        \cE_{k_-krgenN{1}\, \underv}\,
-        \cE_{k_-krgenN{2}\, \underv}
+        \cE_{\kmkrgenN{1}\, \underv}\,
+        \cE_{\kmkrgenN{2}\, \underv}
         \\
         & \times
         \Biggl(
@@ -3497,8 +3500,8 @@ As for the \nbo, we consider the quartic interaction for the scalar \qed action:
       \cA^*_{\mkmkrgenN{2}}
       \\
       & \times
-      \cA_{k_-krgenN{3}}
-      \cA_{k_-krgenN{4}}
+      \cA_{\kmkrgenN{3}}
+      \cA_{\kmkrgenN{4}}
       \cI_{\qty{4}}^{\qty[0]}
     \Biggr\rbrace,
   \end{split}
@@ -3514,16 +3517,16 @@ where we defined:
     \\
     \tilde{\cE}_{\pm\,\left( a, b \right)}
     & =
-    \cE_{k_-krgenN{a}\, \underv}
+    \cE_{\kmkrgenN{a}\, \underv}
     \\
     & \times
-    \qty( \cE_{k_-krgenN{b}\, \underw} \pm \cE_{k_-krgenN{b}\, \underz} )
+    \qty( \cE_{\kmkrgenN{b}\, \underw} \pm \cE_{\kmkrgenN{b}\, \underz} )
     \\
     & -
-    \cE_{k_-krgenN{b}\, \underv}
+    \cE_{\kmkrgenN{b}\, \underv}
     \\
     & \times
-    \qty( \cE_{k_-krgenN{a}\, \underw} \pm \cE_{k_-krgenN{a}\, \underz} )
+    \qty( \cE_{\kmkrgenN{a}\, \underw} \pm \cE_{\kmkrgenN{a}\, \underz} )
   \end{split}
 \end{equation}
 for simplicity.
@@ -3931,6 +3934,8 @@ Now we use the basic trick used in Poisson resummation
     \abs{\frac{k_+ x^+}{k_- x^-}}^{-i \frac{l}{2 \Delta} }\,
     \infinfint{s}
     e^{i\, 2 \pi\, l\, s}
+    \\
+    & \times
     e^{i\, \sgn(k_+\, x^+) \sqrt{\abs{k_+ k_- x^+ x^-}}
       \qty{
         \Lambda^s
@@ -3973,7 +3978,7 @@ Now we use the basic trick used in Poisson resummation
 \end{equation}
 where the last line represents the change of quantum number from $m\, \beta$ to $m\, l$ and allows us to identify
 \begin{equation}
-  \cN_{\text{BO}}
+  \cN_{\text{BO}}\,
   \tphi_{\lsi}(\tau)
   =
   \frac{1}{2\pi}\,
