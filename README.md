@@ -18,7 +18,7 @@ We show that divergences are not due to gravitational feedback but to the lack o
 We also introduce a new orbifold structure capable of fixing the issue and reinstate a distributional interpretation to field theory amplitudes.
 
 We finally present a new artificial intelligence approach to algebraic geometry and string compactifications.
-We compute the Hodge numbers of Complete Intersection Calabi--Yau 3-folds using deep learning techniques based on computer vision and object recognition techniques.
+We compute the Hodge numbers of Complete Intersection Calabi-Yau 3-folds using deep learning techniques based on computer vision and object recognition techniques.
 We also include a methodological study of machine learning applied to data in string theory: as in most applications machine learning almost never relies on the blind application of algorithms to the data but it requires a careful exploratory analysis and feature engineering.
 We thus show how such an approach can help in improving results by processing the data before utilising them.
 We then show that deep learning the configuration matrix of the manifolds reaches the highest accuracy in the task with smaller networks, less parameters and less data.
