@@ -221,8 +221,8 @@
   \rule{0.99\linewidth}{\sepwidth} \\[2ex]
 }
 {%
-  \vspace{\parskip}
-  \theauthor
+  \par
+  \noindent\theauthor
   \vfill
 }
 
