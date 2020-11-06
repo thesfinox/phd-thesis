@@ -349,16 +349,16 @@ One way to deal with them is to introduce the \emph{doubling trick} by gluing th
 Let then $\cU_{(t,\, t+1)} = U_{(t+1)}\, U_{(t)}$ and $\tcU_{(t,\, t+1)} = U_{(\bart)}\, U_{(t)}\, U_{(t+1)}\, U_{(\bart)}$.
 The boundary conditions in terms of the doubling field are:
 \begin{eqnarray}
-  \ipd{z} \cX( x_t + e^{2 \pi i}( \eta + i\, 0^+ ) )
+  \ipd{z} \cX( x_{(t)} + e^{2 \pi i}( \eta + i\, 0^+ ) )
   & = &
-  \cU_{(t,\, t+1)}
-  \ipd{z} \cX( x_t + \eta + i\, 0^+ ),
+  \cU_{(t,\, t+1)}\,
+  \ipd{z} \cX( x_{(t)} + \eta + i\, 0^+ ),
   \label{eq:top_monodromy}
   \\
-  \partial \cX( x_t + e^{2 \pi i}( \eta - i\, 0^+ ) )
+  \ipd{z} \cX( x_{(t)} + e^{2 \pi i}( \eta - i\, 0^+ ) )
   & = &
-  \tcU_{(t,\, t+1)}
-  \ipd{z} \cX( x_t + \eta - i\, 0^+ ),
+  \tcU_{(t,\, t+1)}\,
+  \ipd{z} \cX( x_{(t)} + \eta - i\, 0^+ ),
   \label{eq:bottom_monodromy}
 \end{eqnarray}
 for $0 < \eta < \min\qty( \abs{x_{(t-1)} - x_{(t)}}, \abs{x_{(t)} - x_{(t+1)}} )$ in order to consider only the two adjacent D-branes $D_{(t)}$ and $D_{(t+1)}$.
