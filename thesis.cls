@@ -44,7 +44,7 @@
                 version={4.0}]{doclicense} %---- licence
 \RequirePackage[nottoc]{tocbibind} %------------ put bibliography in TOC
 \RequirePackage[backend=biber,
-                citestyle=numeric-comp,
+                citestyle=numeric-icomp,
                 sorting=none,
                 sortcites=true,
                 style=ieee,
