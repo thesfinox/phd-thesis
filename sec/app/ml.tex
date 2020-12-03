@@ -66,7 +66,7 @@ For larger values of the hyperparameter $\alpha$, $w$ (and $b$) assume smaller v
 \subsection{Support Vector Machines for Regression}
 \label{sec:app:svr}
 
-This family of supervised \ml algorithms were created with classification tasks in mind~\cite{Cortes:1995:SupportvectorNetworks} but have proven to be effective also for regression problems~\cite{Drucker:1997:SupportVectorRegression}.
+This family of supervised \ml algorithms was created with classification tasks in mind~\cite{Cortes:1995:SupportvectorNetworks} but have proven to be effective also for regression problems~\cite{Drucker:1997:SupportVectorRegression}.
 Differently from the linear regression, instead of minimising the squared distance of each sample, the algorithm assigns a penalty to predictions of samples $x^{(i)} \in \R^F$ (for $i = 1, 2, \dots, N$) which are further away than a certain hyperparameter $\varepsilon$ from their true value $y$, allowing however a \textit{soft margin} of tolerance represented by the penalties $\zeta$ above and $\xi$ below.
 This is achieved by minimising $w,\, b,\, \zeta$ and $\xi$ in the function:\footnotemark{}
 \footnotetext{%
