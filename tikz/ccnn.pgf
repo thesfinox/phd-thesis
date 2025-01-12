@@ -2,13 +2,13 @@
 \newlength{\layerheight}
 \newlength{\perspective}
 \newlength{\filters}
-%\newlength{\unit}
+%\newlength{\myunit}
 
 \setlength{\layer}{3cm}
 \setlength{\layerheight}{3cm}
 \setlength{\perspective}{1cm}
 \setlength{\filters}{0.01cm}
-\setlength{\unit}{0.225cm}
+\setlength{\myunit}{0.225cm}
 
 \begin{tikzpicture}
 
@@ -50,13 +50,13 @@
 
 % flatten layer
 \foreach \x in {2,...,7} {
-	\filldraw[fill=cyan!10, draw=black] (4 * \layer + 3cm, 0.5cm * \x) circle (\unit);
-	\draw (4 * \layer + 3cm + \unit, 0.5cm * \x) -- (5 * \layer + 2cm - \unit, 2.5cm);
+	\filldraw[fill=cyan!10, draw=black] (4 * \layer + 3cm, 0.5cm * \x) circle (\myunit);
+	\draw (4 * \layer + 3cm + \myunit, 0.5cm * \x) -- (5 * \layer + 2cm - \myunit, 2.5cm);
 };
 \node[anchor=north, scale=0.5, below=15pt, align=center] at (4 * \layer + 3cm, 1cm) {flatten};
 
 % output layer
-\filldraw[fill=cyan!10, draw=black] (5 * \layer + 2cm, 2.5cm - \unit) -- (5 * \layer + 2cm, 2.5cm) circle (\unit) -- (5 * \layer + 2cm, 2.5cm + \unit);
+\filldraw[fill=cyan!10, draw=black] (5 * \layer + 2cm, 2.5cm - \myunit) -- (5 * \layer + 2cm, 2.5cm) circle (\myunit) -- (5 * \layer + 2cm, 2.5cm + \myunit);
 \draw (5 * \layer + 2cm + 0.05cm, 2.5cm) node[anchor=north, below=10pt, text width=2cm, scale=0.35, align=center] {output layer [1 unit]} -- (5 * \layer + 2cm + 0.10cm, 2.5cm) -- (5 * \layer + 2cm + 0.15cm, 2.5cm + 0.05cm);
 
 % draw first convolution
@@ -81,15 +81,15 @@
 \filldraw[fill=red!50, draw=black, fill opacity=0.5] (3 * \layer + 40 * \filters + 0.4 * \perspective, 0.6 * \layerheight + 0.4 * \perspective) -- (4 * \layer, 0.3 * \layerheight) -- (3 * \layer + 40 * \filters, 0.6 * \layerheight) -- cycle;
 
 % draw the "flatenisation"
-\draw[dashed] (4 * \layer + 20 * \filters, \layerheight) -- (4 * \layer + 3 cm, 3.5cm + \unit) -- (4 * \layer + 20 * \filters + \perspective, \layerheight + \perspective) -- cycle;
-\draw[dashed] (4 * \layer + 20 * \filters, 0cm) -- (4 * \layer + 3 cm, 1cm - \unit) -- (4 * \layer + 20 * \filters + \perspective, \perspective) -- cycle;
+\draw[dashed] (4 * \layer + 20 * \filters, \layerheight) -- (4 * \layer + 3 cm, 3.5cm + \myunit) -- (4 * \layer + 20 * \filters + \perspective, \layerheight + \perspective) -- cycle;
+\draw[dashed] (4 * \layer + 20 * \filters, 0cm) -- (4 * \layer + 3 cm, 1cm - \myunit) -- (4 * \layer + 20 * \filters + \perspective, \perspective) -- cycle;
 
 % hidden layer labels
 \node[anchor=base, align=center, text width=3.9cm, scale=0.75] (c) at (11cm, 5.5cm) {convolutional layers ($5 \times 5$ kernel, ReLU activation)};
-\draw[->] (c) -- (\layer + 180 * \filters + \perspective, \layerheight + \perspective + \unit);
-\draw[->] (c) -- (2 * \layer + 100 * \filters + \perspective, \layerheight + \perspective + \unit);
-\draw[->] (c) -- (3 * \layer + 40 * \filters + \perspective, \layerheight + \perspective + \unit);
-\draw[->] (c) -- (4 * \layer + 0.5 * \perspective, \layerheight + \perspective + \unit);
+\draw[->] (c) -- (\layer + 180 * \filters + \perspective, \layerheight + \perspective + \myunit);
+\draw[->] (c) -- (2 * \layer + 100 * \filters + \perspective, \layerheight + \perspective + \myunit);
+\draw[->] (c) -- (3 * \layer + 40 * \filters + \perspective, \layerheight + \perspective + \myunit);
+\draw[->] (c) -- (4 * \layer + 0.5 * \perspective, \layerheight + \perspective + \myunit);
 
 \end{tikzpicture}
 

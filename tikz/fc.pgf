@@ -1,159 +1,159 @@
-﻿\newlength{\unit}
+﻿\newlength{\myunit}
 \newlength{\layer}
 
-\setlength{\unit}{0.225cm}
+\setlength{\myunit}{0.225cm}
 \setlength{\layer}{1cm}
 
 \begin{tikzpicture}
 
 % draw the first layer
-\filldraw[fill=cyan!10, draw=black] (\layer, -0.75cm - \unit) -- (\layer, -0.75cm) circle (\unit) -- (\layer, -0.75cm + \unit);
+\filldraw[fill=cyan!10, draw=black] (\layer, -0.75cm - \myunit) -- (\layer, -0.75cm) circle (\myunit) -- (\layer, -0.75cm + \myunit);
 \draw (\layer + 0.05cm, -0.75cm) node[anchor=north, below=10pt, text width=2cm, scale=0.35, align=center] {FC layer [876 units]} -- (\layer + 0.10cm, -0.75cm) -- (\layer + 0.15cm, -0.75cm + 0.05cm);
-\node[anchor=base, scale=0.35] at (\layer, -0.75cm + 1.25 * \unit) {$\vdots$};
+\node[anchor=base, scale=0.35] at (\layer, -0.75cm + 1.25 * \myunit) {$\vdots$};
 
 \foreach \x in {0,...,5} {
-	\filldraw[fill=cyan!10, draw=black] (\layer, 0.5cm * \x - \unit) -- (\layer, 0.5cm * \x) circle (\unit) -- (\layer, 0.5cm * \x + \unit);
+	\filldraw[fill=cyan!10, draw=black] (\layer, 0.5cm * \x - \myunit) -- (\layer, 0.5cm * \x) circle (\myunit) -- (\layer, 0.5cm * \x + \myunit);
 	\draw (\layer + 0.05cm, 0.5cm * \x) -- (\layer + 0.10cm, 0.5cm * \x) -- (\layer + 0.15cm, 0.5cm * \x + 0.05cm);
 };
 
-\filldraw[fill=cyan!10, draw=black] (\layer, 3.25cm - \unit) -- (\layer, 3.25cm) circle (\unit) -- (\layer, 3.25cm + \unit);
+\filldraw[fill=cyan!10, draw=black] (\layer, 3.25cm - \myunit) -- (\layer, 3.25cm) circle (\myunit) -- (\layer, 3.25cm + \myunit);
 \draw (\layer + 0.05cm, 3.25cm) -- (\layer + 0.10cm, 3.25cm) -- (\layer + 0.15cm, 3.25cm + 0.05cm);
-\node[anchor=base, scale=0.35] at (\layer, 3.25cm - 2\unit) {$\vdots$};
+\node[anchor=base, scale=0.35] at (\layer, 3.25cm - 2\myunit) {$\vdots$};
 
 % draw the second layer
-\filldraw[fill=cyan!10, draw=black] (2 * \layer, -\unit) -- (2 * \layer, 0cm) circle (\unit) -- (2 * \layer, \unit);
+\filldraw[fill=cyan!10, draw=black] (2 * \layer, -\myunit) -- (2 * \layer, 0cm) circle (\myunit) -- (2 * \layer, \myunit);
 \draw (2 * \layer + 0.05cm, 0cm) node[anchor=north, below=10pt, text width=2cm, scale=0.35, align=center] {FC layer [461 units]} -- (2 * \layer + 0.10cm, 0cm) -- (2 * \layer + 0.15cm, 0.05cm);
-\node[anchor=base, scale=0.35] at (2 * \layer, 1.25 * \unit) {$\vdots$};
+\node[anchor=base, scale=0.35] at (2 * \layer, 1.25 * \myunit) {$\vdots$};
 
 \foreach \x in {1.5,...,3.5} {
-	\filldraw[fill=cyan!10, draw=black] (2 * \layer, 0.5cm * \x - \unit) -- (2 * \layer, 0.5cm * \x) circle (\unit) -- (2 * \layer, 0.5cm * \x + \unit);
+	\filldraw[fill=cyan!10, draw=black] (2 * \layer, 0.5cm * \x - \myunit) -- (2 * \layer, 0.5cm * \x) circle (\myunit) -- (2 * \layer, 0.5cm * \x + \myunit);
 	\draw (2 * \layer + 0.05cm, 0.5cm * \x) -- (2 * \layer + 0.10cm, 0.5cm * \x) -- (2 * \layer + 0.15cm, 0.5cm * \x + 0.05cm);
 };
 
-\filldraw[fill=cyan!10, draw=black] (2 * \layer, 2.5cm - \unit) -- (2 * \layer, 2.5cm) circle (\unit) -- (2 * \layer, 2.5cm + \unit);
+\filldraw[fill=cyan!10, draw=black] (2 * \layer, 2.5cm - \myunit) -- (2 * \layer, 2.5cm) circle (\myunit) -- (2 * \layer, 2.5cm + \myunit);
 \draw (2 * \layer + 0.05cm, 2.5cm) -- (2 * \layer + 0.10cm, 2.5cm) -- (2 * \layer + 0.15cm, 2.5cm + 0.05cm);
-\node[anchor=base, scale=0.35] at (2 * \layer, 2.5cm - 2\unit) {$\vdots$};
+\node[anchor=base, scale=0.35] at (2 * \layer, 2.5cm - 2\myunit) {$\vdots$};
 
 % draw the third layer
-\filldraw[fill=cyan!10, draw=black] (3 * \layer, -\unit) -- (3 * \layer, 0cm) circle (\unit) -- (3 * \layer, \unit);
+\filldraw[fill=cyan!10, draw=black] (3 * \layer, -\myunit) -- (3 * \layer, 0cm) circle (\myunit) -- (3 * \layer, \myunit);
 \draw (3 * \layer + 0.05cm, 0cm) node[anchor=north, below=10pt, text width=2cm, scale=0.35, align=center] {FC layer [437 units]} -- (3 * \layer + 0.10cm, 0cm) -- (3 * \layer + 0.15cm, 0.05cm);
-\node[anchor=base, scale=0.35] at (3 * \layer, 1.25 * \unit) {$\vdots$};
+\node[anchor=base, scale=0.35] at (3 * \layer, 1.25 * \myunit) {$\vdots$};
 
 \foreach \x in {1.5,...,3.5} {
-	\filldraw[fill=cyan!10, draw=black] (3 * \layer, 0.5cm * \x - \unit) -- (3 * \layer, 0.5cm * \x) circle (\unit) -- (3 * \layer, 0.5cm * \x + \unit);
+	\filldraw[fill=cyan!10, draw=black] (3 * \layer, 0.5cm * \x - \myunit) -- (3 * \layer, 0.5cm * \x) circle (\myunit) -- (3 * \layer, 0.5cm * \x + \myunit);
 	\draw (3 * \layer + 0.05cm, 0.5cm * \x) -- (3 * \layer + 0.10cm, 0.5cm * \x) -- (3 * \layer + 0.15cm, 0.5cm * \x + 0.05cm);
 };
 
-\filldraw[fill=cyan!10, draw=black] (3 * \layer, 2.5cm - \unit) -- (3 * \layer, 2.5cm) circle (\unit) -- (3 * \layer, 2.5cm + \unit);
+\filldraw[fill=cyan!10, draw=black] (3 * \layer, 2.5cm - \myunit) -- (3 * \layer, 2.5cm) circle (\myunit) -- (3 * \layer, 2.5cm + \myunit);
 \draw (3 * \layer + 0.05cm, 2.5cm) -- (3 * \layer + 0.10cm, 2.5cm) -- (3 * \layer + 0.15cm, 2.5cm + 0.05cm);
-\node[anchor=base, scale=0.35] at (3 * \layer, 2.5cm - 2\unit) {$\vdots$};
+\node[anchor=base, scale=0.35] at (3 * \layer, 2.5cm - 2\myunit) {$\vdots$};
 
 % draw the fourth layer
-\filldraw[fill=cyan!10, draw=black] (4 * \layer, -0.75cm - \unit) -- (4 * \layer, -0.75cm) circle (\unit) -- (4 * \layer, -0.75cm + \unit);
+\filldraw[fill=cyan!10, draw=black] (4 * \layer, -0.75cm - \myunit) -- (4 * \layer, -0.75cm) circle (\myunit) -- (4 * \layer, -0.75cm + \myunit);
 \draw (4 * \layer + 0.05cm, -0.75cm) node[anchor=north, below=10pt, text width=2cm, scale=0.35, align=center] {FC layer [929 units]} -- (4 * \layer + 0.10cm, -0.75cm) -- (4 * \layer + 0.15cm, -0.75cm + 0.05cm);
-\node[anchor=base, scale=0.35] at (4 * \layer, -0.75cm + 1.25 * \unit) {$\vdots$};
+\node[anchor=base, scale=0.35] at (4 * \layer, -0.75cm + 1.25 * \myunit) {$\vdots$};
 
 \foreach \x in {0,...,5} {
-	\filldraw[fill=cyan!10, draw=black] (4 * \layer, 0.5cm * \x - \unit) -- (4 * \layer, 0.5cm * \x) circle (\unit) -- (4 * \layer, 0.5cm * \x + \unit);
+	\filldraw[fill=cyan!10, draw=black] (4 * \layer, 0.5cm * \x - \myunit) -- (4 * \layer, 0.5cm * \x) circle (\myunit) -- (4 * \layer, 0.5cm * \x + \myunit);
 	\draw (4 * \layer + 0.05cm, 0.5cm * \x) -- (4 * \layer + 0.10cm, 0.5cm * \x) -- (4 * \layer + 0.15cm, 0.5cm * \x + 0.05cm);
 };
 
-\filldraw[fill=cyan!10, draw=black] (4 * \layer, 3.25cm - \unit) -- (4 * \layer, 3.25cm) circle (\unit) -- (4 * \layer, 3.25cm + \unit);
+\filldraw[fill=cyan!10, draw=black] (4 * \layer, 3.25cm - \myunit) -- (4 * \layer, 3.25cm) circle (\myunit) -- (4 * \layer, 3.25cm + \myunit);
 \draw (4 * \layer + 0.05cm, 3.25cm) -- (4 * \layer + 0.10cm, 3.25cm) -- (4 * \layer + 0.15cm, 3.25cm + 0.05cm);
-\node[anchor=base, scale=0.35] at (4 * \layer, 3.25cm - 2\unit) {$\vdots$};
+\node[anchor=base, scale=0.35] at (4 * \layer, 3.25cm - 2\myunit) {$\vdots$};
 
 % draw the fifth layer
-\filldraw[fill=cyan!10, draw=black] (5 * \layer, -\unit) -- (5 * \layer, 0cm) circle (\unit) -- (5 * \layer, \unit);
+\filldraw[fill=cyan!10, draw=black] (5 * \layer, -\myunit) -- (5 * \layer, 0cm) circle (\myunit) -- (5 * \layer, \myunit);
 \draw (5 * \layer + 0.05cm, 0cm) node[anchor=north, below=10pt, text width=2cm, scale=0.35, align=center] {FC layer [404 units]} -- (5 * \layer + 0.10cm, 0cm) -- (5 * \layer + 0.15cm, 0.05cm);
-\node[anchor=base, scale=0.35] at (5 * \layer, 1.25 * \unit) {$\vdots$};
+\node[anchor=base, scale=0.35] at (5 * \layer, 1.25 * \myunit) {$\vdots$};
 
 \foreach \x in {1.5,...,3.5} {
-	\filldraw[fill=cyan!10, draw=black] (5 * \layer, 0.5cm * \x - \unit) -- (5 * \layer, 0.5cm * \x) circle (\unit) -- (5 * \layer, 0.5cm * \x + \unit);
+	\filldraw[fill=cyan!10, draw=black] (5 * \layer, 0.5cm * \x - \myunit) -- (5 * \layer, 0.5cm * \x) circle (\myunit) -- (5 * \layer, 0.5cm * \x + \myunit);
 	\draw (5 * \layer + 0.05cm, 0.5cm * \x) -- (5 * \layer + 0.10cm, 0.5cm * \x) -- (5 * \layer + 0.15cm, 0.5cm * \x + 0.05cm);
 };
 
-\filldraw[fill=cyan!10, draw=black] (5 * \layer, 2.5cm - \unit) -- (5 * \layer, 2.5cm) circle (\unit) -- (5 * \layer, 2.5cm + \unit);
+\filldraw[fill=cyan!10, draw=black] (5 * \layer, 2.5cm - \myunit) -- (5 * \layer, 2.5cm) circle (\myunit) -- (5 * \layer, 2.5cm + \myunit);
 \draw (5 * \layer + 0.05cm, 2.5cm) -- (5 * \layer + 0.10cm, 2.5cm) -- (5 * \layer + 0.15cm, 2.5cm + 0.05cm);
-\node[anchor=base, scale=0.35] at (5 * \layer, 2.5cm - 2\unit) {$\vdots$};
+\node[anchor=base, scale=0.35] at (5 * \layer, 2.5cm - 2\myunit) {$\vdots$};
 
 % draw the output layer
-\filldraw[fill=cyan!10, draw=black] (6 * \layer, 1.25cm - \unit) -- (6 * \layer, 1.25cm) circle (\unit) -- (6 * \layer, 1.25cm + \unit);
+\filldraw[fill=cyan!10, draw=black] (6 * \layer, 1.25cm - \myunit) -- (6 * \layer, 1.25cm) circle (\myunit) -- (6 * \layer, 1.25cm + \myunit);
 \draw (6 * \layer + 0.05cm, 1.25cm) node[anchor=north, below=10pt, text width=2cm, scale=0.35, align=center] {output layer [1 unit]} -- (6 * \layer + 0.10cm, 1.25cm) -- (6 * \layer + 0.15cm, 1.25cm + 0.05cm);
 
 % draw weights 1 --> 2 and 4 --> 5
 \foreach \x in {\layer, 4 * \layer} {
 	\foreach \y in {-0.75cm, 3.25cm} {
 		\foreach \z in {0cm, 2.5cm} {
-			\draw (\x + \unit, \y) -- (\x + \layer - \unit, \z);
+			\draw (\x + \myunit, \y) -- (\x + \layer - \myunit, \z);
 		};
 	};
 	\foreach \y in {0,...,5} {
 		\foreach \z in {1.5,...,3.5} {
-			\draw (\x + \unit, 0.5cm * \y) -- (\x + \layer - \unit, 0.5cm * \z);
+			\draw (\x + \myunit, 0.5cm * \y) -- (\x + \layer - \myunit, 0.5cm * \z);
 		};
 		\foreach \z in {0cm, 2.5cm} {
-			\draw (\x + \unit, 0.5 * \y) -- (\x + \layer - \unit, \z);
+			\draw (\x + \myunit, 0.5 * \y) -- (\x + \layer - \myunit, \z);
 		};
 	};
 	\foreach \y in {1.5,...,3.5} {
-		\draw (\x + \unit, 3.25cm) -- (\x + \layer - \unit, 0.5cm * \y);
-		\draw (\x + \unit, -0.75cm) -- (\x + \layer - \unit, 0.5cm * \y);
+		\draw (\x + \myunit, 3.25cm) -- (\x + \layer - \myunit, 0.5cm * \y);
+		\draw (\x + \myunit, -0.75cm) -- (\x + \layer - \myunit, 0.5cm * \y);
 	};
 };
 
 % draw weights 2 --> 3
 \foreach \y in {0cm, 2.5cm} {
 	\foreach \z in {0cm, 2.5cm} {
-		\draw (2 * \layer + \unit, \y) -- (2 * \layer + \layer - \unit, \z);
+		\draw (2 * \layer + \myunit, \y) -- (2 * \layer + \layer - \myunit, \z);
 	};
 };
 \foreach \y in {1.5,...,3.5} {
 	\foreach \z in {1.5,...,3.5} {
-		\draw (2 * \layer + \unit, 0.5cm * \y) -- (2 * \layer + \layer - \unit, 0.5cm * \z);
+		\draw (2 * \layer + \myunit, 0.5cm * \y) -- (2 * \layer + \layer - \myunit, 0.5cm * \z);
 	};
 	\foreach \z in {0cm, 2.5cm} {
-		\draw (2 * \layer + \unit, 0.5cm * \y) -- (2 * \layer + \layer - \unit, \z);
+		\draw (2 * \layer + \myunit, 0.5cm * \y) -- (2 * \layer + \layer - \myunit, \z);
 	};
 };
 \foreach \y in {1.5,...,3.5} {
-	\draw (2 * \layer + \unit, 2.5cm) -- (2 * \layer + \layer - \unit, 0.5cm * \y);
-	\draw (2 * \layer + \unit, 0cm) -- (2 * \layer + \layer - \unit, 0.5cm * \y);
+	\draw (2 * \layer + \myunit, 2.5cm) -- (2 * \layer + \layer - \myunit, 0.5cm * \y);
+	\draw (2 * \layer + \myunit, 0cm) -- (2 * \layer + \layer - \myunit, 0.5cm * \y);
 };
 
 % draw weights 3 --> 4
 \foreach \y in {0cm, 2.5cm} {
 	\foreach \z in {-0.75cm, 3.25cm} {
-		\draw (3 * \layer + \unit, \y) -- (3 * \layer + \layer - \unit, \z);
+		\draw (3 * \layer + \myunit, \y) -- (3 * \layer + \layer - \myunit, \z);
 	};
 };
 \foreach \y in {1.5,...,3.5} {
 	\foreach \z in {0,...,5} {
-		\draw (3 * \layer + \unit, 0.5cm * \y) -- (3 * \layer + \layer - \unit, 0.5cm * \z);
+		\draw (3 * \layer + \myunit, 0.5cm * \y) -- (3 * \layer + \layer - \myunit, 0.5cm * \z);
 	};
 	\foreach \z in {0cm, 2.5cm} {
-		\draw (3 * \layer + \unit, 0.5cm * \y) -- (3 * \layer + \layer - \unit, \z);
+		\draw (3 * \layer + \myunit, 0.5cm * \y) -- (3 * \layer + \layer - \myunit, \z);
 	};
 };
 \foreach \y in {0,...,5} {
-	\draw (3 * \layer + \unit, 2.5cm) -- (3 * \layer + \layer - \unit, 0.5cm * \y);
-	\draw (3 * \layer + \unit, 0cm) -- (3 * \layer + \layer - \unit, 0.5cm * \y);
+	\draw (3 * \layer + \myunit, 2.5cm) -- (3 * \layer + \layer - \myunit, 0.5cm * \y);
+	\draw (3 * \layer + \myunit, 0cm) -- (3 * \layer + \layer - \myunit, 0.5cm * \y);
 };
 
 % draw weights 5 --> output
 \foreach \y in {0cm, 2.5cm} {
-	\draw (5 * \layer + \unit, \y) -- (5 * \layer + \layer - \unit, 1.25cm);
+	\draw (5 * \layer + \myunit, \y) -- (5 * \layer + \layer - \myunit, 1.25cm);
 };
 \foreach \y in {1.5,...,3.5} {
-	\draw (5 * \layer + \unit, 0.5cm * \y) -- (5 * \layer + \layer - \unit, 1.25cm);
+	\draw (5 * \layer + \myunit, 0.5cm * \y) -- (5 * \layer + \layer - \myunit, 1.25cm);
 };
 
 % draw hidden layers legend
 \node[anchor=base, align=center, text width=3.5cm, scale=0.5] (h) at (4cm, 4.5cm) {hidden layers (ReLU activation)};
-\draw[->] (h) -- (\layer + \unit, 3.6cm);
-\draw[->] (h) -- (2 * \layer + \unit, 2.85cm);
-\draw[->] (h) -- (3 * \layer + 0.5 * \unit, 2.85cm);
+\draw[->] (h) -- (\layer + \myunit, 3.6cm);
+\draw[->] (h) -- (2 * \layer + \myunit, 2.85cm);
+\draw[->] (h) -- (3 * \layer + 0.5 * \myunit, 2.85cm);
 \draw[->] (h) -- (4 * \layer, 3.6cm);
-\draw[->] (h) -- (5 * \layer - 0.5 * \unit, 2.85cm);
+\draw[->] (h) -- (5 * \layer - 0.5 * \myunit, 2.85cm);
 
 \end{tikzpicture}
 
