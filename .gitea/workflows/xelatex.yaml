@@ -19,7 +19,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: cv.tex
+          root_file: thesis.tex
           latexmk_use_xelatex: true
       - name: List files in the repository
         run: |
@@ -40,5 +40,5 @@ jobs:
             endpoint=${{ secrets.S3ENDPOINT }}
             access_key_id=${{ secrets.S3ACCESSKEY }}
             secret_access_key=${{ secrets.S3ACCESSSECRET }}
-          include: '*.pdf'
+          include: 'thesis.pdf'
       - run: echo "🍏 This job's status is ${{ job.status }}."
